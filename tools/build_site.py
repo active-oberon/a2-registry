@@ -95,6 +95,11 @@ h1.title .m{font-family:var(--mono);color:var(--accent-strong);font-weight:600}
 .chip{font-family:var(--mono);font-size:11px;letter-spacing:.03em;padding:3px 8px;border-radius:20px;white-space:nowrap}
 .chip.ok{color:var(--ok);background:var(--ok-bg)} .chip.pending{color:var(--warn);background:var(--warn-bg)}
 .chip.bundled{color:var(--accent);background:var(--accent-glow)}
+.modindex{list-style:none;padding:0;margin:14px 0 0;columns:2;column-gap:32px}
+@media(max-width:640px){.modindex{columns:1}}
+.modindex li{margin:0 0 7px;break-inside:avoid}
+.modindex a{font-family:var(--mono);font-size:14px;color:var(--accent-strong)}
+.foxdoc a[href*=".html#"]{border-bottom:1px dotted var(--faint)}
 .badge{font-family:var(--mono);font-size:11px;color:var(--accent);border:1px solid var(--border);padding:2px 7px;border-radius:6px}
 .card .sym-hit{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--accent);background:var(--accent-glow);padding:6px 9px;border-radius:7px;display:none}
 .card .sym-hit.show{display:block} .card .sym-hit b{color:var(--accent-strong)}
@@ -193,19 +198,66 @@ def page(title, body, rel=""):
       f'</head><body>{top(rel=rel)}<main>{body}</main>{FOOT}'
       f'<script src="{rel}assets/app.js"></script></body></html>')
 
-def module_body(fox_html, pkg, module, modules, rel):
+MODMAP = {}        # module name -> short package dir (built in build(), pass 1)
+_LINK_RE = None
+
+def _build_linkre():
+    global _LINK_RE
+    if MODMAP:
+        names = sorted(MODMAP, key=len, reverse=True)
+        _LINK_RE = re.compile(r'(?<![\w."#/=])(' + '|'.join(map(re.escape, names)) + r')\.([A-Za-z][A-Za-z0-9_]*)')
+
+def linkify(inner, current, rel):
+    # turn cross-module qualified names (Streams.Writer) into links to that module's
+    # page + symbol anchor (Fox emits <a name="Module.Symbol">). Skip the current
+    # module — Fox already anchors its own symbols within the page.
+    if not _LINK_RE: return inner
+    def repl(mo):
+        mod, sym = mo.group(1), mo.group(2)
+        if mod == current or mod not in MODMAP: return mo.group(0)
+        return f'<a href="{rel}{MODMAP[mod]}/{mod}.html#{mod}.{sym}">{mod}.{sym}</a>'
+    return _LINK_RE.sub(repl, inner)
+
+def module_body(fox_html, name, short, module, modules, rel):
     m = re.search(r'<body>(.*)</body>', fox_html, re.S|re.I)
     inner = m.group(1) if m else fox_html
     inner = re.sub(r'<style.*?</style>', '', inner, flags=re.S|re.I)  # drop Fox inline CSS
+    inner = linkify(inner, module, rel)
+    CAP = 18
     rail_items = "".join(
-        f'<li><a href="{rel}{pkg}/{mm}.html"'
-        + (' style="color:var(--accent)"' if mm==module else ' style="color:var(--faint)"')
-        + f'>{mm}</a></li>' for mm in modules[:12])
-    if len(modules) > 12: rail_items += f'<li><a style="color:var(--faint)">…{len(modules)-12} more</a></li>'
+        f'<li><a href="{rel}{short}/{mm}.html"'
+        + (' style="color:var(--accent)"' if mm==module else '')
+        + f'>{mm}</a></li>' for mm in modules[:CAP])
+    if len(modules) > CAP:
+        rail_items += f'<li><a href="{rel}{short}/index.html" style="color:var(--accent-strong)">+{len(modules)-CAP} more →</a></li>'
     return (f'<div class="wrap"><p class="crumb"><a href="{rel}index.html">registry</a> / '
-      f'<a href="{rel}index.html">community/{pkg}</a> / <span style="color:var(--ink)">{module}</span></p>'
-      f'<div class="modlayout"><aside class="rail"><p class="rlabel">community/{pkg}</p><ul>{rail_items}</ul></aside>'
-      f'<div class="foxdoc">{inner}</div></div></div>')
+      f'<a href="{rel}{short}/index.html">{name}</a> / <span style="color:var(--ink)">{module}</span></p>'
+      f'<div class="modlayout"><aside class="rail"><p class="rlabel"><a href="{rel}{short}/index.html">{name}</a></p>'
+      f'<ul>{rail_items}</ul></aside><div class="foxdoc">{inner}</div></div></div>')
+
+def package_index_body(name, short, meta, modules, rel):
+    status = meta.get("status", "pending")
+    chipcls = {"bundled": "bundled", "validated": "ok"}.get(status, "pending")
+    req = meta.get("requires", [])
+    reqhtml = (" · requires " + ", ".join(req)) if req else ""
+    if status == "validated":
+        inst = f'<div class="install"><span class="p">ob get</span> {name}</div>'
+    elif meta.get("install"):
+        inst = f'<p class="hint">{meta["install"]}</p>'
+    else:
+        inst = ""
+    items = "".join(f'<li><a href="{rel}{short}/{mm}.html">{mm}</a></li>' for mm in modules)
+    n = len(modules)
+    return (f'<div class="wrap"><p class="crumb"><a href="{rel}index.html">registry</a> / '
+      f'<span style="color:var(--ink)">{name}</span></p>'
+      f'<div style="padding:24px 0 70px;max-width:780px">'
+      f'<h1 style="font-family:var(--mono);font-size:30px;margin:0 0 10px;letter-spacing:-.01em">{name} '
+      f'<span class="chip {chipcls}" style="vertical-align:middle">{status}</span></h1>'
+      f'<p class="lede" style="font-size:16.5px;margin:0 0 12px">{meta.get("summary","")}</p>'
+      f'<p class="hint">tier {meta.get("tier","?")}{reqhtml} · {n} documented module{"" if n==1 else "s"}</p>'
+      f'{inst}'
+      f'<div class="sec-head"><h2>Modules</h2><span class="count">{n}</span></div>'
+      f'<ul class="modindex">{items}</ul></div></div>')
 
 def build():
     idx = json.load(open(os.path.join(ROOT, "index.json")))
@@ -215,21 +267,30 @@ def build():
     open(os.path.join(SITE, ".nojekyll"), "w").write("")  # serve _-prefixed files as-is
     open(os.path.join(SITE, "assets", "style.css"), "w").write(STYLE)
 
-    # per-package module pages (from raw docs/)
-    cards = []
+    # pass 1: collect modules per package + build the global module->page map
+    pkgmods = {}
     for name, meta in pkgs.items():
         short = name.split("/", 1)[1]
         docdir = os.path.join(DOCS, short)
-        modules, first = [], None
-        if os.path.isdir(docdir):
-            modules = sorted(f[:-5] for f in os.listdir(docdir) if f.endswith(".html") and f != "index.html")
+        modules = sorted(f[:-5] for f in os.listdir(docdir)
+                         if f.endswith(".html") and f != "index.html") if os.path.isdir(docdir) else []
+        pkgmods[name] = (short, modules)
+        for mm in modules: MODMAP[mm] = short
+    _build_linkre()
+
+    # pass 2: render module pages + a package index page, with cross-links resolved
+    cards = []
+    for name, meta in pkgs.items():
+        short, modules = pkgmods[name]
+        if modules:
             os.makedirs(os.path.join(SITE, short), exist_ok=True)
             for mod in modules:
-                fox = open(os.path.join(docdir, mod + ".html"), encoding="utf-8", errors="replace").read()
+                fox = open(os.path.join(DOCS, short, mod + ".html"), encoding="utf-8", errors="replace").read()
                 open(os.path.join(SITE, short, mod + ".html"), "w").write(
-                    page(f"{mod} · community/{short}", module_body(fox, short, mod, modules, "../"), rel="../"))
-            first = modules[0] if modules else None
-        href = f"{short}/{first}.html" if first else None
+                    page(f"{mod} · {name}", module_body(fox, name, short, mod, modules, "../"), rel="../"))
+            open(os.path.join(SITE, short, "index.html"), "w").write(
+                page(f"{name}", package_index_body(name, short, meta, modules, "../"), rel="../"))
+        href = f"{short}/index.html" if modules else None
         cards.append({"n": name, "s": meta.get("summary", ""), "mods": meta.get("modules", len(modules)),
                       "tier": meta.get("tier", 2), "status": meta.get("status", "pending"),
                       "native": meta.get("native", ""), "syms": modules or [short],
