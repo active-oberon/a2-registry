@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#HypercubeBase">HypercubeBase</a></p>
+<hr><h1 id="#_2690F640"><a name="HypercubeBase"></a><a href="#ModuleList">Module</a> HypercubeBase
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>cachesize= (256*1024)<tr><th align='left'>type declarations</th><td>Datatype =<strong>FLOAT64</strong><tr><td></td><td>LineHandler =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> lineIn: <strong>OneD</strong>; <strong>VAR</strong> lineOut: <strong>OneD</strong>)<tr><td></td><td>F4 =<strong>PROCEDURE</strong>{DELEGATE} (x, y, z, t: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td>LineHandler1 =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> lineIn: <strong>OneD</strong>; <strong>VAR</strong> lineOut: <strong>OneD</strong>; v: <strong>Datatype</strong>)<tr><th align='left'>procedures</th><td> <a href="#HypercubeBase.HandleLines4D">HandleLines4D</a> (<strong>CONST</strong> cube: <strong>FourD</strong>; <strong>VAR</strong> rescube: <strong>FourD</strong>; directions: <strong>SET</strong>; linehandler: <strong>LineHandler</strong>)<tr><td></td><td> <a href="#HypercubeBase.HandleLines4D1">HandleLines4D1</a> (<strong>CONST</strong> cube: <strong>FourD</strong>; <strong>VAR</strong> rescube: <strong>FourD</strong>; directions: <strong>SET</strong>; linehandler: <strong>LineHandler1</strong>; f4: <strong>F4</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_2692C1C0"><a name="HypercubeBase.HandleLines4D"></a><a href="#HypercubeBase">HypercubeBase</a>.<a href="#HypercubeBase.HandleLines4D">HandleLines4D</a>
+</h2>
+<p> applies a procedure 'linehandler' to all lines of a 3D dataset in the indicated directions. Avoids cache misses by copying the data into a work array that fits into the cache.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HandleLines4D* (<strong>CONST</strong> cube: <strong>FourD</strong>; <strong>VAR</strong> rescube: <strong>FourD</strong>; directions: <strong>SET</strong>; linehandler: <strong>LineHandler</strong>)</pre>
+<hr><h2 id="#_2693A040"><a name="HypercubeBase.HandleLines4D1"></a><a href="#HypercubeBase">HypercubeBase</a>.<a href="#HypercubeBase.HandleLines4D1">HandleLines4D1</a>
+</h2>
+<p> applies a procedure 'linehandler' to all lines of a 3D dataset in the indicated directions. passes result of f4(x,y,z,t) to the linehandler for parametrization according to the</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HandleLines4D1* (<strong>CONST</strong> cube: <strong>FourD</strong>; <strong>VAR</strong> rescube: <strong>FourD</strong>; directions: <strong>SET</strong>; linehandler: <strong>LineHandler1</strong>; f4: <strong>F4</strong>)</pre>
+</body></html>

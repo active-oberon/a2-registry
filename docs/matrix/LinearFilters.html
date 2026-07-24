@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#LinearFilters">LinearFilters</a></p>
+<hr><h1 id="#_E07C2140"><a name="LinearFilters"></a><a href="#ModuleList">Module</a> LinearFilters
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "Filter construction for Spline and Moment Processing ";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>undefined= -1<tr><td></td><td>finite= 0<tr><td></td><td>cyclicH= 1<tr><td></td><td>cyclicW= 2<tr><td></td><td>anticyclicH= 3<tr><td></td><td>anticyclicW= 4<tr><td></td><td>mirrorH= 5<tr><td></td><td>mirrorW= 6<tr><td></td><td>antimirrorH= 7<tr><td></td><td>antimirrorW= 8<tr><td></td><td>Even= 0<tr><td></td><td>Odd= 1<tr><td></td><td><a href="#LinearFilters.Haar">Haar</a>= 0<tr><td></td><td>BattleLemarie= 1<tr><td></td><td>Coiflet= 2<tr><td></td><td>Daubechies8= 3<tr><td></td><td><a href="#LinearFilters.Daubechies97">Daubechies97</a>= 29<tr><td></td><td>BurtAdelson= 31<tr><td></td><td>quadraticspline= 32<tr><td></td><td>spline97= 33<tr><td></td><td><a href="#LinearFilters.cubicspline">cubicspline</a>= 41<tr><td></td><td>spline610= 42<tr><td></td><td><a href="#LinearFilters.HybridHaarLemarie">HybridHaarLemarie</a>= 61<tr><td></td><td>ShiftOrthoQuadSpline= 62<tr><td></td><td><a href="#LinearFilters.ShiftOrthoCubicSpline">ShiftOrthoCubicSpline</a>= 71<tr><td></td><td><a href="#LinearFilters.DirectBSpline0">DirectBSpline0</a>= 100<tr><td></td><td><a href="#LinearFilters.DirectBSpline1">DirectBSpline1</a>= 101<tr><td></td><td>DirectBSpline2= 102<tr><td></td><td><a href="#LinearFilters.DirectBSpline3">DirectBSpline3</a>= 103<tr><td></td><td>DirectBSpline4= 104<tr><td></td><td>DirectBSpline5= 105<tr><td></td><td>DirectBSpline6= 106<tr><td></td><td>DirectBSpline7= 107<tr><td></td><td>InverseBSpline0= 110<tr><td></td><td>InverseBSpline1= 111<tr><td></td><td>InverseBSpline2= 112<tr><td></td><td>InverseBSpline3= 113<tr><td></td><td>InverseBSpline4= 114<tr><td></td><td>InverseBSpline5= 115<tr><td></td><td>InverseBSpline6= 116<tr><td></td><td>InverseBSpline7= 117<tr><td></td><td><a href="#LinearFilters.DirectCenteredBSpline0">DirectCenteredBSpline0</a>= 120<tr><td></td><td>InverseCenteredBSpline0= 130<tr><td></td><td>InverseCenteredBSpline1= 131<tr><td></td><td>InverseCenteredBSpline2= 132<tr><td></td><td><a href="#LinearFilters.LeastSquareSpline0Down2">LeastSquareSpline0Down2</a>= 140<tr><td></td><td>LeastSquareSpline1Down2= 141<tr><td></td><td>LeastSquareSpline2Down2= 142<tr><td></td><td>LeastSquareSpline3Down2= 143<tr><td></td><td>LeastSquareSplineDown2= 143<tr><td></td><td>LeastSquareSpline4Down2= 144<tr><td></td><td>LeastSquareSpline0Up2= 150<tr><td></td><td>LeastSquareSpline1Up2= 151<tr><td></td><td>LeastSquareSpline2Up2= 152<tr><td></td><td>LeastSquareSpline3Up2= 153<tr><td></td><td>LeastSquareSplineUp2= 153<tr><td></td><td>LeastSquareSpline4Up2= 154<tr><td></td><td><a href="#LinearFilters.LeastSquareSplineCentered0Down2">LeastSquareSplineCentered0Down2</a>= 220<tr><td></td><td>LeastSquareSplineCentered1Down2= 221<tr><td></td><td>LeastSquareSplineCentered2Down2= 222<tr><td></td><td>LeastSquareSplineCentered3Down2= 223<tr><td></td><td>LeastSquareSplineCentered4Down2= 224<tr><td></td><td>LeastSquareSplineCentered0Up2= 230<tr><td></td><td>LeastSquareSplineCentered1Up2= 231<tr><td></td><td>LeastSquareSplineCentered2Up2= 232<tr><td></td><td>LeastSquareSplineCentered3Up2= 233<tr><td></td><td>LeastSquareSplineCentered4Up2= 234<tr><td></td><td><a href="#LinearFilters.MomentCubic0">MomentCubic0</a>= 200<tr><td></td><td><a href="#LinearFilters.MomentCubic1">MomentCubic1</a>= 201<tr><td></td><td><a href="#LinearFilters.MomentCubic2">MomentCubic2</a>= 202<tr><td></td><td><a href="#LinearFilters.MomentCubicH0">MomentCubicH0</a>= 203<tr><td></td><td>MomentCubicH1= 204<tr><td></td><td>MomentCubicH11= 205<tr><td></td><td>MomentCubicH2= 206<tr><td></td><td><a href="#LinearFilters.MomentCubicH21">MomentCubicH21</a>= 207<tr><td></td><td><a href="#LinearFilters.MomentCubicH22">MomentCubicH22</a>= 208<tr><td></td><td><a href="#LinearFilters.CubicSplineDifferentiator">CubicSplineDifferentiator</a>= 180<tr><td></td><td><a href="#LinearFilters.CubicSplineLaplacian">CubicSplineLaplacian</a>= 181<tr><td></td><td><a href="#LinearFilters.SplineDerivative">SplineDerivative</a>= 182<tr><td></td><td><a href="#LinearFilters.SplineLaplacian">SplineLaplacian</a>= 183<tr><td></td><td><a href="#LinearFilters.CubicSplineDerivativeFromSignal">CubicSplineDerivativeFromSignal</a>= 184<tr><td></td><td><a href="#LinearFilters.SplineDerivativeApproximation">SplineDerivativeApproximation</a>= 185<tr><td></td><td>Smooth= 300<tr><th align='left'>type declarations</th><td>Datatype =<strong>FLOAT64</strong><tr><td></td><td>Vector =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td><a href="#LinearFilters.Filter">Filter</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#LinearFilters.FIRFilter">FIRFilter</a> =<strong>OBJECT</strong> (<strong>Filter</strong>)<tr><td></td><td><a href="#LinearFilters.IIRFilter">IIRFilter</a> =<strong>OBJECT</strong> (<strong>Filter</strong>)<tr><th align='left'>procedures</th><td> CreateFIRFilter (<strong>CONST</strong> coeff: <strong>Vector</strong>; origin: <strong>SIZE</strong>): <strong>FIRFilter</strong><tr><td></td><td> CreateIIRFilter (<strong>CONST</strong> poles: <strong>Vector</strong>; gain: <strong>Datatype</strong>): <strong>IIRFilter</strong><tr><td></td><td> CreateSplineFilter (name: <strong>SIGNED32</strong>): <strong>Filter</strong><tr><td></td><td> CreateSheppLogan (): <strong>FIRFilter</strong><tr><td></td><td> CreateHann (): <strong>FIRFilter</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E0825DC0"><a name="LinearFilters.Haar"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.Haar">Haar</a>
+</h2>
+<p> Wavelet name</p>
+
+<p> Orthogonal wavelet</p>
+
+<p> Even length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Haar*= 0</pre>
+<hr><h2 id="#_E082A400"><a name="LinearFilters.Daubechies97"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.Daubechies97">Daubechies97</a>
+</h2>
+<p> Bi-orthogonal wavelets</p>
+
+<p> Odd length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Daubechies97*= 29</pre>
+<hr><h2 id="#_E082DF80"><a name="LinearFilters.cubicspline"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.cubicspline">cubicspline</a>
+</h2>
+<p> Even length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> cubicspline*= 41</pre>
+<hr><h2 id="#_E0831240"><a name="LinearFilters.HybridHaarLemarie"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.HybridHaarLemarie">HybridHaarLemarie</a>
+</h2>
+<p> Shift Orthogonal wavelets</p>
+
+<p> Hybrid Shift Orthogonal Spline Wavelets, from Unser M, Shift-Orthogonal Wavelet Bases, IEEE Trans Signal Proc 1998; 46:1827 and IEEE Sig Proc Letter 1996; 3: 85</p>
+
+<p>Even length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HybridHaarLemarie*= 61</pre>
+<hr><h2 id="#_E083B680"><a name="LinearFilters.ShiftOrthoCubicSpline"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.ShiftOrthoCubicSpline">ShiftOrthoCubicSpline</a>
+</h2>
+<p> Odd length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ShiftOrthoCubicSpline*= 71</pre>
+<hr><h2 id="#_E083E940"><a name="LinearFilters.DirectBSpline0"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.DirectBSpline0">DirectBSpline0</a>
+</h2>
+<p>Spline names</p>
+
+<p> B-Spline Filters of various degrees; shortest possible, symmetric, smooth, but not orthogonal</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DirectBSpline0*= 100</pre>
+<hr><h2 id="#_E0844C40"><a name="LinearFilters.DirectBSpline1"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.DirectBSpline1">DirectBSpline1</a>
+</h2>
+<p> See also description in Unser et al: ...</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DirectBSpline1*= 101</pre>
+<hr><h2 id="#_E0849740"><a name="LinearFilters.DirectBSpline3"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.DirectBSpline3">DirectBSpline3</a>
+</h2>
+<p> cubic spline has special property of "minimal curvature" and is often a good compromise between smoothness and complexity</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DirectBSpline3*= 103</pre>
+<hr><h2 id="#_E0850A40"><a name="LinearFilters.DirectCenteredBSpline0"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.DirectCenteredBSpline0">DirectCenteredBSpline0</a>
+</h2>
+<p>centered splines: downsampled taps IN-BETWEEN the original sampling positions</p>
+
+<p>with these, feature location is better preserved in downsampled/upsampled versions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DirectCenteredBSpline0*= 120</pre>
+<hr><h2 id="#_E0857F40"><a name="LinearFilters.LeastSquareSpline0Down2"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.LeastSquareSpline0Down2">LeastSquareSpline0Down2</a>
+</h2>
+<p> Least square spline filters:</p>
+
+<p> Filtering and downsampling by 2 yields least-square spline approximation. Input: spline coefficients</p>
+
+<p> upsampling by 2 and filtering yields best approximation (least square) to original data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LeastSquareSpline0Down2*= 140</pre>
+<hr><h2 id="#_E0862280"><a name="LinearFilters.LeastSquareSplineCentered0Down2"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.LeastSquareSplineCentered0Down2">LeastSquareSplineCentered0Down2</a>
+</h2>
+<p> Least spline filters: Centered versions: have downsampled taps IN_BETWEEN the coefficients - good to retain localisation of features</p>
+
+<p> Least spline filters: Centered versions: have downsampled taps IN_BETWEEN the coefficients - good to retain localisation of features</p>
+
+<p>these filters are to be used with standard convolution procedures from LinearConvolve.Mod. They expect an array of spline coefficients</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LeastSquareSplineCentered0Down2*= 220</pre>
+<hr><h2 id="#_E0872AC0"><a name="LinearFilters.MomentCubic0"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.MomentCubic0">MomentCubic0</a>
+</h2>
+<p> cubic spline moment filters, see Michael Suehling et al, "Multiresolution Moment Filters", 2003; http:bigwww.epfl.ch</p>
+
+<p> boundary conditions for moments: order p of mp(j+1) boundary extension of mp(j+1) order k of mk(j) boundary extension p-k filter symmetry of hpk even mirror even mirror even symmetric even mirror odd antimirror odd antisymmetric odd antimirror even mirror odd antisymmetric odd antimirror odd antimirror even symmetrix</p>
+
+<p> geometric meaning in 2D: X=m10/m00; Y:=m01/m00 central moments mu20= m20-m00X2 mu02= m02-m00Y2 mu11= m11-m00XY inertia matrix J = mu20 mu11 mu11 mu02 orientation of analysed object: corresponds to eigenvector corresponding to smallest eigenvalue of J ; can also be expressed as angle phi= 1/2 arctan (2*mu11/(mu20-mu02)) object is mapped to ellipsoid centered at X, Y eccentricity of local ellipsoid e= ((lambda1-lambda2)/(lambda1+lambda2))2 e= ((mu20-mu02)2+4 mu112)/(mu20+mu02)2</p>
+
+<p> zero moment</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MomentCubic0*= 200</pre>
+<hr><h2 id="#_E0894940"><a name="LinearFilters.MomentCubic1"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.MomentCubic1">MomentCubic1</a>
+</h2>
+<p> first moment</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MomentCubic1*= 201</pre>
+<hr><h2 id="#_E0897C40"><a name="LinearFilters.MomentCubic2"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.MomentCubic2">MomentCubic2</a>
+</h2>
+<p> second moment</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MomentCubic2*= 202</pre>
+<hr><h2 id="#_E089AE40"><a name="LinearFilters.MomentCubicH0"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.MomentCubicH0">MomentCubicH0</a>
+</h2>
+<p> transfer filters for binary moment tree</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MomentCubicH0*= 203</pre>
+<hr><h2 id="#_E089F140"><a name="LinearFilters.MomentCubicH21"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.MomentCubicH21">MomentCubicH21</a>
+</h2>
+<p> transfer filter for binary moment tree</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MomentCubicH21*= 207</pre>
+<hr><h2 id="#_E08A3440"><a name="LinearFilters.MomentCubicH22"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.MomentCubicH22">MomentCubicH22</a>
+</h2>
+<p> transfer filter for binary moment tree</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MomentCubicH22*= 208</pre>
+<hr><h2 id="#_E08A7740"><a name="LinearFilters.CubicSplineDifferentiator"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.CubicSplineDifferentiator">CubicSplineDifferentiator</a>
+</h2>
+<p> applied to cubic spline coefficients, convolution with this filter yields 1st derivative and mapping back to signal domain</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CubicSplineDifferentiator*= 180</pre>
+<hr><h2 id="#_E08AE940"><a name="LinearFilters.CubicSplineLaplacian"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.CubicSplineLaplacian">CubicSplineLaplacian</a>
+</h2>
+<p> applied to cubic spline coefficients, convolution with this filter yields 2nd derivative and mapping back to signal domain</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CubicSplineLaplacian*= 181</pre>
+<hr><h2 id="#_E08B5B40"><a name="LinearFilters.SplineDerivative"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.SplineDerivative">SplineDerivative</a>
+</h2>
+<p> Gradient operator on splines. Note that degree of spline is reduced by one when this filter is applied</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SplineDerivative*= 182</pre>
+<hr><h2 id="#_E08BCEC0"><a name="LinearFilters.SplineLaplacian"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.SplineLaplacian">SplineLaplacian</a>
+</h2>
+<p> Laplacian=Second Derivative operator on splines; Note that degree of spline is reduced by two when this filter is applied '''</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SplineLaplacian*= 183</pre>
+<hr><h2 id="#_E08C47C0"><a name="LinearFilters.CubicSplineDerivativeFromSignal"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.CubicSplineDerivativeFromSignal">CubicSplineDerivativeFromSignal</a>
+</h2>
+<p> applied to signal domain, implicitely transforms to cubic spline, determines derivative, and transforms back to signal domain</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CubicSplineDerivativeFromSignal*= 184</pre>
+<hr><h2 id="#_E08CB6C0"><a name="LinearFilters.SplineDerivativeApproximation"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.SplineDerivativeApproximation">SplineDerivativeApproximation</a>
+</h2>
+<p> similar to above, but takes into account only few coefficients. Apply to signal domain</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SplineDerivativeApproximation*= 185</pre>
+<hr><h2 id="#_E08D18C0"><a name="LinearFilters.Filter"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.Filter">Filter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Filter* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_E08D4540"><a name="LinearFilters.FIRFilter"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.FIRFilter">FIRFilter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIRFilter* =<strong>OBJECT</strong> (<strong>Filter</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>coeff: <strong>Vector</strong><tr><td></td><td>origin: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> InitFIR (<strong>CONST</strong> coeff: <strong>Vector</strong>; origin: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E08DC740"><a name="LinearFilters.IIRFilter"></a><a href="#LinearFilters">LinearFilters</a>.<a href="#LinearFilters.IIRFilter">IIRFilter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IIRFilter* =<strong>OBJECT</strong> (<strong>Filter</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>poles: <strong>Vector</strong><tr><td></td><td>gain: <strong>Datatype</strong><tr><th align='left'>procedures</th><td> InitIIR (<strong>CONST</strong> poles: <strong>Vector</strong>; gain: <strong>Datatype</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

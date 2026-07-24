@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#StatisticsLinearRegression">StatisticsLinearRegression</a></p>
+<hr><h1 id="#_DB218D00"><a name="StatisticsLinearRegression"></a><a href="#ModuleList">Module</a> StatisticsLinearRegression
+</h1>
+<p> AUTHOR "Patrick Hunziker 2012"; PURPOSE "Linear Regression Models";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#StatisticsLinearRegression.Matrix">Matrix</a> =<strong>MatrixBase.Matrix</strong><tr><td></td><td>Vector =<strong>MatrixBase.Vector</strong><tr><td></td><td>Scalar =<strong>MatrixBase.Datatype</strong><tr><td></td><td><a href="#StatisticsLinearRegression.Regression">Regression</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#StatisticsLinearRegression.Stream_TheilSenEstimator">Stream_TheilSenEstimator</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#StatisticsLinearRegression.Multivariate_TheilSenEstimator">Multivariate_TheilSenEstimator</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> LinearRegression (<strong>CONST</strong> X: <strong>Matrix</strong>; <strong>CONST</strong> y: <strong>Vector</strong>; <strong>VAR</strong> b, e: <strong>Vector</strong>)<tr><td></td><td> SimpleRegressionNoIntercept (<strong>CONST</strong> x: <strong>Vector</strong>; <strong>CONST</strong> y: <strong>Vector</strong>; <strong>VAR</strong> b: <strong>Scalar</strong>; <strong>VAR</strong> e: <strong>Vector</strong>)<tr><td></td><td> SimpleRegression (<strong>CONST</strong> x: <strong>Vector</strong>; <strong>CONST</strong> y: <strong>Vector</strong>; <strong>VAR</strong> b, intercept: <strong>Scalar</strong>; <strong>VAR</strong> e: <strong>Vector</strong>)<tr><td></td><td> <a href="#StatisticsLinearRegression.GeneralLinearModel">GeneralLinearModel</a> (<strong>CONST</strong> X: <strong>Matrix</strong>; <strong>CONST</strong> Y: <strong>Matrix</strong>; <strong>VAR</strong> B, U: <strong>Matrix</strong>)<tr><td></td><td> TheilSenEstimator (<strong>CONST</strong> x: <strong>Vector</strong>; <strong>CONST</strong> y: <strong>Vector</strong>; <strong>VAR</strong> b, intercept: <strong>Scalar</strong>; <strong>VAR</strong> e: <strong>Vector</strong>)<tr><td></td><td> Test<tr><td></td><td> Test1<tr><td></td><td> TestGLM<tr><td></td><td> TestEngine<tr><td></td><td> TestFprobability</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_DB23FEC0">
+</h1><hr><h2 id="#_DB240680"><a name="StatisticsLinearRegression.Matrix"></a><a href="#StatisticsLinearRegression">StatisticsLinearRegression</a>.<a href="#StatisticsLinearRegression.Matrix">Matrix</a>
+</h2>
+<dl>
+<dt><strong>elementwise</strong></dt>
+<dd> y1 = b1 x11+b2 x12 +b3 x13 .. + e1 y2 = b2 x21 ...</dd>
+
+
+</dl>
+<p>Usually a constant is included as one of the regressors.For example we can take xi1 = 1 for i = 1, ..., n.The corresponding element of X is called the intercept.</p>
+
+<p>vector form: y= Xb + e ; with y,b,e: vector; X: matrix (in the simplest case, only one column)</p>
+
+<p>least squares formulation X`X b = X` y</p>
+
+<p> or b= Invert(X`X) * X`y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Matrix* =<strong>MatrixBase.Matrix</strong></pre>
+<hr><h2 id="#_DB256F80"><a name="StatisticsLinearRegression.Regression"></a><a href="#StatisticsLinearRegression">StatisticsLinearRegression</a>.<a href="#StatisticsLinearRegression.Regression">Regression</a>
+</h2>
+<p>y = Xb + e</p>
+
+<dl>
+<dt><strong>y</strong></dt>
+<dd> Observed response variables, vector</dd>
+
+
+<dl>
+<dt><strong>x</strong></dt>
+<dd> regressors = input variables, one row for each response element, making up the design matrix X;</dd>
+
+
+<dl>
+<dt><strong>b</strong></dt>
+<dd> regression coefficient vector, to be determined</dd>
+
+
+<dl>
+<dt><strong>e</strong></dt>
+<dd> error termusually, a constant is included in the regressors X, (e.g. all xi1 := 1), and the resulting b is called intercept.See example in Test() below.</dd>
+
+
+</dl>
+</dl>
+</dl>
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Regression* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>b: <strong>Vector</strong><tr><td></td><td>e: <strong>Vector</strong><tr><td></td><td>yestimate: <strong>Vector</strong><tr><td></td><td>B: <strong>Matrix</strong><tr><td></td><td>U: <strong>Matrix</strong><tr><td></td><td>R2: <strong>Scalar</strong><tr><td></td><td>R2adj: <strong>Scalar</strong><tr><td></td><td>RSS: <strong>Scalar</strong><tr><td></td><td>F: <strong>Scalar</strong><tr><td></td><td>p: <strong>Scalar</strong><tr><td></td><td>ymean: <strong>Scalar</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> X: <strong>Matrix</strong>; intercept: <strong>BOOLEAN</strong>)<tr><td></td><td> InitSimple (<strong>CONST</strong> x: <strong>Vector</strong>; intercept: <strong>BOOLEAN</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> y: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveGLM (<strong>CONST</strong> Y: <strong>Matrix</strong>): <strong>Matrix</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DB27EA80"><a name="StatisticsLinearRegression.Stream_TheilSenEstimator"></a><a href="#StatisticsLinearRegression">StatisticsLinearRegression</a>.<a href="#StatisticsLinearRegression.Stream_TheilSenEstimator">Stream_TheilSenEstimator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Stream_TheilSenEstimator* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_DB281CC0"><a name="StatisticsLinearRegression.Multivariate_TheilSenEstimator"></a><a href="#StatisticsLinearRegression">StatisticsLinearRegression</a>.<a href="#StatisticsLinearRegression.Multivariate_TheilSenEstimator">Multivariate_TheilSenEstimator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Multivariate_TheilSenEstimator* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_DB284FC0"><a name="StatisticsLinearRegression.GeneralLinearModel"></a><a href="#StatisticsLinearRegression">StatisticsLinearRegression</a>.<a href="#StatisticsLinearRegression.GeneralLinearModel">GeneralLinearModel</a>
+</h2>
+<p>The general linear model (GLM) is a statistical linear model. It may be written as Y = XB + Uwhere Y is a matrix with series of multivariate measurements,X is a matrix that might be a design matrix,B is a matrix containing parameters that are usually to be estimated andU is a matrix containing errors or noise.</p>
+
+<p>The general linear model incorporates a number of different statistical models:ANOVA, ANCOVA, MANOVA, MANCOVA, ordinary linear regression, t-test and F-test.The general linear model is a generalization of multiple linear regression model tothe case of more than one dependent variable.</p>
+
+<p>see http://en.wikipedia.org/wiki/General_linear_model</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GeneralLinearModel* (<strong>CONST</strong> X: <strong>Matrix</strong>; <strong>CONST</strong> Y: <strong>Matrix</strong>; <strong>VAR</strong> B, U: <strong>Matrix</strong>)</pre>
+</body></html>

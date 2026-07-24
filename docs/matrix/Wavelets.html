@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Wavelets">Wavelets</a></p>
+<hr><h1 id="#_7BD8EE00"><a name="Wavelets"></a><a href="#ModuleList">Module</a> Wavelets
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Wavelets.undefined">undefined</a>= -LinearFilters.undefined<tr><td></td><td>default= undefined<tr><td></td><td>finite= LinearFilters.finite<tr><td></td><td>periodicH= LinearFilters.cyclicH<tr><td></td><td>mirrorH= LinearFilters.mirrorH<tr><td></td><td>mirrorW= LinearFilters.mirrorW<tr><td></td><td><a href="#Wavelets.Haar">Haar</a>= 0<tr><td></td><td>BattleLemarie= 1<tr><td></td><td>Coiflet= 2<tr><td></td><td>Daubechies8= 3<tr><td></td><td><a href="#Wavelets.Daubechies97">Daubechies97</a>= 29<tr><td></td><td>BurtAdelson= 31<tr><td></td><td>Quadraticspline= 32<tr><td></td><td>Spline97= 33<tr><td></td><td><a href="#Wavelets.Cubicspline">Cubicspline</a>= 41<tr><td></td><td>Spline610= 42<tr><td></td><td><a href="#Wavelets.HybridHaarLemarie">HybridHaarLemarie</a>= 61<tr><td></td><td>ShiftOrthoQuadSpline= 62<tr><td></td><td><a href="#Wavelets.ShiftOrthoCubicSpline">ShiftOrthoCubicSpline</a>= 71<tr><th align='left'>type declarations</th><td>Datatype =<strong>FLOAT64</strong><tr><td></td><td><a href="#Wavelets.FIRFilter">FIRFilter</a> =<strong>LinearFilters.FIRFilter</strong><tr><td></td><td>Dataarray =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>FilterCoeffs =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td><a href="#Wavelets.WaveletFamily">WaveletFamily</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Wavelets.WaveletConvolver">WaveletConvolver</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> NewWaveletFamily (waveletname: <strong>SIGNED32</strong>): <strong>WaveletFamily</strong><tr><td></td><td> CreateWaveletFamily (F: <strong>WaveletFamily</strong>; waveletname: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_7BDB04C0">
+</h1><hr><h2 id="#_7BDB0C80"><a name="Wavelets.undefined"></a><a href="#Wavelets">Wavelets</a>.<a href="#Wavelets.undefined">undefined</a>
+</h2>
+<p> Boundaries. TO DO: adapt to LinearFilters.Mod</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> undefined*= -LinearFilters.undefined</pre>
+<hr><h2 id="#_7BDB5640"><a name="Wavelets.Haar"></a><a href="#Wavelets">Wavelets</a>.<a href="#Wavelets.Haar">Haar</a>
+</h2>
+<p> Wavelet name</p>
+
+<p> Orthogonal wavelet</p>
+
+<p> Even length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Haar*= 0</pre>
+<hr><h2 id="#_7BDB9D40"><a name="Wavelets.Daubechies97"></a><a href="#Wavelets">Wavelets</a>.<a href="#Wavelets.Daubechies97">Daubechies97</a>
+</h2>
+<p> Bi-orthogonal wavelets</p>
+
+<p> Odd length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Daubechies97*= 29</pre>
+<hr><h2 id="#_7BDBD8C0"><a name="Wavelets.Cubicspline"></a><a href="#Wavelets">Wavelets</a>.<a href="#Wavelets.Cubicspline">Cubicspline</a>
+</h2>
+<p> Even length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Cubicspline*= 41</pre>
+<hr><h2 id="#_7BDC0B80"><a name="Wavelets.HybridHaarLemarie"></a><a href="#Wavelets">Wavelets</a>.<a href="#Wavelets.HybridHaarLemarie">HybridHaarLemarie</a>
+</h2>
+<p> Shift Orthogonal wavelets</p>
+
+<p> Hybrid Shift Orthogonal Spline Wavelets, from Unser M, Shift-Orthogonal Wavelet Bases, IEEE Trans Signal Proc 1998; 46:1827 and IEEE Sig Proc Letter 1996; 3: 85</p>
+
+<p>Even length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HybridHaarLemarie*= 61</pre>
+<hr><h2 id="#_7BDCAFC0"><a name="Wavelets.ShiftOrthoCubicSpline"></a><a href="#Wavelets">Wavelets</a>.<a href="#Wavelets.ShiftOrthoCubicSpline">ShiftOrthoCubicSpline</a>
+</h2>
+<p> Odd length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ShiftOrthoCubicSpline*= 71</pre>
+<hr><h2 id="#_7BDCE1C0"><a name="Wavelets.FIRFilter"></a><a href="#Wavelets">Wavelets</a>.<a href="#Wavelets.FIRFilter">FIRFilter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIRFilter* =<strong>LinearFilters.FIRFilter</strong></pre>
+<hr><h2 id="#_7BDD0600"><a name="Wavelets.WaveletFamily"></a><a href="#Wavelets">Wavelets</a>.<a href="#Wavelets.WaveletFamily">WaveletFamily</a>
+</h2>
+<p> wavelet filter family</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WaveletFamily* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>loAnalysis: <strong>FIRFilter</strong><tr><td></td><td>hiAnalysis: <strong>FIRFilter</strong><tr><td></td><td>loReconstruct: <strong>FIRFilter</strong><tr><td></td><td>hiReconstruct: <strong>FIRFilter</strong><tr><td></td><td>defaultBoundary: <strong>SIGNED32</strong><tr><td></td><td>verifiedBoundaries: <strong>SET</strong><tr><th align='left'>procedures</th><td>& Init (wavelet: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7BDDC080"><a name="Wavelets.WaveletConvolver"></a><a href="#Wavelets">Wavelets</a>.<a href="#Wavelets.WaveletConvolver">WaveletConvolver</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WaveletConvolver* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>wavelet: <strong>WaveletFamily</strong><tr><td></td><td>preAn: <strong>PROCEDURE</strong> (<strong>CONST</strong> d: <strong>Dataarray</strong>): <strong>Dataarray</strong><tr><td></td><td>postLoAn: <strong>PROCEDURE</strong> (<strong>CONST</strong> d: <strong>Dataarray</strong>): <strong>Dataarray</strong><tr><td></td><td>postHiAn: <strong>PROCEDURE</strong> (<strong>CONST</strong> d: <strong>Dataarray</strong>): <strong>Dataarray</strong><tr><td></td><td>preLoRec: <strong>PROCEDURE</strong> (<strong>CONST</strong> d: <strong>Dataarray</strong>): <strong>Dataarray</strong><tr><td></td><td>preHiRec: <strong>PROCEDURE</strong> (<strong>CONST</strong> d: <strong>Dataarray</strong>): <strong>Dataarray</strong><tr><td></td><td>postRec: <strong>PROCEDURE</strong> (<strong>CONST</strong> d: <strong>Dataarray</strong>): <strong>Dataarray</strong><tr><td></td><td>boundary: <strong>SIGNED32</strong><tr><td></td><td>shift: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (wavelet: <strong>WaveletFamily</strong>; boundary: <strong>SIGNED32</strong>)<tr><td></td><td> Analyze (<strong>CONST</strong> data: <strong>Dataarray</strong>; <strong>VAR</strong> resdata: <strong>Dataarray</strong>)<tr><td></td><td> Reconstruct (<strong>CONST</strong> data: <strong>Dataarray</strong>; <strong>VAR</strong> resdata: <strong>Dataarray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

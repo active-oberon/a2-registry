@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PlanarNabla">PlanarNabla</a></p>
+<hr><h1 id="#_DED17A00"><a name="PlanarNabla"></a><a href="#ModuleList">Module</a> PlanarNabla
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "Nabla Operators";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>centered= 0<tr><td></td><td>linear= 1<tr><td></td><td>spline2= 2<tr><td></td><td>spline3= 3<tr><td></td><td>entier= 4<tr><td></td><td>nearestneighbour= 8<tr><th align='left'>type declarations</th><td>Scalar =<strong>PlanarBase.Datatype</strong><tr><td></td><td>ScalarField =<strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>Scalar</strong><tr><td></td><td><a href="#PlanarNabla.VectorField">VectorField</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#PlanarNabla.TensorField">TensorField</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> dx (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> dy (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#PlanarNabla.Grad">Grad</a> (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>VectorField</strong><tr><td></td><td> DirectionalDerivative (<strong>CONST</strong> sf: <strong>ScalarField</strong>; <strong>CONST</strong> u: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#PlanarNabla.Div">Div</a> (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#PlanarNabla.Rot">Rot</a> (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#PlanarNabla.Laplacian">Laplacian</a> (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#PlanarNabla.TensorDerivative">TensorDerivative</a><tr><td></td><td> Jacobian (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>TensorField</strong><tr><td></td><td> Hessian (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>TensorField</strong><tr><td></td><td> VectorLaplacian (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> VectorHessian (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>TensorField</strong><tr><td></td><td> CylGrad (<strong>CONST</strong> sf: <strong>ScalarField</strong>; r0: <strong>SIGNED32</strong>; sampling: <strong>SIGNED32</strong>): <strong>VectorField</strong><tr><td></td><td> CylDiv (<strong>CONST</strong> vx, vy: <strong>ScalarField</strong>; r0: <strong>SIGNED32</strong>; phi: <strong>Scalar</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#PlanarNabla.CylRot">CylRot</a> (<strong>CONST</strong> vx, vy: <strong>ScalarField</strong>; r0: <strong>SIGNED32</strong>; phi: <strong>Scalar</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#PlanarNabla.CylLaplacian">CylLaplacian</a> (<strong>CONST</strong> sf: <strong>ScalarField</strong>; r0: <strong>SIGNED32</strong>; phi: <strong>Scalar</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> CylVectorLaplacian (<strong>CONST</strong> vx, vy: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_DED62180">
+</h1><hr><h2 id="#_DED62940"><a name="PlanarNabla.VectorField"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.VectorField">VectorField</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> VectorField* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>x: <strong>ScalarField</strong><tr><td></td><td>y: <strong>ScalarField</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DED67480"><a name="PlanarNabla.TensorField"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.TensorField">TensorField</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TensorField* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>xx: <strong>ScalarField</strong><tr><td></td><td>xy: <strong>ScalarField</strong><tr><td></td><td>yx: <strong>ScalarField</strong><tr><td></td><td>yy: <strong>ScalarField</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DED6DE00"><a name="PlanarNabla.Grad"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Grad">Grad</a>
+</h2>
+<p> Gradients : nabla sf</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Grad* (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>VectorField</strong></pre>
+<hr><h2 id="#_DED73AC0"><a name="PlanarNabla.Div"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Div">Div</a>
+</h2>
+<p> Divergence : nabla dot vf</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Div* (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
+<hr><h2 id="#_DED79CC0"><a name="PlanarNabla.Rot"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Rot">Rot</a>
+</h2>
+<p> Rotation - Rot=Curl ; nabla cross vfis a vector field in general, but in 2D, it only consists of an "z", component, i.e. a scalar value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rot* (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
+<hr><h2 id="#_DED851C0"><a name="PlanarNabla.Laplacian"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Laplacian">Laplacian</a>
+</h2>
+<p> Laplacian Operator, 'nabla square', i.e. nabla dot nablasee http://en.wikipedia.org/wiki/Laplace_operator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Laplacian* (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
+<hr><h2 id="#_DED8C5C0"><a name="PlanarNabla.TensorDerivative"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.TensorDerivative">TensorDerivative</a>
+</h2>
+<p> http://en.wikipedia.org/wiki/Del - not yet implemented</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TensorDerivative*</pre>
+<hr><h2 id="#_DED900C0"><a name="PlanarNabla.CylRot"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.CylRot">CylRot</a>
+</h2>
+<p> Rotation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CylRot* (<strong>CONST</strong> vx, vy: <strong>ScalarField</strong>; r0: <strong>SIGNED32</strong>; phi: <strong>Scalar</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
+<hr><h2 id="#_DED97680"><a name="PlanarNabla.CylLaplacian"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.CylLaplacian">CylLaplacian</a>
+</h2>
+<p> Laplacian Operator, see http://en.wikipedia.org/wiki/Laplace_operator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CylLaplacian* (<strong>CONST</strong> sf: <strong>ScalarField</strong>; r0: <strong>SIGNED32</strong>; phi: <strong>Scalar</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
+</body></html>

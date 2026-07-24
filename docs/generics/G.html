@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#G">G</a></p>
+<hr><h1 id="#_A84AA0C0"><a name="G"></a><a href="#ModuleList">Module</a> G
+</h1>
+<p> AUTHOR "Yaroslav Romanchenko"; PURPOSE "Generics Containers. Parameters are: T - type, L - less comparator procedure with signature (l, r: T): BOOLEAN";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>INITIAL_SIZE= 16<tr><th align='left'>type declarations</th><td>PArrayT =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>T</strong><tr><td></td><td><a href="#Container">Container</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Stack">Stack</a> =<strong>OBJECT</strong> (<strong>Container</strong>)<tr><td></td><td><a href="#Queue">Queue</a> =<strong>OBJECT</strong> (<strong>Stack</strong>)<tr><td></td><td><a href="#DEQue">DEQue</a> =<strong>OBJECT</strong> (<strong>Stack</strong>)<tr><td></td><td><a href="#Vector">Vector</a> =<strong>OBJECT</strong> (<strong>Container</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A84BAE00"><a name="Container"></a><a href="#Container">Container</a>
+</h2>
+<p> Abstract container</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Container* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_A84BE400"><a name="Stack"></a><a href="#Stack">Stack</a>
+</h2>
+<p> Abstract stack</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Stack* =<strong>OBJECT</strong> (<strong>Container</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_A84C2100"><a name="Queue"></a><a href="#Queue">Queue</a>
+</h2>
+<p> Simple Queue or LIFO stack</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Queue* =<strong>OBJECT</strong> (<strong>Stack</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_A84C6BC0"><a name="DEQue"></a><a href="#DEQue">DEQue</a>
+</h2>
+<p> Double Ended Queue or FIFO stack</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DEQue* =<strong>OBJECT</strong> (<strong>Stack</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_A84CB940"><a name="Vector"></a><a href="#Vector">Vector</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Vector* =<strong>OBJECT</strong> (<strong>Container</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+</body></html>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixStandardSolvers">MatrixStandardSolvers</a></p>
+<hr><h1 id="#_3D6EF600"><a name="MatrixStandardSolvers"></a><a href="#ModuleList">Module</a> MatrixStandardSolvers
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "Standard Matrix Solvers. Offers an object-oriented and a procedural interface";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>NONE= 0<tr><td></td><td>PARTIAL= 1<tr><td></td><td>ROW= 1<tr><td></td><td>FULL= 2<tr><th align='left'>type declarations</th><td><a href="#MatrixStandardSolvers.LU">LU</a> =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)<tr><td></td><td><a href="#MatrixStandardSolvers.Gauss">Gauss</a> =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)<tr><td></td><td><a href="#MatrixStandardSolvers.GaussJordan">GaussJordan</a> =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)<tr><td></td><td><a href="#MatrixStandardSolvers.Cholesky">Cholesky</a> =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)<tr><td></td><td><a href="#MatrixStandardSolvers.QR">QR</a> =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)<tr><th align='left'>procedures</th><td> \ (<strong>CONST</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> <a href="#MatrixStandardSolvers.CreateLU">CreateLU</a> (): <strong>Base.Solver</strong><tr><td></td><td> SolveLU (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> CreateGauss (): <strong>Base.Solver</strong><tr><td></td><td> SolveGauss (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> CreateGaussJordan (): <strong>Base.Solver</strong><tr><td></td><td> SolveGaussJordan (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> CreateQR (): <strong>Base.Solver</strong><tr><td></td><td> SolveQR (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_3D716B40">
+</h1><hr><h2 id="#_3D717300"><a name="MatrixStandardSolvers.LU"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.LU">LU</a>
+</h2>
+<p> LU is a standard direct solver for square linear systems of equations; it is related to Gauss elimination; this version uses row pivoting</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LU* =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#MatrixStandardSolvers.LU.pivot">pivot</a>: <strong>SIGNED32</strong><tr><td></td><td>timetotal: <strong>SIGNED32</strong><tr><td></td><td>timeRowRowMul: <strong>SIGNED32</strong><tr><td></td><td>timeMatVecMul: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Inverse (): <strong>Matrix</strong><tr><td></td><td> SolveNoCopy (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveMultiple (<strong>CONST</strong> B: <strong>Matrix</strong>): <strong>Matrix</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_3D72FF80"><a name="MatrixStandardSolvers.LU.pivot"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.LU">LU</a>.<a href="#MatrixStandardSolvers.LU.pivot">pivot</a>
+</h3>
+<p> switch off pivoting by setting this to NONE. default is FULL</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> pivot*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_3D735E00"><a name="MatrixStandardSolvers.Gauss"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.Gauss">Gauss</a>
+</h2>
+<p> Gauss elimination is the historic root of solvers. The current implementation is slow</p>
+
+<p> Solve by Gaussian elimination algorithm with row pivoting</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Gauss* =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>pivot: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> <a href="#MatrixStandardSolvers.Gauss.Solve">Solve</a> (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveNoCopy (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_3D748040"><a name="MatrixStandardSolvers.Gauss.Solve"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.Gauss">Gauss</a>.<a href="#MatrixStandardSolvers.Gauss.Solve">Solve</a>
+</h3>
+<p> Solve by Gaussian elimination algorithm with row pivoting</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Solve* (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></pre>
+<hr><h2 id="#_3D74E800"><a name="MatrixStandardSolvers.GaussJordan"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.GaussJordan">GaussJordan</a>
+</h2>
+<p> Decompose +/- Solve a linear system by the Gauss-Jordan algorithm , with full pivoting; using only the NEW(solver,A) or solver.Init(A) part, matrix inversion is performed; slower than Gauss, but suited for direct computation of the matrix inverse</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GaussJordan* =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Ainv: <strong>Matrix</strong><tr><td></td><td>pivot: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_3D761C00"><a name="MatrixStandardSolvers.Cholesky"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.Cholesky">Cholesky</a>
+</h2>
+<p> Cholesky decomposition for positive definite matrices; can be used to check for positive-definiteness</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Cholesky* =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>L: <strong>Matrix</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_3D76BF40"><a name="MatrixStandardSolvers.QR"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.QR">QR</a>
+</h2>
+<p> QR decomposition and solver; A receives m*n matrix (m&gt=n). returned is column-orthogonal matrix Q, and square, upper diagonal n*n matrix R;</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> QR* =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Q: <strong>Matrix</strong><tr><td></td><td>R: <strong>Matrix</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> SolveNoCopy (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_3D77EC40"><a name="MatrixStandardSolvers.CreateLU"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.CreateLU">CreateLU</a>
+</h2>
+<hr/>
+
+<p> Factory procedures and procedural interfaces for simple solving ---</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CreateLU* (): <strong>Base.Solver</strong></pre>
+</body></html>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ComplexMathL">ComplexMathL</a></p>
+<hr><h1 id="#_CAD68F00"><a name="ComplexMathL"></a><a href="#ModuleList">Module</a> ComplexMathL
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "COMPLEX math module";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>Datatype =<strong>FLOAT64</strong><tr><td></td><td><a href="#ComplexMathL.COMPLEXTYPE">COMPLEXTYPE</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#ComplexMathL.POLAR">POLAR</a> =<strong>RECORD</strong> <tr><td></td><td>COMPLEXARRAY =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>COMPLEXTYPE</strong><tr><td></td><td>POLARARRAY =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>POLAR</strong><tr><td></td><td>FLOATARRAY =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong><tr><th align='left'>variables</th><td>i: <strong>COMPLEXTYPE</strong><tr><td></td><td>one: <strong>COMPLEXTYPE</strong><tr><td></td><td>zero: <strong>COMPLEXTYPE</strong><tr><th align='left'>procedures</th><td> := (<strong>VAR</strong> l: <strong>COMPLEXTYPE</strong>; r: <strong>Datatype</strong>)<tr><td></td><td> := (<strong>VAR</strong> l: <strong>COMPLEXTYPE</strong>; r: <strong>POLAR</strong>)<tr><td></td><td> := (<strong>VAR</strong> l: <strong>POLAR</strong>; r: <strong>COMPLEXTYPE</strong>)<tr><td></td><td> := (<strong>VAR</strong> l: <strong>COMPLEXARRAY</strong>; <strong>CONST</strong> r: <strong>FLOATARRAY</strong>)<tr><td></td><td> := (<strong>VAR</strong> l: <strong>COMPLEXARRAY</strong>; <strong>CONST</strong> r: <strong>POLARARRAY</strong>)<tr><td></td><td> := (<strong>VAR</strong> l: <strong>POLARARRAY</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>)<tr><td></td><td> Complex (<strong>CONST</strong> re, im: <strong>Datatype</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> Polar (<strong>CONST</strong> abs, arg: <strong>Datatype</strong>): <strong>POLAR</strong><tr><td></td><td> GetComplex (<strong>CONST</strong> l: <strong>COMPLEXTYPE</strong>; <strong>VAR</strong> re, im: <strong>Datatype</strong>)<tr><td></td><td> SetComplexArray (<strong>VAR</strong> l: <strong>COMPLEXARRAY</strong>; <strong>CONST</strong> re, im: <strong>FLOATARRAY</strong>)<tr><td></td><td> GetComplexArray (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; <strong>VAR</strong> re, im: <strong>FLOATARRAY</strong>)<tr><td></td><td> = (<strong>VAR</strong> l: <strong>COMPLEXTYPE</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>VAR</strong> l: <strong>COMPLEXTYPE</strong>; r: <strong>Datatype</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>VAR</strong> l: <strong>Datatype</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>VAR</strong> l: <strong>COMPLEXTYPE</strong>; r: <strong>POLAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>VAR</strong> l: <strong>POLAR</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>VAR</strong> l: <strong>COMPLEXTYPE</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>VAR</strong> l: <strong>COMPLEXTYPE</strong>; r: <strong>Datatype</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>VAR</strong> l: <strong>Datatype</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>VAR</strong> l: <strong>POLAR</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>VAR</strong> l: <strong>COMPLEXTYPE</strong>; r: <strong>POLAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> + (l, r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> + (l: <strong>COMPLEXTYPE</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> + (l: <strong>Datatype</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> + (l, r: <strong>POLAR</strong>): <strong>POLAR</strong><tr><td></td><td> + (<strong>CONST</strong> l, r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> + (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; <strong>CONST</strong> r: <strong>FLOATARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> + (<strong>CONST</strong> l: <strong>FLOATARRAY</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> + (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> + (l: <strong>COMPLEXTYPE</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> + (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> + (<strong>CONST</strong> l: <strong>Datatype</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> - (r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> - (l, r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> - (l: <strong>COMPLEXTYPE</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> - (l: <strong>Datatype</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> - (l, r: <strong>POLAR</strong>): <strong>POLAR</strong><tr><td></td><td> - (<strong>CONST</strong> l, r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> - (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; <strong>CONST</strong> r: <strong>FLOATARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> - (<strong>CONST</strong> l: <strong>FLOATARRAY</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> - (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> - (l: <strong>COMPLEXTYPE</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> - (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> - (<strong>CONST</strong> l: <strong>Datatype</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> * (l, r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> * (l: <strong>Datatype</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> * (l: <strong>COMPLEXTYPE</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> * (l, r: <strong>POLAR</strong>): <strong>POLAR</strong><tr><td></td><td> * (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> * (l: <strong>COMPLEXTYPE</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> * (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> * (<strong>CONST</strong> l: <strong>Datatype</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> .* (<strong>CONST</strong> l, r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> .* (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; <strong>CONST</strong> r: <strong>FLOATARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> .* (<strong>CONST</strong> l: <strong>FLOATARRAY</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> / (l, r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> / (l: <strong>Datatype</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> / (l: <strong>COMPLEXTYPE</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> / (l, r: <strong>POLAR</strong>): <strong>POLAR</strong><tr><td></td><td> / (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> / (l: <strong>COMPLEXTYPE</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> / (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> / (<strong>CONST</strong> l: <strong>Datatype</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> ./ (<strong>CONST</strong> l, r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> ./ (<strong>CONST</strong> l: <strong>COMPLEXARRAY</strong>; <strong>CONST</strong> r: <strong>FLOATARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> ./ (<strong>CONST</strong> l: <strong>FLOATARRAY</strong>; <strong>CONST</strong> r: <strong>COMPLEXARRAY</strong>): <strong>COMPLEXARRAY</strong><tr><td></td><td> <a href="#ComplexMathL.~">~</a> (r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> sqrt (c: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> sqrtp (p: <strong>POLAR</strong>): <strong>POLAR</strong><tr><td></td><td> exp (c: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> <a href="#ComplexMathL.cis">cis</a> (arg: <strong>Datatype</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> power (c, expo: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> <a href="#ComplexMathL.root">root</a> (c: <strong>COMPLEXTYPE</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXTYPE</strong><tr><td></td><td> Abs (c: <strong>COMPLEXTYPE</strong>): <strong>Datatype</strong><tr><td></td><td> Arg (x: <strong>COMPLEXTYPE</strong>): <strong>Datatype</strong><tr><td></td><td> Out (c: <strong>COMPLEXTYPE</strong>; n, f, D: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_CAE5A4C0"><a name="ComplexMathL.COMPLEXTYPE"></a><a href="#ComplexMathL">ComplexMathL</a>.<a href="#ComplexMathL.COMPLEXTYPE">COMPLEXTYPE</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> COMPLEXTYPE* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>re: <strong>Datatype</strong><tr><td></td><td>im: <strong>Datatype</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_CAE5F000"><a name="ComplexMathL.POLAR"></a><a href="#ComplexMathL">ComplexMathL</a>.<a href="#ComplexMathL.POLAR">POLAR</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> POLAR* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>abs: <strong>Datatype</strong><tr><td></td><td>arg: <strong>Datatype</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_CAE63B40"><a name="ComplexMathL.~"></a><a href="#ComplexMathL">ComplexMathL</a>.<a href="#ComplexMathL.~">~</a>
+</h2>
+<p> Complex conjugate</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "~"* (r: <strong>COMPLEXTYPE</strong>): <strong>COMPLEXTYPE</strong></pre>
+<hr><h2 id="#_CAE67EC0"><a name="ComplexMathL.cis"></a><a href="#ComplexMathL">ComplexMathL</a>.<a href="#ComplexMathL.cis">cis</a>
+</h2>
+<p> cos(arg) + i*sin(arg)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> cis* (arg: <strong>Datatype</strong>): <strong>COMPLEXTYPE</strong></pre>
+<hr><h2 id="#_CAE6C5C0"><a name="ComplexMathL.root"></a><a href="#ComplexMathL">ComplexMathL</a>.<a href="#ComplexMathL.root">root</a>
+</h2>
+<p> r'th root of complex number. r is real number</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> root* (c: <strong>COMPLEXTYPE</strong>; r: <strong>Datatype</strong>): <strong>COMPLEXTYPE</strong></pre>
+</body></html>

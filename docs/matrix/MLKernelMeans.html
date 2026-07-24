@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MLKernelMeans">MLKernelMeans</a></p>
+<hr><h1 id="#_591121C0"><a name="MLKernelMeans"></a><a href="#ModuleList">Module</a> MLKernelMeans
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#MLKernelMeans.Classifier">Classifier</a> =<strong>OBJECT</strong> (<strong>MLBase.LearningMachine</strong>)</td></tr>
+</table>
+<hr><h1 id="#_59114DC0">
+</h1>
+<dl>
+<dt><strong>DESCRIPTION</strong></dt>
+<dd> Simple classifier based on kernelized clusterization. For linear kernel it is equivalent to classification using distances to the means of 2 clusters.</dd>
+
+
+<dl>
+<dt><strong>AUTHOR</strong></dt>
+<dd> Alexey Morozov</dd>
+
+</dl>
+</dl>
+<hr><h2 id="#_5911BC00"><a name="MLKernelMeans.Classifier"></a><a href="#MLKernelMeans">MLKernelMeans</a>.<a href="#MLKernelMeans.Classifier">Classifier</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Classifier* =<strong>OBJECT</strong> (<strong>MLBase.LearningMachine</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>kernType: <strong>INTEGER</strong><tr><td></td><td>kernParams: <strong>Vector</strong><tr><th align='left'>procedures</th><td> Classify (<strong>CONST</strong> input: <strong>Vector</strong>): <strong>Scalar</strong><tr><td></td><td> ClassifyMultiple (<strong>CONST</strong> input: <strong>Matrix</strong>): <strong>Vector</strong><tr><td></td><td> EvaluateScalarN (<strong>CONST</strong> input: <strong>Matrix</strong>): <strong>Vector</strong><tr><td></td><td> SetKernel (kernType: <strong>INTEGER</strong>; <strong>CONST</strong> kernParams: <strong>Vector</strong>)<tr><td></td><td> Learn (<strong>CONST</strong> input: <strong>Matrix</strong>; <strong>CONST</strong> labels: <strong>Vector</strong>)<tr><td></td><td> LearnScalarN (<strong>CONST</strong> input: <strong>Matrix</strong>; <strong>CONST</strong> labels: <strong>Vector</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

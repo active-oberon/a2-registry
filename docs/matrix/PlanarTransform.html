@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PlanarTransform">PlanarTransform</a></p>
+<hr><h1 id="#_6D38BD40"><a name="PlanarTransform"></a><a href="#ModuleList">Module</a> PlanarTransform
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>finite= Filters.finite<tr><td></td><td>periodic= Filters.cyclicH<tr><td></td><td>mirrorH= Filters.mirrorH<tr><td></td><td>mirrorW= Filters.mirrorW<tr><td></td><td>antimirrorH= Filters.antimirrorH<tr><td></td><td>antimirrorW= Filters.antimirrorW<tr><th align='left'>type declarations</th><td>Datatype =<strong>PlanarBase.Datatype</strong><tr><td></td><td>Dataarray =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>Rect =<strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>Cube =<strong>ARRAY</strong> [*,*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>Signal =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong><tr><th align='left'>procedures</th><td> toSpline2D (<strong>CONST</strong> in: <strong>Rect</strong>; <strong>VAR</strong> out: <strong>Rect</strong>; splinedegree: <strong>SIGNED16</strong>; directions: <strong>SET</strong>)<tr><td></td><td> fromSpline2D (<strong>CONST</strong> in: <strong>Rect</strong>; <strong>VAR</strong> out: <strong>Rect</strong>; splinedegree: <strong>SIGNED16</strong>; directions: <strong>SET</strong>)<tr><td></td><td> Filter2D (<strong>CONST</strong> data: <strong>Rect</strong>; <strong>VAR</strong> resdata: <strong>Rect</strong>; filter: <strong>Filters.Filter</strong>; directions: <strong>SET</strong>; boundary: <strong>SIGNED16</strong>)<tr><td></td><td> Reduce2D (<strong>CONST</strong> data: <strong>Rect</strong>; <strong>VAR</strong> resdata: <strong>Rect</strong>; filter: <strong>Filters.Filter</strong>; directions: <strong>SET</strong>; boundary: <strong>SIGNED16</strong>)<tr><td></td><td> Expand2D (<strong>CONST</strong> data: <strong>Rect</strong>; <strong>VAR</strong> resdata: <strong>Rect</strong>; filter: <strong>Filters.Filter</strong>; directions: <strong>SET</strong>; boundary: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#PlanarTransform.Resample">Resample</a> (<strong>CONST</strong> data: <strong>Rect</strong>; <strong>VAR</strong> resdata: <strong>Rect</strong>; x0, y0, dx, dy: <strong>Datatype</strong>; splinedegree, boundary: <strong>SIGNED32</strong>)<tr><td></td><td> ReduceX (<strong>CONST</strong> g: <strong>Rect</strong>): <strong>Rect</strong><tr><td></td><td> ExpandX (<strong>CONST</strong> g: <strong>Rect</strong>): <strong>Rect</strong><tr><td></td><td> ReduceY (<strong>CONST</strong> g: <strong>Rect</strong>): <strong>Rect</strong><tr><td></td><td> ExpandY (<strong>CONST</strong> g: <strong>Rect</strong>): <strong>Rect</strong><tr><td></td><td> Reduce (<strong>CONST</strong> g: <strong>Rect</strong>): <strong>Rect</strong><tr><td></td><td> ReduceMax (<strong>CONST</strong> g: <strong>Rect</strong>): <strong>Rect</strong><tr><td></td><td> Expand (<strong>CONST</strong> g: <strong>Rect</strong>): <strong>Rect</strong><tr><td></td><td> Mirror (<strong>CONST</strong> m: <strong>Rect</strong>; vertical: <strong>BOOLEAN</strong>): <strong>Rect</strong><tr><td></td><td> Rotate90 (<strong>CONST</strong> m: <strong>Rect</strong>): <strong>Rect</strong><tr><td></td><td> Rotate180 (<strong>CONST</strong> m: <strong>Rect</strong>): <strong>Rect</strong><tr><td></td><td> Wavelet2D (<strong>CONST</strong> data: <strong>Rect</strong>; <strong>VAR</strong> resdata: <strong>Rect</strong>; wavelet: <strong>Wavelets.WaveletFamily</strong>; directions: <strong>SET</strong>; boundary: <strong>SIGNED16</strong>; analyze: <strong>BOOLEAN</strong>)<tr><td></td><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_6D3E0B40">
+</h1><hr><h2 id="#_6D3E1300"><a name="PlanarTransform.Resample"></a><a href="#PlanarTransform">PlanarTransform</a>.<a href="#PlanarTransform.Resample">Resample</a>
+</h2>
+<p> Resampling of input data, starting from x0,y0, in increments of dx,dy; if upscaling (dx,dy&gt1), then ) Input data: spline coefficients of "splinedegree"; allocated 'resdata' of desired size; boundary: see Filters.Mod for boundary types Output resampled data in 'resdata'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Resample* (<strong>CONST</strong> data: <strong>Rect</strong>; <strong>VAR</strong> resdata: <strong>Rect</strong>; x0, y0, dx, dy: <strong>Datatype</strong>; splinedegree, boundary: <strong>SIGNED32</strong>)</pre>
+</body></html>

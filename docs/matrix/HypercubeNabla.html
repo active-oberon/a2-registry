@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#HypercubeNabla">HypercubeNabla</a></p>
+<hr><h1 id="#_D822E5C0"><a name="HypercubeNabla"></a><a href="#ModuleList">Module</a> HypercubeNabla
+</h1>
+<p> AUTHOR "ph"; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>Datatype =<strong>FLOAT64</strong><tr><td></td><td>ScalarField =<strong>ARRAY</strong> [*,*,*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>VectorField =<strong>ARRAY</strong> [*,*,*,*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>TensorField =<strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong><tr><th align='left'>procedures</th><td> dx (<strong>CONST</strong> sf: <strong>ScalarField</strong>; exact: <strong>BOOLEAN</strong>): <strong>ScalarField</strong><tr><td></td><td> dy (<strong>CONST</strong> sf: <strong>ScalarField</strong>; exact: <strong>BOOLEAN</strong>): <strong>ScalarField</strong><tr><td></td><td> dz (<strong>CONST</strong> sf: <strong>ScalarField</strong>; exact: <strong>BOOLEAN</strong>): <strong>ScalarField</strong><tr><td></td><td> dt (<strong>CONST</strong> sf: <strong>ScalarField</strong>; exact: <strong>BOOLEAN</strong>): <strong>ScalarField</strong><tr><td></td><td> Grad (<strong>CONST</strong> sf: <strong>ScalarField</strong>; exact: <strong>BOOLEAN</strong>): <strong>VectorField</strong><tr><td></td><td> <a href="#HypercubeNabla.Div">Div</a> (<strong>CONST</strong> vf: <strong>VectorField</strong>; exact: <strong>BOOLEAN</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#HypercubeNabla.Laplacian">Laplacian</a> (<strong>CONST</strong> sf: <strong>ScalarField</strong>; exact: <strong>BOOLEAN</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#HypercubeNabla.VectorLaplacian">VectorLaplacian</a> (<strong>CONST</strong> vf: <strong>VectorField</strong>; exact: <strong>BOOLEAN</strong>): <strong>VectorField</strong><tr><td></td><td> <a href="#HypercubeNabla.TensorDerivative">TensorDerivative</a><tr><td></td><td> Jacobian (<strong>CONST</strong> vf: <strong>VectorField</strong>; exact: <strong>BOOLEAN</strong>): <strong>TensorField</strong><tr><td></td><td> Hessian (<strong>CONST</strong> sf: <strong>ScalarField</strong>; exact: <strong>BOOLEAN</strong>): <strong>TensorField</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D8259B40"><a name="HypercubeNabla.Div"></a><a href="#HypercubeNabla">HypercubeNabla</a>.<a href="#HypercubeNabla.Div">Div</a>
+</h2>
+<p> Divergence operator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Div* (<strong>CONST</strong> vf: <strong>VectorField</strong>; exact: <strong>BOOLEAN</strong>): <strong>ScalarField</strong></pre>
+<hr><h2 id="#_D825EF80"><a name="HypercubeNabla.Laplacian"></a><a href="#HypercubeNabla">HypercubeNabla</a>.<a href="#HypercubeNabla.Laplacian">Laplacian</a>
+</h2>
+<p> Laplacian Operator, see http://en.wikipedia.org/wiki/Laplace_operator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Laplacian* (<strong>CONST</strong> sf: <strong>ScalarField</strong>; exact: <strong>BOOLEAN</strong>): <strong>ScalarField</strong></pre>
+<hr><h2 id="#_D8264D80"><a name="HypercubeNabla.VectorLaplacian"></a><a href="#HypercubeNabla">HypercubeNabla</a>.<a href="#HypercubeNabla.VectorLaplacian">VectorLaplacian</a>
+</h2>
+<p> Laplacian of Vector Field, see http://en.wikipedia.org/wiki/Vector_Laplacian</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VectorLaplacian* (<strong>CONST</strong> vf: <strong>VectorField</strong>; exact: <strong>BOOLEAN</strong>): <strong>VectorField</strong></pre>
+<hr><h2 id="#_D826B440"><a name="HypercubeNabla.TensorDerivative"></a><a href="#HypercubeNabla">HypercubeNabla</a>.<a href="#HypercubeNabla.TensorDerivative">TensorDerivative</a>
+</h2>
+<p> http://en.wikipedia.org/wiki/Del - not yet implemented</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TensorDerivative*</pre>
+</body></html>

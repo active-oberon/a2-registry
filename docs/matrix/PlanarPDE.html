@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PlanarPDE">PlanarPDE</a></p>
+<hr><h1 id="#_DA88B6C0"><a name="PlanarPDE"></a><a href="#ModuleList">Module</a> PlanarPDE
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>Datatype =<strong>PlanarBase.Datatype</strong><tr><td></td><td>Grid =<strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>BooleanMap =<strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td>Boundary =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> data: <strong>Grid</strong>)<tr><td></td><td><a href="#PlanarPDE.Constraint">Constraint</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#PlanarPDE.Laplace">Laplace</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#PlanarPDE.Poisson">Poisson</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#PlanarPDE.Diffusion">Diffusion</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#PlanarPDE.Wave">Wave</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> JacobiStep (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x, x1: <strong>Grid</strong>; alpha, beta: <strong>Datatype</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> Advect (<strong>CONST</strong> source, u, v: <strong>Grid</strong>; <strong>VAR</strong> target: <strong>Grid</strong>; dt, ds: <strong>Datatype</strong>; bilinear: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_DA8A6140">
+</h1>
+<p> AUTHOR "Patrick Hunziker, Basel; email: Patrick.Hunziker@swissnano.org"; DATE 2009-2-12 ; PURPOSE "implementation of partial differential equations for 2D grids solved directly in the grid domain"; LICENCE "free for noncommercial use, as long as author is cited and this header is kept unchanged "</p>
+
+<p> Such partial derivatives have been approximated based on finite difference methods to get a set of algebraic equations. Different schemes include: Euler explicit Leap frog Adamsbashforth Crank-nicolson Euler implicit The first three numerical schemes are explicit with different orders of accuracy. In explicit methods, the physical quantity is marched forward in time from point to point from the given initial condition. The last two numerical schemes are implicit.</p>
+
+<p> Interpolation schemes include: Forward time, centered space (FTCS), e.g. applicable in explicit euler scheme Backward time, centered space (BTCS), e.g. applicable in implicit euler scheme Centered time, centered space (CTCS); etc</p>
+<hr><h2 id="#_DA8C9100"><a name="PlanarPDE.Constraint"></a><a href="#PlanarPDE">PlanarPDE</a>.<a href="#PlanarPDE.Constraint">Constraint</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Constraint* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>constraint: <strong>Grid</strong><tr><td></td><td>smallconstraint: <strong>Grid</strong><tr><td></td><td>Constrain: <strong>Boundary</strong><tr><td></td><td>map: <strong>BooleanMap</strong><tr><td></td><td>smallmap: <strong>BooleanMap</strong><tr><th align='left'>procedures</th><td> Set (<strong>CONST</strong> constraint: <strong>Grid</strong>; <strong>CONST</strong> map: <strong>BooleanMap</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DA8D3BC0"><a name="PlanarPDE.Laplace"></a><a href="#PlanarPDE">PlanarPDE</a>.<a href="#PlanarPDE.Laplace">Laplace</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Laplace* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Solve (<strong>VAR</strong> x: <strong>Grid</strong>; threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>VAR</strong> x: <strong>Grid</strong>; threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DA8E6E00"><a name="PlanarPDE.Poisson"></a><a href="#PlanarPDE">PlanarPDE</a>.<a href="#PlanarPDE.Poisson">Poisson</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Poisson* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; ds, threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; ds, threshold: <strong>Datatype</strong>; minsize, iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DA8FCA00"><a name="PlanarPDE.Diffusion"></a><a href="#PlanarPDE">PlanarPDE</a>.<a href="#PlanarPDE.Diffusion">Diffusion</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Diffusion* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; nu, dt, ds, threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; nu, dt, ds, threshold: <strong>Datatype</strong>; minsize, iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DA914780"><a name="PlanarPDE.Wave"></a><a href="#PlanarPDE">PlanarPDE</a>.<a href="#PlanarPDE.Wave">Wave</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Wave* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> SolveExplicit (<strong>CONST</strong> phim1, phi0: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; c, dt, ds: <strong>Datatype</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> phim1, phi0: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; c, dt, ds, threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>CONST</strong> phim1, phi0: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; c, dt, ds, threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

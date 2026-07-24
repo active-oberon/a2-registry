@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixBase">MatrixBase</a></p>
+<hr><h1 id="#_1262EEC0"><a name="MatrixBase"></a><a href="#ModuleList">Module</a> MatrixBase
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "Base Types for Oberon 'Matrix' Library based on Felix Friedrichs enhanced compiler for arrays.";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>OK= 0<tr><td></td><td>SINGULAR= 1<tr><td></td><td>NONCONVERGENCE= 2<tr><td></td><td>NOTPOSDEFINITE= 3<tr><td></td><td>NOTSQUARE= 4<tr><td></td><td>SIZEMISMATCH= 5<tr><td></td><td>NOTIMPLEMENTED= 6<tr><td></td><td>NILPROC= 8<tr><td></td><td><a href="#MatrixBase.ERROR">ERROR</a>= 7<tr><th align='left'>type declarations</th><td>Datatype =<strong>FLOAT64</strong><tr><td></td><td>Complex =<strong>COMPLEX64</strong><tr><td></td><td>Tensor =<strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>Hypercube =<strong>ARRAY</strong> [*,*,*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>Volume =<strong>ARRAY</strong> [*,*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>Matrix =<strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>Vector =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>ErrorHandler =<strong>PROCEDURE</strong> (code: <strong>SIGNED32</strong>; <strong>CONST</strong> text: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td><a href="#MatrixBase.Solver">Solver</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>EPS: <strong>FLOAT64</strong><tr><th align='left'>procedures</th><td> SolveGeneric (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> CreateGenericSolver (<strong>VAR</strong> A: <strong>Matrix</strong>): <strong>Solver</strong><tr><td></td><td> HandleError (code: <strong>SIGNED32</strong>; <strong>CONST</strong> text: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteLVector (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> v: <strong>Vector</strong>)<tr><td></td><td> WriteLMatrix (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> m: <strong>Matrix</strong>)<tr><td></td><td> ReadLVector (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> v: <strong>Vector</strong>)<tr><td></td><td> ReadLMatrix (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> m: <strong>Matrix</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_12664A40"><a name="MatrixBase.ERROR"></a><a href="#MatrixBase">MatrixBase</a>.<a href="#MatrixBase.ERROR">ERROR</a>
+</h2>
+<p> undefined error</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ERROR*= 7</pre>
+<hr><h2 id="#_12667C40"><a name="MatrixBase.Solver"></a><a href="#MatrixBase">MatrixBase</a>.<a href="#MatrixBase.Solver">Solver</a>
+</h2>
+<p> Matrix solvers are Objects suited for matrix decomposition and solving in two steps: NEW(solver,A) or solver.Init(A) performs allocation and matrix decomposition; solver.Solve(b) solves for a particular right hand side. This two-step approach allows reuse of memory and avoiding reallocation when multiple problems have to be solved. Alternatively, a one-step solution of a linear system can be done by using the x:=SolveXY(A,b) procedure call</p>
+
+<p> generic template</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Solver* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>res: <strong>SIGNED32</strong><tr><td></td><td>handleError: <strong>ErrorHandler</strong><tr><td></td><td><a href="#MatrixBase.Solver.x">x</a>: <strong>Vector</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveNoCopy (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_12685C00"><a name="MatrixBase.Solver.x"></a><a href="#MatrixBase">MatrixBase</a>.<a href="#MatrixBase.Solver">Solver</a>.<a href="#MatrixBase.Solver.x">x</a>
+</h3>
+<p> solution vector; can be initialized with approximate solution</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> x*: <strong>Vector</strong></pre>
+</body></html>

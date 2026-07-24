@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#VolumeNabla">VolumeNabla</a></p>
+<hr><h1 id="#_0D6C1140"><a name="VolumeNabla"></a><a href="#ModuleList">Module</a> VolumeNabla
+</h1>
+<p> AUTHOR "ph"; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>centered= 0<tr><td></td><td>linear= 1<tr><td></td><td>spline2= 2<tr><td></td><td>spline3= 3<tr><td></td><td>entier= 4<tr><td></td><td>nearestneighbour= 8<tr><th align='left'>type declarations</th><td>Datatype =<strong>FLOAT64</strong><tr><td></td><td>ScalarField =<strong>ARRAY</strong> [*,*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>VectorField =<strong>ARRAY</strong> [*,*,*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>TensorField =<strong>ARRAY</strong> [*,*,*,*,*] <strong>OF</strong> <strong>Datatype</strong><tr><th align='left'>procedures</th><td> dx (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> dy (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> dz (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> Grad (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>VectorField</strong><tr><td></td><td> DirectionalDerivative (<strong>CONST</strong> sf: <strong>ScalarField</strong>; <strong>CONST</strong> u: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#VolumeNabla.Div">Div</a> (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#VolumeNabla.Rot">Rot</a> (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>VectorField</strong><tr><td></td><td> <a href="#VolumeNabla.Laplacian">Laplacian</a> (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong><tr><td></td><td> <a href="#VolumeNabla.TensorDerivative">TensorDerivative</a><tr><td></td><td> Jacobian (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>TensorField</strong><tr><td></td><td> Hessian (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>TensorField</strong><tr><td></td><td> <a href="#VolumeNabla.VectorLaplacian">VectorLaplacian</a> (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>VectorField</strong><tr><td></td><td> VectorHessian (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>TensorField</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_0D6FA6C0">
+</h1><hr><h2 id="#_0D6FAE80"><a name="VolumeNabla.Div"></a><a href="#VolumeNabla">VolumeNabla</a>.<a href="#VolumeNabla.Div">Div</a>
+</h2>
+<p> Divergence operator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Div* (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
+<hr><h2 id="#_0D7002C0"><a name="VolumeNabla.Rot"></a><a href="#VolumeNabla">VolumeNabla</a>.<a href="#VolumeNabla.Rot">Rot</a>
+</h2>
+<p> Rotation or Curl operator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rot* (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>VectorField</strong></pre>
+<hr><h2 id="#_0D706040"><a name="VolumeNabla.Laplacian"></a><a href="#VolumeNabla">VolumeNabla</a>.<a href="#VolumeNabla.Laplacian">Laplacian</a>
+</h2>
+<p> Laplacian Operator, see http://en.wikipedia.org/wiki/Laplace_operator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Laplacian* (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
+<hr><h2 id="#_0D70BE40"><a name="VolumeNabla.TensorDerivative"></a><a href="#VolumeNabla">VolumeNabla</a>.<a href="#VolumeNabla.TensorDerivative">TensorDerivative</a>
+</h2>
+<p> http://en.wikipedia.org/wiki/Del - not yet implemented</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TensorDerivative*</pre>
+<hr><h2 id="#_0D70F900"><a name="VolumeNabla.VectorLaplacian"></a><a href="#VolumeNabla">VolumeNabla</a>.<a href="#VolumeNabla.VectorLaplacian">VectorLaplacian</a>
+</h2>
+<p> Laplacian of Vector Field, see http://en.wikipedia.org/wiki/Vector_Laplacian</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VectorLaplacian* (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>VectorField</strong></pre>
+</body></html>

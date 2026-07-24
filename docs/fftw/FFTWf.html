@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FFTWf">FFTWf</a></p>
+<hr><h1 id="#_88267200"><a name="FFTWf"></a><a href="#ModuleList">Module</a> FFTWf
+</h1>
+<p> AUTHOR "fnecati"; PURPOSE "single precision wrapper for FFTW library";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>FORWARD= -1<tr><td></td><td>BACKWARD= 1<tr><td></td><td>MEASURE= {}<tr><td></td><td>DESTROY_INPUT= {0}<tr><td></td><td>UNALIGNED= {1}<tr><td></td><td>CONSERVE_MEMORY= {2}<tr><td></td><td>EXHAUSTIVE= {3}<tr><td></td><td>PRESERVE_INPUT= {4}<tr><td></td><td>PATIENT= {5}<tr><td></td><td>ESTIMATE= {6}<tr><td></td><td>WISDOM_ONLY= {21}<tr><td></td><td><a href="#FFTWf.ESTIMATE_PATIENT">ESTIMATE_PATIENT</a>= {7}<tr><td></td><td>BELIEVE_PCOST= {8}<tr><td></td><td>NO_DFT_R2HC= {9}<tr><td></td><td>NO_NONTHREADED= {10}<tr><td></td><td>NO_BUFFERING= {11}<tr><td></td><td>NO_INDIRECT_OP= {12}<tr><td></td><td>ALLOW_LARGE_GENERIC= {13}<tr><td></td><td>NO_RANK_SPLITS= {14}<tr><td></td><td>NO_VRANK_SPLITS= {15}<tr><td></td><td>NO_VRECURSE= {16}<tr><td></td><td>NO_SIMD= {17}<tr><td></td><td>NO_SLOW= {18}<tr><td></td><td>NO_FIXED_RADIX_LARGE_N= {19}<tr><td></td><td>ALLOW_PRUNING= {20}<tr><td></td><td>R2HC= 0<tr><td></td><td>HC2R= 1<tr><td></td><td>DHT= 2<tr><td></td><td>REDFT00= 3<tr><td></td><td>REDFT01= 4<tr><td></td><td>REDFT10= 5<tr><td></td><td>REDFT11= 6<tr><td></td><td>RODFT00= 7<tr><td></td><td>RODFT01= 8<tr><td></td><td>RODFT10= 9<tr><td></td><td>RODFT11= 10<tr><th align='left'>type declarations</th><td><a href="#FFTWf.Plan">Plan</a> =<strong>ADDRESS</strong><tr><td></td><td><a href="#FFTWf.Direction">Direction</a> =<strong>INTEGER</strong><tr><td></td><td><a href="#FFTWf.Flags">Flags</a> =<strong>SET32</strong><tr><td></td><td><a href="#FFTWf.Kind">Kind</a> =<strong>INTEGER</strong><tr><td></td><td><a href="#FFTWf.Iodim">Iodim</a> =<strong>RECORD</strong> <tr><th align='left'>variables</th><td><a href="#FFTWf.dll">dll</a>: <strong>HostLibs.LibHandle</strong><tr><td></td><td>malloc: <strong>PROCEDURE</strong>{C} (length: <strong>SIZE</strong>): <strong>ADDRESS</strong><tr><td></td><td>free: <strong>PROCEDURE</strong>{C} (mem: <strong>ADDRESS</strong>)<tr><td></td><td>destroy_plan: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>)<tr><td></td><td>cleanup: <strong>PROCEDURE</strong>{C} <tr><td></td><td>set_timelimit: <strong>PROCEDURE</strong>{C} (seconds: <strong>FLOAT64</strong>)<tr><td></td><td>execute: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>)<tr><td></td><td>execute_dft: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>; input: <strong>ADDRESS</strong>; output: <strong>ADDRESS</strong>)<tr><td></td><td>execute_split_dft: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>; realin, imagin: <strong>ADDRESS</strong>; realout, imagout: <strong>ADDRESS</strong>)<tr><td></td><td>execute_dft_r2c: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>; inputfloat: <strong>ADDRESS</strong>; outputcomplex: <strong>ADDRESS</strong>)<tr><td></td><td>execute_split_dft_r2c: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>; inputfloat: <strong>ADDRESS</strong>; realout, imagout: <strong>ADDRESS</strong>)<tr><td></td><td>execute_dft_c2r: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>; inputcomplex: <strong>ADDRESS</strong>; outputfloat: <strong>ADDRESS</strong>)<tr><td></td><td>execute_split_dft_c2r: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>; realin, imagin: <strong>ADDRESS</strong>; floatout: <strong>ADDRESS</strong>)<tr><td></td><td>execute_r2r: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>; inputfloat: <strong>ADDRESS</strong>; outputfloat: <strong>ADDRESS</strong>)<tr><td></td><td>plan_dft_1d: <strong>PROCEDURE</strong>{C} (n: <strong>INTEGER</strong>; input: <strong>ADDRESS</strong>; output: <strong>ADDRESS</strong>; direction: <strong>Direction</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_2d: <strong>PROCEDURE</strong>{C} (ny, nx: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; direction: <strong>Direction</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_3d: <strong>PROCEDURE</strong>{C} (nz, ny, nx: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; direction: <strong>Direction</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; n: <strong>ADDRESS</strong>; input, output: <strong>ADDRESS</strong>; direction: <strong>Direction</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_r2c_1d: <strong>PROCEDURE</strong>{C} (n: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_r2c_2d: <strong>PROCEDURE</strong>{C} (ny, nx: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_r2c_3d: <strong>PROCEDURE</strong>{C} (nz, ny, nx: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_r2c: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; n: <strong>ADDRESS</strong>; input, output: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_c2r_1d: <strong>PROCEDURE</strong>{C} (n: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_c2r_2d: <strong>PROCEDURE</strong>{C} (ny, nx: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_c2r_3d: <strong>PROCEDURE</strong>{C} (nz, ny, nx: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_dft_c2r: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; n: <strong>ADDRESS</strong>; input, output: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_r2r_1d: <strong>PROCEDURE</strong>{C} (n: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; kind: <strong>Kind</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_r2r_2d: <strong>PROCEDURE</strong>{C} (ny, nx: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; kindx, kindy: <strong>Kind</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_r2r_3d: <strong>PROCEDURE</strong>{C} (nz, ny, nx: <strong>INTEGER</strong>; input, output: <strong>ADDRESS</strong>; kindx, kindy, kindz: <strong>Kind</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_r2r: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; n: <strong>ADDRESS</strong>; input, output: <strong>ADDRESS</strong>; kind: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_many_dft: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; n: <strong>ADDRESS</strong>; howmany: <strong>INTEGER</strong>; input: <strong>ADDRESS</strong>; inembed: <strong>ADDRESS</strong>; istride: <strong>INTEGER</strong>; idist: <strong>INTEGER</strong>; output: <strong>ADDRESS</strong>; onembed: <strong>ADDRESS</strong>; ostride: <strong>INTEGER</strong>; odist: <strong>INTEGER</strong>; sign: <strong>Direction</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_many_dft_r2c: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; n: <strong>ADDRESS</strong>; howmany: <strong>INTEGER</strong>; Rin: <strong>ADDRESS</strong>; inembed: <strong>ADDRESS</strong>; istride: <strong>INTEGER</strong>; idist: <strong>INTEGER</strong>; Cout: <strong>ADDRESS</strong>; onembed: <strong>ADDRESS</strong>; ostride: <strong>INTEGER</strong>; odist: <strong>INTEGER</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_many_dft_c2r: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; n: <strong>ADDRESS</strong>; howmany: <strong>INTEGER</strong>; Cin: <strong>ADDRESS</strong>; inembed: <strong>ADDRESS</strong>; istride: <strong>INTEGER</strong>; idist: <strong>INTEGER</strong>; Rout: <strong>ADDRESS</strong>; onembed: <strong>ADDRESS</strong>; ostride: <strong>INTEGER</strong>; odist: <strong>INTEGER</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_guru_dft: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; dims: <strong>ADDRESS</strong>; howmany_rank: <strong>INTEGER</strong>; howmany_dims: <strong>ADDRESS</strong>; in, out: <strong>ADDRESS</strong>; sign: <strong>Direction</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_guru_split_dft: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; dims: <strong>ADDRESS</strong>; howmany_rank: <strong>INTEGER</strong>; howmany_dims: <strong>ADDRESS</strong>; realinput, imaginput: <strong>ADDRESS</strong>; realout, imagout: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_guru_dft_r2c: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; dims: <strong>ADDRESS</strong>; howmany_rank: <strong>INTEGER</strong>; howmany_dims: <strong>ADDRESS</strong>; doublein: <strong>ADDRESS</strong>; complexout: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_guru_split_dft_r2c: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; dims: <strong>ADDRESS</strong>; howmany_rank: <strong>INTEGER</strong>; howmany_dims: <strong>ADDRESS</strong>; doublein: <strong>ADDRESS</strong>; double_ro: <strong>ADDRESS</strong>; double_io: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_guru_dft_c2r: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; dims: <strong>ADDRESS</strong>; howmany_rank: <strong>INTEGER</strong>; howmany_dims: <strong>ADDRESS</strong>; complexin: <strong>ADDRESS</strong>; doubleout: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>plan_guru_split_dft_c2r: <strong>PROCEDURE</strong>{C} (rank: <strong>INTEGER</strong>; dims: <strong>ADDRESS</strong>; howmany_rank: <strong>INTEGER</strong>; howmany_dims: <strong>ADDRESS</strong>; double_ri: <strong>ADDRESS</strong>; double_ii: <strong>ADDRESS</strong>; double_out: <strong>ADDRESS</strong>; flags: <strong>Flags</strong>): <strong>Plan</strong><tr><td></td><td>flops: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>; <strong>VAR</strong> add, mul, fma: <strong>FLOAT64</strong>)<tr><td></td><td>init_threads: <strong>PROCEDURE</strong>{C} (): <strong>INTEGER</strong><tr><td></td><td>plan_with_nthreads: <strong>PROCEDURE</strong>{C} (n: <strong>INTEGER</strong>)<tr><td></td><td>cleanup_threads: <strong>PROCEDURE</strong>{C} <tr><td></td><td>print_plan: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>)<tr><td></td><td>estimate_cost: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>): <strong>FLOAT64</strong><tr><td></td><td>cost: <strong>PROCEDURE</strong>{C} (plan: <strong>Plan</strong>): <strong>FLOAT64</strong><tr><td></td><td>alignment_of: <strong>PROCEDURE</strong>{C} (realArray: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>xversion: <strong>ADDRESS</strong><tr><th align='left'>procedures</th><td> version (): <strong>Strings.String</strong><tr><td></td><td> Malloc (length: <strong>SIZE</strong>): <strong>ADDRESS</strong><tr><td></td><td> Free (mem: <strong>ADDRESS</strong>)<tr><td></td><td> Execute (plan: <strong>Plan</strong>)<tr><td></td><td> ExecuteDft1din (plan: <strong>Plan</strong>; <strong>VAR</strong> inout: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> ExecuteDft1dinout (plan: <strong>Plan</strong>; <strong>VAR</strong> in, out: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> ExecuteDftComplex1din (plan: <strong>Plan</strong>; <strong>VAR</strong> inout: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>COMPLEX32</strong>)<tr><td></td><td> ExecuteDftComplex1dinout (plan: <strong>Plan</strong>; <strong>VAR</strong> in, out: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>COMPLEX32</strong>)<tr><td></td><td> ExecuteDft2dinout (plan: <strong>Plan</strong>; <strong>VAR</strong> in, out: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> ExecuteDft2din (plan: <strong>Plan</strong>; <strong>VAR</strong> inout: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> ExecuteDftComplex2din (plan: <strong>Plan</strong>; <strong>VAR</strong> inout: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>COMPLEX32</strong>)<tr><td></td><td> ExecuteDftComplex2dinout (plan: <strong>Plan</strong>; <strong>VAR</strong> in, out: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>COMPLEX32</strong>)<tr><td></td><td> DestroyPlan (plan: <strong>Plan</strong>)<tr><td></td><td> Cleanup<tr><td></td><td> SetTimeLimit (seconds: <strong>FLOAT64</strong>)<tr><td></td><td> Flops (plan: <strong>Plan</strong>; <strong>VAR</strong> add, mul, fma: <strong>FLOAT64</strong>)<tr><td></td><td> PlanDft1Din (<strong>VAR</strong> a: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDftComplex1Din (<strong>VAR</strong> a: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>COMPLEX32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDft2Din (<strong>VAR</strong> a: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDftComplex2Din (<strong>VAR</strong> a: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>COMPLEX32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDft3Din (<strong>VAR</strong> a: <strong>ARRAY</strong> [*,*,*] <strong>OF</strong> <strong>FLOAT32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDftComplex3Din (<strong>VAR</strong> a: <strong>ARRAY</strong> [*,*,*] <strong>OF</strong> <strong>COMPLEX32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDft1Dinout (<strong>VAR</strong> a, b: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDftComplex1Dinout (<strong>VAR</strong> a, b: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>COMPLEX32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDft2Dinout (<strong>VAR</strong> a, b: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDftComplex2Dinout (<strong>VAR</strong> a, b: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>COMPLEX32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDft3Dinout (<strong>VAR</strong> a, b: <strong>ARRAY</strong> [*,*,*] <strong>OF</strong> <strong>FLOAT32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> PlanDftComplex3Dinout (<strong>VAR</strong> a, b: <strong>ARRAY</strong> [*,*,*] <strong>OF</strong> <strong>COMPLEX32</strong>; dir: <strong>Direction</strong>): <strong>Plan</strong><tr><td></td><td> GetProcAddress (lib: <strong>HostLibs.LibHandle</strong>; <strong>CONST</strong> procName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; adr: <strong>ADDRESS</strong>)<tr><td></td><td> GetStringFromAddr (adr: <strong>ADDRESS</strong>): <strong>Strings.String</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_88405CC0"><a name="FFTWf.ESTIMATE_PATIENT"></a><a href="#FFTWf">FFTWf</a>.<a href="#FFTWf.ESTIMATE_PATIENT">ESTIMATE_PATIENT</a>
+</h2>
+<p> undocumented beyond-guru flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ESTIMATE_PATIENT*= {7}</pre>
+<hr><h2 id="#_884097C0"><a name="FFTWf.Plan"></a><a href="#FFTWf">FFTWf</a>.<a href="#FFTWf.Plan">Plan</a>
+</h2>
+<p> FFTW planner</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Plan* =<strong>ADDRESS</strong></pre>
+<hr><h2 id="#_8840C9C0"><a name="FFTWf.Direction"></a><a href="#FFTWf">FFTWf</a>.<a href="#FFTWf.Direction">Direction</a>
+</h2>
+<p> fft direction</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Direction* =<strong>INTEGER</strong></pre>
+<hr><h2 id="#_8840FC80"><a name="FFTWf.Flags"></a><a href="#FFTWf">FFTWf</a>.<a href="#FFTWf.Flags">Flags</a>
+</h2>
+<p> documented planner flags, <code>0..21} bits </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Flags* =<strong>SET32</strong></pre>
+<hr><h2 id="#_88413780"><a name="FFTWf.Kind"></a><a href="#FFTWf">FFTWf</a>.<a href="#FFTWf.Kind">Kind</a>
+</h2>
+<p> fftw_r2r_kind_do_not_use_me</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Kind* =<strong>INTEGER</strong></pre>
+<hr><h2 id="#_884166C0"><a name="FFTWf.Iodim"></a><a href="#FFTWf">FFTWf</a>.<a href="#FFTWf.Iodim">Iodim</a>
+</h2>
+<p> fftw_iodim_do_not_use_me</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Iodim* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>n: <strong>INTEGER</strong><tr><td></td><td>inps: <strong>INTEGER</strong><tr><td></td><td>outs: <strong>INTEGER</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8841CCC0"><a name="FFTWf.dll"></a><a href="#FFTWf">FFTWf</a>.<a href="#FFTWf.dll">dll</a>
+</h2>
+<p> handle to fftw library</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> dll-: <strong>HostLibs.LibHandle</strong></pre>
+</body></html>

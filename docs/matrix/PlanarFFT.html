@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PlanarFFT">PlanarFFT</a></p>
+<hr><h1 id="#_945B6800"><a name="PlanarFFT"></a><a href="#ModuleList">Module</a> PlanarFFT
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "FFT operations on 2D Data";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>LineHandler =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> lineInR, lineInI: <strong>OneD</strong>; <strong>VAR</strong> lineOutR, lineOutI: <strong>OneD</strong>)<tr><th align='left'>procedures</th><td> FFT (<strong>CONST</strong> inR, inI: <strong>TwoD</strong>; <strong>VAR</strong> outR, outI: <strong>TwoD</strong>; directions: <strong>SET</strong>)<tr><td></td><td> IFFT (<strong>CONST</strong> inR, inI: <strong>TwoD</strong>; <strong>VAR</strong> outR, outI: <strong>TwoD</strong>; directions: <strong>SET</strong>)<tr><td></td><td> PowerSpectrum (<strong>CONST</strong> in: <strong>TwoD</strong>): <strong>TwoD</strong><tr><td></td><td> <a href="#PlanarFFT.Convolution">Convolution</a> (<strong>CONST</strong> in1, in2: <strong>TwoD</strong>; <strong>VAR</strong> outR, outI: <strong>TwoD</strong>)<tr><td></td><td> <a href="#PlanarFFT.DeConvolution">DeConvolution</a> (<strong>CONST</strong> in1, in2: <strong>TwoD</strong>; <strong>VAR</strong> outR, outI: <strong>TwoD</strong>)<tr><td></td><td> <a href="#PlanarFFT.CrossCorrelation">CrossCorrelation</a> (<strong>CONST</strong> in1, in2: <strong>TwoD</strong>; <strong>VAR</strong> outR, outI: <strong>TwoD</strong>)<tr><td></td><td> AutoCorrelation (<strong>CONST</strong> in: <strong>TwoD</strong>): <strong>TwoD</strong><tr><td></td><td> Filter (<strong>CONST</strong> in, filter: <strong>TwoD</strong>): <strong>TwoD</strong><tr><td></td><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_945DD640"><a name="PlanarFFT.Convolution"></a><a href="#PlanarFFT">PlanarFFT</a>.<a href="#PlanarFFT.Convolution">Convolution</a>
+</h2>
+<p> deconvolution is multiplication in the Fourier domain</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Convolution* (<strong>CONST</strong> in1, in2: <strong>TwoD</strong>; <strong>VAR</strong> outR, outI: <strong>TwoD</strong>)</pre>
+<hr><h2 id="#_945E4D80"><a name="PlanarFFT.DeConvolution"></a><a href="#PlanarFFT">PlanarFFT</a>.<a href="#PlanarFFT.DeConvolution">DeConvolution</a>
+</h2>
+<p> deconvolution is division in Fourier domain: (a+bi )/(c+di) = (ac+bd)/(c*c+d*d), i*(bc-ad)/(c*c+d*d)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DeConvolution* (<strong>CONST</strong> in1, in2: <strong>TwoD</strong>; <strong>VAR</strong> outR, outI: <strong>TwoD</strong>)</pre>
+<hr><h2 id="#_945ED5C0"><a name="PlanarFFT.CrossCorrelation"></a><a href="#PlanarFFT">PlanarFFT</a>.<a href="#PlanarFFT.CrossCorrelation">CrossCorrelation</a>
+</h2>
+<p> crosscorrelation is multiplication in the Fourier domain of the complex conjugate</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CrossCorrelation* (<strong>CONST</strong> in1, in2: <strong>TwoD</strong>; <strong>VAR</strong> outR, outI: <strong>TwoD</strong>)</pre>
+</body></html>

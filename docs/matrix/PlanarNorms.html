@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PlanarNorms">PlanarNorms</a></p>
+<hr><h1 id="#_564380C0"><a name="PlanarNorms"></a><a href="#ModuleList">Module</a> PlanarNorms
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "Norms in planar data";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Power (<strong>CONST</strong> p: <strong>Plane</strong>): <strong>Datatype</strong><tr><td></td><td> PowerComplex (<strong>CONST</strong> p: <strong>ComplexPlane</strong>): <strong>Datatype</strong><tr><td></td><td> TotalVariation (<strong>CONST</strong> p: <strong>Plane</strong>; sampling: <strong>SIGNED32</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#PlanarNorms.SNR">SNR</a> (<strong>CONST</strong> test, reference: <strong>Plane</strong>): <strong>Datatype</strong><tr><td></td><td> SNRComplex (<strong>CONST</strong> test, reference: <strong>ComplexPlane</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#PlanarNorms.PSNR">PSNR</a> (<strong>CONST</strong> test, reference: <strong>Plane</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#PlanarNorms.RMSE">RMSE</a> (<strong>CONST</strong> test, reference: <strong>Plane</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#PlanarNorms.MAE">MAE</a> (<strong>CONST</strong> test, reference: <strong>Plane</strong>): <strong>Datatype</strong><tr><td></td><td> Test (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_56453680">
+</h1><hr><h2 id="#_56453E40"><a name="PlanarNorms.SNR"></a><a href="#PlanarNorms">PlanarNorms</a>.<a href="#PlanarNorms.SNR">SNR</a>
+</h2>
+<p> SNR, PSNR, RMSE, MAE for images, see http://bigwww.epfl.ch/sage/soft/snr</p>
+
+<p> sinus to noise ratio for images = 10 log (...)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SNR* (<strong>CONST</strong> test, reference: <strong>Plane</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_5645D1C0"><a name="PlanarNorms.PSNR"></a><a href="#PlanarNorms">PlanarNorms</a>.<a href="#PlanarNorms.PSNR">PSNR</a>
+</h2>
+<p> peak sinus to noise ratio for images = 10 log (...)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PSNR* (<strong>CONST</strong> test, reference: <strong>Plane</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_56464640"><a name="PlanarNorms.RMSE"></a><a href="#PlanarNorms">PlanarNorms</a>.<a href="#PlanarNorms.RMSE">RMSE</a>
+</h2>
+<p> root mean square error</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RMSE* (<strong>CONST</strong> test, reference: <strong>Plane</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_56469D80"><a name="PlanarNorms.MAE"></a><a href="#PlanarNorms">PlanarNorms</a>.<a href="#PlanarNorms.MAE">MAE</a>
+</h2>
+<p> mean absolute error</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MAE* (<strong>CONST</strong> test, reference: <strong>Plane</strong>): <strong>Datatype</strong></pre>
+</body></html>

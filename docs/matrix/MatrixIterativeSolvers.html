@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixIterativeSolvers">MatrixIterativeSolvers</a></p>
+<hr><h1 id="#_59A43E80"><a name="MatrixIterativeSolvers"></a><a href="#ModuleList">Module</a> MatrixIterativeSolvers
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "Iterative Methods to solve linear equations";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>DefaultMaxIterations= 50<tr><td></td><td>DefaultThreshold=             1.E-3<tr><td></td><td>DefaultOmega=               1.3<tr><th align='left'>type declarations</th><td>Datatype =<strong>Base.Datatype</strong><tr><td></td><td>Matrix =<strong>Base.Matrix</strong><tr><td></td><td>Vector =<strong>Base.Vector</strong><tr><td></td><td><a href="#MatrixIterativeSolvers.IterativeSolver">IterativeSolver</a> =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)<tr><td></td><td><a href="#MatrixIterativeSolvers.GaussSeidel">GaussSeidel</a> =<strong>OBJECT</strong> (<strong>IterativeSolver</strong>)<tr><td></td><td><a href="#MatrixIterativeSolvers.GaussSeidelSOR">GaussSeidelSOR</a> =<strong>OBJECT</strong> (<strong>IterativeSolver</strong>)<tr><td></td><td><a href="#MatrixIterativeSolvers.Jacobi">Jacobi</a> =<strong>OBJECT</strong> (<strong>IterativeSolver</strong>)<tr><td></td><td><a href="#MatrixIterativeSolvers.ConjugateGradient">ConjugateGradient</a> =<strong>OBJECT</strong> (<strong>IterativeSolver</strong>)<tr><th align='left'>procedures</th><td> <a href="#MatrixIterativeSolvers.SolveGaussSeidel">SolveGaussSeidel</a> (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>; threshold: <strong>Datatype</strong>): <strong>Vector</strong><tr><td></td><td> SolveGaussSeidelSOR (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>; threshold, omega: <strong>Datatype</strong>): <strong>Vector</strong><tr><td></td><td> SolveJacobi (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>; threshold: <strong>Datatype</strong>): <strong>Vector</strong><tr><td></td><td> SolveConjugateGradient (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>; threshold: <strong>Datatype</strong>): <strong>Vector</strong><tr><td></td><td> <a href="#MatrixIterativeSolvers.CreateGaussSeidel">CreateGaussSeidel</a> (<strong>VAR</strong> A: <strong>Matrix</strong>): <strong>Base.Solver</strong><tr><td></td><td> CreateGaussSeidelSOR (<strong>VAR</strong> A: <strong>Matrix</strong>): <strong>Base.Solver</strong><tr><td></td><td> CreateJacobi (<strong>VAR</strong> A: <strong>Matrix</strong>): <strong>Base.Solver</strong><tr><td></td><td> CreateConjugateGradient (<strong>VAR</strong> A: <strong>Matrix</strong>): <strong>Base.Solver</strong><tr><td></td><td> Test<tr><td></td><td> Test1</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_59A71700">
+</h1>
+<p> Solves Matrix Equation Ax=b by iterative methods (Gauss-Seidel; Gauss-Seidel with successive overrelaxation; Jacobi); Gauss-Seidel and Jacobi methods converge in diagonally dominant matrices where A[i,i]&gtSUM(A[i,not i]); may also converge in other cases</p>
+<hr><h2 id="#_59A79980"><a name="MatrixIterativeSolvers.IterativeSolver"></a><a href="#MatrixIterativeSolvers">MatrixIterativeSolvers</a>.<a href="#MatrixIterativeSolvers.IterativeSolver">IterativeSolver</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IterativeSolver* =<strong>OBJECT</strong> (<strong>Base.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>A: <strong>Matrix</strong><tr><td></td><td>residual: <strong>Vector</strong><tr><td></td><td>maxIterations: <strong>SIGNED32</strong><tr><td></td><td>iteration: <strong>SIGNED32</strong><tr><td></td><td>threshold: <strong>Datatype</strong><tr><td></td><td>Norm: <strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> v: <strong>Vector</strong>): <strong>Datatype</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Step (<strong>CONST</strong> b: <strong>Vector</strong>; <strong>VAR</strong> x: <strong>Vector</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_59A89DC0"><a name="MatrixIterativeSolvers.GaussSeidel"></a><a href="#MatrixIterativeSolvers">MatrixIterativeSolvers</a>.<a href="#MatrixIterativeSolvers.GaussSeidel">GaussSeidel</a>
+</h2>
+<p> Gauss Seidel is more memory-conservative than the Jacobi method; however, interim results in (i) loop depend on each other, so outer loop parallelisation is problematic</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GaussSeidel* =<strong>OBJECT</strong> (<strong>IterativeSolver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> Step (<strong>CONST</strong> b: <strong>Vector</strong>; <strong>VAR</strong> x: <strong>Vector</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_59A99580"><a name="MatrixIterativeSolvers.GaussSeidelSOR"></a><a href="#MatrixIterativeSolvers">MatrixIterativeSolvers</a>.<a href="#MatrixIterativeSolvers.GaussSeidelSOR">GaussSeidelSOR</a>
+</h2>
+<p> Gauss Seidel with successive overrelaxation. Choose <a href="#0">0</a> <a name="omega"></a> <a name="2]"></a> ; For omega=1, this corresponds to Gauss Seidel; omega&gt1 speeds some problems up (less stable); omega&lt1 damps/stabilizes divergent/oscillating behaviour (but is slower)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GaussSeidelSOR* =<strong>OBJECT</strong> (<strong>IterativeSolver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>omega: <strong>Datatype</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> Step (<strong>CONST</strong> b: <strong>Vector</strong>; <strong>VAR</strong> x: <strong>Vector</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_59AAD480"><a name="MatrixIterativeSolvers.Jacobi"></a><a href="#MatrixIterativeSolvers">MatrixIterativeSolvers</a>.<a href="#MatrixIterativeSolvers.Jacobi">Jacobi</a>
+</h2>
+<p> Jacobi algorithm converges usually slower than Gauss Seidel, but parallelisation is easier. uses somewhat more memory than Gauss-Seidel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Jacobi* =<strong>OBJECT</strong> (<strong>IterativeSolver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> Step (<strong>CONST</strong> b: <strong>Vector</strong>; <strong>VAR</strong> x: <strong>Vector</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_59ABD140"><a name="MatrixIterativeSolvers.ConjugateGradient"></a><a href="#MatrixIterativeSolvers">MatrixIterativeSolvers</a>.<a href="#MatrixIterativeSolvers.ConjugateGradient">ConjugateGradient</a>
+</h2>
+<p> Conjugate Gradient method: for square, symmetric, positive definite matrices</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ConjugateGradient* =<strong>OBJECT</strong> (<strong>IterativeSolver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</table>
+<hr><h2 id="#_59AC5800"><a name="MatrixIterativeSolvers.SolveGaussSeidel"></a><a href="#MatrixIterativeSolvers">MatrixIterativeSolvers</a>.<a href="#MatrixIterativeSolvers.SolveGaussSeidel">SolveGaussSeidel</a>
+</h2>
+<p> simple procedural interfaces to solvers;</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveGaussSeidel* (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>; threshold: <strong>Datatype</strong>): <strong>Vector</strong></pre>
+<hr><h2 id="#_59ACCBC0"><a name="MatrixIterativeSolvers.CreateGaussSeidel"></a><a href="#MatrixIterativeSolvers">MatrixIterativeSolvers</a>.<a href="#MatrixIterativeSolvers.CreateGaussSeidel">CreateGaussSeidel</a>
+</h2>
+<p> Factory procedures</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CreateGaussSeidel* (<strong>VAR</strong> A: <strong>Matrix</strong>): <strong>Base.Solver</strong></pre>
+</body></html>

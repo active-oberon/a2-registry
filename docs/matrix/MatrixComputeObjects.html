@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixComputeObjects">MatrixComputeObjects</a></p>
+<hr><h1 id="#_111F13C0"><a name="MatrixComputeObjects"></a><a href="#ModuleList">Module</a> MatrixComputeObjects
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "Active Objects for Computation";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>Notifier =<strong>PROCEDURE</strong>{DELEGATE} <tr><td></td><td>Computor =<strong>PROCEDURE</strong>{DELEGATE} <tr><td></td><td><a href="#MatrixComputeObjects.ComputeObject">ComputeObject</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#MatrixComputeObjects.ComputeMMObject">ComputeMMObject</a> =<strong>OBJECT</strong> (<strong>ComputeObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.Mul">Mul</a> =<strong>OBJECT</strong> (<strong>ComputeMMObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.MulAdd">MulAdd</a> =<strong>OBJECT</strong> (<strong>ComputeMMObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.MulSub">MulSub</a> =<strong>OBJECT</strong> (<strong>ComputeMMObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.MulSub2">MulSub2</a> =<strong>OBJECT</strong> (<strong>ComputeMMObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.ComputeMVObject">ComputeMVObject</a> =<strong>OBJECT</strong> (<strong>ComputeObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.MulMV">MulMV</a> =<strong>OBJECT</strong> (<strong>ComputeMVObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.SolveMV">SolveMV</a> =<strong>OBJECT</strong> (<strong>ComputeMVObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.ComputeMSObject">ComputeMSObject</a> =<strong>OBJECT</strong> (<strong>ComputeObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.ScaleAddM">ScaleAddM</a> =<strong>OBJECT</strong> (<strong>ComputeMSObject</strong>)<tr><td></td><td><a href="#MatrixComputeObjects.ComputeAgent">ComputeAgent</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>cumulobjects: <strong>SIGNED32</strong><tr><td></td><td>Distributed: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1120B080"><a name="MatrixComputeObjects.ComputeObject"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.ComputeObject">ComputeObject</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ComputeObject* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Notify: <strong>Notifier</strong><tr><td></td><td>Writer: <strong>Streams.Writer</strong><tr><td></td><td>wait: <strong>BOOLEAN</strong><tr><td></td><td>done: <strong>BOOLEAN</strong><tr><td></td><td>priority: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> compute<tr><td></td><td> computeDistributed<tr><td></td><td> WaitReady<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_11215480"><a name="MatrixComputeObjects.ComputeMMObject"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.ComputeMMObject">ComputeMMObject</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ComputeMMObject* =<strong>OBJECT</strong> (<strong>ComputeObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A, B: <strong>Matrix</strong>; <strong>VAR</strong> C: <strong>Matrix</strong>; Notify: <strong>Notifier</strong>; priority: <strong>SIGNED32</strong>)</td></tr>
+</table>
+<hr><h2 id="#_1121E1C0"><a name="MatrixComputeObjects.Mul"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.Mul">Mul</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Mul* =<strong>OBJECT</strong> (<strong>ComputeMMObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> compute</td></tr>
+</table>
+<hr><h2 id="#_11222200"><a name="MatrixComputeObjects.MulAdd"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.MulAdd">MulAdd</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MulAdd* =<strong>OBJECT</strong> (<strong>ComputeMMObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> compute</td></tr>
+</table>
+<hr><h2 id="#_11226180"><a name="MatrixComputeObjects.MulSub"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.MulSub">MulSub</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MulSub* =<strong>OBJECT</strong> (<strong>ComputeMMObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> compute</td></tr>
+</table>
+<hr><h2 id="#_1122A1C0"><a name="MatrixComputeObjects.MulSub2"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.MulSub2">MulSub2</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MulSub2* =<strong>OBJECT</strong> (<strong>ComputeMMObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> compute</td></tr>
+</table>
+<hr><h2 id="#_1122E140"><a name="MatrixComputeObjects.ComputeMVObject"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.ComputeMVObject">ComputeMVObject</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ComputeMVObject* =<strong>OBJECT</strong> (<strong>ComputeObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> B: <strong>Vector</strong>; <strong>VAR</strong> C: <strong>Vector</strong>; Notify: <strong>Notifier</strong>; priority: <strong>SIGNED32</strong>)</td></tr>
+</table>
+<hr><h2 id="#_11237CC0"><a name="MatrixComputeObjects.MulMV"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.MulMV">MulMV</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MulMV* =<strong>OBJECT</strong> (<strong>ComputeMVObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> compute</td></tr>
+</table>
+<hr><h2 id="#_1123BD40"><a name="MatrixComputeObjects.SolveMV"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.SolveMV">SolveMV</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SolveMV* =<strong>OBJECT</strong> (<strong>ComputeMVObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_1123F600"><a name="MatrixComputeObjects.ComputeMSObject"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.ComputeMSObject">ComputeMSObject</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ComputeMSObject* =<strong>OBJECT</strong> (<strong>ComputeObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>; <strong>VAR</strong> B: <strong>Matrix</strong>; s: <strong>Datatype</strong>; Notify: <strong>Notifier</strong>; priority: <strong>SIGNED32</strong>)</td></tr>
+</table>
+<hr><h2 id="#_11248E00"><a name="MatrixComputeObjects.ScaleAddM"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.ScaleAddM">ScaleAddM</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ScaleAddM* =<strong>OBJECT</strong> (<strong>ComputeMSObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> compute</td></tr>
+</table>
+<hr><h2 id="#_1124CD80"><a name="MatrixComputeObjects.ComputeAgent"></a><a href="#MatrixComputeObjects">MatrixComputeObjects</a>.<a href="#MatrixComputeObjects.ComputeAgent">ComputeAgent</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ComputeAgent* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>done: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& Request (<strong>CONST</strong> Operation: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; Flops, SendSize, RecvSize: <strong>SIZE</strong>; priority: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</table>
+</body></html>

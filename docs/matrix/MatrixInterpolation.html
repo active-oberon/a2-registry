@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixInterpolation">MatrixInterpolation</a></p>
+<hr><h1 id="#_2B80C580"><a name="MatrixInterpolation"></a><a href="#ModuleList">Module</a> MatrixInterpolation
+</h1>
+<p> Oberon Version: (c) P.Hunziker, July 2002, the 2D Version is based on the C-Program of Ph.Thevenaz from EPFL Lausanne mentioned below</p>
+
+<p>****************************************************************************<BR> * Date: January 29, 2002 <strong>----------------------------------------------------------------------------</strong></p>
+
+<ul>
+<li> This C program is based on the following three papers:</li>
+
+<li> <a href="#1]">1]</a> M. Unser,</li>
+
+<li> "Splines: A Perfect Fit for Signal and Image Processing,"</li>
+
+<li> IEEE Signal Processing Magazine, vol. 16, no. 6, pp. 22-38,</li>
+
+<li> November 1999.</li>
+
+<li> <a href="#2]">2]</a> M. Unser, A. Aldroubi and M. Eden,</li>
+
+<li> "B-Spline Signal Processing: Part I--Theory,"</li>
+
+<li> IEEE Transactions on Signal Processing, vol. 41, no. 2, pp. 821-832,</li>
+
+<li> February 1993.</li>
+
+<li> <a href="#3]">3]</a> M. Unser, A. Aldroubi and M. Eden,</li>
+
+<li> "B-Spline Signal Processing: Part II--Efficient Design and Applications,"</li>
+
+<li> IEEE Transactions on Signal Processing, vol. 41, no. 2, pp. 834-848,</li>
+
+<li> February 1993. <strong>----------------------------------------------------------------------------</strong></li>
+
+<li> EPFL/STI/IOA/BIG</li>
+
+<li> Philippe Thevenaz</li>
+
+<li> Bldg. BM-Ecublens 4.137</li>
+
+<li> CH-1015 Lausanne <strong>----------------------------------------------------------------------------</strong></li>
+
+<li> phone (CET): +41(21)693.51.61</li>
+
+<li> fax: +41(21)693.37.01</li>
+
+<li> RFC-822: philippe.thevenaz@epfl.ch</li>
+
+<li> X-400: <em>C=ch/A=400net/P=switch/O=epfl/S=thevenaz/G=philippe</em></li>
+
+<li> URL: http://bigwww.epfl.ch <strong>===================================================</strong></li>
+
+</ul>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#MatrixInterpolation.InterpolateSpline">InterpolateSpline</a> (<strong>CONST</strong> Bcoeff: <strong>Vector</strong>; x: <strong>Datatype</strong>; SplineDegree: <strong>SIGNED32</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#MatrixInterpolation.InterpolateSplineN">InterpolateSplineN</a> (<strong>CONST</strong> Bcoeff: <strong>Vector</strong>; <strong>VAR</strong> res: <strong>Vector</strong>; x: <strong>Datatype</strong>; SplineDegree: <strong>SIGNED32</strong>)<tr><td></td><td> InterpolateSpline2D (<strong>CONST</strong> Bcoeff: <strong>Matrix</strong>; x, y: <strong>Datatype</strong>; SplineDegree: <strong>SIGNED32</strong>): <strong>Datatype</strong><tr><td></td><td> InterpolateSplineTensor (<strong>CONST</strong> Bcoeff: <strong>Tensor</strong>; <strong>CONST</strong> x: <strong>Vector</strong>; SplineDegree: <strong>SIGNED32</strong>): <strong>Datatype</strong><tr><td></td><td> InterpolateSpline3D (<strong>CONST</strong> Bcoeff: <strong>Volume</strong>; x, y, z: <strong>Datatype</strong>; SplineDegree: <strong>SIGNED32</strong>): <strong>Datatype</strong><tr><td></td><td> InterpolateSpline4D (<strong>CONST</strong> Bcoeff: <strong>Hypercube</strong>; x, y, z, tm: <strong>Datatype</strong>; SplineDegree: <strong>SIGNED32</strong>): <strong>Datatype</strong><tr><td></td><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_2B852980"><a name="MatrixInterpolation.InterpolateSpline"></a><a href="#MatrixInterpolation">MatrixInterpolation</a>.<a href="#MatrixInterpolation.InterpolateSpline">InterpolateSpline</a>
+</h2>
+<p>Interpolate signal: convert the original, sampled signal into continous spline model of 'SplineDegree' (1..5). Then, use procedure InterpolateSpline to get interpolated value at position x; respectively at position x,y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InterpolateSpline* (<strong>CONST</strong> Bcoeff: <strong>Vector</strong>; x: <strong>Datatype</strong>; SplineDegree: <strong>SIGNED32</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_2B85F480"><a name="MatrixInterpolation.InterpolateSplineN"></a><a href="#MatrixInterpolation">MatrixInterpolation</a>.<a href="#MatrixInterpolation.InterpolateSplineN">InterpolateSplineN</a>
+</h2>
+<p> to do InterpolateSplineN for two dimensional regular displacement by <a href="#dx,dy]">dx,dy]</a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InterpolateSplineN* (<strong>CONST</strong> Bcoeff: <strong>Vector</strong>; <strong>VAR</strong> res: <strong>Vector</strong>; x: <strong>Datatype</strong>; SplineDegree: <strong>SIGNED32</strong>)</pre>
+</body></html>

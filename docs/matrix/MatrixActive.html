@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixActive">MatrixActive</a></p>
+<hr><h1 id="#_696E2E80"><a name="MatrixActive"></a><a href="#ModuleList">Module</a> MatrixActive
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "EXPERIMENTAL - implicit statement parallel execution of matrix algebra by operator overloading with synchronization statements ";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#MatrixActive.Low">Low</a>= Objects.Low<tr><td></td><td>Normal= Objects.Normal<tr><td></td><td>High= Objects.High<tr><th align='left'>type declarations</th><td>Datatype =<strong>FLOAT64</strong><tr><td></td><td>BaseVector =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>BaseMatrix =<strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td><a href="#MatrixActive.Matrix">Matrix</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>computingObjectCount: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> := (<strong>VAR</strong> l: <strong>Matrix</strong>; <strong>CONST</strong> r: <strong>BaseMatrix</strong>)<tr><td></td><td> := (<strong>VAR</strong> l: <strong>Matrix</strong>; <strong>CONST</strong> r: <strong>BaseVector</strong>)<tr><td></td><td> := (<strong>VAR</strong> l: <strong>BaseMatrix</strong>; <strong>CONST</strong> r: <strong>Matrix</strong>)<tr><td></td><td> := (<strong>VAR</strong> l: <strong>BaseVector</strong>; <strong>CONST</strong> r: <strong>Matrix</strong>)<tr><td></td><td> * (<strong>CONST</strong> l, r: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> * (<strong>CONST</strong> l: <strong>Matrix</strong>; <strong>CONST</strong> r: <strong>BaseMatrix</strong>): <strong>Matrix</strong><tr><td></td><td> * (<strong>CONST</strong> l: <strong>BaseMatrix</strong>; <strong>CONST</strong> r: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> + (<strong>CONST</strong> l, r: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> + (<strong>CONST</strong> l: <strong>Matrix</strong>; <strong>CONST</strong> r: <strong>BaseMatrix</strong>): <strong>Matrix</strong><tr><td></td><td> + (<strong>CONST</strong> l: <strong>BaseMatrix</strong>; r: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> - (<strong>CONST</strong> l, r: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> - (<strong>CONST</strong> l: <strong>Matrix</strong>; <strong>CONST</strong> r: <strong>BaseMatrix</strong>): <strong>Matrix</strong><tr><td></td><td> - (<strong>CONST</strong> l: <strong>BaseMatrix</strong>; r: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> +* (<strong>CONST</strong> l, r: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> +* (<strong>CONST</strong> l: <strong>Matrix</strong>; <strong>CONST</strong> r: <strong>BaseMatrix</strong>): <strong>Matrix</strong><tr><td></td><td> +* (<strong>CONST</strong> l: <strong>BaseMatrix</strong>; <strong>CONST</strong> r: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> \ (<strong>CONST</strong> l, r: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> \ (<strong>CONST</strong> l: <strong>Matrix</strong>; <strong>CONST</strong> r: <strong>BaseVector</strong>): <strong>Matrix</strong><tr><td></td><td> \ (<strong>CONST</strong> l: <strong>BaseMatrix</strong>; <strong>CONST</strong> r: <strong>Matrix</strong>): <strong>Matrix</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_69730F00">
+</h1>
+<p> COMPILER PROBLEMS  operator definition for ".*" does not work  how to defined operator for constant array, e.g. for MatrixObject * <a href="#1,2,],[3,4">1,2,],[3,4</a>  inability to access return parameters for objects causes copy overhead ...</p>
+<hr><h2 id="#_69739E00"><a name="MatrixActive.Low"></a><a href="#MatrixActive">MatrixActive</a>.<a href="#MatrixActive.Low">Low</a>
+</h2>
+<p> priorities</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Low*= Objects.Low</pre>
+<hr><h2 id="#_6973D140"><a name="MatrixActive.Matrix"></a><a href="#MatrixActive">MatrixActive</a>.<a href="#MatrixActive.Matrix">Matrix</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Matrix* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>data: <strong>BaseMatrix</strong><tr><td></td><td>vec: <strong>BaseVector</strong><tr><td></td><td>val: <strong>Datatype</strong><tr><th align='left'>procedures</th><td> WaitReadable<tr><td></td><td> Log</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

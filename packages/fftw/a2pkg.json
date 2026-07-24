@@ -1,0 +1,21 @@
+{
+  "name": "community/fftw",
+  "version": "0.0.0",
+  "tier": 2,
+  "context": "A2",
+  "description": "FFI bindings to the native FFTW3 library (double + single precision) via HostLibs.",
+  "provides": [
+    "FFTW",
+    "FFTWf"
+  ],
+  "requires": {
+    "std/runtime": "*"
+  },
+  "native": {
+    "library": "libfftw3.so / libfftw3f.so",
+    "note": "runtime dependency loaded via HostLibs; must be present on the host/container to run (compile-only needs nothing)."
+  },
+  "residual": [
+    "FFTWTest/FFTWTestf are examples, not part of the library API."
+  ]
+}

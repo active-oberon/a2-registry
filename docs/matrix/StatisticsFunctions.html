@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#StatisticsFunctions">StatisticsFunctions</a></p>
+<hr><h1 id="#_2FF23F80"><a name="StatisticsFunctions"></a><a href="#ModuleList">Module</a> StatisticsFunctions
+</h1>
+<p>************** Oberon StatisticsFunctions .Mod <strong>********************</strong> Version 1.0 P.Hunziker (c) 2000</p>
+
+<p> Derived from TurboPascal Library FMATH.PAS version 2.3 (c) J. Debord, July 2000 http://ourworld.compuserve.com/homepages/JDebord</p>
+
+<p> **********<BR> This library is distributed as freeware. You may use it any way you like, as long as you don't charge money for it, remove the copyright notices, or hold anyone liable for its results.</p>
+
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<li></li>
+
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>PI= 3.141592653589793<tr><td></td><td>LN2= 6.931471805599454E-1<tr><td></td><td>LN10= 2.302585092994046<tr><td></td><td>LNPI=   1.1447298858494<tr><td></td><td>INVLN2= 1.442695040888963<tr><td></td><td>INVLN10= 4.342944819032519E-1<tr><td></td><td>TWOPI= 6.283185307179587<tr><td></td><td>PIDIV2= 1.570796326794897<tr><td></td><td>SQRTPI= 1.772453850905516<tr><td></td><td>SQRT2PI= 2.506628274631001<tr><td></td><td>INVSQRT2PI= 3.989422804014327E-1<tr><td></td><td>LNSQRT2PI= 9.189385332046727E-1<tr><td></td><td>LN2PIDIV2= 9.189385332046727E-1<tr><td></td><td>SQRT2= 1.414213562373095<tr><td></td><td>SQRT2DIV2= 7.071067811865475E-1<tr><td></td><td>GOLD= 1.618033988749895<tr><td></td><td>CGOLD= 3.819660112501052E-1<tr><td></td><td>FNOK= 0<tr><td></td><td>FNDOMAIN= -1<tr><td></td><td>FNSING= -2<tr><td></td><td>FNOVERFLOW= -3<tr><td></td><td>FNUNDERFLOW= -4<tr><td></td><td>FNTLOSS= -5<tr><td></td><td>FNPLOSS= -6<tr><th align='left'>variables</th><td>MathErr: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> MathError (): <strong>SIGNED32</strong><tr><td></td><td> FMin (X, Y: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> FMax (X, Y: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> IMin (X, Y: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> IMax (X, Y: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> FSwap (<strong>VAR</strong> X, Y: <strong>Float</strong>)<tr><td></td><td> ISwap (<strong>VAR</strong> X, Y: <strong>SIGNED32</strong>)<tr><td></td><td> Sgn (X: <strong>Float</strong>): <strong>SIGNED32</strong><tr><td></td><td> Sgn0 (X: <strong>Float</strong>): <strong>SIGNED32</strong><tr><td></td><td> Expo (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Exp2 (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Exp10 (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Log (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Log10 (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Log2 (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> LogA (X, A: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> IntPower (X: <strong>Float</strong>; N: <strong>SIGNED32</strong>): <strong>Float</strong><tr><td></td><td> Power (X, Y: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Pythag (X, Y: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Logistic (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> SinCos (X: <strong>Float</strong>; <strong>VAR</strong> SinX, CosX: <strong>Float</strong>)<tr><td></td><td> FixAngle (Theta: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Tan (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> ArcSin (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> ArcCos (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> ArcTan2 (Y, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Sinh (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Cosh (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> SinhCosh (X: <strong>Float</strong>; <strong>VAR</strong> SinhX, CoshX: <strong>Float</strong>)<tr><td></td><td> Tanh (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> ArcSinh (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> ArcCosh (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> ArcTanh (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> PolEvl (<strong>VAR</strong> X: <strong>Float</strong>; <strong>CONST</strong> Coef: <strong>TabCoef</strong>; N: <strong>SIGNED32</strong>): <strong>Float</strong><tr><td></td><td> P1Evl (<strong>VAR</strong> X: <strong>Float</strong>; <strong>CONST</strong> Coef: <strong>TabCoef</strong>; N: <strong>SIGNED32</strong>): <strong>Float</strong><tr><td></td><td> SgnGamma (X: <strong>Float</strong>): <strong>SIGNED32</strong><tr><td></td><td> Stirf (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> GamSmall (X1, Z: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> StirfL (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Gamma (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> LnGamma (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> IGamma (A, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> JGamma (A, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Fact (N: <strong>SIGNED32</strong>): <strong>Float</strong><tr><td></td><td> Binomial (N, K: <strong>SIGNED32</strong>): <strong>Float</strong><tr><td></td><td> Beta (X, Y: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> PSeries (A, B, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> CFrac1 (A, B, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> CFrac2 (A, B, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> IBeta (A, B, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Erf (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> Erfc (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> PBinom (N: <strong>SIGNED32</strong>; P: <strong>Float</strong>; K: <strong>SIGNED32</strong>): <strong>Float</strong><tr><td></td><td> FBinom (N: <strong>SIGNED32</strong>; P: <strong>Float</strong>; K: <strong>SIGNED32</strong>): <strong>Float</strong><tr><td></td><td> PPoisson (Mu: <strong>Float</strong>; K: <strong>SIGNED32</strong>): <strong>Float</strong><tr><td></td><td> FPoisson (Mu: <strong>Float</strong>; K: <strong>SIGNED32</strong>): <strong>Float</strong><tr><td></td><td> DNorm (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> FNorm (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> InvNorm (P: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> PNorm (X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> DStudent (Nu: <strong>SIGNED32</strong>; X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> FStudent (Nu: <strong>SIGNED32</strong>; X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> PStudent (Nu: <strong>SIGNED32</strong>; X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> DKhi2 (Nu: <strong>SIGNED32</strong>; X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> FKhi2 (Nu: <strong>SIGNED32</strong>; X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> PKhi2 (Nu: <strong>SIGNED32</strong>; X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> DSnedecor (Nu1, Nu2: <strong>SIGNED32</strong>; X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> FSnedecor (Nu1, Nu2: <strong>SIGNED32</strong>; X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> PSnedecor (Nu1, Nu2: <strong>SIZE</strong>; X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> DExpo (A, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> FExpo (A, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> DBeta (A, B, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> FBeta (A, B, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> DGamma (A, B, X: <strong>Float</strong>): <strong>Float</strong><tr><td></td><td> FGamma (A, B, X: <strong>Float</strong>): <strong>Float</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

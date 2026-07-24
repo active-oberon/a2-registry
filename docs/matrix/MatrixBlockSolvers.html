@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixBlockSolvers">MatrixBlockSolvers</a></p>
+<hr><h1 id="#_C7052900"><a name="MatrixBlockSolvers"></a><a href="#ModuleList">Module</a> MatrixBlockSolvers
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#MatrixBlockSolvers.LU">LU</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#MatrixBlockSolvers.LUAgent">LUAgent</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#MatrixBlockSolvers.Inverse">Inverse</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#MatrixBlockSolvers.LUActive">LUActive</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> Test<tr><td></td><td> Test0<tr><td></td><td> Test1<tr><td></td><td> Test2<tr><td></td><td> Test3<tr><td></td><td> TestLUAgent<tr><td></td><td> TestLUAgent0<tr><td></td><td> TestLUAgent1</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C705D640"><a name="MatrixBlockSolvers.LU"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.LU">LU</a>
+</h2>
+<p> see http://www.maths.man.ac.uk/~nareport/narep207.pdf/demmel95block.pdf</p>
+
+<p> A=LU; diagonal blocks are squareA= <a href="#A11,A12],[A21,A22">A11,A12],[A21,A22</a>=[[I,0],[L21,I * <a href="#A11,A12][0,S">A11,A12][0,S</a> i.e.</p>
+
+<p>A = <a href="#A11,A12]">A11,A12]</a> = <a href="#I">I</a> , 0] * <a href="#A11,A12]">A11,A12]</a> <a href="#A21,A22]">A21,A22]</a> <a href="#L21,I]">L21,I]</a> <a href="#0">0</a> , S </p>
+
+<p>S = Schur Complement = A22-A21 * A11inv * A12to be applied recursively</p>
+
+<dl>
+<dt><strong>specifically</strong></dt>
+<dd>1) U11:=A11; U12 := A122) Solve L21*A11 = A21 for L21 either using Gauss Elimination with partial pivoting or or compute A11inv explicitely, so that step 2 becomes a matrix multiplication and Ux=y is solved entirely by matrix vector multziplication3) S := A22 - L21 * A12 (Schur complement)4) Compute LU factorisation of S recursively</dd>
+
+
+</dl>
+<p>given the block factorisation of A, the solution to a system Ax=b can be obtained by solving Lx=y by forwardsubstitution since L is triangular, and solving Ux=y by block back substitution.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LU* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>VAR</strong> A: <strong>Matrix</strong>; blocksize: <strong>SIGNED32</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C70866C0"><a name="MatrixBlockSolvers.LUAgent"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.LUAgent">LUAgent</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LUAgent* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (datasize, blocksize: <strong>SIZE</strong>; notify: <strong>Notifier</strong>; prio: <strong>SIGNED32</strong>)<tr><td></td><td> Set (<strong>VAR</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C7092A80"><a name="MatrixBlockSolvers.Inverse"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.Inverse">Inverse</a>
+</h2>
+<p> Block matrix inversion is of particular advantage if A is diagonal and SchurComplement is a small matrix, because only those two need inversion.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Inverse* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_C709B8C0"><a name="MatrixBlockSolvers.LUActive"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.LUActive">LUActive</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LUActive* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Initialize<tr><td></td><td> Done<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#LinearFFT">LinearFFT</a></p>
+<hr><h1 id="#_F69EF400"><a name="LinearFFT"></a><a href="#ModuleList">Module</a> LinearFFT
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> FFT (<strong>CONST</strong> realIn, imagIn: <strong>Array</strong>; <strong>VAR</strong> realOut, imagOut: <strong>Array</strong>)<tr><td></td><td> Frequency (nSamples, index: <strong>SIGNED32</strong>; <strong>CONST</strong> realIn, imagIn: <strong>Array</strong>; <strong>VAR</strong> realOut, imagOut: <strong>Datatype</strong>)<tr><td></td><td> IFFT (<strong>CONST</strong> realIn, imagIn: <strong>Array</strong>; <strong>VAR</strong> realOut, imagOut: <strong>Array</strong>)<tr><td></td><td> PowerSpectrum (<strong>CONST</strong> in: <strong>Array</strong>): <strong>Array</strong><tr><td></td><td> <a href="#LinearFFT.Convolution">Convolution</a> (<strong>CONST</strong> in1, in2: <strong>Array</strong>; <strong>VAR</strong> outR, outI: <strong>Array</strong>)<tr><td></td><td> <a href="#LinearFFT.DeConvolution">DeConvolution</a> (<strong>CONST</strong> in1, in2: <strong>Array</strong>; <strong>VAR</strong> outR, outI: <strong>Array</strong>)<tr><td></td><td> <a href="#LinearFFT.CrossCorrelation">CrossCorrelation</a> (<strong>CONST</strong> in1, in2: <strong>Array</strong>; <strong>VAR</strong> outR, outI: <strong>Array</strong>)<tr><td></td><td> AutoCorrelation (<strong>CONST</strong> in: <strong>Array</strong>): <strong>Array</strong><tr><td></td><td> Filter (<strong>CONST</strong> in, filter: <strong>Array</strong>): <strong>Array</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F6A122C0"><a name="LinearFFT.Convolution"></a><a href="#LinearFFT">LinearFFT</a>.<a href="#LinearFFT.Convolution">Convolution</a>
+</h2>
+<p> convolution is multiplication in the Fourier domain: (a+bi )*(c+di) = (ac-bd), i*(bc+ad)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Convolution* (<strong>CONST</strong> in1, in2: <strong>Array</strong>; <strong>VAR</strong> outR, outI: <strong>Array</strong>)</pre>
+<hr><h2 id="#_F6A1AE00"><a name="LinearFFT.DeConvolution"></a><a href="#LinearFFT">LinearFFT</a>.<a href="#LinearFFT.DeConvolution">DeConvolution</a>
+</h2>
+<p> deconvolution is division in Fourier domain: (a+bi )/(c+di) = (ac+bd)/(c*c+d*d), i*(bc-ad)/(c*c+d*d)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DeConvolution* (<strong>CONST</strong> in1, in2: <strong>Array</strong>; <strong>VAR</strong> outR, outI: <strong>Array</strong>)</pre>
+<hr><h2 id="#_F6A23640"><a name="LinearFFT.CrossCorrelation"></a><a href="#LinearFFT">LinearFFT</a>.<a href="#LinearFFT.CrossCorrelation">CrossCorrelation</a>
+</h2>
+<p> crosscorrelation is multiplication in the Fourier domain of the complex conjugate</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CrossCorrelation* (<strong>CONST</strong> in1, in2: <strong>Array</strong>; <strong>VAR</strong> outR, outI: <strong>Array</strong>)</pre>
+</body></html>

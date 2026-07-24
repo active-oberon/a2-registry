@@ -1,0 +1,17 @@
+{
+  "name": "community/generics",
+  "version": "0.0.0",
+  "tier": 1,
+  "context": "A2",
+  "description": "Yaroslav Romanchenko's generic containers (parametric module).",
+  "provides": [
+    "G"
+  ],
+  "requires": {
+    "std/runtime": "*"
+  },
+  "kind": "generic",
+  "residual": [
+    "G is a PARAMETRIC/generic module: compiles to a .SymUu interface but produces no .GofUu until instantiated. The package manager/build must treat generic modules as symbol-only (no object). GenericsUse.Mod is an instantiation example."
+  ]
+}

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixUtilities">MatrixUtilities</a></p>
+<hr><h1 id="#_E8BDB640"><a name="MatrixUtilities"></a><a href="#ModuleList">Module</a> MatrixUtilities
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Uniform= 0<tr><td></td><td>Diag= 1<tr><td></td><td>DiagDominant= 2<tr><td></td><td>BandDiag3= 3<tr><td></td><td>BandDiag5= 4<tr><td></td><td>BandDiag7= 5<tr><td></td><td>Equal= 0<tr><td></td><td>Smaller= 1<tr><td></td><td>Larger= 2<tr><td></td><td>NoFit= 3<tr><td></td><td>Downsample= 0<tr><td></td><td>And= 1<tr><td></td><td>Or= 2<tr><td></td><td>DatatypeChar= 0<tr><td></td><td>DatatypeLR= 2<tr><td></td><td>DatatypeR= 3<tr><td></td><td>DatatypeSR= 4<tr><td></td><td>DatatypeHInt= 6<tr><td></td><td>DatatypeLInt= 7<tr><td></td><td>DatatypeInt= 8<tr><td></td><td>DatatypeSInt= 9<tr><td></td><td>DatatypeUInt8= 10<tr><td></td><td>DatatypeSize= DatatypeHInt<tr><th align='left'>type declarations</th><td>Datatype =<strong>MatrixBase.Datatype</strong><tr><td></td><td>Matrix =<strong>MatrixBase.Matrix</strong><tr><td></td><td>Vector =<strong>MatrixBase.Vector</strong><tr><td></td><td>Tensor =<strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong><tr><td></td><td>IntVector =<strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong><tr><td></td><td>IntTensor =<strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td>BoolMatrix =<strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td>BoolTensor =<strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td>UnaryOp =<strong>PROCEDURE</strong> (x: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td>BinaryOp =<strong>PROCEDURE</strong> (x, y: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td><a href="#MatrixUtilities.RandomGenerator">RandomGenerator</a> =<strong>OBJECT</strong> (<strong>Rand.Generator</strong>)<tr><th align='left'>procedures</th><td> Identity (<strong>VAR</strong> M: <strong>Matrix</strong>)<tr><td></td><td> Diagonal (<strong>CONST</strong> v: <strong>Vector</strong>): <strong>Matrix</strong><tr><td></td><td> InvDiag (<strong>CONST</strong> M: <strong>Matrix</strong>): <strong>Vector</strong><tr><td></td><td> RandomVec (m: <strong>SIZE</strong>; content: <strong>SIGNED32</strong>): <strong>Vector</strong><tr><td></td><td> RandomMatrix (m, n: <strong>SIZE</strong>; content: <strong>SIGNED32</strong>): <strong>Matrix</strong><tr><td></td><td> Random (<strong>CONST</strong> size: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>; content: <strong>SIGNED32</strong>): <strong>Tensor</strong><tr><td></td><td> Normalize (<strong>CONST</strong> m: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong><tr><td></td><td> Rotate90 (<strong>VAR</strong> A: <strong>Matrix</strong>)<tr><td></td><td> RotateRow (<strong>VAR</strong> A: <strong>Matrix</strong>; row, offset: <strong>SIZE</strong>)<tr><td></td><td> RotateCol (<strong>VAR</strong> A: <strong>Matrix</strong>; col, offset: <strong>SIZE</strong>)<tr><td></td><td> RotateVec (<strong>CONST</strong> v: <strong>Vector</strong>; offset: <strong>SIZE</strong>): <strong>Vector</strong><tr><td></td><td> Mirror (<strong>VAR</strong> a: <strong>Tensor</strong>; <strong>CONST</strong> dim: <strong>SIGNED32</strong>)<tr><td></td><td> RestrictionOp (M, N, rowstep, origin: <strong>SIGNED32</strong>; <strong>CONST</strong> operator: <strong>Vector</strong>): <strong>Matrix</strong><tr><td></td><td> ProlongationOp (M, N, colstep, origin: <strong>SIGNED32</strong>; <strong>CONST</strong> operator: <strong>Vector</strong>): <strong>Matrix</strong><tr><td></td><td> InterpolateMUp2 (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> InterpolateMDown2 (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>Matrix</strong><tr><td></td><td> InterpolateVUp2 (<strong>CONST</strong> A: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> InterpolateVDown2 (<strong>CONST</strong> A: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> BoolToIntVector (<strong>CONST</strong> b: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>BOOLEAN</strong>): <strong>IntVector</strong><tr><td></td><td> BoolToFloat (<strong>CONST</strong> b: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>Tensor</strong><tr><td></td><td> BoolToIntMatrix (<strong>CONST</strong> b: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>BOOLEAN</strong>): <strong>IntMatrix</strong><tr><td></td><td> ReduceBool2 (<strong>CONST</strong> b: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>BOOLEAN</strong>; sampling: <strong>SIGNED32</strong>): <strong>BoolMatrix</strong><tr><td></td><td> ExpandBool2 (<strong>CONST</strong> b: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>BOOLEAN</strong>): <strong>BoolMatrix</strong><tr><td></td><td> ApplyUnaryVec (<strong>CONST</strong> m: <strong>Vector</strong>; op: <strong>UnaryOp</strong>): <strong>Vector</strong><tr><td></td><td> ApplyUnary (<strong>CONST</strong> m: <strong>Matrix</strong>; op: <strong>UnaryOp</strong>): <strong>Matrix</strong><tr><td></td><td> ApplyBinaryVec (<strong>CONST</strong> m, m1: <strong>Vector</strong>; op: <strong>BinaryOp</strong>): <strong>Vector</strong><tr><td></td><td> ApplyBinary (<strong>CONST</strong> m, m1: <strong>Matrix</strong>; op: <strong>BinaryOp</strong>): <strong>Matrix</strong><tr><td></td><td> IsNaNL (<strong>CONST</strong> m: <strong>Matrix</strong>): <strong>BoolMatrix</strong><tr><td></td><td> AssignIF (<strong>CONST</strong> m: <strong>Matrix</strong>; <strong>CONST</strong> map: <strong>BoolMatrix</strong>): <strong>Matrix</strong><tr><td></td><td> ApplyMask (<strong>CONST</strong> data: <strong>Tensor</strong>; <strong>CONST</strong> mask: <strong>BoolTensor</strong>; background: <strong>Datatype</strong>): <strong>Tensor</strong><tr><td></td><td> JoinMasked (<strong>CONST</strong> data, data1: <strong>Tensor</strong>; <strong>CONST</strong> mask: <strong>BoolTensor</strong>): <strong>Tensor</strong><tr><td></td><td> SetMasked (<strong>CONST</strong> data: <strong>Tensor</strong>; <strong>CONST</strong> mask: <strong>BoolTensor</strong>; value: <strong>Datatype</strong>): <strong>Tensor</strong><tr><td></td><td> OutVector (<strong>CONST</strong> v: <strong>Vector</strong>)<tr><td></td><td> OutVectorBool (<strong>CONST</strong> v: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>BOOLEAN</strong>)<tr><td></td><td> Out (<strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong>)<tr><td></td><td> OutInt (<strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>)<tr><td></td><td> OutMatrix (<strong>CONST</strong> m: <strong>Matrix</strong>)<tr><td></td><td> OutMatrixBool (<strong>CONST</strong> m: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>BOOLEAN</strong>)<tr><td></td><td> OutLn (<strong>CONST</strong> m: <strong>Matrix</strong>)<tr><td></td><td> OutFloat (x: <strong>FLOAT64</strong>; n, f, D: <strong>SIGNED32</strong>)<tr><td></td><td> OutComplex (c: <strong>ComplexMathL.COMPLEXTYPE</strong>; n, f, D: <strong>SIGNED32</strong>)<tr><td></td><td> OutComplexVector (<strong>CONST</strong> C: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>ComplexMathL.COMPLEXTYPE</strong>)<tr><td></td><td> Print (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong>; n, f, D: <strong>SIGNED32</strong>)<tr><td></td><td> PrintInt (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>)<tr><td></td><td> PrintSize (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>)<tr><td></td><td> WriteFloat (W: <strong>Streams.Writer</strong>; x: <strong>FLOAT64</strong>; n, f, D: <strong>SIGNED32</strong>)<tr><td></td><td> WriteArray (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong>; n, f, D: <strong>SIGNED32</strong>)<tr><td></td><td> MatrixToFloat (<strong>CONST</strong> m: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong>; <strong>VAR</strong> ret: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> FloatToMatrix (<strong>CONST</strong> m: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; <strong>VAR</strong> ret: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong>)<tr><td></td><td> WriteLR (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong>)<tr><td></td><td> WriteR (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> WriteRasSR (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> WriteUInt8 (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>)<tr><td></td><td> WriteInt (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>)<tr><td></td><td> WriteLInt (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>)<tr><td></td><td> WriteSize (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>)<tr><td></td><td> WriteHeader (W: <strong>Streams.Writer</strong>; datatype: <strong>SIGNED32</strong>; <strong>CONST</strong> len: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>)<tr><td></td><td> StoreLR (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong>)<tr><td></td><td> StoreR (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> StoreRasSR (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> StoreInt (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>)<tr><td></td><td> StoreLInt (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>)<tr><td></td><td> StoreSize (W: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>)<tr><td></td><td> ReadLR (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong>)<tr><td></td><td> ReadR (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> ReadRfromSR (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>)<tr><td></td><td> ReadUInt8 (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>)<tr><td></td><td> ReadInt (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>)<tr><td></td><td> ReadLInt (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>)<tr><td></td><td> ReadSize (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> t: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>)<tr><td></td><td> ParseHeader (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> version, datatype: <strong>SIGNED32</strong>; <strong>VAR</strong> len: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>)<tr><td></td><td> Load (R: <strong>Streams.Reader</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong><tr><td></td><td> LoadLR (R: <strong>Streams.Reader</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong><tr><td></td><td> LoadR (R: <strong>Streams.Reader</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> LoadRfromSR (R: <strong>Streams.Reader</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> LoadInt (R: <strong>Streams.Reader</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> LoadLInt (R: <strong>Streams.Reader</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> LoadSize (R: <strong>Streams.Reader</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> LoadUInt8 (R: <strong>Streams.Reader</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> eps (): <strong>FLOAT32</strong><tr><td></td><td> epsL (): <strong>FLOAT64</strong><tr><td></td><td> Set22 (a1, a2, b1, b2: <strong>MatrixBase.Datatype</strong>): <strong>Matrix</strong><tr><td></td><td> Set33 (a1, a2, a3, b1, b2, b3, c1, c2, c3: <strong>MatrixBase.Datatype</strong>): <strong>Matrix</strong><tr><td></td><td> MaxAbs (<strong>CONST</strong> m: <strong>Matrix</strong>): <strong>Datatype</strong><tr><td></td><td> SumAbs (<strong>CONST</strong> v: <strong>Vector</strong>): <strong>Datatype</strong><tr><td></td><td> NewMatrix (rows, cols: <strong>SIZE</strong>): <strong>Matrix</strong><tr><td></td><td> GetVectorOrder (<strong>CONST</strong> v: <strong>Vector</strong>; <strong>VAR</strong> sorted: <strong>Vector</strong>; <strong>VAR</strong> index: <strong>IntVector</strong>; ascending: <strong>BOOLEAN</strong>)<tr><td></td><td> GetDiagonalOrder (<strong>CONST</strong> m: <strong>Matrix</strong>; <strong>VAR</strong> sorted: <strong>Vector</strong>; <strong>VAR</strong> index: <strong>IntVector</strong>; ascending: <strong>BOOLEAN</strong>)<tr><td></td><td> ReorderMatrix (<strong>CONST</strong> m: <strong>Matrix</strong>; <strong>CONST</strong> order: <strong>IntVector</strong>; byRows: <strong>BOOLEAN</strong>): <strong>Matrix</strong><tr><td></td><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E8D321C0"><a name="MatrixUtilities.RandomGenerator"></a><a href="#MatrixUtilities">MatrixUtilities</a>.<a href="#MatrixUtilities.RandomGenerator">RandomGenerator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RandomGenerator* =<strong>OBJECT</strong> (<strong>Rand.Generator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Random (<strong>CONST</strong> size: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>; content: <strong>SIGNED32</strong>): <strong>Tensor</strong><tr><td></td><td> Dices (<strong>CONST</strong> size: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>; sides: <strong>SIGNED32</strong>): <strong>IntTensor</strong><tr><td></td><td> Binary (<strong>CONST</strong> size: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>; p: <strong>Datatype</strong>): <strong>IntTensor</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

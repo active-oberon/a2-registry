@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixStreams">MatrixStreams</a></p>
+<hr><h1 id="#_9C1C2E00"><a name="MatrixStreams"></a><a href="#ModuleList">Module</a> MatrixStreams
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#MatrixStreams.Reader">Reader</a> =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)<tr><td></td><td><a href="#MatrixStreams.Writer">Writer</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><th align='left'>procedures</th><td> <a href="#MatrixStreams.OpenWriter">OpenWriter</a> (<strong>VAR</strong> b: <strong>Writer</strong>; send: <strong>Streams.Sender</strong>)<tr><td></td><td> <a href="#MatrixStreams.OpenReader">OpenReader</a> (<strong>VAR</strong> b: <strong>Reader</strong>; receive: <strong>Streams.Receiver</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_9C1CE940"><a name="MatrixStreams.Reader"></a><a href="#MatrixStreams">MatrixStreams</a>.<a href="#MatrixStreams.Reader">Reader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reader* =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Matrix (): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>Datatype</strong><tr><td></td><td> Vector (): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_9C1D70C0"><a name="MatrixStreams.Writer"></a><a href="#MatrixStreams">MatrixStreams</a>.<a href="#MatrixStreams.Writer">Writer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Writer* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Matrix (<strong>CONST</strong> m: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>Datatype</strong>)<tr><td></td><td> Vector (<strong>CONST</strong> v: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_9C1E08C0"><a name="MatrixStreams.OpenWriter"></a><a href="#MatrixStreams">MatrixStreams</a>.<a href="#MatrixStreams.OpenWriter">OpenWriter</a>
+</h2>
+<p> Open a writer to the specified stream sender. Update must be called after writing to ensure the buffer is written to the stream.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenWriter* (<strong>VAR</strong> b: <strong>Writer</strong>; send: <strong>Streams.Sender</strong>)</pre>
+<hr><h2 id="#_9C1EA9C0"><a name="MatrixStreams.OpenReader"></a><a href="#MatrixStreams">MatrixStreams</a>.<a href="#MatrixStreams.OpenReader">OpenReader</a>
+</h2>
+<p> Open a reader from the specified stream receiver.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenReader* (<strong>VAR</strong> b: <strong>Reader</strong>; receive: <strong>Streams.Receiver</strong>)</pre>
+</body></html>

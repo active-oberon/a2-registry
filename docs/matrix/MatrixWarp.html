@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixWarp">MatrixWarp</a></p>
+<hr><h1 id="#_2DA84780"><a name="MatrixWarp"></a><a href="#ModuleList">Module</a> MatrixWarp
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#MatrixWarp.Warp2D">Warp2D</a> (<strong>CONST</strong> in: <strong>Matrix</strong>; <strong>VAR</strong> out: <strong>Matrix</strong>; <strong>CONST</strong> dX, dY: <strong>Matrix</strong>; splinedegree: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#MatrixWarp.Warp3D">Warp3D</a> (<strong>CONST</strong> in: <strong>Cube</strong>; <strong>VAR</strong> out: <strong>Cube</strong>; <strong>CONST</strong> dX, dY, dZ: <strong>Cube</strong>; splinedegree: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#MatrixWarp.Warp3Dgeneral">Warp3Dgeneral</a> (<strong>CONST</strong> in: <strong>Cube</strong>; <strong>VAR</strong> out: <strong>Cube</strong>; <strong>CONST</strong> dX, dY, dZ: <strong>Cube</strong>; splinedegree: <strong>SIGNED32</strong>)<tr><td></td><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_2DA98080"><a name="MatrixWarp.Warp2D"></a><a href="#MatrixWarp">MatrixWarp</a>.<a href="#MatrixWarp.Warp2D">Warp2D</a>
+</h2>
+<p> warps a rectangle "in" according to warp maps dX,dY containing relative dislocation in pixels.currently expects spline coefficient volume and delivers voxel values (not in spline domain)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Warp2D* (<strong>CONST</strong> in: <strong>Matrix</strong>; <strong>VAR</strong> out: <strong>Matrix</strong>; <strong>CONST</strong> dX, dY: <strong>Matrix</strong>; splinedegree: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_2DAA5C80"><a name="MatrixWarp.Warp3D"></a><a href="#MatrixWarp">MatrixWarp</a>.<a href="#MatrixWarp.Warp3D">Warp3D</a>
+</h2>
+<p> warps a cube "in" according to warping maps dX,dY,dZ that contain the relative dislocation in pixel units. currently expects spline coefficient volume and delivers voxel values (not in spline domain). This is a 'backward' warp in that each 'out' voxel gets data from the interpolated position from the 'in' volume. (map corresponds to out volume). Precondition Size(in)~size(out)=Size(dX)=Size(dY)=Size(dZ)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Warp3D* (<strong>CONST</strong> in: <strong>Cube</strong>; <strong>VAR</strong> out: <strong>Cube</strong>; <strong>CONST</strong> dX, dY, dZ: <strong>Cube</strong>; splinedegree: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_2DABB600"><a name="MatrixWarp.Warp3Dgeneral"></a><a href="#MatrixWarp">MatrixWarp</a>.<a href="#MatrixWarp.Warp3Dgeneral">Warp3Dgeneral</a>
+</h2>
+<p> warps a cube "in" according to warping maps dX,dY,dZ that contain the relative dislocation in pixel units.currently expects spline coefficient volume and delivers voxel values (not in spline domain).In contrast to the procedure Warp3D above, the map <em>in/out volumes can have different sizes; however, map volumes must have consistent size..More generic, but SLOW.</em></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Warp3Dgeneral* (<strong>CONST</strong> in: <strong>Cube</strong>; <strong>VAR</strong> out: <strong>Cube</strong>; <strong>CONST</strong> dX, dY, dZ: <strong>Cube</strong>; splinedegree: <strong>SIGNED32</strong>)</pre>
+</body></html>

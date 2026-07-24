@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MatrixLeastSquares">MatrixLeastSquares</a></p>
+<hr><h1 id="#_974BFD80"><a name="MatrixLeastSquares"></a><a href="#ModuleList">Module</a> MatrixLeastSquares
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "compute least squares solution from linear system of equation";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#MatrixLeastSquares.LeastSquares">LeastSquares</a> =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)<tr><td></td><td><a href="#MatrixLeastSquares.LeastSquaresQR">LeastSquaresQR</a> =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)<tr><td></td><td><a href="#MatrixLeastSquares.LeastSquaresSVD">LeastSquaresSVD</a> =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)<tr><td></td><td><a href="#MatrixLeastSquares.TotalLeastSquares">TotalLeastSquares</a> =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)<tr><th align='left'>procedures</th><td> CreateLeastSquaresQR (): <strong>MatrixBase.Solver</strong><tr><td></td><td> CreateLeastSquaresSVD (): <strong>MatrixBase.Solver</strong><tr><td></td><td> CreateTotalLeastSquares (): <strong>MatrixBase.Solver</strong><tr><td></td><td> SolveLeastSquares (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveLeastSquaresQR (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveLeastSquaresSVD (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveTotalLeastSquares (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> <a href="#MatrixLeastSquares.TestQR">TestQR</a><tr><td></td><td> TestSVD<tr><td></td><td> TestTLS</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_974DEC00"><a name="MatrixLeastSquares.LeastSquares"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.LeastSquares">LeastSquares</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LeastSquares* =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_974E6C40"><a name="MatrixLeastSquares.LeastSquaresQR"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.LeastSquaresQR">LeastSquaresQR</a>
+</h2>
+<p> Least Squares based on QR - prefer this in overdetermined systems; works in square and overdetermined systems</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LeastSquaresQR* =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>qr: <strong>MatrixStandardSolvers.QR</strong><tr><td></td><td>solver: <strong>MatrixStandardSolvers.QR</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_974F5300"><a name="MatrixLeastSquares.LeastSquaresSVD"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.LeastSquaresSVD">LeastSquaresSVD</a>
+</h2>
+<p> Least Squares based on SVD - prefer this in underdetermined systems; works in under/overdetermined and square systems and works in ill-conditioned systems</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LeastSquaresSVD* =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_97502C80"><a name="MatrixLeastSquares.TotalLeastSquares"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.TotalLeastSquares">TotalLeastSquares</a>
+</h2>
+<p> Total leasts squares are tricky in that they do not always have a unique solution or a solution at all, and in some situations the results given by the algorithm are not the true TLS solution. SeeIVETA HNETYNKOVA, MARTIN PLESINGER, DIANA MARIA SIMA, ZDENIK STRAKO,SABINE VAN HUFFEL: THE TOTAL LEAST SQUARES PROBLEM IN AX . B: A NEW CLASSIFICATION WITH THE RELATIONSHIP TO THE CLASSICAL WORKS</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TotalLeastSquares* =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>dC: <strong>Matrix</strong><tr><td></td><td>C: <strong>Matrix</strong><tr><td></td><td>svd: <strong>MatrixSVD.Solver</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveMultiple (<strong>CONST</strong> B: <strong>Matrix</strong>): <strong>Matrix</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_975203C0"><a name="MatrixLeastSquares.TestQR"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.TestQR">TestQR</a>
+</h2>
+<p> how to use</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TestQR*</pre>
+</body></html>

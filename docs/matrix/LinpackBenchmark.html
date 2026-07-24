@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#LinpackBenchmark">LinpackBenchmark</a></p>
+<hr><h1 id="#_A0E23F80"><a name="LinpackBenchmark"></a><a href="#ModuleList">Module</a> LinpackBenchmark
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Transpose (<strong>VAR</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Linpack1000d<tr><td></td><td> <a href="#LinpackBenchmark.Test">Test</a><tr><td></td><td> <a href="#LinpackBenchmark.TestLUA">TestLUA</a><tr><td></td><td> <a href="#LinpackBenchmark.TestMatMul">TestMatMul</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_A0E2B7C0">
+</h1>
+<p>Use LinpackBenchmark.Test to assess the performance of your current hardware/software setup for various basic linear algebra operations for various data sizes.Also, the Linpack algorithm performance is measured:</p>
+
+<p>a) using a simple linear approach on a single CPUb) using block-decomposition of the matrix (potentially making use of multithreaded linear algebra operations like MatMul, behind the scences)c) using active objects (multiple threads/active objects working on block-decomposed algorithm)</p>
+
+<p>If your platform has a MathArrayBaseOptimized.Mod implementation, it will be used for accelerated linear algebra</p>
+<hr><h2 id="#_A0E401C0"><a name="LinpackBenchmark.Test"></a><a href="#LinpackBenchmark">LinpackBenchmark</a>.<a href="#LinpackBenchmark.Test">Test</a>
+</h2>
+<p> Test Performance of various linear algebra operations</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Test*</pre>
+<hr><h2 id="#_A0E44200"><a name="LinpackBenchmark.TestLUA"></a><a href="#LinpackBenchmark">LinpackBenchmark</a>.<a href="#LinpackBenchmark.TestLUA">TestLUA</a>
+</h2>
+<p> compare performance of three approaches to LU decomposition: a) direct, b) block operators, and c) active objects performing block operations</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TestLUA*</pre>
+<hr><h2 id="#_A0E4B580"><a name="LinpackBenchmark.TestMatMul"></a><a href="#LinpackBenchmark">LinpackBenchmark</a>.<a href="#LinpackBenchmark.TestMatMul">TestMatMul</a>
+</h2>
+<p> test performance of matrix multiplication as a function of (square) matrix size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TestMatMul*</pre>
+</body></html>

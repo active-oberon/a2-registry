@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#StatisticsBase">StatisticsBase</a></p>
+<hr><h1 id="#_D1B1AA00"><a name="StatisticsBase"></a><a href="#ModuleList">Module</a> StatisticsBase
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "tools for statistics";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>Matrix =<strong>MatrixBase.Matrix</strong><tr><td></td><td>Vector =<strong>MatrixBase.Vector</strong><tr><td></td><td>Datatype =<strong>MatrixBase.Datatype</strong><tr><td></td><td>Array =<strong>ARRAY</strong> [?]<strong>OF</strong> <strong>Datatype</strong><tr><th align='left'>procedures</th><td> Count (<strong>CONST</strong> a: <strong>Array</strong>): <strong>SIZE</strong><tr><td></td><td> Prod (<strong>CONST</strong> v: <strong>Vector</strong>): <strong>Datatype</strong><tr><td></td><td> ProdS (<strong>CONST</strong> v: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>): <strong>Datatype</strong><tr><td></td><td> Mean (<strong>CONST</strong> X: <strong>Array</strong>): <strong>Datatype</strong><tr><td></td><td> MeanSquare (<strong>CONST</strong> X: <strong>Array</strong>): <strong>Datatype</strong><tr><td></td><td> RMS (<strong>CONST</strong> X: <strong>Array</strong>): <strong>Datatype</strong><tr><td></td><td> QSort (<strong>VAR</strong> X: <strong>Vector</strong>)<tr><td></td><td> DestructiveMedian (<strong>VAR</strong> v1: <strong>Vector</strong>): <strong>Datatype</strong><tr><td></td><td> Median (<strong>CONST</strong> v: <strong>Vector</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#StatisticsBase.Variance">Variance</a> (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#StatisticsBase.StandardDeviation">StandardDeviation</a> (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#StatisticsBase.EstimatedVariance">EstimatedVariance</a> (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#StatisticsBase.EstimatedStandardDeviation">EstimatedStandardDeviation</a> (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong><tr><td></td><td> Skewness (<strong>CONST</strong> X: <strong>Array</strong>): <strong>Datatype</strong><tr><td></td><td> Kurtosis (<strong>CONST</strong> X: <strong>Array</strong>): <strong>Datatype</strong><tr><td></td><td> Normalize (<strong>CONST</strong> a: <strong>Array</strong>): <strong>Array</strong><tr><td></td><td> NormalizeColumns (<strong>VAR</strong> A: <strong>Matrix</strong>)<tr><td></td><td> ZeroMeanColumns (<strong>VAR</strong> A: <strong>Matrix</strong>)<tr><td></td><td> <a href="#StatisticsBase.SoftMax">SoftMax</a> (<strong>VAR</strong> x: <strong>Array</strong>): <strong>Array</strong><tr><td></td><td> Logistic (X: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#StatisticsBase.SoftMaxNormalize">SoftMaxNormalize</a> (<strong>CONST</strong> x: <strong>Array</strong>): <strong>Array</strong><tr><td></td><td> TestSort<tr><td></td><td> TestMedian<tr><td></td><td> TestSoftMax<tr><td></td><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D1B55DC0"><a name="StatisticsBase.Variance"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.Variance">Variance</a>
+</h2>
+<p> variance of dataset</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Variance* (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_D1B5A940"><a name="StatisticsBase.StandardDeviation"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.StandardDeviation">StandardDeviation</a>
+</h2>
+<p> of full data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StandardDeviation* (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_D1B5F4C0"><a name="StatisticsBase.EstimatedVariance"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.EstimatedVariance">EstimatedVariance</a>
+</h2>
+<p> variance estimated from subset of data, divisor is (N-1)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EstimatedVariance* (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_D1B65940"><a name="StatisticsBase.EstimatedStandardDeviation"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.EstimatedStandardDeviation">EstimatedStandardDeviation</a>
+</h2>
+<p> subset of data , divisor is (N-1)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EstimatedStandardDeviation* (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_D1B6B500"><a name="StatisticsBase.SoftMax"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.SoftMax">SoftMax</a>
+</h2>
+<p> SoftMax of a data vector = Normalized exponential; SUM=1.0 y[i] = softmax(x[i]) = exp(x[i])/sum(exp(x))</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SoftMax* (<strong>VAR</strong> x: <strong>Array</strong>): <strong>Array</strong></pre>
+<hr><h2 id="#_D1B72D00"><a name="StatisticsBase.SoftMaxNormalize"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.SoftMaxNormalize">SoftMaxNormalize</a>
+</h2>
+<p>Normalize input such that input mean(x)=0, input SD(x)=1, then bring to <a href="#0..1]">0..1]</a> using SoftMax sigmoid transform y[i] = softmax(x[i]) = exp(x[i])/sum(exp(x))</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SoftMaxNormalize* (<strong>CONST</strong> x: <strong>Array</strong>): <strong>Array</strong></pre>
+</body></html>
