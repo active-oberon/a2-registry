@@ -59,3 +59,9 @@ mv packages/<name>/_doc/*.html docs/<name>/
   interface extraction from `.SymUu`). Their real blockers are 32-bit, GPU FFI, legacy
   `Aos*` names + `std/compiler`, and `std/gui` respectively (see `index.json`).
 - `a2oberon/ARM` (Enet/Zynq bare-metal) is an embedded track, not a library — excluded.
+
+## License
+
+Registry tooling, catalogue and site: **BSD 3-Clause**, © 2026 Andrii Puhachenko (see `LICENSE`).
+Vendored package sources under `packages/` remain the work of their original authors, gathered
+here for consolidation with attribution preserved — see `NOTICE`.

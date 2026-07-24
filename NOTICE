@@ -1,0 +1,44 @@
+a2-registry — NOTICE
+====================
+
+This repository has two distinct kinds of content with different provenance.
+
+1. Registry tooling, catalogue and site
+----------------------------------------
+The registry infrastructure — the site generator (`tools/`), the styled site
+and its assets, `index.json`, the `a2pkg.json` manifests authored for this
+registry, and the documentation and workflows — is:
+
+    Copyright (c) 2026, Andrii Puhachenko
+    Licensed under the BSD 3-Clause License (see LICENSE).
+
+2. Vendored package sources (under `packages/`)
+-----------------------------------------------
+The Active Oberon / A2 module sources collected under `packages/` are the work
+of their ORIGINAL AUTHORS, not of this registry. They are gathered here to
+consolidate and preserve libraries that were otherwise scattered across the
+community, with author attribution preserved (see the `AUTHOR "..."` comment in
+each module's header).
+
+Known authorship and provenance:
+
+  - community/matrix      — Patrick Hunziker (matrix / imaging / ML library
+                            built on Felix Friedrich's enhanced array compiler)
+  - community/generics    — Yaroslav Romanchenko (parametric generic containers)
+  - community/fftw        — FFTW3 FFI bindings, A2Community contributors
+  - community/freeimage   — FreeImage FFI bindings, A2Community contributors
+  - community/usb         — libusb / FTD2XX FFI bindings, A2Community contributors
+  - other packages        — see each module's AUTHOR header
+
+Canonical upstream collection: https://github.com/sergundo/A2Community
+Lineage: these modules build on the ETH Zürich Oberon / Aos / A2 system, which
+is distributed under the BSD 3-Clause License.
+
+Most of this code has been shared openly within the A2 community for years but
+without explicit per-file license statements. It is redistributed here in good
+faith, for consolidation and preservation, with attribution intact and without
+any claim of ownership over the original authors' work.
+
+If you are an author of any vendored package and would like it relicensed,
+amended, attributed differently, or removed, please open an issue — it will be
+honored promptly.
