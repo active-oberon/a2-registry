@@ -223,6 +223,9 @@ def module_body(fox_html, name, short, module, modules, rel):
     m = re.search(r'<body>(.*)</body>', fox_html, re.S|re.I)
     inner = m.group(1) if m else fox_html
     inner = re.sub(r'<style.*?</style>', '', inner, flags=re.S|re.I)  # drop Fox inline CSS
+    # strip Fox's redundant "ModuleList" preamble (empty heading + repeated "Module X"
+    # link) — the breadcrumb already names the module; start at the real module heading
+    inner = re.sub(r'^.*?<p>\s*Module\b.*?</p>\s*(?:<hr\s*/?>)?', '', inner, count=1, flags=re.S|re.I)
     inner = linkify(inner, module, rel)
     CAP = 18
     rail_items = "".join(
