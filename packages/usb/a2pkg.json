@@ -1,0 +1,6 @@
+{ "name":"community/usb","version":"0.0.0","tier":2,"context":"A2",
+  "description":"FFI bindings to native USB libraries: libusb + FTDI FTD2XX.",
+  "provides":["libusb","FTD2XX"],
+  "requires":{"std/runtime":"*"},
+  "native":{"library":"libusb-1.0.so / libftd2xx.so","note":"runtime dependencies loaded via HostLibs."},
+  "residual":["Testlibusb is an example, not API."] }

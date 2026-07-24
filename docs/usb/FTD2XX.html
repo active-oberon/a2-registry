@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FTD2XX">FTD2XX</a></p>
+<hr><h1 id="#_3DE29DC0"><a name="FTD2XX"></a><a href="#ModuleList">Module</a> FTD2XX
+</h1>
+<p> AUTHOR "fnecati"; PURPOSE "FTDI USB/Serial interface for WinAos/LinuxAos";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>MAX_NUM_DEVICES= 50<tr><td></td><td>MS_CTS_ON= 16<tr><td></td><td>MS_DSR_ON= 32<tr><td></td><td>MS_RING_ON= 64<tr><td></td><td>MS_RLSD_ON= 128<tr><td></td><td>CE_RXOVER= 1<tr><td></td><td>CE_OVERRUN= 2<tr><td></td><td>CE_RXPARITY= 4<tr><td></td><td>CE_FRAME= 8<tr><td></td><td>CE_BREAK= 16<tr><td></td><td>CE_TXFULL= 256<tr><td></td><td>CE_PTO= 512<tr><td></td><td>CE_IOE= 1024<tr><td></td><td>CE_DNS= 2048<tr><td></td><td>CE_OOP= 4096<tr><td></td><td>CE_MODE= 32768<tr><td></td><td>INVALID_HANDLE_VALUE= 4294967295<tr><td></td><td>OK= 0<tr><td></td><td>INVALID_HANDLE= 1<tr><td></td><td>DEVICE_NOT_FOUND= 2<tr><td></td><td>DEVICE_NOT_OPENED= 3<tr><td></td><td>IO_ERROR= 4<tr><td></td><td>INSUFFICIENT_RESOURCES= 5<tr><td></td><td>INVALID_PARAMETER= 6<tr><td></td><td>INVALID_BAUD_RATE= 7<tr><td></td><td>DEVICE_NOT_OPENED_FOR_ERASE= 8<tr><td></td><td>DEVICE_NOT_OPENED_FOR_WRITE= 9<tr><td></td><td>FAILED_TO_WRITE_DEVICE= 10<tr><td></td><td>EEPROM_READ_FAILED= 11<tr><td></td><td>EEPROM_WRITE_FAILED= 12<tr><td></td><td>EEPROM_ERASE_FAILED= 13<tr><td></td><td>EEPROM_NOT_PRESENT= 14<tr><td></td><td>EEPROM_NOT_PROGRAMMED= 15<tr><td></td><td>INVALID_ARGS= 16<tr><td></td><td>NOT_SUPPORTED= 17<tr><td></td><td>OTHER_ERROR= 18<tr><td></td><td>OPEN_BY_SERIAL_NUMBER= 1<tr><td></td><td>OPEN_BY_DESCRIPTION= 2<tr><td></td><td>OPEN_BY_LOCATION= 4<tr><td></td><td>LIST_NUMBER_ONLY= 2147483648<tr><td></td><td>LIST_BY_INDEX= 1073741824<tr><td></td><td>LIST_ALL= 536870912<tr><td></td><td>LIST_MASK= ((LIST_NUMBER_ONLY+LIST_BY_INDEX)+LIST_ALL)<tr><td></td><td>BAUD_300= 300<tr><td></td><td>BAUD_600= 600<tr><td></td><td>BAUD_1200= 1200<tr><td></td><td>BAUD_2400= 2400<tr><td></td><td>BAUD_4800= 4800<tr><td></td><td>BAUD_9600= 9600<tr><td></td><td>BAUD_14400= 14400<tr><td></td><td>BAUD_19200= 19200<tr><td></td><td>BAUD_38400= 38400<tr><td></td><td>BAUD_57600= 57600<tr><td></td><td>BAUD_115200= 115200<tr><td></td><td>BAUD_230400= 230400<tr><td></td><td>BAUD_460800= 460800<tr><td></td><td>BAUD_921600= 921600<tr><td></td><td>BITS_8= 8<tr><td></td><td>BITS_7= 7<tr><td></td><td>STOP_BITS_1= 0<tr><td></td><td>STOP_BITS_2= 2<tr><td></td><td>PARITY_NONE= 0<tr><td></td><td>PARITY_ODD= 1<tr><td></td><td>PARITY_EVEN= 2<tr><td></td><td>PARITY_MARK= 3<tr><td></td><td>PARITY_SPACE= 4<tr><td></td><td>FLOW_NONE= 0<tr><td></td><td>FLOW_RTS_CTS= 256<tr><td></td><td>FLOW_DTR_DSR= 512<tr><td></td><td>FLOW_XON_XOFF= 1024<tr><td></td><td>PURGE_RX= 1<tr><td></td><td>PURGE_TX= 2<tr><td></td><td>EVENT_RXCHAR= 1<tr><td></td><td>EVENT_MODEM_STATUS= 2<tr><td></td><td>EVENT_LINE_STATUS= 4<tr><td></td><td>DEFAULT_RX_TIMEOUT= 300<tr><td></td><td>DEFAULT_TX_TIMEOUT= 300<tr><td></td><td>DEVICE_BM= 0<tr><td></td><td>DEVICE_AM= 1<tr><td></td><td>DEVICE_100AX= 2<tr><td></td><td>DEVICE_UNKNOWN= 3<tr><td></td><td>DEVICE_2232C= 4<tr><td></td><td>DEVICE_232R= 5<tr><td></td><td>DEVICE_2232H= 6<tr><td></td><td>DEVICE_4232H= 7<tr><td></td><td>DEVICE_232H= 8<tr><td></td><td>DEVICE_X_SERIES= 9<tr><td></td><td>DEVICE_4222H_0= 10<tr><td></td><td>DEVICE_4222H_1_2= 11<tr><td></td><td>DEVICE_4222H_3= 12<tr><td></td><td>DEVICE_4222_PROG= 13<tr><td></td><td>BITMODE_RESET= 0<tr><td></td><td>BITMODE_ASYNC_BITBANG= 1<tr><td></td><td>BITMODE_MPSSE= 2<tr><td></td><td>BITMODE_SYNC_BITBANG= 4<tr><td></td><td>BITMODE_MCU_HOST= 8<tr><td></td><td>BITMODE_FAST_SERIAL= 16<tr><td></td><td>BITMODE_CBUS_BITBANG= 32<tr><td></td><td>BITMODE_SYNC_FIFO= 64<tr><td></td><td>FT_232R_CBUS_TXDEN= 0<tr><td></td><td>FT_232R_CBUS_PWRON= 1<tr><td></td><td>FT_232R_CBUS_RXLED= 2<tr><td></td><td>FT_232R_CBUS_TXLED= 3<tr><td></td><td>FT_232R_CBUS_TXRXLED= 4<tr><td></td><td>FT_232R_CBUS_SLEEP= 5<tr><td></td><td>FT_232R_CBUS_CLK48= 6<tr><td></td><td>FT_232R_CBUS_CLK24= 7<tr><td></td><td>FT_232R_CBUS_CLK12= 8<tr><td></td><td>FT_232R_CBUS_CLK6= 9<tr><td></td><td>FT_232R_CBUS_IOMODE= 10<tr><td></td><td>FT_232R_CBUS_BITBANG_WR= 11<tr><td></td><td>FT_232R_CBUS_BITBANG_RD= 12<tr><td></td><td>FT_232H_CBUS_TRISTATE= 0<tr><td></td><td>FT_232H_CBUS_TXLED= 1<tr><td></td><td>FT_232H_CBUS_RXLED= 2<tr><td></td><td>FT_232H_CBUS_TXRXLED= 3<tr><td></td><td>FT_232H_CBUS_PWREN= 4<tr><td></td><td>FT_232H_CBUS_SLEEP= 5<tr><td></td><td>FT_232H_CBUS_DRIVE_0= 6<tr><td></td><td>FT_232H_CBUS_DRIVE_1= 7<tr><td></td><td>FT_232H_CBUS_IOMODE= 8<tr><td></td><td>FT_232H_CBUS_TXDEN= 9<tr><td></td><td>FT_232H_CBUS_CLK30= 10<tr><td></td><td>FT_232H_CBUS_CLK15= 11<tr><td></td><td>FT_232H_CBUS_CLK7_5= 12<tr><td></td><td>FLAGS_OPENED= 1<tr><td></td><td>FLAGS_HISPEED= 2<tr><td></td><td>EV_RXCHAR= 1<tr><td></td><td>EV_RXFLAG= 2<tr><td></td><td>EV_TXEMPTY= 4<tr><td></td><td>EV_CTS= 8<tr><td></td><td>EV_DSR= 16<tr><td></td><td>EV_RLSD= 32<tr><td></td><td>EV_BREAK= 64<tr><td></td><td>EV_ERR= 128<tr><td></td><td>EV_RING= 256<tr><td></td><td>EV_PERR= 512<tr><td></td><td>EV_RX80FULL= 1024<tr><td></td><td>EV_EVENT1= 2048<tr><td></td><td>EV_EVENT2= 4096<tr><td></td><td>SETXOFF= 1<tr><td></td><td>SETXON= 2<tr><td></td><td>SETRTS= 3<tr><td></td><td>CLRRTS= 4<tr><td></td><td>SETDTR= 5<tr><td></td><td>CLRDTR= 6<tr><td></td><td>RESETDEV= 7<tr><td></td><td>SETBREAK= 8<tr><td></td><td>CLRBREAK= 9<tr><td></td><td>PURGE_TXABORT= 1<tr><td></td><td>PURGE_RXABORT= 2<tr><td></td><td>PURGE_TXCLEAR= 4<tr><td></td><td>PURGE_RXCLEAR= 8<tr><th align='left'>type declarations</th><td>DWORD =<strong>UNSIGNED32</strong><tr><td></td><td>ULONG =<strong>UNSIGNED32</strong><tr><td></td><td>USHORT =<strong>UNSIGNED16</strong><tr><td></td><td>UCHAR =<strong>UNSIGNED8</strong><tr><td></td><td>PCHAR =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>PVOID =<strong>ADDRESS</strong><tr><td></td><td>HANDLE =<strong>UNSIGNED32</strong><tr><td></td><td>INT =<strong>SIGNED32</strong><tr><td></td><td>UINT =<strong>UNSIGNED32</strong><tr><td></td><td>LPVOID =<strong>PVOID</strong><tr><td></td><td><a href="#FTD2XX.OVERLAPPED">OVERLAPPED</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FTD2XX.LPOVERLAPPED">LPOVERLAPPED</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>OVERLAPPED</strong><tr><td></td><td>STATUS =<strong>ULONG</strong><tr><td></td><td>PEVENT_HANDLER =<strong>PROCEDURE</strong>{C} (a: <strong>DWORD</strong>; b: <strong>DWORD</strong>)<tr><td></td><td>DEVICE =<strong>ULONG</strong><tr><td></td><td><a href="#FTD2XX.PROGRAM_DATA">PROGRAM_DATA</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FTD2XX.PPROGRAM_DATA">PPROGRAM_DATA</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>PROGRAM_DATA</strong><tr><td></td><td><a href="#FTD2XX.DEVICE_LIST_INFO_NODE">DEVICE_LIST_INFO_NODE</a> =<strong>RECORD</strong> <tr><th align='left'>variables</th><td>Open: <strong>PROCEDURE</strong>{C} (deviceNumber: <strong>DWORD</strong>; <strong>VAR</strong> pHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>OpenEx: <strong>PROCEDURE</strong>{C} (pArg1: <strong>ADDRESS</strong>; Flags: <strong>DWORD</strong>; <strong>VAR</strong> pHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>ListDevices: <strong>PROCEDURE</strong>{C} (pArg1, pArg2: <strong>PVOID</strong>; Flags: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>SetVIDPID: <strong>PROCEDURE</strong>{C} (dwVID, dwPID: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>GetVIDPID: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> pdwVID, pdwPID: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>Close: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>Read: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; nBufferSize: <strong>DWORD</strong>; <strong>VAR</strong> lpBytesReturned: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>Write: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; nBufferSize: <strong>DWORD</strong>; <strong>VAR</strong> lpBytesWritten: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>IoCtl: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; dwIoControlCode: <strong>DWORD</strong>; lpInBuf: <strong>LPVOID</strong>; nInBufSize: <strong>DWORD</strong>; lpOutBuf: <strong>LPVOID</strong>; nOutBufSize: <strong>DWORD</strong>; lpBytesReturned: <strong>DWORD</strong>; <strong>VAR</strong> lpOverlapped: <strong>LPOVERLAPPED</strong>): <strong>STATUS</strong><tr><td></td><td>SetBaudRate: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; BaudRate: <strong>ULONG</strong>): <strong>STATUS</strong><tr><td></td><td>SetDivisor: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; Divisor: <strong>USHORT</strong>): <strong>STATUS</strong><tr><td></td><td>SetDataCharacteristics: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; WordLength, StopBits, Parity: <strong>UCHAR</strong>): <strong>STATUS</strong><tr><td></td><td>SetFlowControl: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; FlowControl: <strong>USHORT</strong>; XonChar, XoffChar: <strong>UCHAR</strong>): <strong>STATUS</strong><tr><td></td><td>ResetDevice: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>SetDtr: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>ClrDtr: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>SetRts: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>ClrRts: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>GetModemStatus: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; <strong>VAR</strong> pModemStatus: <strong>ULONG</strong>): <strong>STATUS</strong><tr><td></td><td>SetChars: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; EventChar, EventCharEnabled, ErrorChar, ErrorCharEnabled: <strong>UCHAR</strong>): <strong>STATUS</strong><tr><td></td><td>Purge: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; Mask: <strong>ULONG</strong>): <strong>STATUS</strong><tr><td></td><td>SetTimeouts: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; ReadTimeout, WriteTimeout: <strong>ULONG</strong>): <strong>STATUS</strong><tr><td></td><td>GetQueueStatus: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; <strong>VAR</strong> dwRxBytes: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>GetQueueStatusEx: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; <strong>VAR</strong> dwRxBytes: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>SetEventNotification: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; Mask: <strong>DWORD</strong>; Param: <strong>PVOID</strong>): <strong>STATUS</strong><tr><td></td><td>GetStatus: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; <strong>VAR</strong> dwRxBytes, dwTxBytes, dwEventDWord: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>SetBreakOn: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>SetBreakOff: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>SetWaitMask: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; Mask: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>WaitOnMask: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; <strong>VAR</strong> Mask: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>GetEventStatus: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; <strong>VAR</strong> dwEventDWord: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>ReadEE: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; dwWordOffset: <strong>DWORD</strong>; <strong>VAR</strong> lpwValue: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>WriteEE: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>; dwWordOffset: <strong>DWORD</strong>; wValue: <strong>UNSIGNED16</strong>): <strong>STATUS</strong><tr><td></td><td>EraseEE: <strong>PROCEDURE</strong>{C} (ftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>CreateDeviceInfoList: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> lpdwNumDevs: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>GetDeviceInfoList: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> pDest: <strong>ARRAY</strong> <strong>OF</strong> <strong>DEVICE_LIST_INFO_NODE</strong>; <strong>VAR</strong> lpdwNumDevs: <strong>DWORD</strong>): <strong>STATUS</strong><tr><td></td><td>GetDeviceInfoDetail: <strong>PROCEDURE</strong>{C} (dwIndex: <strong>DWORD</strong>; <strong>VAR</strong> lpdwFlags, lpdwType, lpdwID, lpdwLocId: <strong>DWORD</strong>; lpSerialNumber: <strong>LPVOID</strong>; lpDescription: <strong>LPVOID</strong>; <strong>VAR</strong> pftHandle: <strong>HANDLE</strong>): <strong>STATUS</strong><tr><td></td><td>numberOfDevices: <strong>ULONG</strong><tr><td></td><td>devInfo: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>DEVICE_LIST_INFO_NODE</strong><tr><th align='left'>procedures</th><td> PrintError (<strong>CONST</strong> errStr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; portStatus: <strong>ULONG</strong>)<tr><td></td><td> GetProcAddress (lib: <strong>HostLibs.LibHandle</strong>; <strong>CONST</strong> procName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; adr: <strong>ADDRESS</strong>)<tr><td></td><td> InitFtdiDevices</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_3DF74FC0"><a name="FTD2XX.OVERLAPPED"></a><a href="#FTD2XX">FTD2XX</a>.<a href="#FTD2XX.OVERLAPPED">OVERLAPPED</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OVERLAPPED* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Internal: <strong>DWORD</strong><tr><td></td><td>InternalHigh: <strong>DWORD</strong><tr><td></td><td>Offset: <strong>DWORD</strong><tr><td></td><td>OffsetHigh: <strong>DWORD</strong><tr><td></td><td>hEvent: <strong>HANDLE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_3DF7C740"><a name="FTD2XX.LPOVERLAPPED"></a><a href="#FTD2XX">FTD2XX</a>.<a href="#FTD2XX.LPOVERLAPPED">LPOVERLAPPED</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LPOVERLAPPED* =<strong>POINTER</strong> <strong>TO</strong> <strong>OVERLAPPED</strong></pre>
+<hr><h2 id="#_3DF7F340"><a name="FTD2XX.PROGRAM_DATA"></a><a href="#FTD2XX">FTD2XX</a>.<a href="#FTD2XX.PROGRAM_DATA">PROGRAM_DATA</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PROGRAM_DATA* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Signature1: <strong>DWORD</strong><tr><td></td><td>Signature2: <strong>DWORD</strong><tr><td></td><td>Version: <strong>DWORD</strong><tr><td></td><td>VendorId: <strong>UNSIGNED16</strong><tr><td></td><td>ProductId: <strong>UNSIGNED16</strong><tr><td></td><td>Manufacturer: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>ManufacturerId: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Description: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>SerialNumber: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>MaxPower: <strong>UNSIGNED16</strong><tr><td></td><td>PnP: <strong>UNSIGNED16</strong><tr><td></td><td>SelfPowered: <strong>UNSIGNED16</strong><tr><td></td><td>RemoteWakeup: <strong>UNSIGNED16</strong><tr><td></td><td>Rev4: <strong>UCHAR</strong><tr><td></td><td>IsoIn: <strong>UCHAR</strong><tr><td></td><td>IsoOut: <strong>UCHAR</strong><tr><td></td><td>PullDownEnable: <strong>UCHAR</strong><tr><td></td><td>SerNumEnable: <strong>UCHAR</strong><tr><td></td><td>USBVersionEnable: <strong>UCHAR</strong><tr><td></td><td>USBVersion: <strong>UNSIGNED16</strong><tr><td></td><td>Rev5: <strong>UCHAR</strong><tr><td></td><td>IsoInA: <strong>UCHAR</strong><tr><td></td><td>IsoInB: <strong>UCHAR</strong><tr><td></td><td>IsoOutA: <strong>UCHAR</strong><tr><td></td><td>IsoOutB: <strong>UCHAR</strong><tr><td></td><td>PullDownEnable5: <strong>UCHAR</strong><tr><td></td><td>SerNumEnable5: <strong>UCHAR</strong><tr><td></td><td>USBVersionEnable5: <strong>UCHAR</strong><tr><td></td><td>USBVersion5: <strong>UNSIGNED16</strong><tr><td></td><td>AIsHighCurrent: <strong>UCHAR</strong><tr><td></td><td>BIsHighCurrent: <strong>UCHAR</strong><tr><td></td><td>IFAIsFifo: <strong>UCHAR</strong><tr><td></td><td>IFAIsFifoTar: <strong>UCHAR</strong><tr><td></td><td>IFAIsFastSer: <strong>UCHAR</strong><tr><td></td><td>AIsVCP: <strong>UCHAR</strong><tr><td></td><td>IFBIsFifo: <strong>UCHAR</strong><tr><td></td><td>IFBIsFifoTar: <strong>UCHAR</strong><tr><td></td><td>IFBIsFastSer: <strong>UCHAR</strong><tr><td></td><td>BIsVCP: <strong>UCHAR</strong><tr><td></td><td>UseExtOsc: <strong>UCHAR</strong><tr><td></td><td>HighDriveIOs: <strong>UCHAR</strong><tr><td></td><td>EndpointSize: <strong>UCHAR</strong><tr><td></td><td>PullDownEnableR: <strong>UCHAR</strong><tr><td></td><td>SerNumEnableR: <strong>UCHAR</strong><tr><td></td><td>InvertTXD: <strong>UCHAR</strong><tr><td></td><td>InvertRXD: <strong>UCHAR</strong><tr><td></td><td>InvertRTS: <strong>UCHAR</strong><tr><td></td><td>InvertCTS: <strong>UCHAR</strong><tr><td></td><td>InvertDTR: <strong>UCHAR</strong><tr><td></td><td>InvertDSR: <strong>UCHAR</strong><tr><td></td><td>InvertDCD: <strong>UCHAR</strong><tr><td></td><td>InvertRI: <strong>UCHAR</strong><tr><td></td><td>Cbus0: <strong>UCHAR</strong><tr><td></td><td>Cbus1: <strong>UCHAR</strong><tr><td></td><td>Cbus2: <strong>UCHAR</strong><tr><td></td><td>Cbus3: <strong>UCHAR</strong><tr><td></td><td>Cbus4: <strong>UCHAR</strong><tr><td></td><td>RIsD2XX: <strong>UCHAR</strong><tr><td></td><td>PullDownEnable7: <strong>UCHAR</strong><tr><td></td><td>SerNumEnable7: <strong>UCHAR</strong><tr><td></td><td>ALSlowSlew: <strong>UCHAR</strong><tr><td></td><td>ALSchmittInput: <strong>UCHAR</strong><tr><td></td><td>ALDriveCurrent: <strong>UCHAR</strong><tr><td></td><td>AHSlowSlew: <strong>UCHAR</strong><tr><td></td><td>AHSchmittInput: <strong>UCHAR</strong><tr><td></td><td>AHDriveCurrent: <strong>UCHAR</strong><tr><td></td><td>BLSlowSlew: <strong>UCHAR</strong><tr><td></td><td>BLSchmittInput: <strong>UCHAR</strong><tr><td></td><td>BLDriveCurrent: <strong>UCHAR</strong><tr><td></td><td>BHSlowSlew: <strong>UCHAR</strong><tr><td></td><td>BHSchmittInput: <strong>UCHAR</strong><tr><td></td><td>BHDriveCurrent: <strong>UCHAR</strong><tr><td></td><td>IFAIsFifo7: <strong>UCHAR</strong><tr><td></td><td>IFAIsFifoTar7: <strong>UCHAR</strong><tr><td></td><td>IFAIsFastSer7: <strong>UCHAR</strong><tr><td></td><td>AIsVCP7: <strong>UCHAR</strong><tr><td></td><td>IFBIsFifo7: <strong>UCHAR</strong><tr><td></td><td>IFBIsFifoTar7: <strong>UCHAR</strong><tr><td></td><td>IFBIsFastSer7: <strong>UCHAR</strong><tr><td></td><td>BIsVCP7: <strong>UCHAR</strong><tr><td></td><td>PowerSaveEnable: <strong>UCHAR</strong><tr><td></td><td>PullDownEnable8: <strong>UCHAR</strong><tr><td></td><td>SerNumEnable8: <strong>UCHAR</strong><tr><td></td><td>ASlowSlew: <strong>UCHAR</strong><tr><td></td><td>ASchmittInput: <strong>UCHAR</strong><tr><td></td><td>ADriveCurrent: <strong>UCHAR</strong><tr><td></td><td>BSlowSlew: <strong>UCHAR</strong><tr><td></td><td>BSchmittInput: <strong>UCHAR</strong><tr><td></td><td>BDriveCurrent: <strong>UCHAR</strong><tr><td></td><td>CSlowSlew: <strong>UCHAR</strong><tr><td></td><td>CSchmittInput: <strong>UCHAR</strong><tr><td></td><td>CDriveCurrent: <strong>UCHAR</strong><tr><td></td><td>DSlowSlew: <strong>UCHAR</strong><tr><td></td><td>DSchmittInput: <strong>UCHAR</strong><tr><td></td><td>DDriveCurrent: <strong>UCHAR</strong><tr><td></td><td>ARIIsTXDEN: <strong>UCHAR</strong><tr><td></td><td>BRIIsTXDEN: <strong>UCHAR</strong><tr><td></td><td>CRIIsTXDEN: <strong>UCHAR</strong><tr><td></td><td>DRIIsTXDEN: <strong>UCHAR</strong><tr><td></td><td>AIsVCP8: <strong>UCHAR</strong><tr><td></td><td>BIsVCP8: <strong>UCHAR</strong><tr><td></td><td>CIsVCP8: <strong>UCHAR</strong><tr><td></td><td>DIsVCP8: <strong>UCHAR</strong><tr><td></td><td>PullDownEnableH: <strong>UCHAR</strong><tr><td></td><td>SerNumEnableH: <strong>UCHAR</strong><tr><td></td><td>ACSlowSlewH: <strong>UCHAR</strong><tr><td></td><td>ACSchmittInputH: <strong>UCHAR</strong><tr><td></td><td>ACDriveCurrentH: <strong>UCHAR</strong><tr><td></td><td>ADSlowSlewH: <strong>UCHAR</strong><tr><td></td><td>ADSchmittInputH: <strong>UCHAR</strong><tr><td></td><td>ADDriveCurrentH: <strong>UCHAR</strong><tr><td></td><td>Cbus0H: <strong>UCHAR</strong><tr><td></td><td>Cbus1H: <strong>UCHAR</strong><tr><td></td><td>Cbus2H: <strong>UCHAR</strong><tr><td></td><td>Cbus3H: <strong>UCHAR</strong><tr><td></td><td>Cbus4H: <strong>UCHAR</strong><tr><td></td><td>Cbus5H: <strong>UCHAR</strong><tr><td></td><td>Cbus6H: <strong>UCHAR</strong><tr><td></td><td>Cbus7H: <strong>UCHAR</strong><tr><td></td><td>Cbus8H: <strong>UCHAR</strong><tr><td></td><td>Cbus9H: <strong>UCHAR</strong><tr><td></td><td>IsFifoH: <strong>UCHAR</strong><tr><td></td><td>IsFifoTarH: <strong>UCHAR</strong><tr><td></td><td>IsFastSerH: <strong>UCHAR</strong><tr><td></td><td>IsFT1248H: <strong>UCHAR</strong><tr><td></td><td>FT1248CpolH: <strong>UCHAR</strong><tr><td></td><td>FT1248LsbH: <strong>UCHAR</strong><tr><td></td><td>FT1248FlowControlH: <strong>UCHAR</strong><tr><td></td><td>IsVCPH: <strong>UCHAR</strong><tr><td></td><td>PowerSaveEnableH: <strong>UCHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_3DFFFD80"><a name="FTD2XX.PPROGRAM_DATA"></a><a href="#FTD2XX">FTD2XX</a>.<a href="#FTD2XX.PPROGRAM_DATA">PPROGRAM_DATA</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PPROGRAM_DATA* =<strong>POINTER</strong> <strong>TO</strong> <strong>PROGRAM_DATA</strong></pre>
+<hr><h2 id="#_3E002980"><a name="FTD2XX.DEVICE_LIST_INFO_NODE"></a><a href="#FTD2XX">FTD2XX</a>.<a href="#FTD2XX.DEVICE_LIST_INFO_NODE">DEVICE_LIST_INFO_NODE</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DEVICE_LIST_INFO_NODE* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Flags: <strong>ULONG</strong><tr><td></td><td>zType: <strong>ULONG</strong><tr><td></td><td>ID: <strong>ULONG</strong><tr><td></td><td>LocId: <strong>DWORD</strong><tr><td></td><td>SerialNumber: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Description: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>ftHandle: <strong>HANDLE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

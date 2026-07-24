@@ -1,0 +1,6 @@
+{ "name":"community/freeimage","version":"0.0.0","tier":2,"context":"A2",
+  "description":"FFI bindings to the native FreeImage library (image load/save across formats) via HostLibs.",
+  "provides":["FreeImageDll"],
+  "requires":{"std/runtime":"*"},
+  "native":{"library":"libfreeimage.so","note":"runtime dependency loaded via HostLibs."},
+  "residual":["TestFreeMemIO/TestFreeMeta are examples, not API."] }

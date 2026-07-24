@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#libusb">libusb</a></p>
+<hr><h1 id="#_54DB5440"><a name="libusb"></a><a href="#ModuleList">Module</a> libusb
+</h1>
+<p> AUTHOR "Zdenek, fnecati"; PURPOSE "libusb-1.0 binding for LinuxAos";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>CLASS_PER_INTERFACE= 0<tr><td></td><td>CLASS_AUDIO= 1<tr><td></td><td><a href="#libusb.CLASS_COMM">CLASS_COMM</a>= 2<tr><td></td><td>CLASS_HID= 3<tr><td></td><td>CLASS_PHYSICAL= 5<tr><td></td><td>CLASS_PRINTER= 7<tr><td></td><td>CLASS_PTP= 6<tr><td></td><td>CLASS_IMAGE= 6<tr><td></td><td>CLASS_MASS_STORAGE= 8<tr><td></td><td>CLASS_HUB= 9<tr><td></td><td>CLASS_DATA= 10<tr><td></td><td>CLASS_SMART_CARD= 11<tr><td></td><td>CLASS_CONTENT_SECURITY= 13<tr><td></td><td>CLASS_VIDEO= 14<tr><td></td><td>CLASS_PERSONAL_HEALTHCARE= 15<tr><td></td><td>CLASS_DIAGNOSTIC_DEVICE= 220<tr><td></td><td>CLASS_WIRELESS= 224<tr><td></td><td>CLASS_APPLICATION= 254<tr><td></td><td>CLASS_VENDOR_SPEC= 255<tr><td></td><td>DT_DEVICE= 1<tr><td></td><td>DT_CONFIG= 2<tr><td></td><td>DT_STRING= 3<tr><td></td><td>DT_INTERFACE= 4<tr><td></td><td>DT_ENDPOINT= 5<tr><td></td><td>DT_BOS= 15<tr><td></td><td>DT_DEVICE_CAPABILITY= 16<tr><td></td><td>DT_HID= 33<tr><td></td><td>DT_REPORT= 34<tr><td></td><td>DT_PHYSICAL= 35<tr><td></td><td>DT_HUB= 41<tr><td></td><td>DT_SUPERSPEED_HUB= 42<tr><td></td><td>DT_SS_ENDPOINT_COMPANION= 48<tr><td></td><td><a href="#libusb.DT_DEVICE_SIZE">DT_DEVICE_SIZE</a>= 18<tr><td></td><td>DT_CONFIG_SIZE= 9<tr><td></td><td>DT_INTERFACE_SIZE= 9<tr><td></td><td>DT_ENDPOINT_SIZE= 7<tr><td></td><td>DT_ENDPOINT_AUDIO_SIZE= 9<tr><td></td><td>DT_HUB_NONVAR_SIZE= 7<tr><td></td><td>DT_SS_ENDPOINT_COMPANION_SIZE= 6<tr><td></td><td>DT_BOS_SIZE= 5<tr><td></td><td>DT_DEVICE_CAPABILITY_SIZE= 3<tr><td></td><td>BT_USB_2_0_EXTENSION_SIZE= 7<tr><td></td><td>BT_SS_USB_DEVICE_CAPABILITY_SIZE= 10<tr><td></td><td>BT_CONTAINER_ID_SIZE= 20<tr><td></td><td>DT_BOS_MAX_SIZE= (((DT_BOS_SIZE+BT_USB_2_0_EXTENSION_SIZE)+BT_SS_USB_DEVICE_CAPABILITY_SIZE)+BT_CONTAINER_ID_SIZE)<tr><td></td><td>ENDPOINT_ADDRESS_MASK= 15<tr><td></td><td>ENDPOINT_DIR_MASK= 128<tr><td></td><td>LIBUSB_ENDPOINT_IN= 128<tr><td></td><td>LIBUSB_ENDPOINT_OUT= 0<tr><td></td><td>TRANSFER_TYPE_MASK= 3<tr><td></td><td>TRANSFER_TYPE_CONTROL= 0<tr><td></td><td>TRANSFER_TYPE_ISOCHRONOUS= 1<tr><td></td><td>TRANSFER_TYPE_BULK= 2<tr><td></td><td>TRANSFER_TYPE_INTERRUPT= 3<tr><td></td><td>TRANSFER_TYPE_BULK_STREAM= 4<tr><td></td><td>SPEED_UNKNOWN= 0<tr><td></td><td>SPEED_LOW= 1<tr><td></td><td>SPEED_FULL= 2<tr><td></td><td>SPEED_HIGH= 3<tr><td></td><td>SPEED_SUPER= 4<tr><td></td><td>LOW_SPEED_OPERATION= 1<tr><td></td><td>FULL_SPEED_OPERATION= 2<tr><td></td><td>HIGH_SPEED_OPERATION= 4<tr><td></td><td>SUPER_SPEED_OPERATION= 8<tr><td></td><td>BM_LPM_SUPPORT= 2<tr><td></td><td>BM_LTM_SUPPORT= 2<tr><td></td><td>BT_WIRELESS_USB_DEVICE_CAPABILITY= 1<tr><td></td><td>BT_USB_2_0_EXTENSION= 2<tr><td></td><td>BT_SS_USB_DEVICE_CAPABILITY= 3<tr><td></td><td>BT_CONTAINER_ID= 4<tr><td></td><td>SUCCESS= 0<tr><td></td><td>ERROR_IO= -1<tr><td></td><td>ERROR_INVALID_PARAM= -2<tr><td></td><td>ERROR_ACCESS= -3<tr><td></td><td>ERROR_NO_DEVICE= -4<tr><td></td><td>ERROR_NOT_FOUND= -5<tr><td></td><td>ERROR_BUSY= -6<tr><td></td><td>ERROR_TIMEOUT= -7<tr><td></td><td>ERROR_OVERFLOW= -8<tr><td></td><td>ERROR_PIPE= -9<tr><td></td><td>ERROR_INTERRUPTED= -10<tr><td></td><td>ERROR_NO_MEM= -11<tr><td></td><td>ERROR_NOT_SUPPORTED= -12<tr><td></td><td>ERROR_OTHER= -99<tr><td></td><td>REQUEST_TYPE_STANDARD= 0<tr><td></td><td>REQUEST_TYPE_CLASS= LSH(1,5)<tr><td></td><td>REQUEST_TYPE_VENDOR= LSH(2,5)<tr><td></td><td>REQUEST_TYPE_RESERVED= LSH(3,5)<tr><td></td><td>RECIPIENT_DEVICE= 0<tr><td></td><td>RECIPIENT_INTERFACE= 1<tr><td></td><td>RECIPIENT_ENDPOINT= 2<tr><td></td><td>RECIPIENT_OTHER= 3<tr><td></td><td>ISO_SYNC_TYPE_MASK= 12<tr><td></td><td>CAP_HAS_CAPABILITY= 0<tr><td></td><td>CAP_HAS_HOTPLUG= 1<tr><td></td><td>CAP_HAS_HID_ACCESS= 256<tr><td></td><td>CAP_SUPPORTS_DETACH_KERNEL_DRIVER= 257<tr><td></td><td>LOG_LEVEL_NONE= 0<tr><td></td><td>LOG_LEVEL_ERROR= 1<tr><td></td><td>LOG_LEVEL_WARNING= 2<tr><td></td><td>LOG_LEVEL_INFO= 3<tr><td></td><td>LEVEL_DEBUG= 4<tr><td></td><td>CONTROL_SETUP_SIZE= SIZEOF(control_setup)<tr><th align='left'>type declarations</th><td>Uint8 =<strong>UNSIGNED8</strong><tr><td></td><td>Uint16 =<strong>UNSIGNED16</strong><tr><td></td><td>Uint32 =<strong>UNSIGNED32</strong><tr><td></td><td><a href="#libusb.Timeval">Timeval</a> =<strong>RECORD</strong> <tr><td></td><td>libusb_class_code =<strong>SIGNED32</strong><tr><td></td><td>libusb_descriptor_type =<strong>SIGNED32</strong><tr><td></td><td>libusb_capability =<strong>SIGNED32</strong><tr><td></td><td>log_level =<strong>SIGNED32</strong><tr><td></td><td><a href="#libusb.context">context</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.device_handle">device_handle</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.device">device</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.device_descriptor">device_descriptor</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#libusb.config_descriptor">config_descriptor</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.endpoint_descriptor">endpoint_descriptor</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#libusb.interface_descriptor">interface_descriptor</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#libusb.Interface">Interface</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#libusb.ss_endpoint_companion_descriptor">ss_endpoint_companion_descriptor</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.ss_usb_device_capability_descriptor">ss_usb_device_capability_descriptor</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.bos_dev_capability_descriptor">bos_dev_capability_descriptor</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.bos_descriptor">bos_descriptor</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.usb_2_0_extension_descriptor">usb_2_0_extension_descriptor</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.container_id_descriptor">container_id_descriptor</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.control_setup">control_setup</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#libusb.iso_packet_descriptor">iso_packet_descriptor</a> =<strong>RECORD</strong> <tr><td></td><td>transfer_cb_fn =<strong>PROCEDURE</strong>{C} (transfer: <strong>transfer</strong>)<tr><td></td><td>pollfd_added_cb =<strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; events: <strong>Uint16</strong>; user_data: <strong>ADDRESS</strong>)<tr><td></td><td>hotplug_callback_fn =<strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; device: <strong>device</strong>; event: <strong>SIGNED32</strong>; user_data: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#libusb.transfer">transfer</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#libusb.pollfd">pollfd</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td>ppollfds =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>pollfd</strong><tr><td></td><td><a href="#libusb.version">version</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td>DeviceList =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>device</strong><tr><th align='left'>variables</th><td>libusb: <strong>HostLibs.LibHandle</strong><tr><td></td><td>init: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> ctx: <strong>context</strong>): <strong>SIGNED32</strong><tr><td></td><td>exit: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>)<tr><td></td><td>set_debug: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; level= 0: <strong>SIGNED32</strong>)<tr><td></td><td>get_version: <strong>PROCEDURE</strong>{C} (): <strong>version</strong><tr><td></td><td>has_capability: <strong>PROCEDURE</strong>{C} (capability: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>setlocale: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> locale: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_device_list: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; <strong>VAR</strong> list: <strong>DeviceList</strong>): <strong>SIGNED32</strong><tr><td></td><td>free_device_list: <strong>PROCEDURE</strong>{C} (list: <strong>DeviceList</strong>; unref_devices: <strong>SIGNED32</strong>)<tr><td></td><td>ref_device: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>): <strong>device</strong><tr><td></td><td>unref_device: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>)<tr><td></td><td>get_configuration: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; <strong>VAR</strong> config: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_device_descriptor: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>; <strong>VAR</strong> desc: <strong>device_descriptor</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_active_config_descriptor: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>; <strong>VAR</strong> desc: <strong>config_descriptor</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_config_descriptor: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>; config_index: <strong>Uint8</strong>; <strong>VAR</strong> config: <strong>config_descriptor</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_config_descriptor_by_value: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>; bConfigurationValue: <strong>Uint8</strong>; <strong>VAR</strong> config: <strong>config_descriptor</strong>): <strong>SIGNED32</strong><tr><td></td><td>free_config_descriptor: <strong>PROCEDURE</strong>{C} (config: <strong>config_descriptor</strong>)<tr><td></td><td>get_ss_endpoint_companion_descriptor: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; endpoint: <strong>endpoint_descriptor</strong>; <strong>VAR</strong> ep_comp: <strong>ss_endpoint_companion_descriptor</strong>): <strong>SIGNED32</strong><tr><td></td><td>free_ss_endpoint_companion_descriptor: <strong>PROCEDURE</strong>{C} (ep_comp: <strong>ss_endpoint_companion_descriptor</strong>)<tr><td></td><td>get_bos_descriptor: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; <strong>VAR</strong> bos: <strong>bos_descriptor</strong>): <strong>SIGNED32</strong><tr><td></td><td>free_bos_descriptor: <strong>PROCEDURE</strong>{C} (config: <strong>bos_descriptor</strong>)<tr><td></td><td>get_usb_2_0_extension_descriptor: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; dev_cap: <strong>bos_dev_capability_descriptor</strong>; <strong>VAR</strong> usb_2_0_extension: <strong>usb_2_0_extension_descriptor</strong>): <strong>SIGNED32</strong><tr><td></td><td>free_usb_2_0_extension_descriptor: <strong>PROCEDURE</strong>{C} (usb_2_0_extension: <strong>usb_2_0_extension_descriptor</strong>)<tr><td></td><td>get_ss_usb_device_capability_descriptor: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; dv_cap: <strong>bos_dev_capability_descriptor</strong>; <strong>VAR</strong> ss_usb_device_cap: <strong>ss_usb_device_capability_descriptor</strong>): <strong>SIGNED32</strong><tr><td></td><td>free_ss_usb_device_capability_descriptor: <strong>PROCEDURE</strong>{C} (ss_usb_device_cap: <strong>ss_usb_device_capability_descriptor</strong>)<tr><td></td><td>get_container_id_descriptor: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; dev_cap: <strong>bos_dev_capability_descriptor</strong>; <strong>VAR</strong> container_id: <strong>container_id_descriptor</strong>): <strong>SIGNED32</strong><tr><td></td><td>free_container_id_descriptor: <strong>PROCEDURE</strong>{C} (container_id: <strong>container_id_descriptor</strong>)<tr><td></td><td>get_bus_number: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>): <strong>Uint8</strong><tr><td></td><td>get_port_number: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>): <strong>Uint8</strong><tr><td></td><td>get_port_numbers: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>; port_numbers: <strong>ADDRESS</strong>; port_numbers_len: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_port_path: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; dev: <strong>device</strong>; path: <strong>ADDRESS</strong>; path_length: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_parent: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>): <strong>device</strong><tr><td></td><td>get_device_address: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>): <strong>Uint8</strong><tr><td></td><td>get_device_speed: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_max_packet_size: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>; endpoint: <strong>Uint8</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_max_iso_packet_size: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>; endpoint: <strong>Uint8</strong>): <strong>SIGNED32</strong><tr><td></td><td>open: <strong>PROCEDURE</strong>{C} (dev: <strong>device</strong>; <strong>VAR</strong> handle: <strong>device_handle</strong>): <strong>SIGNED32</strong><tr><td></td><td>close: <strong>PROCEDURE</strong>{C} (dev_handle: <strong>device_handle</strong>)<tr><td></td><td>get_device: <strong>PROCEDURE</strong>{C} (dev_handle: <strong>device_handle</strong>): <strong>device</strong><tr><td></td><td>set_configuration: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; configuration: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>claim_interface: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; interface_number: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>release_interface: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; interface_number: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>open_device_with_vid_pid: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; vendor_id, product_id: <strong>SIGNED32</strong>): <strong>device_handle</strong><tr><td></td><td>set_interface_alt_setting: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; interface_number, alternate_setting: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>clear_halt: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; endpoint: <strong>Uint8</strong>): <strong>SIGNED32</strong><tr><td></td><td>reset_device: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>): <strong>SIGNED32</strong><tr><td></td><td>alloc_streams: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; num_streams: <strong>SIGNED32</strong>; endpoints: <strong>ADDRESS</strong>; num_endpoints: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>free_streams: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; endpoints: <strong>ADDRESS</strong>; num_endpoints: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>kernel_driver_active: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; interface_number: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>detach_kernel_driver: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; interface_number: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>attach_kernel_driver: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; interface_number: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>set_auto_detach_kernel_driver: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; enable: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>alloc_transfer: <strong>PROCEDURE</strong>{C} (iso_packets: <strong>SIGNED32</strong>): <strong>transfer</strong><tr><td></td><td>submit_transfer: <strong>PROCEDURE</strong>{C} (transfer: <strong>transfer</strong>): <strong>SIGNED32</strong><tr><td></td><td>cancel_transfer: <strong>PROCEDURE</strong>{C} (transfer: <strong>transfer</strong>): <strong>SIGNED32</strong><tr><td></td><td>free_transfer: <strong>PROCEDURE</strong>{C} (transfer: <strong>transfer</strong>)<tr><td></td><td>transfer_set_stream_id: <strong>PROCEDURE</strong>{C} (transfer: <strong>transfer</strong>; stream_id: <strong>SIGNED32</strong>)<tr><td></td><td>transfer_get_stream_id: <strong>PROCEDURE</strong>{C} (transfer: <strong>transfer</strong>): <strong>SIGNED32</strong><tr><td></td><td>control_transfer: <strong>PROCEDURE</strong>{C} (dev_handle: <strong>device_handle</strong>; request_type, bRequest: <strong>Uint8</strong>; wValue, wIndex: <strong>Uint16</strong>; data: <strong>ADDRESS</strong>; wLength: <strong>Uint16</strong>; timeout: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>bulk_transfer: <strong>PROCEDURE</strong>{C} (dev_handle: <strong>device_handle</strong>; endpoint: <strong>SIGNED32</strong>; data: <strong>ADDRESS</strong>; length: <strong>SIGNED32</strong>; <strong>VAR</strong> actual_length: <strong>SIGNED32</strong>; timeout: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>interrupt_transfer: <strong>PROCEDURE</strong>{C} (dev_handle: <strong>device_handle</strong>; endpoint: <strong>SIGNED32</strong>; data: <strong>ADDRESS</strong>; length: <strong>SIGNED32</strong>; <strong>VAR</strong> actual_length: <strong>SIGNED32</strong>; timeout: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_string_descriptor_ascii: <strong>PROCEDURE</strong>{C} (dev: <strong>device_handle</strong>; desc_index: <strong>Uint8</strong>; data: <strong>ADDRESS</strong>; length: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>try_lock_events: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>): <strong>SIGNED32</strong><tr><td></td><td>lock_events: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>)<tr><td></td><td>unlock_events: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>)<tr><td></td><td>event_handling_ok: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>): <strong>SIGNED32</strong><tr><td></td><td>event_handler_active: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>): <strong>SIGNED32</strong><tr><td></td><td>interrupt_event_handler: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>)<tr><td></td><td>unlock_event_waiters: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>)<tr><td></td><td>lock_event_waiters: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>)<tr><td></td><td>wait_for_event: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; <strong>VAR</strong> tv: <strong>Timeval</strong>): <strong>SIGNED32</strong><tr><td></td><td>wait_handle_events_timeout: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; <strong>VAR</strong> tv: <strong>Timeval</strong>): <strong>SIGNED32</strong><tr><td></td><td>handle_events_timeout_completed: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; <strong>VAR</strong> tv: <strong>Timeval</strong>; <strong>VAR</strong> completed: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>handle_events: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>): <strong>SIGNED32</strong><tr><td></td><td>handle_events_completed: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; <strong>VAR</strong> completed: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>handle_events_locked: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; <strong>VAR</strong> tv: <strong>Timeval</strong>): <strong>SIGNED32</strong><tr><td></td><td>pollfds_handle_timeouts: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_next_timeout: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; <strong>VAR</strong> tv: <strong>Timeval</strong>): <strong>SIGNED32</strong><tr><td></td><td>pollfd_removed_cb: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; user_data: <strong>ADDRESS</strong>)<tr><td></td><td>get_pollfds: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>): <strong>ppollfds</strong><tr><td></td><td>free_pollfds: <strong>PROCEDURE</strong>{C} (pollfds: <strong>ppollfds</strong>)<tr><td></td><td>set_pollfd_notifiers: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; added_cb, removed_cb: <strong>pollfd_added_cb</strong>; user_data: <strong>ADDRESS</strong>)<tr><td></td><td>hotplug_register_callback: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; events, flags: <strong>SIGNED32</strong>; vendor_id, product_id, dev_class: <strong>SIGNED32</strong>; cb_fn: <strong>hotplug_callback_fn</strong>; user_data: <strong>ADDRESS</strong>; handle: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>hotplug_deregister_callback: <strong>PROCEDURE</strong>{C} (ctx: <strong>context</strong>; handle: <strong>SIGNED32</strong>)<tr><th align='left'>procedures</th><td> <a href="#libusb.GetStringFromAddr">GetStringFromAddr</a> (adr: <strong>ADDRESS</strong>): <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td> strerror (errorcode: <strong>SIGNED32</strong>): <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td> error_name (errorcode: <strong>SIGNED32</strong>): <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td> GetProcAddress (lib: <strong>HostLibs.LibHandle</strong>; <strong>CONST</strong> procName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; adr: <strong>ADDRESS</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_54F89800"><a name="libusb.CLASS_COMM"></a><a href="#libusb">libusb</a>.<a href="#libusb.CLASS_COMM">CLASS_COMM</a>
+</h2>
+<p> Communications class</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CLASS_COMM*= 2</pre>
+<hr><h2 id="#_54F8CA00"><a name="libusb.DT_DEVICE_SIZE"></a><a href="#libusb">libusb</a>.<a href="#libusb.DT_DEVICE_SIZE">DT_DEVICE_SIZE</a>
+</h2>
+<p> Descriptor sizes per descriptor type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DT_DEVICE_SIZE*= 18</pre>
+<hr><h2 id="#_54F90980"><a name="libusb.Timeval"></a><a href="#libusb">libusb</a>.<a href="#libusb.Timeval">Timeval</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Timeval* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sec: <strong>LONGINTEGER</strong><tr><td></td><td>usec: <strong>LONGINTEGER</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_54F95580"><a name="libusb.context"></a><a href="#libusb">libusb</a>.<a href="#libusb.context">context</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> context* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_54F98A00"><a name="libusb.device_handle"></a><a href="#libusb">libusb</a>.<a href="#libusb.device_handle">device_handle</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> device_handle* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_54F9BF40"><a name="libusb.device"></a><a href="#libusb">libusb</a>.<a href="#libusb.device">device</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> device* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_54F9F3C0"><a name="libusb.device_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.device_descriptor">device_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> device_descriptor* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>bcdUSB: <strong>Uint16</strong><tr><td></td><td>bDeviceClass: <strong>Uint8</strong><tr><td></td><td>bDeviceSubClass: <strong>Uint8</strong><tr><td></td><td>bDeviceProtocol: <strong>Uint8</strong><tr><td></td><td>bMaxPacketSize0: <strong>Uint8</strong><tr><td></td><td>idVendor: <strong>Uint16</strong><tr><td></td><td>idProduct: <strong>Uint16</strong><tr><td></td><td>bcdDevice: <strong>Uint16</strong><tr><td></td><td>iManufacturer: <strong>Uint8</strong><tr><td></td><td>iProduct: <strong>Uint8</strong><tr><td></td><td>iSerialNumber: <strong>Uint8</strong><tr><td></td><td>bNumConfigurations: <strong>Uint8</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_54FAF140"><a name="libusb.config_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.config_descriptor">config_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> config_descriptor* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>wTotalLength: <strong>Uint16</strong><tr><td></td><td>bNumInterfaces: <strong>Uint8</strong><tr><td></td><td>bConfigurationValue: <strong>Uint8</strong><tr><td></td><td>iConfiguration: <strong>Uint8</strong><tr><td></td><td>bmAttributes: <strong>Uint8</strong><tr><td></td><td>MaxPower: <strong>Uint8</strong><tr><td></td><td>interface: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>Interface</strong><tr><td></td><td>extra: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>extra_length: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_54FC0340"><a name="libusb.endpoint_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.endpoint_descriptor">endpoint_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> endpoint_descriptor* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>bEndpointAddress: <strong>Uint8</strong><tr><td></td><td>bmAttributes: <strong>Uint8</strong><tr><td></td><td>wMaxPacketSize: <strong>Uint16</strong><tr><td></td><td>bInterval: <strong>Uint8</strong><tr><td></td><td>bRefresh: <strong>Uint8</strong><tr><td></td><td>bSynchAddress: <strong>Uint8</strong><tr><td></td><td>extra: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>extra_length: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_54FCE1C0"><a name="libusb.interface_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.interface_descriptor">interface_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> interface_descriptor* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>bInterfaceNumber: <strong>Uint8</strong><tr><td></td><td>bAlternateSetting: <strong>Uint8</strong><tr><td></td><td>bNumEndpoints: <strong>Uint8</strong><tr><td></td><td>bInterfaceClass: <strong>Uint8</strong><tr><td></td><td>bInterfaceSubClass: <strong>Uint8</strong><tr><td></td><td>bInterfaceProtocol: <strong>Uint8</strong><tr><td></td><td>iInterface: <strong>Uint8</strong><tr><td></td><td>endpoint: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>endpoint_descriptor</strong><tr><td></td><td>extra: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>extra_length: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_54FDFB00"><a name="libusb.Interface"></a><a href="#libusb">libusb</a>.<a href="#libusb.Interface">Interface</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Interface* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>altsetting: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>interface_descriptor</strong><tr><td></td><td>num_altsetting: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_54FE6280"><a name="libusb.ss_endpoint_companion_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.ss_endpoint_companion_descriptor">ss_endpoint_companion_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ss_endpoint_companion_descriptor* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>bMaxBurst: <strong>Uint8</strong><tr><td></td><td>bmAttributes: <strong>Uint8</strong><tr><td></td><td>wBytesPerInterval: <strong>Uint16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_54FEE340"><a name="libusb.ss_usb_device_capability_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.ss_usb_device_capability_descriptor">ss_usb_device_capability_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ss_usb_device_capability_descriptor* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>bDevCapabilityType: <strong>Uint8</strong><tr><td></td><td>bmAttributes: <strong>Uint8</strong><tr><td></td><td>wSpeedSupported: <strong>Uint16</strong><tr><td></td><td>bFunctionalitySupport: <strong>Uint8</strong><tr><td></td><td>bU1DevExitLat: <strong>Uint8</strong><tr><td></td><td>bU2DevExitLat: <strong>Uint16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_54FF9280"><a name="libusb.bos_dev_capability_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.bos_dev_capability_descriptor">bos_dev_capability_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> bos_dev_capability_descriptor* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>bDevCapabilityType: <strong>Uint8</strong><tr><td></td><td>dev_capability_data: <strong>Uint8</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_55000440"><a name="libusb.bos_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.bos_descriptor">bos_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> bos_descriptor* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>wTotalLength: <strong>Uint16</strong><tr><td></td><td>bNumDeviceCaps: <strong>Uint8</strong><tr><td></td><td>dev_capability: <strong>bos_dev_capability_descriptor</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_55008900"><a name="libusb.usb_2_0_extension_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.usb_2_0_extension_descriptor">usb_2_0_extension_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> usb_2_0_extension_descriptor* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>bDevCapabilityType: <strong>Uint8</strong><tr><td></td><td>bmAttributes: <strong>Uint32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5500FAC0"><a name="libusb.container_id_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.container_id_descriptor">container_id_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> container_id_descriptor* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bLength: <strong>Uint8</strong><tr><td></td><td>bDescriptorType: <strong>Uint8</strong><tr><td></td><td>bDevCapabilityType: <strong>Uint8</strong><tr><td></td><td>bReserved: <strong>Uint8</strong><tr><td></td><td>ContainerID: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_55018A40"><a name="libusb.control_setup"></a><a href="#libusb">libusb</a>.<a href="#libusb.control_setup">control_setup</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> control_setup* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bmRequestType: <strong>Uint8</strong><tr><td></td><td>bRequest: <strong>Uint8</strong><tr><td></td><td>wValue: <strong>Uint16</strong><tr><td></td><td>wIndex: <strong>Uint16</strong><tr><td></td><td>wLength: <strong>Uint16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_55020700"><a name="libusb.iso_packet_descriptor"></a><a href="#libusb">libusb</a>.<a href="#libusb.iso_packet_descriptor">iso_packet_descriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> iso_packet_descriptor* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>length: <strong>SIGNED32</strong><tr><td></td><td>actual_data: <strong>SIGNED32</strong><tr><td></td><td>status: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_55026140"><a name="libusb.transfer"></a><a href="#libusb">libusb</a>.<a href="#libusb.transfer">transfer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> transfer* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>dev_handle: <strong>device_handle</strong><tr><td></td><td>flags: <strong>Uint8</strong><tr><td></td><td>endpoint: <strong>Uint8</strong><tr><td></td><td>type: <strong>Uint8</strong><tr><td></td><td><a href="#libusb.transfer.timeout">timeout</a>: <strong>Uint32</strong><tr><td></td><td>status: <strong>SIGNED32</strong><tr><td></td><td>length: <strong>SIGNED32</strong><tr><td></td><td>actual_length: <strong>SIGNED32</strong><tr><td></td><td>callback: <strong>transfer_cb_fn</strong><tr><td></td><td>user_data: <strong>ADDRESS</strong><tr><td></td><td>buffer: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>num_iso_packets: <strong>SIGNED32</strong><tr><td></td><td>iso_packet_desc: <strong>iso_packet_descriptor</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_55037480"><a name="libusb.transfer.timeout"></a><a href="#libusb">libusb</a>.<a href="#libusb.transfer">transfer</a>.<a href="#libusb.transfer.timeout">timeout</a>
+</h3>
+<p> Timeout for this transfer in millseconds. A value of 0 indicates no timeout.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> timeout*: <strong>Uint32</strong></pre>
+<hr><h2 id="#_5503D940"><a name="libusb.pollfd"></a><a href="#libusb">libusb</a>.<a href="#libusb.pollfd">pollfd</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> pollfd* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fd: <strong>SIGNED32</strong><tr><td></td><td>events: <strong>Uint16</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_550431C0"><a name="libusb.version"></a><a href="#libusb">libusb</a>.<a href="#libusb.version">version</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> version* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>major: <strong>Uint16</strong><tr><td></td><td>minor: <strong>Uint16</strong><tr><td></td><td>micro: <strong>Uint16</strong><tr><td></td><td>nano: <strong>Uint16</strong><tr><td></td><td>rc: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>describe: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5504F940"><a name="libusb.GetStringFromAddr"></a><a href="#libusb">libusb</a>.<a href="#libusb.GetStringFromAddr">GetStringFromAddr</a>
+</h2>
+<p> Get string from address</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetStringFromAddr* (adr: <strong>ADDRESS</strong>): <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></pre>
+</body></html>

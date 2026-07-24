@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FreeImageDll">FreeImageDll</a></p>
+<hr><h1 id="#_7023CB40"><a name="FreeImageDll"></a><a href="#ModuleList">Module</a> FreeImageDll
+</h1>
+<p> AUTHOR "fnecati"; PURPOSE "FreeImage Oberon interface for UNIX and WIN Platforms";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>MAJOR_VERSION= 3<tr><td></td><td>MINOR_VERSION= 17<tr><td></td><td>RELEASE_SERIAL= 0<tr><td></td><td>FI_RGBA_RED= 2<tr><td></td><td>FI_RGBA_GREEN= 1<tr><td></td><td>FI_RGBA_BLUE= 0<tr><td></td><td>FI_RGBA_ALPHA= 3<tr><td></td><td>FI_RGBA_RED_MASK= 16711680<tr><td></td><td>FI_RGBA_GREEN_MASK= 65280<tr><td></td><td>FI_RGBA_BLUE_MASK= 255<tr><td></td><td>FI_RGBA_ALPHA_MASK= 4278190080<tr><td></td><td>FI_RGBA_RED_SHIFT= 16<tr><td></td><td>FI_RGBA_GREEN_SHIFT= 8<tr><td></td><td>FI_RGBA_BLUE_SHIFT= 0<tr><td></td><td>FI_RGBA_ALPHA_SHIFT= 24<tr><td></td><td>FI16_555_RED_MASK= 31744<tr><td></td><td>FI16_555_GREEN_MASK= 992<tr><td></td><td>FI16_555_BLUE_MASK= 31<tr><td></td><td>FI16_555_RED_SHIFT= 10<tr><td></td><td>FI16_555_GREEN_SHIFT= 5<tr><td></td><td>FI16_555_BLUE_SHIFT= 0<tr><td></td><td>FI16_565_RED_MASK= 63488<tr><td></td><td>FI16_565_GREEN_MASK= 2016<tr><td></td><td>FI16_565_BLUE_MASK= 31<tr><td></td><td>FI16_565_RED_SHIFT= 11<tr><td></td><td>FI16_565_GREEN_SHIFT= 5<tr><td></td><td>FI16_565_BLUE_SHIFT= 0<tr><td></td><td>FIICC_DEFAULT= 0<tr><td></td><td>FIICC_COLOR_IS_CMYK= 1<tr><td></td><td>FIF_UNKNOWN= -1<tr><td></td><td>FIF_BMP= 0<tr><td></td><td>FIF_ICO= 1<tr><td></td><td>FIF_JPEG= 2<tr><td></td><td>FIF_JNG= 3<tr><td></td><td>FIF_KOALA= 4<tr><td></td><td>FIF_LBM= 5<tr><td></td><td>FIF_IFF= FIF_LBM<tr><td></td><td>FIF_MNG= 6<tr><td></td><td>FIF_PBM= 7<tr><td></td><td>FIF_PBMRAW= 8<tr><td></td><td>FIF_PCD= 9<tr><td></td><td>FIF_PCX= 10<tr><td></td><td>FIF_PGM= 11<tr><td></td><td>FIF_PGMRAW= 12<tr><td></td><td>FIF_PNG= 13<tr><td></td><td>FIF_PPM= 14<tr><td></td><td>FIF_PPMRAW= 15<tr><td></td><td>FIF_RAS= 16<tr><td></td><td>FIF_TARGA= 17<tr><td></td><td>FIF_TIFF= 18<tr><td></td><td>FIF_WBMP= 19<tr><td></td><td>FIF_PSD= 20<tr><td></td><td>FIF_CUT= 21<tr><td></td><td>FIF_XBM= 22<tr><td></td><td>FIF_XPM= 23<tr><td></td><td>FIF_DDS= 24<tr><td></td><td>FIF_GIF= 25<tr><td></td><td>FIF_HDR= 26<tr><td></td><td>FIF_FAXG3= 27<tr><td></td><td>FIF_SGI= 28<tr><td></td><td>FIF_EXR= 29<tr><td></td><td>FIF_J2K= 30<tr><td></td><td>FIF_JP2= 31<tr><td></td><td>FIF_PFM= 32<tr><td></td><td>FIF_PICT= 33<tr><td></td><td>FIF_RAW= 34<tr><td></td><td>FIF_WEBP= 35<tr><td></td><td>FIF_JXR= 36<tr><td></td><td>FIT_UNKNOWN= 0<tr><td></td><td>FIT_BITMAP= 1<tr><td></td><td>FIT_UINT16= 2<tr><td></td><td>FIT_INT16= 3<tr><td></td><td>FIT_UINT32= 4<tr><td></td><td>FIT_INT32= 5<tr><td></td><td>FIT_FLOAT= 6<tr><td></td><td>FIT_DOUBLE= 7<tr><td></td><td>FIT_COMPLEX= 8<tr><td></td><td>FIT_RGB16= 9<tr><td></td><td>FIT_RGBA16= 10<tr><td></td><td>FIT_RGBF= 11<tr><td></td><td>FIT_RGBAF= 12<tr><td></td><td>FIC_MINISWHITE= 0<tr><td></td><td>FIC_MINISBLACK= 1<tr><td></td><td>FIC_RGB= 2<tr><td></td><td>FIC_PALETTE= 3<tr><td></td><td>FIC_RGBALPHA= 4<tr><td></td><td>FIC_CMYK= 5<tr><td></td><td>FIQ_WUQUANT= 0<tr><td></td><td>FIQ_NNQUANT= 1<tr><td></td><td>FIQ_LFPQUANT= 2<tr><td></td><td>FID_FS= 0<tr><td></td><td>FID_BAYER4x4= 1<tr><td></td><td>FID_BAYER8x8= 2<tr><td></td><td>FID_CLUSTER6x6= 3<tr><td></td><td>FID_CLUSTER8x8= 4<tr><td></td><td>FID_CLUSTER16x16= 5<tr><td></td><td>FID_BAYER16x16= 6<tr><td></td><td>FIJPEG_OP_NONE= 0<tr><td></td><td>FIJPEG_OP_FLIP_H= 1<tr><td></td><td>FIJPEG_OP_FLIP_V= 2<tr><td></td><td>FIJPEG_OP_TRANSPOSE= 3<tr><td></td><td>FIJPEG_OP_TRANSVERSE= 4<tr><td></td><td>FIJPEG_OP_ROTATE_90= 5<tr><td></td><td>FIJPEG_OP_ROTATE_180= 6<tr><td></td><td>FIJPEG_OP_ROTATE_270= 7<tr><td></td><td>FITMO_DRAGO03= 0<tr><td></td><td>FITMO_REINHARD05= 1<tr><td></td><td>FITMO_FATTAL02= 2<tr><td></td><td>FILTER_BOX= 0<tr><td></td><td>FILTER_BICUBIC= 1<tr><td></td><td>FILTER_BILINEAR= 2<tr><td></td><td>FILTER_BSPLINE= 3<tr><td></td><td>FILTER_CATMULLROM= 4<tr><td></td><td>FILTER_LANCZOS3= 5<tr><td></td><td>FICC_RGB= 0<tr><td></td><td>FICC_RED= 1<tr><td></td><td>FICC_GREEN= 2<tr><td></td><td>FICC_BLUE= 3<tr><td></td><td>FICC_ALPHA= 4<tr><td></td><td>FICC_BLACK= 5<tr><td></td><td>FICC_REAL= 6<tr><td></td><td>FICC_IMAG= 7<tr><td></td><td>FICC_MAG= 8<tr><td></td><td>FICC_PHASE= 9<tr><td></td><td>FIDT_NOTYPE= 0<tr><td></td><td>FIDT_BYTE= 1<tr><td></td><td>FIDT_ASCII= 2<tr><td></td><td>FIDT_SHORT= 3<tr><td></td><td>FIDT_LONG= 4<tr><td></td><td>FIDT_RATIONAL= 5<tr><td></td><td>FIDT_SBYTE= 6<tr><td></td><td>FIDT_UNDEFINED= 7<tr><td></td><td>FIDT_SSHORT= 8<tr><td></td><td>FIDT_SLONG= 9<tr><td></td><td>FIDT_SRATIONAL= 10<tr><td></td><td>FIDT_FLOAT= 11<tr><td></td><td>FIDT_DOUBLE= 12<tr><td></td><td>FIDT_IFD= 13<tr><td></td><td>FIDT_PALETTE= 14<tr><td></td><td>FIDT_LONG8= 16<tr><td></td><td>FIDT_SLONG8= 17<tr><td></td><td>FIDT_IFD8= 18<tr><td></td><td>FIMD_NODATA= -1<tr><td></td><td>FIMD_COMMENTS= 0<tr><td></td><td>FIMD_EXIF_MAIN= 1<tr><td></td><td>FIMD_EXIF_EXIF= 2<tr><td></td><td>FIMD_EXIF_GPS= 3<tr><td></td><td>FIMD_EXIF_MAKERNOTE= 4<tr><td></td><td>FIMD_EXIF_INTEROP= 5<tr><td></td><td>FIMD_IPTC= 6<tr><td></td><td>FIMD_XMP= 7<tr><td></td><td>FIMD_GEOTIFF= 8<tr><td></td><td>FIMD_ANIMATION= 9<tr><td></td><td>FIMD_CUSTOM= 10<tr><td></td><td>FIMD_EXIF_RAW= 11<tr><td></td><td>FIF_LOAD_NOPIXELS= 32768<tr><td></td><td>BMP_DEFAULT= 0<tr><td></td><td>BMP_SAVE_RLE= 1<tr><td></td><td>CUT_DEFAULT= 0<tr><td></td><td>DDS_DEFAULT= 0<tr><td></td><td>EXR_DEFAULT= 0<tr><td></td><td>EXR_FLOAT= 1<tr><td></td><td>EXR_NONE= 2<tr><td></td><td>EXR_ZIP= 4<tr><td></td><td>EXR_PIZ= 8<tr><td></td><td>EXR_PXR24= 16<tr><td></td><td>EXR_B44= 32<tr><td></td><td>EXR_LC= 64<tr><td></td><td>FAXG3_DEFAULT= 0<tr><td></td><td>GIF_DEFAULT= 0<tr><td></td><td>GIF_LOAD256= 1<tr><td></td><td>GIF_PLAYBACK= 2<tr><td></td><td>HDR_DEFAULT= 0<tr><td></td><td>ICO_DEFAULT= 0<tr><td></td><td>ICO_MAKEALPHA= 1<tr><td></td><td>IFF_DEFAULT= 0<tr><td></td><td>J2K_DEFAULT= 0<tr><td></td><td>JP2_DEFAULT= 0<tr><td></td><td>JPEG_DEFAULT= 0<tr><td></td><td>JPEG_FAST= 1<tr><td></td><td>JPEG_ACCURATE= 2<tr><td></td><td>JPEG_CMYK= 4096<tr><td></td><td>JPEG_EXIFROTATE= 8<tr><td></td><td>JPEG_GREYSCALE= 16<tr><td></td><td>JPEG_QUALITYSUPERB= 128<tr><td></td><td>JPEG_QUALITYGOOD= 256<tr><td></td><td>JPEG_QUALITYNORMAL= 512<tr><td></td><td>JPEG_QUALITYAVERAGE= 1024<tr><td></td><td>JPEG_QUALITYBAD= 2048<tr><td></td><td>JPEG_PROGRESSIVE= 8192<tr><td></td><td>JPEG_SUBSAMPLING_411= 4096<tr><td></td><td>JPEG_SUBSAMPLING_420= 16384<tr><td></td><td>JPEG_SUBSAMPLING_422= 32768<tr><td></td><td>JPEG_SUBSAMPLING_444= 65536<tr><td></td><td>JPEG_OPTIMIZE= 131072<tr><td></td><td>JPEG_BASELINE= 262144<tr><td></td><td>KOALA_DEFAULT= 0<tr><td></td><td>LBM_DEFAULT= 0<tr><td></td><td>MNG_DEFAULT= 0<tr><td></td><td>PCD_DEFAULT= 0<tr><td></td><td>PCD_BASE= 1<tr><td></td><td>PCD_BASEDIV4= 2<tr><td></td><td>PCD_BASEDIV16= 3<tr><td></td><td>PCX_DEFAULT= 0<tr><td></td><td>PFM_DEFAULT= 0<tr><td></td><td>PICT_DEFAULT= 0<tr><td></td><td>PNG_DEFAULT= 0<tr><td></td><td>PNG_IGNOREGAMMA= 1<tr><td></td><td>PNG_Z_BEST_SPEED= 1<tr><td></td><td>PNG_Z_DEFAULT_COMPRESSION= 6<tr><td></td><td>PNG_Z_BEST_COMPRESSION= 9<tr><td></td><td>PNG_Z_NO_COMPRESSION= 256<tr><td></td><td>PNG_INTERLACED= 512<tr><td></td><td>PNM_DEFAULT= 0<tr><td></td><td>PNM_SAVE_RAW= 0<tr><td></td><td>PNM_SAVE_ASCII= 1<tr><td></td><td>PSD_DEFAULT= 0<tr><td></td><td>PSD_CMYK= 1<tr><td></td><td>PSD_LAB= 2<tr><td></td><td>RAS_DEFAULT= 0<tr><td></td><td>RAW_DEFAULT= 0<tr><td></td><td>RAW_PREVIEW= 1<tr><td></td><td>RAW_DISPLAY= 2<tr><td></td><td>RAW_HALFSIZE= 4<tr><td></td><td>RAW_UNPROCESSED= 8<tr><td></td><td>SGI_DEFAULT= 0<tr><td></td><td>TARGA_DEFAULT= 0<tr><td></td><td>TARGA_LOAD_RGB888= 1<tr><td></td><td>TARGA_SAVE_RLE= 2<tr><td></td><td>TIFF_DEFAULT= 0<tr><td></td><td>TIFF_CMYK= 1<tr><td></td><td>TIFF_PACKBITS= 256<tr><td></td><td>TIFF_DEFLATE= 512<tr><td></td><td>TIFF_ADOBE_DEFLATE= 1024<tr><td></td><td>TIFF_NONE= 2048<tr><td></td><td>TIFF_CCITTFAX3= 4096<tr><td></td><td>TIFF_CCITTFAX4= 8192<tr><td></td><td>TIFF_LZW= 16384<tr><td></td><td>TIFF_JPEG= 32768<tr><td></td><td>TIFF_LOGLUV= 65536<tr><td></td><td>WBMP_DEFAULT= 0<tr><td></td><td>XBM_DEFAULT= 0<tr><td></td><td>XPM_DEFAULT= 0<tr><td></td><td>WEBP_DEFAULT= 0<tr><td></td><td>WEBP_LOSSLESS= 256<tr><td></td><td>JXR_DEFAULT= 0<tr><td></td><td>JXR_LOSSLESS= 100<tr><td></td><td>JXR_PROGRESSIVE= 8192<tr><td></td><td>COLOR_IS_RGB_COLOR= 0<tr><td></td><td>COLOR_IS_RGBA_COLOR= 1<tr><td></td><td>COLOR_FIND_EQUAL_COLOR= 2<tr><td></td><td>COLOR_ALPHA_IS_INDEX= 4<tr><td></td><td>COLOR_PALETTE_SEARCH_MASK= (COLOR_FIND_EQUAL_COLOR+COLOR_ALPHA_IS_INDEX)<tr><td></td><td>RESCALE_DEFAULT= 0<tr><td></td><td>RESCALE_TRUE_COLOR= 1<tr><td></td><td>RESCALE_OMIT_METADATA= 2<tr><td></td><td>SEEK_SET= 0<tr><td></td><td>SEEK_CUR= 1<tr><td></td><td>SEEK_END= 2<tr><th align='left'>type declarations</th><td><a href="#FreeImageDll.FIICCPROFILE">FIICCPROFILE</a> =<strong>RECORD</strong> <tr><td></td><td>IMAGE_FORMAT =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_TYPE =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_COLOR_TYPE =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_QUANTIZE =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_DITHER =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_JPEG_OPERATION =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_TMO =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_FILTER =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_COLOR_CHANNEL =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_MDTYPE =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_MDMODEL =<strong>SIGNED32</strong><tr><td></td><td>IMAGE_FLAGS =<strong>SIGNED32</strong><tr><td></td><td><a href="#FreeImageDll.RGBQUAD">RGBQUAD</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.RGBTRIPLE">RGBTRIPLE</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.PtrBITMAPINFOHEADER">PtrBITMAPINFOHEADER</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>BITMAPINFOHEADER</strong><tr><td></td><td><a href="#FreeImageDll.BITMAPINFOHEADER">BITMAPINFOHEADER</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.PtrBITMAPINFO">PtrBITMAPINFO</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>BITMAPINFO</strong><tr><td></td><td><a href="#FreeImageDll.BITMAPINFO">BITMAPINFO</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FIRGB16">FIRGB16</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FIRGBA16">FIRGBA16</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FIRGBF">FIRGBF</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FIRGBAF">FIRGBAF</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FICOMPLEX">FICOMPLEX</a> =<strong>RECORD</strong> <tr><td></td><td>LUT =<strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>PtrLineRGB =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>RGBTRIPLE</strong><tr><td></td><td>PtrLineRGBA =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>RGBQUAD</strong><tr><td></td><td>PtrFISINT16 =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td>PtrFIINT32 =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td>PtrFIFLOAT =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td>PtrFIDOUBLE =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td>PtrFICOMPLEX =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>FICOMPLEX</strong><tr><td></td><td>PtrFIRGB16 =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>FIRGB16</strong><tr><td></td><td>PtrFIRGBA16 =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>FIRGBA16</strong><tr><td></td><td>PtrFIRGBF =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>FIRGBF</strong><tr><td></td><td>PtrFIRGBAF =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>FIRGBAF</strong><tr><td></td><td>Palette =<strong>ARRAY</strong> 256 <strong>OF</strong> <strong>RGBQUAD</strong><tr><td></td><td>PtrPALETTE =<strong>POINTER</strong> <strong>TO</strong> <strong>Palette</strong><tr><td></td><td>FHandle =<strong>ADDRESS</strong><tr><td></td><td>PSint =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td>Pint =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td>FI_ReadProc =<strong>PROCEDURE</strong>{C} (buffer: <strong>ADDRESS</strong>; size: <strong>SIGNED32</strong>; count: <strong>SIGNED32</strong>; handle: <strong>FHandle</strong>): <strong>SIGNED32</strong><tr><td></td><td>FI_WriteProc =<strong>PROCEDURE</strong>{C} (buffer: <strong>ADDRESS</strong>; size: <strong>SIGNED32</strong>; count: <strong>SIGNED32</strong>; handle: <strong>FHandle</strong>): <strong>SIGNED32</strong><tr><td></td><td>FI_SeekProc =<strong>PROCEDURE</strong>{C} (handle: <strong>FHandle</strong>; offset: <strong>SIGNED32</strong>; origin: <strong>SIGNED32</strong>): <strong>PSint</strong><tr><td></td><td>FI_TellProc =<strong>PROCEDURE</strong>{C} (handle: <strong>FHandle</strong>): <strong>Pint</strong><tr><td></td><td><a href="#FreeImageDll.FreeImageIO">FreeImageIO</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FIMEMORY">FIMEMORY</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FIBITMAP">FIBITMAP</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FIMULTIBITMAP">FIMULTIBITMAP</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FIMETADATA">FIMETADATA</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#FreeImageDll.FITAG">FITAG</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td>OutputMessageFunction =<strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; msg: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> 1024 <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td>OutputMessageFunctionStdCall =<strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; msg: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> 1024 <strong>OF</strong> <strong>CHAR</strong>)<tr><th align='left'>variables</th><td>getVersion: <strong>PROCEDURE</strong>{C} (): <strong>ADDRESS</strong><tr><td></td><td>getCopyrightMessage: <strong>PROCEDURE</strong>{C} (): <strong>ADDRESS</strong><tr><td></td><td>SetOutputMessage: <strong>PROCEDURE</strong>{C} (omf: <strong>OutputMessageFunction</strong>)<tr><td></td><td>SetOutputMessageStdCall: <strong>PROCEDURE</strong>{C} (omf: <strong>OutputMessageFunctionStdCall</strong>)<tr><td></td><td>Allocate: <strong>PROCEDURE</strong>{C} (width, height: <strong>SIGNED32</strong>; bpp: <strong>SIGNED32</strong>; red_mask, green_mask, blue_mask: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>AllocateT: <strong>PROCEDURE</strong>{C} (type: <strong>IMAGE_TYPE</strong>; width, height: <strong>SIGNED32</strong>; bpp: <strong>SIGNED32</strong>; red_mask, green_mask, blue_mask: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>Clone: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>Unload: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>)<tr><td></td><td>HasPixels: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>BOOLEAN</strong><tr><td></td><td>Load: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; <strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>IMAGE_FLAGS</strong>): <strong>FIBITMAP</strong><tr><td></td><td>LoadU: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; <strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>IMAGE_FLAGS</strong>): <strong>FIBITMAP</strong><tr><td></td><td>Save: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; dib: <strong>FIBITMAP</strong>; <strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>IMAGE_FLAGS</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SaveU: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; dib: <strong>FIBITMAP</strong>; <strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>IMAGE_FLAGS</strong>): <strong>BOOLEAN</strong><tr><td></td><td>OpenMemory: <strong>PROCEDURE</strong>{C} (data: <strong>ADDRESS</strong>; size_in_bytes: <strong>SIGNED32</strong>): <strong>FIMEMORY</strong><tr><td></td><td>CloseMemory: <strong>PROCEDURE</strong>{C} (stream: <strong>FIMEMORY</strong>)<tr><td></td><td>LoadFromMemory: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; stream: <strong>FIMEMORY</strong>; flags: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>SaveToMemory: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; dib: <strong>FIBITMAP</strong>; stream: <strong>FIMEMORY</strong>; flags: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>TellMemory: <strong>PROCEDURE</strong>{C} (stream: <strong>FIMEMORY</strong>): <strong>SIGNED32</strong><tr><td></td><td>SeekMemory: <strong>PROCEDURE</strong>{C} (stream: <strong>FIMEMORY</strong>; offset: <strong>SIGNED32</strong>; origin: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>AcquireMemory: <strong>PROCEDURE</strong>{C} (stream: <strong>FIMEMORY</strong>; <strong>VAR</strong> data: <strong>ADDRESS</strong>; <strong>VAR</strong> size_in_bytes: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>ReadMemory: <strong>PROCEDURE</strong>{C} (buffer: <strong>ADDRESS</strong>; size: <strong>SIGNED32</strong>; count: <strong>SIGNED32</strong>; stream: <strong>FIMEMORY</strong>): <strong>SIGNED32</strong><tr><td></td><td>WriteMemory: <strong>PROCEDURE</strong>{C} (buffer: <strong>ADDRESS</strong>; size: <strong>SIGNED32</strong>; count: <strong>SIGNED32</strong>; stream: <strong>FIMEMORY</strong>): <strong>SIGNED32</strong><tr><td></td><td>LoadMultiBitmapFromMemory: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; stream: <strong>FIMEMORY</strong>; flags: <strong>SIGNED32</strong>): <strong>FIMULTIBITMAP</strong><tr><td></td><td>SaveMultiBitmapToMemory: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; bitmap: <strong>FIMULTIBITMAP</strong>; stream: <strong>FIMEMORY</strong>; flags: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetFIFCount: <strong>PROCEDURE</strong>{C} (): <strong>SIGNED32</strong><tr><td></td><td>SetPluginEnabled: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; enable: <strong>BOOLEAN</strong>): <strong>SIGNED32</strong><tr><td></td><td>IsPluginEnabled: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetFIFFromFormat: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> format: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>IMAGE_FORMAT</strong><tr><td></td><td>GetFIFFromMime: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> format: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>IMAGE_FORMAT</strong><tr><td></td><td>getFormatFromFIF: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>): <strong>ADDRESS</strong><tr><td></td><td>getFIFExtensionList: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>): <strong>ADDRESS</strong><tr><td></td><td>getFIFDescription: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>): <strong>ADDRESS</strong><tr><td></td><td>getFIFRegExpr: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>): <strong>ADDRESS</strong><tr><td></td><td>GetFIFFromFilename: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> fname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>IMAGE_FORMAT</strong><tr><td></td><td>GetFIFFromFilenameU: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> fname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>IMAGE_FORMAT</strong><tr><td></td><td>FIFSupportsReading: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>): <strong>BOOLEAN</strong><tr><td></td><td>FIFSupportsWriting: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>): <strong>BOOLEAN</strong><tr><td></td><td>FIFSupportsExportBPP: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; bpp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>FIFSupportsExportType: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; image_type: <strong>IMAGE_TYPE</strong>): <strong>BOOLEAN</strong><tr><td></td><td>FIFSupportsICCProfiles: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>): <strong>BOOLEAN</strong><tr><td></td><td>FIFSupportsNoPixels: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>): <strong>BOOLEAN</strong><tr><td></td><td>OpenMultiBitmap: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; <strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; create_new, read_only, keep_cache_in_memory: <strong>BOOLEAN</strong>): <strong>FIMULTIBITMAP</strong><tr><td></td><td>OpenMultiBitmapFromHandle: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; io: <strong>FreeImageIO</strong>; handle: <strong>SIGNED32</strong>; flags: <strong>SIGNED32</strong>): <strong>FIMULTIBITMAP</strong><tr><td></td><td>SaveMultiBitmapToHandle: <strong>PROCEDURE</strong>{C} (fif: <strong>IMAGE_FORMAT</strong>; bitmap: <strong>FIMULTIBITMAP</strong>; io: <strong>FreeImageIO</strong>; handle: <strong>FHandle</strong>; flags: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>CloseMultiBitmap: <strong>PROCEDURE</strong>{C} (bitmap: <strong>FIMULTIBITMAP</strong>; flags: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetPageCount: <strong>PROCEDURE</strong>{C} (bitmap: <strong>FIMULTIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>AppendPage: <strong>PROCEDURE</strong>{C} (bitmap: <strong>FIMULTIBITMAP</strong>; data: <strong>FIBITMAP</strong>)<tr><td></td><td>InsertPage: <strong>PROCEDURE</strong>{C} (bitmap: <strong>FIMULTIBITMAP</strong>; page: <strong>SIGNED32</strong>; data: <strong>FIBITMAP</strong>)<tr><td></td><td>DeletePage: <strong>PROCEDURE</strong>{C} (bitmap: <strong>FIMULTIBITMAP</strong>; page: <strong>SIGNED32</strong>)<tr><td></td><td>LockPage: <strong>PROCEDURE</strong>{C} (bitmap: <strong>FIMULTIBITMAP</strong>; page: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>UnlockPage: <strong>PROCEDURE</strong>{C} (bitmap: <strong>FIMULTIBITMAP</strong>; page: <strong>FIBITMAP</strong>; changed: <strong>BOOLEAN</strong>)<tr><td></td><td>MovePage: <strong>PROCEDURE</strong>{C} (bitmap: <strong>FIMULTIBITMAP</strong>; target, source: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetLockedPageNumbers: <strong>PROCEDURE</strong>{C} (bitmap: <strong>FIMULTIBITMAP</strong>; <strong>VAR</strong> pages: <strong>SIGNED32</strong>; <strong>VAR</strong> count: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetFileType: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIGNED32</strong>): <strong>IMAGE_FORMAT</strong><tr><td></td><td>GetFileTypeU: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIGNED32</strong>): <strong>IMAGE_FORMAT</strong><tr><td></td><td>GetFileTypeFromHandle: <strong>PROCEDURE</strong>{C} (io: <strong>FreeImageIO</strong>; handle: <strong>SIGNED32</strong>; size: <strong>SIGNED32</strong>): <strong>IMAGE_FORMAT</strong><tr><td></td><td>GetFileTypeFromMemory: <strong>PROCEDURE</strong>{C} (stream: <strong>FIMEMORY</strong>; size: <strong>SIGNED32</strong>): <strong>IMAGE_FORMAT</strong><tr><td></td><td>GetImageType: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>IMAGE_TYPE</strong><tr><td></td><td>IsLittleEndian: <strong>PROCEDURE</strong>{C} (): <strong>BOOLEAN</strong><tr><td></td><td>LookupX11Color: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> szColor: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> nRed, nGreen, nBlue: <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td>LookupSVGColor: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> szColor: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> nRed, nGreen, nBlue: <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetBits: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>ADDRESS</strong><tr><td></td><td>GetScanLine: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>ADDRESS</strong><tr><td></td><td>GetPixelColor: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; x, y: <strong>SIGNED32</strong>; <strong>VAR</strong> value: <strong>RGBQUAD</strong>)<tr><td></td><td>SetPixelColor: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; x, y: <strong>SIGNED32</strong>; <strong>CONST</strong> value: <strong>RGBQUAD</strong>)<tr><td></td><td>GetPixelIndex: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; x, y: <strong>SIGNED32</strong>; <strong>VAR</strong> value: <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetPixelIndex: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; x, y: <strong>SIGNED32</strong>; <strong>CONST</strong> value: <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetScanLineRGB: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrLineRGB</strong><tr><td></td><td>GetScanLineRGBA: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrLineRGBA</strong><tr><td></td><td>GetScanLine16: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrFISINT16</strong><tr><td></td><td>GetScanLine32: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrFIINT32</strong><tr><td></td><td>GetScanLineFloat: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrFIFLOAT</strong><tr><td></td><td>GetScanLineDouble: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrFIDOUBLE</strong><tr><td></td><td>GetScanLineComplex: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrFICOMPLEX</strong><tr><td></td><td>GetScanLineFRGB16: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrFIRGB16</strong><tr><td></td><td>GetScanLineFRGBA16: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrFIRGBA16</strong><tr><td></td><td>GetScanLineFRGBF: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrFIRGBF</strong><tr><td></td><td>GetScanLineFRGBAF: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; scanline: <strong>SIGNED32</strong>): <strong>PtrFIRGBAF</strong><tr><td></td><td>GetColorsUsed: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetBPP: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetWidth: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetHeight: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetLine: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetPitch: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetDIBSize: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetMemorySize: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetPalette: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>PtrPALETTE</strong><tr><td></td><td>GetDotsPerMeterX: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetDotsPerMeterY: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>SetDotsPerMeterX: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; res: <strong>SIGNED32</strong>)<tr><td></td><td>SetDotsPerMeterY: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; res: <strong>SIGNED32</strong>)<tr><td></td><td>GetInfoHeader: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>PtrBITMAPINFOHEADER</strong><tr><td></td><td>GetInfo: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>PtrBITMAPINFO</strong><tr><td></td><td>GetColorType: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetRedMask: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetGreenMask: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetBlueMask: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetTransparencyCount: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetTransparencyTable: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>SetTransparent: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; enabled: <strong>BOOLEAN</strong>)<tr><td></td><td>SetTransparencyTable: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; table: <strong>ADDRESS</strong>; count: <strong>SIGNED32</strong>)<tr><td></td><td>IsTransparent: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetTransparentIndex: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; index: <strong>SIGNED32</strong>)<tr><td></td><td>GetTransparentIndex: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>HasBackgroundColor: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetBackgroundColor: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; <strong>VAR</strong> bkcolor: <strong>RGBQUAD</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetBackgroundColor: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; <strong>CONST</strong> bkcolor: <strong>RGBQUAD</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetThumbnail: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>SetThumbnail: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; thumbnail: <strong>FIBITMAP</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetICCProfile: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIICCPROFILE</strong><tr><td></td><td>CreateICCProfile: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; data: <strong>ADDRESS</strong>; size: <strong>SIGNED32</strong>): <strong>FIICCPROFILE</strong><tr><td></td><td>DestroyICCProfile: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>)<tr><td></td><td>ConvertTo4Bits: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertTo8Bits: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertToGreyscale: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertTo16Bits555: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertTo16Bits565: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertTo24Bits: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertTo32Bits: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ColorQuantize: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; quantize: <strong>IMAGE_QUANTIZE</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ColorQuantizeEx: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; quantize: <strong>IMAGE_QUANTIZE</strong>; PaletteSize: <strong>SIGNED32</strong>; ReserveSize: <strong>SIGNED32</strong>; ReservePalette: <strong>RGBQUAD</strong>): <strong>FIBITMAP</strong><tr><td></td><td>Threshold: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; T: <strong>SIGNED8</strong>): <strong>FIBITMAP</strong><tr><td></td><td>Dither: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; algorithm: <strong>IMAGE_DITHER</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertFromRawBits: <strong>PROCEDURE</strong>{C} (bits: <strong>ADDRESS</strong>; width, height, pitch: <strong>SIGNED32</strong>; bpp, red_mask, green_mask, blue_mask: <strong>SIGNED32</strong>; topdown: <strong>BOOLEAN</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertFromRawBitsEx: <strong>PROCEDURE</strong>{C} (copySource: <strong>BOOLEAN</strong>; bits: <strong>ADDRESS</strong>; type: <strong>IMAGE_TYPE</strong>; width, height, pitch: <strong>SIGNED32</strong>; bpp, red_mask, green_mask, blue_mask: <strong>SIGNED32</strong>; topdown: <strong>BOOLEAN</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertToRawBits: <strong>PROCEDURE</strong>{C} (bits: <strong>ADDRESS</strong>; dib: <strong>FIBITMAP</strong>; pitch: <strong>SIGNED32</strong>; bpp, red_mask, green_mask, blue_mask: <strong>SIGNED32</strong>; topdown: <strong>BOOLEAN</strong>)<tr><td></td><td>ConvertToFloat: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertToRGBF: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertToRGBAF: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertToUINT16: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertToRGB16: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertToRGBA16: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertToStandardType: <strong>PROCEDURE</strong>{C} (src: <strong>FIBITMAP</strong>; scale_linear: <strong>BOOLEAN</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ConvertToType: <strong>PROCEDURE</strong>{C} (src: <strong>FIBITMAP</strong>; dst_type: <strong>IMAGE_TYPE</strong>; scale_linear: <strong>BOOLEAN</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ToneMapping: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; tmo: <strong>IMAGE_TMO</strong>; first_param, second_param: <strong>FLOAT64</strong>): <strong>FIBITMAP</strong><tr><td></td><td>TmoDrago03: <strong>PROCEDURE</strong>{C} (src: <strong>FIBITMAP</strong>; gamma, exposure: <strong>FLOAT64</strong>): <strong>FIBITMAP</strong><tr><td></td><td>TmoReinhard05: <strong>PROCEDURE</strong>{C} (src: <strong>FIBITMAP</strong>; intensity, contrast: <strong>FLOAT64</strong>): <strong>FIBITMAP</strong><tr><td></td><td>TmoReinhard05Ex: <strong>PROCEDURE</strong>{C} (src: <strong>FIBITMAP</strong>; intensity, contrast, adaptation, color_correction: <strong>FLOAT64</strong>): <strong>FIBITMAP</strong><tr><td></td><td>TmoFattal02: <strong>PROCEDURE</strong>{C} (src: <strong>FIBITMAP</strong>; color_saturation, attenuation: <strong>FLOAT64</strong>): <strong>FIBITMAP</strong><tr><td></td><td>ZLibCompress: <strong>PROCEDURE</strong>{C} (target: <strong>ADDRESS</strong>; target_size: <strong>SIGNED32</strong>; source: <strong>ADDRESS</strong>; source_size: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>ZLibUncompress: <strong>PROCEDURE</strong>{C} (target: <strong>ADDRESS</strong>; target_size: <strong>SIGNED32</strong>; source: <strong>ADDRESS</strong>; source_size: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>ZLibGZip: <strong>PROCEDURE</strong>{C} (target: <strong>ADDRESS</strong>; target_size: <strong>SIGNED32</strong>; source: <strong>ADDRESS</strong>; source_size: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>ZLibGUnzip: <strong>PROCEDURE</strong>{C} (target: <strong>ADDRESS</strong>; target_size: <strong>SIGNED32</strong>; source: <strong>ADDRESS</strong>; source_size: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>ZLibCRC32: <strong>PROCEDURE</strong>{C} (crc: <strong>SIGNED32</strong>; source: <strong>ADDRESS</strong>; source_size: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>CreateTag: <strong>PROCEDURE</strong>{C} (): <strong>FITAG</strong><tr><td></td><td>DeleteTag: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>)<tr><td></td><td>CloneTag: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>): <strong>FITAG</strong><tr><td></td><td>getTagKey: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>): <strong>ADDRESS</strong><tr><td></td><td>getTagDescription: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>): <strong>ADDRESS</strong><tr><td></td><td>GetTagID: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetTagType: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>): <strong>IMAGE_MDTYPE</strong><tr><td></td><td>GetTagCount: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetTagLength: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetTagValue: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>): <strong>ADDRESS</strong><tr><td></td><td>SetTagKey: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>; <strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetTagDescription: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>; <strong>CONST</strong> description: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetTagID: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>; id: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetTagType: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>; atype: <strong>IMAGE_MDTYPE</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetTagCount: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>; count: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetTagLength: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>; length: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetTagValue: <strong>PROCEDURE</strong>{C} (tag: <strong>FITAG</strong>; value: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong><tr><td></td><td>FindFirstMetadata: <strong>PROCEDURE</strong>{C} (model: <strong>IMAGE_MDMODEL</strong>; dib: <strong>FIBITMAP</strong>; <strong>VAR</strong> tag: <strong>FITAG</strong>): <strong>FIMETADATA</strong><tr><td></td><td>FindNextMetadata: <strong>PROCEDURE</strong>{C} (mdhandle: <strong>FIMETADATA</strong>; <strong>VAR</strong> tag: <strong>FITAG</strong>): <strong>BOOLEAN</strong><tr><td></td><td>FindCloseMetadata: <strong>PROCEDURE</strong>{C} (mdhandle: <strong>FIMETADATA</strong>)<tr><td></td><td>SetMetadata: <strong>PROCEDURE</strong>{C} (model: <strong>IMAGE_MDMODEL</strong>; dib: <strong>FIBITMAP</strong>; <strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; tag: <strong>FITAG</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetMetadata: <strong>PROCEDURE</strong>{C} (model: <strong>IMAGE_MDMODEL</strong>; dib: <strong>FIBITMAP</strong>; <strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> tag: <strong>FITAG</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SetMetadataKeyValue: <strong>PROCEDURE</strong>{C} (model: <strong>IMAGE_MDMODEL</strong>; dib: <strong>FIBITMAP</strong>; <strong>CONST</strong> key, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetMetadataCount: <strong>PROCEDURE</strong>{C} (model: <strong>IMAGE_MDMODEL</strong>; dib: <strong>FIBITMAP</strong>): <strong>SIGNED32</strong><tr><td></td><td>CloneMetadata: <strong>PROCEDURE</strong>{C} (dst, src: <strong>FIBITMAP</strong>): <strong>BOOLEAN</strong><tr><td></td><td>tagToString: <strong>PROCEDURE</strong>{C} (model: <strong>IMAGE_MDMODEL</strong>; tag: <strong>FITAG</strong>; make: <strong>ADDRESS</strong>): <strong>ADDRESS</strong><tr><td></td><td>JPEGTransform: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> srcfile, dstfile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; operation: <strong>IMAGE_JPEG_OPERATION</strong>; perfect: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td>JPEGTransformU: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> srcfile, dstfile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; operation: <strong>IMAGE_JPEG_OPERATION</strong>; perfect: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td>JPEGCrop: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> srcfile, dstfile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; left, top, right, bottom: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>JPEGCropU: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> srcfile, dstfile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; left, top, right, bottom: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>JPEGTransformCombined: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> srcfile, destfile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; operation: <strong>IMAGE_JPEG_OPERATION</strong>; <strong>VAR</strong> left, top, right, bottom: <strong>SIGNED32</strong>; perfect: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td>JPEGTransformCombinedU: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> srcfile, dstfile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; operation: <strong>IMAGE_JPEG_OPERATION</strong>; <strong>VAR</strong> left, top, right, bottom: <strong>SIGNED32</strong>; perfect: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td>JPEGTransformCombinedFromMemory: <strong>PROCEDURE</strong>{C} (srcstream, dststream: <strong>FIMEMORY</strong>; operation: <strong>IMAGE_JPEG_OPERATION</strong>; <strong>VAR</strong> left, top, right, bottom: <strong>SIGNED32</strong>; perfect: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td>RotateClassic: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; angle: <strong>FLOAT64</strong>): <strong>FIBITMAP</strong><tr><td></td><td>Rotate: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; angle: <strong>FLOAT64</strong>; bkcolor: <strong>ADDRESS</strong>): <strong>FIBITMAP</strong><tr><td></td><td>RotateEx: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; angle: <strong>FLOAT64</strong>; x_shift, y_shift, x_origin, y_origin: <strong>FLOAT64</strong>; use_mask: <strong>BOOLEAN</strong>): <strong>FIBITMAP</strong><tr><td></td><td>FlipHorizontal: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>BOOLEAN</strong><tr><td></td><td>FlipVertical: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>BOOLEAN</strong><tr><td></td><td>Rescale: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; dst_width, dst_height: <strong>SIGNED32</strong>; filter: <strong>IMAGE_FILTER</strong>): <strong>FIBITMAP</strong><tr><td></td><td>MakeThumbnail: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; max_pixel_size: <strong>SIGNED32</strong>; convert: <strong>BOOLEAN</strong>): <strong>FIBITMAP</strong><tr><td></td><td>RescaleRect: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; dst_width, dst_height, left, top, right, bottom: <strong>SIGNED32</strong>; filter: <strong>IMAGE_FILTER</strong>; flags: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>AdjustCurve: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; LUT: <strong>ADDRESS</strong>; channel: <strong>IMAGE_COLOR_CHANNEL</strong>): <strong>BOOLEAN</strong><tr><td></td><td>AdjustGamma: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; gamma: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td>AdjustBrightness: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; percentage: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td>AdjustContrast: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; percentage: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td>Invert: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetHistogram: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; histo: <strong>ADDRESS</strong>; channel: <strong>IMAGE_COLOR_CHANNEL</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetAdjustColorsLookupTable: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> LUT: <strong>Palette</strong>; brightness, contrast, gamma: <strong>FLOAT64</strong>; invert: <strong>BOOLEAN</strong>): <strong>SIGNED32</strong><tr><td></td><td>AdjustColors: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; brightness, contrast, gamma: <strong>FLOAT64</strong>; invert: <strong>BOOLEAN</strong>)<tr><td></td><td>ApplyColorMapping: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; <strong>VAR</strong> srccolors, dstcolors: <strong>Palette</strong>; count: <strong>SIGNED32</strong>; ignore_alpha, swap: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>SwapColors: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; <strong>VAR</strong> color_a, color_b: <strong>Palette</strong>; ignore_alpha: <strong>BOOLEAN</strong>): <strong>SIGNED32</strong><tr><td></td><td>ApplyPaletteIndexMapping: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; <strong>VAR</strong> srcindices, dstindices: <strong>LUT</strong>; count: <strong>SIGNED32</strong>; swap: <strong>BOOLEAN</strong>): <strong>SIGNED32</strong><tr><td></td><td>SwapPaletteIndices: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; <strong>VAR</strong> index_a, index_b: <strong>LUT</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetChannel: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; channel: <strong>IMAGE_COLOR_CHANNEL</strong>): <strong>FIBITMAP</strong><tr><td></td><td>SetChannel: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; dib8: <strong>FIBITMAP</strong>; channel: <strong>IMAGE_COLOR_CHANNEL</strong>): <strong>BOOLEAN</strong><tr><td></td><td>GetComplexChannel: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; channel: <strong>IMAGE_COLOR_CHANNEL</strong>): <strong>FIBITMAP</strong><tr><td></td><td>SetComplexChannel: <strong>PROCEDURE</strong>{C} (dst: <strong>FIBITMAP</strong>; src: <strong>FIBITMAP</strong>; channel: <strong>IMAGE_COLOR_CHANNEL</strong>): <strong>BOOLEAN</strong><tr><td></td><td>Copy: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; left, top, right, bottom: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>Paste: <strong>PROCEDURE</strong>{C} (dst: <strong>FIBITMAP</strong>; src: <strong>FIBITMAP</strong>; left, top, alpha: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>CreateView: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; left, top, right, bottom: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>Composite: <strong>PROCEDURE</strong>{C} (fg: <strong>FIBITMAP</strong>; useFileBkg: <strong>BOOLEAN</strong>; appBkColor: <strong>RGBQUAD</strong>; bg: <strong>FIBITMAP</strong>): <strong>FIBITMAP</strong><tr><td></td><td>PreMultiplyWithAlpha: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>): <strong>BOOLEAN</strong><tr><td></td><td>FillBackground: <strong>PROCEDURE</strong>{C} (dib: <strong>FIBITMAP</strong>; color: <strong>SIGNED32</strong>; options: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>EnlargeCanvas: <strong>PROCEDURE</strong>{C} (src: <strong>FIBITMAP</strong>; left, top, right, bottom: <strong>SIGNED32</strong>; color: <strong>SIGNED32</strong>; options: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>AllocateEx: <strong>PROCEDURE</strong>{C} (width, height, bpp: <strong>SIGNED32</strong>; color: <strong>ADDRESS</strong>; options: <strong>SIGNED32</strong>; palette: <strong>PtrPALETTE</strong>; red_mask, green_mask, blue_mask: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>AllocateExT: <strong>PROCEDURE</strong>{C} (type: <strong>IMAGE_TYPE</strong>; width, height, bpp: <strong>SIGNED32</strong>; color: <strong>ADDRESS</strong>; options: <strong>SIGNED32</strong>; palette: <strong>PtrPALETTE</strong>; red_mask, green_mask, blue_mask: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><td></td><td>MultigridPoissonSolver: <strong>PROCEDURE</strong>{C} (Laplacian: <strong>FIBITMAP</strong>; ncycle: <strong>SIGNED32</strong>): <strong>FIBITMAP</strong><tr><th align='left'>procedures</th><td> GetProcAddress (lib: <strong>HostLibs.LibHandle</strong>; <strong>CONST</strong> procName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; adr: <strong>ADDRESS</strong>)<tr><td></td><td> GetStringFromAddr (adr: <strong>ADDRESS</strong>): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.GetVersion">GetVersion</a> (): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.GetCopyrightMessage">GetCopyrightMessage</a> (): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.GetFormatFromFIF">GetFormatFromFIF</a> (fif: <strong>IMAGE_FORMAT</strong>): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.GetFIFExtensionList">GetFIFExtensionList</a> (fif: <strong>IMAGE_FORMAT</strong>): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.GetFIFDescription">GetFIFDescription</a> (fif: <strong>IMAGE_FORMAT</strong>): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.GetFIFRegExpr">GetFIFRegExpr</a> (fif: <strong>IMAGE_FORMAT</strong>): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.GetTagKey">GetTagKey</a> (tag: <strong>FITAG</strong>): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.GetTagDescription">GetTagDescription</a> (tag: <strong>FITAG</strong>): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.TagToString">TagToString</a> (model: <strong>IMAGE_MDMODEL</strong>; tag: <strong>FITAG</strong>): <strong>Strings.String</strong><tr><td></td><td> <a href="#FreeImageDll.LoadImage">LoadImage</a> (<strong>CONST</strong> fname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>IMAGE_FLAGS</strong>): <strong>FIBITMAP</strong><tr><td></td><td> <a href="#FreeImageDll.SaveImage">SaveImage</a> (dib: <strong>FIBITMAP</strong>; <strong>CONST</strong> fname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>IMAGE_FLAGS</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_70707D40"><a name="FreeImageDll.FIICCPROFILE"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FIICCPROFILE">FIICCPROFILE</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIICCPROFILE* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>flags: <strong>SIGNED16</strong><tr><td></td><td>size: <strong>SIGNED32</strong><tr><td></td><td>data: <strong>ADDRESS</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7070D740"><a name="FreeImageDll.RGBQUAD"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.RGBQUAD">RGBQUAD</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RGBQUAD* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>rgbBlue: <strong>CHAR</strong><tr><td></td><td>rgbGreen: <strong>CHAR</strong><tr><td></td><td>rgbRed: <strong>CHAR</strong><tr><td></td><td>rgbReserved: <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_70714000"><a name="FreeImageDll.RGBTRIPLE"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.RGBTRIPLE">RGBTRIPLE</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RGBTRIPLE* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>rgbtBlue: <strong>CHAR</strong><tr><td></td><td>rgbtGreen: <strong>CHAR</strong><tr><td></td><td>rgbtRed: <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_70719AC0"><a name="FreeImageDll.PtrBITMAPINFOHEADER"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.PtrBITMAPINFOHEADER">PtrBITMAPINFOHEADER</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PtrBITMAPINFOHEADER* =<strong>POINTER</strong> <strong>TO</strong> <strong>BITMAPINFOHEADER</strong></pre>
+<hr><h2 id="#_7071C6C0"><a name="FreeImageDll.BITMAPINFOHEADER"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.BITMAPINFOHEADER">BITMAPINFOHEADER</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BITMAPINFOHEADER* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>biSize: <strong>SIGNED32</strong><tr><td></td><td>biWidth: <strong>SIGNED32</strong><tr><td></td><td>biHeight: <strong>SIGNED32</strong><tr><td></td><td>biPlanes: <strong>SIGNED16</strong><tr><td></td><td>biBitCount: <strong>SIGNED16</strong><tr><td></td><td>biCompression: <strong>SIGNED32</strong><tr><td></td><td>biSizeImage: <strong>SIGNED32</strong><tr><td></td><td>biXPelsPerMeter: <strong>SIGNED32</strong><tr><td></td><td>biYPelsPerMeter: <strong>SIGNED32</strong><tr><td></td><td>biClrUsed: <strong>SIGNED32</strong><tr><td></td><td>biClrImportant: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_70729900"><a name="FreeImageDll.PtrBITMAPINFO"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.PtrBITMAPINFO">PtrBITMAPINFO</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PtrBITMAPINFO* =<strong>POINTER</strong> <strong>TO</strong> <strong>BITMAPINFO</strong></pre>
+<hr><h2 id="#_7072C500"><a name="FreeImageDll.BITMAPINFO"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.BITMAPINFO">BITMAPINFO</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BITMAPINFO* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bmiHeader: <strong>BITMAPINFOHEADER</strong><tr><td></td><td>bmiColors: <strong>ARRAY</strong> 1 <strong>OF</strong> <strong>RGBQUAD</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_70731F40"><a name="FreeImageDll.FIRGB16"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FIRGB16">FIRGB16</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIRGB16* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>red: <strong>SIGNED16</strong><tr><td></td><td>green: <strong>SIGNED16</strong><tr><td></td><td>blue: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_70737F80"><a name="FreeImageDll.FIRGBA16"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FIRGBA16">FIRGBA16</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIRGBA16* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>red: <strong>SIGNED16</strong><tr><td></td><td>green: <strong>SIGNED16</strong><tr><td></td><td>blue: <strong>SIGNED16</strong><tr><td></td><td>alpha: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7073ED80"><a name="FreeImageDll.FIRGBF"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FIRGBF">FIRGBF</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIRGBF* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>red: <strong>FLOAT32</strong><tr><td></td><td>green: <strong>FLOAT32</strong><tr><td></td><td>blue: <strong>FLOAT32</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_70744CC0"><a name="FreeImageDll.FIRGBAF"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FIRGBAF">FIRGBAF</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIRGBAF* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>red: <strong>FLOAT32</strong><tr><td></td><td>green: <strong>FLOAT32</strong><tr><td></td><td>blue: <strong>FLOAT32</strong><tr><td></td><td>alpha: <strong>FLOAT32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7074BAC0"><a name="FreeImageDll.FICOMPLEX"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FICOMPLEX">FICOMPLEX</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FICOMPLEX* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>r: <strong>FLOAT64</strong><tr><td></td><td>i: <strong>FLOAT64</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_70750B40"><a name="FreeImageDll.FreeImageIO"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FreeImageIO">FreeImageIO</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FreeImageIO* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>read_proc: <strong>FI_ReadProc</strong><tr><td></td><td>write_proc: <strong>FI_WriteProc</strong><tr><td></td><td>seek_proc: <strong>FI_SeekProc</strong><tr><td></td><td>tell_proc: <strong>FI_TellProc</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_70757D00"><a name="FreeImageDll.FIMEMORY"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FIMEMORY">FIMEMORY</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIMEMORY* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_7075B6C0"><a name="FreeImageDll.FIBITMAP"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FIBITMAP">FIBITMAP</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIBITMAP* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_7075F080"><a name="FreeImageDll.FIMULTIBITMAP"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FIMULTIBITMAP">FIMULTIBITMAP</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIMULTIBITMAP* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_70762A40"><a name="FreeImageDll.FIMETADATA"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FIMETADATA">FIMETADATA</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FIMETADATA* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_70766400"><a name="FreeImageDll.FITAG"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.FITAG">FITAG</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FITAG* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_70769DC0"><a name="FreeImageDll.GetVersion"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.GetVersion">GetVersion</a>
+</h2>
+<p> wrapper procedure for getVersion()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetVersion* (): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_7076DE80"><a name="FreeImageDll.GetCopyrightMessage"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.GetCopyrightMessage">GetCopyrightMessage</a>
+</h2>
+<p> wrapper procedure for getCopyrightMessage()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetCopyrightMessage* (): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_70772140"><a name="FreeImageDll.GetFormatFromFIF"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.GetFormatFromFIF">GetFormatFromFIF</a>
+</h2>
+<p> wrapper procedure for getFormatFromFIF</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetFormatFromFIF* (fif: <strong>IMAGE_FORMAT</strong>): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_70776D00"><a name="FreeImageDll.GetFIFExtensionList"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.GetFIFExtensionList">GetFIFExtensionList</a>
+</h2>
+<p> wrapper procedure for getFIFExtensionList</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetFIFExtensionList* (fif: <strong>IMAGE_FORMAT</strong>): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_7077B8C0"><a name="FreeImageDll.GetFIFDescription"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.GetFIFDescription">GetFIFDescription</a>
+</h2>
+<p> wrapper procedure for getFIFDescription</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetFIFDescription* (fif: <strong>IMAGE_FORMAT</strong>): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_70780480"><a name="FreeImageDll.GetFIFRegExpr"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.GetFIFRegExpr">GetFIFRegExpr</a>
+</h2>
+<p> wrapper procedure for getFIFRegExpr</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetFIFRegExpr* (fif: <strong>IMAGE_FORMAT</strong>): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_70784FC0"><a name="FreeImageDll.GetTagKey"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.GetTagKey">GetTagKey</a>
+</h2>
+<p> wrapper procedure for getTagKey</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetTagKey* (tag: <strong>FITAG</strong>): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_70789B00"><a name="FreeImageDll.GetTagDescription"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.GetTagDescription">GetTagDescription</a>
+</h2>
+<p> wrapper procedure for getTagDescription</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetTagDescription* (tag: <strong>FITAG</strong>): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_7078E6C0"><a name="FreeImageDll.TagToString"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.TagToString">TagToString</a>
+</h2>
+<p> wrapper procedure for tagToString</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TagToString* (model: <strong>IMAGE_MDMODEL</strong>; tag: <strong>FITAG</strong>): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_70794000"><a name="FreeImageDll.LoadImage"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.LoadImage">LoadImage</a>
+</h2>
+<p> Utilitiy functions, load file fname as FIBITMAP with flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadImage* (<strong>CONST</strong> fname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>IMAGE_FLAGS</strong>): <strong>FIBITMAP</strong></pre>
+<hr><h2 id="#_7079B940"><a name="FreeImageDll.SaveImage"></a><a href="#FreeImageDll">FreeImageDll</a>.<a href="#FreeImageDll.SaveImage">SaveImage</a>
+</h2>
+<p> save FITMAP image to a file named fname</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SaveImage* (dib: <strong>FIBITMAP</strong>; <strong>CONST</strong> fname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>IMAGE_FLAGS</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

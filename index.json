@@ -1,25 +1,26 @@
 {
   "registry": "a2-registry",
-  "description": "Central package registry for A2 / Active Oberon community libraries (CPAN/Maven-style). Install with `ob get`.",
+  "description": "Central package registry for A2 / Active Oberon community libraries (CPAN/Maven-style). Install by name with `ob get community/<name>` and A2_REGISTRY set.",
   "updated": "2026-07-24",
   "packages": {
-    "community/matrix":       { "status": "validated", "modules": 74,  "path": "packages/matrix",   "requires": ["std/runtime","std/math","std/numerics"], "summary": "Dense/complex linear algebra, ML, wavelets, PDE, statistics (Hunziker). Headless numeric core." },
-    "community/fftw":         { "status": "validated", "modules": 2,   "path": "packages/fftw",     "requires": ["std/runtime"], "native": "libfftw3", "summary": "FFI bindings to native FFTW3 (double+single)." },
-    "community/generics":     { "status": "validated", "modules": 1,   "path": "packages/generics", "requires": ["std/runtime"], "kind": "generic", "summary": "Parametric generic containers (Romanchenko)." },
-    "community/work":         { "status": "pending-manifest", "modules": 44, "summary": "Assorted tools/experiments; manifest + headless/GUI split TODO." },
-    "community/freeimage":    { "status": "pending-manifest", "modules": 5,  "summary": "FreeImage FFI bindings." },
-    "community/ph":           { "status": "pending-manifest", "modules": 4,  "summary": "PH utilities." },
-    "community/opendocument": { "status": "pending-manifest", "modules": 4,  "summary": "OpenDocument support." },
-    "community/usb":          { "status": "pending-manifest", "modules": 3,  "summary": "USB helpers." },
-    "community/v4l2":         { "status": "pending-manifest", "modules": 3,  "summary": "Video4Linux2 FFI." },
-    "community/octk":         { "status": "pending-binary",   "modules": 77, "summary": "OCTK toolkit — source in binary Oberon-Text format; compiler reads it, text analysis/manifest-gen needs interface extraction." },
-    "community/reanimator":   { "status": "pending-binary",   "modules": 42, "summary": "Reanimator — binary Oberon-Text format." },
-    "community/sr":           { "status": "pending-binary",   "modules": 22, "summary": "sr voxel/raytracer engine — binary format + GUI (WMWindowManager/WMGraphics)." }
+    "community/matrix":       { "status": "validated", "modules": 74, "path": "packages/matrix",   "requires": ["std/runtime","std/math","std/numerics"], "summary": "Dense/complex linear algebra, ML, wavelets, PDE, statistics (Hunziker). Headless numeric core." },
+    "community/fftw":         { "status": "validated", "modules": 2,  "path": "packages/fftw",     "requires": ["std/runtime"], "native": "libfftw3", "summary": "FFI bindings to native FFTW3 (double+single)." },
+    "community/generics":     { "status": "validated", "modules": 1,  "path": "packages/generics", "requires": ["std/runtime"], "kind": "generic", "summary": "Parametric generic containers (Romanchenko)." },
+    "community/freeimage":    { "status": "validated", "modules": 1,  "path": "packages/freeimage","requires": ["std/runtime"], "native": "libfreeimage", "summary": "FFI to native FreeImage (image load/save)." },
+    "community/usb":          { "status": "validated", "modules": 2,  "path": "packages/usb",      "requires": ["std/runtime"], "native": "libusb / libftd2xx", "summary": "FFI to libusb + FTDI FTD2XX." },
+    "community/v4l2":         { "status": "pending-manifest", "modules": 2, "summary": "Video4Linux2 FFI (Unix.V4L2/Unix.libv4l2). Compiles; needs platform-prefixed-filename handling in packaging; GUI VideoExample excluded." },
+    "community/ph":           { "status": "pending-deps", "modules": 4, "summary": "PH utilities (IP monitor, registries, web syndication). Needs std/net + std/crypto + std/base + community SearchTools/NewHTTPClient; IPMonitor uses Windows WSock32." },
+    "community/opendocument": { "status": "pending", "modules": 4, "summary": "OpenDocument (ODF) codecs. Needs std/web+compress+crypto+base and GUI (WMDialogs); one file (OpenDocumentTransforms) is a malformed XSL-as-source and must be fixed/dropped." },
+    "community/work":         { "status": "pending", "modules": 44, "summary": "Grab-bag of experiments/tools (incl. stray copies of compiler modules); not a coherent library — triage before packaging." },
+    "community/octk":         { "status": "pending-binary", "modules": 77, "summary": "OCTK toolkit — binary Oberon-Text source; ob compile/doc read it, text manifest-gen needs interface extraction." },
+    "community/reanimator":   { "status": "pending-binary", "modules": 42, "summary": "Reanimator — binary Oberon-Text source." },
+    "community/sr":           { "status": "pending-binary", "modules": 22, "summary": "sr voxel/raytracer — binary source + GUI (WMWindowManager/WMGraphics)." }
   },
   "notes": {
     "canonical_source": "github.com/sergundo/A2Community",
     "ocp_extras": "a2oberon/ocp adds 33 modules not in A2Community (Rubik, VolumeRaytracer, Wedgelets, Miniscript, ants*, ...) — union candidates.",
-    "binary_format": "OCTK/Reanimator/sr are stored in A2 binary Text format. `ob compile`/`ob doc` READ it fine (Fox has a Text subsystem); only grep/python text analysis and manifest auto-generation are blocked — those need interface extraction (compile then read .SymUu, or Text->ASCII export).",
-    "embedded_excluded": "a2oberon/ARM (73 modules: Enet stack, DMA330, Zynq EMAC) is a bare-metal/embedded track, not a library — excluded from this registry."
+    "binary_format": "OCTK/Reanimator/sr are A2 binary Text format. ob compile/doc READ it (Fox Text subsystem); only grep/python text analysis + manifest auto-gen are blocked (need interface extraction: compile then read .SymUu, or Text->ASCII export).",
+    "platform_prefixed": "Files like Unix.V4L2.Mod carry a [Platform.] filename prefix; the module inside is V4L2. Packaging must resolve the module name from the MODULE header, not the filename stem.",
+    "embedded_excluded": "a2oberon/ARM (73 modules: Enet stack, DMA330, Zynq EMAC) is a bare-metal/embedded track, not a library — excluded."
   }
 }
