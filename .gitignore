@@ -1,0 +1,3 @@
+# generated static site (built by tools/build_site.py, deployed via Actions)
+/site/
+*.bak
