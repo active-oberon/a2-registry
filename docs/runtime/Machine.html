@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Machine">Machine</a></p>
+<hr><h1 id="#_6560C380"><a name="Machine"></a><a href="#ModuleList">Module</a> Machine
+</h1>
+<p> AUTHOR "pjm, G.F."; PURPOSE "Bootstrapping, configuration and machine interface";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>DefaultObjectFileExtension= ".GofUu"<tr><td></td><td>Second= 1000<tr><td></td><td><a href="#Machine.MTTR">MTTR</a>= 12<tr><td></td><td>MMX= 23<tr><td></td><td>MemBlockSize= ((64*1024)*1024)<tr><td></td><td>TraceOutput= 0<tr><td></td><td>Memory= 1<tr><td></td><td>X11= 2<tr><td></td><td>Heaps= 3<tr><td></td><td>Interrupts= 4<tr><td></td><td>Modules= 5<tr><td></td><td>Objects= 6<tr><td></td><td>Processors= 7<tr><td></td><td>KernelLog= 8<tr><td></td><td>MaxLocks= 9<tr><td></td><td>MaxCPU= 4<tr><th align='left'>type declarations</th><td>Vendor =<strong>ARRAY</strong> 13 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Machine.MemoryBlock">MemoryBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>MemoryBlockDesc</strong><tr><td></td><td><a href="#Machine.MemoryBlockDesc">MemoryBlockDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Machine.State">State</a> =<strong>RECORD</strong> <tr><th align='left'>variables</th><td><a href="#Machine.version">version</a>: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>features: <strong>SET</strong><tr><td></td><td>MMXSupport: <strong>BOOLEAN</strong><tr><td></td><td>SSESupport: <strong>BOOLEAN</strong><tr><td></td><td>SSE2Support: <strong>BOOLEAN</strong><tr><td></td><td>SSE3Support: <strong>BOOLEAN</strong><tr><td></td><td>SSSE3Support: <strong>BOOLEAN</strong><tr><td></td><td>SSE41Support: <strong>BOOLEAN</strong><tr><td></td><td>SSE42Support: <strong>BOOLEAN</strong><tr><td></td><td>SSE5Support: <strong>BOOLEAN</strong><tr><td></td><td>AVXSupport: <strong>BOOLEAN</strong><tr><td></td><td><a href="#Machine.ticks">ticks</a>: <strong>SIGNED32</strong><tr><td></td><td>prioLow: <strong>INTEGER</strong><tr><td></td><td>prioHigh: <strong>INTEGER</strong><tr><td></td><td><a href="#Machine.fcr">fcr</a>: <strong>SET</strong><tr><td></td><td><a href="#Machine.timerFrequency">timerFrequency</a>: <strong>SIGNED64</strong><tr><td></td><td>gcThreshold: <strong>SIZE</strong><tr><td></td><td>memBlockHead: <strong>MemoryBlock</strong><tr><td></td><td>memBlockTail: <strong>MemoryBlock</strong><tr><th align='left'>procedures</th><td> <a href="#Machine.ID">ID</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Machine.FlushDCacheRange">FlushDCacheRange</a> (adr: <strong>ADDRESS</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Machine.InvalidateDCacheRange">InvalidateDCacheRange</a> (adr: <strong>ADDRESS</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Machine.InvalidateICacheRange">InvalidateICacheRange</a> (adr: <strong>ADDRESS</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> FreeMemBlock (memBlock: <strong>MemoryBlock</strong>)<tr><td></td><td> ExpandHeap (dummy: <strong>SIGNED32</strong>; size: <strong>SIZE</strong>; <strong>VAR</strong> memoryBlock: <strong>MemoryBlock</strong>; <strong>VAR</strong> beginBlockAdr, endBlockAdr: <strong>ADDRESS</strong>)<tr><td></td><td> SetMemoryBlockEndAddress (memBlock: <strong>MemoryBlock</strong>; endBlockAdr: <strong>ADDRESS</strong>)<tr><td></td><td> <a href="#Machine.GetStaticHeap">GetStaticHeap</a> (<strong>VAR</strong> beginBlockAdr, endBlockAdr, freeBlockAdr: <strong>ADDRESS</strong>)<tr><td></td><td> ValidHeapAddress (p: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Machine.GetFreeK">GetFreeK</a> (<strong>VAR</strong> total, lowFree, highFree: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Machine.Fill32">Fill32</a> (destAdr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>; filler: <strong>SIGNED32</strong>)<tr><td></td><td> Portin8 (port: <strong>SIGNED32</strong>; <strong>VAR</strong> val: <strong>CHAR</strong>)<tr><td></td><td> Portin16 (port: <strong>SIGNED32</strong>; <strong>VAR</strong> val: <strong>SIGNED16</strong>)<tr><td></td><td> Portin32 (port: <strong>SIGNED32</strong>; <strong>VAR</strong> val: <strong>SIGNED32</strong>)<tr><td></td><td> Portout8 (port: <strong>SIGNED32</strong>; val: <strong>CHAR</strong>)<tr><td></td><td> Portout16 (port: <strong>SIGNED32</strong>; val: <strong>SIGNED16</strong>)<tr><td></td><td> Portout32 (port: <strong>SIGNED32</strong>; val: <strong>SIGNED32</strong>)<tr><td></td><td>- <a href="#Machine.AtomicInc">AtomicInc</a> (<strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td>- <a href="#Machine.AtomicDec">AtomicDec</a> (<strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td>- <a href="#Machine.AtomicAdd">AtomicAdd</a> (<strong>VAR</strong> x: <strong>SIGNED32</strong>; y: <strong>SIGNED32</strong>)<tr><td></td><td>- <a href="#Machine.AtomicTestSet">AtomicTestSet</a> (<strong>VAR</strong> x: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td>- AtomicCAS (<strong>VAR</strong> x: <strong>SIGNED32</strong>; old, new: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>- <a href="#Machine.SpinHint">SpinHint</a><tr><td></td><td> CurrentPC (): <strong>ADDRESS</strong><tr><td></td><td>- GetTimer (): <strong>SIGNED64</strong><tr><td></td><td> <a href="#Machine.GetConfig">GetConfig</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Machine.StrToInt">StrToInt</a> (<strong>VAR</strong> i: <strong>SIZE</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> NumberOfProcessors (): <strong>SIZE</strong><tr><td></td><td> SetNumberOfProcessors (num: <strong>SIGNED32</strong>)<tr><td></td><td> ChangeByteOrder (n: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> TraceChar (c: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Machine.CPUID">CPUID</a> (<strong>VAR</strong> vendor: <strong>Vendor</strong>; <strong>VAR</strong> version: <strong>SIGNED32</strong>; <strong>VAR</strong> features1, features2: <strong>SET</strong>)<tr><td></td><td> <a href="#Machine.SetupFPU">SetupFPU</a><tr><td></td><td> CleanupLocks<tr><td></td><td> <a href="#Machine.Acquire">Acquire</a> (level: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Machine.Release">Release</a> (level: <strong>SIGNED32</strong>)<tr><td></td><td> Shutdown (reboot: <strong>BOOLEAN</strong>)<tr><td></td><td> SetGCParams<tr><td></td><td> UpdateTicks<tr><td></td><td> SilentLog<tr><td></td><td> VerboseLog<tr><td></td><td> Init0</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_65694B80"><a name="Machine.MTTR"></a><a href="#Machine">Machine</a>.<a href="#Machine.MTTR">MTTR</a>
+</h2>
+<p> bits in features variable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MTTR*= 12</pre>
+<hr><h2 id="#_65698600"><a name="Machine.MemoryBlock"></a><a href="#Machine">Machine</a>.<a href="#Machine.MemoryBlock">MemoryBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MemoryBlock* =<strong>POINTER</strong> <strong>TO</strong> <strong>MemoryBlockDesc</strong></pre>
+<hr><h2 id="#_6569B200"><a name="Machine.MemoryBlockDesc"></a><a href="#Machine">Machine</a>.<a href="#Machine.MemoryBlockDesc">MemoryBlockDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MemoryBlockDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>MemoryBlock</strong><tr><td></td><td>startAdr: <strong>ADDRESS</strong><tr><td></td><td>size: <strong>SIZE</strong><tr><td></td><td>beginBlockAdr: <strong>ADDRESS</strong><tr><td></td><td>endBlockAdr: <strong>ADDRESS</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_656A2A40"><a name="Machine.State"></a><a href="#Machine">Machine</a>.<a href="#Machine.State">State</a>
+</h2>
+<p> processor state</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> State* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>PC: <strong>ADDRESS</strong><tr><td></td><td>BP: <strong>ADDRESS</strong><tr><td></td><td>SP: <strong>ADDRESS</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_656A93C0"><a name="Machine.version"></a><a href="#Machine">Machine</a>.<a href="#Machine.version">version</a>
+</h2>
+<p> Aos version</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> version-: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_656AD4C0"><a name="Machine.ticks"></a><a href="#Machine">Machine</a>.<a href="#Machine.ticks">ticks</a>
+</h2>
+<p> timer ticks. Use Kernel.GetTicks() to read, don't write</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ticks-: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_656B1FC0"><a name="Machine.fcr"></a><a href="#Machine">Machine</a>.<a href="#Machine.fcr">fcr</a>
+</h2>
+<p> default floating-point control register value (default rounding mode is towards -infinity, for ENTIER)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> fcr-: <strong>SET</strong></pre>
+<hr><h2 id="#_656B7E40"><a name="Machine.timerFrequency"></a><a href="#Machine">Machine</a>.<a href="#Machine.timerFrequency">timerFrequency</a>
+</h2>
+<p> clock rate of GetTimer in Hz</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> timerFrequency-: <strong>SIGNED64</strong></pre>
+<hr><h2 id="#_656BC1C0"><a name="Machine.ID"></a><a href="#Machine">Machine</a>.<a href="#Machine.ID">ID</a>
+</h2>
+<p> Return current processor ID (0 to MaxNum-1).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ID* (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_656C0E80"><a name="Machine.FlushDCacheRange"></a><a href="#Machine">Machine</a>.<a href="#Machine.FlushDCacheRange">FlushDCacheRange</a>
+</h2>
+<ul>
+<li> Flush Data Cache for the specified virtual address range. If len is negative, flushes the whole cache.</li>
+
+<li> This is used on some architecture to interact with DMA hardware (e.g. Ethernet and USB. It can be</li>
+
+<li> left empty on Intel architecture.</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FlushDCacheRange* (adr: <strong>ADDRESS</strong>; len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_656CF700"><a name="Machine.InvalidateDCacheRange"></a><a href="#Machine">Machine</a>.<a href="#Machine.InvalidateDCacheRange">InvalidateDCacheRange</a>
+</h2>
+<ul>
+<li> Invalidate Data Cache for the specified virtual address range. If len is negative, flushes the whole cache.</li>
+
+<li> This is used on some architecture to interact with DMA hardware (e.g. Ethernet and USB. It can be</li>
+
+<li> left empty on Intel architecture.</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InvalidateDCacheRange* (adr: <strong>ADDRESS</strong>; len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_656DDF80"><a name="Machine.InvalidateICacheRange"></a><a href="#Machine">Machine</a>.<a href="#Machine.InvalidateICacheRange">InvalidateICacheRange</a>
+</h2>
+<ul>
+<li> Invalidate Instruction Cache for the specified virtual address range. If len is negative, flushes the whole cache.</li>
+
+<li> This is used on some architecture to interact with DMA hardware (e.g. Ethernet and USB. It can be</li>
+
+<li> left empty on Intel architecture.</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InvalidateICacheRange* (adr: <strong>ADDRESS</strong>; len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_656EC800"><a name="Machine.GetStaticHeap"></a><a href="#Machine">Machine</a>.<a href="#Machine.GetStaticHeap">GetStaticHeap</a>
+</h2>
+<p> Get first memory block and first free address, the first free address is identical to memBlockHead.endBlockAdr</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetStaticHeap* (<strong>VAR</strong> beginBlockAdr, endBlockAdr, freeBlockAdr: <strong>ADDRESS</strong>)</pre>
+<hr><h2 id="#_656F50C0"><a name="Machine.GetFreeK"></a><a href="#Machine">Machine</a>.<a href="#Machine.GetFreeK">GetFreeK</a>
+</h2>
+<p> Return information on free memory in Kbytes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetFreeK* (<strong>VAR</strong> total, lowFree, highFree: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_656FB600"><a name="Machine.Fill32"></a><a href="#Machine">Machine</a>.<a href="#Machine.Fill32">Fill32</a>
+</h2>
+<p> Fill "size" bytes at "destAdr" with "filler". "size" must be multiple of 4.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Fill32* (destAdr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>; filler: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_65703BC0"><a name="Machine.AtomicInc"></a><a href="#Machine">Machine</a>.<a href="#Machine.AtomicInc">AtomicInc</a>
+</h2>
+<p> -- Atomic operations --</p>
+
+<p> Atomic INC(x).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>- AtomicInc* (<strong>VAR</strong> x: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_65709100"><a name="Machine.AtomicDec"></a><a href="#Machine">Machine</a>.<a href="#Machine.AtomicDec">AtomicDec</a>
+</h2>
+<p> Atomic DEC(x).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>- AtomicDec* (<strong>VAR</strong> x: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_6570D3C0"><a name="Machine.AtomicAdd"></a><a href="#Machine">Machine</a>.<a href="#Machine.AtomicAdd">AtomicAdd</a>
+</h2>
+<p> Atomic INC(x, y).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>- AtomicAdd* (<strong>VAR</strong> x: <strong>SIGNED32</strong>; y: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_657128C0"><a name="Machine.AtomicTestSet"></a><a href="#Machine">Machine</a>.<a href="#Machine.AtomicTestSet">AtomicTestSet</a>
+</h2>
+<p> Atomic test-and-set. Set x = TRUE and return old value of x.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>- AtomicTestSet* (<strong>VAR</strong> x: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_65719A80"><a name="Machine.SpinHint"></a><a href="#Machine">Machine</a>.<a href="#Machine.SpinHint">SpinHint</a>
+</h2>
+<p> This procedure should be called in all spin loops as a hint to the processor (e.g. Pentium 4).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>- SpinHint*</pre>
+<hr><h2 id="#_65720940"><a name="Machine.GetConfig"></a><a href="#Machine">Machine</a>.<a href="#Machine.GetConfig">GetConfig</a>
+</h2>
+<p> -- Configuration and bootstrapping --</p>
+
+<p> Return the value of the configuration string specified by parameter name in parameter val. Returns val = "" if the string was not found, or has an empty value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetConfig* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_6572EB40"><a name="Machine.StrToInt"></a><a href="#Machine">Machine</a>.<a href="#Machine.StrToInt">StrToInt</a>
+</h2>
+<p> Convert a string to an integer. Parameter i specifies where in the string scanning should begin (usually 0 in the first call). Scanning stops at the first non-valid character, and i returns the updated position. Parameter s is the string to be scanned. The value is returned as result, or 0 if not valid. Syntax: number = <a href="#"-"]">"-"]</a> digit <code>digit} ["H" | "h"] . digit = "0" | ... "9" | "A" .. "F" | "a" .. "f" . If the number contains any hexdecimal letter, or if it ends in "H" or "h", it is interpreted as hexadecimal. </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToInt* (<strong>VAR</strong> i: <strong>SIZE</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_657430C0"><a name="Machine.CPUID"></a><a href="#Machine">Machine</a>.<a href="#Machine.CPUID">CPUID</a>
+</h2>
+<p> CPU identification</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CPUID* (<strong>VAR</strong> vendor: <strong>Vendor</strong>; <strong>VAR</strong> version: <strong>SIGNED32</strong>; <strong>VAR</strong> features1, features2: <strong>SET</strong>)</pre>
+<hr><h2 id="#_65749C80"><a name="Machine.SetupFPU"></a><a href="#Machine">Machine</a>.<a href="#Machine.SetupFPU">SetupFPU</a>
+</h2>
+<p> Setup FPU control word of current processor.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetupFPU*</pre>
+<hr><h2 id="#_6574DCC0"><a name="Machine.Acquire"></a><a href="#Machine">Machine</a>.<a href="#Machine.Acquire">Acquire</a>
+</h2>
+<p> Acquire a spin-lock.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Acquire* (level: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_65751E40"><a name="Machine.Release"></a><a href="#Machine">Machine</a>.<a href="#Machine.Release">Release</a>
+</h2>
+<p> Release a spin-lock.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Release* (level: <strong>SIGNED32</strong>)</pre>
+</body></html>

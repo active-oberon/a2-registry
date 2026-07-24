@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Heaps">Heaps</a></p>
+<hr><h1 id="#_988E5D00"><a name="Heaps"></a><a href="#ModuleList">Module</a> Heaps
+</h1>
+<p> AUTHOR "pjm/Luc Bläser/U. Glavitsch (ug)"; PURPOSE "Heap management and garbage collector";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Stats= TRUE<tr><td></td><td>BlockSize= (8*SIZEOF(ADDRESS))<tr><td></td><td>ArrayAlignment= 8<tr><td></td><td>BlockHeaderSize= (2*AddressSize)<tr><td></td><td>HeapBlockOffset= (-2*AddressSize)<tr><td></td><td>TypeDescOffset= -AddressSize<tr><td></td><td><a href="#Heaps.ProtTypeBit">ProtTypeBit</a>= 31<tr><td></td><td>MethodEndMarker= MinPtrOfs<tr><td></td><td>NilVal= 0<tr><td></td><td>NumPriorities= 6<tr><td></td><td>HeuristicStackInspectionGC= 0<tr><td></td><td>MetaDataForStackGC= 1<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> 96 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Heaps.RootObject">RootObject</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Heaps.ProcessLink">ProcessLink</a> =<strong>OBJECT</strong> (<strong>RootObject</strong>)<tr><td></td><td><a href="#Heaps.ProcessQueue">ProcessQueue</a> =<strong>RECORD</strong> <tr><td></td><td>Finalizer =<strong>PROCEDURE</strong>{DELEGATE} (obj: @Any0)<tr><td></td><td><a href="#Heaps.FinalizerNode">FinalizerNode</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Heaps.FinalizedCollection">FinalizedCollection</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Heaps.HeapBlock">HeapBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>HeapBlockDesc</strong><tr><td></td><td><a href="#Heaps.HeapBlockDesc">HeapBlockDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Heaps.FreeBlock">FreeBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>FreeBlockDesc</strong><tr><td></td><td><a href="#Heaps.FreeBlockDesc">FreeBlockDesc</a> =<strong>RECORD</strong> (<strong>HeapBlockDesc</strong>)<tr><td></td><td><a href="#Heaps.SystemBlock">SystemBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>SystemBlockDesc</strong><tr><td></td><td><a href="#Heaps.RecordBlock">RecordBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RecordBlockDesc</strong><tr><td></td><td><a href="#Heaps.ProtRecBlock">ProtRecBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ProtRecBlockDesc</strong><tr><td></td><td><a href="#Heaps.ProtRecBlockDesc">ProtRecBlockDesc</a> =<strong>RECORD</strong> (<strong>RecordBlockDesc</strong>)<tr><td></td><td><a href="#Heaps.ArrayBlock">ArrayBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ArrayBlockDesc</strong><tr><td></td><td><a href="#Heaps.TypeInfo">TypeInfo</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>TypeInfoDesc</strong><tr><td></td><td><a href="#Heaps.StaticTypeBlock">StaticTypeBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>StaticTypeDesc</strong><tr><td></td><td><a href="#Heaps.Block">Block</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Heaps.DataBlockDesc">DataBlockDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Heaps.ArrayDataBlockDesc">ArrayDataBlockDesc</a> =<strong>RECORD</strong> (<strong>DataBlockDesc</strong>)<tr><td></td><td><a href="#Heaps.GCStatus">GCStatus</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>marking: <strong>BOOLEAN</strong><tr><td></td><td><a href="#Heaps.GC">GC</a>: <strong>PROCEDURE</strong> <tr><td></td><td><a href="#Heaps.Nnew">Nnew</a>: <strong>SIZE</strong><tr><td></td><td><a href="#Heaps.NnewBytes">NnewBytes</a>: <strong>SIGNED64</strong><tr><td></td><td><a href="#Heaps.Ngc">Ngc</a>: <strong>SIZE</strong><tr><td></td><td><a href="#Heaps.Nmark">Nmark</a>: <strong>SIZE</strong><tr><td></td><td>Nmarked: <strong>SIZE</strong><tr><td></td><td>NfinalizeAlive: <strong>SIZE</strong><tr><td></td><td>NfinalizeDead: <strong>SIZE</strong><tr><td></td><td>NgcCyclesMark: <strong>SIGNED64</strong><tr><td></td><td>NgcCyclesLastRun: <strong>SIGNED64</strong><tr><td></td><td>NgcCyclesMax: <strong>SIGNED64</strong><tr><td></td><td>NgcCyclesAllRuns: <strong>SIGNED64</strong><tr><td></td><td>NgcSweeps: <strong>SIGNED64</strong><tr><td></td><td>NgcSweepTime: <strong>SIGNED64</strong><tr><td></td><td>NgcSweepMax: <strong>SIGNED64</strong><tr><td></td><td>gcStatus: <strong>GCStatus</strong><tr><td></td><td>GCType: <strong>INTEGER</strong><tr><td></td><td>trace: <strong>BOOLEAN</strong><tr><td></td><td>allocationLogger: <strong>PROCEDURE</strong> (p: @Any0)<tr><td></td><td>throughput: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> SetAllocationLogger (a: <strong>PROCEDURE</strong> (p: @Any0))<tr><td></td><td> Mark (block: @Any0)<tr><td></td><td> <a href="#Heaps.WriteType">WriteType</a> (t: <strong>ADDRESS</strong>)<tr><td></td><td> CheckCandidates<tr><td></td><td> Candidate (p: <strong>ADDRESS</strong>)<tr><td></td><td> <a href="#Heaps.RegisterCandidates">RegisterCandidates</a> (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Heaps.GetFinalizer">GetFinalizer</a> (): <strong>FinalizerNode</strong><tr><td></td><td> <a href="#Heaps.CleanupModuleFinalizers">CleanupModuleFinalizers</a> (codeAdr: <strong>ADDRESS</strong>; codeLen: <strong>SIZE</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> CollectGarbage (root: <strong>RootObject</strong>)<tr><td></td><td> InvokeGC<tr><td></td><td> FullSweep<tr><td></td><td> LazySweepGC<tr><td></td><td> SetPC (p: <strong>DataBlockU</strong>)<tr><td></td><td> <a href="#Heaps.NewSys">NewSys</a> (<strong>VAR</strong> p: @Any0; size: <strong>SIZE</strong>; isRealtime: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Heaps.NewRec">NewRec</a> (<strong>VAR</strong> p: @Any0; tag: <strong>ADDRESS</strong>; isRealtime: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Heaps.NewProtRec">NewProtRec</a> (<strong>VAR</strong> p: @Any0; tag: <strong>ADDRESS</strong>; isRealtime: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Heaps.NewArr">NewArr</a> (<strong>VAR</strong> p: @Any0; elemTag: <strong>ADDRESS</strong>; numElems, numDims: <strong>SIZE</strong>; isRealtime: <strong>BOOLEAN</strong>)<tr><td></td><td> NewArray (<strong>CONST</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIZE</strong>; tag: <strong>ADDRESS</strong>; staticElements, elementSize: <strong>SIZE</strong>; <strong>VAR</strong> dest: @Any0)<tr><td></td><td> FillStaticType (<strong>VAR</strong> staticTypeAddr: <strong>ADDRESS</strong>; startAddr, typeInfoAdr: <strong>ADDRESS</strong>; size, recSize: <strong>SIZE</strong>; numPtrs, numSlots: <strong>SIZE</strong>)<tr><td></td><td> AddFinalizer (obj: @Any0; n: <strong>FinalizerNode</strong>)<tr><td></td><td> <a href="#Heaps.GetHeapInfo">GetHeapInfo</a> (<strong>VAR</strong> total, free, largest: <strong>SIZE</strong>)<tr><td></td><td> MarkPointer (adr: <strong>ADDRESS</strong>)<tr><td></td><td> CopyRecord (src, dest: <strong>ADDRESS</strong>; tag: <strong>StaticTypeBlockU</strong>)<tr><td></td><td> MarkRecord (adr: <strong>ADDRESS</strong>; tag: <strong>StaticTypeBlockU</strong>)<tr><td></td><td> CopyArray (src, dest: <strong>ADDRESS</strong>; tag: <strong>StaticTypeBlockU</strong>; numElems: <strong>SIZE</strong>)<tr><td></td><td> MarkArray (adr: <strong>ADDRESS</strong>; tag: <strong>StaticTypeBlockU</strong>; numElems: <strong>SIZE</strong>)<tr><td></td><td> SetHeuristic<tr><td></td><td> SetMetaData<tr><td></td><td> StopMarking</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_98973780">
+</h1><hr><h2 id="#_98973F40"><a name="Heaps.ProtTypeBit"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.ProtTypeBit">ProtTypeBit</a>
+</h2>
+<p> flags in TypeDesc, RoundUp(log2(MaxTags)) low bits reserved for extLevel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ProtTypeBit*= 31</pre>
+<hr><h2 id="#_98978DC0"><a name="Heaps.RootObject"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.RootObject">RootObject</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RootObject* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#Heaps.RootObject.FindRoots">FindRoots</a></td></tr>
+</table>
+<hr><h3 id="#_9897CC40"><a name="Heaps.RootObject.FindRoots"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.RootObject">RootObject</a>.<a href="#Heaps.RootObject.FindRoots">FindRoots</a>
+</h3>
+<p> abstract</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindRoots*</pre>
+<hr><h2 id="#_9897FB40"><a name="Heaps.ProcessLink"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.ProcessLink">ProcessLink</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcessLink* =<strong>OBJECT</strong> (<strong>RootObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>ProcessLink</strong><tr><td></td><td>prev: <strong>ProcessLink</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_98984E40"><a name="Heaps.ProcessQueue"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.ProcessQueue">ProcessQueue</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcessQueue* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>head: <strong>ProcessLink</strong><tr><td></td><td>tail: <strong>ProcessLink</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_98989980"><a name="Heaps.FinalizerNode"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.FinalizerNode">FinalizerNode</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FinalizerNode* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>objWeak: @Any0<tr><td></td><td>objStrong: @Any0<tr><td></td><td>finalizer: <strong>Finalizer</strong><tr><td></td><td>collection: <strong>FinalizedCollection</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_98990A40"><a name="Heaps.FinalizedCollection"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.FinalizedCollection">FinalizedCollection</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FinalizedCollection* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> RemoveAll (obj: @Any0)</td></tr>
+</table>
+<hr><h2 id="#_98995980"><a name="Heaps.HeapBlock"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.HeapBlock">HeapBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HeapBlock* =<strong>POINTER</strong> <strong>TO</strong> <strong>HeapBlockDesc</strong></pre>
+<hr><h2 id="#_98998AC0"><a name="Heaps.HeapBlockDesc"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.HeapBlockDesc">HeapBlockDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HeapBlockDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>dataAdr: <strong>ADDRESS</strong><tr><td></td><td>size: <strong>SIZE</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_9899D600"><a name="Heaps.FreeBlock"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.FreeBlock">FreeBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FreeBlock* =<strong>POINTER</strong> <strong>TO</strong> <strong>FreeBlockDesc</strong></pre>
+<hr><h2 id="#_989A0200"><a name="Heaps.FreeBlockDesc"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.FreeBlockDesc">FreeBlockDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FreeBlockDesc* =<strong>RECORD</strong> (<strong>HeapBlockDesc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_989A3580"><a name="Heaps.SystemBlock"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.SystemBlock">SystemBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SystemBlock* =<strong>POINTER</strong> <strong>TO</strong> <strong>SystemBlockDesc</strong></pre>
+<hr><h2 id="#_989A6280"><a name="Heaps.RecordBlock"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.RecordBlock">RecordBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RecordBlock* =<strong>POINTER</strong> <strong>TO</strong> <strong>RecordBlockDesc</strong></pre>
+<hr><h2 id="#_989A8E80"><a name="Heaps.ProtRecBlock"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.ProtRecBlock">ProtRecBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProtRecBlock* =<strong>POINTER</strong> <strong>TO</strong> <strong>ProtRecBlockDesc</strong></pre>
+<hr><h2 id="#_989ABA80"><a name="Heaps.ProtRecBlockDesc"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.ProtRecBlockDesc">ProtRecBlockDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProtRecBlockDesc* =<strong>RECORD</strong> (<strong>RecordBlockDesc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>count: <strong>SIGNED32</strong><tr><td></td><td>locked: <strong>BOOLEAN</strong><tr><td></td><td>awaitingLock: <strong>ProcessQueue</strong><tr><td></td><td>awaitingCond: <strong>ProcessQueue</strong><tr><td></td><td>lockedBy: @Any0<tr><td></td><td>waitingPriorities: <strong>ARRAY</strong> NumPriorities <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td>lock: @Any0</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_989B6500"><a name="Heaps.ArrayBlock"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.ArrayBlock">ArrayBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArrayBlock* =<strong>POINTER</strong> <strong>TO</strong> <strong>ArrayBlockDesc</strong></pre>
+<hr><h2 id="#_989B9100"><a name="Heaps.TypeInfo"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.TypeInfo">TypeInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TypeInfo* =<strong>POINTER</strong> <strong>TO</strong> <strong>TypeInfoDesc</strong></pre>
+<hr><h2 id="#_989BBD00"><a name="Heaps.StaticTypeBlock"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.StaticTypeBlock">StaticTypeBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StaticTypeBlock* =<strong>POINTER</strong> <strong>TO</strong> <strong>StaticTypeDesc</strong></pre>
+<hr><h2 id="#_989BE900"><a name="Heaps.Block"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.Block">Block</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Block* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_989C1F00"><a name="Heaps.DataBlockDesc"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.DataBlockDesc">DataBlockDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DataBlockDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_989C4B80"><a name="Heaps.ArrayDataBlockDesc"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.ArrayDataBlockDesc">ArrayDataBlockDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArrayDataBlockDesc* =<strong>RECORD</strong> (<strong>DataBlockDesc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_989C7F00"><a name="Heaps.GCStatus"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.GCStatus">GCStatus</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GCStatus* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetgcOngoing (value: <strong>BOOLEAN</strong>)<tr><td></td><td> GetgcOngoing (): <strong>BOOLEAN</strong><tr><td></td><td> WaitForGCEnd</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_989CEEC0"><a name="Heaps.GC"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.GC">GC</a>
+</h2>
+<p> activate the garbage collector</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GC*: <strong>PROCEDURE</strong> </pre>
+<hr><h2 id="#_989D2B80"><a name="Heaps.Nnew"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.Nnew">Nnew</a>
+</h2>
+<p> Statistics. Will only be maintained if Stats = TRUE</p>
+
+<p> Memory allocation statistics</p>
+
+<p> Number of times NewBlock has been called since system startup</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Nnew-: <strong>SIZE</strong></pre>
+<hr><h2 id="#_989DB200"><a name="Heaps.NnewBytes"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.NnewBytes">NnewBytes</a>
+</h2>
+<p> Number of bytes allocated by NewBlock since system startup</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> NnewBytes-: <strong>SIGNED64</strong></pre>
+<hr><h2 id="#_989E0080"><a name="Heaps.Ngc"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.Ngc">Ngc</a>
+</h2>
+<p> Garbage collection statistics</p>
+
+<p> Number of GC cycles since system startup</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Ngc-: <strong>SIZE</strong></pre>
+<hr><h2 id="#_989E54C0"><a name="Heaps.Nmark"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.Nmark">Nmark</a>
+</h2>
+<p> Statistics considering the last GC cyle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Nmark-: <strong>SIZE</strong></pre>
+<hr><h2 id="#_989E97C0"><a name="Heaps.WriteType"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.WriteType">WriteType</a>
+</h2>
+<p> WriteType - Write a type name (for tracing only).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteType* (t: <strong>ADDRESS</strong>)</pre>
+<hr><h2 id="#_989EF180"><a name="Heaps.RegisterCandidates"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.RegisterCandidates">RegisterCandidates</a>
+</h2>
+<p> RegisterCandidates - Register a block of pointer candidates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RegisterCandidates* (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_989F55C0"><a name="Heaps.GetFinalizer"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.GetFinalizer">GetFinalizer</a>
+</h2>
+<p> Return the next scheduled finalizer or NIL if none available. Called by finalizer object in Kernel.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetFinalizer* (): <strong>FinalizerNode</strong></pre>
+<hr><h2 id="#_989FC680"><a name="Heaps.CleanupModuleFinalizers"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.CleanupModuleFinalizers">CleanupModuleFinalizers</a>
+</h2>
+<p> Check finalizers registered in the specified module, which is about to be freed or shut down. Remove all finalizer procedures in this module from the finalizer lists so they won't be called any more.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CleanupModuleFinalizers* (codeAdr: <strong>ADDRESS</strong>; codeLen: <strong>SIZE</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_98A0A600"><a name="Heaps.NewSys"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.NewSys">NewSys</a>
+</h2>
+<p> NewSys - Implementation of SYSTEM.NEW.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewSys* (<strong>VAR</strong> p: @Any0; size: <strong>SIZE</strong>; isRealtime: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_98A110C0"><a name="Heaps.NewRec"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.NewRec">NewRec</a>
+</h2>
+<p> NewRec - Implementation of NEW with a record.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewRec* (<strong>VAR</strong> p: @Any0; tag: <strong>ADDRESS</strong>; isRealtime: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_98A18700"><a name="Heaps.NewProtRec"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.NewProtRec">NewProtRec</a>
+</h2>
+<p> NewProtRec - Implementation of NEW with a protected record.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewProtRec* (<strong>VAR</strong> p: @Any0; tag: <strong>ADDRESS</strong>; isRealtime: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_98A200C0"><a name="Heaps.NewArr"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.NewArr">NewArr</a>
+</h2>
+<p> NewArr - Implementation of NEW with an array containing pointers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewArr* (<strong>VAR</strong> p: @Any0; elemTag: <strong>ADDRESS</strong>; numElems, numDims: <strong>SIZE</strong>; isRealtime: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_98A29480"><a name="Heaps.GetHeapInfo"></a><a href="#Heaps">Heaps</a>.<a href="#Heaps.GetHeapInfo">GetHeapInfo</a>
+</h2>
+<p> Compute total heap size, free space and largest free block size in bytes. This is a slow operation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetHeapInfo* (<strong>VAR</strong> total, free, largest: <strong>SIZE</strong>)</pre>
+</body></html>

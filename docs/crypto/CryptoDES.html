@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoDES">CryptoDES</a></p>
+<hr><h1 id="#_B51B0BC0"><a name="CryptoDES"></a><a href="#ModuleList">Module</a> CryptoDES
+</h1>
+<p> AUTHOR "G.F."; PUROSE "DES Cipher";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CryptoDES.Cipher">Cipher</a> =<strong>OBJECT</strong> (<strong>Ciphers.Cipher</strong>)<tr><th align='left'>variables</th><td>sb1: <strong>Sandbox</strong><tr><td></td><td>sb2: <strong>Sandbox</strong><tr><td></td><td>sb3: <strong>Sandbox</strong><tr><td></td><td>sb4: <strong>Sandbox</strong><tr><td></td><td>sb5: <strong>Sandbox</strong><tr><td></td><td>sb6: <strong>Sandbox</strong><tr><td></td><td>sb7: <strong>Sandbox</strong><tr><td></td><td>sb8: <strong>Sandbox</strong><tr><th align='left'>procedures</th><td> NewCipher (): <strong>Ciphers.Cipher</strong><tr><td></td><td> IP (<strong>VAR</strong> x, y: <strong>SET32</strong>)<tr><td></td><td> FP (<strong>VAR</strong> x, y: <strong>SET32</strong>)<tr><td></td><td> ComputeSubkeys (x, y: <strong>SET32</strong>; <strong>VAR</strong> sk: <strong>ARRAY</strong> <strong>OF</strong> <strong>SET32</strong>; ofs: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_B51C7D80">
+</h1><hr><h2 id="#_B51C8540"><a name="CryptoDES.Cipher"></a><a href="#CryptoDES">CryptoDES</a>.<a href="#CryptoDES.Cipher">Cipher</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Cipher* =<strong>OBJECT</strong> (<strong>Ciphers.Cipher</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> InitKey (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; keybits: <strong>SIZE</strong>)<tr><td></td><td> SetIV (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; mode: <strong>SIGNED8</strong>)<tr><td></td><td> Encrypt (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> Decrypt (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> RoundE (<strong>VAR</strong> x, y: <strong>SET32</strong>)<tr><td></td><td> RoundD (<strong>VAR</strong> x, y: <strong>SET32</strong>)<tr><td></td><td>& Init</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Plugins">Plugins</a></p>
+<hr><h1 id="#_1D871480"><a name="Plugins"></a><a href="#ModuleList">Module</a> Plugins
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "Plugin object management";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Plugins.Ok">Ok</a>= 0<tr><td></td><td>DuplicateName= 4101<tr><td></td><td>AlreadyRegistered= 4102<tr><td></td><td>NeverRegistered= 4103<tr><td></td><td><a href="#Plugins.EventAdd">EventAdd</a>= 0<tr><td></td><td><a href="#Plugins.EventRemove">EventRemove</a>= 1<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Description =<strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Plugins.Plugin">Plugin</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Plugins.PluginHandler">PluginHandler</a> =<strong>PROCEDURE</strong>{DELEGATE} (p: <strong>Plugin</strong>)<tr><td></td><td><a href="#Plugins.EventHandler">EventHandler</a> =<strong>PROCEDURE</strong>{DELEGATE} (event: <strong>INTEGER</strong>; plugin: <strong>Plugin</strong>)<tr><td></td><td><a href="#Plugins.Table">Table</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Plugin</strong><tr><td></td><td><a href="#Plugins.Registry">Registry</a> =<strong>OBJECT</strong> (<strong>Plugin</strong>)<tr><th align='left'>variables</th><td><a href="#Plugins.main">main</a>: <strong>Registry</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1D888D80"><a name="Plugins.Ok"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Ok">Ok</a>
+</h2>
+<p> Result code constants</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_1D88C3C0"><a name="Plugins.EventAdd"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.EventAdd">EventAdd</a>
+</h2>
+<p> Event constants</p>
+
+<p> Occurs when a plugin is added to the registry</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EventAdd*= 0</pre>
+<hr><h2 id="#_1D891BC0"><a name="Plugins.EventRemove"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.EventRemove">EventRemove</a>
+</h2>
+<p> Occurs when a plugin is removed from the registry</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EventRemove*= 1</pre>
+<hr><h2 id="#_1D896B00"><a name="Plugins.Plugin"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Plugin">Plugin</a>
+</h2>
+<p> The plugin object provides the basis of extendibility.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Plugin* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Plugins.Plugin.name">name</a>: <strong>Name</strong><tr><td></td><td><a href="#Plugins.Plugin.desc">desc</a>: <strong>Description</strong><tr><th align='left'>procedures</th><td> <a href="#Plugins.Plugin.SetName">SetName</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1D8A0880"><a name="Plugins.Plugin.name"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Plugin">Plugin</a>.<a href="#Plugins.Plugin.name">name</a>
+</h3>
+<p> unique identifying name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> name-: <strong>Name</strong></pre>
+<hr><h3 id="#_1D8A4640"><a name="Plugins.Plugin.desc"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Plugin">Plugin</a>.<a href="#Plugins.Plugin.desc">desc</a>
+</h3>
+<p> human-readable description of plugin</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> desc*: <strong>Description</strong></pre>
+<hr><h3 id="#_1D8A8800"><a name="Plugins.Plugin.SetName"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Plugin">Plugin</a>.<a href="#Plugins.Plugin.SetName">SetName</a>
+</h3>
+<p> Set the name field. Must be called before adding the plugin to a registry.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetName* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_1D8B0700"><a name="Plugins.PluginHandler"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.PluginHandler">PluginHandler</a>
+</h2>
+<p> Plugin handler type for Registry.Enumerate()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PluginHandler* =<strong>PROCEDURE</strong>{DELEGATE} (p: <strong>Plugin</strong>)</pre>
+<hr><h2 id="#_1D8B5F40"><a name="Plugins.EventHandler"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.EventHandler">EventHandler</a>
+</h2>
+<p> Event handler (upcall)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EventHandler* =<strong>PROCEDURE</strong>{DELEGATE} (event: <strong>INTEGER</strong>; plugin: <strong>Plugin</strong>)</pre>
+<hr><h2 id="#_1D8BBBC0"><a name="Plugins.Table"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Table">Table</a>
+</h2>
+<p> A table of plugins.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Table* =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Plugin</strong></pre>
+<hr><h2 id="#_1D8C0600"><a name="Plugins.Registry"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>
+</h2>
+<p> Plugin registries are collections of plugins.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Registry* =<strong>OBJECT</strong> (<strong>Plugin</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#Plugins.Registry.Get">Get</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Plugin</strong><tr><td></td><td> <a href="#Plugins.Registry.Await">Await</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Plugin</strong><tr><td></td><td> <a href="#Plugins.Registry.Enumerate">Enumerate</a> (h: <strong>PluginHandler</strong>)<tr><td></td><td> <a href="#Plugins.Registry.GetAll">GetAll</a> (<strong>VAR</strong> table: <strong>Table</strong>)<tr><td></td><td> <a href="#Plugins.Registry.Add">Add</a> (p: <strong>Plugin</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Plugins.Registry.Remove">Remove</a> (p: <strong>Plugin</strong>)<tr><td></td><td> <a href="#Plugins.Registry.AddEventHandler">AddEventHandler</a> (h: <strong>EventHandler</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Plugins.Registry.RemoveEventHandler">RemoveEventHandler</a> (h: <strong>EventHandler</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td>& <a href="#Plugins.Registry.Init">Init</a> (<strong>CONST</strong> name, desc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1D8DC280"><a name="Plugins.Registry.Get"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>.<a href="#Plugins.Registry.Get">Get</a>
+</h3>
+<p> Get a specific plugin. If name = "", get the first existing plugin. Return NIL if it was not found.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Plugin</strong></pre>
+<hr><h3 id="#_1D8E5E80"><a name="Plugins.Registry.Await"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>.<a href="#Plugins.Registry.Await">Await</a>
+</h3>
+<p> Like Get, but wait until the plugin is available.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Await* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Plugin</strong></pre>
+<hr><h3 id="#_1D8ED100"><a name="Plugins.Registry.Enumerate"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>.<a href="#Plugins.Registry.Enumerate">Enumerate</a>
+</h3>
+<p> Call h for each plugin in this registry</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Enumerate* (h: <strong>PluginHandler</strong>)</pre>
+<hr><h3 id="#_1D8F2E00"><a name="Plugins.Registry.GetAll"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>.<a href="#Plugins.Registry.GetAll">GetAll</a>
+</h3>
+<p> Get a table of available plugin instances in the registry, in order of registration. If none are available, table = NIL, otherwise LEN(table^) is the number of available plugins.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetAll* (<strong>VAR</strong> table: <strong>Table</strong>)</pre>
+<hr><h3 id="#_1D8FDF40"><a name="Plugins.Registry.Add"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>.<a href="#Plugins.Registry.Add">Add</a>
+</h3>
+<p> Register a new plugin instance. Called by plugins to advertise their availability. If the plugin has an empty name, a unique name is assigned, otherwise the name must be unique already. The res parameter returns Ok if successful, or a non-zero error code otherwise.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (p: <strong>Plugin</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_1D90D740"><a name="Plugins.Registry.Remove"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>.<a href="#Plugins.Registry.Remove">Remove</a>
+</h3>
+<p> Unregister a plugin instance. Called by plugins to withdraw their availability.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Remove* (p: <strong>Plugin</strong>)</pre>
+<hr><h3 id="#_1D914040"><a name="Plugins.Registry.AddEventHandler"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>.<a href="#Plugins.Registry.AddEventHandler">AddEventHandler</a>
+</h3>
+<p> Add an event handler</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddEventHandler* (h: <strong>EventHandler</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_1D919E40"><a name="Plugins.Registry.RemoveEventHandler"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>.<a href="#Plugins.Registry.RemoveEventHandler">RemoveEventHandler</a>
+</h3>
+<p> Remove an event handler</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveEventHandler* (h: <strong>EventHandler</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_1D91FC40"><a name="Plugins.Registry.Init"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.Registry">Registry</a>.<a href="#Plugins.Registry.Init">Init</a>
+</h3>
+<p> Initialize the registry</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Init* (<strong>CONST</strong> name, desc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_1D925B00"><a name="Plugins.main"></a><a href="#Plugins">Plugins</a>.<a href="#Plugins.main">main</a>
+</h2>
+<p> registry of all registries (excluding itself)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> main*: <strong>Registry</strong></pre>
+</body></html>

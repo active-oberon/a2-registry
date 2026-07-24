@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#X509">X509</a></p>
+<hr><h1 id="#_F43B8000"><a name="X509"></a><a href="#ModuleList">Module</a> X509
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#X509.AllowNotTrusted">AllowNotTrusted</a>= 0<tr><td></td><td><a href="#X509.AllowOutdated">AllowOutdated</a>= 1<tr><td></td><td><a href="#X509.Bypass">Bypass</a>= 31<tr><th align='left'>type declarations</th><td><a href="#X509.Entity">Entity</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#X509.Certificate">Certificate</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#X509.Verify">Verify</a> (chain: <strong>Certificate</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#X509.Read">Read</a> (reader: <strong>Streams.Reader</strong>): <strong>Certificate</strong><tr><td></td><td> <a href="#X509.Write">Write</a> (writer: <strong>Streams.Writer</strong>; cert: <strong>Certificate</strong>)<tr><td></td><td> <a href="#X509.AddToTrusted">AddToTrusted</a> (certificate: <strong>Certificate</strong>)<tr><td></td><td> <a href="#X509.FormatRsaPublicKey">FormatRsaPublicKey</a> (publicKey: <strong>ASN1.Triplet</strong>; <strong>VAR</strong> key: <strong>CryptoRSA.Key</strong>)<tr><td></td><td> <a href="#X509.PrintCertificate">PrintCertificate</a> (certificate: <strong>Certificate</strong>; writer: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_F43CDA00">
+</h1>
+<p> X.509 Certificates and certificate management. See RFC5280 standard. Written by Timothée Martiel, 2014, with some fragments by P. Hunziker.</p>
+<hr><h2 id="#_F43D2EC0"><a name="X509.AllowNotTrusted"></a><a href="#X509">X509</a>.<a href="#X509.AllowNotTrusted">AllowNotTrusted</a>
+</h2>
+<p> Verification flags</p>
+
+<p> Allow valid certificates that are not linked to the trusted root certificates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> AllowNotTrusted*= 0</pre>
+<hr><h2 id="#_F43D92C0"><a name="X509.AllowOutdated"></a><a href="#X509">X509</a>.<a href="#X509.AllowOutdated">AllowOutdated</a>
+</h2>
+<p> Allow certificates that are not valid anymore</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> AllowOutdated*= 1</pre>
+<hr><h2 id="#_F43DDA00"><a name="X509.Bypass"></a><a href="#X509">X509</a>.<a href="#X509.Bypass">Bypass</a>
+</h2>
+<p> Bypass all checks</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Bypass*= 31</pre>
+<hr><h2 id="#_F43E1040"><a name="X509.Entity"></a><a href="#X509">X509</a>.<a href="#X509.Entity">Entity</a>
+</h2>
+<p> Represent an issuer or a subject. Only mandatory fields are kept. Fields are NIL if not present.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Entity* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>country: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>organisation: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>organisationUnit: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>distName: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>state: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>commonName: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>serial: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F43F5000"><a name="X509.Certificate"></a><a href="#X509">X509</a>.<a href="#X509.Certificate">Certificate</a>
+</h2>
+<p> Base certificate type. Certificates are specialized according to the encryption algorithm they provide.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Certificate* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>version: <strong>SIGNED32</strong><tr><td></td><td>serial: <strong>SIGNED32</strong><tr><td></td><td>algorithm: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>validity: <strong>RECORD</strong> <tr><td></td><td>identifier: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>publicKey: <strong>CryptoRSA.Key</strong><tr><td></td><td>issuer: <strong>Entity</strong><tr><td></td><td>subject: <strong>Entity</strong><tr><td></td><td>parent: <strong>Certificate</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F4406780"><a name="X509.Verify"></a><a href="#X509">X509</a>.<a href="#X509.Verify">Verify</a>
+</h2>
+<p> Verifies validity of certificate in the given mode.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Verify* (chain: <strong>Certificate</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_F440D140"><a name="X509.Read"></a><a href="#X509">X509</a>.<a href="#X509.Read">Read</a>
+</h2>
+<p> Reads a certificate from a stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (reader: <strong>Streams.Reader</strong>): <strong>Certificate</strong></pre>
+<hr><h2 id="#_F4412580"><a name="X509.Write"></a><a href="#X509">X509</a>.<a href="#X509.Write">Write</a>
+</h2>
+<p> Writes a certificate to a stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (writer: <strong>Streams.Writer</strong>; cert: <strong>Certificate</strong>)</pre>
+<hr><h2 id="#_F4418140"><a name="X509.AddToTrusted"></a><a href="#X509">X509</a>.<a href="#X509.AddToTrusted">AddToTrusted</a>
+</h2>
+<p> Add certificate to trusted roots</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddToTrusted* (certificate: <strong>Certificate</strong>)</pre>
+<hr><h2 id="#_F441CB80"><a name="X509.FormatRsaPublicKey"></a><a href="#X509">X509</a>.<a href="#X509.FormatRsaPublicKey">FormatRsaPublicKey</a>
+</h2>
+<p> Formats a RSA public key from a ASN1 triplet.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FormatRsaPublicKey* (publicKey: <strong>ASN1.Triplet</strong>; <strong>VAR</strong> key: <strong>CryptoRSA.Key</strong>)</pre>
+<hr><h2 id="#_F44236C0"><a name="X509.PrintCertificate"></a><a href="#X509">X509</a>.<a href="#X509.PrintCertificate">PrintCertificate</a>
+</h2>
+<p> Prints a certificate in human readable form</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PrintCertificate* (certificate: <strong>Certificate</strong>; writer: <strong>Streams.Writer</strong>)</pre>
+</body></html>

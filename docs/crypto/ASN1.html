@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ASN1">ASN1</a></p>
+<hr><h1 id="#_E453FB80"><a name="ASN1"></a><a href="#ModuleList">Module</a> ASN1
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "ISO 8824/8825 standard tag/length/data encoding";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>ASN1Universal= 0<tr><td></td><td>ASN1Application= 1<tr><td></td><td>ASN1Context= 2<tr><td></td><td>ASN1Private= 3<tr><td></td><td>Boolean= 1<tr><td></td><td>Integer= 2<tr><td></td><td>BitString= 3<tr><td></td><td>String= 4<tr><td></td><td>Null= 5<tr><td></td><td>Oid= 6<tr><td></td><td>UTF8= 12<tr><td></td><td>PrintableString= 19<tr><td></td><td>TeletexString= 20<tr><td></td><td>IA5String= 22<tr><td></td><td>UTCTime= 23<tr><td></td><td>BMPString= 30<tr><td></td><td>Sequence= 48<tr><td></td><td>Set= 49<tr><th align='left'>type declarations</th><td>CharString =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#ASN1.Triplet">Triplet</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>log: <strong>Streams.Writer</strong><tr><th align='left'>procedures</th><td> PrintHexString (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PrintNumericString (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PrintString (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Decode (reader: <strong>Streams.Reader</strong>; level: <strong>SIGNED32</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>): <strong>Triplet</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_E4566A40">
+</h1><hr><h2 id="#_E4567200"><a name="ASN1.Triplet"></a><a href="#ASN1">ASN1</a>.<a href="#ASN1.Triplet">Triplet</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Triplet* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>tag: <strong>SIGNED32</strong><tr><td></td><td>class: <strong>SIGNED32</strong><tr><td></td><td>length: <strong>SIGNED32</strong><tr><td></td><td>unusedbits: <strong>SIGNED32</strong><tr><td></td><td>constructed: <strong>BOOLEAN</strong><tr><td></td><td>definite: <strong>BOOLEAN</strong><tr><td></td><td>bvalue: <strong>BOOLEAN</strong><tr><td></td><td>ivalue: <strong>SIGNED32</strong><tr><td></td><td>svalue: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>child: <strong>Triplet</strong><tr><td></td><td>next: <strong>Triplet</strong><tr><td></td><td>level: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> AppendChild (t: <strong>Triplet</strong>)<tr><td></td><td> Print (w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

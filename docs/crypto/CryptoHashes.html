@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoHashes">CryptoHashes</a></p>
+<hr><h1 id="#_DC92AFC0"><a name="CryptoHashes"></a><a href="#ModuleList">Module</a> CryptoHashes
+</h1>
+<p> AUTHOR "G.F."; PURPOSE "Empty Hash";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CryptoHashes.Hash">Hash</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#CryptoHashes.NewHash">NewHash</a> (<strong>CONST</strong> modname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Hash</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DC931FC0"><a name="CryptoHashes.Hash"></a><a href="#CryptoHashes">CryptoHashes</a>.<a href="#CryptoHashes.Hash">Hash</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Hash* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>size: <strong>SIGNED32</strong><tr><td></td><td>initialized: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Initialize<tr><td></td><td> <a href="#CryptoHashes.Hash.SetNameAndSize">SetNameAndSize</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#CryptoHashes.Hash.Update">Update</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoHashes.Hash.GetHash">GetHash</a> (<strong>VAR</strong> buffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_DC944740"><a name="CryptoHashes.Hash.SetNameAndSize"></a><a href="#CryptoHashes">CryptoHashes</a>.<a href="#CryptoHashes.Hash">Hash</a>.<a href="#CryptoHashes.Hash.SetNameAndSize">SetNameAndSize</a>
+</h3>
+<p> this method is invoked by subclasses</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetNameAndSize* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_DC94B640"><a name="CryptoHashes.Hash.Update"></a><a href="#CryptoHashes">CryptoHashes</a>.<a href="#CryptoHashes.Hash">Hash</a>.<a href="#CryptoHashes.Hash.Update">Update</a>
+</h3>
+<p> data: value to be hashed; when Update is invoked several times before GetHash or Initialize is invoked, the concatenation of all data-parameters is hashed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_DC957180"><a name="CryptoHashes.Hash.GetHash"></a><a href="#CryptoHashes">CryptoHashes</a>.<a href="#CryptoHashes.Hash">Hash</a>.<a href="#CryptoHashes.Hash.GetHash">GetHash</a>
+</h3>
+<p> get the hashvalue of length SELF.size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetHash* (<strong>VAR</strong> buffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_DC95E080"><a name="CryptoHashes.NewHash"></a><a href="#CryptoHashes">CryptoHashes</a>.<a href="#CryptoHashes.NewHash">NewHash</a>
+</h2>
+<p> get a new hash from module 'modname'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewHash* (<strong>CONST</strong> modname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Hash</strong></pre>
+</body></html>

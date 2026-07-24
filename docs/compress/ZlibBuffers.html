@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ZlibBuffers">ZlibBuffers</a></p>
+<hr><h1 id="#_9D621B40"><a name="ZlibBuffers"></a><a href="#ModuleList">Module</a> ZlibBuffers
+</h1>
+<p> Stefan Walthert</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#ZlibBuffers.Buffer">Buffer</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#ZlibBuffers.Reset">Reset</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>)<tr><td></td><td> <a href="#ZlibBuffers.Init">Init</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>CONST</strong> mem: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, size, avail: <strong>SIZE</strong>)<tr><td></td><td> <a href="#ZlibBuffers.Read">Read</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>VAR</strong> ch: <strong>CHAR</strong>)<tr><td></td><td> <a href="#ZlibBuffers.ReadBytes">ReadBytes</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#ZlibBuffers.Write">Write</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>; ch: <strong>CHAR</strong>)<tr><td></td><td> <a href="#ZlibBuffers.WriteBytes">WriteBytes</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#ZlibBuffers.Rewind">Rewind</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>; avail: <strong>SIZE</strong>)<tr><td></td><td> <a href="#ZlibBuffers.Reread">Reread</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>; offset: <strong>SIZE</strong>)<tr><td></td><td> <a href="#ZlibBuffers.Rewrite">Rewrite</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>)<tr><td></td><td> <a href="#ZlibBuffers.Fill">Fill</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, size: <strong>SIZE</strong>)<tr><td></td><td> <a href="#ZlibBuffers.Drain">Drain</a> (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, size: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_9D64D9C0">
+</h1><hr><h2 id="#_9D64E180"><a name="ZlibBuffers.Buffer"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>
+</h2>
+<p> input/output buffer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Buffer* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#ZlibBuffers.Buffer.avail">avail</a>: <strong>SIZE</strong><tr><td></td><td><a href="#ZlibBuffers.Buffer.size">size</a>: <strong>SIZE</strong><tr><td></td><td>totalOut: <strong>SIZE</strong><tr><td></td><td><a href="#ZlibBuffers.Buffer.totalIn">totalIn</a>: <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_9D6559C0"><a name="ZlibBuffers.Buffer.avail"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>.<a href="#ZlibBuffers.Buffer.avail">avail</a>
+</h3>
+<p> number of bytes that can be produced/consumed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> avail-: <strong>SIZE</strong></pre>
+<hr><h3 id="#_9D65A7C0"><a name="ZlibBuffers.Buffer.size"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>.<a href="#ZlibBuffers.Buffer.size">size</a>
+</h3>
+<p> total number of bytes in buffer memory</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> size-: <strong>SIZE</strong></pre>
+<hr><h3 id="#_9D65F500"><a name="ZlibBuffers.Buffer.totalIn"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>.<a href="#ZlibBuffers.Buffer.totalIn">totalIn</a>
+</h3>
+<p> total number of bytes produced/consumed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> totalIn-: <strong>SIZE</strong></pre>
+<hr><h2 id="#_9D663C00"><a name="ZlibBuffers.Reset"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Reset">Reset</a>
+</h2>
+<p> set buf.totalIn and buf.totalOut to zero</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reset* (<strong>VAR</strong> buf: <strong>Buffer</strong>)</pre>
+<hr><h2 id="#_9D668DC0"><a name="ZlibBuffers.Init"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Init">Init</a>
+</h2>
+<p> initialize buffer on memory in client space</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>CONST</strong> mem: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, size, avail: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_9D671B00"><a name="ZlibBuffers.Read"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Read">Read</a>
+</h2>
+<p> read byte from (input) buffer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>VAR</strong> ch: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_9D677B40"><a name="ZlibBuffers.ReadBytes"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.ReadBytes">ReadBytes</a>
+</h2>
+<p> read len bytes from (input) buffer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReadBytes* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_9D67FD00"><a name="ZlibBuffers.Write"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Write">Write</a>
+</h2>
+<p> write byte into (output) buffer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (<strong>VAR</strong> buf: <strong>Buffer</strong>; ch: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_9D6858C0"><a name="ZlibBuffers.WriteBytes"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.WriteBytes">WriteBytes</a>
+</h2>
+<p> write len bytes into (output) buffer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteBytes* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_9D68DB00"><a name="ZlibBuffers.Rewind"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Rewind">Rewind</a>
+</h2>
+<p> rewind previously empty input buffer to first position after it has been filled with new input</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rewind* (<strong>VAR</strong> buf: <strong>Buffer</strong>; avail: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_9D696040"><a name="ZlibBuffers.Reread"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Reread">Reread</a>
+</h2>
+<p> move position of next read for -offset bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reread* (<strong>VAR</strong> buf: <strong>Buffer</strong>; offset: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_9D69C900"><a name="ZlibBuffers.Rewrite"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Rewrite">Rewrite</a>
+</h2>
+<p> restart writing at starting position of output buffer after it has been emptied</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rewrite* (<strong>VAR</strong> buf: <strong>Buffer</strong>)</pre>
+<hr><h2 id="#_9D6A35C0"><a name="ZlibBuffers.Fill"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Fill">Fill</a>
+</h2>
+<p> fill input buffer with new bytes to consume</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Fill* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, size: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_9D6AC000"><a name="ZlibBuffers.Drain"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Drain">Drain</a>
+</h2>
+<p> extract bytes from output buffer to make room for new bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Drain* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, size: <strong>SIZE</strong>)</pre>
+</body></html>

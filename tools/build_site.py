@@ -94,6 +94,7 @@ h1.title .m{font-family:var(--mono);color:var(--accent-strong);font-weight:600}
 .card .meta .dot{width:3px;height:3px;border-radius:50%;background:var(--faint)}
 .chip{font-family:var(--mono);font-size:11px;letter-spacing:.03em;padding:3px 8px;border-radius:20px;white-space:nowrap}
 .chip.ok{color:var(--ok);background:var(--ok-bg)} .chip.pending{color:var(--warn);background:var(--warn-bg)}
+.chip.bundled{color:var(--accent);background:var(--accent-glow)}
 .badge{font-family:var(--mono);font-size:11px;color:var(--accent);border:1px solid var(--border);padding:2px 7px;border-radius:6px}
 .card .sym-hit{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--accent);background:var(--accent-glow);padding:6px 9px;border-radius:7px;display:none}
 .card .sym-hit.show{display:block} .card .sym-hit b{color:var(--accent-strong)}
@@ -142,7 +143,9 @@ APP_JS = r"""
   function render(list,query){
     grid.innerHTML='';
     list.forEach(function(p){
-      var chip=p.status==='validated'?'<span class="chip ok">validated</span>':'<span class="chip pending">pending</span>';
+      var chip=p.status==='bundled'?'<span class="chip bundled">bundled</span>':
+               p.status==='validated'?'<span class="chip ok">validated</span>':
+               '<span class="chip pending">pending</span>';
       var hit='';
       if(query){var m=(p.syms||[]).filter(function(s){return s.toLowerCase().indexOf(query)>=0});
         if(m.length&&p.n.indexOf(query)<0) hit='<div class="sym-hit show">↳ symbol · <b>'+m.slice(0,3).join('</b>, <b>')+'</b>'+(m.length>3?' …':'')+'</div>';}
@@ -232,8 +235,9 @@ def build():
                       "native": meta.get("native", ""), "syms": modules or [short],
                       "href": href})
 
-    # order: validated first, then by module count
-    cards.sort(key=lambda c: (c["status"] != "validated", -c["mods"]))
+    # order: bundled stdlib first, then validated community, then pending; tier then size
+    rank = {"bundled": 0, "validated": 1}
+    cards.sort(key=lambda c: (rank.get(c["status"], 2), c["tier"], -c["mods"]))
 
     hero_moon = ('<svg class="moon" viewBox="0 0 200 200" aria-hidden="true">'
       '<defs><radialGradient id="hg" cx="38%" cy="34%" r="72%"><stop offset="0%" stop-color="var(--accent-strong)"/>'

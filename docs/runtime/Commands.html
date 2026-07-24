@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Commands">Commands</a></p>
+<hr><h1 id="#_13E27F80"><a name="Commands"></a><a href="#ModuleList">Module</a> Commands
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "Commands and parameters";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Commands.Wait">Wait</a>= 0<tr><td></td><td><a href="#Commands.InheritContext">InheritContext</a>= 1<tr><td></td><td>Silent= 2<tr><td></td><td>Ok= 0<tr><td></td><td>CommandNotFound= 3901<tr><td></td><td>CommandError= 3902<tr><td></td><td>CommandParseError= 3903<tr><td></td><td>CommandTrapped= 3904<tr><td></td><td>Delimiter= "."<tr><th align='left'>type declarations</th><td><a href="#Commands.Context">Context</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#Commands.Split">Split</a> (<strong>CONST</strong> cmdstr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> moduleName, procedureName: <strong>Modules.Name</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Commands.GetContext">GetContext</a> (): <strong>Context</strong><tr><td></td><td> <a href="#Commands.Activate">Activate</a> (<strong>CONST</strong> cmd: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; context: <strong>Context</strong>; flags: <strong>SET</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Commands.Call">Call</a> (cmds: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>SET</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_13E496C0"><a name="Commands.Wait"></a><a href="#Commands">Commands</a>.<a href="#Commands.Wait">Wait</a>
+</h2>
+<p> Activate flags.</p>
+
+<p> Wait until the activated command returns.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Wait*= 0</pre>
+<hr><h2 id="#_13E4E340"><a name="Commands.InheritContext"></a><a href="#Commands">Commands</a>.<a href="#Commands.InheritContext">InheritContext</a>
+</h2>
+<p> Inherit context (as far as not overwritten) of the caller</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> InheritContext*= 1</pre>
+<hr><h2 id="#_13E53540"><a name="Commands.Context"></a><a href="#Commands">Commands</a>.<a href="#Commands.Context">Context</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Context* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>in: <strong>Streams.Reader</strong><tr><td></td><td>arg: <strong>Streams.Reader</strong><tr><td></td><td>out: <strong>Streams.Writer</strong><tr><td></td><td>error: <strong>Streams.Writer</strong><tr><td></td><td>caller: <strong>OBJECT</strong><tr><td></td><td>result: <strong>INTEGER</strong><tr><th align='left'>procedures</th><td>& Init (in, arg: <strong>Streams.Reader</strong>; out, error: <strong>Streams.Writer</strong>; caller: <strong>OBJECT</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_13E60800"><a name="Commands.Split"></a><a href="#Commands">Commands</a>.<a href="#Commands.Split">Split</a>
+</h2>
+<p> Splits a command string of the form moduleName.commandProcName into its components. Can be used to check whether a command string is syntactically correct, i.e. is of the form 'ModuleName "." <a href="#ProcedureName]'">ProcedureName]'</a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Split* (<strong>CONST</strong> cmdstr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> moduleName, procedureName: <strong>Modules.Name</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_13E70500"><a name="Commands.GetContext"></a><a href="#Commands">Commands</a>.<a href="#Commands.GetContext">GetContext</a>
+</h2>
+<p> Can be called by a command to retrieve the context associated with its active object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetContext* (): <strong>Context</strong></pre>
+<hr><h2 id="#_13E77100"><a name="Commands.Activate"></a><a href="#Commands">Commands</a>.<a href="#Commands.Activate">Activate</a>
+</h2>
+<p> Activate a command in its own active object. Returns res = Ok if successful, otherwise msg contains error message. The command can call GetConext() to get its context, which is also passed directly.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Activate* (<strong>CONST</strong> cmd: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; context: <strong>Context</strong>; flags: <strong>SET</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_13E87700"><a name="Commands.Call"></a><a href="#Commands">Commands</a>.<a href="#Commands.Call">Call</a>
+</h2>
+<p> Activate a string of commands, including their parameters. The string is parsed from left to right and Activate is called for every command. Parsing stops at the end of the string, or when Activate returns an error. The flags are applied to every command, i.e., for sequential execution, use the Wait flag (the caller waits until all commands return). Syntax cmds = <a href="#mode">mode</a> " "  cmd <code>";" cmd} .<BR>		mode = "PAR" | "SEQ" .<BR>		cmd = mod ["." proc] [" " params] .<BR>		params = {&ltany character except ";"&gt} .<BR></code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Call* (cmds: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>SET</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>

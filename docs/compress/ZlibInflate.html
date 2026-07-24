@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ZlibInflate">ZlibInflate</a></p>
+<hr><h1 id="#_39EF5340"><a name="ZlibInflate"></a><a href="#ModuleList">Module</a> ZlibInflate
+</h1>
+<p> eos</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#ZlibInflate.Ok">Ok</a>= Zlib.Ok<tr><td></td><td>StreamEnd= Zlib.StreamEnd<tr><td></td><td>NeedDict= Zlib.NeedDict<tr><td></td><td>StreamError= Zlib.StreamError<tr><td></td><td>DataError= Zlib.DataError<tr><td></td><td>MemError= Zlib.MemError<tr><td></td><td>BufError= Zlib.BufError<tr><td></td><td><a href="#ZlibInflate.NoFlush">NoFlush</a>= Zlib.NoFlush<tr><td></td><td>SyncFlush= Zlib.SyncFlush<tr><td></td><td>FullFlush= Zlib.FullFlush<tr><td></td><td>Finish= Zlib.Finish<tr><td></td><td><a href="#ZlibInflate.DeflateMethod">DeflateMethod</a>= 8<tr><th align='left'>type declarations</th><td><a href="#ZlibInflate.Result">Result</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#ZlibInflate.Stream">Stream</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#ZlibInflate.Reset">Reset</a> (<strong>VAR</strong> stream: <strong>Stream</strong>)<tr><td></td><td> <a href="#ZlibInflate.Open">Open</a> (<strong>VAR</strong> stream: <strong>Stream</strong>; wrapper: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#ZlibInflate.Close">Close</a> (<strong>VAR</strong> stream: <strong>Stream</strong>)<tr><td></td><td> <a href="#ZlibInflate.Inflate">Inflate</a> (<strong>VAR</strong> stream: <strong>Stream</strong>; flush: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#ZlibInflate.SetDictionary">SetDictionary</a> (<strong>VAR</strong> stream: <strong>Stream</strong>; <strong>VAR</strong> dict: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dictLen: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#ZlibInflate.Sync">Sync</a> (<strong>VAR</strong> stream: <strong>Stream</strong>)<tr><td></td><td> <a href="#ZlibInflate.SyncPoint">SyncPoint</a> (<strong>VAR</strong> stream: <strong>Stream</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#ZlibInflate.Uncompress">Uncompress</a> (<strong>VAR</strong> src, dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; srcoffset, srclen, dstoffset, dstlen: <strong>SIGNED32</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>Result</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_39F21900">
+</h1>
+<p> AUTHOR "swalthert"; PURPOSE "Zlib decompression";</p>
+
+<p> Decompression of deflated byte streams</p>
+<hr><h2 id="#_39F24E40"><a name="ZlibInflate.Ok"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Ok">Ok</a>
+</h2>
+<p> result codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= Zlib.Ok</pre>
+<hr><h2 id="#_39F28500"><a name="ZlibInflate.NoFlush"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.NoFlush">NoFlush</a>
+</h2>
+<p> inflate operation codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NoFlush*= Zlib.NoFlush</pre>
+<hr><h2 id="#_39F2C0C0"><a name="ZlibInflate.DeflateMethod"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.DeflateMethod">DeflateMethod</a>
+</h2>
+<p> only supported compression method</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DeflateMethod*= 8</pre>
+<hr><h2 id="#_39F2FB40"><a name="ZlibInflate.Result"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Result">Result</a>
+</h2>
+<p> result codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Result* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#ZlibInflate.Result.code">code</a>: <strong>INTEGER</strong><tr><td></td><td><a href="#ZlibInflate.Result.msg">msg</a>: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_39F36740"><a name="ZlibInflate.Result.code"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Result">Result</a>.<a href="#ZlibInflate.Result.code">code</a>
+</h3>
+<p> result code including special conditions and errors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> code-: <strong>INTEGER</strong></pre>
+<hr><h3 id="#_39F3B480"><a name="ZlibInflate.Result.msg"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Result">Result</a>.<a href="#ZlibInflate.Result.msg">msg</a>
+</h3>
+<p> detailed error description if available</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> msg-: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_39F40A80"><a name="ZlibInflate.Stream"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Stream">Stream</a>
+</h2>
+<p> inflate stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Stream* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>in: <strong>ZlibBuffers.Buffer</strong><tr><td></td><td><a href="#ZlibInflate.Stream.out">out</a>: <strong>ZlibBuffers.Buffer</strong><tr><td></td><td><a href="#ZlibInflate.Stream.res">res</a>: <strong>Result</strong><tr><td></td><td><a href="#ZlibInflate.Stream.wrapper">wrapper</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#ZlibInflate.Stream.open">open</a>: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_39F49280"><a name="ZlibInflate.Stream.out"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Stream">Stream</a>.<a href="#ZlibInflate.Stream.out">out</a>
+</h3>
+<p> input and output buffers (initialized by client)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> out*: <strong>ZlibBuffers.Buffer</strong></pre>
+<hr><h3 id="#_39F4DFC0"><a name="ZlibInflate.Stream.res"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Stream">Stream</a>.<a href="#ZlibInflate.Stream.res">res</a>
+</h3>
+<p> result of last operation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> res-: <strong>Result</strong></pre>
+<hr><h3 id="#_39F52100"><a name="ZlibInflate.Stream.wrapper"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Stream">Stream</a>.<a href="#ZlibInflate.Stream.wrapper">wrapper</a>
+</h3>
+<p> if set, the stream has a zlib header and a checksum</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> wrapper-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_39F57EC0"><a name="ZlibInflate.Stream.open"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Stream">Stream</a>.<a href="#ZlibInflate.Stream.open">open</a>
+</h3>
+<p> if set, stream is initialized</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> open-: <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_39F5C480"><a name="ZlibInflate.Reset"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Reset">Reset</a>
+</h2>
+<p> reset an opened inflate stream (equivalent to closing and reopening)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reset* (<strong>VAR</strong> stream: <strong>Stream</strong>)</pre>
+<hr><h2 id="#_39F62640"><a name="ZlibInflate.Open"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Open">Open</a>
+</h2>
+<p> initialize inflate stream; if 'wrapper' is not set, the stream has no zlib header and no checksum</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (<strong>VAR</strong> stream: <strong>Stream</strong>; wrapper: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_39F6B100"><a name="ZlibInflate.Close"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Close">Close</a>
+</h2>
+<p> close inflate stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close* (<strong>VAR</strong> stream: <strong>Stream</strong>)</pre>
+<hr><h2 id="#_39F6F600"><a name="ZlibInflate.Inflate"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Inflate">Inflate</a>
+</h2>
+<p> inflate until either input or output buffer runs out; if op is 'Finish', Inflate returns with either 'StreamEnd' or an error</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Inflate* (<strong>VAR</strong> stream: <strong>Stream</strong>; flush: <strong>SIGNED8</strong>)</pre>
+<hr><h2 id="#_39F78F40"><a name="ZlibInflate.SetDictionary"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.SetDictionary">SetDictionary</a>
+</h2>
+<p> set dictionary if inflate returned 'NeedDict'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetDictionary* (<strong>VAR</strong> stream: <strong>Stream</strong>; <strong>VAR</strong> dict: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dictLen: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_39F80800"><a name="ZlibInflate.Sync"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Sync">Sync</a>
+</h2>
+<p> try to synchronize stream to end of block generated with 'SyncFlush' or 'FullFlush'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Sync* (<strong>VAR</strong> stream: <strong>Stream</strong>)</pre>
+<hr><h2 id="#_39F874C0"><a name="ZlibInflate.SyncPoint"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.SyncPoint">SyncPoint</a>
+</h2>
+<p> return if inflate is currently at end of block generated with 'SyncFlush' or 'FullFlush'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SyncPoint* (<strong>VAR</strong> stream: <strong>Stream</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_39F8EB80"><a name="ZlibInflate.Uncompress"></a><a href="#ZlibInflate">ZlibInflate</a>.<a href="#ZlibInflate.Uncompress">Uncompress</a>
+</h2>
+<p> uncompress complete stream and return output length in len</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Uncompress* (<strong>VAR</strong> src, dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; srcoffset, srclen, dstoffset, dstlen: <strong>SIGNED32</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>Result</strong>)</pre>
+</body></html>

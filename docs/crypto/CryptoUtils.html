@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoUtils">CryptoUtils</a></p>
+<hr><h1 id="#_C8792F40"><a name="CryptoUtils"></a><a href="#ModuleList">Module</a> CryptoUtils
+</h1>
+<p> AUTHOR "GF"; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CryptoUtils.InitBuffer">InitBuffer</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> PrintHex (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; p, n: <strong>SIZE</strong>)<tr><td></td><td> PrintBufferString (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIGNED32</strong>)<tr><td></td><td> PutLength (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> GetLength (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>)<tr><td></td><td> GetInt (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>): <strong>SIGNED32</strong><tr><td></td><td> PutChar (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>; ch: <strong>CHAR</strong>)<tr><td></td><td> GetChar (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>VAR</strong> ch: <strong>CHAR</strong>)<tr><td></td><td> PutString (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetString (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PutArray (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> arr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; apos, len: <strong>SIZE</strong>)<tr><td></td><td> PutBigNumber (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>; b: <strong>B.BigNumber</strong>)<tr><td></td><td> GetBigNumber (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>VAR</strong> b: <strong>B.BigNumber</strong>)<tr><td></td><td> <a href="#CryptoUtils.Hex2Bin">Hex2Bin</a> (<strong>CONST</strong> hex: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hp: <strong>SIZE</strong>; <strong>VAR</strong> bin: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bp: <strong>SIZE</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoUtils.Bin2Hex">Bin2Hex</a> (<strong>CONST</strong> bin: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bpos: <strong>SIZE</strong>; <strong>VAR</strong> hex: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hpos: <strong>SIZE</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoUtils.RandomBytes">RandomBytes</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> XORBlock (<strong>VAR</strong> block1, block2: <strong>ARRAY</strong> <strong>OF</strong> <strong>S.BYTE</strong>)<tr><td></td><td> BufferToBlockBE (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>; <strong>VAR</strong> block: <strong>ARRAY</strong> <strong>OF</strong> <strong>S.BYTE</strong>)<tr><td></td><td> BufferToBlockLE (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>; <strong>VAR</strong> block: <strong>ARRAY</strong> <strong>OF</strong> <strong>S.BYTE</strong>)<tr><td></td><td> BlockToBufferBE (<strong>CONST</strong> block: <strong>ARRAY</strong> <strong>OF</strong> <strong>S.BYTE</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)<tr><td></td><td> BlockToBufferLE (<strong>CONST</strong> block: <strong>ARRAY</strong> <strong>OF</strong> <strong>S.BYTE</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)<tr><td></td><td> SetToBufferBE (val: <strong>SET32</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)<tr><td></td><td> IntToBufferBE (val: <strong>SIGNED32</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)<tr><td></td><td> SetToBufferLE (val: <strong>SET32</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)<tr><td></td><td> IntToBufferLE (val: <strong>SIGNED32</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)<tr><td></td><td> SetFromBufferBE (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>): <strong>SET32</strong><tr><td></td><td> IntFromBufferBE (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>): <strong>SIGNED32</strong><tr><td></td><td> SetFromBufferLE (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>): <strong>SET32</strong><tr><td></td><td> IntFromBufferLE (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C8814540"><a name="CryptoUtils.InitBuffer"></a><a href="#CryptoUtils">CryptoUtils</a>.<a href="#CryptoUtils.InitBuffer">InitBuffer</a>
+</h2>
+<p> buffer supporting initialization of large tables with hex values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InitBuffer* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (size: <strong>SIZE</strong>)<tr><td></td><td> Add (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetInt (): <strong>SIGNED32</strong><tr><td></td><td> GetSet (): <strong>SET32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C8821140"><a name="CryptoUtils.Hex2Bin"></a><a href="#CryptoUtils">CryptoUtils</a>.<a href="#CryptoUtils.Hex2Bin">Hex2Bin</a>
+</h2>
+<p> convert 2*len hex nibbles into len bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Hex2Bin* (<strong>CONST</strong> hex: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hp: <strong>SIZE</strong>; <strong>VAR</strong> bin: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bp: <strong>SIZE</strong>; len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_C882B080"><a name="CryptoUtils.Bin2Hex"></a><a href="#CryptoUtils">CryptoUtils</a>.<a href="#CryptoUtils.Bin2Hex">Bin2Hex</a>
+</h2>
+<p> convert len bytes into 2*len hex nibbles</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Bin2Hex* (<strong>CONST</strong> bin: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bpos: <strong>SIZE</strong>; <strong>VAR</strong> hex: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hpos: <strong>SIZE</strong>; len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_C8835080"><a name="CryptoUtils.RandomBytes"></a><a href="#CryptoUtils">CryptoUtils</a>.<a href="#CryptoUtils.RandomBytes">RandomBytes</a>
+</h2>
+<p> fill len pseudo-random bytes into buf, starting at posistion ofs</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RandomBytes* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
+</body></html>

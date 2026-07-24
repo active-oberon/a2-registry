@@ -1,8 +1,48 @@
 {
   "registry": "a2-registry",
-  "description": "Central package registry for A2 / Active Oberon community libraries (CPAN/Maven-style). Install by name with `ob get community/<name>` and A2_REGISTRY set.",
+  "description": "Catalogue and docs for the whole A2 / Active Oberon module world \u2014 the bundled standard library (std/*) and installable community packages (community/*, via `ob get`).",
   "updated": "2026-07-24",
   "packages": {
+    "std/runtime": {
+      "status": "bundled",
+      "modules": 41,
+      "path": "packages/std/runtime",
+      "tier": 0,
+      "install": "bundled with the SDK",
+      "summary": "Sealed A2 runtime: kernel, GC/heaps, module system, object loader, files, streams, shell + shared primitives."
+    },
+    "std/math": {
+      "status": "bundled",
+      "modules": 17,
+      "path": "packages/std/math",
+      "tier": 1,
+      "install": "bundled with the SDK",
+      "summary": "Numeric core: fixed/arbitrary number types (Nbr*), base real/complex math, RNG."
+    },
+    "std/compress": {
+      "status": "bundled",
+      "modules": 8,
+      "path": "packages/std/compress",
+      "tier": 1,
+      "install": "bundled with the SDK",
+      "summary": "DEFLATE/zlib primitives (inflate/deflate, buffers, readers/writers) + gzip."
+    },
+    "std/crypto": {
+      "status": "bundled",
+      "modules": 30,
+      "path": "packages/std/crypto",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "summary": "Ciphers, hashes (SHA/Keccak/MD5), public-key (RSA/DSA/DH), big numbers, CSPRNG, ASN.1 / X.509."
+    },
+    "std/numerics": {
+      "status": "bundled",
+      "modules": 10,
+      "path": "packages/std/numerics",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "summary": "Advanced / special functions over std/math: cube root, error/gamma, real & complex series."
+    },
     "community/matrix": {
       "status": "validated",
       "modules": 74,

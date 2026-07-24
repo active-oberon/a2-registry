@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#NbrRe">NbrRe</a></p>
+<hr><h1 id="#_FE76B480"><a name="NbrRe"></a><a href="#ModuleList">Module</a> NbrRe
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Defines a base Real type for scientific computing.";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#NbrRe.E">E</a>= NbrRe32.E<tr><td></td><td>Pi= NbrRe32.Pi<tr><th align='left'>type declarations</th><td>Real =<strong>NbrRe32.Real</strong><tr><th align='left'>variables</th><td>MinNbr: <strong>Real</strong><tr><td></td><td>MaxNbr: <strong>Real</strong><tr><td></td><td><a href="#NbrRe.Epsilon">Epsilon</a>: <strong>Real</strong><tr><td></td><td><a href="#NbrRe.Radix">Radix</a>: <strong>NbrInt.Integer</strong><tr><th align='left'>procedures</th><td> := (<strong>VAR</strong> l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>)<tr><td></td><td> ReToRat (x: <strong>Real</strong>): <strong>NbrRat.Rational</strong><tr><td></td><td> <a href="#NbrRe.=">=</a> (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrRe.=">=</a> (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrRe.+">+</a> (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>Real</strong><tr><td></td><td> <a href="#NbrRe.+">+</a> (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> - (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>Real</strong><tr><td></td><td> - (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> * (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>Real</strong><tr><td></td><td> * (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> / (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>Real</strong><tr><td></td><td> / (l: <strong>NbrRat.Rational</strong>; r: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> <a href="#NbrRe.Abs">Abs</a> (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Entier (x: <strong>Real</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> Max (x1, x2: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Min (x1, x2: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Sign (x: <strong>Real</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> Int (x: <strong>Real</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> Frac (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Round (x: <strong>Real</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> Floor (x: <strong>Real</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> Ceiling (x: <strong>Real</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> <a href="#NbrRe.Mantissa">Mantissa</a> (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Exponent (x: <strong>Real</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> Re (mantissa: <strong>Real</strong>; exponent: <strong>NbrInt.Integer</strong>): <strong>Real</strong><tr><td></td><td> <a href="#NbrRe.Sqrt">Sqrt</a> (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Sin (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Cos (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> ArcTan (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Exp (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Ln (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> <a href="#NbrRe.StringToRe">StringToRe</a> (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Real</strong>)<tr><td></td><td> ReToString (x: <strong>Real</strong>; significantFigures: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#NbrRe.Load">Load</a> (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Real</strong>)<tr><td></td><td> Store (W: <strong>Streams.Writer</strong>; x: <strong>Real</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_FE7ECE80">
+</h1><hr><h2 id="#_FE7ED640"><a name="NbrRe.E"></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.E">E</a>
+</h2>
+<p> This module hides the type size of the real implemented. This makes it a straightforward process for the user to change this one module, and in doing so, change the type size for all reals without having to change any modules that import NbrRe, at least in principle. That was one of our design goals.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> E*= NbrRe32.E</pre>
+<hr><h2 id="#_FE7FDC00"><a name="NbrRe.Epsilon"></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.Epsilon">Epsilon</a>
+</h2>
+<p> Machine epsilon, i.e., e.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Epsilon-: <strong>Real</strong></pre>
+<hr><h2 id="#_FE801740"><a name="NbrRe.Radix"></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.Radix">Radix</a>
+</h2>
+<p> Machine radix, or base number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Radix-: <strong>NbrInt.Integer</strong></pre>
+<hr><h2 id="#_FE805640"><a name="NbrRe.="></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.=">=</a>
+</h2>
+<p> Comparison Operators</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "="* (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_FE80A7C0"><a name="NbrRe.+"></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.+">+</a>
+</h2>
+<p> Arithmetic</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "+"* (l: <strong>Real</strong>; r: <strong>NbrRat.Rational</strong>): <strong>Real</strong></pre>
+<hr><h2 id="#_FE80F500"><a name="NbrRe.Abs"></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.Abs">Abs</a>
+</h2>
+<p> Basic Functions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Abs* (x: <strong>Real</strong>): <strong>Real</strong></pre>
+<hr><h2 id="#_FE8137C0"><a name="NbrRe.Mantissa"></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.Mantissa">Mantissa</a>
+</h2>
+<p> Functions based on: real = mantissa * (radix ^ exponent)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Mantissa* (x: <strong>Real</strong>): <strong>Real</strong></pre>
+<hr><h2 id="#_FE819B80"><a name="NbrRe.Sqrt"></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.Sqrt">Sqrt</a>
+</h2>
+<p> The basic Math functions.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Sqrt* (x: <strong>Real</strong>): <strong>Real</strong></pre>
+<hr><h2 id="#_FE81E6C0"><a name="NbrRe.StringToRe"></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.StringToRe">StringToRe</a>
+</h2>
+<p> String conversions. LEN(string) = significantFigures + 6</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StringToRe* (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Real</strong>)</pre>
+<hr><h2 id="#_FE825500"><a name="NbrRe.Load"></a><a href="#NbrRe">NbrRe</a>.<a href="#NbrRe.Load">Load</a>
+</h2>
+<p> Persistence: file IO</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Real</strong>)</pre>
+</body></html>

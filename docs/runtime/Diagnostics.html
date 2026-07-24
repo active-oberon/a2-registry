@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Diagnostics">Diagnostics</a></p>
+<hr><h1 id="#_D8FF51C0"><a name="Diagnostics"></a><a href="#ModuleList">Module</a> Diagnostics
+</h1>
+<p> AUTHOR "staubesv"; PURPOSE "Generic diagnostics reporting facility";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Diagnostics.TypeInformation">TypeInformation</a>= 0<tr><td></td><td>TypeWarning= 1<tr><td></td><td>TypeError= 2<tr><td></td><td><a href="#Diagnostics.All">All</a>= {TypeInformation,TypeWarning,TypeError}<tr><th align='left'>type declarations</th><td><a href="#Diagnostics.Diagnostics">Diagnostics</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Diagnostics.Entry">Entry</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td>EntryArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Entry</strong><tr><td></td><td>EnumProc =<strong>PROCEDURE</strong>{DELEGATE} (e: <strong>Entry</strong>)<tr><td></td><td><a href="#Diagnostics.DiagnosticsList">DiagnosticsList</a> =<strong>OBJECT</strong> (<strong>Diagnostics</strong>)<tr><td></td><td><a href="#Diagnostics.StreamDiagnostics">StreamDiagnostics</a> =<strong>OBJECT</strong> (<strong>Diagnostics</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D9007100"><a name="Diagnostics.TypeInformation"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.TypeInformation">TypeInformation</a>
+</h2>
+<p> Entry types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TypeInformation*= 0</pre>
+<hr><h2 id="#_D900A300"><a name="Diagnostics.All"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.All">All</a>
+</h2>
+<p> DiagnosticsList.ToStream mask argument</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> All*= {TypeInformation,TypeWarning,TypeError}</pre>
+<hr><h2 id="#_D900E780"><a name="Diagnostics.Diagnostics"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.Diagnostics">Diagnostics</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Diagnostics* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Error (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D90203C0"><a name="Diagnostics.Entry"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.Entry">Entry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Entry* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>INTEGER</strong><tr><td></td><td>source: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>position: <strong>Streams.Position</strong><tr><td></td><td>message: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>next: <strong>Entry</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D9029FC0"><a name="Diagnostics.DiagnosticsList"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.DiagnosticsList">DiagnosticsList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DiagnosticsList* =<strong>OBJECT</strong> (<strong>Diagnostics</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>entries: <strong>Entry</strong><tr><td></td><td>nofErrors: <strong>SIZE</strong><tr><td></td><td>nofWarnings: <strong>SIZE</strong><tr><td></td><td>nofInformations: <strong>SIZE</strong><tr><td></td><td>nofMessages: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Error (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ToStream (w: <strong>Streams.Writer</strong>; mask: <strong>SET</strong>)<tr><td></td><td>& Reset<tr><td></td><td> ForAll (proc: <strong>EnumProc</strong>)<tr><td></td><td> GetEntries (): <strong>EntryArray</strong><tr><td></td><td> NewEntry (type: <strong>INTEGER</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; next: <strong>Entry</strong>): <strong>Entry</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D904E500"><a name="Diagnostics.StreamDiagnostics"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.StreamDiagnostics">StreamDiagnostics</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StreamDiagnostics* =<strong>OBJECT</strong> (<strong>Diagnostics</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (w: <strong>Streams.Writer</strong>)<tr><td></td><td> Error (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

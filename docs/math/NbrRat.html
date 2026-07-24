@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#NbrRat">NbrRat</a></p>
+<hr><h1 id="#_B1110F40"><a name="NbrRat"></a><a href="#ModuleList">Module</a> NbrRat
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Defines a base fixed-point Rational type for scientific computing. ";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#NbrRat.Rational">Rational</a> =<strong>RECORD</strong> <tr><th align='left'>variables</th><td>MinNbr: <strong>Rational</strong><tr><td></td><td>MaxNbr: <strong>Rational</strong><tr><th align='left'>procedures</th><td> <a href="#NbrRat.-">-</a> (x: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> <a href="#NbrRat.:=">:=</a> (<strong>VAR</strong> l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>)<tr><td></td><td> <a href="#NbrRat.=">=</a> (l, r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrRat.=">=</a> (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrRat.=">=</a> (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l, r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (l, r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (l, r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (l, r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (l, r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrRat.+">+</a> (l, r: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> <a href="#NbrRat.+">+</a> (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>Rational</strong><tr><td></td><td> <a href="#NbrRat.+">+</a> (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> <a href="#NbrRat.-">-</a> (l, r: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> <a href="#NbrRat.-">-</a> (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>Rational</strong><tr><td></td><td> <a href="#NbrRat.-">-</a> (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> * (l, r: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> * (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>Rational</strong><tr><td></td><td> * (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> / (l, r: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> / (l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>): <strong>Rational</strong><tr><td></td><td> / (l: <strong>NbrInt.Integer</strong>; r: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> <a href="#NbrRat.Abs">Abs</a> (x: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> Frac (x: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> Max (x1, x2: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> Min (x1, x2: <strong>Rational</strong>): <strong>Rational</strong><tr><td></td><td> Sign (x: <strong>Rational</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> <a href="#NbrRat.StringToRat">StringToRat</a> (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Rational</strong>)<tr><td></td><td> RatToString (x: <strong>Rational</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#NbrRat.Load">Load</a> (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Rational</strong>)<tr><td></td><td> Store (W: <strong>Streams.Writer</strong>; x: <strong>Rational</strong>)<tr><td></td><td> <a href="#NbrRat.Numer">Numer</a> (x: <strong>Rational</strong>): <strong>NbrInt64.Integer</strong><tr><td></td><td> Denom (x: <strong>Rational</strong>): <strong>NbrInt64.Integer</strong><tr><td></td><td> Int (x: <strong>Rational</strong>): <strong>NbrInt64.Integer</strong><tr><td></td><td> Round (x: <strong>Rational</strong>): <strong>NbrInt64.Integer</strong><tr><td></td><td> Floor (x: <strong>Rational</strong>): <strong>NbrInt64.Integer</strong><tr><td></td><td> Ceiling (x: <strong>Rational</strong>): <strong>NbrInt64.Integer</strong><tr><td></td><td> Set (numerator, denominator: <strong>NbrInt64.Integer</strong>; <strong>VAR</strong> x: <strong>Rational</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_B1199BC0"><a name="NbrRat.Rational"></a><a href="#NbrRat">NbrRat</a>.<a href="#NbrRat.Rational">Rational</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Rational* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_B119C840"><a name="NbrRat.-"></a><a href="#NbrRat">NbrRat</a>.<a href="#NbrRat.-">-</a>
+</h2>
+<p> Monadic Operator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (x: <strong>Rational</strong>): <strong>Rational</strong></pre>
+<hr><h2 id="#_B11A0B00"><a name="NbrRat.:="></a><a href="#NbrRat">NbrRat</a>.<a href="#NbrRat.:=">:=</a>
+</h2>
+<p> Dyadic Operators</p>
+
+<p> Type Conversion</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> ":="* (<strong>VAR</strong> l: <strong>Rational</strong>; r: <strong>NbrInt.Integer</strong>)</pre>
+<hr><h2 id="#_B11A6400"><a name="NbrRat.="></a><a href="#NbrRat">NbrRat</a>.<a href="#NbrRat.=">=</a>
+</h2>
+<p> Comparison Operators</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "="* (l, r: <strong>Rational</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_B11AAF40"><a name="NbrRat.+"></a><a href="#NbrRat">NbrRat</a>.<a href="#NbrRat.+">+</a>
+</h2>
+<p> Arithmetic</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "+"* (l, r: <strong>Rational</strong>): <strong>Rational</strong></pre>
+<hr><h2 id="#_B11AF7C0"><a name="NbrRat.Abs"></a><a href="#NbrRat">NbrRat</a>.<a href="#NbrRat.Abs">Abs</a>
+</h2>
+<p> Additional Functions and Procedures</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Abs* (x: <strong>Rational</strong>): <strong>Rational</strong></pre>
+<hr><h2 id="#_B11B4300"><a name="NbrRat.StringToRat"></a><a href="#NbrRat">NbrRat</a>.<a href="#NbrRat.StringToRat">StringToRat</a>
+</h2>
+<p> String conversions.</p>
+
+<p> Admissible characters include: <code>" ", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "/", ","}. LEN(string) &gt= 53 </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StringToRat* (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Rational</strong>)</pre>
+<hr><h2 id="#_B11BAF00"><a name="NbrRat.Load"></a><a href="#NbrRat">NbrRat</a>.<a href="#NbrRat.Load">Load</a>
+</h2>
+<p> Persistence: file IO</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Rational</strong>)</pre>
+<hr><h2 id="#_B11C0300"><a name="NbrRat.Numer"></a><a href="#NbrRat">NbrRat</a>.<a href="#NbrRat.Numer">Numer</a>
+</h2>
+<p> The following procedures are useful, but their use exposes the implemented type size, and therefore, any module that imports NbrRat and that uses any of these procedures will have to be rewritten if the base type size for defining rational numbers is changed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Numer* (x: <strong>Rational</strong>): <strong>NbrInt64.Integer</strong></pre>
+</body></html>

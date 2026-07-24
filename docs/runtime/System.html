@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#System">System</a></p>
+<hr><h1 id="#_BC3B2600"><a name="System"></a><a href="#ModuleList">Module</a> System
+</h1>
+<p> AUTHOR "TF"; PURPOSE "Access to System Functions";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#System.ListModules">ListModules</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.ListPlugins">ListPlugins</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.ListCommands">ListCommands</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> List (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.WhoImports">WhoImports</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.IsLoaded">IsLoaded</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> ModuleState (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.Load">Load</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.FreeDownTo">FreeDownTo</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.Free">Free</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Kill (context: <strong>Commands.Context</strong>)<tr><td></td><td> ShowProcesses (context: <strong>Commands.Context</strong>)<tr><td></td><td> ShowStacks (context: <strong>Commands.Context</strong>)<tr><td></td><td> ShowStack (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.Watch">Watch</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> RenameExtension (context: <strong>Commands.Context</strong>)<tr><td></td><td> DoFile (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.DoCommands">DoCommands</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Repeat (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.Timer">Timer</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.Time">Time</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.ShowFile">ShowFile</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.Show">Show</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.Ln">Ln</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#System.Wait">Wait</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Reboot<tr><td></td><td> PowerDown<tr><td></td><td> <a href="#System.CollectGarbage">CollectGarbage</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Version (context: <strong>Commands.Context</strong>)<tr><td></td><td> ShowTimeDifference (t1, t2: <strong>Dates.DateTime</strong>; out: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_BC3E89C0"><a name="System.ListModules"></a><a href="#System">System</a>.<a href="#System.ListModules">ListModules</a>
+</h2>
+<p> List all currently loaded modules</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ListModules* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC3ED400"><a name="System.ListPlugins"></a><a href="#System">System</a>.<a href="#System.ListPlugins">ListPlugins</a>
+</h2>
+<p> List all loaded plugins.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ListPlugins* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC3F19C0"><a name="System.ListCommands"></a><a href="#System">System</a>.<a href="#System.ListCommands">ListCommands</a>
+</h2>
+<p> List all commands of the specified module.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ListCommands* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC3F6C40"><a name="System.WhoImports"></a><a href="#System">System</a>.<a href="#System.WhoImports">WhoImports</a>
+</h2>
+<p> Show all modules that import 'basemodule' (transitively) and are currently loaded.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WhoImports* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC3FCE80"><a name="System.IsLoaded"></a><a href="#System">System</a>.<a href="#System.IsLoaded">IsLoaded</a>
+</h2>
+<p> Check whether the specified module is currenlty loaded.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsLoaded* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC402580"><a name="System.Load"></a><a href="#System">System</a>.<a href="#System.Load">Load</a>
+</h2>
+<p> Load the specified module</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC406B40"><a name="System.FreeDownTo"></a><a href="#System">System</a>.<a href="#System.FreeDownTo">FreeDownTo</a>
+</h2>
+<p> Free all modules that import basemodule (transitively).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FreeDownTo* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC40BD00"><a name="System.Free"></a><a href="#System">System</a>.<a href="#System.Free">Free</a>
+</h2>
+<p> Unload modules from memory</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Free* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC4103C0"><a name="System.Watch"></a><a href="#System">System</a>.<a href="#System.Watch">Watch</a>
+</h2>
+<p> Inspect free Heaps space</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Watch* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC414980"><a name="System.DoCommands"></a><a href="#System">System</a>.<a href="#System.DoCommands">DoCommands</a>
+</h2>
+<p> Sequentially execute a list of commands .IMPORTANT This command is specially handled by command interpreters that support it. It is the only commandin the system for which two tilde characters (only separated by whitespace) are used to delimit the parameter string.If you change the name of this module or this command, you have to adapt: WMTextView.TextView.FindCommandRange</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DoCommands* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC426200"><a name="System.Timer"></a><a href="#System">System</a>.<a href="#System.Timer">Timer</a>
+</h2>
+<p> Time interval measurement  start/starth <a href="#number]:">number]:</a> Set timer <a name="number&gt"></a> to current time (number = 0 if omitted)  elapsed/elapsedh <a href="#number]:">number]:</a> Display time difference between timer <a name="number&gt"></a> and the current time (number = 0 if omitted)  diff/diffh number1 number2: Display time difference between the two timers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Timer* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC4347C0"><a name="System.Time"></a><a href="#System">System</a>.<a href="#System.Time">Time</a>
+</h2>
+<p> If no parameter is specified, this command displays the system time on Kernel Log.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Time* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC43B480"><a name="System.ShowFile"></a><a href="#System">System</a>.<a href="#System.ShowFile">ShowFile</a>
+</h2>
+<p> Display the content of the specified file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ShowFile* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC440740"><a name="System.Show"></a><a href="#System">System</a>.<a href="#System.Show">Show</a>
+</h2>
+<p> Display a string on the context output stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Show* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC445D80"><a name="System.Ln"></a><a href="#System">System</a>.<a href="#System.Ln">Ln</a>
+</h2>
+<p> Print carriage return on the context output stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Ln* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC44B3C0"><a name="System.Wait"></a><a href="#System">System</a>.<a href="#System.Wait">Wait</a>
+</h2>
+<p> Block for ms milliseconds</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Wait* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_BC44F980"><a name="System.CollectGarbage"></a><a href="#System">System</a>.<a href="#System.CollectGarbage">CollectGarbage</a>
+</h2>
+<p> Invoke garbage collector</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CollectGarbage* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

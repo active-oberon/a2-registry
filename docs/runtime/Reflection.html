@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Reflection">Reflection</a></p>
+<hr><h1 id="#_B8838740"><a name="Reflection"></a><a href="#ModuleList">Module</a> Reflection
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>sfTypeNone= 0X<tr><td></td><td>sfTypeCHAR= 1X<tr><td></td><td>sfTypeRANGE= 5X<tr><td></td><td>sfTypeSHORTINT= 6X<tr><td></td><td>sfTypeINTEGER= 7X<tr><td></td><td>sfTypeLONGINT= 8X<tr><td></td><td>sfTypeHUGEINT= 9X<tr><td></td><td>sfTypeWORD= 0AX<tr><td></td><td>sfTypeLONGWORD= 0BX<tr><td></td><td>sfTypeSIGNED8= 0CX<tr><td></td><td>sfTypeSIGNED16= 0DX<tr><td></td><td>sfTypeSIGNED32= 0EX<tr><td></td><td>sfTypeSIGNED64= 0FX<tr><td></td><td>sfTypeUNSIGNED8= 10X<tr><td></td><td>sfTypeUNSIGNED16= 11X<tr><td></td><td>sfTypeUNSIGNED32= 12X<tr><td></td><td>sfTypeUNSIGNED64= 13X<tr><td></td><td>sfTypeREAL= 14X<tr><td></td><td>sfTypeLONGREAL= 15X<tr><td></td><td>sfTypeCOMPLEX= 16X<tr><td></td><td>sfTypeLONGCOMPLEX= 17X<tr><td></td><td>sfTypeBOOLEAN= 18X<tr><td></td><td>sfTypeSET= 19X<tr><td></td><td>sfTypeANY= 1AX<tr><td></td><td>sfTypeOBJECT= 1BX<tr><td></td><td>sfTypeBYTE= 1CX<tr><td></td><td>sfTypeADDRESS= 1DX<tr><td></td><td>sfTypeSIZE= 1EX<tr><td></td><td>sfTypeIndirect= 1FX<tr><td></td><td>sfTypeRecord= 20X<tr><td></td><td>sfTypePointerToRecord= 21X<tr><td></td><td>sfTypePointerToArray= 22X<tr><td></td><td>sfTypeOpenArray= 23X<tr><td></td><td>sfTypeStaticArray= 24X<tr><td></td><td>sfTypeDynamicArray= 25X<tr><td></td><td>sfTypeMathStaticArray= 26X<tr><td></td><td>sfTypeMathOpenArray= 27X<tr><td></td><td>sfTypeMathTensor= 28X<tr><td></td><td>sfTypeProcedure= 29X<tr><td></td><td>sfTypeDelegate= 2AX<tr><td></td><td>sfTypeENUM= 2BX<tr><td></td><td>sfTypeCELL= 2CX<tr><td></td><td>sfTypePORT= 2DX<tr><td></td><td>sfIN= 0X<tr><td></td><td>sfOUT= 1X<tr><td></td><td>flagDelegate= 0<tr><td></td><td>flagConstructor= 1<tr><td></td><td>sfAbsolute= 0X<tr><td></td><td>sfRelative= 1X<tr><td></td><td>sfIndirect= 2X<tr><td></td><td>sfScopeBegin= 0F0X<tr><td></td><td>sfScopeEnd= 0F1X<tr><td></td><td>sfProcedure= 0F2X<tr><td></td><td>sfVariable= 0F3X<tr><td></td><td>sfTypeDeclaration= 0F4X<tr><td></td><td>sfModule= 0FFX<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Reflection.Meta">Meta</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Reflection.Variable">Variable</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> GetChar (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>): <strong>CHAR</strong><tr><td></td><td> SkipChar (<strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> GetAddress (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>): <strong>ADDRESS</strong><tr><td></td><td> SkipAddress (<strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> GetSize (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> SkipSize (<strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> GetSet (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>): <strong>SET</strong><tr><td></td><td> SkipSet (<strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> GetString (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SkipString (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> GetFullName (refs: <strong>Modules.Bytes</strong>; offset: <strong>SIZE</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteType (w: <strong>Streams.Writer</strong>; adr: <strong>ADDRESS</strong>)<tr><td></td><td> WriteBasicValue (w: <strong>Streams.Writer</strong>; type: <strong>CHAR</strong>; adr: <strong>ADDRESS</strong>; <strong>VAR</strong> size: <strong>SIZE</strong>)<tr><td></td><td> WriteValueString (w: <strong>Streams.Writer</strong>; adr: <strong>ADDRESS</strong>; maxLen: <strong>SIZE</strong>; low, high: <strong>ADDRESS</strong>)<tr><td></td><td> WriteMathArray (w: <strong>Streams.Writer</strong>; adr: <strong>ADDRESS</strong>; low, high: <strong>ADDRESS</strong>)<tr><td></td><td> WriteValue (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>; adr: <strong>ADDRESS</strong>; low, high: <strong>ADDRESS</strong>)<tr><td></td><td> WriteVariable (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>; base: <strong>ADDRESS</strong>; low, high: <strong>ADDRESS</strong>)<tr><td></td><td> WriteVariables (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>; base: <strong>ADDRESS</strong>; low, high: <strong>ADDRESS</strong>)<tr><td></td><td> SkipType (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> SkipProcedure (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> SkipVariable (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> SkipTypeDeclaration (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> SkipModule (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> SkipScope (refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> FindByName (refs: <strong>Modules.Bytes</strong>; offset: <strong>SIZE</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; skipFirstSymbol: <strong>BOOLEAN</strong>): <strong>SIZE</strong><tr><td></td><td> FindByAdr (refs: <strong>Modules.Bytes</strong>; offset: <strong>SIZE</strong>; pc: <strong>ADDRESS</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#Reflection.WriteProc">WriteProc</a> (w: <strong>Streams.Writer</strong>; pc: <strong>ADDRESS</strong>)<tr><td></td><td> <a href="#Reflection.ModuleState">ModuleState</a> (w: <strong>Streams.Writer</strong>; mod: <strong>Modules.Module</strong>)<tr><td></td><td> StackTraceBack (w: <strong>Streams.Writer</strong>; pc, bp: <strong>ADDRESS</strong>; low, high: <strong>ADDRESS</strong>; long, overflow: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Reflection.WriteProcess">WriteProcess</a> (w: <strong>Streams.Writer</strong>; p: <strong>Objects.Process</strong>)<tr><td></td><td> GetVariableAdr (fp, pc: <strong>ADDRESS</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> GetProcedureName (pc: <strong>ADDRESS</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> startpc: <strong>ADDRESS</strong>)<tr><td></td><td> FindVar (mod: <strong>Modules.Module</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> v: <strong>Variable</strong>): <strong>BOOLEAN</strong><tr><td></td><td> WriteVar (w: <strong>Streams.Writer</strong>; v: <strong>Variable</strong>; <strong>VAR</strong> col: <strong>SIGNED32</strong>)<tr><td></td><td> ReportType (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> ReportProcedure (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> ReportVariable (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> ReportTypeDeclaration (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> ReportScope (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; <strong>VAR</strong> offset: <strong>SIZE</strong>)<tr><td></td><td> ReportModule (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; offset: <strong>SIZE</strong>)<tr><td></td><td> Report (w: <strong>Streams.Writer</strong>; refs: <strong>Modules.Bytes</strong>; offset: <strong>SIZE</strong>)<tr><td></td><td> WriteMode (mode: <strong>SIGNED32</strong>; out: <strong>Streams.Writer</strong>)<tr><td></td><td> WriteWaitingOn (t: <strong>Objects.Process</strong>; out: <strong>Streams.Writer</strong>)<tr><td></td><td> WriteFlags (flags: <strong>SET</strong>; out: <strong>Streams.Writer</strong>)<tr><td></td><td> TraceProcesses<tr><td></td><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_B890E640">
+</h1>
+<p> (c) Felix Friedrich, ETH Zurich, 2016 -- Reflection with more structured references section emitted by Fox Compiler</p>
+<hr><h2 id="#_B8913400"><a name="Reflection.Meta"></a><a href="#Reflection">Reflection</a>.<a href="#Reflection.Meta">Meta</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Meta* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>module: <strong>Modules.Module</strong><tr><td></td><td>refs: <strong>Modules.Bytes</strong><tr><td></td><td>offset: <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_B8918E00"><a name="Reflection.Variable"></a><a href="#Reflection">Reflection</a>.<a href="#Reflection.Variable">Variable</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Variable* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>adr: <strong>ADDRESS</strong><tr><td></td><td>type: <strong>SIZE</strong><tr><td></td><td>size: <strong>SIZE</strong><tr><td></td><td>n: <strong>SIZE</strong><tr><td></td><td>tdadr: <strong>ADDRESS</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_B8920640"><a name="Reflection.WriteProc"></a><a href="#Reflection">Reflection</a>.<a href="#Reflection.WriteProc">WriteProc</a>
+</h2>
+<p> service procedures</p>
+
+<p> Find procedure name and write it.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteProc* (w: <strong>Streams.Writer</strong>; pc: <strong>ADDRESS</strong>)</pre>
+<hr><h2 id="#_B8926C00"><a name="Reflection.ModuleState"></a><a href="#Reflection">Reflection</a>.<a href="#Reflection.ModuleState">ModuleState</a>
+</h2>
+<p> Write the state of the specified module.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ModuleState* (w: <strong>Streams.Writer</strong>; mod: <strong>Modules.Module</strong>)</pre>
+<hr><h2 id="#_B892CC80"><a name="Reflection.WriteProcess"></a><a href="#Reflection">Reflection</a>.<a href="#Reflection.WriteProcess">WriteProcess</a>
+</h2>
+<p> Write a process's state in one line.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteProcess* (w: <strong>Streams.Writer</strong>; p: <strong>Objects.Process</strong>)</pre>
+</body></html>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoFortunaRng">CryptoFortunaRng</a></p>
+<hr><h1 id="#_E8D51CC0"><a name="CryptoFortunaRng"></a><a href="#ModuleList">Module</a> CryptoFortunaRng
+</h1>
+<dl>
+<dt><strong>AUTHOR</strong></dt>
+<dd> Alexey Morozov</dd>
+
+
+<dl>
+<dt><strong>PURPOSE</strong></dt>
+<dd> Fortuna cryptographic pseudorandom generator for A2</dd>
+
+
+</dl>
+</dl>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#CryptoFortunaRng.CollectEntropyIntervalMs">CollectEntropyIntervalMs</a>= 1000<tr><th align='left'>type declarations</th><td><a href="#CryptoFortunaRng.Generator">Generator</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>generator: <strong>Generator</strong><tr><th align='left'>procedures</th><td> <a href="#CryptoFortunaRng.Generate">Generate</a> (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoFortunaRng.NewGenerator">NewGenerator</a> (): <strong>Generator</strong><tr><td></td><td> <a href="#CryptoFortunaRng.StartStoringEntropy">StartStoringEntropy</a> (ctx: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#CryptoFortunaRng.StopStoringEntropy">StopStoringEntropy</a> (ctx: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E8D61D80"><a name="CryptoFortunaRng.CollectEntropyIntervalMs"></a><a href="#CryptoFortunaRng">CryptoFortunaRng</a>.<a href="#CryptoFortunaRng.CollectEntropyIntervalMs">CollectEntropyIntervalMs</a>
+</h2>
+<p> entropy collection interval in ms</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CollectEntropyIntervalMs*= 1000</pre>
+<hr><h2 id="#_E8D65D00"><a name="CryptoFortunaRng.Generator"></a><a href="#CryptoFortunaRng">CryptoFortunaRng</a>.<a href="#CryptoFortunaRng.Generator">Generator</a>
+</h2>
+<p> Fortuna pseudorandom generator for cryptographic applications</p>
+
+<dl>
+<dt><strong>Remarks</strong></dt>
+<dd> access to the object is thread-safe</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Generator* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#CryptoFortunaRng.Generator.NewInstance">NewInstance</a> (): <strong>Generator</strong><tr><td></td><td> <a href="#CryptoFortunaRng.Generator.Generate">Generate</a> (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E8D71C80"><a name="CryptoFortunaRng.Generator.NewInstance"></a><a href="#CryptoFortunaRng">CryptoFortunaRng</a>.<a href="#CryptoFortunaRng.Generator">Generator</a>.<a href="#CryptoFortunaRng.Generator.NewInstance">NewInstance</a>
+</h3>
+<p> Create a new instance of the Fortuna generator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewInstance* (): <strong>Generator</strong></pre>
+<hr><h3 id="#_E8D77540"><a name="CryptoFortunaRng.Generator.Generate"></a><a href="#CryptoFortunaRng">CryptoFortunaRng</a>.<a href="#CryptoFortunaRng.Generator">Generator</a>.<a href="#CryptoFortunaRng.Generator.Generate">Generate</a>
+</h3>
+<p> Generate pseudorandom data (thread-safe)</p>
+
+<p> data : output data array dataOffs : offset in the output array dataLen : requested amount of data in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Generate* (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_E8D833C0"><a name="CryptoFortunaRng.Generate"></a><a href="#CryptoFortunaRng">CryptoFortunaRng</a>.<a href="#CryptoFortunaRng.Generate">Generate</a>
+</h2>
+<p> Generate pseudorandom data (thread-safe)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Generate* (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_E8D89C40"><a name="CryptoFortunaRng.NewGenerator"></a><a href="#CryptoFortunaRng">CryptoFortunaRng</a>.<a href="#CryptoFortunaRng.NewGenerator">NewGenerator</a>
+</h2>
+<p> Create a new instance of Fortuna generator (thread-safe)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewGenerator* (): <strong>Generator</strong></pre>
+<hr><h2 id="#_E8D8ED80"><a name="CryptoFortunaRng.StartStoringEntropy"></a><a href="#CryptoFortunaRng">CryptoFortunaRng</a>.<a href="#CryptoFortunaRng.StartStoringEntropy">StartStoringEntropy</a>
+</h2>
+<p> Start storing collected entropy data into files (useful for verification of selected entropy sources)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StartStoringEntropy* (ctx: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_E8D95AC0"><a name="CryptoFortunaRng.StopStoringEntropy"></a><a href="#CryptoFortunaRng">CryptoFortunaRng</a>.<a href="#CryptoFortunaRng.StopStoringEntropy">StopStoringEntropy</a>
+</h2>
+<p> Stop storing collected entropy data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StopStoringEntropy* (ctx: <strong>Commands.Context</strong>)</pre>
+</body></html>

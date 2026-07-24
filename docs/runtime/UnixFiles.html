@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#UnixFiles">UnixFiles</a></p>
+<hr><h1 id="#_A2BD61C0"><a name="UnixFiles"></a><a href="#ModuleList">Module</a> UnixFiles
+</h1>
+<p> AUTHOR "gf"; PURPOSE "Unix file systems"</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#UnixFiles.UnixFileSystem">UnixFileSystem</a> =<strong>OBJECT</strong> (<strong>Files.FileSystem</strong>)<tr><td></td><td><a href="#UnixFiles.File">File</a> =<strong>OBJECT</strong> (<strong>Files.File</strong>)<tr><th align='left'>procedures</th><td> <a href="#UnixFiles.GetWorkingDirectory">GetWorkingDirectory</a> (<strong>VAR</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#UnixFiles.ChangeDirectory">ChangeDirectory</a> (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> done: <strong>BOOLEAN</strong>)<tr><td></td><td> StripPath (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> CleanPath (<strong>VAR</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddSearchPath (context: <strong>Commands.Context</strong>)<tr><td></td><td> SetWorkPath (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_A2BEC380">
+</h1><hr><h2 id="#_A2BECB40"><a name="UnixFiles.UnixFileSystem"></a><a href="#UnixFiles">UnixFiles</a>.<a href="#UnixFiles.UnixFileSystem">UnixFileSystem</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> UnixFileSystem* =<strong>OBJECT</strong> (<strong>Files.FileSystem</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> New0 (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Files.File</strong><tr><td></td><td> Old0 (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Files.File</strong><tr><td></td><td> <a href="#UnixFiles.UnixFileSystem.FileKey">FileKey</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> Delete0 (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> key: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> TryRename (old, new: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; f: <strong>Files.File</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>SIGNED32</strong><tr><td></td><td> Rename0 (<strong>CONST</strong> old, new: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; f: <strong>Files.File</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateDirectory0 (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> RemoveDirectory0 (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; force: <strong>BOOLEAN</strong>; <strong>VAR</strong> key: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Enumerate0 (<strong>CONST</strong> mask: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>SET</strong>; enum: <strong>Files.Enumerator</strong>)<tr><td></td><td> Has (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> fullName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> flags: <strong>SET</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_A2C19D40"><a name="UnixFiles.UnixFileSystem.FileKey"></a><a href="#UnixFiles">UnixFiles</a>.<a href="#UnixFiles.UnixFileSystem">UnixFileSystem</a>.<a href="#UnixFiles.UnixFileSystem.FileKey">FileKey</a>
+</h3>
+<p> Return the unique non-zero key of the named file, if it exists.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FileKey* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_A2C21B80"><a name="UnixFiles.File"></a><a href="#UnixFiles">UnixFiles</a>.<a href="#UnixFiles.File">File</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> File* =<strong>OBJECT</strong> (<strong>Files.File</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Set (<strong>VAR</strong> r: <strong>Files.Rider</strong>; pos: <strong>Files.Position</strong>)<tr><td></td><td> Pos (<strong>VAR</strong> r: <strong>Files.Rider</strong>): <strong>Files.Position</strong><tr><td></td><td> Read (<strong>VAR</strong> r: <strong>Files.Rider</strong>; <strong>VAR</strong> x: <strong>CHAR</strong>)<tr><td></td><td> ReadBytes (<strong>VAR</strong> r: <strong>Files.Rider</strong>; <strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> Write (<strong>VAR</strong> r: <strong>Files.Rider</strong>; x: <strong>CHAR</strong>)<tr><td></td><td> WriteBytes (<strong>VAR</strong> r: <strong>Files.Rider</strong>; <strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> Length (): <strong>Files.Size</strong><tr><td></td><td> GetDate (<strong>VAR</strong> t, d: <strong>SIGNED32</strong>)<tr><td></td><td> SetDate (t, d: <strong>SIGNED32</strong>)<tr><td></td><td> GetAttributes (): <strong>SET</strong><tr><td></td><td> SetAttributes (attr: <strong>SET</strong>)<tr><td></td><td> Register0 (<strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Update<tr><td></td><td> Finalize<tr><td></td><td> Close<tr><td></td><td> GetName (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A2C49700"><a name="UnixFiles.GetWorkingDirectory"></a><a href="#UnixFiles">UnixFiles</a>.<a href="#UnixFiles.GetWorkingDirectory">GetWorkingDirectory</a>
+</h2>
+<p> Get the current directory.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetWorkingDirectory* (<strong>VAR</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_A2C4E900"><a name="UnixFiles.ChangeDirectory"></a><a href="#UnixFiles">UnixFiles</a>.<a href="#UnixFiles.ChangeDirectory">ChangeDirectory</a>
+</h2>
+<p> Change to directory path.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ChangeDirectory* (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> done: <strong>BOOLEAN</strong>)</pre>
+</body></html>

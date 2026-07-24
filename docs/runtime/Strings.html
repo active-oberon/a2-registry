@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Strings">Strings</a></p>
+<hr><h1 id="#_AEAFAFC0"><a name="Strings"></a><a href="#ModuleList">Module</a> Strings
+</h1>
+<p> AUTHOR "be,tf, staubesv"; PURPOSE "String functions"</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Ok= 0<tr><td></td><td>SyntaxError= 1<tr><td></td><td>BaseError= 2<tr><td></td><td>RangeError= 3<tr><td></td><td>EmptyStringError= 4<tr><td></td><td>FullStringError= 5<tr><td></td><td>BitSizeError= 6<tr><td></td><td>StrToInt= StrToInt32<tr><td></td><td>StrToHInt= StrToInt64<tr><td></td><td>HexStrToInt32= HexStrToInt<tr><th align='left'>type declarations</th><td>String =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>StringArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>String</strong><tr><th align='left'>procedures</th><td> + (a: <strong>String</strong>; <strong>CONST</strong> b: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> + (a: <strong>String</strong>; b: <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> + (a, b: <strong>String</strong>): <strong>String</strong><tr><td></td><td> + (a: <strong>String</strong>; b: <strong>SIGNED64</strong>): <strong>String</strong><tr><td></td><td> + (a: <strong>String</strong>; b: <strong>FLOAT64</strong>): <strong>String</strong><tr><td></td><td> <a href="#Strings.Length">Length</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#Strings.Find">Find</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>; ch: <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#Strings.Count">Count</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ch: <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#Strings.Truncate">Truncate</a> (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; length: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Strings.Pos">Pos</a> (<strong>CONST</strong> pattern, string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#Strings.GenericPos">GenericPos</a> (<strong>CONST</strong> pattern: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; from: <strong>SIZE</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ignoreCase, backwards: <strong>BOOLEAN</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#Strings.Match">Match</a> (<strong>CONST</strong> mask, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.Move">Move</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; soff, len: <strong>SIZE</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; doff: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Strings.Concat">Concat</a> (<strong>CONST</strong> s1, s2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.ConcatX">ConcatX</a> (<strong>CONST</strong> s1, s2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.Append">Append</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> appendix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.AppendX">AppendX</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> appendix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.AppendInt">AppendInt</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; num: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Strings.AppendChar">AppendChar</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ch: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.Copy">Copy</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index, len: <strong>SIZE</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.Delete">Delete</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index, count: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Strings.Insert">Insert</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Strings.TrimLeft">TrimLeft</a> (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; c: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.TrimRight">TrimRight</a> (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; c: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.Trim">Trim</a> (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; c: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.Split">Split</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; separator: <strong>CHAR</strong>): <strong>StringArray</strong><tr><td></td><td> Join (<strong>CONST</strong> strings: <strong>StringArray</strong>; startIndex, endIndex: <strong>SIZE</strong>; separator: <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> <a href="#Strings.LOW">LOW</a> (ch: <strong>CHAR</strong>): <strong>CHAR</strong><tr><td></td><td> <a href="#Strings.LowerCase">LowerCase</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.UP">UP</a> (ch: <strong>CHAR</strong>): <strong>CHAR</strong><tr><td></td><td> UpperCaseChar (<strong>VAR</strong> ch: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.UpperCase">UpperCase</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> IsPrintable (ch: <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.BoolToStr">BoolToStr</a> (b: <strong>BOOLEAN</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.StrToBool">StrToBool</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> b: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Strings.IntToStr">IntToStr</a> (x: <strong>SIGNED64</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.UIntToStr">UIntToStr</a> (x: <strong>UNSIGNED64</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.TryScanUInt32At">TryScanUInt32At</a> (<strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; base: <strong>UNSIGNED32</strong>; <strong>VAR</strong> value: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.TryScanInt32At">TryScanInt32At</a> (<strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; base: <strong>UNSIGNED32</strong>; <strong>VAR</strong> value: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.TryScanUInt64At">TryScanUInt64At</a> (<strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; base: <strong>UNSIGNED32</strong>; <strong>VAR</strong> value: <strong>UNSIGNED64</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.TryScanInt64At">TryScanInt64At</a> (<strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; base: <strong>UNSIGNED32</strong>; <strong>VAR</strong> value: <strong>SIGNED64</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.TryParseInt32">TryParseInt32</a> (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED32</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.TryParseInt64">TryParseInt64</a> (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED64</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.TryParseSize">TryParseSize</a> (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIZE</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.TryParseUInt32">TryParseUInt32</a> (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>UNSIGNED32</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.TryParseUInt64">TryParseUInt64</a> (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>UNSIGNED64</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.TryParseAddress">TryParseAddress</a> (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>ADDRESS</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.StrToInt32">StrToInt32</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Strings.StrToUInt32">StrToUInt32</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>UNSIGNED32</strong>)<tr><td></td><td> <a href="#Strings.StrToInt64">StrToInt64</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Strings.StrToUInt64">StrToUInt64</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>UNSIGNED64</strong>)<tr><td></td><td> <a href="#Strings.StrToSize">StrToSize</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Strings.StrToIntPos">StrToIntPos</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED32</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Strings.StrToHIntPos">StrToHIntPos</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED64</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Strings.StrToSizePos">StrToSizePos</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIZE</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Strings.IntToHexStr">IntToHexStr</a> (h: <strong>SIGNED64</strong>; width: <strong>INTEGER</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.UIntToHexStr">UIntToHexStr</a> (h: <strong>UNSIGNED64</strong>; width: <strong>INTEGER</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.HexStrToInt">HexStrToInt</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Strings.HexStrToUInt32">HexStrToUInt32</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Strings.HexStrToSize">HexStrToSize</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Strings.FloatToStr">FloatToStr</a> (x: <strong>FLOAT64</strong>; n, f, D: <strong>SIGNED32</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddressToStr (adr: <strong>ADDRESS</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.StrToFloat">StrToFloat</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> r: <strong>FLOAT64</strong>)<tr><td></td><td> <a href="#Strings.SetToStr">SetToStr</a> (set: <strong>SET</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Strings.StrToSet">StrToSet</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> set: <strong>SET</strong>)<tr><td></td><td> NewString (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> SetAOC (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> s: <strong>String</strong>)<tr><td></td><td> GetExtension (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> file, ext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ConcatToNew (<strong>CONST</strong> s1, s2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> EndsWith (<strong>CONST</strong> suffix, s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Equal (s1, s2: <strong>String</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.ContainsChar">ContainsChar</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ch: <strong>CHAR</strong>; ignoreCase: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IndexOfByte2 (ch: <strong>CHAR</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> IndexOfByte (ch: <strong>CHAR</strong>; fromIndex: <strong>SIZE</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> LastIndexOfByte2 (ch: <strong>CHAR</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> LastIndexOfByte (ch: <strong>CHAR</strong>; fromIndex: <strong>SIZE</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> LowerCaseInNew (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> StartsWith2 (<strong>CONST</strong> prefix, s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> StartsWith (<strong>CONST</strong> prefix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; toffset: <strong>SIZE</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Substring2 (beginIndex: <strong>SIZE</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> Substring (beginIndex: <strong>SIZE</strong>; endIndex: <strong>SIZE</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> TrimWS (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> UpperCaseInNew (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> <a href="#Strings.IsDigit">IsDigit</a> (c: <strong>CHAR</strong>; radix: <strong>UNSIGNED32</strong>; <strong>VAR</strong> d: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.IsDecimal">IsDecimal</a> (c: <strong>CHAR</strong>; <strong>VAR</strong> d: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.IsHexadecimal">IsHexadecimal</a> (c: <strong>CHAR</strong>; <strong>VAR</strong> d: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Strings.CharOrDefault">CharOrDefault</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, limit: <strong>SIZE</strong>; default= 0X: <strong>CHAR</strong>): <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_AEC64D00"><a name="Strings.Length"></a><a href="#Strings">Strings</a>.<a href="#Strings.Length">Length</a>
+</h2>
+<p> string handling</p>
+
+<p> returns the length of a string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Length* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_AEC6B5C0"><a name="Strings.Find"></a><a href="#Strings">Strings</a>.<a href="#Strings.Find">Find</a>
+</h2>
+<p> Find position of character, returns -1 if not found</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Find* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>; ch: <strong>CHAR</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_AEC73C00"><a name="Strings.Count"></a><a href="#Strings">Strings</a>.<a href="#Strings.Count">Count</a>
+</h2>
+<p> returns the number of occurences of ch within string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Count* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ch: <strong>CHAR</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_AEC7B600"><a name="Strings.Truncate"></a><a href="#Strings">Strings</a>.<a href="#Strings.Truncate">Truncate</a>
+</h2>
+<p> truncates string to length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Truncate* (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; length: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_AEC815C0"><a name="Strings.Pos"></a><a href="#Strings">Strings</a>.<a href="#Strings.Pos">Pos</a>
+</h2>
+<ul>
+<li> Returns the position of the first occurrence of pattern in the string or -1 if no occurrence is found.</li>
+
+<li> Rabin-Karp algorithm, adopted from Sedgewick.</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pos* (<strong>CONST</strong> pattern, string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_AEC8C7C0"><a name="Strings.GenericPos"></a><a href="#Strings">Strings</a>.<a href="#Strings.GenericPos">GenericPos</a>
+</h2>
+<p> More generic version of Pos. Basically the same search algorithm, but can also perform case-insensitive searching and/or</p>
+
+<ul>
+<li> backwards directed searching.</li>
+
+<li> Returns the position of the first character of the first occurence of 'pattern' in 'text' in search direction or -1 if pattern not found</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GenericPos* (<strong>CONST</strong> pattern: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; from: <strong>SIZE</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ignoreCase, backwards: <strong>BOOLEAN</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_AEC9FC80"><a name="Strings.Match"></a><a href="#Strings">Strings</a>.<a href="#Strings.Match">Match</a>
+</h2>
+<p> Simple pattern matching with support for "*" and "?" wildcards - returns TRUE if name matches mask. Patent pending ;-)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Match* (<strong>CONST</strong> mask, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AECA9AC0"><a name="Strings.Move"></a><a href="#Strings">Strings</a>.<a href="#Strings.Move">Move</a>
+</h2>
+<p> copies src[soff ... soff + len - 1] to dst[doff ... doff + len - 1]</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Move* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; soff, len: <strong>SIZE</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; doff: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_AECB5780"><a name="Strings.Concat"></a><a href="#Strings">Strings</a>.<a href="#Strings.Concat">Concat</a>
+</h2>
+<p> concatenates s1 and s2: s := s1</p>
+
+<table><tr><td></td><td> s2</td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Concat* (<strong>CONST</strong> s1, s2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AECBDFC0"><a name="Strings.ConcatX"></a><a href="#Strings">Strings</a>.<a href="#Strings.ConcatX">ConcatX</a>
+</h2>
+<p> concatenates s1 and s2: s := s1</p>
+
+<table><tr><td></td><td> s2. The resulting string is truncated to the length of s if necessary</td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ConcatX* (<strong>CONST</strong> s1, s2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AECC9780"><a name="Strings.Append"></a><a href="#Strings">Strings</a>.<a href="#Strings.Append">Append</a>
+</h2>
+<p> appends appendix to s: s := s</p>
+
+<table><tr><td></td><td> appendix</td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Append* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> appendix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AECD1840"><a name="Strings.AppendX"></a><a href="#Strings">Strings</a>.<a href="#Strings.AppendX">AppendX</a>
+</h2>
+<p> appends appendix to s: s := s</p>
+
+<table><tr><td></td><td> appendix. The resulting string is truncated to the length of s if necessary</td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AppendX* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> appendix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AECDC880"><a name="Strings.AppendInt"></a><a href="#Strings">Strings</a>.<a href="#Strings.AppendInt">AppendInt</a>
+</h2>
+<p> appends an integer number to a string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AppendInt* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; num: <strong>SIGNED64</strong>)</pre>
+<hr><h2 id="#_AECE3540"><a name="Strings.AppendChar"></a><a href="#Strings">Strings</a>.<a href="#Strings.AppendChar">AppendChar</a>
+</h2>
+<p> appends a character to a string s := s</p>
+
+<table><tr><td></td><td> char</td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AppendChar* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ch: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AECEB380"><a name="Strings.Copy"></a><a href="#Strings">Strings</a>.<a href="#Strings.Copy">Copy</a>
+</h2>
+<p> copies src[index ... index + len-1] to dst</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Copy* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index, len: <strong>SIZE</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AECF44C0"><a name="Strings.Delete"></a><a href="#Strings">Strings</a>.<a href="#Strings.Delete">Delete</a>
+</h2>
+<p> deletes positions index ... index + count - 1 from 's'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Delete* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index, count: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_AECFC880"><a name="Strings.Insert"></a><a href="#Strings">Strings</a>.<a href="#Strings.Insert">Insert</a>
+</h2>
+<p> inserts 'src' at position 'index' into 'dst'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Insert* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_AED04DC0"><a name="Strings.TrimLeft"></a><a href="#Strings">Strings</a>.<a href="#Strings.TrimLeft">TrimLeft</a>
+</h2>
+<p> removes all occurrences of 'c' at the head of 'string'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TrimLeft* (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; c: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AED0C500"><a name="Strings.TrimRight"></a><a href="#Strings">Strings</a>.<a href="#Strings.TrimRight">TrimRight</a>
+</h2>
+<p> removes all occurrences of 'c' at the end of 'string'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TrimRight* (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; c: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AED13C40"><a name="Strings.Trim"></a><a href="#Strings">Strings</a>.<a href="#Strings.Trim">Trim</a>
+</h2>
+<p> removes all occurrences of 'c' at both ends of 'string'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Trim* (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; c: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AED1B500"><a name="Strings.Split"></a><a href="#Strings">Strings</a>.<a href="#Strings.Split">Split</a>
+</h2>
+<ul>
+<li> Splits 'string' into multiple strings separated by 'separator'.</li>
+
+<li> Result properties:</li>
+
+<li> separator = 0X: LEN(StringArray) = 1</li>
+
+<li> separator # 0X: LEN(StringArray) = 1 + <a name="Number"></a> of occurences of 'ch' in 'string'&gt</li>
+
+<li> StringArray[i] # NIL (0 <a name="="></a> i <a name="="></a> LEN(StringArray)-1)</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Split* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; separator: <strong>CHAR</strong>): <strong>StringArray</strong></pre>
+<hr><h2 id="#_AED2AC80"><a name="Strings.LOW"></a><a href="#Strings">Strings</a>.<a href="#Strings.LOW">LOW</a>
+</h2>
+<p> returns the corresponding lower-case letter for "A" <a name="="></a> ch <a name="="></a> "Z"</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LOW* (ch: <strong>CHAR</strong>): <strong>CHAR</strong></pre>
+<hr><h2 id="#_AED31440"><a name="Strings.LowerCase"></a><a href="#Strings">Strings</a>.<a href="#Strings.LowerCase">LowerCase</a>
+</h2>
+<p> converts s to lower-case letters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LowerCase* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AED36A00"><a name="Strings.UP"></a><a href="#Strings">Strings</a>.<a href="#Strings.UP">UP</a>
+</h2>
+<p> returns the corresponding upper-case letter for "a" <a name="="></a> ch <a name="="></a> "z"</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UP* (ch: <strong>CHAR</strong>): <strong>CHAR</strong></pre>
+<hr><h2 id="#_AED3D1C0"><a name="Strings.UpperCase"></a><a href="#Strings">Strings</a>.<a href="#Strings.UpperCase">UpperCase</a>
+</h2>
+<p> converts s to upper-case letters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UpperCase* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AED42780"><a name="Strings.BoolToStr"></a><a href="#Strings">Strings</a>.<a href="#Strings.BoolToStr">BoolToStr</a>
+</h2>
+<p> conversion functions</p>
+
+<p> converts a boolean value to a string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> BoolToStr* (b: <strong>BOOLEAN</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AED49CC0"><a name="Strings.StrToBool"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToBool">StrToBool</a>
+</h2>
+<p> converts a string to a boolean value: b := CAP(s[0]) = "T"</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToBool* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> b: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_AED52000"><a name="Strings.IntToStr"></a><a href="#Strings">Strings</a>.<a href="#Strings.IntToStr">IntToStr</a>
+</h2>
+<p> converts an integer value to a string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntToStr* (x: <strong>SIGNED64</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AED58BC0"><a name="Strings.UIntToStr"></a><a href="#Strings">Strings</a>.<a href="#Strings.UIntToStr">UIntToStr</a>
+</h2>
+<p> converts an unsigned integer value to a string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UIntToStr* (x: <strong>UNSIGNED64</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AED5FC00"><a name="Strings.TryScanUInt32At"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryScanUInt32At">TryScanUInt32At</a>
+</h2>
+<p> Tries to parse an unsigned 32-bit integer from a string at a given position</p>
+
+<p> The <a href="#Strings.TryScanUInt32At">TryScanUInt32At</a> procedure attempts to parse an unsigned 32-bit integer from a string starting at the specified position. It supports various number formats including binary (0b), octal (0o), and hexadecimal (0x) prefixes.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> pos</td><td> Input/Output. The position in the string to start parsing from. Updated to the position after the parsed number.</td><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> base</td><td> The number base to use for parsing. If 0, the base is auto-detected from prefixes.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed unsigned 32-bit integer value.</td><td></td></tr>
+<tr><td> res</td><td> Output. Result code indicating success or specific error type.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> The procedure sets the res parameter to indicate specific error conditions:</p>
+
+<ul>
+<li> EmptyStringError - Empty string at the starting position</li>
+
+<li> BaseError - Invalid base value (must be 2-36)</li>
+
+<li> SyntaxError - Invalid number syntax</li>
+
+<li> RangeError - Number exceeds the range of UNSIGNED32</li>
+
+</ul>
+<h3> Special Features</h3>
+
+<p> Supports digit separators using apostrophes (') and the 'H' suffix for hexadecimal numbers without the 0x prefix.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryScanUInt32At* (<strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; base: <strong>UNSIGNED32</strong>; <strong>VAR</strong> value: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AED99E00"><a name="Strings.TryScanInt32At"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryScanInt32At">TryScanInt32At</a>
+</h2>
+<p> Tries to parse a signed 32-bit integer from a string at a given position</p>
+
+<p> The <a href="#Strings.TryScanInt32At">TryScanInt32At</a> procedure attempts to parse a signed 32-bit integer from a string starting at the specified position. It handles optional '+' or '-' signs and delegates the actual parsing to <a href="#Strings.TryScanUInt32At">TryScanUInt32At</a>.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> pos</td><td> Input/Output. The position in the string to start parsing from. Updated to the position after the parsed number.</td><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> base</td><td> The number base to use for parsing. If 0, the base is auto-detected from prefixes.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed signed 32-bit integer value.</td><td></td></tr>
+<tr><td> res</td><td> Output. Result code indicating success or specific error type.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> The procedure sets the res parameter to indicate specific error conditions, including:</p>
+
+<ul>
+<li> RangeError - Number exceeds the range of SIGNED32</li>
+
+<li> Any errors returned by <a href="#Strings.TryScanUInt32At">TryScanUInt32At</a></li>
+
+</ul>
+<h3> Special Features</h3>
+
+<p> Special handling for the minimum SIGNED32 value which cannot be represented as a positive number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryScanInt32At* (<strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; base: <strong>UNSIGNED32</strong>; <strong>VAR</strong> value: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEDCFD80"><a name="Strings.TryScanUInt64At"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryScanUInt64At">TryScanUInt64At</a>
+</h2>
+<p> Tries to parse an unsigned 64-bit integer from a string at a given position</p>
+
+<p> The <a href="#Strings.TryScanUInt64At">TryScanUInt64At</a> procedure attempts to parse an unsigned 64-bit integer from a string starting at the specified position. It supports various number formats including binary (0b), octal (0o), and hexadecimal (0x) prefixes.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> pos</td><td> Input/Output. The position in the string to start parsing from. Updated to the position after the parsed number.</td><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> base</td><td> The number base to use for parsing. If 0, the base is auto-detected from prefixes.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed unsigned 64-bit integer value.</td><td></td></tr>
+<tr><td> res</td><td> Output. Result code indicating success or specific error type.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> The procedure sets the res parameter to indicate specific error conditions:</p>
+
+<ul>
+<li> EmptyStringError - Empty string at the starting position</li>
+
+<li> BaseError - Invalid base value (must be 2-36)</li>
+
+<li> SyntaxError - Invalid number syntax</li>
+
+<li> RangeError - Number exceeds the range of UNSIGNED64</li>
+
+</ul>
+<h3> Special Features</h3>
+
+<p> Supports digit separators using apostrophes (') and the 'H' suffix for hexadecimal numbers without the 0x prefix.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryScanUInt64At* (<strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; base: <strong>UNSIGNED32</strong>; <strong>VAR</strong> value: <strong>UNSIGNED64</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEE09F80"><a name="Strings.TryScanInt64At"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryScanInt64At">TryScanInt64At</a>
+</h2>
+<p> Tries to parse a signed 64-bit integer from a string at a given position</p>
+
+<p> The <a href="#Strings.TryScanInt64At">TryScanInt64At</a> procedure attempts to parse a signed 64-bit integer from a string starting at the specified position. It handles optional '+' or '-' signs and delegates the actual parsing to <a href="#Strings.TryScanUInt64At">TryScanUInt64At</a>.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> pos</td><td> Input/Output. The position in the string to start parsing from. Updated to the position after the parsed number.</td><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> base</td><td> The number base to use for parsing. If 0, the base is auto-detected from prefixes.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed signed 64-bit integer value.</td><td></td></tr>
+<tr><td> res</td><td> Output. Result code indicating success or specific error type.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> The procedure sets the res parameter to indicate specific error conditions, including:</p>
+
+<ul>
+<li> RangeError - Number exceeds the range of SIGNED64</li>
+
+<li> Any errors returned by <a href="#Strings.TryScanUInt64At">TryScanUInt64At</a></li>
+
+</ul>
+<h3> Special Features</h3>
+
+<p> Special handling for the minimum SIGNED64 value which cannot be represented as a positive number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryScanInt64At* (<strong>VAR</strong> pos: <strong>SIZE</strong>; <strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; base: <strong>UNSIGNED32</strong>; <strong>VAR</strong> value: <strong>SIGNED64</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEE3FD00"><a name="Strings.TryParseInt32"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryParseInt32">TryParseInt32</a>
+</h2>
+<p> Tries to parse a signed 32-bit integer from a string</p>
+
+<p> The <a href="#Strings.TryParseInt32">TryParseInt32</a> procedure attempts to parse a signed 32-bit integer from a string starting at the specified position. It handles optional '+' or '-' signs and delegates the actual parsing to <a href="#Strings.TryParseUInt32">TryParseUInt32</a>.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed signed 32-bit integer value.</td><td></td></tr>
+<tr><td> pos</td><td> Input. The position in the string to start parsing from. Defaults to 0.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> Returns FALSE if parsing fails. In case of overflow or invalid format, the value parameter is set to either MIN(SIGNED32) or MAX(SIGNED32) depending on the context.</p>
+
+<h3> Special Features</h3>
+
+<p> Special handling for the minimum SIGNED32 value (-2147483648) which cannot be represented as a positive number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryParseInt32* (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED32</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEE6A540"><a name="Strings.TryParseInt64"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryParseInt64">TryParseInt64</a>
+</h2>
+<p> Tries to parse a signed 64-bit integer from a string</p>
+
+<p> The <a href="#Strings.TryParseInt64">TryParseInt64</a> procedure attempts to parse a signed 64-bit integer from a string starting at the specified position. It handles optional '+' or '-' signs and delegates the actual parsing to <a href="#Strings.TryParseUInt64">TryParseUInt64</a>.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed signed 64-bit integer value.</td><td></td></tr>
+<tr><td> pos</td><td> Input. The position in the string to start parsing from. Defaults to 0.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> Returns FALSE if parsing fails. In case of overflow or invalid format, the value parameter is set to either MIN(SIGNED64) or MAX(SIGNED64) depending on the context.</p>
+
+<h3> Special Features</h3>
+
+<p> Special handling for the minimum SIGNED64 value which cannot be represented as a positive number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryParseInt64* (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED64</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEE94A00"><a name="Strings.TryParseSize"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryParseSize">TryParseSize</a>
+</h2>
+<p> Tries to parse a SIZE value from a string</p>
+
+<p> The <a href="#Strings.TryParseSize">TryParseSize</a> procedure attempts to parse a SIZE value from a string starting at the specified position. It handles optional '+' or '-' signs and delegates the actual parsing to <a href="#Strings.TryParseAddress">TryParseAddress</a>.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed SIZE value.</td><td></td></tr>
+<tr><td> pos</td><td> Input. The position in the string to start parsing from. Defaults to 0.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> Returns FALSE if parsing fails. In case of overflow or invalid format, the value parameter is set to either MIN(SIZE) or MAX(SIZE) depending on the context.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryParseSize* (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIZE</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEEB98C0"><a name="Strings.TryParseUInt32"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryParseUInt32">TryParseUInt32</a>
+</h2>
+<p> Tries to parse an unsigned 32-bit integer from a string</p>
+
+<p> The <a href="#Strings.TryParseUInt32">TryParseUInt32</a> procedure attempts to parse an unsigned 32-bit integer from a string starting at the specified position. It supports various number formats including binary (0b), octal (0o), and hexadecimal (0x) prefixes.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed unsigned 32-bit integer value.</td><td></td></tr>
+<tr><td> pos</td><td> Input. The position in the string to start parsing from. Defaults to 0.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> Returns FALSE if parsing fails due to invalid syntax or overflow. In case of overflow, the value parameter is set to MAX(UNSIGNED32).</p>
+
+<h3> Special Features</h3>
+
+<p> Auto-detects the number base from prefixes (0b for binary, 0o for octal or 0x for hexadecimal). If no prefix is present, it defaults to base 10.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryParseUInt32* (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>UNSIGNED32</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEEE5380"><a name="Strings.TryParseUInt64"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryParseUInt64">TryParseUInt64</a>
+</h2>
+<p> Tries to parse an unsigned 64-bit integer from a string</p>
+
+<p> The <a href="#Strings.TryParseUInt64">TryParseUInt64</a> procedure attempts to parse an unsigned 64-bit integer from a string starting at the specified position. It supports various number formats including binary (0b), octal (0o), and hexadecimal (0x) prefixes.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed unsigned 64-bit integer value.</td><td></td></tr>
+<tr><td> pos</td><td> Input. The position in the string to start parsing from. Defaults to 0.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> Returns FALSE if parsing fails due to invalid syntax or overflow. In case of overflow, the value parameter is set to MAX(UNSIGNED64).</p>
+
+<h3> Special Features</h3>
+
+<p> Auto-detects the number base from prefixes (0b for binary, 0o for octal or 0x for hexadecimal). If no prefix is present, it defaults to base 10.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryParseUInt64* (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>UNSIGNED64</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEF10E40"><a name="Strings.TryParseAddress"></a><a href="#Strings">Strings</a>.<a href="#Strings.TryParseAddress">TryParseAddress</a>
+</h2>
+<p> Tries to parse a memory address (ADDRESS) from a string</p>
+
+<p> The <a href="#Strings.TryParseAddress">TryParseAddress</a> procedure attempts to parse a memory address (ADDRESS) from a string starting at the specified position. It supports various number formats including binary (0b), octal (0o), and hexadecimal (0x) prefixes.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> number</td><td> The input string containing the number to parse.</td><td></td></tr>
+<tr><td> value</td><td> Output. The parsed memory address (ADDRESS).</td><td></td></tr>
+<tr><td> pos</td><td> Input. The position in the string to start parsing from. Defaults to 0.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if parsing was successful, FALSE otherwise.</p>
+
+<h3> Error Handling</h3>
+
+<p> Returns FALSE if parsing fails due to invalid syntax or overflow. In case of overflow, the value parameter is set to MAX(ADDRESS).</p>
+
+<h3> Special Features</h3>
+
+<p> Auto-detects the number base from prefixes (0b for binary, 0o for octal, 0x for hexadecimal). If no prefix is present, it defaults to base 10.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TryParseAddress* (<strong>CONST</strong> number: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>ADDRESS</strong>; pos= 0: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEF3C200"><a name="Strings.StrToInt32"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToInt32">StrToInt32</a>
+</h2>
+<p> converts a string to an integer. Leading whitespace is ignored</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToInt32* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_AEF43CC0"><a name="Strings.StrToUInt32"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToUInt32">StrToUInt32</a>
+</h2>
+<p> converts a string to an unsigned32. Leading whitespace is ignored</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToUInt32* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>UNSIGNED32</strong>)</pre>
+<hr><h2 id="#_AEF4B780"><a name="Strings.StrToInt64"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToInt64">StrToInt64</a>
+</h2>
+<p> converts a string to a huge integer. Leading whitespace is ignored</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToInt64* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED64</strong>)</pre>
+<hr><h2 id="#_AEF53740"><a name="Strings.StrToUInt64"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToUInt64">StrToUInt64</a>
+</h2>
+<p> converts a string to an unsigned64. Leading whitespace is ignored</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToUInt64* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>UNSIGNED64</strong>)</pre>
+<hr><h2 id="#_AEF5B200"><a name="Strings.StrToSize"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToSize">StrToSize</a>
+</h2>
+<p> converts a string to a size. Leading whitespace is ignored</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToSize* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_AEF62CC0"><a name="Strings.StrToIntPos"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToIntPos">StrToIntPos</a>
+</h2>
+<p> Convert the substring beginning at position i in str into an integer. Leading whitespace is ignored. After the conversion i points to the first character after the integer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToIntPos* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED32</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_AEF6FE40"><a name="Strings.StrToHIntPos"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToHIntPos">StrToHIntPos</a>
+</h2>
+<p> Convert the substring beginning at position i in str into a huge integer. Leading whitespace is ignored. After the conversion i points to the first character after the integer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToHIntPos* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED64</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_AEF7D340"><a name="Strings.StrToSizePos"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToSizePos">StrToSizePos</a>
+</h2>
+<p> Convert the substring beginning at position i in str into a size. Leading whitespace is ignored. After the conversion i points to the first character after the integer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToSizePos* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIZE</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_AEF8A780"><a name="Strings.IntToHexStr"></a><a href="#Strings">Strings</a>.<a href="#Strings.IntToHexStr">IntToHexStr</a>
+</h2>
+<p> converts an integer value to a hex string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntToHexStr* (h: <strong>SIGNED64</strong>; width: <strong>INTEGER</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AEF924C0"><a name="Strings.UIntToHexStr"></a><a href="#Strings">Strings</a>.<a href="#Strings.UIntToHexStr">UIntToHexStr</a>
+</h2>
+<p> converts an unsigned integer value to a hex string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UIntToHexStr* (h: <strong>UNSIGNED64</strong>; width: <strong>INTEGER</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AEF9A580"><a name="Strings.HexStrToInt"></a><a href="#Strings">Strings</a>.<a href="#Strings.HexStrToInt">HexStrToInt</a>
+</h2>
+<p> converts a hex string to an integer. Leading whitespace is ignored. res=Ok indicates success, val=0 on failure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HexStrToInt* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_AEFA4D40"><a name="Strings.HexStrToUInt32"></a><a href="#Strings">Strings</a>.<a href="#Strings.HexStrToUInt32">HexStrToUInt32</a>
+</h2>
+<p> converts a hex string to an unsigned integer. Leading whitespace is ignored. res=Ok indicates success, val=0 on failure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HexStrToUInt32* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_AEFAF880"><a name="Strings.HexStrToSize"></a><a href="#Strings">Strings</a>.<a href="#Strings.HexStrToSize">HexStrToSize</a>
+</h2>
+<p> converts a hex string to a size. Leading whitespace is ignored. res=Ok indicates success, val=0 on failure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HexStrToSize* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_AEFBA040"><a name="Strings.FloatToStr"></a><a href="#Strings">Strings</a>.<a href="#Strings.FloatToStr">FloatToStr</a>
+</h2>
+<p> converts a real value to a string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FloatToStr* (x: <strong>FLOAT64</strong>; n, f, D: <strong>SIGNED32</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AEFC2980"><a name="Strings.StrToFloat"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToFloat">StrToFloat</a>
+</h2>
+<p> converts a string to a real value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToFloat* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> r: <strong>FLOAT64</strong>)</pre>
+<hr><h2 id="#_AEFC9840"><a name="Strings.SetToStr"></a><a href="#Strings">Strings</a>.<a href="#Strings.SetToStr">SetToStr</a>
+</h2>
+<p> converts a set to a string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetToStr* (set: <strong>SET</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_AEFD0000"><a name="Strings.StrToSet"></a><a href="#Strings">Strings</a>.<a href="#Strings.StrToSet">StrToSet</a>
+</h2>
+<p> converts a string to a set</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToSet* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> set: <strong>SET</strong>)</pre>
+<hr><h2 id="#_AEFD6B40"><a name="Strings.ContainsChar"></a><a href="#Strings">Strings</a>.<a href="#Strings.ContainsChar">ContainsChar</a>
+</h2>
+<p> Returns TRUE if the 0X-terminated string contains the character 'ch', FALSE otherwise.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ContainsChar* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ch: <strong>CHAR</strong>; ignoreCase: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AEFDFD80"><a name="Strings.IsDigit"></a><a href="#Strings">Strings</a>.<a href="#Strings.IsDigit">IsDigit</a>
+</h2>
+<p> Checks if a character is a valid digit for a specified radix</p>
+
+<p> The <a href="#Strings.IsDigit">IsDigit</a> function determines if a given character is a valid digit for a specified number base (radix). It is a general-purpose utility used by parsing procedures.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> c</td><td> The character to be checked.</td><td></td></tr>
+<tr><td> radix</td><td> The number base (from 2 to 36).</td><td></td></tr>
+<tr><td> d</td><td> Output. The numeric value of the digit if the character is valid.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if `c` is a valid digit for the given `radix`, otherwise FALSE.</p>
+
+<h3> Details</h3>
+
+<p> The function is case-insensitive and supports digits '0'-'9' and letters 'A'-'Z' for values 10-35. It returns FALSE if the radix is outside the range of 2-36.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsDigit* (c: <strong>CHAR</strong>; radix: <strong>UNSIGNED32</strong>; <strong>VAR</strong> d: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AF003E40"><a name="Strings.IsDecimal"></a><a href="#Strings">Strings</a>.<a href="#Strings.IsDecimal">IsDecimal</a>
+</h2>
+<p> Checks if a character is a decimal digit (0-9)</p>
+
+<p> The <a href="#Strings.IsDecimal">IsDecimal</a> function is a specialized and optimized version of <a href="#Strings.IsDigit">IsDigit</a> that checks if a character is a valid decimal digit (base 10).</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> c</td><td> The character to be checked.</td><td></td></tr>
+<tr><td> d</td><td> Output. The numeric value of the digit (0-9) if the character is valid.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if `c` is a decimal digit ('0'-'9'), otherwise FALSE.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsDecimal* (c: <strong>CHAR</strong>; <strong>VAR</strong> d: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AF01B9C0"><a name="Strings.IsHexadecimal"></a><a href="#Strings">Strings</a>.<a href="#Strings.IsHexadecimal">IsHexadecimal</a>
+</h2>
+<p> Checks if a character is a hexadecimal digit (0-9, A-F)</p>
+
+<p> The <a href="#Strings.IsHexadecimal">IsHexadecimal</a> function is a specialized version of <a href="#Strings.IsDigit">IsDigit</a> that checks if a character is a valid hexadecimal digit (base 16).</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> c</td><td> The character to be checked.</td><td></td></tr>
+<tr><td> d</td><td> Output. The numeric value of the digit (0-15) if the character is valid.</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns TRUE if `c` is a hexadecimal digit ('0'-'9', 'A'-'F', 'a'-'f'), otherwise FALSE.</p>
+
+<h3> Details</h3>
+
+<p> The function is case-insensitive.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsHexadecimal* (c: <strong>CHAR</strong>; <strong>VAR</strong> d: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_AF035300"><a name="Strings.CharOrDefault"></a><a href="#Strings">Strings</a>.<a href="#Strings.CharOrDefault">CharOrDefault</a>
+</h2>
+<p> Safely retrieves a character from an array, providing a default on out-of-bounds access</p>
+
+<p> The <a href="#Strings.CharOrDefault">CharOrDefault</a> function provides a safe way to access a character in an array by its index. It prevents runtime errors by returning a default character if the index is outside the array's bounds.</p>
+
+<h3> Parameters</h3>
+
+<table><tr><th align='left'> Parameter</th><th align='left'> Description</th><td></td></tr>
+<tr><td> s</td><td> The input character array (string).</td><td></td></tr>
+<tr><td> pos</td><td> The index of the character to retrieve.</td><td></td></tr>
+<tr><td> limit</td><td> The size limit of the array.</td><td></td></tr>
+<tr><td> default</td><td> The character to return if `pos` is out of bounds. Defaults to the null character (0X).</td><td></td></tr>
+</table>
+
+<h3> Return Value</h3>
+
+<p> Returns the character at `s[pos]` if `pos` is less than `limit`. Otherwise, returns the `default` character.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CharOrDefault* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, limit: <strong>SIZE</strong>; default= 0X: <strong>CHAR</strong>): <strong>CHAR</strong></pre>
+</body></html>

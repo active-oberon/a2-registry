@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CRC">CRC</a></p>
+<hr><h1 id="#_C2379840"><a name="CRC"></a><a href="#ModuleList">Module</a> CRC
+</h1>
+<p> AUTHOR "prk/TF"; PURPOSE "CRC utilities";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CRC.CRC16Stream">CRC16Stream</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td><a href="#CRC.CRC32Stream">CRC32Stream</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td><a href="#CRC.CRC32">CRC32</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_C23807C0">
+</h1>
+<ul>
+<li> History: <strong></strong></li>
+
+<li> 28.09.2000 added CRC32 support -- TF</li>
+
+<li> 08.01.2007 added SetCRC procedures to enable other initial values (staubesv)</li>
+</ul>
+<hr><h2 id="#_C2385C80"><a name="CRC.CRC16Stream"></a><a href="#CRC">CRC</a>.<a href="#CRC.CRC16Stream">CRC16Stream</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CRC16Stream* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>crc: <strong>SIGNED16</strong><tr><th align='left'>procedures</th><td>& InitStream<tr><td></td><td> Send (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> SetCRC (crc: <strong>SIGNED16</strong>)<tr><td></td><td> GetCRC (): <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C2393D40"><a name="CRC.CRC32Stream"></a><a href="#CRC">CRC</a>.<a href="#CRC.CRC32Stream">CRC32Stream</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CRC32Stream* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitStream<tr><td></td><td> Reset<tr><td></td><td> Send (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> SetCRC (crc: <strong>SIGNED32</strong>)<tr><td></td><td> GetCRC (): <strong>SIGNED32</strong><tr><td></td><td> GetUninvertedCRC (): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C23A2E80"><a name="CRC.CRC32"></a><a href="#CRC">CRC</a>.<a href="#CRC.CRC32">CRC32</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CRC32* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Char (c: <strong>CHAR</strong>)<tr><td></td><td> Add (i: <strong>SIGNED32</strong>)<tr><td></td><td> Get (): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

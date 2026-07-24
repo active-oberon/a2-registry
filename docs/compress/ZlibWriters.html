@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ZlibWriters">ZlibWriters</a></p>
+<hr><h1 id="#_ED1302C0"><a name="ZlibWriters"></a><a href="#ModuleList">Module</a> ZlibWriters
+</h1>
+<p> Stefan Walthert</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#ZlibWriters.Ok">Ok</a>= ZlibDeflate.Ok<tr><td></td><td>StreamEnd= ZlibDeflate.StreamEnd<tr><td></td><td>StreamError= ZlibDeflate.StreamError<tr><td></td><td>DataError= ZlibDeflate.DataError<tr><td></td><td>BufError= ZlibDeflate.BufError<tr><td></td><td><a href="#ZlibWriters.NoFlush">NoFlush</a>= ZlibDeflate.NoFlush<tr><td></td><td>SyncFlush= ZlibDeflate.SyncFlush<tr><td></td><td>FullFlush= ZlibDeflate.FullFlush<tr><td></td><td><a href="#ZlibWriters.DefaultCompression">DefaultCompression</a>= ZlibDeflate.DefaultCompression<tr><td></td><td>NoCompression= ZlibDeflate.NoCompression<tr><td></td><td>BestSpeed= ZlibDeflate.BestSpeed<tr><td></td><td>BestCompression= ZlibDeflate.BestCompression<tr><td></td><td><a href="#ZlibWriters.DefaultStrategy">DefaultStrategy</a>= ZlibDeflate.DefaultStrategy<tr><td></td><td>Filtered= ZlibDeflate.Filtered<tr><td></td><td>HuffmanOnly= ZlibDeflate.HuffmanOnly<tr><th align='left'>type declarations</th><td><a href="#ZlibWriters.Writer">Writer</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#ZlibWriters.SetParams">SetParams</a> (<strong>VAR</strong> w: <strong>Writer</strong>; level, strategy, flush: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#ZlibWriters.Open">Open</a> (<strong>VAR</strong> w: <strong>Writer</strong>; level, strategy, flush: <strong>SIGNED8</strong>; wrapper: <strong>BOOLEAN</strong>; r: <strong>Files.Rider</strong>)<tr><td></td><td> <a href="#ZlibWriters.WriteBytes">WriteBytes</a> (<strong>VAR</strong> w: <strong>Writer</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>; <strong>VAR</strong> written: <strong>SIZE</strong>)<tr><td></td><td> <a href="#ZlibWriters.Write">Write</a> (<strong>VAR</strong> w: <strong>Writer</strong>; ch: <strong>CHAR</strong>)<tr><td></td><td> <a href="#ZlibWriters.Close">Close</a> (<strong>VAR</strong> w: <strong>Writer</strong>)<tr><td></td><td> <a href="#ZlibWriters.Compress">Compress</a> (<strong>VAR</strong> src, dst: <strong>Files.Rider</strong>; srclen: <strong>SIGNED32</strong>; <strong>VAR</strong> dstlen: <strong>SIGNED32</strong>; level, strategy: <strong>SIGNED8</strong>; <strong>VAR</strong> crc32: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_ED162300"><a name="ZlibWriters.Ok"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Ok">Ok</a>
+</h2>
+<p> result codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= ZlibDeflate.Ok</pre>
+<hr><h2 id="#_ED1659C0"><a name="ZlibWriters.NoFlush"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.NoFlush">NoFlush</a>
+</h2>
+<p> flush values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NoFlush*= ZlibDeflate.NoFlush</pre>
+<hr><h2 id="#_ED169080"><a name="ZlibWriters.DefaultCompression"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.DefaultCompression">DefaultCompression</a>
+</h2>
+<p> compression levels</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DefaultCompression*= ZlibDeflate.DefaultCompression</pre>
+<hr><h2 id="#_ED16C800"><a name="ZlibWriters.DefaultStrategy"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.DefaultStrategy">DefaultStrategy</a>
+</h2>
+<p> compression strategies</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DefaultStrategy*= ZlibDeflate.DefaultStrategy</pre>
+<hr><h2 id="#_ED16FEC0"><a name="ZlibWriters.Writer"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Writer">Writer</a>
+</h2>
+<p> structure for writing deflated data in a file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Writer* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#ZlibWriters.Writer.res">res</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#ZlibWriters.Writer.flush">flush</a>: <strong>SIGNED8</strong><tr><td></td><td><a href="#ZlibWriters.Writer.wrapper">wrapper</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#ZlibWriters.Writer.crc32">crc32</a>: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_ED1790C0"><a name="ZlibWriters.Writer.res"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Writer">Writer</a>.<a href="#ZlibWriters.Writer.res">res</a>
+</h3>
+<p> current stream state</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> res-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_ED17CDC0"><a name="ZlibWriters.Writer.flush"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Writer">Writer</a>.<a href="#ZlibWriters.Writer.flush">flush</a>
+</h3>
+<p> flush strategy</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> flush-: <strong>SIGNED8</strong></pre>
+<hr><h3 id="#_ED180680"><a name="ZlibWriters.Writer.wrapper"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Writer">Writer</a>.<a href="#ZlibWriters.Writer.wrapper">wrapper</a>
+</h3>
+<p> if set, zlib header and checksum are generated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> wrapper-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_ED185940"><a name="ZlibWriters.Writer.crc32"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Writer">Writer</a>.<a href="#ZlibWriters.Writer.crc32">crc32</a>
+</h3>
+<p> crc32 of uncompressed data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> crc32-: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_ED189A80"><a name="ZlibWriters.SetParams"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.SetParams">SetParams</a>
+</h2>
+<p> change deflate parameters within the writer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetParams* (<strong>VAR</strong> w: <strong>Writer</strong>; level, strategy, flush: <strong>SIGNED8</strong>)</pre>
+<hr><h2 id="#_ED190AC0"><a name="ZlibWriters.Open"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Open">Open</a>
+</h2>
+<p> open writer on a Files.Rider</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (<strong>VAR</strong> w: <strong>Writer</strong>; level, strategy, flush: <strong>SIGNED8</strong>; wrapper: <strong>BOOLEAN</strong>; r: <strong>Files.Rider</strong>)</pre>
+<hr><h2 id="#_ED199300"><a name="ZlibWriters.WriteBytes"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.WriteBytes">WriteBytes</a>
+</h2>
+<p> write specified number of bytes from buffer into and return number of bytes actually written</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteBytes* (<strong>VAR</strong> w: <strong>Writer</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>; <strong>VAR</strong> written: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_ED1A47C0"><a name="ZlibWriters.Write"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Write">Write</a>
+</h2>
+<p> write byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (<strong>VAR</strong> w: <strong>Writer</strong>; ch: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_ED1A9780"><a name="ZlibWriters.Close"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Close">Close</a>
+</h2>
+<p> close writer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close* (<strong>VAR</strong> w: <strong>Writer</strong>)</pre>
+<hr><h2 id="#_ED1AD840"><a name="ZlibWriters.Compress"></a><a href="#ZlibWriters">ZlibWriters</a>.<a href="#ZlibWriters.Compress">Compress</a>
+</h2>
+<p> compress srclen bytes from src to dst with specified level and strategy. dstlen returns how many bytes have been written.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Compress* (<strong>VAR</strong> src, dst: <strong>Files.Rider</strong>; srclen: <strong>SIGNED32</strong>; <strong>VAR</strong> dstlen: <strong>SIGNED32</strong>; level, strategy: <strong>SIGNED8</strong>; <strong>VAR</strong> crc32: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+</body></html>

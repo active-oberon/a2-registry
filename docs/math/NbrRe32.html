@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#NbrRe32">NbrRe32</a></p>
+<hr><h1 id="#_FDA4A8C0"><a name="NbrRe32"></a><a href="#ModuleList">Module</a> NbrRe32
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Alias for type FLOAT32.";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>E= Math32.e<tr><td></td><td>Pi= Math32.pi<tr><th align='left'>type declarations</th><td>Real =<strong>FLOAT32</strong><tr><th align='left'>variables</th><td>MinNbr: <strong>Real</strong><tr><td></td><td>MaxNbr: <strong>Real</strong><tr><td></td><td>Epsilon: <strong>Real</strong><tr><td></td><td>Radix: <strong>NbrInt8.Integer</strong><tr><th align='left'>procedures</th><td> <a href="#NbrRe32.Abs">Abs</a> (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Entier (x: <strong>Real</strong>): <strong>NbrInt32.Integer</strong><tr><td></td><td> LEntier (x: <strong>Real</strong>): <strong>NbrInt64.Integer</strong><tr><td></td><td> Max (x1, x2: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Min (x1, x2: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Sign (x: <strong>Real</strong>): <strong>NbrInt8.Integer</strong><tr><td></td><td> Int (x: <strong>Real</strong>): <strong>NbrInt32.Integer</strong><tr><td></td><td> Frac (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Round (x: <strong>Real</strong>): <strong>NbrInt32.Integer</strong><tr><td></td><td> Floor (x: <strong>Real</strong>): <strong>NbrInt32.Integer</strong><tr><td></td><td> Ceiling (x: <strong>Real</strong>): <strong>NbrInt32.Integer</strong><tr><td></td><td> <a href="#NbrRe32.Mantissa">Mantissa</a> (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Exponent (x: <strong>Real</strong>): <strong>NbrInt16.Integer</strong><tr><td></td><td> Re (mantissa: <strong>Real</strong>; exponent: <strong>NbrInt16.Integer</strong>): <strong>Real</strong><tr><td></td><td> <a href="#NbrRe32.Sqrt">Sqrt</a> (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Sin (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Cos (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> ArcTan (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Exp (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> Ln (x: <strong>Real</strong>): <strong>Real</strong><tr><td></td><td> StringToRe (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Real</strong>)<tr><td></td><td> <a href="#NbrRe32.ReToString">ReToString</a> (x: <strong>Real</strong>; significantFigures: <strong>NbrInt8.Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#NbrRe32.Load">Load</a> (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Real</strong>)<tr><td></td><td> Store (W: <strong>Streams.Writer</strong>; x: <strong>Real</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_FDA8D940"><a name="NbrRe32.Abs"></a><a href="#NbrRe32">NbrRe32</a>.<a href="#NbrRe32.Abs">Abs</a>
+</h2>
+<p> Basic functions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Abs* (x: <strong>Real</strong>): <strong>Real</strong></pre>
+<hr><h2 id="#_FDA91C00"><a name="NbrRe32.Mantissa"></a><a href="#NbrRe32">NbrRe32</a>.<a href="#NbrRe32.Mantissa">Mantissa</a>
+</h2>
+<p> Functions based on: real = mantissa * (radix ^ exponent)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Mantissa* (x: <strong>Real</strong>): <strong>Real</strong></pre>
+<hr><h2 id="#_FDA97EC0"><a name="NbrRe32.Sqrt"></a><a href="#NbrRe32">NbrRe32</a>.<a href="#NbrRe32.Sqrt">Sqrt</a>
+</h2>
+<p> Provide aliases for the Math functions.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Sqrt* (x: <strong>Real</strong>): <strong>Real</strong></pre>
+<hr><h2 id="#_FDA9D340"><a name="NbrRe32.ReToString"></a><a href="#NbrRe32">NbrRe32</a>.<a href="#NbrRe32.ReToString">ReToString</a>
+</h2>
+<p> LEN(string = significantFigures + 6</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReToString* (x: <strong>Real</strong>; significantFigures: <strong>NbrInt8.Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_FDAA4680"><a name="NbrRe32.Load"></a><a href="#NbrRe32">NbrRe32</a>.<a href="#NbrRe32.Load">Load</a>
+</h2>
+<p> Persistence: file IO</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Real</strong>)</pre>
+</body></html>

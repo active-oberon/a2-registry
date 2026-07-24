@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoDSA">CryptoDSA</a></p>
+<hr><h1 id="#_38569180"><a name="CryptoDSA"></a><a href="#ModuleList">Module</a> CryptoDSA
+</h1>
+<p> AUTHOR "G.F."; PURPOSE "Digital Signature Algorithm DSA";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CryptoDSA.Signature">Signature</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#CryptoDSA.Key">Key</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> GenParams (dsa: <strong>Key</strong>; bits: <strong>SIGNED16</strong>; <strong>CONST</strong> seed: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> MakeKeys (bits: <strong>SIGNED16</strong>; <strong>CONST</strong> seed: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pub, priv: <strong>Key</strong>)<tr><td></td><td> <a href="#CryptoDSA.PubKey">PubKey</a> (p, q, g, y: <strong>Number</strong>): <strong>Key</strong><tr><td></td><td> LoadPrivateKey (r: <strong>Streams.Reader</strong>; <strong>CONST</strong> passwd: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Key</strong><tr><td></td><td> StorePrivateKey (w: <strong>Streams.Writer</strong>; k: <strong>Key</strong>; <strong>CONST</strong> passwd: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> StorePublicKey (w: <strong>Streams.Writer</strong>; k: <strong>Key</strong>)<tr><td></td><td> LoadPublicKey (r: <strong>Streams.Reader</strong>): <strong>Key</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_38588040"><a name="CryptoDSA.Signature"></a><a href="#CryptoDSA">CryptoDSA</a>.<a href="#CryptoDSA.Signature">Signature</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Signature* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>r: <strong>Number</strong><tr><td></td><td>s: <strong>Number</strong><tr><th align='left'>procedures</th><td>& Init (r, s: <strong>Number</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_3858F340"><a name="CryptoDSA.Key"></a><a href="#CryptoDSA">CryptoDSA</a>.<a href="#CryptoDSA.Key">Key</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Key* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CryptoDSA.Key.name">name</a>: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>private: <strong>BOOLEAN</strong><tr><td></td><td>p: <strong>Number</strong><tr><td></td><td>q: <strong>Number</strong><tr><td></td><td>g: <strong>Number</strong><tr><td></td><td>y: <strong>Number</strong><tr><th align='left'>procedures</th><td> Sign (<strong>CONST</strong> digest: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>): <strong>Signature</strong><tr><td></td><td> Verify (<strong>CONST</strong> digest: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dlen: <strong>SIZE</strong>; sig: <strong>Signature</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_385A0D80"><a name="CryptoDSA.Key.name"></a><a href="#CryptoDSA">CryptoDSA</a>.<a href="#CryptoDSA.Key">Key</a>.<a href="#CryptoDSA.Key.name">name</a>
+</h3>
+<p> Owner of this key.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> name-: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_385A5DC0"><a name="CryptoDSA.PubKey"></a><a href="#CryptoDSA">CryptoDSA</a>.<a href="#CryptoDSA.PubKey">PubKey</a>
+</h2>
+<p> returns a new public key with exponent e and modulus m</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PubKey* (p, q, g, y: <strong>Number</strong>): <strong>Key</strong></pre>
+</body></html>

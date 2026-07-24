@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MathInt">MathInt</a></p>
+<hr><h1 id="#_AE13FE00"><a name="MathInt"></a><a href="#ModuleList">Module</a> MathInt
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Integer math functions";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>MaxFactorial= 12<tr><th align='left'>procedures</th><td> <a href="#MathInt.Factorial">Factorial</a> (n: <strong>NbrInt.Integer</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> <a href="#MathInt.Power">Power</a> (x, n: <strong>NbrInt.Integer</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> <a href="#MathInt.Random">Random</a> (): <strong>NbrInt.Integer</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_AE14A480"><a name="MathInt.Factorial"></a><a href="#MathInt">MathInt</a>.<a href="#MathInt.Factorial">Factorial</a>
+</h2>
+<p> Computes n! = n * (n - 1) * (n - 2) * ... * 1, MaxFactorial 3 n 3 0.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Factorial* (n: <strong>NbrInt.Integer</strong>): <strong>NbrInt.Integer</strong></pre>
+<hr><h2 id="#_AE153140"><a name="MathInt.Power"></a><a href="#MathInt">MathInt</a>.<a href="#MathInt.Power">Power</a>
+</h2>
+<p> Computes xn, n 3 0, <code>x,n} 9 {0,0}.  </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Power* (x, n: <strong>NbrInt.Integer</strong>): <strong>NbrInt.Integer</strong></pre>
+<hr><h2 id="#_AE158D80"><a name="MathInt.Random"></a><a href="#MathInt">MathInt</a>.<a href="#MathInt.Random">Random</a>
+</h2>
+<p> Returns a positive pseudo-random number. To help ensure a truely random random-number, the seed is automatically retrieved-from/stored-to file MathRandomSeed by Aos.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Random* (): <strong>NbrInt.Integer</strong></pre>
+</body></html>

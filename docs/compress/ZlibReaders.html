@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ZlibReaders">ZlibReaders</a></p>
+<hr><h1 id="#_01C4D540"><a name="ZlibReaders"></a><a href="#ModuleList">Module</a> ZlibReaders
+</h1>
+<p> Stefan Walthert</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#ZlibReaders.Ok">Ok</a>= ZlibInflate.Ok<tr><td></td><td>StreamEnd= ZlibInflate.StreamEnd<tr><td></td><td>FileError= -1<tr><td></td><td>StreamError= ZlibInflate.StreamError<tr><td></td><td>DataError= ZlibInflate.DataError<tr><td></td><td>BufError= ZlibInflate.BufError<tr><th align='left'>type declarations</th><td><a href="#ZlibReaders.Reader">Reader</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#ZlibReaders.Open">Open</a> (<strong>VAR</strong> r: <strong>Reader</strong>; wrapper: <strong>BOOLEAN</strong>; <strong>VAR</strong> fr: <strong>Files.Rider</strong>)<tr><td></td><td> <a href="#ZlibReaders.ReadBytes">ReadBytes</a> (<strong>VAR</strong> r: <strong>Reader</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>; <strong>VAR</strong> read: <strong>SIZE</strong>)<tr><td></td><td> <a href="#ZlibReaders.Read">Read</a> (<strong>VAR</strong> r: <strong>Reader</strong>; <strong>VAR</strong> ch: <strong>CHAR</strong>)<tr><td></td><td> <a href="#ZlibReaders.Close">Close</a> (<strong>VAR</strong> r: <strong>Reader</strong>)<tr><td></td><td> <a href="#ZlibReaders.Uncompress">Uncompress</a> (<strong>VAR</strong> src, dst: <strong>Files.Rider</strong>; <strong>VAR</strong> crc32: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_01C6B800"><a name="ZlibReaders.Ok"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Ok">Ok</a>
+</h2>
+<p> result codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= ZlibInflate.Ok</pre>
+<hr><h2 id="#_01C6EEC0"><a name="ZlibReaders.Reader"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Reader">Reader</a>
+</h2>
+<p> structure for reading from a file with deflated data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reader* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#ZlibReaders.Reader.res">res</a>: <strong>INTEGER</strong><tr><td></td><td>crc32: <strong>SIGNED32</strong><tr><td></td><td><a href="#ZlibReaders.Reader.wrapper">wrapper</a>: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_01C774C0"><a name="ZlibReaders.Reader.res"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Reader">Reader</a>.<a href="#ZlibReaders.Reader.res">res</a>
+</h3>
+<p> current stream state</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> res-: <strong>INTEGER</strong></pre>
+<hr><h3 id="#_01C7B280"><a name="ZlibReaders.Reader.wrapper"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Reader">Reader</a>.<a href="#ZlibReaders.Reader.wrapper">wrapper</a>
+</h3>
+<p> if set, a zlib header and a checksum are present</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> wrapper-: <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_01C80B40"><a name="ZlibReaders.Open"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Open">Open</a>
+</h2>
+<p> open reader on a Rider for input; is wrapper is not set, no zlib header and no checksum are present</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (<strong>VAR</strong> r: <strong>Reader</strong>; wrapper: <strong>BOOLEAN</strong>; <strong>VAR</strong> fr: <strong>Files.Rider</strong>)</pre>
+<hr><h2 id="#_01C8B3C0"><a name="ZlibReaders.ReadBytes"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.ReadBytes">ReadBytes</a>
+</h2>
+<p> read specified number of bytes into buffer and return number of bytes actually read</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReadBytes* (<strong>VAR</strong> r: <strong>Reader</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>; <strong>VAR</strong> read: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_01C96500"><a name="ZlibReaders.Read"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Read">Read</a>
+</h2>
+<p> read decompressed byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (<strong>VAR</strong> r: <strong>Reader</strong>; <strong>VAR</strong> ch: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_01C9BB80"><a name="ZlibReaders.Close"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Close">Close</a>
+</h2>
+<p> close reader</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close* (<strong>VAR</strong> r: <strong>Reader</strong>)</pre>
+<hr><h2 id="#_01C9FD40"><a name="ZlibReaders.Uncompress"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Uncompress">Uncompress</a>
+</h2>
+<p> uncompress deflated data from scr and write them to dst</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Uncompress* (<strong>VAR</strong> src, dst: <strong>Files.Rider</strong>; <strong>VAR</strong> crc32: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+</body></html>

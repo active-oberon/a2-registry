@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Trace">Trace</a></p>
+<hr><h1 id="#_1523F400"><a name="Trace"></a><a href="#ModuleList">Module</a> Trace
+</h1>
+<p> AUTHOR "fn"; PURPOSE "Low-level trace output based on KernelLog";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>CharProc =<strong>PROCEDURE</strong> (c: <strong>CHAR</strong>)<tr><th align='left'>variables</th><td>Char: <strong>CharProc</strong><tr><td></td><td>Color: <strong>PROCEDURE</strong> (c: <strong>SIGNED8</strong>)<tr><th align='left'>procedures</th><td> Enter<tr><td></td><td> Exit<tr><td></td><td> <a href="#Trace.Send">Send</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Trace.Ln">Ln</a><tr><td></td><td> <a href="#Trace.String">String</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Trace.StringLn">StringLn</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Trace.Int">Int</a> (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)<tr><td></td><td> UInt (x: <strong>UNSIGNED64</strong>; w: <strong>INTEGER</strong>)<tr><td></td><td> Boolean (x: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Trace.IntSuffix">IntSuffix</a> (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>; <strong>CONST</strong> suffix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Trace.Hex">Hex</a> (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Trace.Address">Address</a> (x: <strong>ADDRESS</strong>)<tr><td></td><td> <a href="#Trace.Size">Size</a> (x: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Trace.HIntHex">HIntHex</a> (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Trace.Memory">Memory</a> (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> StackFrames (skip, count, size: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Trace.Buffer">Buffer</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Trace.Bits">Bits</a> (x: <strong>SET</strong>; ofs, n: <strong>SIZE</strong>)<tr><td></td><td> Set (x: <strong>SET</strong>)<tr><td></td><td> <a href="#Trace.Blue">Blue</a><tr><td></td><td> Green<tr><td></td><td> Red<tr><td></td><td> Yellow<tr><td></td><td> Default<tr><td></td><td> Init</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1527A400"><a name="Trace.Send"></a><a href="#Trace">Trace</a>.<a href="#Trace.Send">Send</a>
+</h2>
+<p> Send the specified characters to the trace output (cf. Streams.Sender).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Send* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_15284240"><a name="Trace.Ln"></a><a href="#Trace">Trace</a>.<a href="#Trace.Ln">Ln</a>
+</h2>
+<p> Skip to the next line on trace output.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Ln*</pre>
+<hr><h2 id="#_15288700"><a name="Trace.String"></a><a href="#Trace">Trace</a>.<a href="#Trace.String">String</a>
+</h2>
+<p> Write a string to the trace output.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> String* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_1528E480"><a name="Trace.StringLn"></a><a href="#Trace">Trace</a>.<a href="#Trace.StringLn">StringLn</a>
+</h2>
+<p> Write a string to the trace output and skip to next line.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StringLn* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_152955C0"><a name="Trace.Int"></a><a href="#Trace">Trace</a>.<a href="#Trace.Int">Int</a>
+</h2>
+<p> Write a character.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Int* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_1529A600"><a name="Trace.IntSuffix"></a><a href="#Trace">Trace</a>.<a href="#Trace.IntSuffix">IntSuffix</a>
+</h2>
+<p> Write "x" as a decimal number with a power-of-two multiplier (K, M or G), followed by "suffix". "w" is the field width, excluding "suffix".</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntSuffix* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>; <strong>CONST</strong> suffix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_152A5F40"><a name="Trace.Hex"></a><a href="#Trace">Trace</a>.<a href="#Trace.Hex">Hex</a>
+</h2>
+<p> Write an integer in hexadecimal right-justified in a field of at least ABS(w) characters. If w <a name="0"></a> THEN w least significant hex digits of x are written (possibly including leading zeros)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Hex* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_152B1B40"><a name="Trace.Address"></a><a href="#Trace">Trace</a>.<a href="#Trace.Address">Address</a>
+</h2>
+<p> Write "x" as a hexadecimal address</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Address* (x: <strong>ADDRESS</strong>)</pre>
+<hr><h2 id="#_152B6A00"><a name="Trace.Size"></a><a href="#Trace">Trace</a>.<a href="#Trace.Size">Size</a>
+</h2>
+<p> Write "x" as a size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Size* (x: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_152BB440"><a name="Trace.HIntHex"></a><a href="#Trace">Trace</a>.<a href="#Trace.HIntHex">HIntHex</a>
+</h2>
+<p> Write "x" as a hexadecimal number. "w" is the field width. Always prints 16 digits.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HIntHex* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_152C3280"><a name="Trace.Memory"></a><a href="#Trace">Trace</a>.<a href="#Trace.Memory">Memory</a>
+</h2>
+<p> Write a block of memory in hex.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Memory* (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_152C91C0"><a name="Trace.Buffer"></a><a href="#Trace">Trace</a>.<a href="#Trace.Buffer">Buffer</a>
+</h2>
+<p> Write a buffer in hex.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Buffer* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_152CFD80"><a name="Trace.Bits"></a><a href="#Trace">Trace</a>.<a href="#Trace.Bits">Bits</a>
+</h2>
+<p> Write bits (ofs..ofs+n-1) of x in binary.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Bits* (x: <strong>SET</strong>; ofs, n: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_152D65C0"><a name="Trace.Blue"></a><a href="#Trace">Trace</a>.<a href="#Trace.Blue">Blue</a>
+</h2>
+<p> Colors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Blue*</pre>
+</body></html>

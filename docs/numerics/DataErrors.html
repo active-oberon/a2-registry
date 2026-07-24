@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#DataErrors">DataErrors</a></p>
+<hr><h1 id="#_471A3BC0"><a name="DataErrors"></a><a href="#ModuleList">Module</a> DataErrors
+</h1>
+<p> AUTHOR "adf, fof"; PURPOSE "For reporting runtime warnings & errors into file Error.Log";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#DataErrors.Error">Error</a> (message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.IntError">IntError</a> (int: <strong>NbrInt.Integer</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.RatError">RatError</a> (rat: <strong>NbrRat.Rational</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.ReError">ReError</a> (re: <strong>NbrRe.Real</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.CplxError">CplxError</a> (cplx: <strong>NbrCplx.Complex</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.Warning">Warning</a> (message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.IntWarning">IntWarning</a> (int: <strong>NbrInt.Integer</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.RatWarning">RatWarning</a> (rat: <strong>NbrRat.Rational</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.ReWarning">ReWarning</a> (re: <strong>NbrRe.Real</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.CplxWarning">CplxWarning</a> (cplx: <strong>NbrCplx.Complex</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DataErrors.Open">Open</a><tr><td></td><td> <a href="#DataErrors.Close">Close</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_471C6880">
+</h1>
+<p> Error.Log is an error log file that can be viewed with any ASCII editor, and is overwritten with each session. If no errors or warnings were logged, the file will be empty. File Error.Log is automatically opened/closed whenever module DataErrors.Mod is loaded-into/freed-from the system. The Error.Log file from the previous session is saved in file Error.Log.Bak.</p>
+
+<p> Logging of the first error message of a session produces an audible SOS beep to inform the user to check this file. Logging of the first warning message of a session produces just 3 beeps (instead of 9) in the SOS tone sequence.</p>
+
+<p> Errors are for catostropic events, e.g., division by zero. Warnings are for non-optimal events, e.g., a series did not converge.</p>
+<hr><h2 id="#_471E4540"><a name="DataErrors.Error"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.Error">Error</a>
+</h2>
+<p> Log an error message to file Error.Log.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Error* (message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_471E9E00"><a name="DataErrors.IntError"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.IntError">IntError</a>
+</h2>
+<p> Log an error message to file Error.Log when an error arises from a passed parameter whose value was int.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntError* (int: <strong>NbrInt.Integer</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_471F3480"><a name="DataErrors.RatError"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.RatError">RatError</a>
+</h2>
+<p> Log an error message to file Error.Log when an error arises from a passed parameter whose value was rat.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RatError* (rat: <strong>NbrRat.Rational</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_471FCA40"><a name="DataErrors.ReError"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.ReError">ReError</a>
+</h2>
+<p> Log an error message to file Error.Log when an error arises from a passed parameter whose value was re.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReError* (re: <strong>NbrRe.Real</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_472060C0"><a name="DataErrors.CplxError"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.CplxError">CplxError</a>
+</h2>
+<p> Log an error message to file Error.Log when an error arises from a passed parameter whose value was cplx.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CplxError* (cplx: <strong>NbrCplx.Complex</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_4720F680"><a name="DataErrors.Warning"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.Warning">Warning</a>
+</h2>
+<p> Log a warning message to file Error.Log.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Warning* (message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_47214F40"><a name="DataErrors.IntWarning"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.IntWarning">IntWarning</a>
+</h2>
+<p> Log a warning message to file Error.Log when a warning arises from a passed parameter whose value was int.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntWarning* (int: <strong>NbrInt.Integer</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_4721E600"><a name="DataErrors.RatWarning"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.RatWarning">RatWarning</a>
+</h2>
+<p> Log a warning message to file Error.Log when a warning arises from a passed parameter whose value was rat.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RatWarning* (rat: <strong>NbrRat.Rational</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_47227BC0"><a name="DataErrors.ReWarning"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.ReWarning">ReWarning</a>
+</h2>
+<p> Log a warning message to file Error.Log when a warning arises from a passed parameter whose value was re.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReWarning* (re: <strong>NbrRe.Real</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_47231180"><a name="DataErrors.CplxWarning"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.CplxWarning">CplxWarning</a>
+</h2>
+<p> Log a warning message to file Error.Log when a warning arises from a passed parameter whose value was cplx.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CplxWarning* (cplx: <strong>NbrCplx.Complex</strong>; message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_4723A740"><a name="DataErrors.Open"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.Open">Open</a>
+</h2>
+<p> Opens the file Error.Log, saving the prior log file to Error.Log.Bak. Error.Log is automatically opened whenever this module is loaded into memory, and it only needs to be reopened manually if you had previously closed it manually.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open*</pre>
+<hr><h2 id="#_47245D00"><a name="DataErrors.Close"></a><a href="#DataErrors">DataErrors</a>.<a href="#DataErrors.Close">Close</a>
+</h2>
+<p> Closes the file Error.Log. Error.Log is automatically closed whenever this module is garbage collected. Executing Close forces the file to close immediately.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close*</pre>
+</body></html>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Objects">Objects</a></p>
+<hr><h1 id="#_2905C200"><a name="Objects"></a><a href="#ModuleList">Module</a> Objects
+</h1>
+<p> AUTHOR "pjm, G.F."; PURPOSE "Active object runtime support";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>PleaseHalt= 10<tr><td></td><td>Unbreakable= 11<tr><td></td><td>SelfTermination= 12<tr><td></td><td>Preempted= 27<tr><td></td><td>Resistant= 28<tr><td></td><td>MinPriority= Unix.ThreadLow<tr><td></td><td>Low= (Unix.ThreadLow+1)<tr><td></td><td>Normal= Unix.ThreadNormal<tr><td></td><td>High= (Unix.ThreadHigh-2)<tr><td></td><td>GCPriority= (Unix.ThreadHigh-1)<tr><td></td><td>Realtime= Unix.ThreadHigh<tr><td></td><td>Restart= 0<tr><td></td><td>Unknown= 0<tr><td></td><td>Ready= 1<tr><td></td><td>Running= 2<tr><td></td><td>AwaitingLock= 3<tr><td></td><td>AwaitingCond= 4<tr><td></td><td>AwaitingEvent= 5<tr><td></td><td>Terminated= 6<tr><td></td><td>Second= 1000<tr><th align='left'>type declarations</th><td>CpuCyclesArray =<strong>ARRAY</strong> Machine.MaxCPU <strong>OF</strong> <strong>SIGNED64</strong><tr><td></td><td>EventHandler =<strong>PROCEDURE</strong>{DELEGATE} <tr><td></td><td><a href="#Objects.Timer">Timer</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Objects.Clock">Clock</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Objects.Process">Process</a> =<strong>OBJECT</strong> (<strong>Heaps.ProcessLink</strong>)<tr><th align='left'>variables</th><td>root: <strong>Process</strong><tr><td></td><td>TraceProcessHook: <strong>PROCEDURE</strong> (prcoess: <strong>Process</strong>; pc, bp: <strong>ADDRESS</strong>; stacklow, stackhigh: <strong>ADDRESS</strong>)<tr><th align='left'>procedures</th><td> CreateProcess (body: <strong>Body</strong>; priority: <strong>INTEGER</strong>; flags: <strong>SET</strong>; obj: <strong>ProtectedObject</strong>)<tr><td></td><td> Lock (obj: <strong>ProtectedObject</strong>; exclusive: <strong>BOOLEAN</strong>)<tr><td></td><td> Await (cond: <strong>Condition</strong>; slink: <strong>ADDRESS</strong>; obj: <strong>ProtectedObject</strong>; flags: <strong>SET</strong>)<tr><td></td><td> Unlock (obj: <strong>ProtectedObject</strong>; dummy: <strong>BOOLEAN</strong>)<tr><td></td><td> Terminate<tr><td></td><td> TerminateThis (p: <strong>Process</strong>; unbreakable: <strong>BOOLEAN</strong>)<tr><td></td><td> SetPriority (pri: <strong>INTEGER</strong>)<tr><td></td><td> Sleep (ms: <strong>SIGNED32</strong>)<tr><td></td><td> Yield<tr><td></td><td> CurrentProcess (): <strong>Process</strong><tr><td></td><td> CurrentContext (): @Any0<tr><td></td><td> SetContext (context: @Any0)<tr><td></td><td> ActiveObject (): @Any0<tr><td></td><td> GetStackBottom (p: <strong>Process</strong>): <strong>ADDRESS</strong><tr><td></td><td> GetStack (p: <strong>Process</strong>; <strong>VAR</strong> pc, bp, sp, sb: <strong>ADDRESS</strong>; <strong>VAR</strong> contextPos: <strong>SIZE</strong>)<tr><td></td><td> NextValidStackSegment (p: <strong>Process</strong>; <strong>VAR</strong> bp, pc, sp: <strong>ADDRESS</strong>; <strong>VAR</strong> contextPos: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetProcessID (): <strong>INTEGER</strong><tr><td></td><td> NumReady (): <strong>SIGNED32</strong><tr><td></td><td> GetCpuCycles (process: <strong>Process</strong>; <strong>VAR</strong> cpuCycles: <strong>CpuCyclesArray</strong>; all: <strong>BOOLEAN</strong>)<tr><td></td><td> ExitTrap<tr><td></td><td> SetTimeout (t: <strong>Timer</strong>; h: <strong>EventHandler</strong>; ms: <strong>SIGNED32</strong>)<tr><td></td><td> SetTimeoutAt (t: <strong>Timer</strong>; h: <strong>EventHandler</strong>; ms: <strong>SIGNED32</strong>)<tr><td></td><td> CancelTimeout (t: <strong>Timer</strong>)<tr><td></td><td> UpdateProcessState (p: <strong>Process</strong>)<tr><td></td><td> CurrentProcessTime (): <strong>SIGNED64</strong><tr><td></td><td> TimerFrequency (): <strong>SIGNED64</strong><tr><td></td><td> LeaveA2<tr><td></td><td> ReenterA2</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_290C0580"><a name="Objects.Timer"></a><a href="#Objects">Objects</a>.<a href="#Objects.Timer">Timer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Timer* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_290C3200"><a name="Objects.Clock"></a><a href="#Objects">Objects</a>.<a href="#Objects.Clock">Clock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Clock* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> @Body</td></tr>
+</table>
+<hr><h2 id="#_290C6A80"><a name="Objects.Process"></a><a href="#Objects">Objects</a>.<a href="#Objects.Process">Process</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Process* =<strong>OBJECT</strong> (<strong>Heaps.ProcessLink</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>threadId: <strong>Unix.Thread_t</strong><tr><td></td><td>nextProcess: <strong>Process</strong><tr><td></td><td>stackBottom: <strong>ADDRESS</strong><tr><td></td><td>id: <strong>INTEGER</strong><tr><td></td><td>mode: <strong>INTEGER</strong><tr><td></td><td>flags: <strong>SET</strong><tr><td></td><td>priority: <strong>INTEGER</strong><tr><td></td><td>obj: <strong>ProtectedObject</strong><tr><td></td><td>condition: <strong>Condition</strong><tr><td></td><td>condFP: <strong>ADDRESS</strong><tr><td></td><td>waitingOn: <strong>ProtectedObject</strong><tr><td></td><td>procID: <strong>SIGNED32</strong><tr><td></td><td>state: <strong>Machine.State</strong><tr><th align='left'>procedures</th><td> FindRoots</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

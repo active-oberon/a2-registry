@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MathReSeries">MathReSeries</a></p>
+<hr><h1 id="#_71DBE380"><a name="MathReSeries"></a><a href="#ModuleList">Module</a> MathReSeries
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Procedures for computing real series";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#MathReSeries.Coefficient">Coefficient</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#MathReSeries.ContinuedFraction">ContinuedFraction</a> (a, b: <strong>Coefficient</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#MathReSeries.TruncatedContinuedFraction">TruncatedContinuedFraction</a> (a, b: <strong>ARRAY</strong> <strong>OF</strong> <strong>NbrRe.Real</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#MathReSeries.PowerSeries">PowerSeries</a> (a: <strong>Coefficient</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> TruncatedPowerSeries (a: <strong>ARRAY</strong> <strong>OF</strong> <strong>NbrRe.Real</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#MathReSeries.RationalFunction">RationalFunction</a> (a, b: <strong>Coefficient</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> TruncatedRationalFunction (a, b: <strong>ARRAY</strong> <strong>OF</strong> <strong>NbrRe.Real</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_71DD8700"><a name="MathReSeries.Coefficient"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.Coefficient">Coefficient</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Coefficient* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#MathReSeries.Coefficient.n">n</a>: <strong>NbrInt.Integer</strong><tr><td></td><td><a href="#MathReSeries.Coefficient.x">x</a>: <strong>NbrRe.Real</strong><tr><td></td><td><a href="#MathReSeries.Coefficient.eos">eos</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#MathReSeries.Coefficient.coef">coef</a>: <strong>NbrRe.Real</strong><tr><th align='left'>procedures</th><td> <a href="#MathReSeries.Coefficient.Evaluate">Evaluate</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_71DDFC80"><a name="MathReSeries.Coefficient.n"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.Coefficient">Coefficient</a>.<a href="#MathReSeries.Coefficient.n">n</a>
+</h3>
+<p> The index of a coefficient to be determined - supplied by the calling function, e.g., PowerSeries.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> n-: <strong>NbrInt.Integer</strong></pre>
+<hr><h3 id="#_71DE6BC0"><a name="MathReSeries.Coefficient.x"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.Coefficient">Coefficient</a>.<a href="#MathReSeries.Coefficient.x">x</a>
+</h3>
+<p> The argument of the function being evaluated - supplied by the calling function, e.g., PowerSeries.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> x-: <strong>NbrRe.Real</strong></pre>
+<hr><h3 id="#_71DED840"><a name="MathReSeries.Coefficient.eos"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.Coefficient">Coefficient</a>.<a href="#MathReSeries.Coefficient.eos">eos</a>
+</h3>
+<p> The End Of Series - to be updated by Evaluate.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> eos*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_71DF3100"><a name="MathReSeries.Coefficient.coef"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.Coefficient">Coefficient</a>.<a href="#MathReSeries.Coefficient.coef">coef</a>
+</h3>
+<p> The derived coefficinet - to be updated by Evaluate.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> coef*: <strong>NbrRe.Real</strong></pre>
+<hr><h3 id="#_71DF8700"><a name="MathReSeries.Coefficient.Evaluate"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.Coefficient">Coefficient</a>.<a href="#MathReSeries.Coefficient.Evaluate">Evaluate</a>
+</h3>
+<p> Abstract - must be extended. Used to evaluate coefficients in user-defined series.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Evaluate*</pre>
+<hr><h2 id="#_71DFE200"><a name="MathReSeries.ContinuedFraction"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.ContinuedFraction">ContinuedFraction</a>
+</h2>
+<p> a1(x) y = b0(x) + ---------- b1(x) + a2(x)  b2(x) + a3(x)  b3(x) + ...</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ContinuedFraction* (a, b: <strong>Coefficient</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_71E07840"><a name="MathReSeries.TruncatedContinuedFraction"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.TruncatedContinuedFraction">TruncatedContinuedFraction</a>
+</h2>
+<p> The lengths of the supplied arrays a & b must be the same.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TruncatedContinuedFraction* (a, b: <strong>ARRAY</strong> <strong>OF</strong> <strong>NbrRe.Real</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_71E10600"><a name="MathReSeries.PowerSeries"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.PowerSeries">PowerSeries</a>
+</h2>
+<p> y = a0 + a1x + a2x2 + a3x3 + ...</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PowerSeries* (a: <strong>Coefficient</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_71E17B40"><a name="MathReSeries.RationalFunction"></a><a href="#MathReSeries">MathReSeries</a>.<a href="#MathReSeries.RationalFunction">RationalFunction</a>
+</h2>
+<p> a0 + a1x + a2x2 + a3x3 + ... y = -------------------- b0 + b1x + b2x2 + b3x3 + ...</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RationalFunction* (a, b: <strong>Coefficient</strong>; x: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong></pre>
+</body></html>

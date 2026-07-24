@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoSHA256">CryptoSHA256</a></p>
+<hr><h1 id="#_04979DC0"><a name="CryptoSHA256"></a><a href="#ModuleList">Module</a> CryptoSHA256
+</h1>
+<p> AUTHOR "GF"; PURPOSE "SHA2-256";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#CryptoSHA256.BlockSize">BlockSize</a>= 64<tr><td></td><td><a href="#CryptoSHA256.HashSize">HashSize</a>= 32<tr><th align='left'>type declarations</th><td><a href="#CryptoSHA256.SHA256">SHA256</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#CryptoSHA256.Hash">Hash</a> =<strong>OBJECT</strong> (<strong>Hashes.Hash</strong>)<tr><th align='left'>procedures</th><td> <a href="#CryptoSHA256.NewHash">NewHash</a> (): <strong>Hashes.Hash</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_04982940"><a name="CryptoSHA256.BlockSize"></a><a href="#CryptoSHA256">CryptoSHA256</a>.<a href="#CryptoSHA256.BlockSize">BlockSize</a>
+</h2>
+<p> hash size in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> BlockSize*= 64</pre>
+<hr><h2 id="#_049863C0"><a name="CryptoSHA256.HashSize"></a><a href="#CryptoSHA256">CryptoSHA256</a>.<a href="#CryptoSHA256.HashSize">HashSize</a>
+</h2>
+<p> hash block size in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HashSize*= 32</pre>
+<hr><h2 id="#_0498A2C0"><a name="CryptoSHA256.SHA256"></a><a href="#CryptoSHA256">CryptoSHA256</a>.<a href="#CryptoSHA256.SHA256">SHA256</a>
+</h2>
+<p> SHA256 hash (value type implementation)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SHA256* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Initialize<tr><td></td><td> <a href="#CryptoSHA256.SHA256.()">()</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoSHA256.SHA256.GetHash">GetHash</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_04996A00"><a name="CryptoSHA256.SHA256.()"></a><a href="#CryptoSHA256">CryptoSHA256</a>.<a href="#CryptoSHA256.SHA256">SHA256</a>.<a href="#CryptoSHA256.SHA256.()">()</a>
+</h3>
+<p> Update the hash with a given data chunk</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "()"* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)</pre>
+
+<h3>Parameters</h3>
+
+<dl>
+<dt><strong>data</strong></dt>
+<dd> value to be hashed</dd>
+
+</dl>
+<hr><h3 id="#_049A04C0"><a name="CryptoSHA256.SHA256.GetHash"></a><a href="#CryptoSHA256">CryptoSHA256</a>.<a href="#CryptoSHA256.SHA256">SHA256</a>.<a href="#CryptoSHA256.SHA256.GetHash">GetHash</a>
+</h3>
+<p> get the hashvalue of length HashSize</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetHash* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_049A7480"><a name="CryptoSHA256.Hash"></a><a href="#CryptoSHA256">CryptoSHA256</a>.<a href="#CryptoSHA256.Hash">Hash</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Hash* =<strong>OBJECT</strong> (<strong>Hashes.Hash</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Initialize<tr><td></td><td> <a href="#CryptoSHA256.Hash.Update">Update</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoSHA256.Hash.GetHash">GetHash</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_049B3100"><a name="CryptoSHA256.Hash.Update"></a><a href="#CryptoSHA256">CryptoSHA256</a>.<a href="#CryptoSHA256.Hash">Hash</a>.<a href="#CryptoSHA256.Hash.Update">Update</a>
+</h3>
+<p> data: value to be hashed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_049BA380"><a name="CryptoSHA256.Hash.GetHash"></a><a href="#CryptoSHA256">CryptoSHA256</a>.<a href="#CryptoSHA256.Hash">Hash</a>.<a href="#CryptoSHA256.Hash.GetHash">GetHash</a>
+</h3>
+<p> get the hashvalue of length SELF.size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetHash* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_049C1380"><a name="CryptoSHA256.NewHash"></a><a href="#CryptoSHA256">CryptoSHA256</a>.<a href="#CryptoSHA256.NewHash">NewHash</a>
+</h2>
+<p> get an instance of SHA256</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewHash* (): <strong>Hashes.Hash</strong></pre>
+</body></html>

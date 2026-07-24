@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Files">Files</a></p>
+<hr><h1 id="#_48586480"><a name="Files"></a><a href="#ModuleList">Module</a> Files
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Files.ReadOnly">ReadOnly</a>= 0<tr><td></td><td><a href="#Files.Removable">Removable</a>= 1<tr><td></td><td>Boot= 2<tr><td></td><td><a href="#Files.Directory">Directory</a>= 1<tr><td></td><td>Hidden= 2<tr><td></td><td>System= 3<tr><td></td><td>Archive= 4<tr><td></td><td>Temporary= 5<tr><td></td><td>Ok= 0<tr><td></td><td><a href="#Files.VolumeReadOnly">VolumeReadOnly</a>= 2905<tr><td></td><td><a href="#Files.FsNotFound">FsNotFound</a>= 2906<tr><td></td><td><a href="#Files.FileAlreadyExists">FileAlreadyExists</a>= 2908<tr><td></td><td><a href="#Files.BadFileName">BadFileName</a>= 2909<tr><td></td><td><a href="#Files.FileNotFound">FileNotFound</a>= 2910<tr><td></td><td>EnumSize= 0<tr><td></td><td><a href="#Files.EnumTime">EnumTime</a>= 1<tr><td></td><td><a href="#Files.PrefixLength">PrefixLength</a>= 16<tr><td></td><td><a href="#Files.NameLength">NameLength</a>= 256<tr><td></td><td><a href="#Files.PathDelimiter">PathDelimiter</a>= "/"<tr><td></td><td>NeedsPrefix= 0<tr><th align='left'>type declarations</th><td>Position =<strong>Streams.Position</strong><tr><td></td><td>Size =<strong>Streams.Position</strong><tr><td></td><td><a href="#Files.FileName">FileName</a> =<strong>ARRAY</strong> (PrefixLength+NameLength) <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Files.Rider">Rider</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Files.Reader">Reader</a> =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)<tr><td></td><td><a href="#Files.Writer">Writer</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td>Prefix =<strong>ARRAY</strong> PrefixLength <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Files.Address">Address</a> =<strong>SIGNED32</strong><tr><td></td><td><a href="#Files.Hint">Hint</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Files.Volume">Volume</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Files.FileSystem">FileSystem</a> =<strong>OBJECT</strong> <tr><td></td><td>FileSystemTable =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>FileSystem</strong><tr><td></td><td><a href="#Files.File">File</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Files.Enumerator">Enumerator</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Files.Parameters">Parameters</a> =<strong>OBJECT</strong> (<strong>Commands.Context</strong>)<tr><td></td><td>FileSystemFactory =<strong>PROCEDURE</strong> (context: <strong>Parameters</strong>)<tr><th align='left'>procedures</th><td> Base (<strong>VAR</strong> r: <strong>Rider</strong>): <strong>File</strong><tr><td></td><td> <a href="#Files.Set">Set</a> (<strong>VAR</strong> r: <strong>Rider</strong>; f: <strong>File</strong>; pos: <strong>Position</strong>)<tr><td></td><td> <a href="#Files.Pos">Pos</a> (<strong>VAR</strong> r: <strong>Rider</strong>): <strong>Position</strong><tr><td></td><td> <a href="#Files.Length">Length</a> (f: <strong>File</strong>): <strong>Position</strong><tr><td></td><td> <a href="#Files.GetDate">GetDate</a> (f: <strong>File</strong>; <strong>VAR</strong> t, d: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Files.SetDate">SetDate</a> (f: <strong>File</strong>; t, d: <strong>SIGNED32</strong>)<tr><td></td><td> GetName (f: <strong>File</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Update (f: <strong>File</strong>)<tr><td></td><td> <a href="#Files.OpenReader">OpenReader</a> (<strong>VAR</strong> b: <strong>Reader</strong>; f: <strong>File</strong>; pos: <strong>Position</strong>)<tr><td></td><td> <a href="#Files.OpenWriter">OpenWriter</a> (<strong>VAR</strong> b: <strong>Writer</strong>; f: <strong>File</strong>; pos: <strong>Position</strong>)<tr><td></td><td> <a href="#Files.SplitName">SplitName</a> (<strong>CONST</strong> fullname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> prefix, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.JoinName">JoinName</a> (<strong>CONST</strong> prefix, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> fullname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.SplitPath">SplitPath</a> (<strong>CONST</strong> pathname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> path, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.JoinPath">JoinPath</a> (<strong>CONST</strong> path, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pathname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.SplitExtension">SplitExtension</a> (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> name, extension: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.JoinExtension">JoinExtension</a> (<strong>CONST</strong> name, extension: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.ForceTrailingDelimiter">ForceTrailingDelimiter</a> (<strong>VAR</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.Add">Add</a> (fs: <strong>FileSystem</strong>; <strong>CONST</strong> prefix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.Promote">Promote</a> (fs: <strong>FileSystem</strong>)<tr><td></td><td> <a href="#Files.Remove">Remove</a> (fs: <strong>FileSystem</strong>)<tr><td></td><td> <a href="#Files.This">This</a> (<strong>CONST</strong> prefix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>FileSystem</strong><tr><td></td><td> <a href="#Files.GetList">GetList</a> (<strong>VAR</strong> list: <strong>FileSystemTable</strong>)<tr><td></td><td> <a href="#Files.Old">Old</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>File</strong><tr><td></td><td> <a href="#Files.New">New</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>File</strong><tr><td></td><td> <a href="#Files.Delete">Delete</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Copy (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Paste (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Files.CopyFile">CopyFile</a> (<strong>CONST</strong> source, destination: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> overwrite: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Files.Rename">Rename</a> (<strong>CONST</strong> old, new: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Files.Register">Register</a> (f: <strong>File</strong>)<tr><td></td><td> <a href="#Files.CreateDirectory">CreateDirectory</a> (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Files.RemoveDirectory">RemoveDirectory</a> (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; force: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Exists (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> fullName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> AddSearchPath (context: <strong>Commands.Context</strong>)<tr><td></td><td> SetWorkPath (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#Files.ReadSystemByte">ReadSystemByte</a> (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SYSTEM.BYTE</strong>)<tr><td></td><td> Read (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>CHAR</strong>)<tr><td></td><td> ReadChar16 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>Streams.Char16</strong>)<tr><td></td><td> ReadChar32 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>Streams.Char32</strong>)<tr><td></td><td> ReadBytes (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> ReadSystemBytes (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> ReadSInt (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED8</strong>)<tr><td></td><td> ReadInt8 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED8</strong>)<tr><td></td><td> ReadInt (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED16</strong>)<tr><td></td><td> ReadInt16 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED16</strong>)<tr><td></td><td> ReadLInt (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td> ReadInt32 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td> ReadHInt (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED64</strong>)<tr><td></td><td> ReadInt64 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED64</strong>)<tr><td></td><td> ReadSet (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SET</strong>)<tr><td></td><td> ReadSet32 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SET32</strong>)<tr><td></td><td> ReadBool (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>BOOLEAN</strong>)<tr><td></td><td> ReadReal (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>FLOAT32</strong>)<tr><td></td><td> ReadFloat32 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>FLOAT32</strong>)<tr><td></td><td> ReadLReal (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>FLOAT64</strong>)<tr><td></td><td> ReadFloat64 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>FLOAT64</strong>)<tr><td></td><td> ReadString (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ReadNum (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td> ReadNum32 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td> ReadNum64 (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SIGNED64</strong>)<tr><td></td><td> ReadSize (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>Size</strong>)<tr><td></td><td> <a href="#Files.WriteSystemByte">WriteSystemByte</a> (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SYSTEM.BYTE</strong>)<tr><td></td><td> Write (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>CHAR</strong>)<tr><td></td><td> WriteChar16 (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>Streams.Char16</strong>)<tr><td></td><td> WriteChar32 (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>Streams.Char32</strong>)<tr><td></td><td> WriteBytes (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> WriteSystemBytes (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> WriteSInt (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SIGNED8</strong>)<tr><td></td><td> WriteInt8 (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SIGNED8</strong>)<tr><td></td><td> WriteInt (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SIGNED16</strong>)<tr><td></td><td> WriteInt16 (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SIGNED16</strong>)<tr><td></td><td> WriteLInt (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SIGNED32</strong>)<tr><td></td><td> WriteInt32 (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SIGNED32</strong>)<tr><td></td><td> WriteHInt (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SIGNED64</strong>)<tr><td></td><td> WriteInt64 (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SIGNED64</strong>)<tr><td></td><td> WriteSet (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SET</strong>)<tr><td></td><td> WriteSet32 (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SET32</strong>)<tr><td></td><td> WriteBool (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>BOOLEAN</strong>)<tr><td></td><td> WriteReal (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>FLOAT32</strong>)<tr><td></td><td> WriteFloat32 (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>FLOAT32</strong>)<tr><td></td><td> WriteLReal (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>FLOAT64</strong>)<tr><td></td><td> WriteFloat64 (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>FLOAT64</strong>)<tr><td></td><td> WriteString (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteNum (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Files.AppendStr">AppendStr</a> (<strong>CONST</strong> from: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.AppendInt">AppendInt</a> (x: <strong>SIGNED32</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.GetDevPart">GetDevPart</a> (arg: <strong>Streams.Reader</strong>; <strong>VAR</strong> deviceName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> partition: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_486C6040">
+</h1>
+<p> Aos file system base.</p>
+<hr><h2 id="#_486C7A00"><a name="Files.ReadOnly"></a><a href="#Files">Files</a>.<a href="#Files.ReadOnly">ReadOnly</a>
+</h2>
+<p> Volume & file flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ReadOnly*= 0</pre>
+<hr><h2 id="#_486CB480"><a name="Files.Removable"></a><a href="#Files">Files</a>.<a href="#Files.Removable">Removable</a>
+</h2>
+<p> Volume flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Removable*= 1</pre>
+<hr><h2 id="#_486CE740"><a name="Files.Directory"></a><a href="#Files">Files</a>.<a href="#Files.Directory">Directory</a>
+</h2>
+<p> File flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Directory*= 1</pre>
+<hr><h2 id="#_486D1940"><a name="Files.VolumeReadOnly"></a><a href="#Files">Files</a>.<a href="#Files.VolumeReadOnly">VolumeReadOnly</a>
+</h2>
+<p> Cannot modify read-only volume</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> VolumeReadOnly*= 2905</pre>
+<hr><h2 id="#_486D5480"><a name="Files.FsNotFound"></a><a href="#Files">Files</a>.<a href="#Files.FsNotFound">FsNotFound</a>
+</h2>
+<p> File system not found</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FsNotFound*= 2906</pre>
+<hr><h2 id="#_486D8F00"><a name="Files.FileAlreadyExists"></a><a href="#Files">Files</a>.<a href="#Files.FileAlreadyExists">FileAlreadyExists</a>
+</h2>
+<p> File already exists</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FileAlreadyExists*= 2908</pre>
+<hr><h2 id="#_486DC540"><a name="Files.BadFileName"></a><a href="#Files">Files</a>.<a href="#Files.BadFileName">BadFileName</a>
+</h2>
+<p> Bad file name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> BadFileName*= 2909</pre>
+<hr><h2 id="#_486DFC80"><a name="Files.FileNotFound"></a><a href="#Files">Files</a>.<a href="#Files.FileNotFound">FileNotFound</a>
+</h2>
+<p> File not found</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FileNotFound*= 2910</pre>
+<hr><h2 id="#_486E32C0"><a name="Files.EnumTime"></a><a href="#Files">Files</a>.<a href="#Files.EnumTime">EnumTime</a>
+</h2>
+<p> Enumerate flags.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EnumTime*= 1</pre>
+<hr><h2 id="#_486E64C0"><a name="Files.PrefixLength"></a><a href="#Files">Files</a>.<a href="#Files.PrefixLength">PrefixLength</a>
+</h2>
+<p> maximum length of a file system prefix.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PrefixLength*= 16</pre>
+<hr><h2 id="#_486EAB40"><a name="Files.NameLength"></a><a href="#Files">Files</a>.<a href="#Files.NameLength">NameLength</a>
+</h2>
+<p> maximum length of a file name.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NameLength*= 256</pre>
+<hr><h2 id="#_486EEDC0"><a name="Files.PathDelimiter"></a><a href="#Files">Files</a>.<a href="#Files.PathDelimiter">PathDelimiter</a>
+</h2>
+<p> Path delimiter</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PathDelimiter*= "/"</pre>
+<hr><h2 id="#_486F20C0"><a name="Files.FileName"></a><a href="#Files">Files</a>.<a href="#Files.FileName">FileName</a>
+</h2>
+<p> All record fields are read-only for users, and read-write for extenders.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FileName* =<strong>ARRAY</strong> (PrefixLength+NameLength) <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_486F8F00"><a name="Files.Rider"></a><a href="#Files">Files</a>.<a href="#Files.Rider">Rider</a>
+</h2>
+<p> A rider points to some location in a file, where reading and writing will be done.</p>
+
+<p> not shareable between multiple processes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Rider* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Files.Rider.eof">eof</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#Files.Rider.res">res</a>: <strong>SIZE</strong><tr><td></td><td><a href="#Files.Rider.apos">apos</a>: <strong>Position</strong><tr><td></td><td>bpos: <strong>SIZE</strong><tr><td></td><td>hint: <strong>Hint</strong><tr><td></td><td>file: <strong>File</strong><tr><td></td><td>fs: <strong>FileSystem</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_48708100"><a name="Files.Rider.eof"></a><a href="#Files">Files</a>.<a href="#Files.Rider">Rider</a>.<a href="#Files.Rider.eof">eof</a>
+</h3>
+<p> has end of file been passed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> eof*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_4870CA40"><a name="Files.Rider.res"></a><a href="#Files">Files</a>.<a href="#Files.Rider">Rider</a>.<a href="#Files.Rider.res">res</a>
+</h3>
+<p> leftover byte count for ReadBytes/WriteBytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> res*: <strong>SIZE</strong></pre>
+<hr><h3 id="#_48711080"><a name="Files.Rider.apos"></a><a href="#Files">Files</a>.<a href="#Files.Rider">Rider</a>.<a href="#Files.Rider.apos">apos</a>
+</h3>
+<p> private fields for implementors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> apos*: <strong>Position</strong></pre>
+<hr><h2 id="#_487151C0"><a name="Files.Reader"></a><a href="#Files">Files</a>.<a href="#Files.Reader">Reader</a>
+</h2>
+<p> Reader for buffered reading of a file via Streams.Read procedures. See OpenReader.</p>
+
+<p> not sharable between multiple processes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reader* =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Streams.Position</strong>)<tr><td></td><td> Base (): <strong>File</strong><tr><td></td><td>& InitFileReader (file: <strong>File</strong>; pos: <strong>Position</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_48724BC0"><a name="Files.Writer"></a><a href="#Files">Files</a>.<a href="#Files.Writer">Writer</a>
+</h2>
+<p> Writer for buffered writing of a file via Streams.Write procedures. See OpenWriter.</p>
+
+<p> not sharable between multiple processes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Writer* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Streams.Position</strong>)<tr><td></td><td> Pos (): <strong>Streams.Position</strong><tr><td></td><td> Base (): <strong>File</strong><tr><td></td><td>& InitFileWriter (file: <strong>File</strong>; pos: <strong>Position</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_48735DC0"><a name="Files.Address"></a><a href="#Files">Files</a>.<a href="#Files.Address">Address</a>
+</h2>
+<p> Volume block address <a href="#1..size]">1..size]</a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Address* =<strong>SIGNED32</strong></pre>
+<hr><h2 id="#_48739840"><a name="Files.Hint"></a><a href="#Files">Files</a>.<a href="#Files.Hint">Hint</a>
+</h2>
+<p> for use by file system implementors.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Hint* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_4873ED40"><a name="Files.Volume"></a><a href="#Files">Files</a>.<a href="#Files.Volume">Volume</a>
+</h2>
+<p> Volume is the base type of all volumes. It provides operations on an abstract array of file system data blocks of blockSize bytes, numbered from 1 to size. It is mainly used by file system implementations.</p>
+
+<p> shareable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Volume* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Files.Volume.size">size</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Files.Volume.blockSize">blockSize</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Files.Volume.flags">flags</a>: <strong>SET</strong><tr><td></td><td><a href="#Files.Volume.name">name</a>: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> AllocBlock (hint: <strong>Address</strong>; <strong>VAR</strong> adr: <strong>Address</strong>)<tr><td></td><td> FreeBlock (adr: <strong>Address</strong>)<tr><td></td><td> FreeBlocks (<strong>CONST</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>Address</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> MarkBlock (adr: <strong>Address</strong>)<tr><td></td><td> MarkBlocks (<strong>CONST</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>Address</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> Marked (adr: <strong>Address</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Available (): <strong>SIGNED32</strong><tr><td></td><td> GetBlock (adr: <strong>SIGNED32</strong>; <strong>VAR</strong> blk: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PutBlock (adr: <strong>SIGNED32</strong>; <strong>VAR</strong> blk: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Finalize<tr><td></td><td> <a href="#Files.Volume.Init">Init</a> (flags: <strong>SET</strong>; size, reserved: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_4876BA40"><a name="Files.Volume.size"></a><a href="#Files">Files</a>.<a href="#Files.Volume">Volume</a>.<a href="#Files.Volume.size">size</a>
+</h3>
+<p> size in blocks</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> size*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_4876F740"><a name="Files.Volume.blockSize"></a><a href="#Files">Files</a>.<a href="#Files.Volume">Volume</a>.<a href="#Files.Volume.blockSize">blockSize</a>
+</h3>
+<p> block size in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> blockSize*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_48773880"><a name="Files.Volume.flags"></a><a href="#Files">Files</a>.<a href="#Files.Volume">Volume</a>.<a href="#Files.Volume.flags">flags</a>
+</h3>
+<p> ReadOnly, Removable, Boot</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> flags*: <strong>SET</strong></pre>
+<hr><h3 id="#_48777580"><a name="Files.Volume.name"></a><a href="#Files">Files</a>.<a href="#Files.Volume">Volume</a>.<a href="#Files.Volume.name">name</a>
+</h3>
+<p> descriptive name - e.g. for matching with Partitions.Show</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> name*: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="#_4877D580"><a name="Files.Volume.Init"></a><a href="#Files">Files</a>.<a href="#Files.Volume">Volume</a>.<a href="#Files.Volume.Init">Init</a>
+</h3>
+<p> Init procedure for private data of above methods only. If the above methods are not required, this procedure should not be called, and the volume fields should be initialized directly. The flags parameter defines the volume flags, the size parameter its size, and the reserved parameter says how many blocks are reserved for the system (out of disk space trap occurs when less than this amount of blocks are present).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init* (flags: <strong>SET</strong>; size, reserved: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_48793300"><a name="Files.FileSystem"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>
+</h2>
+<p> shareable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FileSystem* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Files.FileSystem.prefix">prefix</a>: <strong>Prefix</strong><tr><td></td><td><a href="#Files.FileSystem.desc">desc</a>: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Files.FileSystem.vol">vol</a>: <strong>Volume</strong><tr><td></td><td>flags: <strong>SET</strong><tr><th align='left'>procedures</th><td> <a href="#Files.FileSystem.New0">New0</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>File</strong><tr><td></td><td> <a href="#Files.FileSystem.Old0">Old0</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>File</strong><tr><td></td><td> <a href="#Files.FileSystem.Delete0">Delete0</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> key: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Files.FileSystem.Rename0">Rename0</a> (<strong>CONST</strong> old, new: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; f: <strong>File</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Files.FileSystem.Enumerate0">Enumerate0</a> (<strong>CONST</strong> mask: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>SET</strong>; enum: <strong>Enumerator</strong>)<tr><td></td><td> <a href="#Files.FileSystem.FileKey">FileKey</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Files.FileSystem.CreateDirectory0">CreateDirectory0</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Files.FileSystem.RemoveDirectory0">RemoveDirectory0</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; force: <strong>BOOLEAN</strong>; <strong>VAR</strong> key: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Files.FileSystem.Finalize">Finalize</a><tr><td></td><td> Has (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> fullName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> flags: <strong>SET</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_487C0D40"><a name="Files.FileSystem.prefix"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.prefix">prefix</a>
+</h3>
+<p> mount prefix</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> prefix*: <strong>Prefix</strong></pre>
+<hr><h3 id="#_487C4600"><a name="Files.FileSystem.desc"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.desc">desc</a>
+</h3>
+<p> description of file system</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> desc*: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="#_487C9780"><a name="Files.FileSystem.vol"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.vol">vol</a>
+</h3>
+<p> underlying volume, if any (a boot FS must have a volume)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> vol*: <strong>Volume</strong></pre>
+<hr><h3 id="#_487CF540"><a name="Files.FileSystem.New0"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.New0">New0</a>
+</h3>
+<p> Create a new file with the specified name. End users use Files.New instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> New0* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>File</strong></pre>
+<hr><h3 id="#_487D7640"><a name="Files.FileSystem.Old0"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.Old0">Old0</a>
+</h3>
+<p> Open an existing file. The same file descriptor is returned if a file is opened multiple times. End users use Files.Old instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Old0* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>File</strong></pre>
+<hr><h3 id="#_487E1940"><a name="Files.FileSystem.Delete0"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.Delete0">Delete0</a>
+</h3>
+<p> Delete a file. res = 0 indicates success. End users use Files.Delete instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Delete0* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> key: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_487EB740"><a name="Files.FileSystem.Rename0"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.Rename0">Rename0</a>
+</h3>
+<p> Rename a file. res = 0 indicates success. End users use Files.Rename instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rename0* (<strong>CONST</strong> old, new: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; f: <strong>File</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_487F5B40"><a name="Files.FileSystem.Enumerate0"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.Enumerate0">Enumerate0</a>
+</h3>
+<p> Enumerate canonical file names. mask may contain * wildcards. For internal use only. End users use Enumerator instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Enumerate0* (<strong>CONST</strong> mask: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>SET</strong>; enum: <strong>Enumerator</strong>)</pre>
+<hr><h3 id="#_48800640"><a name="Files.FileSystem.FileKey"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.FileKey">FileKey</a>
+</h3>
+<p> Return the unique non-zero key of the named file, if it exists.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FileKey* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_488083C0"><a name="Files.FileSystem.CreateDirectory0"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.CreateDirectory0">CreateDirectory0</a>
+</h3>
+<p> Create a new directory structure. May not be supported by the actual implementation. End users use Files.CreateDirectory instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CreateDirectory0* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_48812540"><a name="Files.FileSystem.RemoveDirectory0"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.RemoveDirectory0">RemoveDirectory0</a>
+</h3>
+<p> Remove a directory. If force=TRUE, any subdirectories and files should be automatically deleted. End users use Files.RemoveDirectory instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveDirectory0* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; force: <strong>BOOLEAN</strong>; <strong>VAR</strong> key: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_4881E640"><a name="Files.FileSystem.Finalize"></a><a href="#Files">Files</a>.<a href="#Files.FileSystem">FileSystem</a>.<a href="#Files.FileSystem.Finalize">Finalize</a>
+</h3>
+<p> Finalize the file system.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Finalize*</pre>
+<hr><h2 id="#_48822140"><a name="Files.File"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>
+</h2>
+<p> sharable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> File* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Files.File.flags">flags</a>: <strong>SET</strong><tr><td></td><td>key: <strong>SIGNED32</strong><tr><td></td><td>fs: <strong>FileSystem</strong><tr><th align='left'>procedures</th><td> <a href="#Files.File.Set">Set</a> (<strong>VAR</strong> r: <strong>Rider</strong>; pos: <strong>Position</strong>)<tr><td></td><td> <a href="#Files.File.Pos">Pos</a> (<strong>VAR</strong> r: <strong>Rider</strong>): <strong>Position</strong><tr><td></td><td> <a href="#Files.File.Read">Read</a> (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.File.ReadBytes">ReadBytes</a> (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Files.File.Write">Write</a> (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.File.WriteBytes">WriteBytes</a> (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Files.File.Length">Length</a> (): <strong>Size</strong><tr><td></td><td> <a href="#Files.File.GetDate">GetDate</a> (<strong>VAR</strong> t, d: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Files.File.SetDate">SetDate</a> (t, d: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Files.File.GetAttributes">GetAttributes</a> (): <strong>SET</strong><tr><td></td><td> <a href="#Files.File.SetAttributes">SetAttributes</a> (flags: <strong>SET</strong>)<tr><td></td><td> <a href="#Files.File.GetName">GetName</a> (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Files.File.Register0">Register0</a> (<strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Files.File.Update">Update</a><tr><td></td><td> Close<tr><td></td><td> NewReader (old= NIL: <strong>Reader</strong>; pos= 0: <strong>Position</strong>): <strong>Reader</strong><tr><td></td><td> NewWriter (old= NIL: <strong>Writer</strong>; pos= 0: <strong>Position</strong>): <strong>Writer</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_48853D00"><a name="Files.File.flags"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.flags">flags</a>
+</h3>
+<p> private fields for implementors</p>
+
+<p> (read-only!) file-specific flags, i.e. Directory.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> flags*: <strong>SET</strong></pre>
+<hr><h3 id="#_48859540"><a name="Files.File.Set"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.Set">Set</a>
+</h3>
+<p> Position a Rider at a certain position in a file. Multiple Riders can be positioned at different locations in a file. A Rider cannot be positioned beyond the end of a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Set* (<strong>VAR</strong> r: <strong>Rider</strong>; pos: <strong>Position</strong>)</pre>
+<hr><h3 id="#_48865F00"><a name="Files.File.Pos"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.Pos">Pos</a>
+</h3>
+<p> Return the offset of a Rider positioned on a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pos* (<strong>VAR</strong> r: <strong>Rider</strong>): <strong>Position</strong></pre>
+<hr><h3 id="#_4886CD00"><a name="Files.File.Read"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.Read">Read</a>
+</h3>
+<p> Read a byte from a file, advancing the Rider one byte further. R.eof indicates if the end of the file has been passed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_48877780"><a name="Files.File.ReadBytes"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.ReadBytes">ReadBytes</a>
+</h3>
+<p> Read a sequence of len bytes into the buffer x at offset ofs, advancing the Rider. Less bytes will be read when reading over the end of the file. r.res indicates the number of unread bytes. x must be big enough to hold all the bytes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReadBytes* (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_48889BC0"><a name="Files.File.Write"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.Write">Write</a>
+</h3>
+<p> Write a byte into the file at the Rider position, advancing the Rider by one.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_48892440"><a name="Files.File.WriteBytes"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.WriteBytes">WriteBytes</a>
+</h3>
+<p> Write the buffer x containing len bytes (starting at offset ofs) into a file at the Rider position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteBytes* (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_4889DBC0"><a name="Files.File.Length"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.Length">Length</a>
+</h3>
+<p> Return the current length of a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Length* (): <strong>Size</strong></pre>
+<hr><h3 id="#_488A2F40"><a name="Files.File.GetDate"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.GetDate">GetDate</a>
+</h3>
+<p> Return the time (t) and date (d) when a file was last modified.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetDate* (<strong>VAR</strong> t, d: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_488AAB40"><a name="Files.File.SetDate"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.SetDate">SetDate</a>
+</h3>
+<p> Set the modification time (t) and date (d) of a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetDate* (t, d: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_488B1BC0"><a name="Files.File.GetAttributes"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.GetAttributes">GetAttributes</a>
+</h3>
+<p> Get file attributes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetAttributes* (): <strong>SET</strong></pre>
+<hr><h3 id="#_488B5F00"><a name="Files.File.SetAttributes"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.SetAttributes">SetAttributes</a>
+</h3>
+<p> Set file attributes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetAttributes* (flags: <strong>SET</strong>)</pre>
+<hr><h3 id="#_488BA740"><a name="Files.File.GetName"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.GetName">GetName</a>
+</h3>
+<p> Return the canonical name of a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetName* (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_488C0B40"><a name="Files.File.Register0"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.Register0">Register0</a>
+</h3>
+<p> Register a file created with New in the directory, replacing the previous file in the directory with the same name. The file is automatically updated. End users use Files.Register instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Register0* (<strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_488CC000"><a name="Files.File.Update"></a><a href="#Files">Files</a>.<a href="#Files.File">File</a>.<a href="#Files.File.Update">Update</a>
+</h3>
+<p> Flush the changes made to a file from its buffers. Register0 will automatically update a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update*</pre>
+<hr><h2 id="#_488D2900"><a name="Files.Enumerator"></a><a href="#Files">Files</a>.<a href="#Files.Enumerator">Enumerator</a>
+</h2>
+<p> not shareable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Enumerator* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Files.Enumerator.size">size</a>: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> <a href="#Files.Enumerator.Open">Open</a> (<strong>CONST</strong> mask: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>SET</strong>)<tr><td></td><td> <a href="#Files.Enumerator.Reset">Reset</a><tr><td></td><td> <a href="#Files.Enumerator.HasMoreEntries">HasMoreEntries</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Files.Enumerator.GetEntry">GetEntry</a> (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> flags: <strong>SET</strong>; <strong>VAR</strong> time, date: <strong>SIGNED32</strong>; <strong>VAR</strong> size: <strong>Size</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Files.Enumerator.Close">Close</a><tr><td></td><td> <a href="#Files.Enumerator.PutEntry">PutEntry</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>SET</strong>; time, date: <strong>SIGNED32</strong>; size: <strong>Size</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_488E99C0"><a name="Files.Enumerator.size"></a><a href="#Files">Files</a>.<a href="#Files.Enumerator">Enumerator</a>.<a href="#Files.Enumerator.size">size</a>
+</h3>
+<p> total number of entries</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> size-: <strong>SIZE</strong></pre>
+<hr><h3 id="#_488EDB00"><a name="Files.Enumerator.Open"></a><a href="#Files">Files</a>.<a href="#Files.Enumerator">Enumerator</a>.<a href="#Files.Enumerator.Open">Open</a>
+</h3>
+<p> Open an enumerator and enumerate the files that match mask.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (<strong>CONST</strong> mask: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>SET</strong>)</pre>
+<hr><h3 id="#_488F5900"><a name="Files.Enumerator.Reset"></a><a href="#Files">Files</a>.<a href="#Files.Enumerator">Enumerator</a>.<a href="#Files.Enumerator.Reset">Reset</a>
+</h3>
+<p> reset the enumerator to the first entry</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reset*</pre>
+<hr><h3 id="#_488FA000"><a name="Files.Enumerator.HasMoreEntries"></a><a href="#Files">Files</a>.<a href="#Files.Enumerator">Enumerator</a>.<a href="#Files.Enumerator.HasMoreEntries">HasMoreEntries</a>
+</h3>
+<p> returns TRUE if the enumerator contains more entries</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HasMoreEntries* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_488FF800"><a name="Files.Enumerator.GetEntry"></a><a href="#Files">Files</a>.<a href="#Files.Enumerator">Enumerator</a>.<a href="#Files.Enumerator.GetEntry">GetEntry</a>
+</h3>
+<p> Get one entry from the enumerator.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetEntry* (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> flags: <strong>SET</strong>; <strong>VAR</strong> time, date: <strong>SIGNED32</strong>; <strong>VAR</strong> size: <strong>Size</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_48909A00"><a name="Files.Enumerator.Close"></a><a href="#Files">Files</a>.<a href="#Files.Enumerator">Enumerator</a>.<a href="#Files.Enumerator.Close">Close</a>
+</h3>
+<p> Close the enumerator.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close*</pre>
+<hr><h3 id="#_4890D0C0"><a name="Files.Enumerator.PutEntry"></a><a href="#Files">Files</a>.<a href="#Files.Enumerator">Enumerator</a>.<a href="#Files.Enumerator.PutEntry">PutEntry</a>
+</h3>
+<p> For internal use only.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PutEntry* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; flags: <strong>SET</strong>; time, date: <strong>SIGNED32</strong>; size: <strong>Size</strong>)</pre>
+<hr><h2 id="#_48915AC0"><a name="Files.Parameters"></a><a href="#Files">Files</a>.<a href="#Files.Parameters">Parameters</a>
+</h2>
+<p> Parameters passed to volume and file system generator commands. The str field contains a generic parameter string from the mount command. The vol field returns the new volume from volume generators and passes the volume parameter to file system generators. The prefix field contains the mount prefix, mainly for file system generators to add themselves with Files.Add.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parameters* =<strong>OBJECT</strong> (<strong>Commands.Context</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Files.Parameters.vol">vol</a>: <strong>Volume</strong><tr><td></td><td>prefix: <strong>Prefix</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_4497B640"><a name="Files.Parameters.vol"></a><a href="#Files">Files</a>.<a href="#Files.Parameters">Parameters</a>.<a href="#Files.Parameters.vol">vol</a>
+</h3>
+<p> out parameter of volume generators and in parameter of file system generators.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> vol*: <strong>Volume</strong></pre>
+<hr><h2 id="#_44981780"><a name="Files.Set"></a><a href="#Files">Files</a>.<a href="#Files.Set">Set</a>
+</h2>
+<p> Positions a Rider at a certain position in a file. Multiple Riders can be positioned at different locations in a file. A Rider cannot be positioned beyond the end of a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Set* (<strong>VAR</strong> r: <strong>Rider</strong>; f: <strong>File</strong>; pos: <strong>Position</strong>)</pre>
+<hr><h2 id="#_44991A80"><a name="Files.Pos"></a><a href="#Files">Files</a>.<a href="#Files.Pos">Pos</a>
+</h2>
+<p> Returns the offset of a Rider positioned on a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pos* (<strong>VAR</strong> r: <strong>Rider</strong>): <strong>Position</strong></pre>
+<hr><h2 id="#_449981C0"><a name="Files.Length"></a><a href="#Files">Files</a>.<a href="#Files.Length">Length</a>
+</h2>
+<p> Returns the current length of a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Length* (f: <strong>File</strong>): <strong>Position</strong></pre>
+<hr><h2 id="#_4499D900"><a name="Files.GetDate"></a><a href="#Files">Files</a>.<a href="#Files.GetDate">GetDate</a>
+</h2>
+<p> Returns the time (t) and date (d) when a file was last modified.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetDate* (f: <strong>File</strong>; <strong>VAR</strong> t, d: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_449A5F00"><a name="Files.SetDate"></a><a href="#Files">Files</a>.<a href="#Files.SetDate">SetDate</a>
+</h2>
+<p> Sets the modification time (t) and date (d) of a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetDate* (f: <strong>File</strong>; t, d: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_449B0F40"><a name="Files.OpenReader"></a><a href="#Files">Files</a>.<a href="#Files.OpenReader">OpenReader</a>
+</h2>
+<p> Buffered reading and writing.</p>
+
+<p> Open a reader on a file at the specified position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenReader* (<strong>VAR</strong> b: <strong>Reader</strong>; f: <strong>File</strong>; pos: <strong>Position</strong>)</pre>
+<hr><h2 id="#_449B9E80"><a name="Files.OpenWriter"></a><a href="#Files">Files</a>.<a href="#Files.OpenWriter">OpenWriter</a>
+</h2>
+<p> Open a writer on a file at the specified position. Remember to call Streams.Update before registering or closing the file!</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenWriter* (<strong>VAR</strong> b: <strong>Writer</strong>; f: <strong>File</strong>; pos: <strong>Position</strong>)</pre>
+<hr><h2 id="#_449C6400"><a name="Files.SplitName"></a><a href="#Files">Files</a>.<a href="#Files.SplitName">SplitName</a>
+</h2>
+<p> File name prefix support.</p>
+
+<p> Split fullname = ( prefix ":" name ) into prefix and name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SplitName* (<strong>CONST</strong> fullname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> prefix, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_449D1840"><a name="Files.JoinName"></a><a href="#Files">Files</a>.<a href="#Files.JoinName">JoinName</a>
+</h2>
+<p> Join prefix and name to fullname = ( prefix ":" name )</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> JoinName* (<strong>CONST</strong> prefix, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> fullname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_449DAA00"><a name="Files.SplitPath"></a><a href="#Files">Files</a>.<a href="#Files.SplitPath">SplitPath</a>
+</h2>
+<p> Split a pathname at the last PathDelimiter or ":" into path and filename = ( <code>path (PathDelimiter|":")} filename ) </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SplitPath* (<strong>CONST</strong> pathname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> path, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_449E4B00"><a name="Files.JoinPath"></a><a href="#Files">Files</a>.<a href="#Files.JoinPath">JoinPath</a>
+</h2>
+<p> Join path and file name = ( path PathDelimiter name )</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> JoinPath* (<strong>CONST</strong> path, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pathname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_449ED940"><a name="Files.SplitExtension"></a><a href="#Files">Files</a>.<a href="#Files.SplitExtension">SplitExtension</a>
+</h2>
+<p> Split a filename at the last '.' into name and extension = ( name "." extension )</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SplitExtension* (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> name, extension: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_449F7E80"><a name="Files.JoinExtension"></a><a href="#Files">Files</a>.<a href="#Files.JoinExtension">JoinExtension</a>
+</h2>
+<p> Join name and extension = ( name "." extension )</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> JoinExtension* (<strong>CONST</strong> name, extension: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_44A007C0"><a name="Files.ForceTrailingDelimiter"></a><a href="#Files">Files</a>.<a href="#Files.ForceTrailingDelimiter">ForceTrailingDelimiter</a>
+</h2>
+<p> Append the path delimiter to path if path does not contain one</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ForceTrailingDelimiter* (<strong>VAR</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_44A07900"><a name="Files.Add"></a><a href="#Files">Files</a>.<a href="#Files.Add">Add</a>
+</h2>
+<p> Add file system at end of list, with specified prefix, which must be unique.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (fs: <strong>FileSystem</strong>; <strong>CONST</strong> prefix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_44A0FFC0"><a name="Files.Promote"></a><a href="#Files">Files</a>.<a href="#Files.Promote">Promote</a>
+</h2>
+<p> Promote fs to the start of the list.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Promote* (fs: <strong>FileSystem</strong>)</pre>
+<hr><h2 id="#_44A15600"><a name="Files.Remove"></a><a href="#Files">Files</a>.<a href="#Files.Remove">Remove</a>
+</h2>
+<p> Remove the file system and finalize it.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Remove* (fs: <strong>FileSystem</strong>)</pre>
+<hr><h2 id="#_44A1A7C0"><a name="Files.This"></a><a href="#Files">Files</a>.<a href="#Files.This">This</a>
+</h2>
+<p> Find file system with specified prefix.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> This* (<strong>CONST</strong> prefix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>FileSystem</strong></pre>
+<hr><h2 id="#_44A20700"><a name="Files.GetList"></a><a href="#Files">Files</a>.<a href="#Files.GetList">GetList</a>
+</h2>
+<p> Get a list of file systems.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetList* (<strong>VAR</strong> list: <strong>FileSystemTable</strong>)</pre>
+<hr><h2 id="#_44A25840"><a name="Files.Old"></a><a href="#Files">Files</a>.<a href="#Files.Old">Old</a>
+</h2>
+<p> Open an existing file, searching through the mounted file system list if no prefix is specified.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Old* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>File</strong></pre>
+<hr><h2 id="#_44A2DD00"><a name="Files.New"></a><a href="#Files">Files</a>.<a href="#Files.New">New</a>
+</h2>
+<p> Create a new file. If no prefix is specified, create the file on the first file system in the mounted list.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> New* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>File</strong></pre>
+<hr><h2 id="#_44A39CC0"><a name="Files.Delete"></a><a href="#Files">Files</a>.<a href="#Files.Delete">Delete</a>
+</h2>
+<p> Delete a file. res = 0 indicates success.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Delete* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_44A431C0"><a name="Files.CopyFile"></a><a href="#Files">Files</a>.<a href="#Files.CopyFile">CopyFile</a>
+</h2>
+<ul>
+<li> Make a copy of a file</li>
+
+<li></li>
+
+</ul>
+<h2> source: Prefix, path and name of file to be copied</h2>
+
+<ul>
+<li></li>
+
+</ul>
+<h2> destination: Prefix, path and name of file to be created</h2>
+
+<ul>
+<li></li>
+
+</ul>
+<h2> overwrite:</h2>
+
+<h2> Overwrite existing files?</h2>
+
+<h2> Has an existing file been overwritten?</h2>
+
+<ul>
+<li></li>
+
+</ul>
+<h2> res:</h2>
+
+<h2> Result code</h2>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CopyFile* (<strong>CONST</strong> source, destination: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> overwrite: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<a name="param"></a><hr><h1 id="#param"> source: Prefix, path and name of file to be copied
+</h1>
+<ul>
+<li></li>
+
+<li></li>
+</ul>
+<a name="in:"></a><hr><h1 id="#in:"> Overwrite existing files?
+</h1><a name="out:"></a><hr><h1 id="#out:"> Has an existing file been overwritten?
+</h1>
+<ul>
+<li></li>
+</ul>
+<hr><h2 id="#_44A58880"><a name="Files.Rename"></a><a href="#Files">Files</a>.<a href="#Files.Rename">Rename</a>
+</h2>
+<p> Rename a file. res = 0 indicates success.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rename* (<strong>CONST</strong> old, new: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_44A619C0"><a name="Files.Register"></a><a href="#Files">Files</a>.<a href="#Files.Register">Register</a>
+</h2>
+<p> Register a file created with New in the directory, replacing the previous file in the directory with the same name. The file is automatically closed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Register* (f: <strong>File</strong>)</pre>
+<hr><h2 id="#_44A6C3C0"><a name="Files.CreateDirectory"></a><a href="#Files">Files</a>.<a href="#Files.CreateDirectory">CreateDirectory</a>
+</h2>
+<p> Create a directory structure. Directories are automatically registered. res=0 indicates success. Use Files.RemoveDirectory to delete a directory</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CreateDirectory* (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_44A76B80"><a name="Files.RemoveDirectory"></a><a href="#Files">Files</a>.<a href="#Files.RemoveDirectory">RemoveDirectory</a>
+</h2>
+<p> Remove a directory. res=0 indicates success. If force=TRUE, any files and subdirectories are automatically deleted.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveDirectory* (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; force: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_44A8A700"><a name="Files.ReadSystemByte"></a><a href="#Files">Files</a>.<a href="#Files.ReadSystemByte">ReadSystemByte</a>
+</h2>
+<p> Portable routines to read the standard Oberon types. DEPRECATED, use Streams instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReadSystemByte* (<strong>VAR</strong> r: <strong>Rider</strong>; <strong>VAR</strong> x: <strong>SYSTEM.BYTE</strong>)</pre>
+<hr><h2 id="#_44AC6980"><a name="Files.WriteSystemByte"></a><a href="#Files">Files</a>.<a href="#Files.WriteSystemByte">WriteSystemByte</a>
+</h2>
+<p> Portable routines to write the standard Oberon types. DEPRECATED, used Streams instead.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteSystemByte* (<strong>VAR</strong> r: <strong>Rider</strong>; x: <strong>SYSTEM.BYTE</strong>)</pre>
+<hr><h2 id="#_44ACF180"><a name="Files.AppendStr"></a><a href="#Files">Files</a>.<a href="#Files.AppendStr">AppendStr</a>
+</h2>
+<p> Help procedures.</p>
+
+<p> Append first string to second string, truncating on overflow.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AppendStr* (<strong>CONST</strong> from: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_44AD7940"><a name="Files.AppendInt"></a><a href="#Files">Files</a>.<a href="#Files.AppendInt">AppendInt</a>
+</h2>
+<p> Append unsigned integer to string in ASCII format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AppendInt* (x: <strong>SIGNED32</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_44AE0B00"><a name="Files.GetDevPart"></a><a href="#Files">Files</a>.<a href="#Files.GetDevPart">GetDevPart</a>
+</h2>
+<p> Get the dev#part string from the stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetDevPart* (arg: <strong>Streams.Reader</strong>; <strong>VAR</strong> deviceName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> partition: <strong>SIGNED32</strong>)</pre>
+</body></html>

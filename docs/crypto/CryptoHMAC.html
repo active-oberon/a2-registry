@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoHMAC">CryptoHMAC</a></p>
+<hr><h1 id="#_22AAFD40"><a name="CryptoHMAC"></a><a href="#ModuleList">Module</a> CryptoHMAC
+</h1>
+<p> AUTHOR "G.F."; PURPOSE "RFC 2104 HMAC";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CryptoHMAC.HMac">HMac</a> =<strong>OBJECT</strong> </td></tr>
+</table>
+<hr><h2 id="#_22AB4240"><a name="CryptoHMAC.HMac"></a><a href="#CryptoHMAC">CryptoHMAC</a>.<a href="#CryptoHMAC.HMac">HMac</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HMac* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CryptoHMAC.HMac.size">size</a>: <strong>SIZE</strong><tr><td></td><td>name: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> hashmod: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ShrinkLength (len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoHMAC.HMac.Initialize">Initialize</a> (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoHMAC.HMac.Update">Update</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoHMAC.HMac.GetMac">GetMac</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_22AC8980"><a name="CryptoHMAC.HMac.size"></a><a href="#CryptoHMAC">CryptoHMAC</a>.<a href="#CryptoHMAC.HMac">HMac</a>.<a href="#CryptoHMAC.HMac.size">size</a>
+</h3>
+<p> mac size L in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> size-: <strong>SIZE</strong></pre>
+<hr><h3 id="#_22ACCF40"><a name="CryptoHMAC.HMac.Initialize"></a><a href="#CryptoHMAC">CryptoHMAC</a>.<a href="#CryptoHMAC.HMac">HMac</a>.<a href="#CryptoHMAC.HMac.Initialize">Initialize</a>
+</h3>
+<p> Set a key, recommended key-length is the hash-size of the underlying hash-function. This method has to be invoked for EACH mac to be calculated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Initialize* (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_22AD8300"><a name="CryptoHMAC.HMac.Update"></a><a href="#CryptoHMAC">CryptoHMAC</a>.<a href="#CryptoHMAC.HMac">HMac</a>.<a href="#CryptoHMAC.HMac.Update">Update</a>
+</h3>
+<p> set string from which a mac will be calculated. strings can be concatenated by invoking Update several times without invoking Initialize</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_22AE3300"><a name="CryptoHMAC.HMac.GetMac"></a><a href="#CryptoHMAC">CryptoHMAC</a>.<a href="#CryptoHMAC.HMac">HMac</a>.<a href="#CryptoHMAC.HMac.GetMac">GetMac</a>
+</h3>
+<p> Load the generated mac of size L into buf, starting at position pos</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetMac* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</pre>
+</body></html>

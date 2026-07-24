@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MathRat">MathRat</a></p>
+<hr><h1 id="#_59BBE3C0"><a name="MathRat"></a><a href="#ModuleList">Module</a> MathRat
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Rational math functions";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>MaxFactorial= 21<tr><th align='left'>procedures</th><td> <a href="#MathRat.Binomial">Binomial</a> (top, bottom: <strong>NbrInt.Integer</strong>): <strong>NbrRat.Rational</strong><tr><td></td><td> <a href="#MathRat.Factorial">Factorial</a> (n: <strong>NbrInt.Integer</strong>): <strong>NbrRat.Rational</strong><tr><td></td><td> <a href="#MathRat.Power">Power</a> (x: <strong>NbrRat.Rational</strong>; n: <strong>NbrInt.Integer</strong>): <strong>NbrRat.Rational</strong><tr><td></td><td> <a href="#MathRat.Random">Random</a> (): <strong>NbrRat.Rational</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_59BCB940"><a name="MathRat.Binomial"></a><a href="#MathRat">MathRat</a>.<a href="#MathRat.Binomial">Binomial</a>
+</h2>
+<p> h n i n!</p>
+
+<table><tr><td></td><td> = ---------, m 3 0</td></tr>
+</table>
+
+<p> m k m!(n-m)!</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Binomial* (top, bottom: <strong>NbrInt.Integer</strong>): <strong>NbrRat.Rational</strong></pre>
+<hr><h2 id="#_59BD3780"><a name="MathRat.Factorial"></a><a href="#MathRat">MathRat</a>.<a href="#MathRat.Factorial">Factorial</a>
+</h2>
+<p> Computes n! = n * (n - 1) * (n - 2) * ... * 1, MaxFactorial 3 n 3 0.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Factorial* (n: <strong>NbrInt.Integer</strong>): <strong>NbrRat.Rational</strong></pre>
+<hr><h2 id="#_59BDC440"><a name="MathRat.Power"></a><a href="#MathRat">MathRat</a>.<a href="#MathRat.Power">Power</a>
+</h2>
+<p> Computes xn, <code>x,n} 9 {0,0}. </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Power* (x: <strong>NbrRat.Rational</strong>; n: <strong>NbrInt.Integer</strong>): <strong>NbrRat.Rational</strong></pre>
+<hr><h2 id="#_59BE1A00"><a name="MathRat.Random"></a><a href="#MathRat">MathRat</a>.<a href="#MathRat.Random">Random</a>
+</h2>
+<p> Returns a pseudo-random rational number uniformly distributed over the unit interval, i.e., Random() N (0, 1).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Random* (): <strong>NbrRat.Rational</strong></pre>
+</body></html>

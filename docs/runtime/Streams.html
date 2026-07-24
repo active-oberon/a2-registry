@@ -1,0 +1,1301 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Streams">Streams</a></p>
+<hr><h1 id="#_5A403780"><a name="Streams"></a><a href="#ModuleList">Module</a> Streams
+</h1>
+<p> AUTHOR "pjm/be"; PURPOSE "I/O buffering and formatted writing and reading";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Streams.Ok">Ok</a>= 0<tr><td></td><td><a href="#Streams.EOF">EOF</a>= 4201<tr><td></td><td><a href="#Streams.EOT">EOT</a>= 1AX<tr><td></td><td>StringFull= 4202<tr><td></td><td><a href="#Streams.FormatError">FormatError</a>= 4203<tr><td></td><td>Incomplete= 4204<tr><td></td><td>DefaultWriterSize= 4096<tr><td></td><td>DefaultReaderSize= 4096<tr><td></td><td><a href="#Streams.Invalid">Invalid</a>= -1<tr><th align='left'>type declarations</th><td><a href="#Streams.ByteOrder">ByteOrder</a> =<strong>ENUMERATION</strong> <tr><td></td><td>Char16 =<strong>UNSIGNED16</strong><tr><td></td><td>Char32 =<strong>UNSIGNED32</strong><tr><td></td><td>Position =<strong>SIGNED64</strong><tr><td></td><td><a href="#Streams.Sender">Sender</a> =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td><a href="#Streams.Receiver">Receiver</a> =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td><a href="#Streams.Connection">Connection</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Streams.Writer">Writer</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Streams.StringWriter">StringWriter</a> =<strong>OBJECT</strong> (<strong>Writer</strong>)<tr><td></td><td><a href="#Streams.Reader">Reader</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Streams.StringReader">StringReader</a> =<strong>OBJECT</strong> (<strong>Reader</strong>)<tr><td></td><td><a href="#Streams.Buffer">Buffer</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#Streams.OpenWriter">OpenWriter</a> (<strong>VAR</strong> b: <strong>Writer</strong>; send: <strong>Sender</strong>)<tr><td></td><td> <a href="#Streams.OpenReader">OpenReader</a> (<strong>VAR</strong> b: <strong>Reader</strong>; receive: <strong>Receiver</strong>)<tr><td></td><td> <a href="#Streams.OpenStringWriter">OpenStringWriter</a> (<strong>VAR</strong> b: <strong>StringWriter</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.OpenStringReader">OpenStringReader</a> (<strong>VAR</strong> b: <strong>StringReader</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Copy">Copy</a> (r: <strong>Reader</strong>; w: <strong>Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5A4375C0"><a name="Streams.Ok"></a><a href="#Streams">Streams</a>.<a href="#Streams.Ok">Ok</a>
+</h2>
+<p> zero result code means no error occurred</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_5A43BC40"><a name="Streams.EOF"></a><a href="#Streams">Streams</a>.<a href="#Streams.EOF">EOF</a>
+</h2>
+<p> error returned when Receive reads past end of file or stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EOF*= 4201</pre>
+<hr><h2 id="#_5A441340"><a name="Streams.EOT"></a><a href="#Streams">Streams</a>.<a href="#Streams.EOT">EOT</a>
+</h2>
+<p> EOT character</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EOT*= 1AX</pre>
+<hr><h2 id="#_5A444600"><a name="Streams.FormatError"></a><a href="#Streams">Streams</a>.<a href="#Streams.FormatError">FormatError</a>
+</h2>
+<p> error returned when ReadInt/Utf fails</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FormatError*= 4203</pre>
+<hr><h2 id="#_5A448700"><a name="Streams.Invalid"></a><a href="#Streams">Streams</a>.<a href="#Streams.Invalid">Invalid</a>
+</h2>
+<p> invalid stream position</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Invalid*= -1</pre>
+<hr><h2 id="#_5A44C0C0"><a name="Streams.ByteOrder"></a><a href="#Streams">Streams</a>.<a href="#Streams.ByteOrder">ByteOrder</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ByteOrder* =<strong>ENUMERATION</strong> <strong>CONST</strong> BigEndian*= 0, <strong>CONST</strong> LittleEndian*= 1</pre>
+<hr><h2 id="#_5A4505C0"><a name="Streams.Sender"></a><a href="#Streams">Streams</a>.<a href="#Streams.Sender">Sender</a>
+</h2>
+<p> Any stream output procedure or method.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Sender* =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_5A45A080"><a name="Streams.Receiver"></a><a href="#Streams">Streams</a>.<a href="#Streams.Receiver">Receiver</a>
+</h2>
+<p> Any stream input procedure or method.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Receiver* =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_5A464A00"><a name="Streams.Connection"></a><a href="#Streams">Streams</a>.<a href="#Streams.Connection">Connection</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Connection* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Send (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Receive (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5A474680"><a name="Streams.Writer"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>
+</h2>
+<p> A writer buffers output before it is sent to a Sender. Must not be shared between processes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Writer* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Streams.Writer.res">res</a>: <strong>INTEGER</strong><tr><td></td><td><a href="#Streams.Writer.sent">sent</a>: <strong>Position</strong><tr><td></td><td>byteOrder: <strong>ByteOrder</strong><tr><th align='left'>procedures</th><td>& InitWriter (send: <strong>Sender</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> Reset<tr><td></td><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Position</strong>)<tr><td></td><td> SetByteOrder (order: <strong>ByteOrder</strong>)<tr><td></td><td> Update<tr><td></td><td> <a href="#Streams.Writer.Pos">Pos</a> (): <strong>Position</strong><tr><td></td><td> <a href="#Streams.Writer.Char">Char</a> (x: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Writer.Bytes">Bytes</a> (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawSInt">RawSInt</a> (x: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawInt8">RawInt8</a> (x: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawInt">RawInt</a> (x: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawInt16">RawInt16</a> (x: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawLInt">RawLInt</a> (x: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawInt32">RawInt32</a> (x: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawHInt">RawHInt</a> (x: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawInt64">RawInt64</a> (x: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawUInt8">RawUInt8</a> (x: <strong>UNSIGNED8</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawUInt16">RawUInt16</a> (x: <strong>UNSIGNED16</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawUInt32">RawUInt32</a> (x: <strong>UNSIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawUInt64">RawUInt64</a> (x: <strong>UNSIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Writer.Net64">Net64</a> (x: <strong>SIGNED64</strong>)<tr><td></td><td> UNet64 (x: <strong>UNSIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Writer.Net32">Net32</a> (x: <strong>SIGNED32</strong>)<tr><td></td><td> UNet32 (x: <strong>UNSIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Writer.Net16">Net16</a> (x: <strong>SIGNED32</strong>)<tr><td></td><td> UNet16 (x: <strong>UNSIGNED16</strong>)<tr><td></td><td> <a href="#Streams.Writer.Net8">Net8</a> (x: <strong>SIGNED32</strong>)<tr><td></td><td> UNet8 (x: <strong>UNSIGNED8</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawSet">RawSet</a> (x: <strong>SET</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawSet8">RawSet8</a> (x: <strong>SET8</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawSet16">RawSet16</a> (x: <strong>SET16</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawSet32">RawSet32</a> (x: <strong>SET32</strong>)<tr><td></td><td> RawSet64 (x: <strong>SET64</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawBool">RawBool</a> (x: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawReal">RawReal</a> (x: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawFloat32">RawFloat32</a> (x: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawLReal">RawLReal</a> (x: <strong>FLOAT64</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawFloat64">RawFloat64</a> (x: <strong>FLOAT64</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawString">RawString</a> (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawNum">RawNum</a> (x: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Writer.Ln">Ln</a><tr><td></td><td> <a href="#Streams.Writer.String">String</a> (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Writer.Int">Int</a> (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.Writer.UInt">UInt</a> (x: <strong>UNSIGNED64</strong>; w: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.Writer.Set">Set</a> (s: <strong>SET</strong>)<tr><td></td><td> <a href="#Streams.Writer.Hex">Hex</a> (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.Writer.Address">Address</a> (x: <strong>ADDRESS</strong>)<tr><td></td><td> <a href="#Streams.Writer.Size">Size</a> (x: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.Writer.Date">Date</a> (t, d: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Writer.Date822">Date822</a> (t, d, tz: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Writer.Float">Float</a> (x: <strong>FLOAT64</strong>; n: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Streams.Writer.FloatFix">FloatFix</a> (x: <strong>FLOAT64</strong>; n, f, D: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Streams.Writer.RawChar16">RawChar16</a> (x: <strong>Char16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Writer.RawChar32">RawChar32</a> (ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Writer.UTF8Char">UTF8Char</a> (ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> UTF16Char (ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Writer.UTF32Char">UTF32Char</a> (ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_5A4EBD40"><a name="Streams.Writer.res"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.res">res</a>
+</h3>
+<p> result of last output operation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> res*: <strong>INTEGER</strong></pre>
+<hr><h3 id="#_5A4F0300"><a name="Streams.Writer.sent"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.sent">sent</a>
+</h3>
+<p> count of sent bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> sent*: <strong>Position</strong></pre>
+<hr><h3 id="#_5A4F4440"><a name="Streams.Writer.Pos"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Pos">Pos</a>
+</h3>
+<p> Current write position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pos* (): <strong>Position</strong></pre>
+<hr><h3 id="#_5A4F8880"><a name="Streams.Writer.Char"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Char">Char</a>
+</h3>
+<p> -- Write raw binary data --</p>
+
+<p> Write one byte.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Char* (x: <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_5A4FEB40"><a name="Streams.Writer.Bytes"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Bytes">Bytes</a>
+</h3>
+<p> Write len bytes from x, starting at ofs.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Bytes* (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_5A5069C0"><a name="Streams.Writer.RawSInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawSInt">RawSInt</a>
+</h3>
+<p>!DEPRECATED, use RawInt8 instead! Write a SIGNED8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSInt* (x: <strong>SIGNED8</strong>)</pre>
+<hr><h3 id="#_5A50C0C0"><a name="Streams.Writer.RawInt8"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawInt8">RawInt8</a>
+</h3>
+<p> Write a SIGNED8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt8* (x: <strong>SIGNED8</strong>)</pre>
+<hr><h3 id="#_5A510900"><a name="Streams.Writer.RawInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawInt">RawInt</a>
+</h3>
+<p>!DEPRECATED, use RawInt16 instead! Write an SIGNED16.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt* (x: <strong>SIGNED16</strong>)</pre>
+<hr><h3 id="#_5A516000"><a name="Streams.Writer.RawInt16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawInt16">RawInt16</a>
+</h3>
+<p> Write an SIGNED16.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt16* (x: <strong>SIGNED16</strong>)</pre>
+<hr><h3 id="#_5A51A840"><a name="Streams.Writer.RawLInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawLInt">RawLInt</a>
+</h3>
+<p>!DEPRECATED, use RawInt32 instead! Write a SIGNED32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawLInt* (x: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A5200C0"><a name="Streams.Writer.RawInt32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawInt32">RawInt32</a>
+</h3>
+<p> Write a SIGNED32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt32* (x: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A524900"><a name="Streams.Writer.RawHInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawHInt">RawHInt</a>
+</h3>
+<p>!DEPRECATED, use RawInt64 instead! Write a SIGNED64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawHInt* (x: <strong>SIGNED64</strong>)</pre>
+<hr><h3 id="#_5A52A000"><a name="Streams.Writer.RawInt64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawInt64">RawInt64</a>
+</h3>
+<p> Write a SIGNED64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt64* (x: <strong>SIGNED64</strong>)</pre>
+<hr><h3 id="#_5A52E840"><a name="Streams.Writer.RawUInt8"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawUInt8">RawUInt8</a>
+</h3>
+<p> Write a UNSIGNED8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawUInt8* (x: <strong>UNSIGNED8</strong>)</pre>
+<hr><h3 id="#_5A533080"><a name="Streams.Writer.RawUInt16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawUInt16">RawUInt16</a>
+</h3>
+<p> Write an UNSIGNED16.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawUInt16* (x: <strong>UNSIGNED16</strong>)</pre>
+<hr><h3 id="#_5A5378C0"><a name="Streams.Writer.RawUInt32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawUInt32">RawUInt32</a>
+</h3>
+<p> Write a UNSIGNED32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawUInt32* (x: <strong>UNSIGNED32</strong>)</pre>
+<hr><h3 id="#_5A53C100"><a name="Streams.Writer.RawUInt64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawUInt64">RawUInt64</a>
+</h3>
+<p> Write a UNSIGNED64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawUInt64* (x: <strong>UNSIGNED64</strong>)</pre>
+<hr><h3 id="#_5A540940"><a name="Streams.Writer.Net64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Net64">Net64</a>
+</h3>
+<p> Write a 64 bit value in network byte order (most significant byte first)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Net64* (x: <strong>SIGNED64</strong>)</pre>
+<hr><h3 id="#_5A547940"><a name="Streams.Writer.Net32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Net32">Net32</a>
+</h3>
+<p> Write a 32 bit value in network byte order (most significant byte first)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Net32* (x: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A54E940"><a name="Streams.Writer.Net16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Net16">Net16</a>
+</h3>
+<p> Write a 16 bit value in network byte order (most significant byte first)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Net16* (x: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A555940"><a name="Streams.Writer.Net8"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Net8">Net8</a>
+</h3>
+<p> write unsigned byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Net8* (x: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A55A380"><a name="Streams.Writer.RawSet"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawSet">RawSet</a>
+</h3>
+<p> Write a SET.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSet* (x: <strong>SET</strong>)</pre>
+<hr><h3 id="#_5A55EBC0"><a name="Streams.Writer.RawSet8"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawSet8">RawSet8</a>
+</h3>
+<p> Write a SET8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSet8* (x: <strong>SET8</strong>)</pre>
+<hr><h3 id="#_5A563400"><a name="Streams.Writer.RawSet16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawSet16">RawSet16</a>
+</h3>
+<p> Write a SET16.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSet16* (x: <strong>SET16</strong>)</pre>
+<hr><h3 id="#_5A567C40"><a name="Streams.Writer.RawSet32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawSet32">RawSet32</a>
+</h3>
+<p> Write a SET32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSet32* (x: <strong>SET32</strong>)</pre>
+<hr><h3 id="#_5A56C480"><a name="Streams.Writer.RawBool"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawBool">RawBool</a>
+</h3>
+<p> Write a BOOLEAN.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawBool* (x: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_5A570CC0"><a name="Streams.Writer.RawReal"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawReal">RawReal</a>
+</h3>
+<p>!DEPRECATED, use RawFloat32 instead! Write a FLOAT32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawReal* (x: <strong>FLOAT32</strong>)</pre>
+<hr><h3 id="#_5A5763C0"><a name="Streams.Writer.RawFloat32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawFloat32">RawFloat32</a>
+</h3>
+<p> Write a FLOAT32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawFloat32* (x: <strong>FLOAT32</strong>)</pre>
+<hr><h3 id="#_5A57AC00"><a name="Streams.Writer.RawLReal"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawLReal">RawLReal</a>
+</h3>
+<p>!DEPRECATED, use RawFloat64 instead! Write a FLOAT64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawLReal* (x: <strong>FLOAT64</strong>)</pre>
+<hr><h3 id="#_5A580300"><a name="Streams.Writer.RawFloat64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawFloat64">RawFloat64</a>
+</h3>
+<p> Write a FLOAT64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawFloat64* (x: <strong>FLOAT64</strong>)</pre>
+<hr><h3 id="#_5A584B40"><a name="Streams.Writer.RawString"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawString">RawString</a>
+</h3>
+<p> Write a 0X-terminated string, including the 0X terminator.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawString* (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_5A58B3C0"><a name="Streams.Writer.RawNum"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawNum">RawNum</a>
+</h3>
+<p> Write a number in a compressed format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawNum* (x: <strong>SIGNED64</strong>)</pre>
+<hr><h3 id="#_5A590C40"><a name="Streams.Writer.Ln"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Ln">Ln</a>
+</h3>
+<p> -- Write formatted data --</p>
+
+<p> Write an ASCII end-of-line (CR/LF).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Ln*</pre>
+<hr><h3 id="#_5A5962C0"><a name="Streams.Writer.String"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.String">String</a>
+</h3>
+<p> Write a 0X-terminated string, excluding the 0X terminator.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> String* (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_5A59CB40"><a name="Streams.Writer.Int"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Int">Int</a>
+</h3>
+<p> Write an integer in decimal right-justified in a field of at least w characters.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Int* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_5A5A4CC0"><a name="Streams.Writer.UInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.UInt">UInt</a>
+</h3>
+<p> Write an unsigned integer in decimal right-justified in a field of at least w characters.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UInt* (x: <strong>UNSIGNED64</strong>; w: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_5A5AD1C0"><a name="Streams.Writer.Set"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Set">Set</a>
+</h3>
+<p> Write a SET in Oberon notation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Set* (s: <strong>SET</strong>)</pre>
+<hr><h3 id="#_5A5B2900"><a name="Streams.Writer.Hex"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Hex">Hex</a>
+</h3>
+<p> Write an integer in hexadecimal right-justified in a field of at least ABS(w) characters. If w <a name="0"></a> THEN w least significant hex digits of x are written (potentially including leading zeros)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Hex* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_5A5BEBC0"><a name="Streams.Writer.Address"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Address">Address</a>
+</h3>
+<p> Write "x" as a hexadecimal address. Do not use Hex because of arithmetic shift of the sign !</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Address* (x: <strong>ADDRESS</strong>)</pre>
+<hr><h3 id="#_5A5C6F40"><a name="Streams.Writer.Size"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Size">Size</a>
+</h3>
+<p> Write "x" as a size.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Size* (x: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_5A5CC040"><a name="Streams.Writer.Date"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Date">Date</a>
+</h3>
+<p> Write the date and time in ISO format (yyyy-mm-dd hh:mm:ss). The t and d parameters are in Oberon time and date format. If all parameters are within range, the output string is exactly 19 characters wide. The t or d parameter can be -1, in which case the time or date respectively are left out.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Date* (t, d: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A5DDAC0"><a name="Streams.Writer.Date822"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Date822">Date822</a>
+</h3>
+<p> Write the date and time in RFC 822/1123 format without the optional day of the week (dd mmm yyyy hh:mm:ss SZZZZ) . The t and d parameters are in Oberon time and date format. The tz parameter specifies the time zone offset in minutes (from -720 to 720 in steps of 30). If all parameters are within range, the output string is exactly 26 characters wide. The t, d or tz parameter can be -1, in which case the time, date or timezone respectively are left out.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Date822* (t, d, tz: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A5F76C0"><a name="Streams.Writer.Float"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.Float">Float</a>
+</h3>
+<p> Write FLOAT64 x using at least n character positions.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Float* (x: <strong>FLOAT64</strong>; n: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_5A5FE540"><a name="Streams.Writer.FloatFix"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.FloatFix">FloatFix</a>
+</h3>
+<p> Write FLOAT64 x in a fixed point notation. n is the overall minimal length for the output field, f the number of fraction digits following the decimal point, D the fixed exponent (printed only when D # 0).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FloatFix* (x: <strong>FLOAT64</strong>; n, f, D: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_5A60D4C0"><a name="Streams.Writer.RawChar16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawChar16">RawChar16</a>
+</h3>
+<p> -- unicode --</p>
+
+<p> Write one UTF-16 unit without validation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawChar16* (x: <strong>Char16</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_5A613D00"><a name="Streams.Writer.RawChar32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.RawChar32">RawChar32</a>
+</h3>
+<p> Write one UTF-32 unit without validation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawChar32* (ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_5A619780"><a name="Streams.Writer.UTF8Char"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.UTF8Char">UTF8Char</a>
+</h3>
+<p> Encodes a Unicode code point into a UTF-8 byte sequence. Returns TRUE if encoding succeeds, FALSE for invalid code points or output errors. Rejects U+D800–U+DFFF (surrogates) and U+10FFFF.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTF8Char* (ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_5A6248C0"><a name="Streams.Writer.UTF32Char"></a><a href="#Streams">Streams</a>.<a href="#Streams.Writer">Writer</a>.<a href="#Streams.Writer.UTF32Char">UTF32Char</a>
+</h3>
+<p> Encodes a Unicode code point into a UTF-32 byte sequence. Returns TRUE if encoding succeeds, FALSE for invalid code points (U+D800–U+DFFF, U+10FFFF) or output errors. Supports big-endian (network byte order) and little-endian byte order.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTF32Char* (ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_5A630F80"><a name="Streams.StringWriter"></a><a href="#Streams">Streams</a>.<a href="#Streams.StringWriter">StringWriter</a>
+</h2>
+<p> A special writer that buffers output to be fetched by GetString or GetRawString.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringWriter* =<strong>OBJECT</strong> (<strong>Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitStringWriter (size: <strong>SIZE</strong>)<tr><td></td><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Position</strong>)<tr><td></td><td> Update<tr><td></td><td> <a href="#Streams.StringWriter.Get">Get</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.StringWriter.GetRaw">GetRaw</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_5A643A00"><a name="Streams.StringWriter.Get"></a><a href="#Streams">Streams</a>.<a href="#Streams.StringWriter">StringWriter</a>.<a href="#Streams.StringWriter.Get">Get</a>
+</h3>
+<p> Return the contents of the string writer (0X-terminated).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_5A64A280"><a name="Streams.StringWriter.GetRaw"></a><a href="#Streams">Streams</a>.<a href="#Streams.StringWriter">StringWriter</a>.<a href="#Streams.StringWriter.GetRaw">GetRaw</a>
+</h3>
+<p> Return the contents of the string writer (not 0X-terminated). The len parameters returns the string length.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetRaw* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_5A653B00"><a name="Streams.Reader"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>
+</h2>
+<p> A reader buffers input received from a Receiver. Must not be shared between processes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reader* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Streams.Reader.res">res</a>: <strong>INTEGER</strong><tr><td></td><td><a href="#Streams.Reader.received">received</a>: <strong>Position</strong><tr><td></td><td>byteOrder: <strong>ByteOrder</strong><tr><th align='left'>procedures</th><td>& InitReader (receive: <strong>Receiver</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.Reader.Reset">Reset</a><tr><td></td><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Position</strong>)<tr><td></td><td> <a href="#Streams.Reader.Available">Available</a> (): <strong>SIZE</strong><tr><td></td><td> <a href="#Streams.Reader.Pos">Pos</a> (): <strong>Position</strong><tr><td></td><td> <a href="#Streams.Reader.SetByteOrder">SetByteOrder</a> (order: <strong>ByteOrder</strong>)<tr><td></td><td> <a href="#Streams.Reader.Char">Char</a> (<strong>VAR</strong> x: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Reader.Get">Get</a> (): <strong>CHAR</strong><tr><td></td><td> <a href="#Streams.Reader.Peek">Peek</a> (): <strong>CHAR</strong><tr><td></td><td> PeekBytes (nofBytes: <strong>SIZE</strong>; <strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.PeekUTF8Char">PeekUTF8Char</a> (): <strong>Char32</strong><tr><td></td><td> <a href="#Streams.Reader.Bytes">Bytes</a> (<strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.Reader.SkipBytes">SkipBytes</a> (n: <strong>Position</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawSInt">RawSInt</a> (<strong>VAR</strong> x: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawInt8">RawInt8</a> (<strong>VAR</strong> x: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawInt">RawInt</a> (<strong>VAR</strong> x: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawInt16">RawInt16</a> (<strong>VAR</strong> x: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawLInt">RawLInt</a> (<strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawInt32">RawInt32</a> (<strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawHInt">RawHInt</a> (<strong>VAR</strong> x: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawInt64">RawInt64</a> (<strong>VAR</strong> x: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawUInt8">RawUInt8</a> (<strong>VAR</strong> x: <strong>UNSIGNED8</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawUInt16">RawUInt16</a> (<strong>VAR</strong> x: <strong>UNSIGNED16</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawUInt32">RawUInt32</a> (<strong>VAR</strong> x: <strong>UNSIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawUInt64">RawUInt64</a> (<strong>VAR</strong> x: <strong>UNSIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Reader.Net64">Net64</a> (): <strong>SIGNED64</strong><tr><td></td><td> UNet64 (): <strong>UNSIGNED64</strong><tr><td></td><td> <a href="#Streams.Reader.Net32">Net32</a> (): <strong>SIGNED32</strong><tr><td></td><td> UNet32 (): <strong>UNSIGNED32</strong><tr><td></td><td> <a href="#Streams.Reader.Net16">Net16</a> (): <strong>SIGNED32</strong><tr><td></td><td> UNet16 (): <strong>UNSIGNED16</strong><tr><td></td><td> <a href="#Streams.Reader.Net8">Net8</a> (): <strong>SIGNED32</strong><tr><td></td><td> UNet8 (): <strong>UNSIGNED8</strong><tr><td></td><td> <a href="#Streams.Reader.RawSet">RawSet</a> (<strong>VAR</strong> x: <strong>SET</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawSet8">RawSet8</a> (<strong>VAR</strong> x: <strong>SET8</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawSet16">RawSet16</a> (<strong>VAR</strong> x: <strong>SET16</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawSet32">RawSet32</a> (<strong>VAR</strong> x: <strong>SET32</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawSet64">RawSet64</a> (<strong>VAR</strong> x: <strong>SET64</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawBool">RawBool</a> (<strong>VAR</strong> x: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawReal">RawReal</a> (<strong>VAR</strong> x: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawFloat32">RawFloat32</a> (<strong>VAR</strong> x: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawLReal">RawLReal</a> (<strong>VAR</strong> x: <strong>FLOAT64</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawFloat64">RawFloat64</a> (<strong>VAR</strong> x: <strong>FLOAT64</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawString">RawString</a> (<strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawNum">RawNum</a> (<strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawNum32">RawNum32</a> (<strong>VAR</strong> x: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawHNum">RawHNum</a> (<strong>VAR</strong> x: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawNum64">RawNum64</a> (<strong>VAR</strong> x: <strong>SIGNED64</strong>)<tr><td></td><td> <a href="#Streams.Reader.RawSize">RawSize</a> (<strong>VAR</strong> x: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.Reader.UInt32">UInt32</a> (<strong>VAR</strong> x: <strong>UNSIGNED32</strong>; hex: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Reader.Int">Int</a> (<strong>VAR</strong> x: <strong>SIGNED32</strong>; hex: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Reader.Int32">Int32</a> (<strong>VAR</strong> x: <strong>SIGNED32</strong>; hex: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Reader.HInt">HInt</a> (<strong>VAR</strong> x: <strong>SIGNED64</strong>; hex: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Reader.Int64">Int64</a> (<strong>VAR</strong> x: <strong>SIGNED64</strong>; hex: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Reader.UInt64">UInt64</a> (<strong>VAR</strong> x: <strong>UNSIGNED64</strong>; hex: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Reader.Size">Size</a> (<strong>VAR</strong> x: <strong>SIZE</strong>; hex: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Reader.Address">Address</a> (<strong>VAR</strong> x: <strong>ADDRESS</strong>; hex: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Streams.Reader.EOLN">EOLN</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.Ln">Ln</a> (<strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Reader.LnEOT">LnEOT</a> (<strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Reader.SkipLn">SkipLn</a><tr><td></td><td> <a href="#Streams.Reader.SkipSpaces">SkipSpaces</a><tr><td></td><td> <a href="#Streams.Reader.SkipWhitespace">SkipWhitespace</a><tr><td></td><td> <a href="#Streams.Reader.Token">Token</a> (<strong>VAR</strong> token: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Reader.String">String</a> (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.Reader.GetString">GetString</a> (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.GetInteger">GetInteger</a> (<strong>VAR</strong> integer: <strong>SIGNED32</strong>; isHexadecimal: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.GetSize">GetSize</a> (<strong>VAR</strong> size: <strong>SIZE</strong>; isHexadecimal: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.GetReal">GetReal</a> (<strong>VAR</strong> real: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.GetChar">GetChar</a> (<strong>VAR</strong> ch: <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.RawChar16">RawChar16</a> (<strong>VAR</strong> x: <strong>Char16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.RawChar32">RawChar32</a> (<strong>VAR</strong> x: <strong>Char32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.UTF8Char">UTF8Char</a> (<strong>VAR</strong> ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.UTF16Char">UTF16Char</a> (<strong>VAR</strong> ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.Reader.UTF32Char">UTF32Char</a> (<strong>VAR</strong> ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_5A6F7EC0"><a name="Streams.Reader.res"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.res">res</a>
+</h3>
+<p> result of last input operation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> res*: <strong>INTEGER</strong></pre>
+<hr><h3 id="#_5A6FC480"><a name="Streams.Reader.received"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.received">received</a>
+</h3>
+<p> count of received bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> received*: <strong>Position</strong></pre>
+<hr><h3 id="#_5A7005C0"><a name="Streams.Reader.Reset"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Reset">Reset</a>
+</h3>
+<p> reset the reader by dropping the bytes in the buffer, resetting the result code and setting received to 0. This is used by seekable extensions of the reader</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reset*</pre>
+<hr><h3 id="#_5A709E00"><a name="Streams.Reader.Available"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Available">Available</a>
+</h3>
+<p> Return bytes currently available in input buffer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Available* (): <strong>SIZE</strong></pre>
+<hr><h3 id="#_5A70F180"><a name="Streams.Reader.Pos"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Pos">Pos</a>
+</h3>
+<p> Current read position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pos* (): <strong>Position</strong></pre>
+<hr><h3 id="#_5A7134C0"><a name="Streams.Reader.SetByteOrder"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.SetByteOrder">SetByteOrder</a>
+</h3>
+<p> Sets the byte order of the stream. Only has an effect on Unicode data.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetByteOrder* (order: <strong>ByteOrder</strong>)</pre>
+<hr><h3 id="#_5A71A840"><a name="Streams.Reader.Char"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Char">Char</a>
+</h3>
+<p> -- Read raw binary data --</p>
+
+<p> Read one byte. x=0X if no success (e.g. file ended)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Char* (<strong>VAR</strong> x: <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_5A7229C0"><a name="Streams.Reader.Get"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Get">Get</a>
+</h3>
+<p> Like Read, but return result. Return 0X if no success (e.g. file ended)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (): <strong>CHAR</strong></pre>
+<hr><h3 id="#_5A7294C0"><a name="Streams.Reader.Peek"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Peek">Peek</a>
+</h3>
+<p> Like Get, but leave the byte in the input buffer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Peek* (): <strong>CHAR</strong></pre>
+<hr><h3 id="#_5A72F780"><a name="Streams.Reader.PeekUTF8Char"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.PeekUTF8Char">PeekUTF8Char</a>
+</h3>
+<p> peek utf8 char</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PeekUTF8Char* (): <strong>Char32</strong></pre>
+<hr><h3 id="#_5A733AC0"><a name="Streams.Reader.Bytes"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Bytes">Bytes</a>
+</h3>
+<p> Read size bytes into x, starting at ofs. The len parameter returns the number of bytes that were actually read.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Bytes* (<strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_5A73F9C0"><a name="Streams.Reader.SkipBytes"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.SkipBytes">SkipBytes</a>
+</h3>
+<p> Skip n bytes on the reader.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SkipBytes* (n: <strong>Position</strong>)</pre>
+<hr><h3 id="#_5A744E40"><a name="Streams.Reader.RawSInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawSInt">RawSInt</a>
+</h3>
+<p>!DEPRECATED, use RawInt8 instead! Read a SIGNED8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSInt* (<strong>VAR</strong> x: <strong>SIGNED8</strong>)</pre>
+<hr><h3 id="#_5A74A8C0"><a name="Streams.Reader.RawInt8"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawInt8">RawInt8</a>
+</h3>
+<p> Read a SIGNED8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt8* (<strong>VAR</strong> x: <strong>SIGNED8</strong>)</pre>
+<hr><h3 id="#_5A74F480"><a name="Streams.Reader.RawInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawInt">RawInt</a>
+</h3>
+<p>!DEPRECATED, use RawInt16 instead! Read an SIGNED16.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt* (<strong>VAR</strong> x: <strong>SIGNED16</strong>)</pre>
+<hr><h3 id="#_5A754F00"><a name="Streams.Reader.RawInt16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawInt16">RawInt16</a>
+</h3>
+<p> Read an SIGNED16.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt16* (<strong>VAR</strong> x: <strong>SIGNED16</strong>)</pre>
+<hr><h3 id="#_5A759AC0"><a name="Streams.Reader.RawLInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawLInt">RawLInt</a>
+</h3>
+<p>!DEPRECATED, use RawInt32 instead! Read a SIGNED32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawLInt* (<strong>VAR</strong> x: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A75F540"><a name="Streams.Reader.RawInt32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawInt32">RawInt32</a>
+</h3>
+<p> Read a SIGNED32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt32* (<strong>VAR</strong> x: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A764100"><a name="Streams.Reader.RawHInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawHInt">RawHInt</a>
+</h3>
+<p>!DEPRECATED, use RawInt64 instead! Read a SIGNED64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawHInt* (<strong>VAR</strong> x: <strong>SIGNED64</strong>)</pre>
+<hr><h3 id="#_5A769B80"><a name="Streams.Reader.RawInt64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawInt64">RawInt64</a>
+</h3>
+<p> Read a SIGNED64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawInt64* (<strong>VAR</strong> x: <strong>SIGNED64</strong>)</pre>
+<hr><h3 id="#_5A76E740"><a name="Streams.Reader.RawUInt8"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawUInt8">RawUInt8</a>
+</h3>
+<p> Read a UNSIGNED8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawUInt8* (<strong>VAR</strong> x: <strong>UNSIGNED8</strong>)</pre>
+<hr><h3 id="#_5A773300"><a name="Streams.Reader.RawUInt16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawUInt16">RawUInt16</a>
+</h3>
+<p> Read an UNSIGNED16.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawUInt16* (<strong>VAR</strong> x: <strong>UNSIGNED16</strong>)</pre>
+<hr><h3 id="#_5A777EC0"><a name="Streams.Reader.RawUInt32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawUInt32">RawUInt32</a>
+</h3>
+<p> Read a UNSIGNED32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawUInt32* (<strong>VAR</strong> x: <strong>UNSIGNED32</strong>)</pre>
+<hr><h3 id="#_5A77CA80"><a name="Streams.Reader.RawUInt64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawUInt64">RawUInt64</a>
+</h3>
+<p> Read a UNSIGNED64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawUInt64* (<strong>VAR</strong> x: <strong>UNSIGNED64</strong>)</pre>
+<hr><h3 id="#_5A781640"><a name="Streams.Reader.Net64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Net64">Net64</a>
+</h3>
+<p> Read a 64 bit value in network byte order (most significant byte first)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Net64* (): <strong>SIGNED64</strong></pre>
+<hr><h3 id="#_5A788140"><a name="Streams.Reader.Net32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Net32">Net32</a>
+</h3>
+<p> Read a 32 bit value in network byte order (most significant byte first)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Net32* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_5A78EC40"><a name="Streams.Reader.Net16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Net16">Net16</a>
+</h3>
+<p> Read an unsigned 16bit value in network byte order (most significant byte first)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Net16* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_5A795740"><a name="Streams.Reader.Net8"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Net8">Net8</a>
+</h3>
+<p> Read an unsigned byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Net8* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_5A799EC0"><a name="Streams.Reader.RawSet"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawSet">RawSet</a>
+</h3>
+<p> Read a SET.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSet* (<strong>VAR</strong> x: <strong>SET</strong>)</pre>
+<hr><h3 id="#_5A79EA80"><a name="Streams.Reader.RawSet8"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawSet8">RawSet8</a>
+</h3>
+<p> Read a SET8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSet8* (<strong>VAR</strong> x: <strong>SET8</strong>)</pre>
+<hr><h3 id="#_5A7A3640"><a name="Streams.Reader.RawSet16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawSet16">RawSet16</a>
+</h3>
+<p> Read a SET16.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSet16* (<strong>VAR</strong> x: <strong>SET16</strong>)</pre>
+<hr><h3 id="#_5A7A8200"><a name="Streams.Reader.RawSet32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawSet32">RawSet32</a>
+</h3>
+<p> Read a SET32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSet32* (<strong>VAR</strong> x: <strong>SET32</strong>)</pre>
+<hr><h3 id="#_5A7ACDC0"><a name="Streams.Reader.RawSet64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawSet64">RawSet64</a>
+</h3>
+<p> Read a SET64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSet64* (<strong>VAR</strong> x: <strong>SET64</strong>)</pre>
+<hr><h3 id="#_5A7B1980"><a name="Streams.Reader.RawBool"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawBool">RawBool</a>
+</h3>
+<p> Read a BOOLEAN.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawBool* (<strong>VAR</strong> x: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_5A7B6540"><a name="Streams.Reader.RawReal"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawReal">RawReal</a>
+</h3>
+<p>!DEPRECATED, use RawFloat32 instead! Read a FLOAT32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawReal* (<strong>VAR</strong> x: <strong>FLOAT32</strong>)</pre>
+<hr><h3 id="#_5A7BBFC0"><a name="Streams.Reader.RawFloat32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawFloat32">RawFloat32</a>
+</h3>
+<p> Read a FLOAT32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawFloat32* (<strong>VAR</strong> x: <strong>FLOAT32</strong>)</pre>
+<hr><h3 id="#_5A7C0B80"><a name="Streams.Reader.RawLReal"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawLReal">RawLReal</a>
+</h3>
+<p>!DEPRECATED, use RawFloat64 instead! Read a FLOAT64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawLReal* (<strong>VAR</strong> x: <strong>FLOAT64</strong>)</pre>
+<hr><h3 id="#_5A7C6600"><a name="Streams.Reader.RawFloat64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawFloat64">RawFloat64</a>
+</h3>
+<p> Read a FLOAT64.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawFloat64* (<strong>VAR</strong> x: <strong>FLOAT64</strong>)</pre>
+<hr><h3 id="#_5A7CB1C0"><a name="Streams.Reader.RawString"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawString">RawString</a>
+</h3>
+<p> Read a 0X-terminated string. If the input string is larger than x, read the full string and assign the truncated 0X-terminated value to x.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawString* (<strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_5A7D5640"><a name="Streams.Reader.RawNum"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawNum">RawNum</a>
+</h3>
+<p> DEPRECATED use RawNum32 instead. Read a number in a compressed format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawNum* (<strong>VAR</strong> x: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A7DC2C0"><a name="Streams.Reader.RawNum32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawNum32">RawNum32</a>
+</h3>
+<p> Read a number in a compressed format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawNum32* (<strong>VAR</strong> x: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_5A7E1EC0"><a name="Streams.Reader.RawHNum"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawHNum">RawHNum</a>
+</h3>
+<p> DEPRECATED use RawNum64 instead. Read a huge number in a compressed format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawHNum* (<strong>VAR</strong> x: <strong>SIGNED64</strong>)</pre>
+<hr><h3 id="#_5A7E8EC0"><a name="Streams.Reader.RawNum64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawNum64">RawNum64</a>
+</h3>
+<p> Read a huge number in a compressed format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawNum64* (<strong>VAR</strong> x: <strong>SIGNED64</strong>)</pre>
+<hr><h3 id="#_56837CC0"><a name="Streams.Reader.RawSize"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawSize">RawSize</a>
+</h3>
+<p> Read a size in a compressed format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawSize* (<strong>VAR</strong> x: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_56846D00"><a name="Streams.Reader.UInt32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.UInt32">UInt32</a>
+</h3>
+<p> -- Read formatted data (uses Peek for one character lookahead) --</p>
+
+<p> Read an unsigned32 value in decimal or hexadecimal. If hex = TRUE, recognize the "H" postfix for hexadecimal numbers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UInt32* (<strong>VAR</strong> x: <strong>UNSIGNED32</strong>; hex: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_56853B00"><a name="Streams.Reader.Int"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Int">Int</a>
+</h3>
+<p> DEPRECATED, use Int32 instead. Read a signed32 value in decimal or hexadecimal. If hex = TRUE, recognize the "H" postfix for hexadecimal numbers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Int* (<strong>VAR</strong> x: <strong>SIGNED32</strong>; hex: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_56861380"><a name="Streams.Reader.Int32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Int32">Int32</a>
+</h3>
+<p> Read a signed32 value in decimal or hexadecimal. If hex = TRUE, recognize the "H" postfix for hexadecimal numbers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Int32* (<strong>VAR</strong> x: <strong>SIGNED32</strong>; hex: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_5686AC80"><a name="Streams.Reader.HInt"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.HInt">HInt</a>
+</h3>
+<p> DEPRECATED, use Int64 instead. Read a signed64 value in decimal or hexadecimal. If hex = TRUE, recognize the "H" postfix for hexadecimal numbers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HInt* (<strong>VAR</strong> x: <strong>SIGNED64</strong>; hex: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_56875380"><a name="Streams.Reader.Int64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Int64">Int64</a>
+</h3>
+<p> Read a signed64 value in decimal or hexadecimal. If hex = TRUE, recognize the "H" postfix for hexadecimal numbers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Int64* (<strong>VAR</strong> x: <strong>SIGNED64</strong>; hex: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_56882540"><a name="Streams.Reader.UInt64"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.UInt64">UInt64</a>
+</h3>
+<p> Read an unsigned64 value in decimal or hexadecimal. If hex = TRUE, recognize the "H" postfix for hexadecimal numbers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UInt64* (<strong>VAR</strong> x: <strong>UNSIGNED64</strong>; hex: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_5688BE40"><a name="Streams.Reader.Size"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Size">Size</a>
+</h3>
+<p> Read a size value in decimal or hexadecimal. If hex = TRUE, recognize the "H" postfix for hexadecimal numbers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Size* (<strong>VAR</strong> x: <strong>SIZE</strong>; hex: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_56897880"><a name="Streams.Reader.Address"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Address">Address</a>
+</h3>
+<p> Read an address value in decimal or hexadecimal. If hex = TRUE, recognize the "H" postfix for hexadecimal numbers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Address* (<strong>VAR</strong> x: <strong>ADDRESS</strong>; hex: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_568A2240"><a name="Streams.Reader.EOLN"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.EOLN">EOLN</a>
+</h3>
+<p> Return TRUE iff at the end of a line (or file).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EOLN* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_568A8640"><a name="Streams.Reader.Ln"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Ln">Ln</a>
+</h3>
+<p> Read all characters until the end of the line (inclusive). If the input string is larger than x, read the full string and assign the truncated 0X-terminated value to x.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Ln* (<strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_568B4300"><a name="Streams.Reader.LnEOT"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.LnEOT">LnEOT</a>
+</h3>
+<p> Read all characters until the end of the line (inclusive) or an <a name="EOT&gt"></a> character. If the input string is larger than x, read the full string and assign the truncated 0X-terminated value to x.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LnEOT* (<strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_568C0DC0"><a name="Streams.Reader.SkipLn"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.SkipLn">SkipLn</a>
+</h3>
+<p> Skip over all characters until the end of the line (inclusive).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SkipLn*</pre>
+<hr><h3 id="#_568C6540"><a name="Streams.Reader.SkipSpaces"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.SkipSpaces">SkipSpaces</a>
+</h3>
+<p> Skip over space and TAB characters.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SkipSpaces*</pre>
+<hr><h3 id="#_568CA840"><a name="Streams.Reader.SkipWhitespace"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.SkipWhitespace">SkipWhitespace</a>
+</h3>
+<p> Skip over space, TAB and EOLN characters.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SkipWhitespace*</pre>
+<hr><h3 id="#_568CEF40"><a name="Streams.Reader.Token"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.Token">Token</a>
+</h3>
+<p> Read a token, consisting of any string of characters terminated by space, TAB or EOLN.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Token* (<strong>VAR</strong> token: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_568D71C0"><a name="Streams.Reader.String"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.String">String</a>
+</h3>
+<p> Read an optionally "" or '' enquoted string. Will not read past the end of a line.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> String* (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_568DFD40"><a name="Streams.Reader.GetString"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.GetString">GetString</a>
+</h3>
+<p> First skip whitespace, then read string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetString* (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_568E6340"><a name="Streams.Reader.GetInteger"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.GetInteger">GetInteger</a>
+</h3>
+<p> First skip whitespace, then read integer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetInteger* (<strong>VAR</strong> integer: <strong>SIGNED32</strong>; isHexadecimal: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_568ECF40"><a name="Streams.Reader.GetSize"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.GetSize">GetSize</a>
+</h3>
+<p> First skip whitespace, then read size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetSize* (<strong>VAR</strong> size: <strong>SIZE</strong>; isHexadecimal: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_568F3B40"><a name="Streams.Reader.GetReal"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.GetReal">GetReal</a>
+</h3>
+<p> First skip whitespace, then read a real</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetReal* (<strong>VAR</strong> real: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_568F9DC0"><a name="Streams.Reader.GetChar"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.GetChar">GetChar</a>
+</h3>
+<p> First skip whitespace, then read 1 byte character</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetChar* (<strong>VAR</strong> ch: <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_56902C00"><a name="Streams.Reader.RawChar16"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawChar16">RawChar16</a>
+</h3>
+<p> -- unicode --</p>
+
+<p> Try raw read one UTF-16 unit</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawChar16* (<strong>VAR</strong> x: <strong>Char16</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_569098C0"><a name="Streams.Reader.RawChar32"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.RawChar32">RawChar32</a>
+</h3>
+<p> Try raw read one UTF-32 unit</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RawChar32* (<strong>VAR</strong> x: <strong>Char32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_5690F740"><a name="Streams.Reader.UTF8Char"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.UTF8Char">UTF8Char</a>
+</h3>
+<p> Decodes a UTF-8 encoded character from a byte stream into a 32-bit Unicode code point. Returns TRUE if a valid UTF-8 sequence is decoded and ucs is set, FALSE for invalid sequences (U+D800–U+DFFF, U+10FFFF) or insufficient bytes.</p>
+
+<p> On success, advances the stream position by the appropriate number of bytes.</p>
+
+<p> UTF-8 sequences are validated according to the standard:  0x00..0x7F  0xC2..0xDF + 1 continuation byte  0xE0..0xEF + 2 continuation bytes (with overlong and surrogate checks)  0xF0..0xF4 + 3 continuation bytes (limited to <a name="="></a> U+10FFFF)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTF8Char* (<strong>VAR</strong> ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_5692DCC0"><a name="Streams.Reader.UTF16Char"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.UTF16Char">UTF16Char</a>
+</h3>
+<p> Decodes a UTF-16 encoded character from a byte stream into a 32-bit Unicode code point. Returns TRUE if a valid UTF-16 sequence is decoded and ucs is set, FALSE for invalid sequences or insufficient bytes. Handles BMP (U+0000–U+D7FF, U+E000–U+FFFF) and supplementary plane (U+10000–U+10FFFF) via surrogate pairs. Supports big-endian and little-endian byte order.</p>
+
+<p> On success, advances the stream position by the appropriate number of bytes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTF16Char* (<strong>VAR</strong> ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_56942D00"><a name="Streams.Reader.UTF32Char"></a><a href="#Streams">Streams</a>.<a href="#Streams.Reader">Reader</a>.<a href="#Streams.Reader.UTF32Char">UTF32Char</a>
+</h3>
+<p> Decodes a UTF-32 encoded character from a byte stream into a 32-bit Unicode code point. Returns TRUE if a valid UTF-32 sequence is decoded and ucs is set, FALSE for invalid sequences (U+D800–U+DFFF, U+10FFFF) or insufficient bytes. Supports big-endian (network byte order) and little-endian byte order.</p>
+
+<p> On success, advances the stream position by the appropriate number of bytes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTF32Char* (<strong>VAR</strong> ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_569950C0"><a name="Streams.StringReader"></a><a href="#Streams">Streams</a>.<a href="#Streams.StringReader">StringReader</a>
+</h2>
+<p> A special reader that buffers input set by SetString or SetRawString.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringReader* =<strong>OBJECT</strong> (<strong>Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitStringReader (size: <strong>SIZE</strong>)<tr><td></td><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Streams.StringReader.SetPos">SetPos</a> (pos: <strong>Position</strong>)<tr><td></td><td> <a href="#Streams.StringReader.Set">Set</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Streams.StringReader.SetRaw">SetRaw</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_569A7EC0"><a name="Streams.StringReader.SetPos"></a><a href="#Streams">Streams</a>.<a href="#Streams.StringReader">StringReader</a>.<a href="#Streams.StringReader.SetPos">SetPos</a>
+</h3>
+<p> Set the reader position</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetPos* (pos: <strong>Position</strong>)</pre>
+<hr><h3 id="#_569AEC80"><a name="Streams.StringReader.Set"></a><a href="#Streams">Streams</a>.<a href="#Streams.StringReader">StringReader</a>.<a href="#Streams.StringReader.Set">Set</a>
+</h3>
+<p> Set the contents of the string buffer. The s parameter is a 0X-terminated string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Set* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_569B6B80"><a name="Streams.StringReader.SetRaw"></a><a href="#Streams">Streams</a>.<a href="#Streams.StringReader">StringReader</a>.<a href="#Streams.StringReader.SetRaw">SetRaw</a>
+</h3>
+<p> Set the contents of the string buffer. The len parameter specifies the size of the buffer s.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetRaw* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_569C0D00"><a name="Streams.Buffer"></a><a href="#Streams">Streams</a>.<a href="#Streams.Buffer">Buffer</a>
+</h2>
+<p> The stringmaker creates an automatically growing character array from the input with an Streams writer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Buffer* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Add (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Shorten (n: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Streams.Buffer.Clear">Clear</a><tr><td></td><td> <a href="#Streams.Buffer.GetWriter">GetWriter</a> (): <strong>Writer</strong><tr><td></td><td> <a href="#Streams.Buffer.GetReader">GetReader</a> (): <strong>StringReader</strong><tr><td></td><td> <a href="#Streams.Buffer.GetLength">GetLength</a> (): <strong>SIZE</strong><tr><td></td><td> <a href="#Streams.Buffer.GetString">GetString</a> (): <strong>String</strong><tr><td></td><td> GetStringCopy (): <strong>String</strong><tr><td></td><td> Write (out: <strong>Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_569DA900"><a name="Streams.Buffer.Clear"></a><a href="#Streams">Streams</a>.<a href="#Streams.Buffer">Buffer</a>.<a href="#Streams.Buffer.Clear">Clear</a>
+</h3>
+<p> resets the length of the string to 0. The buffer is reused</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Clear*</pre>
+<hr><h3 id="#_569E0400"><a name="Streams.Buffer.GetWriter"></a><a href="#Streams">Streams</a>.<a href="#Streams.Buffer">Buffer</a>.<a href="#Streams.Buffer.GetWriter">GetWriter</a>
+</h3>
+<p> returns an Streams.Writer to the string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetWriter* (): <strong>Writer</strong></pre>
+<hr><h3 id="#_569E5400"><a name="Streams.Buffer.GetReader"></a><a href="#Streams">Streams</a>.<a href="#Streams.Buffer">Buffer</a>.<a href="#Streams.Buffer.GetReader">GetReader</a>
+</h3>
+<p> returns an Streams.StringReader to the string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetReader* (): <strong>StringReader</strong></pre>
+<hr><h3 id="#_569EA400"><a name="Streams.Buffer.GetLength"></a><a href="#Streams">Streams</a>.<a href="#Streams.Buffer">Buffer</a>.<a href="#Streams.Buffer.GetLength">GetLength</a>
+</h3>
+<p> returns the number of bytes written to the string. The Streams.Writer is updated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetLength* (): <strong>SIZE</strong></pre>
+<hr><h3 id="#_569F0F00"><a name="Streams.Buffer.GetString"></a><a href="#Streams">Streams</a>.<a href="#Streams.Buffer">Buffer</a>.<a href="#Streams.Buffer.GetString">GetString</a>
+</h3>
+<p> returns the current string buffer. If the string maker is reused, the content of the string may or may not vary. The application might need to copy the returned string. The Streams.Writer is updated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetString* (): <strong>String</strong></pre>
+<hr><h2 id="#_56A18640"><a name="Streams.OpenWriter"></a><a href="#Streams">Streams</a>.<a href="#Streams.OpenWriter">OpenWriter</a>
+</h2>
+<p> Open a writer to the specified stream sender. Update must be called after writing to ensure the buffer is written to the stream.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenWriter* (<strong>VAR</strong> b: <strong>Writer</strong>; send: <strong>Sender</strong>)</pre>
+<hr><h2 id="#_56A22680"><a name="Streams.OpenReader"></a><a href="#Streams">Streams</a>.<a href="#Streams.OpenReader">OpenReader</a>
+</h2>
+<p> Open a reader from the specified stream receiver.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenReader* (<strong>VAR</strong> b: <strong>Reader</strong>; receive: <strong>Receiver</strong>)</pre>
+<hr><h2 id="#_56A29EC0"><a name="Streams.OpenStringWriter"></a><a href="#Streams">Streams</a>.<a href="#Streams.OpenStringWriter">OpenStringWriter</a>
+</h2>
+<p> Open a string writer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenStringWriter* (<strong>VAR</strong> b: <strong>StringWriter</strong>; size: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_56A30680"><a name="Streams.OpenStringReader"></a><a href="#Streams">Streams</a>.<a href="#Streams.OpenStringReader">OpenStringReader</a>
+</h2>
+<p> Open a string reader</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenStringReader* (<strong>VAR</strong> b: <strong>StringReader</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_56A369C0"><a name="Streams.Copy"></a><a href="#Streams">Streams</a>.<a href="#Streams.Copy">Copy</a>
+</h2>
+<p> Copy the contents of a reader to a writer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Copy* (r: <strong>Reader</strong>; w: <strong>Writer</strong>)</pre>
+</body></html>

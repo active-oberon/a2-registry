@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Unix">Unix</a></p>
+<hr><h1 id="#_F1584500"><a name="Unix"></a><a href="#ModuleList">Module</a> Unix
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Version= "Linux"<tr><td></td><td>libcname= "libc.so.6"<tr><td></td><td>libX11name= "libX11.so.6"<tr><td></td><td><a href="#Unix.LittleEndian">LittleEndian</a>= TRUE<tr><td></td><td><a href="#Unix.LsbIs0">LsbIs0</a>= TRUE<tr><td></td><td>PageSize= 4096<tr><td></td><td>stdin= 0<tr><td></td><td>stdout= 1<tr><td></td><td>stderr= 2<tr><td></td><td><a href="#Unix.EPERM">EPERM</a>= 1<tr><td></td><td>ENOENT= 2<tr><td></td><td>ESRCH= 3<tr><td></td><td>EINTR= 4<tr><td></td><td>EIO= 5<tr><td></td><td>ENXIO= 6<tr><td></td><td>E2BIG= 7<tr><td></td><td>ENOEXEC= 8<tr><td></td><td>EBADF= 9<tr><td></td><td>ECHILD= 10<tr><td></td><td>EAGAIN= 11<tr><td></td><td>ENOMEM= 12<tr><td></td><td>EACCES= 13<tr><td></td><td>EFAULT= 14<tr><td></td><td>ENOTBLK= 15<tr><td></td><td>EBUSY= 16<tr><td></td><td>EEXIST= 17<tr><td></td><td>EXDEV= 18<tr><td></td><td>ENODEV= 19<tr><td></td><td>ENOTDIR= 20<tr><td></td><td>EISDIR= 21<tr><td></td><td>EINVAL= 22<tr><td></td><td>ENFILE= 23<tr><td></td><td>EMFILE= 24<tr><td></td><td>ENOTTY= 25<tr><td></td><td>ETXTBSY= 26<tr><td></td><td>EFBIG= 27<tr><td></td><td>ENOSPC= 28<tr><td></td><td>ESPIPE= 29<tr><td></td><td>EROFS= 30<tr><td></td><td>EMLINK= 31<tr><td></td><td>EPIPE= 32<tr><td></td><td>EDOM= 33<tr><td></td><td>ERANGE= 34<tr><td></td><td>ENOMSG= 42<tr><td></td><td>EIDRM= 43<tr><td></td><td>ECHRNG= 44<tr><td></td><td>EL2NSYNC= 45<tr><td></td><td>EL3HLT= 46<tr><td></td><td>EL3RST= 47<tr><td></td><td>ELNRNG= 48<tr><td></td><td>EUNATCH= 49<tr><td></td><td>ENOCSI= 50<tr><td></td><td>EL2HLT= 51<tr><td></td><td>EDEADLK= 35<tr><td></td><td>ENOLCK= 37<tr><td></td><td><a href="#Unix.O_ACCMODE">O_ACCMODE</a>= 3<tr><td></td><td>O_RDONLY= 0<tr><td></td><td>O_WRONLY= 1<tr><td></td><td>O_RDWR= 2<tr><td></td><td>O_CREAT= 64<tr><td></td><td>O_EXCL= 128<tr><td></td><td>O_NOCTTY= 256<tr><td></td><td>O_TRUNC= 512<tr><td></td><td>O_APPEND= 1024<tr><td></td><td>O_NONBLOCK= 2048<tr><td></td><td>O_DSYNC= 4096<tr><td></td><td>O_DIRECT= 16384<tr><td></td><td>O_LARGEFILE= 0<tr><td></td><td>O_DIRECTORY= 65536<tr><td></td><td>O_NOFOLLOW= 131072<tr><td></td><td>O_NOATIME= 262144<tr><td></td><td>O_CLOEXEC= 524288<tr><td></td><td>O_SYNC= 1052672<tr><td></td><td>O_PATH= 2097152<tr><td></td><td>O_TMPFILE= 4259840<tr><td></td><td>O_NDELAY= 2048<tr><td></td><td><a href="#Unix.PROT_READ">PROT_READ</a>= 1<tr><td></td><td>PROT_WRITE= 2<tr><td></td><td>PROT_EXEC= 4<tr><td></td><td>PROT_SEM= 8<tr><td></td><td>PROT_NONE= 0<tr><td></td><td>PROT_GROWSDOWN= 16777216<tr><td></td><td>PROT_GROWSUP= 33554432<tr><td></td><td><a href="#Unix.MAP_SHARED">MAP_SHARED</a>= 1<tr><td></td><td>MAP_PRIVATE= 2<tr><td></td><td>MAP_TYPE= 15<tr><td></td><td>MAP_FIXED= 16<tr><td></td><td>MAP_ANONYMOUS= 32<tr><td></td><td>MAP_GROWSDOWN= 256<tr><td></td><td>MAP_DENYWRITE= 2048<tr><td></td><td>MAP_EXECUTABLE= 4096<tr><td></td><td>MAP_LOCKED= 8192<tr><td></td><td>MAP_NORESERVE= 16384<tr><td></td><td>MAP_POPULATE= 32768<tr><td></td><td>MAP_NONBLOCK= 65536<tr><td></td><td>MAP_STACK= 131072<tr><td></td><td>MAP_HUGETLB= 262144<tr><td></td><td>MAP_SYNC= 524288<tr><td></td><td>MAP_FIXED_NOREPLACE= 1048576<tr><td></td><td>MAP_UNINITIALIZED= 67108864<tr><td></td><td>rdonly= SET32(O_RDONLY)<tr><td></td><td>rdwr= SET32(O_RDWR)<tr><td></td><td>creat= SET32(O_CREAT)<tr><td></td><td>trunc= SET32(O_TRUNC)<tr><td></td><td>rwrwr= 436<tr><td></td><td>rwxrwxrwx= 511<tr><td></td><td>F_OK= {}<tr><td></td><td>X_Ok= {0}<tr><td></td><td>W_OK= {1}<tr><td></td><td>R_OK= {2}<tr><td></td><td>SIGHUP= 1<tr><td></td><td>SIGINT= 2<tr><td></td><td>SIGQUIT= 3<tr><td></td><td>SIGILL= 4<tr><td></td><td>SIGTRAP= 5<tr><td></td><td>SIGABRT= 6<tr><td></td><td>SIGIOT= 6<tr><td></td><td>SIGBUS= 7<tr><td></td><td>SIGFPE= 8<tr><td></td><td>SIGKILL= 9<tr><td></td><td>SIGUSR1= 10<tr><td></td><td>SIGSEGV= 11<tr><td></td><td>SIGUSR2= 12<tr><td></td><td>SIGPIPE= 13<tr><td></td><td>SIGALRM= 14<tr><td></td><td>SIGTERM= 15<tr><td></td><td>SIGSTKFLT= 16<tr><td></td><td>SIGCHLD= 17<tr><td></td><td>SIGCONT= 18<tr><td></td><td>SIGSTOP= 19<tr><td></td><td>SIGTSTP= 20<tr><td></td><td>SIGTTIN= 21<tr><td></td><td>SIGTTOU= 22<tr><td></td><td>SIGURG= 23<tr><td></td><td>SIGXCPU= 24<tr><td></td><td>SIGXFSZ= 25<tr><td></td><td>SIGVTALRM= 26<tr><td></td><td>SIGPROF= 27<tr><td></td><td>SIGWINCH= 28<tr><td></td><td>SIGIO= 29<tr><td></td><td>SIGPOLL= SIGIO<tr><td></td><td>SIGPWR= 30<tr><td></td><td>SIGSYS= 31<tr><td></td><td>CLOCK_MONOTONIC= 1<tr><td></td><td>CLOCK_MONOTONIC_RAW= 4<tr><td></td><td>CLOCK_PROCESS_CPUTIME_ID= 2<tr><td></td><td>CLOCK_REALTIME= 0<tr><td></td><td>CLOCK_THREAD_CPUTIME_ID= 3<tr><td></td><td>PTHREAD_BARRIER_SERIAL_THREAD= -1<tr><td></td><td>CPUSetSize= 128<tr><td></td><td>ThreadLow= 1<tr><td></td><td>ThreadNormal= 20<tr><td></td><td>ThreadHigh= 99<tr><td></td><td>NumPriorities= 99<tr><td></td><td>AFINET= 2<tr><td></td><td>AFINET6= 10<tr><td></td><td>PFINET= AFINET<tr><td></td><td>PFINET6= AFINET6<tr><td></td><td>SockStream= 1<tr><td></td><td>SockDGram= 2<tr><td></td><td>IpProtoUDP= 17<tr><td></td><td>IpProtoTCP= 6<tr><td></td><td>SoLSocket= 1<tr><td></td><td>SoLinger= 13<tr><td></td><td>SoKeepAlive= 9<tr><td></td><td>SoNoDelay= 1<tr><td></td><td>FioNRead= 21531<tr><td></td><td>MsgPeek= 2<tr><td></td><td>MsgDontWait= 64<tr><td></td><td>ShutRDWR= 2<tr><td></td><td>SockAddrSizeV4= 16<tr><td></td><td>SockAddrSizeV6= 28<tr><td></td><td>FIONREAD= 21531<tr><td></td><td>TIOCMGET= 21525<tr><td></td><td>TIOCMBIS= 21526<tr><td></td><td>TIOCMBIC= 21527<tr><td></td><td>TIOCMSET= 21528<tr><td></td><td>B0= 0<tr><td></td><td>B50= 1<tr><td></td><td>B75= 2<tr><td></td><td>B110= 3<tr><td></td><td>B134= 4<tr><td></td><td>B150= 5<tr><td></td><td>B200= 6<tr><td></td><td>B300= 7<tr><td></td><td>B600= 8<tr><td></td><td>B1200= 9<tr><td></td><td>B1800= 10<tr><td></td><td>B2400= 11<tr><td></td><td>B4800= 12<tr><td></td><td>B9600= 13<tr><td></td><td>B19200= 14<tr><td></td><td>B38400= 15<tr><td></td><td>B57600= 4097<tr><td></td><td>B115200= 4098<tr><td></td><td>B230400= 4099<tr><td></td><td>CSIZE= {4,5}<tr><td></td><td>CS5= {}<tr><td></td><td>CS6= {4}<tr><td></td><td>CS7= {5}<tr><td></td><td>CS8= {4,5}<tr><td></td><td>CSTOPB= {6}<tr><td></td><td>CREAD= {7}<tr><td></td><td>PARENB= {8}<tr><td></td><td>PARODD= {9}<tr><td></td><td>HUPCL= {10}<tr><td></td><td>CLOCAL= {11}<tr><td></td><td>FdSetLen= 32<tr><th align='left'>type declarations</th><td>Thread_t =<strong>ADDRESS</strong><tr><td></td><td>Mutex_t =<strong>ADDRESS</strong><tr><td></td><td>Condition_t =<strong>ADDRESS</strong><tr><td></td><td>Key_t =<strong>ADDRESS</strong><tr><td></td><td>path_t =<strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>arg_t =<strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>argv_t =<strong>ARRAY</strong> <strong>OF</strong> <strong>arg_t</strong><tr><td></td><td><a href="#Unix.Sem">Sem</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Unix.Barrier">Barrier</a> =<strong>RECORD</strong> <tr><td></td><td>CPUSet =<strong>ARRAY</strong> (CPUSetSizeDIV((MAX(SET)-MIN(SET))+1)) <strong>OF</strong> <strong>SET</strong><tr><td></td><td><a href="#Unix.Termios">Termios</a> =<strong>RECORD</strong> <tr><td></td><td>dev_t =<strong>SIGNED64</strong><tr><td></td><td>ino_t =<strong>LONGINTEGER</strong><tr><td></td><td>nlink_t =<strong>LONGINTEGER</strong><tr><td></td><td>mode_t =<strong>INTEGER</strong><tr><td></td><td>off_t =<strong>LONGINTEGER</strong><tr><td></td><td>blksize_t =<strong>LONGINTEGER</strong><tr><td></td><td>blkcnt_t =<strong>LONGINTEGER</strong><tr><td></td><td>uid_t =<strong>SIGNED32</strong><tr><td></td><td>gid_t =<strong>SIGNED32</strong><tr><td></td><td>pid_t =<strong>SIGNED32</strong><tr><td></td><td><a href="#Unix.Status">Status</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Unix.tvPtr">tvPtr</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>Timeval</strong><tr><td></td><td><a href="#Unix.Timeval">Timeval</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Unix.TmPtr">TmPtr</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>Tm</strong><tr><td></td><td><a href="#Unix.Tm">Tm</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Unix.Tms">Tms</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Unix.Timezone">Timezone</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Unix.Itimerval">Itimerval</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Unix.Timespec">Timespec</a> =<strong>RECORD</strong> <tr><td></td><td>FdSet =<strong>ARRAY</strong> FdSetLen <strong>OF</strong> <strong>SET32</strong><tr><td></td><td><a href="#Unix.Dirent">Dirent</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Unix.Stack">Stack</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Unix.Ucontext">Ucontext</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>UcontextDesc</strong><tr><td></td><td><a href="#Unix.UcontextDesc">UcontextDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Unix.Mcontext">Mcontext</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>McontextDesc</strong><tr><td></td><td><a href="#Unix.McontextDesc">McontextDesc</a> =<strong>RECORD</strong> <tr><td></td><td>OberonXErrorHandler =<strong>PROCEDURE</strong> (disp, err: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>OberonXIOErrorHandler =<strong>PROCEDURE</strong> (disp: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><th align='left'>variables</th><td>argc: <strong>SIGNED32</strong><tr><td></td><td>argv: <strong>ADDRESS</strong><tr><td></td><td>environ: <strong>ADDRESS</strong><tr><td></td><td>sysinfo: <strong>RECORD</strong> <tr><td></td><td>pthread_create: <strong>PROCEDURE</strong>{C} (newthread: <strong>ADDRESS</strong>; attr: <strong>ADDRESS</strong>; start_routine: <strong>ADDRESS</strong>; arg: <strong>PROCEDURE</strong> ): <strong>INTEGER</strong><tr><td></td><td>pthread_join: <strong>PROCEDURE</strong>{C} (thread: <strong>Thread_t</strong>; return: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>pthread_self: <strong>PROCEDURE</strong>{C} (): <strong>Thread_t</strong><tr><td></td><td>nanosleep: <strong>PROCEDURE</strong>{C} (req, rem: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>sem_init: <strong>PROCEDURE</strong>{C} (sem: <strong>ADDRESS</strong>; pshared: <strong>INTEGER</strong>; value: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td>sem_wait: <strong>PROCEDURE</strong>{C} (sem: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>sem_post: <strong>PROCEDURE</strong>{C} (sem: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>sem_destroy: <strong>PROCEDURE</strong>{C} (sem: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>pthread_barrier_init: <strong>PROCEDURE</strong>{C} (barrier: <strong>ADDRESS</strong>; attr: <strong>ADDRESS</strong>; count: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td>pthread_barrier_wait: <strong>PROCEDURE</strong>{C} (barrier: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>pthread_barrier_destroy: <strong>PROCEDURE</strong>{C} (barrier: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>pthread_getaffinity_np: <strong>PROCEDURE</strong>{C} (thread: <strong>Thread_t</strong>; cpusetsize: <strong>SIZE</strong>; cpuset: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>pthread_setaffinity_np: <strong>PROCEDURE</strong>{C} (thread: <strong>Thread_t</strong>; cpusetsize: <strong>SIZE</strong>; cpuset: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>posix_spawnp: <strong>PROCEDURE</strong>{C} (pid: <strong>ADDRESS</strong>; path: <strong>ADDRESS</strong>; file_actions: <strong>ADDRESS</strong>; attrp: <strong>ADDRESS</strong>; argv: <strong>ADDRESS</strong>; envp: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>posix_spawn: <strong>PROCEDURE</strong>{C} (pid: <strong>ADDRESS</strong>; path: <strong>ADDRESS</strong>; file_actions: <strong>ADDRESS</strong>; attrp: <strong>ADDRESS</strong>; argv: <strong>ADDRESS</strong>; envp: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>waitpid: <strong>PROCEDURE</strong>{C} (pid: <strong>pid_t</strong>; status: <strong>ADDRESS</strong>; options: <strong>SIGNED32</strong>): <strong>pid_t</strong><tr><td></td><td>pipe: <strong>PROCEDURE</strong>{C} (pipefd: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>dup2: <strong>PROCEDURE</strong>{C} (oldfd, newfd: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>dup: <strong>PROCEDURE</strong>{C} (oldfd: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>read: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; buf: <strong>ADDRESS</strong>; n: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td>write: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; buf: <strong>ADDRESS</strong>; n: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td>pread: <strong>PROCEDURE</strong>{C} (fd: <strong>INTEGER</strong>; buf: <strong>ADDRESS</strong>; count: <strong>SIZE</strong>; offset: <strong>off_t</strong>): <strong>SIZE</strong><tr><td></td><td>pwrite: <strong>PROCEDURE</strong>{C} (fd: <strong>INTEGER</strong>; buf: <strong>ADDRESS</strong>; count: <strong>SIZE</strong>; offset: <strong>off_t</strong>): <strong>SIZE</strong><tr><td></td><td>open: <strong>PROCEDURE</strong>{C} (name: <strong>ADDRESS</strong>; flags: <strong>SET32</strong>; mode: <strong>mode_t</strong>): <strong>SIGNED32</strong><tr><td></td><td>close: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>lseek: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; offset: <strong>off_t</strong>; origin: <strong>SIGNED32</strong>): <strong>off_t</strong><tr><td></td><td>fsync: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>ioctl: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; request: <strong>SIGNED32</strong>; arg: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>unlink: <strong>PROCEDURE</strong>{C} (name: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>rename: <strong>PROCEDURE</strong>{C} (oldname, newname: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>ftruncate: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; length: <strong>SIZE</strong>): <strong>SIGNED32</strong><tr><td></td><td>chmod: <strong>PROCEDURE</strong>{C} (name: <strong>ADDRESS</strong>; mode: <strong>SET</strong>): <strong>SIGNED32</strong><tr><td></td><td>utime: <strong>PROCEDURE</strong>{C} (name: <strong>ADDRESS</strong>; tb: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>access: <strong>PROCEDURE</strong>{C} (name: <strong>ADDRESS</strong>; mode: <strong>SET</strong>): <strong>SIGNED32</strong><tr><td></td><td>select: <strong>PROCEDURE</strong>{C} (width: <strong>SIGNED32</strong>; rd, wr, ex: <strong>ADDRESS</strong>; <strong>VAR</strong> timeout: <strong>Timeval</strong>): <strong>SIGNED32</strong><tr><td></td><td>realpath: <strong>PROCEDURE</strong>{C} (file_name: <strong>ADDRESS</strong>; resolved_name: <strong>ADDRESS</strong>): <strong>ADDRESS</strong><tr><td></td><td>chdir: <strong>PROCEDURE</strong>{C} (name: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>mkdir: <strong>PROCEDURE</strong>{C} (name: <strong>ADDRESS</strong>; mode: <strong>mode_t</strong>): <strong>SIGNED32</strong><tr><td></td><td>rmdir: <strong>PROCEDURE</strong>{C} (path: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>xstat: <strong>PROCEDURE</strong>{C} (ver: <strong>SIGNED32</strong>; name: <strong>ADDRESS</strong>; <strong>VAR</strong> buf: <strong>Status</strong>): <strong>SIGNED32</strong><tr><td></td><td>lxstat: <strong>PROCEDURE</strong>{C} (ver: <strong>SIGNED32</strong>; name: <strong>ADDRESS</strong>; <strong>VAR</strong> buf: <strong>Status</strong>): <strong>SIGNED32</strong><tr><td></td><td>fxstat: <strong>PROCEDURE</strong>{C} (ver: <strong>SIGNED32</strong>; fd: <strong>SIGNED32</strong>; <strong>VAR</strong> buf: <strong>Status</strong>): <strong>SIGNED32</strong><tr><td></td><td>getpid: <strong>PROCEDURE</strong>{C} (): <strong>SIGNED32</strong><tr><td></td><td>getuid: <strong>PROCEDURE</strong>{C} (): <strong>SIGNED32</strong><tr><td></td><td>posix_memalign: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> p: <strong>ADDRESS</strong>; alignment, size: <strong>SIZE</strong>): <strong>SIGNED32</strong><tr><td></td><td>malloc: <strong>PROCEDURE</strong>{C} (size: <strong>SIZE</strong>): <strong>ADDRESS</strong><tr><td></td><td>free: <strong>PROCEDURE</strong>{C} (p: <strong>ADDRESS</strong>)<tr><td></td><td>mprotect: <strong>PROCEDURE</strong>{C} (p: <strong>ADDRESS</strong>; len: <strong>SIZE</strong>; prot: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>mmap: <strong>PROCEDURE</strong>{C} (addr: <strong>ADDRESS</strong>; length: <strong>SIZE</strong>; prot: <strong>INTEGER</strong>; flags: <strong>INTEGER</strong>; fd: <strong>INTEGER</strong>; offset: <strong>off_t</strong>): <strong>ADDRESS</strong><tr><td></td><td>munmap: <strong>PROCEDURE</strong>{C} (addr: <strong>ADDRESS</strong>; length: <strong>SIZE</strong>): <strong>INTEGER</strong><tr><td></td><td>alarm: <strong>PROCEDURE</strong>{C} (ms: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>setitimer: <strong>PROCEDURE</strong>{C} (which: <strong>SIGNED32</strong>; <strong>VAR</strong> value, ovalue: <strong>Itimerval</strong>): <strong>SIGNED32</strong><tr><td></td><td>getitimer: <strong>PROCEDURE</strong>{C} (which: <strong>SIGNED32</strong>; <strong>VAR</strong> value: <strong>Itimerval</strong>): <strong>SIGNED32</strong><tr><td></td><td>clock_gettime: <strong>PROCEDURE</strong>{C} (clk_id: <strong>INTEGER</strong>; tp: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>clock_getres: <strong>PROCEDURE</strong>{C} (clk_id: <strong>INTEGER</strong>; res: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td>clock: <strong>PROCEDURE</strong>{C} (): <strong>INTEGER</strong><tr><td></td><td>gettimeofday: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> tv: <strong>Timeval</strong>; <strong>VAR</strong> tz: <strong>Timezone</strong>): <strong>SIGNED32</strong><tr><td></td><td>mktime: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> tm: <strong>Tm</strong>): <strong>SIGNED32</strong><tr><td></td><td>localtime: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> tv: <strong>Timeval</strong>): <strong>TmPtr</strong><tr><td></td><td>time: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> tv: <strong>Timeval</strong>): <strong>SIGNED32</strong><tr><td></td><td>times: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> tms: <strong>Tms</strong>): <strong>SIGNED32</strong><tr><td></td><td>system: <strong>PROCEDURE</strong>{C} (cmd: <strong>ADDRESS</strong>)<tr><td></td><td>uname: <strong>PROCEDURE</strong>{C} (utsname: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>getcwd: <strong>PROCEDURE</strong>{C} (buf: <strong>ADDRESS</strong>; len: <strong>SIZE</strong>): <strong>ADDRESS</strong><tr><td></td><td>getenv: <strong>PROCEDURE</strong>{C} (name: <strong>ADDRESS</strong>): <strong>ADDRESS</strong><tr><td></td><td>opendir: <strong>PROCEDURE</strong>{C} (name: <strong>ADDRESS</strong>): <strong>ADDRESS</strong><tr><td></td><td>readdir: <strong>PROCEDURE</strong>{C} (dir: <strong>ADDRESS</strong>): <strong>Dirent</strong><tr><td></td><td>closedir: <strong>PROCEDURE</strong>{C} (dir: <strong>ADDRESS</strong>)<tr><td></td><td>sigsetjmp: <strong>PROCEDURE</strong>{C} (env: <strong>ADDRESS</strong>; savemask: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>siglongjmp: <strong>PROCEDURE</strong>{C} (env: <strong>ADDRESS</strong>; val: <strong>SIGNED32</strong>)<tr><td></td><td>kill: <strong>PROCEDURE</strong>{C} (pid, sig: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>exit: <strong>PROCEDURE</strong>{C} (status: <strong>SIGNED32</strong>)<tr><td></td><td>perror: <strong>PROCEDURE</strong>{C} (msg: <strong>ADDRESS</strong>)<tr><td></td><td>libc: <strong>ADDRESS</strong><tr><td></td><td>libp: <strong>ADDRESS</strong><tr><td></td><td>libx: <strong>ADDRESS</strong><tr><td></td><td>suspendHandler: <strong>PROCEDURE</strong> (c: <strong>Ucontext</strong>)<tr><th align='left'>procedures</th><td> getnprocs (): <strong>LONGINTEGER</strong><tr><td></td><td> NewKey (): <strong>Key_t</strong><tr><td></td><td> ReadKey (key: <strong>Key_t</strong>): <strong>ADDRESS</strong><tr><td></td><td> WriteKey (key: <strong>Key_t</strong>; value: <strong>ADDRESS</strong>)<tr><td></td><td> NewMtx (): <strong>Mutex_t</strong><tr><td></td><td> NewRecursiveMtx (): <strong>Mutex_t</strong><tr><td></td><td> MtxDestroy (mtx: <strong>Mutex_t</strong>)<tr><td></td><td> MtxLock (mtx: <strong>Mutex_t</strong>)<tr><td></td><td> MtxUnlock (mtx: <strong>Mutex_t</strong>)<tr><td></td><td> NewCond (): <strong>Condition_t</strong><tr><td></td><td> CondDestroy (con: <strong>Condition_t</strong>)<tr><td></td><td> CondWait (con: <strong>Condition_t</strong>; mtx: <strong>Mutex_t</strong>)<tr><td></td><td> CondSignal (cond: <strong>Condition_t</strong>)<tr><td></td><td> ThrThis (): <strong>Thread_t</strong><tr><td></td><td> ThrYield<tr><td></td><td> ThrExit<tr><td></td><td> ThrSetPriority (thr: <strong>Thread_t</strong>; prio: <strong>SIGNED32</strong>)<tr><td></td><td> ThrGetPriority (thr: <strong>Thread_t</strong>): <strong>SIGNED32</strong><tr><td></td><td> ThrStart (p: <strong>PROCEDURE</strong> ; stackSize: <strong>SIZE</strong>): <strong>Thread_t</strong><tr><td></td><td> ThrSleep (ms: <strong>SIGNED32</strong>)<tr><td></td><td> NanoSleep (ns: <strong>LONGINTEGER</strong>)<tr><td></td><td> ThrKill (thr: <strong>Thread_t</strong>)<tr><td></td><td> ThrResume (thr: <strong>Thread_t</strong>)<tr><td></td><td> ThrSuspend (thr: <strong>Thread_t</strong>; saveContext: <strong>BOOLEAN</strong>)<tr><td></td><td> ThrInitialize (<strong>VAR</strong> low, high: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CopyContext (<strong>CONST</strong> from: <strong>McontextDesc</strong>; <strong>VAR</strong> to: <strong>McontextDesc</strong>)<tr><td></td><td> ModifyContext (cont: <strong>Mcontext</strong>; pc, bp, sp: <strong>ADDRESS</strong>)<tr><td></td><td> Perror (<strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Dlsym (lib: <strong>ADDRESS</strong>; <strong>CONST</strong> sym: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; objAddr: <strong>ADDRESS</strong>)<tr><td></td><td> Dlopen (<strong>CONST</strong> libname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; mode: <strong>SIGNED32</strong>): <strong>ADDRESS</strong><tr><td></td><td> Dlclose (lib: <strong>ADDRESS</strong>)<tr><td></td><td> GetArg (no: <strong>SIGNED32</strong>; <strong>VAR</strong> val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetArgval (<strong>CONST</strong> argName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> InstallTrap (h: <strong>SignalTrap</strong>)<tr><td></td><td> fstat (fd: <strong>SIGNED32</strong>; <strong>VAR</strong> buf: <strong>Status</strong>): <strong>SIGNED32</strong><tr><td></td><td> stat (path: <strong>ADDRESS</strong>; <strong>VAR</strong> buf: <strong>Status</strong>): <strong>SIGNED32</strong><tr><td></td><td> HandleSignal (sig: <strong>SIGNED32</strong>)<tr><td></td><td> errno (): <strong>SIGNED32</strong><tr><td></td><td> InitXErrorHandlers (xErrorHandler: <strong>OberonXErrorHandler</strong>; xIOErrorHandler: <strong>OberonXIOErrorHandler</strong>)<tr><td></td><td> LinkToX</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_F17E4700">
+</h1>
+<p> Linux x86 version, non portable</p>
+<hr><h2 id="#_F17E65C0"><a name="Unix.LittleEndian"></a><a href="#Unix">Unix</a>.<a href="#Unix.LittleEndian">LittleEndian</a>
+</h2>
+<p> byte order of basic types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LittleEndian*= TRUE</pre>
+<hr><h2 id="#_F17EA4C0"><a name="Unix.LsbIs0"></a><a href="#Unix">Unix</a>.<a href="#Unix.LsbIs0">LsbIs0</a>
+</h2>
+<p> bit order of SET type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LsbIs0*= TRUE</pre>
+<hr><h2 id="#_F17EE480"><a name="Unix.EPERM"></a><a href="#Unix">Unix</a>.<a href="#Unix.EPERM">EPERM</a>
+</h2>
+<p> Unix error codes:</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EPERM*= 1</pre>
+<hr><h2 id="#_F17F1AC0"><a name="Unix.O_ACCMODE"></a><a href="#Unix">Unix</a>.<a href="#Unix.O_ACCMODE">O_ACCMODE</a>
+</h2>
+<p> open flag values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> O_ACCMODE*= 3</pre>
+<hr><h2 id="#_F17F51C0"><a name="Unix.PROT_READ"></a><a href="#Unix">Unix</a>.<a href="#Unix.PROT_READ">PROT_READ</a>
+</h2>
+<p> memory protection flag values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PROT_READ*= 1</pre>
+<hr><h2 id="#_F17F8C40"><a name="Unix.MAP_SHARED"></a><a href="#Unix">Unix</a>.<a href="#Unix.MAP_SHARED">MAP_SHARED</a>
+</h2>
+<p> mmap flag values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MAP_SHARED*= 1</pre>
+<hr><h2 id="#_F17FC280"><a name="Unix.Sem"></a><a href="#Unix">Unix</a>.<a href="#Unix.Sem">Sem</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Sem* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>reserved1: <strong>ARRAY</strong> 4 <strong>OF</strong> <strong>ADDRESS</strong></td></tr>
+</table>
+<hr><h2 id="#_F1800F00"><a name="Unix.Barrier"></a><a href="#Unix">Unix</a>.<a href="#Unix.Barrier">Barrier</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Barrier* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>reserved1: <strong>ARRAY</strong> 3 <strong>OF</strong> <strong>ADDRESS</strong><tr><td></td><td>reserved2: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>INTEGER</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1807780"><a name="Unix.Termios"></a><a href="#Unix">Unix</a>.<a href="#Unix.Termios">Termios</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Termios* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>iflags: <strong>SET32</strong><tr><td></td><td>oflags: <strong>SET32</strong><tr><td></td><td>cflags: <strong>SET32</strong><tr><td></td><td>lflags: <strong>SET32</strong><tr><td></td><td>line: <strong>CHAR</strong><tr><td></td><td>cc: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>ispeed: <strong>SIGNED32</strong><tr><td></td><td>ospeed: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1812980"><a name="Unix.Status"></a><a href="#Unix">Unix</a>.<a href="#Unix.Status">Status</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Status* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>dev: <strong>dev_t</strong><tr><td></td><td>ino: <strong>ino_t</strong><tr><td></td><td>nlink: <strong>nlink_t</strong><tr><td></td><td>mode: <strong>mode_t</strong><tr><td></td><td>uid: <strong>INTEGER</strong><tr><td></td><td>gid: <strong>INTEGER</strong><tr><td></td><td>rdev: <strong>dev_t</strong><tr><td></td><td>size: <strong>SIZE</strong><tr><td></td><td>blksize: <strong>blksize_t</strong><tr><td></td><td>blocks: <strong>blkcnt_t</strong><tr><td></td><td>atime: <strong>Timeval</strong><tr><td></td><td>mtime: <strong>Timeval</strong><tr><td></td><td>ctime: <strong>Timeval</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1821700"><a name="Unix.tvPtr"></a><a href="#Unix">Unix</a>.<a href="#Unix.tvPtr">tvPtr</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> tvPtr* =<strong>POINTER</strong> <strong>TO</strong> <strong>Timeval</strong></pre>
+<hr><h2 id="#_F1824300"><a name="Unix.Timeval"></a><a href="#Unix">Unix</a>.<a href="#Unix.Timeval">Timeval</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Timeval* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sec: <strong>LONGINTEGER</strong><tr><td></td><td>usec: <strong>LONGINTEGER</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1828F40"><a name="Unix.TmPtr"></a><a href="#Unix">Unix</a>.<a href="#Unix.TmPtr">TmPtr</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TmPtr* =<strong>POINTER</strong> <strong>TO</strong> <strong>Tm</strong></pre>
+<hr><h2 id="#_F182BB40"><a name="Unix.Tm"></a><a href="#Unix">Unix</a>.<a href="#Unix.Tm">Tm</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tm* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sec: <strong>SIGNED32</strong><tr><td></td><td>min: <strong>SIGNED32</strong><tr><td></td><td>hour: <strong>SIGNED32</strong><tr><td></td><td>mday: <strong>SIGNED32</strong><tr><td></td><td>mon: <strong>SIGNED32</strong><tr><td></td><td>year: <strong>SIGNED32</strong><tr><td></td><td>wday: <strong>SIGNED32</strong><tr><td></td><td>yday: <strong>SIGNED32</strong><tr><td></td><td>isdst: <strong>SIGNED32</strong><tr><td></td><td>gmtoff: <strong>SIGNED32</strong><tr><td></td><td>tmzone: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1838B40"><a name="Unix.Tms"></a><a href="#Unix">Unix</a>.<a href="#Unix.Tms">Tms</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tms* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>utime: <strong>SIGNED32</strong><tr><td></td><td>stime: <strong>SIGNED32</strong><tr><td></td><td>cutime: <strong>SIGNED32</strong><tr><td></td><td>cstime: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F183F400"><a name="Unix.Timezone"></a><a href="#Unix">Unix</a>.<a href="#Unix.Timezone">Timezone</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Timezone* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>minuteswest: <strong>SIGNED32</strong><tr><td></td><td>dsttime: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1843F40"><a name="Unix.Itimerval"></a><a href="#Unix">Unix</a>.<a href="#Unix.Itimerval">Itimerval</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Itimerval* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>interval: <strong>Timeval</strong><tr><td></td><td>value: <strong>Timeval</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1848A80"><a name="Unix.Timespec"></a><a href="#Unix">Unix</a>.<a href="#Unix.Timespec">Timespec</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Timespec* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>tv_sec: <strong>LONGINTEGER</strong><tr><td></td><td>tv_nsec: <strong>LONGINTEGER</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F184D5C0"><a name="Unix.Dirent"></a><a href="#Unix">Unix</a>.<a href="#Unix.Dirent">Dirent</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Dirent* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ino: <strong>ino_t</strong><tr><td></td><td>off: <strong>off_t</strong><tr><td></td><td>reclen: <strong>SIGNED16</strong><tr><td></td><td>typ: <strong>CHAR</strong><tr><td></td><td>name: <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F18556C0"><a name="Unix.Stack"></a><a href="#Unix">Unix</a>.<a href="#Unix.Stack">Stack</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Stack* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sp: <strong>ADDRESS</strong><tr><td></td><td>flags: <strong>SET</strong><tr><td></td><td>size: <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F185B0C0"><a name="Unix.Ucontext"></a><a href="#Unix">Unix</a>.<a href="#Unix.Ucontext">Ucontext</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Ucontext* =<strong>POINTER</strong> <strong>TO</strong> <strong>UcontextDesc</strong></pre>
+<hr><h2 id="#_F185DCC0"><a name="Unix.UcontextDesc"></a><a href="#Unix">Unix</a>.<a href="#Unix.UcontextDesc">UcontextDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> UcontextDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>flags: <strong>SET</strong><tr><td></td><td>link: <strong>ADDRESS</strong><tr><td></td><td>stack: <strong>Stack</strong><tr><td></td><td>mc: <strong>McontextDesc</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1864580"><a name="Unix.Mcontext"></a><a href="#Unix">Unix</a>.<a href="#Unix.Mcontext">Mcontext</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Mcontext* =<strong>POINTER</strong> <strong>TO</strong> <strong>McontextDesc</strong></pre>
+<hr><h2 id="#_F1867180"><a name="Unix.McontextDesc"></a><a href="#Unix">Unix</a>.<a href="#Unix.McontextDesc">McontextDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> McontextDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>r_8: <strong>SIGNED64</strong><tr><td></td><td>r_9: <strong>SIGNED64</strong><tr><td></td><td>r_10: <strong>SIGNED64</strong><tr><td></td><td>r_11: <strong>SIGNED64</strong><tr><td></td><td>r_12: <strong>SIGNED64</strong><tr><td></td><td>r_13: <strong>SIGNED64</strong><tr><td></td><td>r_14: <strong>SIGNED64</strong><tr><td></td><td>r_15: <strong>SIGNED64</strong><tr><td></td><td>r_di: <strong>SIGNED64</strong><tr><td></td><td>r_si: <strong>SIGNED64</strong><tr><td></td><td>r_bp: <strong>ADDRESS</strong><tr><td></td><td>r_bx: <strong>SIGNED64</strong><tr><td></td><td>r_dx: <strong>SIGNED64</strong><tr><td></td><td>r_ax: <strong>SIGNED64</strong><tr><td></td><td>r_cx: <strong>SIGNED64</strong><tr><td></td><td>r_sp: <strong>ADDRESS</strong><tr><td></td><td>r_pc: <strong>ADDRESS</strong><tr><td></td><td>err: <strong>SIGNED64</strong><tr><td></td><td>trapno: <strong>SIGNED64</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

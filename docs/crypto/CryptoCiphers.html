@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoCiphers">CryptoCiphers</a></p>
+<hr><h1 id="#_87704300"><a name="CryptoCiphers"></a><a href="#ModuleList">Module</a> CryptoCiphers
+</h1>
+<p> empty cipher</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#CryptoCiphers.ECB">ECB</a>= 0<tr><td></td><td><a href="#CryptoCiphers.CBC">CBC</a>= 1<tr><td></td><td><a href="#CryptoCiphers.CTR">CTR</a>= 2<tr><td></td><td><a href="#CryptoCiphers.Ok">Ok</a>= 0<tr><th align='left'>type declarations</th><td><a href="#CryptoCiphers.Cipher">Cipher</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#CryptoCiphers.NewCipher">NewCipher</a> (<strong>CONST</strong> modname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Cipher</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_8770E280">
+</h1><hr><h2 id="#_8770EA40"><a name="CryptoCiphers.ECB"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.ECB">ECB</a>
+</h2>
+<p> cipher modes</p>
+
+<p> electronic codebook mode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ECB*= 0</pre>
+<hr><h2 id="#_87712A80"><a name="CryptoCiphers.CBC"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.CBC">CBC</a>
+</h2>
+<p> cipher-block chaining mode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CBC*= 1</pre>
+<hr><h2 id="#_87716180"><a name="CryptoCiphers.CTR"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.CTR">CTR</a>
+</h2>
+<p> counter mode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CTR*= 2</pre>
+<hr><h2 id="#_87719380"><a name="CryptoCiphers.Ok"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.Ok">Ok</a>
+</h2>
+<p> error codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_8771C640"><a name="CryptoCiphers.Cipher"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.Cipher">Cipher</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Cipher* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#CryptoCiphers.Cipher.blockSize">blockSize</a>: <strong>SIGNED32</strong><tr><td></td><td>isKeyInitialized: <strong>BOOLEAN</strong><tr><td></td><td><a href="#CryptoCiphers.Cipher.mode">mode</a>: <strong>SIGNED8</strong><tr><th align='left'>procedures</th><td> <a href="#CryptoCiphers.Cipher.InitKey">InitKey</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; keybits: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoCiphers.Cipher.SetIV">SetIV</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; mode: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#CryptoCiphers.Cipher.Encrypt">Encrypt</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoCiphers.Cipher.Decrypt">Decrypt</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoCiphers.Cipher.SetNameAndBlocksize">SetNameAndBlocksize</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIGNED32</strong>)<tr><td></td><td>& Init</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_877366C0"><a name="CryptoCiphers.Cipher.blockSize"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.Cipher">Cipher</a>.<a href="#CryptoCiphers.Cipher.blockSize">blockSize</a>
+</h3>
+<p> cipher block size (bytes)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> blockSize-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_8773A800"><a name="CryptoCiphers.Cipher.mode"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.Cipher">Cipher</a>.<a href="#CryptoCiphers.Cipher.mode">mode</a>
+</h3>
+<p> ECB, CBC</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> mode-: <strong>SIGNED8</strong></pre>
+<hr><h3 id="#_8773E1C0"><a name="CryptoCiphers.Cipher.InitKey"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.Cipher">Cipher</a>.<a href="#CryptoCiphers.Cipher.InitKey">InitKey</a>
+</h3>
+<p> initialize key for de/encryption</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitKey* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; keybits: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_87744840"><a name="CryptoCiphers.Cipher.SetIV"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.Cipher">Cipher</a>.<a href="#CryptoCiphers.Cipher.SetIV">SetIV</a>
+</h3>
+<p> set initialization vector, change mode to CBC; MUST be invoked AFTER Initkey</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetIV* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; mode: <strong>SIGNED8</strong>)</pre>
+<hr><h3 id="#_8774CEC0"><a name="CryptoCiphers.Cipher.Encrypt"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.Cipher">Cipher</a>.<a href="#CryptoCiphers.Cipher.Encrypt">Encrypt</a>
+</h3>
+<p> encrypts len bytes of data; len must be a multiple of blockSize</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Encrypt* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_87755CC0"><a name="CryptoCiphers.Cipher.Decrypt"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.Cipher">Cipher</a>.<a href="#CryptoCiphers.Cipher.Decrypt">Decrypt</a>
+</h3>
+<p> decrypts len bytes of data; len must be a multiple of blockSize</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Decrypt* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_8775EAC0"><a name="CryptoCiphers.Cipher.SetNameAndBlocksize"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.Cipher">Cipher</a>.<a href="#CryptoCiphers.Cipher.SetNameAndBlocksize">SetNameAndBlocksize</a>
+</h3>
+<p> this method is invoked by subclasses; blocksize in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetNameAndBlocksize* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_877666C0"><a name="CryptoCiphers.NewCipher"></a><a href="#CryptoCiphers">CryptoCiphers</a>.<a href="#CryptoCiphers.NewCipher">NewCipher</a>
+</h2>
+<p> create a new cipher object of the subtype given in modname</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewCipher* (<strong>CONST</strong> modname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Cipher</strong></pre>
+</body></html>

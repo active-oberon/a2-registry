@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Kernel">Kernel</a></p>
+<hr><h1 id="#_82AAE440"><a name="Kernel"></a><a href="#ModuleList">Module</a> Kernel
+</h1>
+<p> AUTHOR "pjm, G.F."; PURPOSE "Implementation-independent kernel interface";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Second= Machine.Second<tr><th align='left'>type declarations</th><td><a href="#Kernel.Finalizer">Finalizer</a> =<strong>Heaps.Finalizer</strong><tr><td></td><td><a href="#Kernel.Enumerator">Enumerator</a> =<strong>PROCEDURE</strong>{DELEGATE} (obj: @Any0; <strong>VAR</strong> cont: <strong>BOOLEAN</strong>)<tr><td></td><td><a href="#Kernel.MilliTimer">MilliTimer</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel.Timer">Timer</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Kernel.FinalizedCollection">FinalizedCollection</a> =<strong>OBJECT</strong> (<strong>Heaps.FinalizedCollection</strong>)<tr><th align='left'>variables</th><td><a href="#Kernel.second">second</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#Kernel.GC">GC</a><tr><td></td><td> <a href="#Kernel.GetTicks">GetTicks</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Kernel.SetTimer">SetTimer</a> (<strong>VAR</strong> t: <strong>MilliTimer</strong>; ms: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Kernel.Expired">Expired</a> (<strong>CONST</strong> t: <strong>MilliTimer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Kernel.Elapsed">Elapsed</a> (<strong>CONST</strong> t: <strong>MilliTimer</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Kernel.Left">Left</a> (<strong>CONST</strong> t: <strong>MilliTimer</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_82AC8080"><a name="Kernel.Finalizer"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.Finalizer">Finalizer</a>
+</h2>
+<p> Finalizer for FinalizedCollection.Add.</p>
+
+<p> PROCEDURE (obj: ANY)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Finalizer* =<strong>Heaps.Finalizer</strong></pre>
+<hr><h2 id="#_82ACC500"><a name="Kernel.Enumerator"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.Enumerator">Enumerator</a>
+</h2>
+<p> Enumerator for FinalizedCollection.Enumerate.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Enumerator* =<strong>PROCEDURE</strong>{DELEGATE} (obj: @Any0; <strong>VAR</strong> cont: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_82AD2580"><a name="Kernel.MilliTimer"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.MilliTimer">MilliTimer</a>
+</h2>
+<p> Polling timer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MilliTimer* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_82AD6240"><a name="Kernel.Timer"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.Timer">Timer</a>
+</h2>
+<p> Delay timer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Timer* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#Kernel.Timer.Sleep">Sleep</a> (ms: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Kernel.Timer.Wakeup">Wakeup</a><tr><td></td><td>& <a href="#Kernel.Timer.Init">Init</a></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_82ADD1C0"><a name="Kernel.Timer.Sleep"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.Timer">Timer</a>.<a href="#Kernel.Timer.Sleep">Sleep</a>
+</h3>
+<p> Delay the calling process the specified number of milliseconds or until Wakeup is called. Only one process may sleep on a specific timer at a time.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Sleep* (ms: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_82AE7540"><a name="Kernel.Timer.Wakeup"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.Timer">Timer</a>.<a href="#Kernel.Timer.Wakeup">Wakeup</a>
+</h3>
+<p> Wake up the process sleeping on the timer, if any.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Wakeup*</pre>
+<hr><h3 id="#_82AEC7C0"><a name="Kernel.Timer.Init"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.Timer">Timer</a>.<a href="#Kernel.Timer.Init">Init</a>
+</h3>
+<p> Initializer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Init*</pre>
+<hr><h2 id="#_82AEF8C0"><a name="Kernel.FinalizedCollection"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.FinalizedCollection">FinalizedCollection</a>
+</h2>
+<p> A collection of objects that are finalized automatically by the garbage collector.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FinalizedCollection* =<strong>OBJECT</strong> (<strong>Heaps.FinalizedCollection</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#Kernel.FinalizedCollection.Add">Add</a> (obj: @Any0; fin: <strong>Finalizer</strong>)<tr><td></td><td> <a href="#Kernel.FinalizedCollection.Remove">Remove</a> (obj: @Any0)<tr><td></td><td> <a href="#Kernel.FinalizedCollection.RemoveAll">RemoveAll</a> (obj: @Any0)<tr><td></td><td> <a href="#Kernel.FinalizedCollection.Enumerate">Enumerate</a> (enum: <strong>Enumerator</strong>)<tr><td></td><td> <a href="#Kernel.FinalizedCollection.EnumerateN">EnumerateN</a> (enum: <strong>Enumerator</strong>)<tr><td></td><td>& <a href="#Kernel.FinalizedCollection.Clear">Clear</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_82B00AC0"><a name="Kernel.FinalizedCollection.Add"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.FinalizedCollection">FinalizedCollection</a>.<a href="#Kernel.FinalizedCollection.Add">Add</a>
+</h3>
+<p> Add obj to collection. Parameter fin specifies finalizer, or NIL if not required.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (obj: @Any0; fin: <strong>Finalizer</strong>)</pre>
+<hr><h3 id="#_82B088C0"><a name="Kernel.FinalizedCollection.Remove"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.FinalizedCollection">FinalizedCollection</a>.<a href="#Kernel.FinalizedCollection.Remove">Remove</a>
+</h3>
+<p> Remove one occurrence of obj from collection.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Remove* (obj: @Any0)</pre>
+<hr><h3 id="#_82B0E140"><a name="Kernel.FinalizedCollection.RemoveAll"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.FinalizedCollection">FinalizedCollection</a>.<a href="#Kernel.FinalizedCollection.RemoveAll">RemoveAll</a>
+</h3>
+<p> Remove all occurrences of obj from collection.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveAll* (obj: @Any0)</pre>
+<hr><h3 id="#_82B139C0"><a name="Kernel.FinalizedCollection.Enumerate"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.FinalizedCollection">FinalizedCollection</a>.<a href="#Kernel.FinalizedCollection.Enumerate">Enumerate</a>
+</h3>
+<p> Enumerate all objects in the collection (Enumerator may not call Remove, Add, Enumerate or Clear).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Enumerate* (enum: <strong>Enumerator</strong>)</pre>
+<hr><h3 id="#_82B1B0C0"><a name="Kernel.FinalizedCollection.EnumerateN"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.FinalizedCollection">FinalizedCollection</a>.<a href="#Kernel.FinalizedCollection.EnumerateN">EnumerateN</a>
+</h3>
+<p> Enumerate all objects in the collection not being finalized (Enumerator may not call Remove, Add, Enumerate or Clear).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnumerateN* (enum: <strong>Enumerator</strong>)</pre>
+<hr><h3 id="#_82B235C0"><a name="Kernel.FinalizedCollection.Clear"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.FinalizedCollection">FinalizedCollection</a>.<a href="#Kernel.FinalizedCollection.Clear">Clear</a>
+</h3>
+<p> Initialize new collection. May also be called to clear an existing collection.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Clear*</pre>
+<hr><h2 id="#_82B292C0"><a name="Kernel.second"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.second">second</a>
+</h2>
+<p> number of timer counts per second (Hz)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> second*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_82B2D940"><a name="Kernel.GC"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.GC">GC</a>
+</h2>
+<p> Activate the garbage collector immediately.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GC*</pre>
+<hr><h2 id="#_82B31280"><a name="Kernel.GetTicks"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.GetTicks">GetTicks</a>
+</h2>
+<p> -- Timers --</p>
+
+<p> Get the current timer count. Timer increment rate is stored in "second" variable in Hz.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetTicks* (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_82B38C00"><a name="Kernel.SetTimer"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.SetTimer">SetTimer</a>
+</h2>
+<p> Set timer to expire in approximately "ms" milliseconds.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetTimer* (<strong>VAR</strong> t: <strong>MilliTimer</strong>; ms: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_82B3F3C0"><a name="Kernel.Expired"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.Expired">Expired</a>
+</h2>
+<p> Test whether a timer has expired.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Expired* (<strong>CONST</strong> t: <strong>MilliTimer</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_82B44B80"><a name="Kernel.Elapsed"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.Elapsed">Elapsed</a>
+</h2>
+<p> Return elapsed time on a timer in milliseconds.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Elapsed* (<strong>CONST</strong> t: <strong>MilliTimer</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_82B4AD40"><a name="Kernel.Left"></a><a href="#Kernel">Kernel</a>.<a href="#Kernel.Left">Left</a>
+</h2>
+<p> Return time left on a timer in milliseconds.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Left* (<strong>CONST</strong> t: <strong>MilliTimer</strong>): <strong>SIGNED32</strong></pre>
+</body></html>

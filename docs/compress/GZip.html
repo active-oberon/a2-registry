@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#GZip">GZip</a></p>
+<hr><h1 id="#_C5CC41C0"><a name="GZip"></a><a href="#ModuleList">Module</a> GZip
+</h1>
+<p> DK</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#GZip.DefaultCompression">DefaultCompression</a>= ZlibDeflate.DefaultCompression<tr><td></td><td>NoCompression= ZlibDeflate.NoCompression<tr><td></td><td>BestSpeed= ZlibDeflate.BestSpeed<tr><td></td><td>BestCompression= ZlibDeflate.BestCompression<tr><td></td><td><a href="#GZip.DefaultStrategy">DefaultStrategy</a>= ZlibDeflate.DefaultStrategy<tr><td></td><td>Filtered= ZlibDeflate.Filtered<tr><td></td><td>HuffmanOnly= ZlibDeflate.HuffmanOnly<tr><td></td><td><a href="#GZip.NoFlush">NoFlush</a>= ZlibDeflate.NoFlush<tr><td></td><td>SyncFlush= ZlibDeflate.SyncFlush<tr><td></td><td>FullFlush= ZlibDeflate.FullFlush<tr><th align='left'>type declarations</th><td><a href="#GZip.Deflator">Deflator</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#GZip.Inflator">Inflator</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#GZip.DeflateWriter">DeflateWriter</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td><a href="#GZip.InflateReader">InflateReader</a> =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)<tr><th align='left'>procedures</th><td> Deflate (in, out: <strong>Files.File</strong>; level, strategy, flush: <strong>SIGNED8</strong>)<tr><td></td><td> Inflate (in, out: <strong>Files.File</strong>)<tr><td></td><td> GZip (context: <strong>Commands.Context</strong>)<tr><td></td><td> UnGZip (context: <strong>Commands.Context</strong>)<tr><td></td><td> TestStream (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_C5CE2D80">
+</h1><hr><h2 id="#_C5CE3540"><a name="GZip.DefaultCompression"></a><a href="#GZip">GZip</a>.<a href="#GZip.DefaultCompression">DefaultCompression</a>
+</h2>
+<p> compression levels</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DefaultCompression*= ZlibDeflate.DefaultCompression</pre>
+<hr><h2 id="#_C5CE6C00"><a name="GZip.DefaultStrategy"></a><a href="#GZip">GZip</a>.<a href="#GZip.DefaultStrategy">DefaultStrategy</a>
+</h2>
+<p> compression strategies</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DefaultStrategy*= ZlibDeflate.DefaultStrategy</pre>
+<hr><h2 id="#_C5CEA380"><a name="GZip.NoFlush"></a><a href="#GZip">GZip</a>.<a href="#GZip.NoFlush">NoFlush</a>
+</h2>
+<p> flush values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NoFlush*= ZlibDeflate.NoFlush</pre>
+<hr><h2 id="#_C5CEDA40"><a name="GZip.Deflator"></a><a href="#GZip">GZip</a>.<a href="#GZip.Deflator">Deflator</a>
+</h2>
+<p> Reader for buffered reading of a file via Streams.Read procedures. See OpenReader.</p>
+
+<p> not sharable between multiple processes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Deflator* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>crc32: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (writer: <strong>Streams.Writer</strong>; level, strategy, flush: <strong>SIGNED8</strong>)<tr><td></td><td> Send (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C5D00340"><a name="GZip.Inflator"></a><a href="#GZip">GZip</a>.<a href="#GZip.Inflator">Inflator</a>
+</h2>
+<p> Reader for buffered reading of a file via Streams.Read procedures. See OpenReader.</p>
+
+<p> not sharable between multiple processes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Inflator* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>crc32: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (reader: <strong>Streams.Reader</strong>)<tr><td></td><td> Receive (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C5D11800"><a name="GZip.DeflateWriter"></a><a href="#GZip">GZip</a>.<a href="#GZip.DeflateWriter">DeflateWriter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DeflateWriter* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Initialize (out: <strong>Streams.Writer</strong>; compression= DefaultCompression: <strong>SIGNED8</strong>; strategy= DefaultStrategy: <strong>SIGNED8</strong>; flush= SyncFlush: <strong>SIGNED8</strong>)</td></tr>
+</table>
+<hr><h2 id="#_C5D1A700"><a name="GZip.InflateReader"></a><a href="#GZip">GZip</a>.<a href="#GZip.InflateReader">InflateReader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InflateReader* =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Initialize (in: <strong>Streams.Reader</strong>; size= BufSize: <strong>SIZE</strong>)</td></tr>
+</table>
+</body></html>

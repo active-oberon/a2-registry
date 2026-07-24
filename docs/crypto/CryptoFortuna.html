@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoFortuna">CryptoFortuna</a></p>
+<hr><h1 id="#_E0003EC0"><a name="CryptoFortuna"></a><a href="#ModuleList">Module</a> CryptoFortuna
+</h1>
+<dl>
+<dt><strong>AUTHOR</strong></dt>
+<dd> Alexey Morozov</dd>
+
+
+<dl>
+<dt><strong>PURPOSE</strong></dt>
+<dd> Building blocks for Fortuna cryptographic pseudorandom generator by Niels Ferguson, Bruce Schneier, Tadayoshi Kohno ( https://www.schneier.com/wp-content/uploads/2015/12/fortuna.pdf ). PyCrypto 2.6.1 ( https://www.dlitz.net/software/pycrypto ) was used as a reference for testing the code.</dd>
+
+
+</dl>
+</dl>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#CryptoFortuna.HashSize">HashSize</a>= 32<tr><td></td><td>CipherBlockSize= 16<tr><td></td><td>CipherKeySize= 32<tr><td></td><td><a href="#CryptoFortuna.CounterSize">CounterSize</a>= CipherBlockSize<tr><td></td><td><a href="#CryptoFortuna.MaxRandomEventDataLen">MaxRandomEventDataLen</a>= 32<tr><td></td><td><a href="#CryptoFortuna.NumPools">NumPools</a>= 32<tr><td></td><td><a href="#CryptoFortuna.MinPoolSize">MinPoolSize</a>= 64<tr><th align='left'>type declarations</th><td><a href="#CryptoFortuna.Crc32">Crc32</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#CryptoFortuna.Counter">Counter</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#CryptoFortuna.Hash">Hash</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#CryptoFortuna.Generator">Generator</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#CryptoFortuna.Pool">Pool</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#CryptoFortuna.ReseedPoolIndices">ReseedPoolIndices</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#CryptoFortuna.Accumulator">Accumulator</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#CryptoFortuna.Permutation">Permutation</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#CryptoFortuna.EntropyCollector">EntropyCollector</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> Int16ToBytes (v: <strong>INTEGER</strong>; <strong>VAR</strong> bytes: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> bytesOffs: <strong>SIZE</strong>)<tr><td></td><td> Int24ToBytes (v: <strong>SIGNED32</strong>; <strong>VAR</strong> bytes: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> bytesOffs: <strong>SIZE</strong>)<tr><td></td><td> Int32ToBytes (v: <strong>SIGNED32</strong>; <strong>VAR</strong> bytes: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> bytesOffs: <strong>SIZE</strong>)<tr><td></td><td> IntToBytes (v: <strong>SIGNED64</strong>; <strong>VAR</strong> bytes: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> bytesOffs: <strong>SIZE</strong>; byteCount: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E00309C0"><a name="CryptoFortuna.HashSize"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.HashSize">HashSize</a>
+</h2>
+<p> Fortuna reseed hash size in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HashSize*= 32</pre>
+<hr><h2 id="#_E0034C40"><a name="CryptoFortuna.CounterSize"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.CounterSize">CounterSize</a>
+</h2>
+<p> Fortuna counter size in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CounterSize*= CipherBlockSize</pre>
+<hr><h2 id="#_E0038B40"><a name="CryptoFortuna.MaxRandomEventDataLen"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.MaxRandomEventDataLen">MaxRandomEventDataLen</a>
+</h2>
+<p> maximal amount of random event data in bytes to feed the Fortuna accumulator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MaxRandomEventDataLen*= 32</pre>
+<hr><h2 id="#_E003EA00"><a name="CryptoFortuna.NumPools"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.NumPools">NumPools</a>
+</h2>
+<p> number of Fortuna accumulator pools</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NumPools*= 32</pre>
+<hr><h2 id="#_E0042900"><a name="CryptoFortuna.MinPoolSize"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.MinPoolSize">MinPoolSize</a>
+</h2>
+<p> minimal size in bytes of the 0-th pool data to be collected before a reseed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MinPoolSize*= 64</pre>
+<hr><h2 id="#_E0048EC0"><a name="CryptoFortuna.Crc32"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Crc32">Crc32</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Crc32* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>poly: <strong>UNSIGNED32</strong><tr><td></td><td>xorMsk: <strong>UNSIGNED32</strong><tr><td></td><td>table: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>SET32</strong><tr><td></td><td><a href="#CryptoFortuna.Crc32.crc">crc</a>: <strong>UNSIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#CryptoFortuna.Crc32.Init">Init</a> (polynomial= 3988292384: <strong>UNSIGNED32</strong>; initialValue= 4294967295: <strong>UNSIGNED32</strong>; xorMask= 4294967295: <strong>UNSIGNED32</strong>)<tr><td></td><td> () (data: <strong>CHAR</strong>)<tr><td></td><td> () (data: <strong>SIGNED16</strong>)<tr><td></td><td> () (data: <strong>SIGNED32</strong>)<tr><td></td><td> () (data: <strong>SIGNED64</strong>)<tr><td></td><td> () (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)<tr><td></td><td> () (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Get (): <strong>UNSIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E0063980"><a name="CryptoFortuna.Crc32.crc"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Crc32">Crc32</a>.<a href="#CryptoFortuna.Crc32.crc">crc</a>
+</h3>
+<p> CRC32 value without applying the XOR mask</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> crc-: <strong>UNSIGNED32</strong></pre>
+<hr><h3 id="#_E00686C0"><a name="CryptoFortuna.Crc32.Init"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Crc32">Crc32</a>.<a href="#CryptoFortuna.Crc32.Init">Init</a>
+</h3>
+<p> Set the algorithm to its initial state</p>
+
+<p> initialValue : algorithm initial value (default 0xFFFFFFFF) polynomial : the used polynomial in reverse bit order (default 0xEDB88320 that corresponds to the standard CRC32 polynomial 0x04C11DB7) xorMask : XOR mask used for computing the checksum result (default 0xFFFFFFFF)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init* (polynomial= 3988292384: <strong>UNSIGNED32</strong>; initialValue= 4294967295: <strong>UNSIGNED32</strong>; xorMask= 4294967295: <strong>UNSIGNED32</strong>)</pre>
+<hr><h2 id="#_E007A440"><a name="CryptoFortuna.Counter"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Counter">Counter</a>
+</h2>
+<p> CounterSize*8 bit counter with big endian storage format</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Counter* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>data: <strong>ARRAY</strong> CounterSize <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> <a href="#CryptoFortuna.Counter.Clear">Clear</a><tr><td></td><td> <a href="#CryptoFortuna.Counter.Set">Set</a> (<strong>CONST</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offs: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoFortuna.Counter.Inc">Inc</a> (increment: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E0087440"><a name="CryptoFortuna.Counter.Clear"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Counter">Counter</a>.<a href="#CryptoFortuna.Counter.Clear">Clear</a>
+</h3>
+<p> Clear (zero) the counter</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Clear*</pre>
+<hr><h3 id="#_E008AF40"><a name="CryptoFortuna.Counter.Set"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Counter">Counter</a>.<a href="#CryptoFortuna.Counter.Set">Set</a>
+</h3>
+<p> Set counter value given a CounterSize long byte array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Set* (<strong>CONST</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offs: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_E00929C0"><a name="CryptoFortuna.Counter.Inc"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Counter">Counter</a>.<a href="#CryptoFortuna.Counter.Inc">Inc</a>
+</h3>
+<p> Increment the counter</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Inc* (increment: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_E0097200"><a name="CryptoFortuna.Hash"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Hash">Hash</a>
+</h2>
+<p> Hash function used for Fortuna seeding</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Hash* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#CryptoFortuna.Hash.Init">Init</a><tr><td></td><td> <a href="#CryptoFortuna.Hash.Update">Update</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoFortuna.Hash.GetHash">GetHash</a> (<strong>VAR</strong> hashValue: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hashValueOffs: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E00A3D00"><a name="CryptoFortuna.Hash.Init"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Hash">Hash</a>.<a href="#CryptoFortuna.Hash.Init">Init</a>
+</h3>
+<p> Set the hash to its initial state</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init*</pre>
+<hr><h3 id="#_E00A8380"><a name="CryptoFortuna.Hash.Update"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Hash">Hash</a>.<a href="#CryptoFortuna.Hash.Update">Update</a>
+</h3>
+<p> Update the hash with a given data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_E00AFD00"><a name="CryptoFortuna.Hash.GetHash"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Hash">Hash</a>.<a href="#CryptoFortuna.Hash.GetHash">GetHash</a>
+</h3>
+<p> Get the HashSize byte long hash value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetHash* (<strong>VAR</strong> hashValue: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hashValueOffs: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_E00B6F80"><a name="CryptoFortuna.Generator"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Generator">Generator</a>
+</h2>
+<p> Cipher-based pseudorandom stream generator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Generator* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CryptoFortuna.Generator.isSeeded">isSeeded</a>: <strong>BOOLEAN</strong><tr><td></td><td>key: <strong>ARRAY</strong> CipherKeySize <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> <a href="#CryptoFortuna.Generator.Init">Init</a><tr><td></td><td> <a href="#CryptoFortuna.Generator.Reseed">Reseed</a> (<strong>CONST</strong> seed: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; seedOffs, seedLen: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoFortuna.Generator.Generate">Generate</a> (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E00C6840"><a name="CryptoFortuna.Generator.isSeeded"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Generator">Generator</a>.<a href="#CryptoFortuna.Generator.isSeeded">isSeeded</a>
+</h3>
+<p> TRUE if the generator is already seeded</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> isSeeded-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_E00CB580"><a name="CryptoFortuna.Generator.Init"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Generator">Generator</a>.<a href="#CryptoFortuna.Generator.Init">Init</a>
+</h3>
+<p> Set the generator to its initial state</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init*</pre>
+<hr><h3 id="#_E00CFC80"><a name="CryptoFortuna.Generator.Reseed"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Generator">Generator</a>.<a href="#CryptoFortuna.Generator.Reseed">Reseed</a>
+</h3>
+<p> Reseed the generator with given seed data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reseed* (<strong>CONST</strong> seed: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; seedOffs, seedLen: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_E00D7800"><a name="CryptoFortuna.Generator.Generate"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Generator">Generator</a>.<a href="#CryptoFortuna.Generator.Generate">Generate</a>
+</h3>
+<p> Generate a specified amount of pseudorandom data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Generate* (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_E00DF200"><a name="CryptoFortuna.Pool"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Pool">Pool</a>
+</h2>
+<p> Fortuna pool</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Pool* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CryptoFortuna.Pool.length">length</a>: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> <a href="#CryptoFortuna.Pool.Init">Init</a><tr><td></td><td> <a href="#CryptoFortuna.Pool.Append">Append</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoFortuna.Pool.GetHash">GetHash</a> (<strong>VAR</strong> hashValue: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hashValueOffs: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E00EBBC0"><a name="CryptoFortuna.Pool.length"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Pool">Pool</a>.<a href="#CryptoFortuna.Pool.length">length</a>
+</h3>
+<p> amount of data fed to the pool since the last call of Init</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> length-: <strong>SIZE</strong></pre>
+<hr><h3 id="#_E00F2080"><a name="CryptoFortuna.Pool.Init"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Pool">Pool</a>.<a href="#CryptoFortuna.Pool.Init">Init</a>
+</h3>
+<p> Set the pool to its initial state</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init*</pre>
+<hr><h3 id="#_E00F6700"><a name="CryptoFortuna.Pool.Append"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Pool">Pool</a>.<a href="#CryptoFortuna.Pool.Append">Append</a>
+</h3>
+<p> Append to the pool given amount of data with entropy</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Append* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_E00FEC80"><a name="CryptoFortuna.Pool.GetHash"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Pool">Pool</a>.<a href="#CryptoFortuna.Pool.GetHash">GetHash</a>
+</h3>
+<p> Get the HashSize byte long pool hash value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetHash* (<strong>VAR</strong> hashValue: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hashValueOffs: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_E0106380"><a name="CryptoFortuna.ReseedPoolIndices"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.ReseedPoolIndices">ReseedPoolIndices</a>
+</h2>
+<p> A helper object for computing indices of pool to reseed based on the reseed count as described in the original algorithm description</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ReseedPoolIndices* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Init (reseedCount: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoFortuna.ReseedPoolIndices.GetNext">GetNext</a> (<strong>VAR</strong> index: <strong>SIZE</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E0112F80"><a name="CryptoFortuna.ReseedPoolIndices.GetNext"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.ReseedPoolIndices">ReseedPoolIndices</a>.<a href="#CryptoFortuna.ReseedPoolIndices.GetNext">GetNext</a>
+</h3>
+<p> Get the next index of a pool to reseed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNext* (<strong>VAR</strong> index: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_E0119A00"><a name="CryptoFortuna.Accumulator"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Accumulator">Accumulator</a>
+</h2>
+<p> Fortuna accumulator</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Accumulator* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CryptoFortuna.Accumulator.reseedCount">reseedCount</a>: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> <a href="#CryptoFortuna.Accumulator.Init">Init</a><tr><td></td><td> <a href="#CryptoFortuna.Accumulator.Generate">Generate</a> (currentTimeMs: <strong>SIGNED32</strong>; <strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoFortuna.Accumulator.AddRandomEvent">AddRandomEvent</a> (sourceNum: <strong>INTEGER</strong>; poolIndex: <strong>SIZE</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoFortuna.Accumulator.IsReady">IsReady</a> (currentTimeMs: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E012B700"><a name="CryptoFortuna.Accumulator.reseedCount"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Accumulator">Accumulator</a>.<a href="#CryptoFortuna.Accumulator.reseedCount">reseedCount</a>
+</h3>
+<p> generator reseed count</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> reseedCount-: <strong>SIZE</strong></pre>
+<hr><h3 id="#_E012F400"><a name="CryptoFortuna.Accumulator.Init"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Accumulator">Accumulator</a>.<a href="#CryptoFortuna.Accumulator.Init">Init</a>
+</h3>
+<p> Set the accumulator to its initial state</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init*</pre>
+<hr><h3 id="#_E0133D00"><a name="CryptoFortuna.Accumulator.Generate"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Accumulator">Accumulator</a>.<a href="#CryptoFortuna.Accumulator.Generate">Generate</a>
+</h3>
+<p> Generate pseudorandom data.</p>
+
+<p> currentTimeMs : current time counter value in ms data : output data array dataOffs : offset in the output array dataLen : requested amount of data in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Generate* (currentTimeMs: <strong>SIGNED32</strong>; <strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_E0142380"><a name="CryptoFortuna.Accumulator.AddRandomEvent"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Accumulator">Accumulator</a>.<a href="#CryptoFortuna.Accumulator.AddRandomEvent">AddRandomEvent</a>
+</h3>
+<p> Add random source event data to a selected pool</p>
+
+<p> sourceNum : random source number within <a href="#0,">0,</a> 255] poolIndex : selected pool index within <a href="#0,">0,</a> NumPools) data random source data dataOffs : random source data offset dataLen : random source data length (not more than MaxRandomEventDataLen bytes)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddRandomEvent* (sourceNum: <strong>INTEGER</strong>; poolIndex: <strong>SIZE</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_E0155580"><a name="CryptoFortuna.Accumulator.IsReady"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Accumulator">Accumulator</a>.<a href="#CryptoFortuna.Accumulator.IsReady">IsReady</a>
+</h3>
+<p> Returns TRUE if the accumulator is ready for use and the user can call Generate method</p>
+
+<p> currentTimeMs : current time counter value in ms</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsReady* (currentTimeMs: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_E015F800"><a name="CryptoFortuna.Permutation"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Permutation">Permutation</a>
+</h2>
+<p> Pool of randomly permuted integer indices</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Permutation* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CryptoFortuna.Permutation.size">size</a>: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> <a href="#CryptoFortuna.Permutation.Init">Init</a> (rand: <strong>PROCEDURE</strong>{DELEGATE} (): <strong>SIGNED32</strong>; poolSize: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoFortuna.Permutation.Get">Get</a> (pos: <strong>SIZE</strong>): <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E016B4C0"><a name="CryptoFortuna.Permutation.size"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Permutation">Permutation</a>.<a href="#CryptoFortuna.Permutation.size">size</a>
+</h3>
+<p> size of the pool in number of elements</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> size-: <strong>SIZE</strong></pre>
+<hr><h3 id="#_E0170680"><a name="CryptoFortuna.Permutation.Init"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Permutation">Permutation</a>.<a href="#CryptoFortuna.Permutation.Init">Init</a>
+</h3>
+<p> Initialize the permutation</p>
+
+<p> rand : random generator procedure; NIL to implement linear indexing poolSize : permutation index pool size; pool indices are within the range <a href="#0,">0,</a> poolSize)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init* (rand: <strong>PROCEDURE</strong>{DELEGATE} (): <strong>SIGNED32</strong>; poolSize: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_E017CE40"><a name="CryptoFortuna.Permutation.Get"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.Permutation">Permutation</a>.<a href="#CryptoFortuna.Permutation.Get">Get</a>
+</h3>
+<p> Get permuted index at a given pool position; (pos = 0) & (pos <a name="poolSize)"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (pos: <strong>SIZE</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_E01848C0"><a name="CryptoFortuna.EntropyCollector"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.EntropyCollector">EntropyCollector</a>
+</h2>
+<p> Fortuna entropy collector</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EntropyCollector* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Init<tr><td></td><td> <a href="#CryptoFortuna.EntropyCollector.Collect">Collect</a> (<strong>VAR</strong> accumulator: <strong>Accumulator</strong>; sourceNum: <strong>INTEGER</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E018F180"><a name="CryptoFortuna.EntropyCollector.Collect"></a><a href="#CryptoFortuna">CryptoFortuna</a>.<a href="#CryptoFortuna.EntropyCollector">EntropyCollector</a>.<a href="#CryptoFortuna.EntropyCollector.Collect">Collect</a>
+</h3>
+<p> Collect entropy data from a randomness source</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Collect* (<strong>VAR</strong> accumulator: <strong>Accumulator</strong>; sourceNum: <strong>INTEGER</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dataOffs, dataLen: <strong>SIZE</strong>)</pre>
+</body></html>

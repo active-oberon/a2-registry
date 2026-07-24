@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Dates">Dates</a></p>
+<hr><h1 id="#_73510B80"><a name="Dates"></a><a href="#ModuleList">Module</a> Dates
+</h1>
+<p> AUTHOR "be, tf, staubesv"; PURPOSE "Date and time functions";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Dates.DateTime">DateTime</a> =<strong>RECORD</strong> <tr><th align='left'>variables</th><td><a href="#Dates.Months">Months</a>: <strong>ARRAY</strong> 12 <strong>OF</strong> <strong>ARRAY</strong> 10 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Dates.Days">Days</a>: <strong>ARRAY</strong> 7 <strong>OF</strong> <strong>ARRAY</strong> 10 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>ZeroDateUnix: <strong>DateTime</strong><tr><td></td><td>ZeroDateRFC868: <strong>DateTime</strong><tr><td></td><td>ZeroDateNTP: <strong>DateTime</strong><tr><td></td><td>DateFormat: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Dates.TimeFormat">TimeFormat</a>: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> <a href="#Dates.LeapYear">LeapYear</a> (year: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Dates.NofDays">NofDays</a> (year, month: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Dates.ValidDateTime">ValidDateTime</a> (dt: <strong>DateTime</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Dates.OberonToDateTime">OberonToDateTime</a> (Date, Time: <strong>SIGNED32</strong>): <strong>DateTime</strong><tr><td></td><td> <a href="#Dates.DateTimeToOberon">DateTimeToOberon</a> (dt: <strong>DateTime</strong>; <strong>VAR</strong> date, time: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Dates.Now">Now</a> (): <strong>DateTime</strong><tr><td></td><td> <a href="#Dates.WeekDate">WeekDate</a> (Date: <strong>DateTime</strong>; <strong>VAR</strong> year, week, weekday: <strong>SIGNED32</strong>)<tr><td></td><td> Equal (t1, t2: <strong>DateTime</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Dates.CompareDateTime">CompareDateTime</a> (t1, t2: <strong>DateTime</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Dates.TimeDifference">TimeDifference</a> (t1, t2: <strong>DateTime</strong>; <strong>VAR</strong> days, hours, minutes, seconds: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Dates.AddYears">AddYears</a> (<strong>VAR</strong> dt: <strong>DateTime</strong>; years: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Dates.AddMonths">AddMonths</a> (<strong>VAR</strong> dt: <strong>DateTime</strong>; months: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Dates.AddDays">AddDays</a> (<strong>VAR</strong> dt: <strong>DateTime</strong>; days: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Dates.AddHours">AddHours</a> (<strong>VAR</strong> dt: <strong>DateTime</strong>; hours: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Dates.AddMinutes">AddMinutes</a> (<strong>VAR</strong> dt: <strong>DateTime</strong>; minutes: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Dates.AddSeconds">AddSeconds</a> (<strong>VAR</strong> dt: <strong>DateTime</strong>; seconds: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Dates.TimeToStr">TimeToStr</a> (time: <strong>DateTime</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Dates.StrToTime">StrToTime</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dt: <strong>DateTime</strong>)<tr><td></td><td> <a href="#Dates.DateToStr">DateToStr</a> (date: <strong>DateTime</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Dates.StrToDate">StrToDate</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dt: <strong>DateTime</strong>)<tr><td></td><td> <a href="#Dates.FormatDateTime">FormatDateTime</a> (<strong>CONST</strong> format: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dt: <strong>DateTime</strong>; <strong>VAR</strong> result: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_73561240">
+</h1>
+<p> Oberon date & time format: time bits 16-12: hours 11-6 minutes 5-0 seconds</p>
+
+<dl>
+<dt><strong>date</strong></dt>
+<dd> 30-9: count of years from 1900</dd>
+
+
+<dl>
+<dt><strong>8-5</strong></dt>
+<dd> month of year</dd>
+
+
+<dl>
+<dt><strong>4-0</strong></dt>
+<dd> day of month</dd>
+
+</dl>
+</dl>
+</dl>
+<hr><h2 id="#_73568D80"><a name="Dates.DateTime"></a><a href="#Dates">Dates</a>.<a href="#Dates.DateTime">DateTime</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DateTime* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>year: <strong>SIGNED32</strong><tr><td></td><td>month: <strong>SIGNED32</strong><tr><td></td><td>day: <strong>SIGNED32</strong><tr><td></td><td>hour: <strong>SIGNED32</strong><tr><td></td><td>minute: <strong>SIGNED32</strong><tr><td></td><td>second: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_735713C0"><a name="Dates.Months"></a><a href="#Dates">Dates</a>.<a href="#Dates.Months">Months</a>
+</h2>
+<p> month's names (January = 0....December=11)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Months-: <strong>ARRAY</strong> 12 <strong>OF</strong> <strong>ARRAY</strong> 10 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_73576FC0"><a name="Dates.Days"></a><a href="#Dates">Dates</a>.<a href="#Dates.Days">Days</a>
+</h2>
+<p> day's names (Moday = 0, .... Sunday = 6)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Days-: <strong>ARRAY</strong> 7 <strong>OF</strong> <strong>ARRAY</strong> 10 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_7357DA00"><a name="Dates.TimeFormat"></a><a href="#Dates">Dates</a>.<a href="#Dates.TimeFormat">TimeFormat</a>
+</h2>
+<p> date and time format strings used by DateToStr/TimeToStr</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> TimeFormat*: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_73583400"><a name="Dates.LeapYear"></a><a href="#Dates">Dates</a>.<a href="#Dates.LeapYear">LeapYear</a>
+</h2>
+<p> Date and Time functions</p>
+
+<p> returns TRUE if 'year' is a leap year</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LeapYear* (year: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_7358A1C0"><a name="Dates.NofDays"></a><a href="#Dates">Dates</a>.<a href="#Dates.NofDays">NofDays</a>
+</h2>
+<p> returns the number of days in that month</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NofDays* (year, month: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_73590600"><a name="Dates.ValidDateTime"></a><a href="#Dates">Dates</a>.<a href="#Dates.ValidDateTime">ValidDateTime</a>
+</h2>
+<p> checks if the values of a DateTime structure are valid</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ValidDateTime* (dt: <strong>DateTime</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_735969C0"><a name="Dates.OberonToDateTime"></a><a href="#Dates">Dates</a>.<a href="#Dates.OberonToDateTime">OberonToDateTime</a>
+</h2>
+<p> convert an Oberon date/time to a DateTime structure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OberonToDateTime* (Date, Time: <strong>SIGNED32</strong>): <strong>DateTime</strong></pre>
+<hr><h2 id="#_7359CE00"><a name="Dates.DateTimeToOberon"></a><a href="#Dates">Dates</a>.<a href="#Dates.DateTimeToOberon">DateTimeToOberon</a>
+</h2>
+<p> convert a DateTime structure to an Oberon date/time</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DateTimeToOberon* (dt: <strong>DateTime</strong>; <strong>VAR</strong> date, time: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_735A3D40"><a name="Dates.Now"></a><a href="#Dates">Dates</a>.<a href="#Dates.Now">Now</a>
+</h2>
+<p> returns the current date and time</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Now* (): <strong>DateTime</strong></pre>
+<hr><h2 id="#_735A8600"><a name="Dates.WeekDate"></a><a href="#Dates">Dates</a>.<a href="#Dates.WeekDate">WeekDate</a>
+</h2>
+<p> returns the ISO 8601 year number, week number & week day (Monday=1, ....Sunday=7)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WeekDate* (Date: <strong>DateTime</strong>; <strong>VAR</strong> year, week, weekday: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_735B1140"><a name="Dates.CompareDateTime"></a><a href="#Dates">Dates</a>.<a href="#Dates.CompareDateTime">CompareDateTime</a>
+</h2>
+<p> Returns -1 if (t1 <a name="t2),"></a> 0 if (t1 = t2) or 1 if (t1  t2)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CompareDateTime* (t1, t2: <strong>DateTime</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_735B9380"><a name="Dates.TimeDifference"></a><a href="#Dates">Dates</a>.<a href="#Dates.TimeDifference">TimeDifference</a>
+</h2>
+<p> Absolute time difference between t1 and t2.Note that leap seconds are not counted, see http://www.eecis.udel.edu/~mills/leap.html</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TimeDifference* (t1, t2: <strong>DateTime</strong>; <strong>VAR</strong> days, hours, minutes, seconds: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_735C3800"><a name="Dates.AddYears"></a><a href="#Dates">Dates</a>.<a href="#Dates.AddYears">AddYears</a>
+</h2>
+<p> Add/Subtract a number of years to/from dt</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddYears* (<strong>VAR</strong> dt: <strong>DateTime</strong>; years: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_735C9B40"><a name="Dates.AddMonths"></a><a href="#Dates">Dates</a>.<a href="#Dates.AddMonths">AddMonths</a>
+</h2>
+<p> Add/Subtract a number of months to/from dt. This will adjust dt.year if necessary</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddMonths* (<strong>VAR</strong> dt: <strong>DateTime</strong>; months: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_735D1600"><a name="Dates.AddDays"></a><a href="#Dates">Dates</a>.<a href="#Dates.AddDays">AddDays</a>
+</h2>
+<p> Add/Subtract a number of days to/from dt. This will adjust dt.month and dt.year if necessary</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddDays* (<strong>VAR</strong> dt: <strong>DateTime</strong>; days: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_735D97C0"><a name="Dates.AddHours"></a><a href="#Dates">Dates</a>.<a href="#Dates.AddHours">AddHours</a>
+</h2>
+<p> Add/Subtract a number of hours to/from dt. This will adjust dt.day, dt.month and dt.year if necessary</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddHours* (<strong>VAR</strong> dt: <strong>DateTime</strong>; hours: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_735E1D80"><a name="Dates.AddMinutes"></a><a href="#Dates">Dates</a>.<a href="#Dates.AddMinutes">AddMinutes</a>
+</h2>
+<p> Add/Subtract a number of minutes to/from dt. This will adjust dt.hour, dt.day, dt.month and dt.year if necessary</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddMinutes* (<strong>VAR</strong> dt: <strong>DateTime</strong>; minutes: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_735EA8C0"><a name="Dates.AddSeconds"></a><a href="#Dates">Dates</a>.<a href="#Dates.AddSeconds">AddSeconds</a>
+</h2>
+<p> Add/Subtract a number of seconds to/from dt. This will adjust dt.minute, dt.hour, dt.day, dt.month and dt.year if necessary</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddSeconds* (<strong>VAR</strong> dt: <strong>DateTime</strong>; seconds: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_735F3900"><a name="Dates.TimeToStr"></a><a href="#Dates">Dates</a>.<a href="#Dates.TimeToStr">TimeToStr</a>
+</h2>
+<p> converts a time to a string, using the 'TimeFormat' format. C.f. FormatDateTime</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TimeToStr* (time: <strong>DateTime</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_735FB8C0"><a name="Dates.StrToTime"></a><a href="#Dates">Dates</a>.<a href="#Dates.StrToTime">StrToTime</a>
+</h2>
+<p> converts a string to a time</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToTime* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dt: <strong>DateTime</strong>)</pre>
+<hr><h2 id="#_73602400"><a name="Dates.DateToStr"></a><a href="#Dates">Dates</a>.<a href="#Dates.DateToStr">DateToStr</a>
+</h2>
+<p> converts a date to a string, using the 'DateFormat' format. C.f. FormatDateTime</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DateToStr* (date: <strong>DateTime</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_7360A3C0"><a name="Dates.StrToDate"></a><a href="#Dates">Dates</a>.<a href="#Dates.StrToDate">StrToDate</a>
+</h2>
+<p> Convert a string of the form 'day month year' into an date value. Leading whitespace is ignored.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToDate* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dt: <strong>DateTime</strong>)</pre>
+<hr><h2 id="#_73613A80"><a name="Dates.FormatDateTime"></a><a href="#Dates">Dates</a>.<a href="#Dates.FormatDateTime">FormatDateTime</a>
+</h2>
+<p> converts a TDateTime into a string. Format rules: yyyy -&gt four-digit year, e.g. 2001 yy -&gt two-digit year, e.g. 01 mmmm -&gt clear-text month, e.g. May mmm -&gt clear-text month, abbreviated, e.g. Sep mm -&gt two-digit month, e.g. 05 m -&gt month, e.g. 5 dd -&gt two-digit day, e.g. 02 d -&gt day, e.g. 2 or 15 wwww -&gt clear-text week-day, e.g. Monday www -&gt clear-text week-day, e.g. Mon</p>
+
+<p> hh -&gt two-digit hour, e.g. 08 h -&gt hour, e.g. 8 nn -&gt two-digit minute, e.g. 03 n -&gt minute, e.g. 3 ss -&gt two-digit second, e.g. 00 s -&gt second, e.g. 0 any other characters will be copied 1:1 to the result string</p>
+
+<dl>
+<dt><strong>Examples</strong></dt>
+<dd> "yyyy.mm.dd hh:nn:ss" -&gt "2002.01.01 17:08:00" "yyyyyy.m.ddd" -&gt "002002.1.001" "wwww, mmmm d, yyyy" -&gt "Tuesday, September 11, 2001"</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FormatDateTime* (<strong>CONST</strong> format: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dt: <strong>DateTime</strong>; <strong>VAR</strong> result: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#RealConversions">RealConversions</a></p>
+<hr><h1 id="#_50122C40"><a name="RealConversions"></a><a href="#ModuleList">Module</a> RealConversions
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#RealConversions.PeekNext">PeekNext</a> =<strong>PROCEDURE</strong>{DELEGATE} (): <strong>CHAR</strong><tr><th align='left'>procedures</th><td> <a href="#RealConversions.ScanReal">ScanReal</a> (ch: <strong>CHAR</strong>; next: <strong>PeekNext</strong>; <strong>VAR</strong> r: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#RealConversions.StringToReal">StringToReal</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> r: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#RealConversions.RealToString">RealToString</a> (x: <strong>FLOAT64</strong>; n: <strong>INTEGER</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#RealConversions.RealToStringFix">RealToStringFix</a> (x: <strong>FLOAT64</strong>; n, f, D: <strong>INTEGER</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_50137F80"><a name="RealConversions.PeekNext"></a><a href="#RealConversions">RealConversions</a>.<a href="#RealConversions.PeekNext">PeekNext</a>
+</h2>
+<p> Procedure used in ScanReal for peeking the next character from the input character stream.</p>
+
+<p> An example:</p>
+
+<p> PROCEDURE Next(): CHAR; BEGIN INC(streamPos); ( preincrement the stream position <strong>) IF streamPos <a name="streamLength"></a> THEN RETURN stream(streamPos); ELSE RETURN 0X; END; END Next;</strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PeekNext* =<strong>PROCEDURE</strong>{DELEGATE} (): <strong>CHAR</strong></pre>
+<hr><h2 id="#_50146100"><a name="RealConversions.ScanReal"></a><a href="#RealConversions">RealConversions</a>.<a href="#RealConversions.ScanReal">ScanReal</a>
+</h2>
+<p> Scan a floating-point number. EBNF Real = <a href="#"></a><code>' '}] ['+'|'-'] [Digit {Digit}] '.' Digit {Digit} ['d'|'D|'e'|'E'' ['+'|'-'] Digit {Digit}].<BR><BR>		ch : first peek from the input character stream<BR>		next : a procedure to peek the next character<BR>		r : scanning result<BR><BR>		Returns TRUE in case of a valid conversion. The result value r remains unchanged in case of an error.<BR>	</code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ScanReal* (ch: <strong>CHAR</strong>; next: <strong>PeekNext</strong>; <strong>VAR</strong> r: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_5014E640"><a name="RealConversions.StringToReal"></a><a href="#RealConversions">RealConversions</a>.<a href="#RealConversions.StringToReal">StringToReal</a>
+</h2>
+<p> Convert a string to a floating-point number. EBNF Real = <a href="#"></a><code>' '}] ['+'|'-'] [Digit {Digit}] '.' Digit {Digit} ['d'|'D|'e'|'E'' ['+'|'-'] Digit {Digit}] [{' '}].<BR><BR>		s : input null-terminated string; absence of the terminating null can cause an index out of range exception<BR>		r : conversion result<BR><BR>		Returns TRUE in case of a valid conversion. The result value r remains unchanged in case of an error.<BR>	</code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StringToReal* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> r: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_501575C0"><a name="RealConversions.RealToString"></a><a href="#RealConversions">RealConversions</a>.<a href="#RealConversions.RealToString">RealToString</a>
+</h2>
+<p> Convert FLOAT64 x using at least n character positions.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RealToString* (x: <strong>FLOAT64</strong>; n: <strong>INTEGER</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_5015F680"><a name="RealConversions.RealToStringFix"></a><a href="#RealConversions">RealConversions</a>.<a href="#RealConversions.RealToStringFix">RealToStringFix</a>
+</h2>
+<p> Convert FLOAT64 x to string in a fixed point notation. n is the overall minimal length for the output field, f the number of fraction digits following the decimal point, D the fixed exponent (printed only when D # 0).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RealToStringFix* (x: <strong>FLOAT64</strong>; n, f, D: <strong>INTEGER</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>

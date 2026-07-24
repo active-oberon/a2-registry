@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#NbrStrings">NbrStrings</a></p>
+<hr><h1 id="#_5CF57E80"><a name="NbrStrings"></a><a href="#ModuleList">Module</a> NbrStrings
+</h1>
+<p> AUTHOR "fof"; PURPOSE "Overloaded operators for string/base-type assignments.";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>String =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>CHAR</strong>)<tr><td></td><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrInt8.Integer</strong>)<tr><td></td><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrInt16.Integer</strong>)<tr><td></td><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrInt64.Integer</strong>)<tr><td></td><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrRe64.Real</strong>)<tr><td></td><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrInt.Integer</strong>)<tr><td></td><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrRat.Rational</strong>)<tr><td></td><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrRe.Real</strong>)<tr><td></td><td> <a href="#NbrStrings.:=">:=</a> (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrCplx.Complex</strong>)<tr><td></td><td> <a href="#NbrStrings.+">+</a> (l, r: <strong>String</strong>): <strong>String</strong><tr><td></td><td> <a href="#NbrStrings.+">+</a> (l: <strong>String</strong>; r: <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> <a href="#NbrStrings.+">+</a> (l: <strong>CHAR</strong>; r: <strong>String</strong>): <strong>String</strong><tr><td></td><td> <a href="#NbrStrings.+">+</a> (l: <strong>String</strong>; r: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> <a href="#NbrStrings.+">+</a> (l: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; r: <strong>String</strong>): <strong>String</strong><tr><td></td><td> <a href="#NbrStrings.Int">Int</a> (x: <strong>NbrInt.Integer</strong>): <strong>String</strong><tr><td></td><td> Rat (x: <strong>NbrRat.Rational</strong>): <strong>String</strong><tr><td></td><td> Re (x: <strong>NbrRe.Real</strong>): <strong>String</strong><tr><td></td><td> Cplx (x: <strong>NbrCplx.Complex</strong>): <strong>String</strong><tr><td></td><td> <a href="#NbrStrings.Load">Load</a> (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>String</strong>)<tr><td></td><td> Store (W: <strong>Streams.Writer</strong>; x: <strong>String</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_5CF97740">
+</h1><hr><h2 id="#_5CF97F00"><a name="NbrStrings.:="></a><a href="#NbrStrings">NbrStrings</a>.<a href="#NbrStrings.:=">:=</a>
+</h2>
+<p> Assignment Operators</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> ":="* (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_5CF9CDC0"><a name="NbrStrings.:="></a><a href="#NbrStrings">NbrStrings</a>.<a href="#NbrStrings.:=">:=</a>
+</h2>
+<p> String conversion for the core numeric types.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> ":="* (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrInt8.Integer</strong>)</pre>
+<hr><h2 id="#_5CFA31C0"><a name="NbrStrings.:="></a><a href="#NbrStrings">NbrStrings</a>.<a href="#NbrStrings.:=">:=</a>
+</h2>
+<p> OPERATOR ":="*( VAR string: String; x: NbrRe32.Integer ) is not needed because NbrInt.Integer = NbrInt32.Integer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> ":="* (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrInt64.Integer</strong>)</pre>
+<hr><h2 id="#_5CFAB400"><a name="NbrStrings.:="></a><a href="#NbrStrings">NbrStrings</a>.<a href="#NbrStrings.:=">:=</a>
+</h2>
+<p> OPERATOR ":="*( VAR string: String; x: NbrRe32.Real ) is not needed because NbrRe.Real = NbrRe32.Real.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> ":="* (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrRe64.Real</strong>)</pre>
+<hr><h2 id="#_5CFB3700"><a name="NbrStrings.:="></a><a href="#NbrStrings">NbrStrings</a>.<a href="#NbrStrings.:=">:=</a>
+</h2>
+<p> String conversion for the base numeric types.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> ":="* (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrInt.Integer</strong>)</pre>
+<hr><h2 id="#_5CFB9A40"><a name="NbrStrings.:="></a><a href="#NbrStrings">NbrStrings</a>.<a href="#NbrStrings.:=">:=</a>
+</h2>
+<p> The returned string will be in Cartesian format. To get a string in polar format use: NbrCplx.CplxToPolarString.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> ":="* (<strong>VAR</strong> string: <strong>String</strong>; x: <strong>NbrCplx.Complex</strong>)</pre>
+<hr><h2 id="#_5CFC2580"><a name="NbrStrings.+"></a><a href="#NbrStrings">NbrStrings</a>.<a href="#NbrStrings.+">+</a>
+</h2>
+<p> String concatination</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "+"* (l, r: <strong>String</strong>): <strong>String</strong></pre>
+<hr><h2 id="#_5CFC71C0"><a name="NbrStrings.Int"></a><a href="#NbrStrings">NbrStrings</a>.<a href="#NbrStrings.Int">Int</a>
+</h2>
+<p> However, do not mix Nbr and string types. This would yield non-associative addition, e.g., "Number = " + "10" + "20" would yield "Number = 1020" instead of "Number = 30" Instead use "Number = " + Int(10+20) yielding "Number = 30".</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Int* (x: <strong>NbrInt.Integer</strong>): <strong>String</strong></pre>
+<hr><h2 id="#_5CFD5000"><a name="NbrStrings.Load"></a><a href="#NbrStrings">NbrStrings</a>.<a href="#NbrStrings.Load">Load</a>
+</h2>
+<p> Persistence: file IO</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>String</strong>)</pre>
+</body></html>

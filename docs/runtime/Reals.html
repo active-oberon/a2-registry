@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Reals">Reals</a></p>
+<hr><h1 id="#_0C7EC3C0"><a name="Reals"></a><a href="#ModuleList">Module</a> Reals
+</h1>
+<p> portable, except where noted</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>DefaultFCR: <strong>SET</strong><tr><th align='left'>procedures</th><td> <a href="#Reals.Expo">Expo</a> (x: <strong>FLOAT32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Reals.ExpoL">ExpoL</a> (x: <strong>FLOAT64</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Reals.SetExpo">SetExpo</a> (e: <strong>SIGNED32</strong>; <strong>VAR</strong> x: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#Reals.SetExpoL">SetExpoL</a> (e: <strong>SIGNED32</strong>; <strong>VAR</strong> x: <strong>FLOAT64</strong>)<tr><td></td><td> <a href="#Reals.Real">Real</a> (h: <strong>SIGNED32</strong>): <strong>FLOAT32</strong><tr><td></td><td> <a href="#Reals.RealL">RealL</a> (h, l: <strong>SIGNED32</strong>): <strong>FLOAT64</strong><tr><td></td><td> <a href="#Reals.Int">Int</a> (x: <strong>FLOAT32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Reals.IntL">IntL</a> (x: <strong>FLOAT64</strong>; <strong>VAR</strong> h, l: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Reals.Ten">Ten</a> (e: <strong>SIGNED32</strong>): <strong>FLOAT64</strong><tr><td></td><td> <a href="#Reals.NaNCode">NaNCode</a> (x: <strong>FLOAT32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Reals.NaNCodeL">NaNCodeL</a> (x: <strong>FLOAT64</strong>; <strong>VAR</strong> h, l: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Reals.IsNaN">IsNaN</a> (x: <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Reals.IsNaNL">IsNaNL</a> (x: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Reals.NaN">NaN</a> (l: <strong>SIGNED32</strong>): <strong>FLOAT32</strong><tr><td></td><td> <a href="#Reals.NaNL">NaNL</a> (h, l: <strong>SIGNED32</strong>): <strong>FLOAT64</strong><tr><td></td><td> <a href="#Reals.FCR">FCR</a> (): <strong>SET</strong><tr><td></td><td> <a href="#Reals.SetFCR">SetFCR</a> (s: <strong>SET</strong>)<tr><td></td><td>- <a href="#Reals.Round">Round</a> (x: <strong>FLOAT32</strong>): <strong>SIGNED32</strong><tr><td></td><td>- <a href="#Reals.RoundL">RoundL</a> (x: <strong>FLOAT64</strong>): <strong>SIGNED32</strong><tr><td></td><td> Eps (): <strong>FLOAT32</strong><tr><td></td><td> EpsL (): <strong>FLOAT64</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_0C81E4C0">
+</h1>
+<p> AUTHOR "bmoesli"; PURPOSE "Real number manipulation";</p>
+
+<p> Implementation of the non-portable components of IEEE FLOAT32 andFLOAT64 manipulation. The routines here are required to do conversionof reals to strings and back.Implemented by Bernd Moesli, Seminar for Applied Mathematics,Swiss Federal Institute of Technology Zürich.</p>
+<hr><h2 id="#_0C829B80"><a name="Reals.Expo"></a><a href="#Reals">Reals</a>.<a href="#Reals.Expo">Expo</a>
+</h2>
+<p> Returns the shifted binary exponent (0 <a name="="></a> e <a name="256)."></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Expo* (x: <strong>FLOAT32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_0C82FAC0"><a name="Reals.ExpoL"></a><a href="#Reals">Reals</a>.<a href="#Reals.ExpoL">ExpoL</a>
+</h2>
+<p> Returns the shifted binary exponent (0 <a name="="></a> e <a name="2048)."></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ExpoL* (x: <strong>FLOAT64</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_0C835AC0"><a name="Reals.SetExpo"></a><a href="#Reals">Reals</a>.<a href="#Reals.SetExpo">SetExpo</a>
+</h2>
+<p> Sets the shifted binary exponent.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetExpo* (e: <strong>SIGNED32</strong>; <strong>VAR</strong> x: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_0C83B680"><a name="Reals.SetExpoL"></a><a href="#Reals">Reals</a>.<a href="#Reals.SetExpoL">SetExpoL</a>
+</h2>
+<p> Sets the shifted binary exponent.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetExpoL* (e: <strong>SIGNED32</strong>; <strong>VAR</strong> x: <strong>FLOAT64</strong>)</pre>
+<hr><h2 id="#_0C841300"><a name="Reals.Real"></a><a href="#Reals">Reals</a>.<a href="#Reals.Real">Real</a>
+</h2>
+<p> Convert hexadecimal to FLOAT32.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Real* (h: <strong>SIGNED32</strong>): <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_0C845E40"><a name="Reals.RealL"></a><a href="#Reals">Reals</a>.<a href="#Reals.RealL">RealL</a>
+</h2>
+<p> Convert hexadecimal to FLOAT64. h and l are the high and low parts.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RealL* (h, l: <strong>SIGNED32</strong>): <strong>FLOAT64</strong></pre>
+<hr><h2 id="#_0C84D580"><a name="Reals.Int"></a><a href="#Reals">Reals</a>.<a href="#Reals.Int">Int</a>
+</h2>
+<p> Convert FLOAT32 to hexadecimal.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Int* (x: <strong>FLOAT32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_0C8521C0"><a name="Reals.IntL"></a><a href="#Reals">Reals</a>.<a href="#Reals.IntL">IntL</a>
+</h2>
+<p> Convert FLOAT64 to hexadecimal. h and l are the high and low parts.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntL* (x: <strong>FLOAT64</strong>; <strong>VAR</strong> h, l: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_0C85A400"><a name="Reals.Ten"></a><a href="#Reals">Reals</a>.<a href="#Reals.Ten">Ten</a>
+</h2>
+<p> Returns 10^e (e <a name="="></a> 308, 308 <a name="e"></a> delivers IEEE-code +INF).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Ten* (e: <strong>SIGNED32</strong>): <strong>FLOAT64</strong></pre>
+<hr><h2 id="#_0C8606C0"><a name="Reals.NaNCode"></a><a href="#Reals">Reals</a>.<a href="#Reals.NaNCode">NaNCode</a>
+</h2>
+<p> Returns the NaN code (0 <a name="="></a> c <a name="8399608)"></a> or -1 if not NaN/Infinite.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NaNCode* (x: <strong>FLOAT32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_0C867580"><a name="Reals.NaNCodeL"></a><a href="#Reals">Reals</a>.<a href="#Reals.NaNCodeL">NaNCodeL</a>
+</h2>
+<p> Returns the NaN code (0 <a name="="></a> h <a name="1048576,"></a> MIN(SIGNED32) <a name="="></a> l <a name="="></a> MAX(SIGNED32)) or (-1,-1) if not NaN/Infinite.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NaNCodeL* (x: <strong>FLOAT64</strong>; <strong>VAR</strong> h, l: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_0C870BC0"><a name="Reals.IsNaN"></a><a href="#Reals">Reals</a>.<a href="#Reals.IsNaN">IsNaN</a>
+</h2>
+<p> Returns TRUE iff x is NaN/Infinite.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsNaN* (x: <strong>FLOAT32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_0C876000"><a name="Reals.IsNaNL"></a><a href="#Reals">Reals</a>.<a href="#Reals.IsNaNL">IsNaNL</a>
+</h2>
+<p> Returns TRUE iff x is NaN/Infinite.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsNaNL* (x: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_0C87B340"><a name="Reals.NaN"></a><a href="#Reals">Reals</a>.<a href="#Reals.NaN">NaN</a>
+</h2>
+<p> Returns NaN with specified code (0 <a name="="></a> l <a name="8399608)."></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NaN* (l: <strong>SIGNED32</strong>): <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_0C881280"><a name="Reals.NaNL"></a><a href="#Reals">Reals</a>.<a href="#Reals.NaNL">NaNL</a>
+</h2>
+<p> Returns NaN with specified code (0 <a name="="></a> h <a name="1048576,"></a> MIN(SIGNED32) <a name="="></a> l <a name="="></a> MAX(SIGNED32)).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NaNL* (h, l: <strong>SIGNED32</strong>): <strong>FLOAT64</strong></pre>
+<hr><h2 id="#_0C888D40"><a name="Reals.FCR"></a><a href="#Reals">Reals</a>.<a href="#Reals.FCR">FCR</a>
+</h2>
+<p> Return state of the floating-point control register.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FCR* (): <strong>SET</strong></pre>
+<hr><h2 id="#_0C88DA00"><a name="Reals.SetFCR"></a><a href="#Reals">Reals</a>.<a href="#Reals.SetFCR">SetFCR</a>
+</h2>
+<p> Set state of floating-point control register. Traps reset this to the default. Note that changing the rounding mode affects rounding of imprecise results as well as the ENTIER operation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetFCR* (s: <strong>SET</strong>)</pre>
+<hr><h2 id="#_0C898100"><a name="Reals.Round"></a><a href="#Reals">Reals</a>.<a href="#Reals.Round">Round</a>
+</h2>
+<p> Round x to an integer using the current rounding mode.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>- Round* (x: <strong>FLOAT32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_0C89E5C0"><a name="Reals.RoundL"></a><a href="#Reals">Reals</a>.<a href="#Reals.RoundL">RoundL</a>
+</h2>
+<p> Round x to an integer using the current rounding mode.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>- RoundL* (x: <strong>FLOAT64</strong>): <strong>SIGNED32</strong></pre>
+</body></html>

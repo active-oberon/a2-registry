@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoStreams">CryptoStreams</a></p>
+<hr><h1 id="#_D2374700"><a name="CryptoStreams"></a><a href="#ModuleList">Module</a> CryptoStreams
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CryptoStreams.Cipher">Cipher</a> =<strong>CryptoCiphers.Cipher</strong><tr><td></td><td><a href="#CryptoStreams.EncryptingWriter">EncryptingWriter</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td><a href="#CryptoStreams.DecryptingReader">DecryptingReader</a> =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)<tr><th align='left'>procedures</th><td> NewCipher (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Cipher</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D237CC80"><a name="CryptoStreams.Cipher"></a><a href="#CryptoStreams">CryptoStreams</a>.<a href="#CryptoStreams.Cipher">Cipher</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Cipher* =<strong>CryptoCiphers.Cipher</strong></pre>
+<hr><h2 id="#_D237EFC0"><a name="CryptoStreams.EncryptingWriter"></a><a href="#CryptoStreams">CryptoStreams</a>.<a href="#CryptoStreams.EncryptingWriter">EncryptingWriter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EncryptingWriter* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Position</strong>)<tr><td></td><td> Pos (): <strong>Position</strong><tr><td></td><td>& InitCrWriter (output: <strong>Streams.Writer</strong>; c: <strong>Cipher</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D23899C0"><a name="CryptoStreams.DecryptingReader"></a><a href="#CryptoStreams">CryptoStreams</a>.<a href="#CryptoStreams.DecryptingReader">DecryptingReader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DecryptingReader* =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Position</strong>)<tr><td></td><td>& InitCrReader (input: <strong>Streams.Reader</strong>; c: <strong>Cipher</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

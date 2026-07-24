@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoMD5">CryptoMD5</a></p>
+<hr><h1 id="#_48B289C0"><a name="CryptoMD5"></a><a href="#ModuleList">Module</a> CryptoMD5
+</h1>
+<p> AUTHOR "G.F."; PURPOSE "MD5";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CryptoMD5.Hash">Hash</a> =<strong>OBJECT</strong> (<strong>Hashes.Hash</strong>)<tr><th align='left'>procedures</th><td> <a href="#CryptoMD5.NewHash">NewHash</a> (): <strong>Hashes.Hash</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_48B2E580"><a name="CryptoMD5.Hash"></a><a href="#CryptoMD5">CryptoMD5</a>.<a href="#CryptoMD5.Hash">Hash</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Hash* =<strong>OBJECT</strong> (<strong>Hashes.Hash</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Initialize<tr><td></td><td> <a href="#CryptoMD5.Hash.Update">Update</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoMD5.Hash.GetHash">GetHash</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_48B3A200"><a name="CryptoMD5.Hash.Update"></a><a href="#CryptoMD5">CryptoMD5</a>.<a href="#CryptoMD5.Hash">Hash</a>.<a href="#CryptoMD5.Hash.Update">Update</a>
+</h3>
+<p> data: value to be hashed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_48B41480"><a name="CryptoMD5.Hash.GetHash"></a><a href="#CryptoMD5">CryptoMD5</a>.<a href="#CryptoMD5.Hash">Hash</a>.<a href="#CryptoMD5.Hash.GetHash">GetHash</a>
+</h3>
+<p> get the hashvalue of length SELF.size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetHash* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_48B48440"><a name="CryptoMD5.NewHash"></a><a href="#CryptoMD5">CryptoMD5</a>.<a href="#CryptoMD5.NewHash">NewHash</a>
+</h2>
+<p> get an instance of MD5</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewHash* (): <strong>Hashes.Hash</strong></pre>
+</body></html>

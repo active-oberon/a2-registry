@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#NbrInt">NbrInt</a></p>
+<hr><h1 id="#_1E88FAC0"><a name="NbrInt"></a><a href="#ModuleList">Module</a> NbrInt
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Defines a base Integer type for scientific computing.";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#NbrInt.Integer">Integer</a> =<strong>NbrInt32.Integer</strong><tr><th align='left'>variables</th><td>MinNbr: <strong>Integer</strong><tr><td></td><td>MaxNbr: <strong>Integer</strong><tr><th align='left'>procedures</th><td> <a href="#NbrInt.Abs">Abs</a> (i: <strong>Integer</strong>): <strong>Integer</strong><tr><td></td><td> Dec (<strong>VAR</strong> i: <strong>Integer</strong>)<tr><td></td><td> Inc (<strong>VAR</strong> i: <strong>Integer</strong>)<tr><td></td><td> Odd (i: <strong>Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Max (x1, x2: <strong>Integer</strong>): <strong>Integer</strong><tr><td></td><td> Min (x1, x2: <strong>Integer</strong>): <strong>Integer</strong><tr><td></td><td> Sign (x: <strong>Integer</strong>): <strong>Integer</strong><tr><td></td><td> <a href="#NbrInt.StringToInt">StringToInt</a> (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Integer</strong>)<tr><td></td><td> IntToString (x: <strong>Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#NbrInt.Load">Load</a> (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Integer</strong>)<tr><td></td><td> Store (W: <strong>Streams.Writer</strong>; x: <strong>Integer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1E8B2940"><a name="NbrInt.Integer"></a><a href="#NbrInt">NbrInt</a>.<a href="#NbrInt.Integer">Integer</a>
+</h2>
+<p> This module hides the type size of the integer implemented. This makes it a straightforward process for the user to change this one module, and in doing so, change the type size for all integers without having to change any modules that import NbrInt, at least in principle. That was one of our design goals.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Integer* =<strong>NbrInt32.Integer</strong></pre>
+<hr><h2 id="#_1E8C2A40"><a name="NbrInt.Abs"></a><a href="#NbrInt">NbrInt</a>.<a href="#NbrInt.Abs">Abs</a>
+</h2>
+<p> Basic Functions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Abs* (i: <strong>Integer</strong>): <strong>Integer</strong></pre>
+<hr><h2 id="#_1E8C6D00"><a name="NbrInt.StringToInt"></a><a href="#NbrInt">NbrInt</a>.<a href="#NbrInt.StringToInt">StringToInt</a>
+</h2>
+<p> String conversions. LEN(string) = 15</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StringToInt* (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Integer</strong>)</pre>
+<hr><h2 id="#_1E8CD400"><a name="NbrInt.Load"></a><a href="#NbrInt">NbrInt</a>.<a href="#NbrInt.Load">Load</a>
+</h2>
+<p> Persistence: file IO</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Integer</strong>)</pre>
+</body></html>

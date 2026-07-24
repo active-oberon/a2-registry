@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoRSA">CryptoRSA</a></p>
+<hr><h1 id="#_2B95E440"><a name="CryptoRSA"></a><a href="#ModuleList">Module</a> CryptoRSA
+</h1>
+<p> AUTHOR "G.F."; PURPOSE "RSA";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CryptoRSA.Certificate">Certificate</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#CryptoRSA.Key">Key</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#CryptoRSA.MakeKeys">MakeKeys</a> (p, q, e: <strong>Number</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pub, priv: <strong>Key</strong>)<tr><td></td><td> <a href="#CryptoRSA.PubKey">PubKey</a> (e, m: <strong>Number</strong>): <strong>Key</strong><tr><td></td><td> LoadPrivateKey (r: <strong>Streams.Reader</strong>; <strong>CONST</strong> passwd: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Key</strong><tr><td></td><td> StorePrivateKey (w: <strong>Streams.Writer</strong>; k: <strong>Key</strong>; <strong>CONST</strong> passwd: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> StorePublicKey (w: <strong>Streams.Writer</strong>; k: <strong>Key</strong>)<tr><td></td><td> LoadPublicKey (r: <strong>Streams.Reader</strong>): <strong>Key</strong><tr><td></td><td> ExtractPublicKey (r: <strong>Streams.Reader</strong>): <strong>Key</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_2B97A400">
+</h1><hr><h2 id="#_2B97ABC0"><a name="CryptoRSA.Certificate"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Certificate">Certificate</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Certificate* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CryptoRSA.Certificate.authority">authority</a>: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#CryptoRSA.Certificate.signature">signature</a>: <strong>Number</strong><tr><td></td><td>next: <strong>Certificate</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_2B981400"><a name="CryptoRSA.Certificate.authority"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Certificate">Certificate</a>.<a href="#CryptoRSA.Certificate.authority">authority</a>
+</h3>
+<p> Certifying authority.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> authority*: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="#_2B985BC0"><a name="CryptoRSA.Certificate.signature"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Certificate">Certificate</a>.<a href="#CryptoRSA.Certificate.signature">signature</a>
+</h3>
+<p> Signature of key.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> signature*: <strong>Number</strong></pre>
+<hr><h2 id="#_2B9898C0"><a name="CryptoRSA.Key"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Key">Key</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Key* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CryptoRSA.Key.name">name</a>: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#CryptoRSA.Key.private">private</a>: <strong>BOOLEAN</strong><tr><td></td><td>size: <strong>SIZE</strong><tr><td></td><td>exponent: <strong>Number</strong><tr><td></td><td>modulus: <strong>Number</strong><tr><td></td><td>time: <strong>SIGNED32</strong><tr><td></td><td>date: <strong>SIGNED32</strong><tr><td></td><td>certificates: <strong>Certificate</strong><tr><td></td><td>next: <strong>Key</strong><tr><th align='left'>procedures</th><td> Sign (<strong>CONST</strong> digest: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dlen: <strong>SIGNED32</strong>): <strong>Number</strong><tr><td></td><td> Verify (<strong>CONST</strong> digest: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dlen: <strong>SIZE</strong>; signature: <strong>Number</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Encrypt (msg: <strong>Number</strong>): <strong>Number</strong><tr><td></td><td> Decrypt (msg: <strong>Number</strong>): <strong>Number</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_2B9A2200"><a name="CryptoRSA.Key.name"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Key">Key</a>.<a href="#CryptoRSA.Key.name">name</a>
+</h3>
+<p> Owner of this key.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> name-: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="#_2B9A7180"><a name="CryptoRSA.Key.private"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Key">Key</a>.<a href="#CryptoRSA.Key.private">private</a>
+</h3>
+<p> Is this a private key? then the exponent is encrypted</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> private-: <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_2B9ACA40"><a name="CryptoRSA.MakeKeys"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.MakeKeys">MakeKeys</a>
+</h2>
+<p> Generate public and private keys out of the large primes p and q, using the specified public exponent e. The private key's exponent will be enrypted with IDEA and key passwd</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MakeKeys* (p, q, e: <strong>Number</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pub, priv: <strong>Key</strong>)</pre>
+<hr><h2 id="#_2B9BBC40"><a name="CryptoRSA.PubKey"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.PubKey">PubKey</a>
+</h2>
+<p> returns a new public key with exponent e and modulus m</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PubKey* (e, m: <strong>Number</strong>): <strong>Key</strong></pre>
+</body></html>

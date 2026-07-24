@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#KernelLog">KernelLog</a></p>
+<hr><h1 id="#_FE3BA640"><a name="KernelLog"></a><a href="#ModuleList">Module</a> KernelLog
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "Trace output for booting and debugging";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#KernelLog.Send">Send</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#KernelLog.String">String</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#KernelLog.Ln">Ln</a><tr><td></td><td> <a href="#KernelLog.Char">Char</a> (c: <strong>CHAR</strong>)<tr><td></td><td> <a href="#KernelLog.Int">Int</a> (x: <strong>SIGNED64</strong>; w: <strong>INTEGER</strong>)<tr><td></td><td> UInt (x: <strong>UNSIGNED64</strong>; w: <strong>INTEGER</strong>)<tr><td></td><td> Boolean (x: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#KernelLog.IntSuffix">IntSuffix</a> (x: <strong>SIGNED64</strong>; w: <strong>INTEGER</strong>; <strong>CONST</strong> suffix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#KernelLog.Hex">Hex</a> (x: <strong>SIGNED64</strong>; w: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#KernelLog.Address">Address</a> (x: <strong>ADDRESS</strong>)<tr><td></td><td> <a href="#KernelLog.Size">Size</a> (x: <strong>SIZE</strong>)<tr><td></td><td> <a href="#KernelLog.HIntHex">HIntHex</a> (x: <strong>SIGNED64</strong>; w: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#KernelLog.Memory">Memory</a> (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> <a href="#KernelLog.Buffer">Buffer</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#KernelLog.Bits">Bits</a> (x: <strong>SET</strong>; ofs, n: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#KernelLog.Set">Set</a> (x: <strong>SET</strong>)<tr><td></td><td> <a href="#KernelLog.Enter">Enter</a><tr><td></td><td> <a href="#KernelLog.Exit">Exit</a><tr><td></td><td> <a href="#KernelLog.OpenBuffer">OpenBuffer</a> (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#KernelLog.GetBuffer">GetBuffer</a> (<strong>VAR</strong> val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#KernelLog.CloseBuffer">CloseBuffer</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_FE3EF180">
+</h1><hr><h2 id="#_FE3EF940"><a name="KernelLog.Send"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Send">Send</a>
+</h2>
+<p> Send the specified characters to the trace output (cf. Streams.Sender).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Send* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_FE3F9780"><a name="KernelLog.String"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.String">String</a>
+</h2>
+<p> Write a string to the trace output.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> String* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_FE3FF500"><a name="KernelLog.Ln"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Ln">Ln</a>
+</h2>
+<p> Skip to the next line on trace output.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Ln*</pre>
+<hr><h2 id="#_FE4039C0"><a name="KernelLog.Char"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Char">Char</a>
+</h2>
+<p> Write a character.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Char* (c: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_FE407C00"><a name="KernelLog.Int"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Int">Int</a>
+</h2>
+<p> Write "x" as a decimal number. "w" is the field width.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Int* (x: <strong>SIGNED64</strong>; w: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_FE40EC40"><a name="KernelLog.IntSuffix"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.IntSuffix">IntSuffix</a>
+</h2>
+<p> Write "x" as a decimal number with a power-of-two multiplier (K, M or G), followed by "suffix". "w" is the field width, excluding "suffix".</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntSuffix* (x: <strong>SIGNED64</strong>; w: <strong>INTEGER</strong>; <strong>CONST</strong> suffix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_FE41A580"><a name="KernelLog.Hex"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Hex">Hex</a>
+</h2>
+<p> Write an integer in hexadecimal right-justified in a field of at least ABS(w) characters. If w <a name="0,"></a> the w least significant hex digits of x are written (potentially including leading zeros)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Hex* (x: <strong>SIGNED64</strong>; w: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_FE426280"><a name="KernelLog.Address"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Address">Address</a>
+</h2>
+<p> Write "x" as a hexadecimal address.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Address* (x: <strong>ADDRESS</strong>)</pre>
+<hr><h2 id="#_FE42B040"><a name="KernelLog.Size"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Size">Size</a>
+</h2>
+<p> Write "x" as a size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Size* (x: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_FE42FA80"><a name="KernelLog.HIntHex"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.HIntHex">HIntHex</a>
+</h2>
+<p> Write "x" as a hexadecimal number. "w" is the field width. Always prints 16 digits.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HIntHex* (x: <strong>SIGNED64</strong>; w: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_FE4378C0"><a name="KernelLog.Memory"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Memory">Memory</a>
+</h2>
+<p> Write a block of memory in hex.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Memory* (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_FE43D800"><a name="KernelLog.Buffer"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Buffer">Buffer</a>
+</h2>
+<p> Write a buffer in hex.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Buffer* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_FE4444C0"><a name="KernelLog.Bits"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Bits">Bits</a>
+</h2>
+<p> Write bits (ofs..ofs+n-1) of x in binary.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Bits* (x: <strong>SET</strong>; ofs, n: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_FE44AC00"><a name="KernelLog.Set"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Set">Set</a>
+</h2>
+<p> write a set as set</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Set* (x: <strong>SET</strong>)</pre>
+<hr><h2 id="#_FE44F640"><a name="KernelLog.Enter"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Enter">Enter</a>
+</h2>
+<p> Enter mutually exclusive region for writing, using a fine-grained lock. This region should be kept as short as possible, and only procedures from KernelLog should be called inside it.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Enter*</pre>
+<hr><h2 id="#_FE458BC0"><a name="KernelLog.Exit"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.Exit">Exit</a>
+</h2>
+<p> Exit mutually exclusive region for writing.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Exit*</pre>
+<hr><h2 id="#_FE45C880"><a name="KernelLog.OpenBuffer"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.OpenBuffer">OpenBuffer</a>
+</h2>
+<p> Assign a new trace buffer. Used by a display process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenBuffer* (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_FE463940"><a name="KernelLog.GetBuffer"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.GetBuffer">GetBuffer</a>
+</h2>
+<p> Return output buffer contents. Used by a display process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetBuffer* (<strong>VAR</strong> val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_FE469E80"><a name="KernelLog.CloseBuffer"></a><a href="#KernelLog">KernelLog</a>.<a href="#KernelLog.CloseBuffer">CloseBuffer</a>
+</h2>
+<p> Close the trace buffer and revert to the default. Used by a display process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CloseBuffer*</pre>
+</body></html>

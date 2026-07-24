@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ZlibDeflate">ZlibDeflate</a></p>
+<hr><h1 id="#_B56A4DC0"><a name="ZlibDeflate"></a><a href="#ModuleList">Module</a> ZlibDeflate
+</h1>
+<p> Stefan Walthert</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#ZlibDeflate.Ok">Ok</a>= Zlib.Ok<tr><td></td><td><a href="#ZlibDeflate.StreamEnd">StreamEnd</a>= Zlib.StreamEnd<tr><td></td><td>StreamError= Zlib.StreamError<tr><td></td><td>DataError= Zlib.DataError<tr><td></td><td>MemError= Zlib.MemError<tr><td></td><td><a href="#ZlibDeflate.BufError">BufError</a>= Zlib.BufError<tr><td></td><td><a href="#ZlibDeflate.NoFlush">NoFlush</a>= Zlib.NoFlush<tr><td></td><td>SyncFlush= Zlib.SyncFlush<tr><td></td><td>FullFlush= Zlib.FullFlush<tr><td></td><td>Finish= Zlib.Finish<tr><td></td><td><a href="#ZlibDeflate.DefaultCompression">DefaultCompression</a>= Zlib.DefaultCompression<tr><td></td><td>NoCompression= Zlib.NoCompression<tr><td></td><td>BestSpeed= Zlib.BestSpeed<tr><td></td><td>BestCompression= Zlib.BestCompression<tr><td></td><td><a href="#ZlibDeflate.DefaultStrategy">DefaultStrategy</a>= Zlib.DefaultStrategy<tr><td></td><td>Filtered= Zlib.Filtered<tr><td></td><td>HuffmanOnly= Zlib.HuffmanOnly<tr><td></td><td><a href="#ZlibDeflate.Binary">Binary</a>= Zlib.Binary<tr><td></td><td>Ascii= Zlib.Ascii<tr><td></td><td>Unknown= Zlib.Unknown<tr><th align='left'>type declarations</th><td><a href="#ZlibDeflate.Stream">Stream</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#ZlibDeflate.Reset">Reset</a> (<strong>VAR</strong> stream: <strong>Stream</strong>)<tr><td></td><td> <a href="#ZlibDeflate.Close">Close</a> (<strong>VAR</strong> stream: <strong>Stream</strong>)<tr><td></td><td> <a href="#ZlibDeflate.Open">Open</a> (<strong>VAR</strong> stream: <strong>Stream</strong>; level, strategy: <strong>SIGNED8</strong>; wrapper: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#ZlibDeflate.SetDictionary">SetDictionary</a> (<strong>VAR</strong> stream: <strong>Stream</strong>; <strong>VAR</strong> dict: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#ZlibDeflate.Deflate">Deflate</a> (<strong>VAR</strong> stream: <strong>Stream</strong>; flush: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#ZlibDeflate.SetParams">SetParams</a> (<strong>VAR</strong> stream: <strong>Stream</strong>; level, strategy: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#ZlibDeflate.Compress">Compress</a> (<strong>VAR</strong> src, dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; srcoffset, srclen, dstoffset, dstlen: <strong>SIGNED32</strong>; level, strategy: <strong>SIGNED8</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_B56DC200">
+</h1>
+<p> AUTHOR "swalthert"; PURPOSE "Zlib compression";</p>
+
+<p> Compression of byte streams with deflate algorithm</p>
+<hr><h2 id="#_B56DFEC0"><a name="ZlibDeflate.Ok"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Ok">Ok</a>
+</h2>
+<p> Result codes for compression/decompression functions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= Zlib.Ok</pre>
+<hr><h2 id="#_B56E4300"><a name="ZlibDeflate.StreamEnd"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.StreamEnd">StreamEnd</a>
+</h2>
+<p> regular termination</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> StreamEnd*= Zlib.StreamEnd</pre>
+<hr><h2 id="#_B56E7A80"><a name="ZlibDeflate.BufError"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.BufError">BufError</a>
+</h2>
+<p> errors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> BufError*= Zlib.BufError</pre>
+<hr><h2 id="#_B56EADC0"><a name="ZlibDeflate.NoFlush"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.NoFlush">NoFlush</a>
+</h2>
+<p> Flush values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NoFlush*= Zlib.NoFlush</pre>
+<hr><h2 id="#_B56EE540"><a name="ZlibDeflate.DefaultCompression"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.DefaultCompression">DefaultCompression</a>
+</h2>
+<p> compression levels</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DefaultCompression*= Zlib.DefaultCompression</pre>
+<hr><h2 id="#_B56F1C00"><a name="ZlibDeflate.DefaultStrategy"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.DefaultStrategy">DefaultStrategy</a>
+</h2>
+<p> compression strategies</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DefaultStrategy*= Zlib.DefaultStrategy</pre>
+<hr><h2 id="#_B56F52C0"><a name="ZlibDeflate.Binary"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Binary">Binary</a>
+</h2>
+<p> data type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Binary*= Zlib.Binary</pre>
+<hr><h2 id="#_B56F8A80"><a name="ZlibDeflate.Stream"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Stream">Stream</a>
+</h2>
+<p> deflate stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Stream* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>in: <strong>ZlibBuffers.Buffer</strong><tr><td></td><td>out: <strong>ZlibBuffers.Buffer</strong><tr><td></td><td><a href="#ZlibDeflate.Stream.res">res</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#ZlibDeflate.Stream.level">level</a>: <strong>SIGNED8</strong><tr><td></td><td><a href="#ZlibDeflate.Stream.strategy">strategy</a>: <strong>SIGNED8</strong><tr><td></td><td><a href="#ZlibDeflate.Stream.dataType">dataType</a>: <strong>SIGNED8</strong><tr><td></td><td><a href="#ZlibDeflate.Stream.wrapper">wrapper</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#ZlibDeflate.Stream.open">open</a>: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_B5703DC0"><a name="ZlibDeflate.Stream.res"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Stream">Stream</a>.<a href="#ZlibDeflate.Stream.res">res</a>
+</h3>
+<p> result of last operation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> res-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_B5707F00"><a name="ZlibDeflate.Stream.level"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Stream">Stream</a>.<a href="#ZlibDeflate.Stream.level">level</a>
+</h3>
+<p> compression level</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> level-: <strong>SIGNED8</strong></pre>
+<hr><h3 id="#_B570B7C0"><a name="ZlibDeflate.Stream.strategy"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Stream">Stream</a>.<a href="#ZlibDeflate.Stream.strategy">strategy</a>
+</h3>
+<p>compression strategy</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> strategy-: <strong>SIGNED8</strong></pre>
+<hr><h3 id="#_B570EF00"><a name="ZlibDeflate.Stream.dataType"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Stream">Stream</a>.<a href="#ZlibDeflate.Stream.dataType">dataType</a>
+</h3>
+<p> Unknown, Binary or Ascii</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> dataType-: <strong>SIGNED8</strong></pre>
+<hr><h3 id="#_B5713140"><a name="ZlibDeflate.Stream.wrapper"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Stream">Stream</a>.<a href="#ZlibDeflate.Stream.wrapper">wrapper</a>
+</h3>
+<p> if set, zlib header and checksum are generated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> wrapper-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_B5718300"><a name="ZlibDeflate.Stream.open"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Stream">Stream</a>.<a href="#ZlibDeflate.Stream.open">open</a>
+</h3>
+<p> if set, stream is initialized</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> open-: <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_B571C8C0"><a name="ZlibDeflate.Reset"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Reset">Reset</a>
+</h2>
+<p>---Streams---</p>
+
+<p> reset stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reset* (<strong>VAR</strong> stream: <strong>Stream</strong>)</pre>
+<hr><h2 id="#_B5720E00"><a name="ZlibDeflate.Close"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Close">Close</a>
+</h2>
+<p> close deflate stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close* (<strong>VAR</strong> stream: <strong>Stream</strong>)</pre>
+<hr><h2 id="#_B5725300"><a name="ZlibDeflate.Open"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Open">Open</a>
+</h2>
+<p> initialize deflate stream with compression level and strategy; if wrapper is not set, no header and checksum are generated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (<strong>VAR</strong> stream: <strong>Stream</strong>; level, strategy: <strong>SIGNED8</strong>; wrapper: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_B572FB40"><a name="ZlibDeflate.SetDictionary"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.SetDictionary">SetDictionary</a>
+</h2>
+<p> initializes the compression dictionary from the given byte sequence without producing any compressed output. Must be called immediately after Open or Reset before any call of Deflate</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetDictionary* (<strong>VAR</strong> stream: <strong>Stream</strong>; <strong>VAR</strong> dict: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_B573C5C0"><a name="ZlibDeflate.Deflate"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Deflate">Deflate</a>
+</h2>
+<p> Deflate compresses as much data as possible, and stops when the input buffer becomes empty or the output buffer becomes full; the flush parameter decides if and how blocks are terminated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Deflate* (<strong>VAR</strong> stream: <strong>Stream</strong>; flush: <strong>SIGNED8</strong>)</pre>
+<hr><h2 id="#_B57486C0"><a name="ZlibDeflate.SetParams"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.SetParams">SetParams</a>
+</h2>
+<p> change deflate parameters within the stream. If the compression level is changed, the input available so far is compressed with the old level (and may be flushed); the new level will take effect only at the next call of Deflate</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetParams* (<strong>VAR</strong> stream: <strong>Stream</strong>; level, strategy: <strong>SIGNED8</strong>)</pre>
+<hr><h2 id="#_B5757180"><a name="ZlibDeflate.Compress"></a><a href="#ZlibDeflate">ZlibDeflate</a>.<a href="#ZlibDeflate.Compress">Compress</a>
+</h2>
+<p> compress complete stream and return output length in len</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Compress* (<strong>VAR</strong> src, dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; srcoffset, srclen, dstoffset, dstlen: <strong>SIGNED32</strong>; level, strategy: <strong>SIGNED8</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+</body></html>

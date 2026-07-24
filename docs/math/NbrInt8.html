@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#NbrInt8">NbrInt8</a></p>
+<hr><h1 id="#_17AEEB40"><a name="NbrInt8"></a><a href="#ModuleList">Module</a> NbrInt8
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Alias for type SIGNED8.";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>Integer =<strong>SIGNED8</strong><tr><th align='left'>variables</th><td>MinNbr: <strong>Integer</strong><tr><td></td><td>MaxNbr: <strong>Integer</strong><tr><th align='left'>procedures</th><td> <a href="#NbrInt8.Abs">Abs</a> (i: <strong>Integer</strong>): <strong>Integer</strong><tr><td></td><td> Dec (<strong>VAR</strong> i: <strong>Integer</strong>)<tr><td></td><td> Inc (<strong>VAR</strong> i: <strong>Integer</strong>)<tr><td></td><td> Odd (i: <strong>Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Max (x1, x2: <strong>Integer</strong>): <strong>Integer</strong><tr><td></td><td> Min (x1, x2: <strong>Integer</strong>): <strong>Integer</strong><tr><td></td><td> Sign (x: <strong>Integer</strong>): <strong>Integer</strong><tr><td></td><td> <a href="#NbrInt8.StringToInt">StringToInt</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Integer</strong>)<tr><td></td><td> <a href="#NbrInt8.IntToString">IntToString</a> (x: <strong>Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#NbrInt8.Load">Load</a> (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Integer</strong>)<tr><td></td><td> Store (W: <strong>Streams.Writer</strong>; x: <strong>Integer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_17B10CC0"><a name="NbrInt8.Abs"></a><a href="#NbrInt8">NbrInt8</a>.<a href="#NbrInt8.Abs">Abs</a>
+</h2>
+<p> All arithmetic operations are built into the compiler and therefore need not to be defined here.</p>
+
+<p> Basic Functions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Abs* (i: <strong>Integer</strong>): <strong>Integer</strong></pre>
+<hr><h2 id="#_17B19000"><a name="NbrInt8.StringToInt"></a><a href="#NbrInt8">NbrInt8</a>.<a href="#NbrInt8.StringToInt">StringToInt</a>
+</h2>
+<p> String conversions.</p>
+
+<p> Admissible characters include: <code>" ", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ","}. </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StringToInt* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Integer</strong>)</pre>
+<hr><h2 id="#_17B1FF80"><a name="NbrInt8.IntToString"></a><a href="#NbrInt8">NbrInt8</a>.<a href="#NbrInt8.IntToString">IntToString</a>
+</h2>
+<p> LEN(string) = 5</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntToString* (x: <strong>Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_17B25E00"><a name="NbrInt8.Load"></a><a href="#NbrInt8">NbrInt8</a>.<a href="#NbrInt8.Load">Load</a>
+</h2>
+<p> Persistence: file IO</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Integer</strong>)</pre>
+</body></html>

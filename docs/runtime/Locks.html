@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Locks">Locks</a></p>
+<hr><h1 id="#_B328E440"><a name="Locks"></a><a href="#ModuleList">Module</a> Locks
+</h1>
+<p> AUTHOR "TF"; PURPOSE "Highlevel locks (recursive, reader writer)";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Locks.Lock">Lock</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Locks.RecursiveLock">RecursiveLock</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Locks.LockReleasedHandler">LockReleasedHandler</a> =<strong>PROCEDURE</strong>{DELEGATE} <tr><td></td><td><a href="#Locks.RWLock">RWLock</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> DeadLock</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_B32974C0"><a name="Locks.Lock"></a><a href="#Locks">Locks</a>.<a href="#Locks.Lock">Lock</a>
+</h2>
+<p> Non-reentrant lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Lock* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& New<tr><td></td><td> Acquire<tr><td></td><td> Release<tr><td></td><td> HasLock (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_B329E940"><a name="Locks.RecursiveLock"></a><a href="#Locks">Locks</a>.<a href="#Locks.RecursiveLock">RecursiveLock</a>
+</h2>
+<p> Implements a recursive lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RecursiveLock* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& New<tr><td></td><td> <a href="#Locks.RecursiveLock.Acquire">Acquire</a><tr><td></td><td> <a href="#Locks.RecursiveLock.Release">Release</a><tr><td></td><td> HasLock (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_B32A6640"><a name="Locks.RecursiveLock.Acquire"></a><a href="#Locks">Locks</a>.<a href="#Locks.RecursiveLock">RecursiveLock</a>.<a href="#Locks.RecursiveLock.Acquire">Acquire</a>
+</h3>
+<p> acquire a lock on the object</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Acquire*</pre>
+<hr><h3 id="#_B32AAA00"><a name="Locks.RecursiveLock.Release"></a><a href="#Locks">Locks</a>.<a href="#Locks.RecursiveLock">RecursiveLock</a>.<a href="#Locks.RecursiveLock.Release">Release</a>
+</h3>
+<p> release the read/write lock on the object</p>
+
+<p> MUST hold lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Release*</pre>
+<hr><h2 id="#_B32AFEC0"><a name="Locks.LockReleasedHandler"></a><a href="#Locks">Locks</a>.<a href="#Locks.LockReleasedHandler">LockReleasedHandler</a>
+</h2>
+<p> Reader/Writer Lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LockReleasedHandler* =<strong>PROCEDURE</strong>{DELEGATE} </pre>
+<hr><h2 id="#_B32B3AC0"><a name="Locks.RWLock"></a><a href="#Locks">Locks</a>.<a href="#Locks.RWLock">RWLock</a>
+</h2>
+<p> Implements a Reader/Writer lock that can be taken by many readers at the same time, as long as no writer lock was taken. Only one writer lock is possible at one time. (MREW = Multi Read, Exclusive Write) Writers can starve. Possible remedies : simple : Don't let new readers in if a writer made an acquire. more complicated: Q all acquires and handle in order (optimizing readers) Readers trying to get a Writer lock result in a trap. Currently no upgrade.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RWLock* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& New<tr><td></td><td> <a href="#Locks.RWLock.AcquireWrite">AcquireWrite</a><tr><td></td><td> <a href="#Locks.RWLock.ReleaseWrite">ReleaseWrite</a><tr><td></td><td> <a href="#Locks.RWLock.HasWriteLock">HasWriteLock</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Locks.RWLock.GetWLockLevel">GetWLockLevel</a> (): <strong>SIZE</strong><tr><td></td><td> SetLockReleasedHandler (handler: <strong>LockReleasedHandler</strong>)<tr><td></td><td> <a href="#Locks.RWLock.AcquireRead">AcquireRead</a><tr><td></td><td> <a href="#Locks.RWLock.ReleaseRead">ReleaseRead</a><tr><td></td><td> <a href="#Locks.RWLock.HasReadLock">HasReadLock</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Locks.RWLock.Reset">Reset</a><tr><td></td><td> WriteLock<tr><td></td><td> WriteStats</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_B32D6040"><a name="Locks.RWLock.AcquireWrite"></a><a href="#Locks">Locks</a>.<a href="#Locks.RWLock">RWLock</a>.<a href="#Locks.RWLock.AcquireWrite">AcquireWrite</a>
+</h3>
+<p> acquire a write-lock on the object</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AcquireWrite*</pre>
+<hr><h3 id="#_B32DA340"><a name="Locks.RWLock.ReleaseWrite"></a><a href="#Locks">Locks</a>.<a href="#Locks.RWLock">RWLock</a>.<a href="#Locks.RWLock.ReleaseWrite">ReleaseWrite</a>
+</h3>
+<p> release the write-lock on the object. MUST hold lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReleaseWrite*</pre>
+<hr><h3 id="#_B32DF340"><a name="Locks.RWLock.HasWriteLock"></a><a href="#Locks">Locks</a>.<a href="#Locks.RWLock">RWLock</a>.<a href="#Locks.RWLock.HasWriteLock">HasWriteLock</a>
+</h3>
+<p> Make sure, the calling process has this write-lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HasWriteLock* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_B32E4B40"><a name="Locks.RWLock.GetWLockLevel"></a><a href="#Locks">Locks</a>.<a href="#Locks.RWLock">RWLock</a>.<a href="#Locks.RWLock.GetWLockLevel">GetWLockLevel</a>
+</h3>
+<p> Returns the locklevel of the write lock. <a href="#Must">Must</a> hold write lock]</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetWLockLevel* (): <strong>SIZE</strong></pre>
+<hr><h3 id="#_B32EAF40"><a name="Locks.RWLock.AcquireRead"></a><a href="#Locks">Locks</a>.<a href="#Locks.RWLock">RWLock</a>.<a href="#Locks.RWLock.AcquireRead">AcquireRead</a>
+</h3>
+<p> acquire a read-lock on the object</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AcquireRead*</pre>
+<hr><h3 id="#_B32EF240"><a name="Locks.RWLock.ReleaseRead"></a><a href="#Locks">Locks</a>.<a href="#Locks.RWLock">RWLock</a>.<a href="#Locks.RWLock.ReleaseRead">ReleaseRead</a>
+</h3>
+<p> release the read lock on the object. MUST hold lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReleaseRead*</pre>
+<hr><h3 id="#_B32F44C0"><a name="Locks.RWLock.HasReadLock"></a><a href="#Locks">Locks</a>.<a href="#Locks.RWLock">RWLock</a>.<a href="#Locks.RWLock.HasReadLock">HasReadLock</a>
+</h3>
+<p> Make sure, the calling process has a read lock. A write lock implicitly holds the read lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HasReadLock* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_B32FC0C0"><a name="Locks.RWLock.Reset"></a><a href="#Locks">Locks</a>.<a href="#Locks.RWLock">RWLock</a>.<a href="#Locks.RWLock.Reset">Reset</a>
+</h3>
+<p> Remove all locks owned by the caller</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reset*</pre>
+</body></html>

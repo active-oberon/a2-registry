@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ObjectFile">ObjectFile</a></p>
+<hr><h1 id="#_A1491480"><a name="ObjectFile"></a><a href="#ModuleList">Module</a> ObjectFile
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Version= 8<tr><td></td><td>Absolute= 0<tr><td></td><td>Relative= 1<tr><td></td><td>EntryCode= 0<tr><td></td><td>InitCode= 1<tr><td></td><td>ExitCode= 2<tr><td></td><td>BodyCode= 3<tr><td></td><td>Code= 4<tr><td></td><td>Data= 5<tr><td></td><td>Const= 6<tr><td></td><td>DefaultExtension= ".Gof"<tr><th align='left'>type declarations</th><td>Unit =<strong>SIZE</strong><tr><td></td><td>Bits =<strong>SIZE</strong><tr><td></td><td>Fingerprint =<strong>SIGNED64</strong><tr><td></td><td>SegmentedName =<strong>ARRAY</strong> 8 <strong>OF</strong> <strong>StringPool.Index</strong><tr><td></td><td>SectionName =<strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#ObjectFile.FixupPattern">FixupPattern</a> =<strong>RECORD</strong> <tr><td></td><td>FixupPatterns =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>FixupPattern</strong><tr><td></td><td><a href="#ObjectFile.Identifier">Identifier</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#ObjectFile.Pattern">Pattern</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#ObjectFile.Patch">Patch</a> =<strong>RECORD</strong> <tr><td></td><td>Patches =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Patch</strong><tr><td></td><td><a href="#ObjectFile.Fixup">Fixup</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#ObjectFile.Alias">Alias</a> =<strong>RECORD</strong> <tr><td></td><td>Fixups =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Fixup</strong><tr><td></td><td>Aliases =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Alias</strong><tr><td></td><td><a href="#ObjectFile.Section">Section</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#ObjectFile.PoolMap">PoolMap</a> =<strong>OBJECT</strong> <tr><td></td><td>NameList =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>SegmentedName</strong><tr><th align='left'>procedures</th><td> IsCode (type: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Matches (<strong>CONST</strong> this, that: <strong>Identifier</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CopyFixup (source: <strong>Fixup</strong>; <strong>VAR</strong> dest: <strong>Fixup</strong>)<tr><td></td><td> CopyAlias (<strong>CONST</strong> source: <strong>Alias</strong>; <strong>VAR</strong> dest: <strong>Alias</strong>)<tr><td></td><td> CopySection (<strong>CONST</strong> source: <strong>Section</strong>; <strong>VAR</strong> dest: <strong>Section</strong>)<tr><td></td><td> InitSection (<strong>VAR</strong> dest: <strong>Section</strong>)<tr><td></td><td> NibbleToCharacter (value: <strong>INTEGER</strong>): <strong>CHAR</strong><tr><td></td><td> CharacterToNibble (char: <strong>CHAR</strong>): <strong>INTEGER</strong><tr><td></td><td> ReadNameList (reader: <strong>Streams.Reader</strong>; <strong>VAR</strong> nameList: <strong>NameList</strong>; binary: <strong>BOOLEAN</strong>; poolMap: <strong>PoolMap</strong>)<tr><td></td><td> WriteNameList (writer: <strong>Streams.Writer</strong>; nameList: <strong>NameList</strong>; binary: <strong>BOOLEAN</strong>; poolMap: <strong>PoolMap</strong>)<tr><td></td><td> ReadSection (reader: <strong>Streams.Reader</strong>; <strong>VAR</strong> section: <strong>Section</strong>; binary: <strong>BOOLEAN</strong>; poolMap: <strong>PoolMap</strong>)<tr><td></td><td> WriteSection (writer: <strong>Streams.Writer</strong>; <strong>CONST</strong> section: <strong>Section</strong>; binary: <strong>BOOLEAN</strong>; poolMap: <strong>PoolMap</strong>)<tr><td></td><td> SetFixups (<strong>VAR</strong> section: <strong>Section</strong>; fixups: <strong>SIZE</strong>; fixup: <strong>Fixups</strong>)<tr><td></td><td> SetAliases (<strong>VAR</strong> section: <strong>Section</strong>; aliases: <strong>SIZE</strong>; alias: <strong>Aliases</strong>)<tr><td></td><td> AddPatch (<strong>VAR</strong> patches: <strong>SIZE</strong>; <strong>VAR</strong> patch: <strong>Patches</strong>; disp, ofs: <strong>Unit</strong>)<tr><td></td><td> AddFixup (<strong>VAR</strong> fixups: <strong>SIZE</strong>; <strong>VAR</strong> fixup: <strong>Fixups</strong>; <strong>CONST</strong> name: <strong>SegmentedName</strong>; fingerprint: <strong>Fingerprint</strong>; mode: <strong>INTEGER</strong>; scale: <strong>Bits</strong>; patterns: <strong>SIZE</strong>; pattern: <strong>FixupPatterns</strong>): <strong>SIZE</strong><tr><td></td><td> AddAlias (<strong>VAR</strong> aliases: <strong>SIZE</strong>; <strong>VAR</strong> alias: <strong>Aliases</strong>; <strong>CONST</strong> name: <strong>SegmentedName</strong>; fingerprint: <strong>Fingerprint</strong>; offset: <strong>Unit</strong>): <strong>SIZE</strong><tr><td></td><td> StringToSegmentedName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> segmentedName: <strong>SegmentedName</strong>)<tr><td></td><td> SegmentedNameToString (<strong>CONST</strong> segmentedName: <strong>SegmentedName</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> CompareSegmentedNames (<strong>CONST</strong> s1, s2: <strong>SegmentedName</strong>): <strong>INTEGER</strong><tr><td></td><td> IsPrefix (<strong>CONST</strong> prefix, of: <strong>SegmentedName</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> l, r: <strong>SegmentedName</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> l, r: <strong>Identifier</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> l, r: <strong>Identifier</strong>): <strong>BOOLEAN</strong><tr><td></td><td> := (<strong>VAR</strong> l: <strong>SegmentedName</strong>; <strong>CONST</strong> r: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> := (<strong>VAR</strong> l: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> r: <strong>SegmentedName</strong>)<tr><td></td><td> = (<strong>CONST</strong> l: <strong>SegmentedName</strong>; <strong>CONST</strong> r: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> l: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; r: <strong>SegmentedName</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> l: <strong>SegmentedName</strong>; <strong>CONST</strong> r: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> l: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; r: <strong>SegmentedName</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> l, r: <strong>SegmentedName</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Statistics<tr><td></td><td> ResetStatistics</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A1526240"><a name="ObjectFile.FixupPattern"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.FixupPattern">FixupPattern</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FixupPattern* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>offset: <strong>Bits</strong><tr><td></td><td>bits: <strong>Bits</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A152B2C0"><a name="ObjectFile.Identifier"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.Identifier">Identifier</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Identifier* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>SegmentedName</strong><tr><td></td><td>fingerprint: <strong>Fingerprint</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A152FE00"><a name="ObjectFile.Pattern"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.Pattern">Pattern</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Pattern* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>mode: <strong>INTEGER</strong><tr><td></td><td>scale: <strong>Bits</strong><tr><td></td><td>patterns: <strong>SIZE</strong><tr><td></td><td>pattern: <strong>FixupPatterns</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A15374C0"><a name="ObjectFile.Patch"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.Patch">Patch</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Patch* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>offset: <strong>Unit</strong><tr><td></td><td>displacement: <strong>Unit</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A153C000"><a name="ObjectFile.Fixup"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.Fixup">Fixup</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Fixup* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>identifier: <strong>Identifier</strong><tr><td></td><td>pattern: <strong>Pattern</strong><tr><td></td><td>index: <strong>SIZE</strong><tr><td></td><td>patches: <strong>SIZE</strong><tr><td></td><td>patch: <strong>Patches</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A1543840"><a name="ObjectFile.Alias"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.Alias">Alias</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Alias* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>identifier: <strong>Identifier</strong><tr><td></td><td>offset: <strong>Unit</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A1548380"><a name="ObjectFile.Section"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.Section">Section</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Section* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>INTEGER</strong><tr><td></td><td>identifier: <strong>Identifier</strong><tr><td></td><td>unit: <strong>Bits</strong><tr><td></td><td>fixed: <strong>BOOLEAN</strong><tr><td></td><td>alignment: <strong>Unit</strong><tr><td></td><td>fixups: <strong>SIZE</strong><tr><td></td><td>fixup: <strong>Fixups</strong><tr><td></td><td>aliases: <strong>SIZE</strong><tr><td></td><td>alias: <strong>Aliases</strong><tr><td></td><td>bits: <strong>BitSets.BitSet</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A15544C0"><a name="ObjectFile.PoolMap"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.PoolMap">PoolMap</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PoolMap* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Get (key: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> Has (key: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Clear<tr><td></td><td> <a href="#ObjectFile.PoolMap.Read">Read</a> (reader: <strong>Streams.Reader</strong>)<tr><td></td><td> <a href="#ObjectFile.PoolMap.PutGlobal">PutGlobal</a> (key: <strong>SIZE</strong>)<tr><td></td><td> PutSegmentedName (<strong>CONST</strong> name: <strong>SegmentedName</strong>)<tr><td></td><td> BeginWriting (w: <strong>Streams.Writer</strong>)<tr><td></td><td> EndWriting</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_A1565940"><a name="ObjectFile.PoolMap.Read"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.PoolMap">PoolMap</a>.<a href="#ObjectFile.PoolMap.Read">Read</a>
+</h3>
+<p> read map and produce Local --&gt Global</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (reader: <strong>Streams.Reader</strong>)</pre>
+<hr><h3 id="#_A156B1C0"><a name="ObjectFile.PoolMap.PutGlobal"></a><a href="#ObjectFile">ObjectFile</a>.<a href="#ObjectFile.PoolMap">PoolMap</a>.<a href="#ObjectFile.PoolMap.PutGlobal">PutGlobal</a>
+</h3>
+<p> write global --&gt local map</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PutGlobal* (key: <strong>SIZE</strong>)</pre>
+</body></html>

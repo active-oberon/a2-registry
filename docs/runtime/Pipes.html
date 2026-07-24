@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Pipes">Pipes</a></p>
+<hr><h1 id="#_0EFD1100"><a name="Pipes"></a><a href="#ModuleList">Module</a> Pipes
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "Simple pipe object";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Pipes.Pipe">Pipe</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Pipes.Receiver">Receiver</a> =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td><a href="#Pipes.ReadDecoupler">ReadDecoupler</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_0EFDDA80">
+</h1><hr><h2 id="#_0EFDE240"><a name="Pipes.Pipe"></a><a href="#Pipes">Pipes</a>.<a href="#Pipes.Pipe">Pipe</a>
+</h2>
+<p> A pipe is a bounded buffer that can be used as an Streams Reader and Writer. Everything sent to the sink can be read from the source.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Pipe* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#Pipes.Pipe.Available">Available</a> (): <strong>SIZE</strong><tr><td></td><td> Send (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Receive (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td>& Init (size: <strong>SIZE</strong>)<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_0EFF8480"><a name="Pipes.Pipe.Available"></a><a href="#Pipes">Pipes</a>.<a href="#Pipes.Pipe">Pipe</a>.<a href="#Pipes.Pipe.Available">Available</a>
+</h3>
+<p> return the number of bytes that can be read without blocking</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Available* (): <strong>SIZE</strong></pre>
+<hr><h2 id="#_0EFFE940"><a name="Pipes.Receiver"></a><a href="#Pipes">Pipes</a>.<a href="#Pipes.Receiver">Receiver</a>
+</h2>
+<p> Any stream input procedure or method. Identical to the definition in Streams.Mod, but I don't want to import that here</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Receiver* =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_0F00C7C0"><a name="Pipes.ReadDecoupler"></a><a href="#Pipes">Pipes</a>.<a href="#Pipes.ReadDecoupler">ReadDecoupler</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ReadDecoupler* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitReadDecoupler (inputReceiver: <strong>Receiver</strong>)<tr><td></td><td> Receive (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

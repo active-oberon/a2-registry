@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CryptoBigNumbers">CryptoBigNumbers</a></p>
+<hr><h1 id="#_7460F640"><a name="CryptoBigNumbers"></a><a href="#ModuleList">Module</a> CryptoBigNumbers
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CryptoBigNumbers.BigNumber">BigNumber</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> RandomBytes (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; p, n: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoBigNumbers.NewRand">NewRand</a> (bits: <strong>SIZE</strong>; top, bottom: <strong>SIGNED8</strong>): <strong>BigNumber</strong><tr><td></td><td> NewRandRange (range: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> AssignHex (<strong>VAR</strong> b: <strong>BigNumber</strong>; <strong>CONST</strong> hex: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> AssignBin (<strong>VAR</strong> b: <strong>BigNumber</strong>; <strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoBigNumbers.GetBinaryValue">GetBinaryValue</a> (<strong>VAR</strong> b: <strong>BigNumber</strong>; <strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>)<tr><td></td><td> AssignInt (<strong>VAR</strong> b: <strong>BigNumber</strong>; val: <strong>INTEGER</strong>)<tr><td></td><td> Cmp (a, b: <strong>BigNumber</strong>): <strong>SIGNED8</strong><tr><td></td><td> Copy (<strong>VAR</strong> a, b: <strong>BigNumber</strong>)<tr><td></td><td> Add (a, b: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> Sub (a, b: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> Mul (a, b: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> Div2 (a, b: <strong>BigNumber</strong>; <strong>VAR</strong> q, r: <strong>BigNumber</strong>)<tr><td></td><td> ModWord (<strong>VAR</strong> a: <strong>BigNumber</strong>; b: <strong>BNdigit</strong>): <strong>BNdigit</strong><tr><td></td><td> Div (a, b: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> Mod (a, b: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> Exp (a, b: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> ModMul (a, b, m: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> ModExp (a, b, m: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> GCD (a, b: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> ModInverse (a, m: <strong>BigNumber</strong>): <strong>BigNumber</strong><tr><td></td><td> TextWrite (w: <strong>Streams.Writer</strong>; b: <strong>BigNumber</strong>)<tr><td></td><td> <a href="#CryptoBigNumbers.Print">Print</a> (b: <strong>BigNumber</strong>)<tr><td></td><td> TextRead (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> b: <strong>BigNumber</strong>)<tr><td></td><td> FileRead (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> b: <strong>BigNumber</strong>)<tr><td></td><td> FileWrite (w: <strong>Streams.Writer</strong>; b: <strong>BigNumber</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_7465F8C0">
+</h1><hr><h2 id="#_74660080"><a name="CryptoBigNumbers.BigNumber"></a><a href="#CryptoBigNumbers">CryptoBigNumbers</a>.<a href="#CryptoBigNumbers.BigNumber">BigNumber</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BigNumber* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CryptoBigNumbers.BigNumber.len">len</a>: <strong>SIZE</strong><tr><td></td><td>neg: <strong>BOOLEAN</strong><tr><td></td><td>d: <strong>digits</strong><tr><th align='left'>procedures</th><td> Mask (bits: <strong>SIZE</strong>)<tr><td></td><td> IsZero (): <strong>BOOLEAN</strong><tr><td></td><td> EQ (b: <strong>BigNumber</strong>): <strong>BOOLEAN</strong><tr><td></td><td> NEQ (b: <strong>BigNumber</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GT (b: <strong>BigNumber</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GEQ (b: <strong>BigNumber</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Shift (n: <strong>SIZE</strong>)<tr><td></td><td> Dec<tr><td></td><td> Inc<tr><td></td><td> Negate<tr><td></td><td> BitSize (): <strong>SIZE</strong><tr><td></td><td> BitSet (n: <strong>SIZE</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_74678440"><a name="CryptoBigNumbers.BigNumber.len"></a><a href="#CryptoBigNumbers">CryptoBigNumbers</a>.<a href="#CryptoBigNumbers.BigNumber">BigNumber</a>.<a href="#CryptoBigNumbers.BigNumber.len">len</a>
+</h3>
+<p> number of significant 'digits'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> len-: <strong>SIZE</strong></pre>
+<hr><h2 id="#_7467C640"><a name="CryptoBigNumbers.NewRand"></a><a href="#CryptoBigNumbers">CryptoBigNumbers</a>.<a href="#CryptoBigNumbers.NewRand">NewRand</a>
+</h2>
+<p> random number with len 'bits'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewRand* (bits: <strong>SIZE</strong>; top, bottom: <strong>SIGNED8</strong>): <strong>BigNumber</strong></pre>
+<hr><h2 id="#_74682D00"><a name="CryptoBigNumbers.GetBinaryValue"></a><a href="#CryptoBigNumbers">CryptoBigNumbers</a>.<a href="#CryptoBigNumbers.GetBinaryValue">GetBinaryValue</a>
+</h2>
+<p> Returns the value of b as a binary string 'data' starting at ofs. The Length of 'data' must be longer or equal to 4*b.len + ofs.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetBinaryValue* (<strong>VAR</strong> b: <strong>BigNumber</strong>; <strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_7468F440"><a name="CryptoBigNumbers.Print"></a><a href="#CryptoBigNumbers">CryptoBigNumbers</a>.<a href="#CryptoBigNumbers.Print">Print</a>
+</h2>
+<p> writes a hexadecimal representation of b to the standard output</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Print* (b: <strong>BigNumber</strong>)</pre>
+</body></html>

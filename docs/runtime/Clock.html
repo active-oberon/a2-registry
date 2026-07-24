@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Clock">Clock</a></p>
+<hr><h1 id="#_1043C040"><a name="Clock"></a><a href="#ModuleList">Module</a> Clock
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "Real-time clock driver";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Clock.tz">tz</a>: <strong>SIGNED32</strong><tr><td></td><td>starttime: <strong>SIGNED32</strong><tr><td></td><td><a href="#Clock.startdate">startdate</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#Clock.Get">Get</a> (<strong>VAR</strong> time, date: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Clock.Set">Set</a> (time, date: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_10446DC0"><a name="Clock.tz"></a><a href="#Clock">Clock</a>.<a href="#Clock.tz">tz</a>
+</h2>
+<p> system time zone offset in minutes (from -720 to 720)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> tz*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_1044BFC0"><a name="Clock.startdate"></a><a href="#Clock">Clock</a>.<a href="#Clock.startdate">startdate</a>
+</h2>
+<p> time this module was loaded (usually boot time)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> startdate*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_10450AC0"><a name="Clock.Get"></a><a href="#Clock">Clock</a>.<a href="#Clock.Get">Get</a>
+</h2>
+<p> Return the current time and date in Oberon format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (<strong>VAR</strong> time, date: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_10457140"><a name="Clock.Set"></a><a href="#Clock">Clock</a>.<a href="#Clock.Set">Set</a>
+</h2>
+<p> Set the current time and date in Oberon format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Set* (time, date: <strong>SIGNED32</strong>)</pre>
+</body></html>

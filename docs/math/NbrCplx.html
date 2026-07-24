@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#NbrCplx">NbrCplx</a></p>
+<hr><h1 id="#_9A3BF000"><a name="NbrCplx"></a><a href="#ModuleList">Module</a> NbrCplx
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Defines a base Complex type for scientific computing.";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#NbrCplx.Complex">Complex</a> =<strong>RECORD</strong> <tr><th align='left'>variables</th><td><a href="#NbrCplx.I">I</a>: <strong>Complex</strong><tr><th align='left'>procedures</th><td> <a href="#NbrCplx.-">-</a> (x: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.~">~</a> (x: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.:=">:=</a> (<strong>VAR</strong> l: <strong>Complex</strong>; r: <strong>NbrInt.Integer</strong>)<tr><td></td><td> <a href="#NbrCplx.:=">:=</a> (<strong>VAR</strong> l: <strong>Complex</strong>; r: <strong>NbrRat.Rational</strong>)<tr><td></td><td> <a href="#NbrCplx.:=">:=</a> (<strong>VAR</strong> l: <strong>Complex</strong>; r: <strong>NbrRe.Real</strong>)<tr><td></td><td> <a href="#NbrCplx.=">=</a> (l, r: <strong>Complex</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrCplx.=">=</a> (l: <strong>Complex</strong>; r: <strong>NbrRe.Real</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrCplx.=">=</a> (l: <strong>Complex</strong>; r: <strong>NbrRat.Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrCplx.=">=</a> (l: <strong>Complex</strong>; r: <strong>NbrInt.Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrCplx.=">=</a> (l: <strong>NbrRe.Real</strong>; r: <strong>Complex</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrCplx.=">=</a> (l: <strong>NbrRat.Rational</strong>; r: <strong>Complex</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrCplx.=">=</a> (l: <strong>NbrInt.Integer</strong>; r: <strong>Complex</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l, r: <strong>Complex</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>Complex</strong>; r: <strong>NbrRe.Real</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>Complex</strong>; r: <strong>NbrRat.Rational</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>Complex</strong>; r: <strong>NbrInt.Integer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>NbrRe.Real</strong>; r: <strong>Complex</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>NbrRat.Rational</strong>; r: <strong>Complex</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l: <strong>NbrInt.Integer</strong>; r: <strong>Complex</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#NbrCplx.+">+</a> (l, r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.+">+</a> (l: <strong>Complex</strong>; r: <strong>NbrRe.Real</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.+">+</a> (l: <strong>Complex</strong>; r: <strong>NbrRat.Rational</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.+">+</a> (l: <strong>Complex</strong>; r: <strong>NbrInt.Integer</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.+">+</a> (l: <strong>NbrRe.Real</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.+">+</a> (l: <strong>NbrRat.Rational</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.+">+</a> (l: <strong>NbrInt.Integer</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.-">-</a> (l, r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.-">-</a> (l: <strong>Complex</strong>; r: <strong>NbrRe.Real</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.-">-</a> (l: <strong>Complex</strong>; r: <strong>NbrRat.Rational</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.-">-</a> (l: <strong>Complex</strong>; r: <strong>NbrInt.Integer</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.-">-</a> (l: <strong>NbrRe.Real</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.-">-</a> (l: <strong>NbrRat.Rational</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.-">-</a> (l: <strong>NbrInt.Integer</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> * (l, r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> * (l: <strong>Complex</strong>; r: <strong>NbrRe.Real</strong>): <strong>Complex</strong><tr><td></td><td> * (l: <strong>Complex</strong>; r: <strong>NbrRat.Rational</strong>): <strong>Complex</strong><tr><td></td><td> * (l: <strong>Complex</strong>; r: <strong>NbrInt.Integer</strong>): <strong>Complex</strong><tr><td></td><td> * (l: <strong>NbrRe.Real</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> * (l: <strong>NbrRat.Rational</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> * (l: <strong>NbrInt.Integer</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> / (l, r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> / (l: <strong>Complex</strong>; r: <strong>NbrRe.Real</strong>): <strong>Complex</strong><tr><td></td><td> / (l: <strong>Complex</strong>; r: <strong>NbrRat.Rational</strong>): <strong>Complex</strong><tr><td></td><td> / (l: <strong>Complex</strong>; r: <strong>NbrInt.Integer</strong>): <strong>Complex</strong><tr><td></td><td> / (l: <strong>NbrRe.Real</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> / (l: <strong>NbrRat.Rational</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> / (l: <strong>NbrInt.Integer</strong>; r: <strong>Complex</strong>): <strong>Complex</strong><tr><td></td><td> <a href="#NbrCplx.Re">Re</a> (x: <strong>Complex</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#NbrCplx.Im">Im</a> (x: <strong>Complex</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#NbrCplx.Abs">Abs</a> (x: <strong>Complex</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#NbrCplx.Arg">Arg</a> (x: <strong>Complex</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#NbrCplx.Get">Get</a> (x: <strong>Complex</strong>; <strong>VAR</strong> re, im: <strong>NbrRe.Real</strong>)<tr><td></td><td> Set (re, im: <strong>NbrRe.Real</strong>; <strong>VAR</strong> x: <strong>Complex</strong>)<tr><td></td><td> <a href="#NbrCplx.GetPolar">GetPolar</a> (x: <strong>Complex</strong>; <strong>VAR</strong> abs, arg: <strong>NbrRe.Real</strong>)<tr><td></td><td> SetPolar (abs, arg: <strong>NbrRe.Real</strong>; <strong>VAR</strong> x: <strong>Complex</strong>)<tr><td></td><td> <a href="#NbrCplx.StringToCplx">StringToCplx</a> (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Complex</strong>)<tr><td></td><td> <a href="#NbrCplx.CplxToString">CplxToString</a> (x: <strong>Complex</strong>; significantFigures: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#NbrCplx.PolarStringToCplx">PolarStringToCplx</a> (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Complex</strong>)<tr><td></td><td> <a href="#NbrCplx.CplxToPolarString">CplxToPolarString</a> (x: <strong>Complex</strong>; significantFigures: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#NbrCplx.Load">Load</a> (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Complex</strong>)<tr><td></td><td> Store (W: <strong>Streams.Writer</strong>; x: <strong>Complex</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_9A475640">
+</h1>
+<p> Cartesian componets: z = x + i y where x, y N !. Polar components: z = r exp(if) where r, f N !; r 3 0. Imaginary unit: i = V-1.</p>
+<hr><h2 id="#_9A47DB40"><a name="NbrCplx.Complex"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.Complex">Complex</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Complex* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_9A4807C0"><a name="NbrCplx.I"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.I">I</a>
+</h2>
+<p> The imaginary unit: i = V-1.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> I-: <strong>Complex</strong></pre>
+<hr><h2 id="#_9A484B00"><a name="NbrCplx.-"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.-">-</a>
+</h2>
+<p> Monadic Operators</p>
+
+<p> Negative, i.e., -z = -x - i y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (x: <strong>Complex</strong>): <strong>Complex</strong></pre>
+<hr><h2 id="#_9A48B040"><a name="NbrCplx.~"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.~">~</a>
+</h2>
+<p> Complex conjugate, i.e., ~z = x - i y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "~"* (x: <strong>Complex</strong>): <strong>Complex</strong></pre>
+<hr><h2 id="#_9A491040"><a name="NbrCplx.:="></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.:=">:=</a>
+</h2>
+<p> Dyadic Operators</p>
+
+<p> Type Conversions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> ":="* (<strong>VAR</strong> l: <strong>Complex</strong>; r: <strong>NbrInt.Integer</strong>)</pre>
+<hr><h2 id="#_9A496900"><a name="NbrCplx.="></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.=">=</a>
+</h2>
+<p> Comparison Operators</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "="* (l, r: <strong>Complex</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_9A49B440"><a name="NbrCplx.+"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.+">+</a>
+</h2>
+<p> Arithmetic</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "+"* (l, r: <strong>Complex</strong>): <strong>Complex</strong></pre>
+<hr><h2 id="#_9A49FD00"><a name="NbrCplx.Re"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.Re">Re</a>
+</h2>
+<p> Basic functions</p>
+
+<p> x in z = x + i y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Re* (x: <strong>Complex</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_9A4A6240"><a name="NbrCplx.Im"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.Im">Im</a>
+</h2>
+<p> y in z = x + i y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Im* (x: <strong>Complex</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_9A4ABD80"><a name="NbrCplx.Abs"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.Abs">Abs</a>
+</h2>
+<p> r in z = r exp(if)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Abs* (x: <strong>Complex</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_9A4B10C0"><a name="NbrCplx.Arg"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.Arg">Arg</a>
+</h2>
+<p> f in z = r exp(if)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Arg* (x: <strong>Complex</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_9A4B6400"><a name="NbrCplx.Get"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.Get">Get</a>
+</h2>
+<p> re = x and im = y in z = x + i y.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (x: <strong>Complex</strong>; <strong>VAR</strong> re, im: <strong>NbrRe.Real</strong>)</pre>
+<hr><h2 id="#_9A4BEAC0"><a name="NbrCplx.GetPolar"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.GetPolar">GetPolar</a>
+</h2>
+<p> abs = r and arg = f in z = r exp(if).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetPolar* (x: <strong>Complex</strong>; <strong>VAR</strong> abs, arg: <strong>NbrRe.Real</strong>)</pre>
+<hr><h2 id="#_9A4C6980"><a name="NbrCplx.StringToCplx"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.StringToCplx">StringToCplx</a>
+</h2>
+<p> String conversions.</p>
+
+<p> Admissible characters: <code>" ", "+", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "E", "i", ",", "."}. </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StringToCplx* (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Complex</strong>)</pre>
+<hr><h2 id="#_9A4CD140"><a name="NbrCplx.CplxToString"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.CplxToString">CplxToString</a>
+</h2>
+<p> LEN(string) = 2*significantFigures+18</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CplxToString* (x: <strong>Complex</strong>; significantFigures: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_9A4D3C80"><a name="NbrCplx.PolarStringToCplx"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.PolarStringToCplx">PolarStringToCplx</a>
+</h2>
+<p> Admissible characters: <code>" ", "+", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "E", "exp", "(", ")", "i", ",", "."}. </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PolarStringToCplx* (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> x: <strong>Complex</strong>)</pre>
+<hr><h2 id="#_9A4D9AC0"><a name="NbrCplx.CplxToPolarString"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.CplxToPolarString">CplxToPolarString</a>
+</h2>
+<p> LEN(string) = 2*significantFigures+22</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CplxToPolarString* (x: <strong>Complex</strong>; significantFigures: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_9A4E0600"><a name="NbrCplx.Load"></a><a href="#NbrCplx">NbrCplx</a>.<a href="#NbrCplx.Load">Load</a>
+</h2>
+<p> Persistence: file IO</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>Streams.Reader</strong>; <strong>VAR</strong> x: <strong>Complex</strong>)</pre>
+</body></html>
