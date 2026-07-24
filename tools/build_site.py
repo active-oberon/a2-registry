@@ -184,7 +184,7 @@ MOON_MARK = ('<svg class="mark" viewBox="0 0 32 32" aria-label="A2 moon mark">'
 def top(active_home=True, rel=""):
     return (f'<header class="top"><div class="wrap"><a class="brand" href="{rel}index.html" style="text-decoration:none">'
       f'{MOON_MARK}<span class="wm">A<sup>2</sup></span><span class="sub">· registry</span></a>'
-      f'<nav><a href="{rel}index.html">Packages</a><a href="https://gitlab.com/a25665725/minia2">SDK</a>'
+      f'<nav><a href="{rel}index.html">Packages</a><a href="https://github.com/active-oberon/minia2">SDK</a>'
       f'<button class="toggle" id="tt" title="Toggle theme" aria-label="Toggle light/dark">◑</button></nav></div></header>')
 
 FOOT = ('<footer><div class="wrap"><span class="mono">A² registry · Active Oberon / A2</span>'
