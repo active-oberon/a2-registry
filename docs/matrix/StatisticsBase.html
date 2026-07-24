@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#StatisticsBase">StatisticsBase</a></p>
-<hr><h1 id="#_D1B1AA00"><a name="StatisticsBase"></a><a href="#ModuleList">Module</a> StatisticsBase
+<hr><h1 id="#_C50C1A00"><a name="StatisticsBase"></a><a href="#ModuleList">Module</a> StatisticsBase
 </h1>
 <p> AUTHOR "Patrick Hunziker"; PURPOSE "tools for statistics";</p>
 
@@ -68,42 +68,42 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_D1B55DC0"><a name="StatisticsBase.Variance"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.Variance">Variance</a>
+<hr><h2 id="#_C50FCDC0"><a name="StatisticsBase.Variance"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.Variance">Variance</a>
 </h2>
 <p> variance of dataset</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Variance* (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_D1B5A940"><a name="StatisticsBase.StandardDeviation"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.StandardDeviation">StandardDeviation</a>
+<hr><h2 id="#_C5101940"><a name="StatisticsBase.StandardDeviation"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.StandardDeviation">StandardDeviation</a>
 </h2>
 <p> of full data</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> StandardDeviation* (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_D1B5F4C0"><a name="StatisticsBase.EstimatedVariance"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.EstimatedVariance">EstimatedVariance</a>
+<hr><h2 id="#_C51064C0"><a name="StatisticsBase.EstimatedVariance"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.EstimatedVariance">EstimatedVariance</a>
 </h2>
 <p> variance estimated from subset of data, divisor is (N-1)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> EstimatedVariance* (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_D1B65940"><a name="StatisticsBase.EstimatedStandardDeviation"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.EstimatedStandardDeviation">EstimatedStandardDeviation</a>
+<hr><h2 id="#_C510C940"><a name="StatisticsBase.EstimatedStandardDeviation"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.EstimatedStandardDeviation">EstimatedStandardDeviation</a>
 </h2>
 <p> subset of data , divisor is (N-1)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> EstimatedStandardDeviation* (<strong>CONST</strong> v: <strong>Array</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_D1B6B500"><a name="StatisticsBase.SoftMax"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.SoftMax">SoftMax</a>
+<hr><h2 id="#_C5112500"><a name="StatisticsBase.SoftMax"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.SoftMax">SoftMax</a>
 </h2>
 <p> SoftMax of a data vector = Normalized exponential; SUM=1.0 y[i] = softmax(x[i]) = exp(x[i])/sum(exp(x))</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SoftMax* (<strong>VAR</strong> x: <strong>Array</strong>): <strong>Array</strong></pre>
-<hr><h2 id="#_D1B72D00"><a name="StatisticsBase.SoftMaxNormalize"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.SoftMaxNormalize">SoftMaxNormalize</a>
+<hr><h2 id="#_C5119D00"><a name="StatisticsBase.SoftMaxNormalize"></a><a href="#StatisticsBase">StatisticsBase</a>.<a href="#StatisticsBase.SoftMaxNormalize">SoftMaxNormalize</a>
 </h2>
 <p>Normalize input such that input mean(x)=0, input SD(x)=1, then bring to <a href="#0..1]">0..1]</a> using SoftMax sigmoid transform y[i] = softmax(x[i]) = exp(x[i])/sum(exp(x))</p>
 

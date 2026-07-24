@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ArrayRotations">ArrayRotations</a></p>
+<hr><h1 id="#_E0473240"><a name="ArrayRotations"></a><a href="#ModuleList">Module</a> ArrayRotations
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "rotation decompositions in 2D and 3D";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Sxyzx= 1<tr><td></td><td>Sxzyx= 2<tr><td></td><td>Syxzy= 3<tr><td></td><td>Syzxy= 4<tr><td></td><td>Szxyz= 5<tr><td></td><td>Szyxz= 6<tr><td></td><td>GimbalLock= -1<tr><th align='left'>procedures</th><td> EulerxyzToMatrix (phi, theta, alpha: <strong>Datatype</strong>): <strong>Matrix</strong><tr><td></td><td> <a href="#ArrayRotations.Rotation4ShearDecomposition">Rotation4ShearDecomposition</a> (<strong>CONST</strong> Rotation: <strong>Matrix</strong>; <strong>VAR</strong> bestparam: <strong>Vector</strong>): <strong>SIGNED32</strong><tr><td></td><td> Test (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_E0486480">
+</h1>
+<p> example of rotation of a point or vector by a matrix: <a href="#x1,y1,z1]">x1,y1,z1]</a> := R * <a href="#x0,y0,z0]">x0,y0,z0]</a> ; example of concatenated rotatations: v1:= R2*R1*v0 ;</p>
+
+<dl>
+<dt><strong>CAVE</strong></dt>
+<dd> order of rotations !</dd>
+
+</dl>
+<hr><h2 id="#_E048DFC0"><a name="ArrayRotations.Rotation4ShearDecomposition"></a><a href="#ArrayRotations">ArrayRotations</a>.<a href="#ArrayRotations.Rotation4ShearDecomposition">Rotation4ShearDecomposition</a>
+</h2>
+<p> decomposes full 3D rotation from rotation matrix R into one of the possible sequences of 4 consecutive shear transforms; there are at least 6 variants; and the one with the lowest sum of squares for parameters a,b,c,d,e,f,g,h is chosen. Note that there are still invalid cases near 0,90,180 degree rotation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rotation4ShearDecomposition* (<strong>CONST</strong> Rotation: <strong>Matrix</strong>; <strong>VAR</strong> bestparam: <strong>Vector</strong>): <strong>SIGNED32</strong></pre>
+</body></html>

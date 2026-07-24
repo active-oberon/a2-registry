@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#MLBase">MLBase</a></p>
-<hr><h1 id="#_7B058940"><a name="MLBase"></a><a href="#ModuleList">Module</a> MLBase
+<hr><h1 id="#_1927A940"><a name="MLBase"></a><a href="#ModuleList">Module</a> MLBase
 </h1>
 <h3>Summary</h3>
 
@@ -42,7 +42,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_7B05F1C0">
+<hr><h1 id="#_192811C0">
 </h1>
 <dl>
 <dt><strong>DESCRIPTION</strong></dt>
@@ -61,7 +61,7 @@
 </dl>
 </dl>
 </dl>
-<hr><h2 id="#_7B063880"><a name="MLBase.SimpleMachine"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>
+<hr><h2 id="#_19285880"><a name="MLBase.SimpleMachine"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>
 </h2>
 <p> Simple machine accepting input data and giving some output - is base type for all machine learning objects like classifiers, regression, neural networks, SVM's etc</p>
 
@@ -76,35 +76,35 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_7B076740"><a name="MLBase.SimpleMachine.EvaluateScalar"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>.<a href="#MLBase.SimpleMachine.EvaluateScalar">EvaluateScalar</a>
+<hr><h3 id="#_19298740"><a name="MLBase.SimpleMachine.EvaluateScalar"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>.<a href="#MLBase.SimpleMachine.EvaluateScalar">EvaluateScalar</a>
 </h3>
 <p> Mapping from vector valued input to scalar output</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> EvaluateScalar* (<strong>CONST</strong> input: <strong>Vector</strong>): <strong>Scalar</strong></pre>
-<hr><h3 id="#_7B07CF00"><a name="MLBase.SimpleMachine.EvaluateVector"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>.<a href="#MLBase.SimpleMachine.EvaluateVector">EvaluateVector</a>
+<hr><h3 id="#_1929EF00"><a name="MLBase.SimpleMachine.EvaluateVector"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>.<a href="#MLBase.SimpleMachine.EvaluateVector">EvaluateVector</a>
 </h3>
 <p>Mapping from vector valued input to a vector valued output</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> EvaluateVector* (<strong>CONST</strong> input: <strong>Vector</strong>): <strong>Vector</strong></pre>
-<hr><h3 id="#_7B083B80"><a name="MLBase.SimpleMachine.EvaluateScalarN"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>.<a href="#MLBase.SimpleMachine.EvaluateScalarN">EvaluateScalarN</a>
+<hr><h3 id="#_192A5B80"><a name="MLBase.SimpleMachine.EvaluateScalarN"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>.<a href="#MLBase.SimpleMachine.EvaluateScalarN">EvaluateScalarN</a>
 </h3>
 <p> Mapping from a multiple set of vector valued inputs to a set of scalar valued outputs</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> EvaluateScalarN* (<strong>CONST</strong> input: <strong>Matrix</strong>): <strong>Vector</strong></pre>
-<hr><h3 id="#_7B08C0C0"><a name="MLBase.SimpleMachine.EvaluateVectorN"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>.<a href="#MLBase.SimpleMachine.EvaluateVectorN">EvaluateVectorN</a>
+<hr><h3 id="#_192AE0C0"><a name="MLBase.SimpleMachine.EvaluateVectorN"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.SimpleMachine">SimpleMachine</a>.<a href="#MLBase.SimpleMachine.EvaluateVectorN">EvaluateVectorN</a>
 </h3>
 <p> Mapping from a multiple set of vector valued inputs to a set of vector valued outputs</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> EvaluateVectorN* (<strong>CONST</strong> input: <strong>Matrix</strong>): <strong>Matrix</strong></pre>
-<hr><h2 id="#_7B094540"><a name="MLBase.LearningMachine"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>
+<hr><h2 id="#_192B6540"><a name="MLBase.LearningMachine"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>
 </h2>
 <p> Machine with learning capability</p>
 
@@ -120,35 +120,35 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_7B0A6200"><a name="MLBase.LearningMachine.isTrained"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.isTrained">isTrained</a>
+<hr><h3 id="#_192C8200"><a name="MLBase.LearningMachine.isTrained"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.isTrained">isTrained</a>
 </h3>
 <p> TRUE when machine is trained</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> isTrained*: <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_7B0AA8C0"><a name="MLBase.LearningMachine.LearnScalar"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.LearnScalar">LearnScalar</a>
+<hr><h3 id="#_192CC8C0"><a name="MLBase.LearningMachine.LearnScalar"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.LearnScalar">LearnScalar</a>
 </h3>
 <p> learn mapping from vector valued input to scalar output</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> LearnScalar* (<strong>CONST</strong> input: <strong>Vector</strong>; target: <strong>Scalar</strong>)</pre>
-<hr><h3 id="#_7B0B1AC0"><a name="MLBase.LearningMachine.LearnVector"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.LearnVector">LearnVector</a>
+<hr><h3 id="#_192D3AC0"><a name="MLBase.LearningMachine.LearnVector"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.LearnVector">LearnVector</a>
 </h3>
 <p> Learn mapping from vector valued input to vector valued output</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> LearnVector* (<strong>CONST</strong> input: <strong>Vector</strong>; <strong>CONST</strong> target: <strong>Vector</strong>)</pre>
-<hr><h3 id="#_7B0B93C0"><a name="MLBase.LearningMachine.LearnScalarN"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.LearnScalarN">LearnScalarN</a>
+<hr><h3 id="#_192DB3C0"><a name="MLBase.LearningMachine.LearnScalarN"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.LearnScalarN">LearnScalarN</a>
 </h3>
 <p> Learn mapping from a multiple set of vector valued inputs to a set of scalar valued outputs</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> LearnScalarN* (<strong>CONST</strong> input: <strong>Matrix</strong>; <strong>CONST</strong> target: <strong>Vector</strong>)</pre>
-<hr><h3 id="#_7B0C28C0"><a name="MLBase.LearningMachine.LearnVectorN"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.LearnVectorN">LearnVectorN</a>
+<hr><h3 id="#_192E48C0"><a name="MLBase.LearningMachine.LearnVectorN"></a><a href="#MLBase">MLBase</a>.<a href="#MLBase.LearningMachine">LearningMachine</a>.<a href="#MLBase.LearningMachine.LearnVectorN">LearnVectorN</a>
 </h3>
 <p> Mapping from a multiple set of vector valued inputs to a set of vector valued outputs</p>
 

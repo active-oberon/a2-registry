@@ -5,7 +5,7 @@
   "packages": {
     "std/runtime": {
       "status": "bundled",
-      "modules": 41,
+      "modules": 42,
       "path": "packages/std/runtime",
       "tier": 0,
       "install": "bundled with the SDK",
@@ -174,7 +174,7 @@
     },
     "community/matrix": {
       "status": "validated",
-      "modules": 74,
+      "modules": 79,
       "path": "packages/matrix",
       "requires": [
         "std/runtime",

@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#MatrixStandardSolvers">MatrixStandardSolvers</a></p>
-<hr><h1 id="#_3D6EF600"><a name="MatrixStandardSolvers"></a><a href="#ModuleList">Module</a> MatrixStandardSolvers
+<hr><h1 id="#_FAE95600"><a name="MatrixStandardSolvers"></a><a href="#ModuleList">Module</a> MatrixStandardSolvers
 </h1>
 <p> AUTHOR "Patrick Hunziker"; PURPOSE "Standard Matrix Solvers. Offers an object-oriented and a procedural interface";</p>
 
@@ -57,8 +57,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_3D716B40">
-</h1><hr><h2 id="#_3D717300"><a name="MatrixStandardSolvers.LU"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.LU">LU</a>
+<hr><h1 id="#_FAEBCB40">
+</h1><hr><h2 id="#_FAEBD300"><a name="MatrixStandardSolvers.LU"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.LU">LU</a>
 </h2>
 <p> LU is a standard direct solver for square linear systems of equations; it is related to Gauss elimination; this version uses row pivoting</p>
 
@@ -78,14 +78,14 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_3D72FF80"><a name="MatrixStandardSolvers.LU.pivot"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.LU">LU</a>.<a href="#MatrixStandardSolvers.LU.pivot">pivot</a>
+<hr><h3 id="#_FAED5F80"><a name="MatrixStandardSolvers.LU.pivot"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.LU">LU</a>.<a href="#MatrixStandardSolvers.LU.pivot">pivot</a>
 </h3>
 <p> switch off pivoting by setting this to NONE. default is FULL</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> pivot*: <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_3D735E00"><a name="MatrixStandardSolvers.Gauss"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.Gauss">Gauss</a>
+<hr><h2 id="#_FAEDBE00"><a name="MatrixStandardSolvers.Gauss"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.Gauss">Gauss</a>
 </h2>
 <p> Gauss elimination is the historic root of solvers. The current implementation is slow</p>
 
@@ -102,14 +102,14 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_3D748040"><a name="MatrixStandardSolvers.Gauss.Solve"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.Gauss">Gauss</a>.<a href="#MatrixStandardSolvers.Gauss.Solve">Solve</a>
+<hr><h3 id="#_FAEEE040"><a name="MatrixStandardSolvers.Gauss.Solve"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.Gauss">Gauss</a>.<a href="#MatrixStandardSolvers.Gauss.Solve">Solve</a>
 </h3>
 <p> Solve by Gaussian elimination algorithm with row pivoting</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Solve* (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></pre>
-<hr><h2 id="#_3D74E800"><a name="MatrixStandardSolvers.GaussJordan"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.GaussJordan">GaussJordan</a>
+<hr><h2 id="#_FAEF4800"><a name="MatrixStandardSolvers.GaussJordan"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.GaussJordan">GaussJordan</a>
 </h2>
 <p> Decompose +/- Solve a linear system by the Gauss-Jordan algorithm , with full pivoting; using only the NEW(solver,A) or solver.Init(A) part, matrix inversion is performed; slower than Gauss, but suited for direct computation of the matrix inverse</p>
 
@@ -124,7 +124,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_3D761C00"><a name="MatrixStandardSolvers.Cholesky"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.Cholesky">Cholesky</a>
+<hr><h2 id="#_FAF07C00"><a name="MatrixStandardSolvers.Cholesky"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.Cholesky">Cholesky</a>
 </h2>
 <p> Cholesky decomposition for positive definite matrices; can be used to check for positive-definiteness</p>
 
@@ -137,7 +137,7 @@
 <table><tr><th align='left'>variables</th><td>L: <strong>Matrix</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_3D76BF40"><a name="MatrixStandardSolvers.QR"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.QR">QR</a>
+<hr><h2 id="#_FAF11F40"><a name="MatrixStandardSolvers.QR"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.QR">QR</a>
 </h2>
 <p> QR decomposition and solver; A receives m*n matrix (m&gt=n). returned is column-orthogonal matrix Q, and square, upper diagonal n*n matrix R;</p>
 
@@ -153,7 +153,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_3D77EC40"><a name="MatrixStandardSolvers.CreateLU"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.CreateLU">CreateLU</a>
+<hr><h2 id="#_FAF24C40"><a name="MatrixStandardSolvers.CreateLU"></a><a href="#MatrixStandardSolvers">MatrixStandardSolvers</a>.<a href="#MatrixStandardSolvers.CreateLU">CreateLU</a>
 </h2>
 <hr/>
 

@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#PlanarNabla">PlanarNabla</a></p>
-<hr><h1 id="#_DED17A00"><a name="PlanarNabla"></a><a href="#ModuleList">Module</a> PlanarNabla
+<hr><h1 id="#_B4139A00"><a name="PlanarNabla"></a><a href="#ModuleList">Module</a> PlanarNabla
 </h1>
 <p> AUTHOR "Patrick Hunziker"; PURPOSE "Nabla Operators";</p>
 
@@ -66,8 +66,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_DED62180">
-</h1><hr><h2 id="#_DED62940"><a name="PlanarNabla.VectorField"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.VectorField">VectorField</a>
+<hr><h1 id="#_B4184180">
+</h1><hr><h2 id="#_B4184940"><a name="PlanarNabla.VectorField"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.VectorField">VectorField</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -78,7 +78,7 @@
 <table><tr><th align='left'>variables</th><td>x: <strong>ScalarField</strong><tr><td></td><td>y: <strong>ScalarField</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_DED67480"><a name="PlanarNabla.TensorField"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.TensorField">TensorField</a>
+<hr><h2 id="#_B4189480"><a name="PlanarNabla.TensorField"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.TensorField">TensorField</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -91,49 +91,49 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_DED6DE00"><a name="PlanarNabla.Grad"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Grad">Grad</a>
+<hr><h2 id="#_B418FE00"><a name="PlanarNabla.Grad"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Grad">Grad</a>
 </h2>
 <p> Gradients : nabla sf</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Grad* (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>VectorField</strong></pre>
-<hr><h2 id="#_DED73AC0"><a name="PlanarNabla.Div"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Div">Div</a>
+<hr><h2 id="#_B4195AC0"><a name="PlanarNabla.Div"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Div">Div</a>
 </h2>
 <p> Divergence : nabla dot vf</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Div* (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
-<hr><h2 id="#_DED79CC0"><a name="PlanarNabla.Rot"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Rot">Rot</a>
+<hr><h2 id="#_B419BCC0"><a name="PlanarNabla.Rot"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Rot">Rot</a>
 </h2>
 <p> Rotation - Rot=Curl ; nabla cross vfis a vector field in general, but in 2D, it only consists of an "z", component, i.e. a scalar value</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Rot* (<strong>CONST</strong> vf: <strong>VectorField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
-<hr><h2 id="#_DED851C0"><a name="PlanarNabla.Laplacian"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Laplacian">Laplacian</a>
+<hr><h2 id="#_B41A71C0"><a name="PlanarNabla.Laplacian"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.Laplacian">Laplacian</a>
 </h2>
 <p> Laplacian Operator, 'nabla square', i.e. nabla dot nablasee http://en.wikipedia.org/wiki/Laplace_operator</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Laplacian* (<strong>CONST</strong> sf: <strong>ScalarField</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
-<hr><h2 id="#_DED8C5C0"><a name="PlanarNabla.TensorDerivative"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.TensorDerivative">TensorDerivative</a>
+<hr><h2 id="#_B41AE5C0"><a name="PlanarNabla.TensorDerivative"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.TensorDerivative">TensorDerivative</a>
 </h2>
 <p> http://en.wikipedia.org/wiki/Del - not yet implemented</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> TensorDerivative*</pre>
-<hr><h2 id="#_DED900C0"><a name="PlanarNabla.CylRot"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.CylRot">CylRot</a>
+<hr><h2 id="#_B41B20C0"><a name="PlanarNabla.CylRot"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.CylRot">CylRot</a>
 </h2>
 <p> Rotation</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> CylRot* (<strong>CONST</strong> vx, vy: <strong>ScalarField</strong>; r0: <strong>SIGNED32</strong>; phi: <strong>Scalar</strong>; sampling: <strong>SIGNED32</strong>): <strong>ScalarField</strong></pre>
-<hr><h2 id="#_DED97680"><a name="PlanarNabla.CylLaplacian"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.CylLaplacian">CylLaplacian</a>
+<hr><h2 id="#_B41B9680"><a name="PlanarNabla.CylLaplacian"></a><a href="#PlanarNabla">PlanarNabla</a>.<a href="#PlanarNabla.CylLaplacian">CylLaplacian</a>
 </h2>
 <p> Laplacian Operator, see http://en.wikipedia.org/wiki/Laplace_operator</p>
 

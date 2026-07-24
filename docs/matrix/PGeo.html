@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PGeo">PGeo</a></p>
+<hr><h1 id="#_506AAF80"><a name="PGeo"></a><a href="#ModuleList">Module</a> PGeo
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#PGeo.DistanceofPoints">DistanceofPoints</a> (Ax, Ay, Bx, By: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#PGeo.DistancePointfromLine">DistancePointfromLine</a> (Ax, Ay, Bx, By, Cx, Cy: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> PointOnLine<tr><td></td><td> LineNormal (Ax, Ay, Bx, By: <strong>Datatype</strong>; <strong>VAR</strong> Cx, Cy: <strong>Datatype</strong>)<tr><td></td><td> CircleArea (r: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> SphereVolume (r: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> SphereSurface (r: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> SphereRadiusFromVolume (vol: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> HexagonArea (r: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> HexagonalPrismVol (radius, height: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> HexagonalPrismRadius (volume, height: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> PyramidVolume (Area, height: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> FrustumVol (A1, A2, h: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> <a href="#PGeo.CircularFrustumVol">CircularFrustumVol</a> (r1, r2, h: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> Rotate (X, Y, angle: <strong>Datatype</strong>; <strong>VAR</strong> x, y: <strong>Datatype</strong>)<tr><td></td><td> Dot (Ax, Ay, Bx, By: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> Length (X, Y: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> Normalize (<strong>VAR</strong> X, Y: <strong>Datatype</strong>)<tr><td></td><td> CosAngle (Ax, Ay, Bx, By: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> Projection (Ax, Ay, Bx, By: <strong>Datatype</strong>; <strong>VAR</strong> Cx, Cy: <strong>Datatype</strong>)<tr><td></td><td> ProjectionToPointRadial (Ax, Ay, Bx, By, Cx, Cy: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> ProjectionToPointTangential (Ax, Ay, Bx, By, Cx, Cy: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> ProjectionToLineNormal (Ax, Ay, Bx, By, Cx, Cy, Dx, Dy: <strong>Datatype</strong>): <strong>Datatype</strong><tr><td></td><td> ProjectionToLineParallel (Ax, Ay, Bx, By, Cx, Cy, Dx, Dy: <strong>Datatype</strong>): <strong>Datatype</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_506FC340"><a name="PGeo.DistanceofPoints"></a><a href="#PGeo">PGeo</a>.<a href="#PGeo.DistanceofPoints">DistanceofPoints</a>
+</h2>
+<p> distance of points A and B</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DistanceofPoints* (Ax, Ay, Bx, By: <strong>Datatype</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_50702F80"><a name="PGeo.DistancePointfromLine"></a><a href="#PGeo">PGeo</a>.<a href="#PGeo.DistancePointfromLine">DistancePointfromLine</a>
+</h2>
+<p> distance of point C from line defined by points A and BFormeln & Tafeln, Orell Fuessli, Zurich 1977, p 68</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DistancePointfromLine* (Ax, Ay, Bx, By, Cx, Cy: <strong>Datatype</strong>): <strong>Datatype</strong></pre>
+<hr><h2 id="#_5070E340"><a name="PGeo.CircularFrustumVol"></a><a href="#PGeo">PGeo</a>.<a href="#PGeo.CircularFrustumVol">CircularFrustumVol</a>
+</h2>
+<p> Volume of cone slice with height h, upper surface radius r1 and lower surface radius r2;Formeln & Tafeln, Orell Fuessli, Zurich 1977, p 68</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CircularFrustumVol* (r1, r2, h: <strong>Datatype</strong>): <strong>Datatype</strong></pre>
+</body></html>

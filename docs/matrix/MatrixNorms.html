@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#MatrixNorms">MatrixNorms</a></p>
-<hr><h1 id="#_2FD48D40"><a name="MatrixNorms"></a><a href="#ModuleList">Module</a> MatrixNorms
+<hr><h1 id="#_0868FD40"><a name="MatrixNorms"></a><a href="#ModuleList">Module</a> MatrixNorms
 </h1>
 <p> AUTHOR "Patrick Hunziker"; PURPOSE "Norms, Determinant, Trace"</p>
 
@@ -49,19 +49,19 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_2FD630C0">
+<hr><h1 id="#_086AA0C0">
 </h1>
 <p> Norms for vectors and matrices. Cave: the "euclidian norm" is used by some for the L2 norm, by others for the J2 norm . Some inspiration from Al Freed's Oberon libraries</p>
 
 <p> Version 12.3.2008</p>
-<hr><h2 id="#_2FD6BC40"><a name="MatrixNorms.l2"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.l2">l2</a>
+<hr><h2 id="#_086B2C40"><a name="MatrixNorms.l2"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.l2">l2</a>
 </h2>
 <p> Vector Norms</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> l2* (<strong>CONST</strong> v: <strong>Vector</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_2FD70380"><a name="MatrixNorms.L1"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.L1">L1</a>
+<hr><h2 id="#_086B7380"><a name="MatrixNorms.L1"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.L1">L1</a>
 </h2>
 <p> Matrix Norms</p>
 
@@ -70,14 +70,14 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> L1* (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_2FD75E00"><a name="MatrixNorms.L2"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.L2">L2</a>
+<hr><h2 id="#_086BCE00"><a name="MatrixNorms.L2"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.L2">L2</a>
 </h2>
 <p> 'natural norm' = spectal matrix normThe spectral norm of a matrix A is the largest singular value of A or the square root of the largest eigenvalue of the positive-semidefinite matrix AA .Its computation can be expensive.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> L2* (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_2FD834C0"><a name="MatrixNorms.J2"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.J2">J2</a>
+<hr><h2 id="#_086CA4C0"><a name="MatrixNorms.J2"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.J2">J2</a>
 </h2>
 <p> Frobenius matrix norm:</p>
 
@@ -87,28 +87,28 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> J2* (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_2FD8C400"><a name="MatrixNorms.LInf"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.LInf">LInf</a>
+<hr><h2 id="#_086D3400"><a name="MatrixNorms.LInf"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.LInf">LInf</a>
 </h2>
 <p> The maximum row-sum matrix norm.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> LInf* (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_2FD91840"><a name="MatrixNorms.Trace"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.Trace">Trace</a>
+<hr><h2 id="#_086D8840"><a name="MatrixNorms.Trace"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.Trace">Trace</a>
 </h2>
 <p> The matrix trace, tr x.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Trace* (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_2FD96C80"><a name="MatrixNorms.Rank"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.Rank">Rank</a>
+<hr><h2 id="#_086DDC80"><a name="MatrixNorms.Rank"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.Rank">Rank</a>
 </h2>
 <p> The matrix rank</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Rank* (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_2FD9B900"><a name="MatrixNorms.Det"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.Det">Det</a>
+<hr><h2 id="#_086E2900"><a name="MatrixNorms.Det"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.Det">Det</a>
 </h2>
 <p> The matrix determinant,</p>
 
@@ -118,7 +118,7 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Det* (<strong>VAR</strong> A: <strong>Matrix</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_2FDA0F80"><a name="MatrixNorms.ConditionNumber"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.ConditionNumber">ConditionNumber</a>
+<hr><h2 id="#_086E7F80"><a name="MatrixNorms.ConditionNumber"></a><a href="#MatrixNorms">MatrixNorms</a>.<a href="#MatrixNorms.ConditionNumber">ConditionNumber</a>
 </h2>
 <p> compute condition number from eigenvalues</p>
 

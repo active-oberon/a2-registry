@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#MatrixOptim">MatrixOptim</a></p>
-<hr><h1 id="#_22508300"><a name="MatrixOptim"></a><a href="#ModuleList">Module</a> MatrixOptim
+<hr><h1 id="#_F1BD5300"><a name="MatrixOptim"></a><a href="#ModuleList">Module</a> MatrixOptim
 </h1>
 <h3>Summary</h3>
 
@@ -56,7 +56,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_2254FDC0">
+<hr><h1 id="#_F1C1CDC0">
 </h1>
 <p>Methods for 1- and N-dimensional function minimization.</p>
 
@@ -67,42 +67,42 @@
 <dd> 0) Pascal Unit "OPTIM.PAS 2.0', (c) J.Debord, August 2000) 1) 'Numerical Recipes' by Press et al. 2) D. W. MARQUARDT, J. Soc. Indust. Appl. Math., 1963, 11, 431-441 3) J. A. NELDER & R. MEAD, Comput. J., 1964, 7, 308-313 4) R. O'NEILL, Appl. Statist., 1971, 20, 338-345</dd>
 
 </dl>
-<hr><h2 id="#_2255F900"><a name="MatrixOptim.OK"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.OK">OK</a>
+<hr><h2 id="#_F1C2C900"><a name="MatrixOptim.OK"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.OK">OK</a>
 </h2>
 <p> procedure results</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> OK*= MatrixBase.OK</pre>
-<hr><h2 id="#_22562FC0"><a name="MatrixOptim.TFunc"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.TFunc">TFunc</a>
+<hr><h2 id="#_F1C2FFC0"><a name="MatrixOptim.TFunc"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.TFunc">TFunc</a>
 </h2>
 <p> Function of one variable</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> TFunc* =<strong>PROCEDURE</strong>{DELEGATE} (X: <strong>Real</strong>): <strong>Real</strong></pre>
-<hr><h2 id="#_22568840"><a name="MatrixOptim.TFuncNVar"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.TFuncNVar">TFuncNVar</a>
+<hr><h2 id="#_F1C35840"><a name="MatrixOptim.TFuncNVar"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.TFuncNVar">TFuncNVar</a>
 </h2>
 <p> Function of several variables</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> TFuncNVar* =<strong>PROCEDURE</strong> (<strong>CONST</strong> X: <strong>Vector</strong>): <strong>Real</strong></pre>
-<hr><h2 id="#_2256DD80"><a name="MatrixOptim.TGradient"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.TGradient">TGradient</a>
+<hr><h2 id="#_F1C3AD80"><a name="MatrixOptim.TGradient"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.TGradient">TGradient</a>
 </h2>
 <p> Procedure to compute gradient vector</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> TGradient* =<strong>PROCEDURE</strong> (Func: <strong>TFuncNVar</strong>; <strong>VAR</strong> X: <strong>Vector</strong>; <strong>VAR</strong> G: <strong>Vector</strong>)</pre>
-<hr><h2 id="#_22575200"><a name="MatrixOptim.THessGrad"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.THessGrad">THessGrad</a>
+<hr><h2 id="#_F1C42200"><a name="MatrixOptim.THessGrad"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.THessGrad">THessGrad</a>
 </h2>
 <p> Procedure to compute gradient vector and hessian matrix</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> THessGrad* =<strong>PROCEDURE</strong> (Func: <strong>TFuncNVar</strong>; <strong>VAR</strong> X: <strong>Vector</strong>; <strong>VAR</strong> G: <strong>Vector</strong>; <strong>VAR</strong> H: <strong>Matrix</strong>)</pre>
-<hr><h2 id="#_2257E3C0"><a name="MatrixOptim.OFunc"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.OFunc">OFunc</a>
+<hr><h2 id="#_F1C4B3C0"><a name="MatrixOptim.OFunc"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.OFunc">OFunc</a>
 </h2>
 <p> Function of several variables</p>
 
@@ -115,49 +115,49 @@
 <table><tr><th align='left'>procedures</th><td>& Init (Func: <strong>TFuncNVar</strong>; <strong>VAR</strong> X, DeltaX: <strong>Vector</strong>)<tr><td></td><td> F1dim (R: <strong>Real</strong>): <strong>Real</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_22588340"><a name="MatrixOptim.GoldSearch"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.GoldSearch">GoldSearch</a>
+<hr><h2 id="#_F1C55340"><a name="MatrixOptim.GoldSearch"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.GoldSearch">GoldSearch</a>
 </h2>
 <p> ---------------------------------------------------------------------- Performs a golden search for the minimum of function Func  Input parameters : Func = objective function A, B = two points near the minimum MaxIter = maximum number of iterations Tol = required precision (should not be less than the square root of the machine precision)  Output parameters : Xmin, Ymin = coordinates of minimum  Possible results : OK NONCONV </p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GoldSearch* (Func: <strong>TFunc</strong>; A, B: <strong>Real</strong>; MaxIter: <strong>SIGNED32</strong>; Tol: <strong>Real</strong>; <strong>VAR</strong> Xmin, Ymin: <strong>Real</strong>): <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_225A0B40"><a name="MatrixOptim.Simplex"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.Simplex">Simplex</a>
+<hr><h2 id="#_F1C6DB40"><a name="MatrixOptim.Simplex"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.Simplex">Simplex</a>
 </h2>
 <p> ---------------------------------------------------------------------- Minimization of a function of several variables by the simplex method of Nelder and Mead  Input parameters : Func = objective function X = initial minimum coordinates MaxIter = maximum number of iterations Tol = required precision  Output parameters : X = refined minimum coordinates Fmin = function value at minimum  Possible results : OK NONCONV </p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Simplex* (Func: <strong>TFuncNVar</strong>; <strong>VAR</strong> X: <strong>Vector</strong>; MaxIter: <strong>SIGNED32</strong>; Tol: <strong>Real</strong>; <strong>VAR</strong> Fmin: <strong>Real</strong>): <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_225B74C0"><a name="MatrixOptim.LinMin"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.LinMin">LinMin</a>
+<hr><h2 id="#_F1C844C0"><a name="MatrixOptim.LinMin"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.LinMin">LinMin</a>
 </h2>
 <p> ---------------------------------------------------------------------- Minimizes function Func from point X in the direction specified by DeltaX  Input parameters : Func = objective function X = initial minimum coordinates DeltaX = direction in which minimum is searched Lbound, Ubound = indices of first and last variables MaxIter = maximum number of iterations Tol = required precision  Output parameters : X = refined minimum coordinates Fmin = function value at minimum  Possible results : OK NONCONV </p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> LinMin* (Func: <strong>TFuncNVar</strong>; <strong>VAR</strong> X, DeltaX: <strong>Vector</strong>; MaxIter: <strong>SIGNED32</strong>; Tol: <strong>Real</strong>; <strong>VAR</strong> Fmin: <strong>Real</strong>): <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_225D18C0"><a name="MatrixOptim.NumGradient"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.NumGradient">NumGradient</a>
+<hr><h2 id="#_F1C9E8C0"><a name="MatrixOptim.NumGradient"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.NumGradient">NumGradient</a>
 </h2>
 <p> Computes the gradient vector of a function of several variables by numerical differentiation Input parameters : Func = function of several variables X = vector of variables bound = index of last variable Output parameter : G = gradient vector</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NumGradient* (Func: <strong>TFuncNVar</strong>; <strong>VAR</strong> X: <strong>Vector</strong>; <strong>VAR</strong> G: <strong>Vector</strong>)</pre>
-<hr><h2 id="#_225E0E00"><a name="MatrixOptim.NumHessGrad"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.NumHessGrad">NumHessGrad</a>
+<hr><h2 id="#_F1CADE00"><a name="MatrixOptim.NumHessGrad"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.NumHessGrad">NumHessGrad</a>
 </h2>
 <p> Computes gradient vector & hessian matrix by numerical differentiation Input parameters : as in NumGradient Output parameters : G = gradient vector H = hessian matrix</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NumHessGrad* (Func: <strong>TFuncNVar</strong>; <strong>VAR</strong> X: <strong>Vector</strong>; <strong>VAR</strong> G: <strong>Vector</strong>; <strong>VAR</strong> H: <strong>Matrix</strong>)</pre>
-<hr><h2 id="#_225EE080"><a name="MatrixOptim.Marquardt"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.Marquardt">Marquardt</a>
+<hr><h2 id="#_F1CBB080"><a name="MatrixOptim.Marquardt"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.Marquardt">Marquardt</a>
 </h2>
 <p> ---------------------------------------------------------------------- Minimization of a function of several variables by Marquardt's method  Input parameters : Func = objective function HessGrad = PROCEDURE to compute gradient & hessian X = initial minimum coordinates MaxIter = maximum number of iterations Tol = required precision  Output parameters : X = refined minimum coordinates Fmin = function value at minimum Hinv = inverse hessian matrix  Possible results : OK SING BIGLAMBDA NONCONV </p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Marquardt* (Func: <strong>TFuncNVar</strong>; HessGrad: <strong>THessGrad</strong>; <strong>VAR</strong> X: <strong>Vector</strong>; MaxIter: <strong>SIGNED32</strong>; Tol: <strong>Real</strong>; <strong>VAR</strong> Fmin: <strong>Real</strong>; <strong>VAR</strong> Hinv: <strong>Matrix</strong>): <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_22609040"><a name="MatrixOptim.BFGS"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.BFGS">BFGS</a>
+<hr><h2 id="#_F1CD6040"><a name="MatrixOptim.BFGS"></a><a href="#MatrixOptim">MatrixOptim</a>.<a href="#MatrixOptim.BFGS">BFGS</a>
 </h2>
 <p> ---------------------------------------------------------------------- Minimization of a function of several variables by the Broyden-Fletcher-Goldfarb-Shanno method  Parameters : Gradient = PROCEDURE to compute gradient vector Other parameters as in Marquardt  Possible results : OK NONCONV </p>
 

@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#MatrixBSplineInterpolation">MatrixBSplineInterpolation</a></p>
-<hr><h1 id="#_16566640"><a name="MatrixBSplineInterpolation"></a><a href="#ModuleList">Module</a> MatrixBSplineInterpolation
+<hr><h1 id="#_5E40A640"><a name="MatrixBSplineInterpolation"></a><a href="#ModuleList">Module</a> MatrixBSplineInterpolation
 </h1>
 <p> AUTHOR "ph"; PURPOSE "";</p>
 
@@ -44,7 +44,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_165835C0"><a name="MatrixBSplineInterpolation.interpolate"></a><a href="#MatrixBSplineInterpolation">MatrixBSplineInterpolation</a>.<a href="#MatrixBSplineInterpolation.interpolate">interpolate</a>
+<hr><h2 id="#_5E4275C0"><a name="MatrixBSplineInterpolation.interpolate"></a><a href="#MatrixBSplineInterpolation">MatrixBSplineInterpolation</a>.<a href="#MatrixBSplineInterpolation.interpolate">interpolate</a>
 </h2>
 <dl>
 <dt><strong>input</strong></dt>
@@ -61,14 +61,14 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> interpolate* (t: <strong>Datatype</strong>; <strong>CONST</strong> B: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong>; splinedegree: <strong>SIGNED32</strong>): <strong>Datatype</strong></pre>
-<hr><h2 id="#_1658FB80"><a name="MatrixBSplineInterpolation.subdivide"></a><a href="#MatrixBSplineInterpolation">MatrixBSplineInterpolation</a>.<a href="#MatrixBSplineInterpolation.subdivide">subdivide</a>
+<hr><h2 id="#_5E433B80"><a name="MatrixBSplineInterpolation.subdivide"></a><a href="#MatrixBSplineInterpolation">MatrixBSplineInterpolation</a>.<a href="#MatrixBSplineInterpolation.subdivide">subdivide</a>
 </h2>
 <p> given 3 Points by their B-Spline Coefficients B[0], B[1], B[2] yields new Coefficients B[01],B[11],B[12] which define the new, binary subdivided point sequence B[0], B[01],B[11],B[12], B[2] ; given 4 Points B[0], B[1], B[2], B[3] the new points B[01],B[11],B[12], B[22], B[23] are computed, yielding the sequence B[0], B[01],B[11],B[12], B[22], B[23], B[3]</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> subdivide* (t: <strong>Datatype</strong>; <strong>CONST</strong> B: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong>; <strong>VAR</strong> NewB: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>Datatype</strong>; splinedegree: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_165A3D40"><a name="MatrixBSplineInterpolation.LineInterpolationWeights"></a><a href="#MatrixBSplineInterpolation">MatrixBSplineInterpolation</a>.<a href="#MatrixBSplineInterpolation.LineInterpolationWeights">LineInterpolationWeights</a>
+<hr><h2 id="#_5E447D40"><a name="MatrixBSplineInterpolation.LineInterpolationWeights"></a><a href="#MatrixBSplineInterpolation">MatrixBSplineInterpolation</a>.<a href="#MatrixBSplineInterpolation.LineInterpolationWeights">LineInterpolationWeights</a>
 </h2>
 <p> interpolation from a regularly sampled dataset in 1D to a result vector with a new sampling interval by spline interpolation.input a 1D array of N spline coefficients C at regular intervals; result vector size M.output a M*4 matrix of weights for interpolation; an index table of size M giving the position of the first coeffient for each interpolation location.application do an inner product of strides of 4 coefficients of the signal coefficients (starting at indices[i]) with the weights given in the table row[i].CAVE boundary not handled here; i.e., indices array will contain indices <a name="0"></a> and/or  LEN(C)</p>
 
