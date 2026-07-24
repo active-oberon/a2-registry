@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxARMAssembler">FoxARMAssembler</a></p>
+<hr><h1 id="#_FA884300"><a name="FoxARMAssembler"></a><a href="#ModuleList">Module</a> FoxARMAssembler
+</h1>
+<p> AUTHOR ""; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#FoxARMAssembler.Assembler">Assembler</a> =<strong>OBJECT</strong> (<strong>FoxAssembler.Assembler</strong>)</td></tr>
+</table>
+<hr><h2 id="#_FA888640"><a name="FoxARMAssembler.Assembler"></a><a href="#FoxARMAssembler">FoxARMAssembler</a>.<a href="#FoxARMAssembler.Assembler">Assembler</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Assembler* =<strong>OBJECT</strong> (<strong>FoxAssembler.Assembler</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init2 (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> <a href="#FoxARMAssembler.Assembler.GetRegister">GetRegister</a> (<strong>VAR</strong> registerNumber: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxARMAssembler.Assembler.GetShiftMode">GetShiftMode</a> (<strong>VAR</strong> shiftModeNumber: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxARMAssembler.Assembler.GetCoprocessor">GetCoprocessor</a> (<strong>VAR</strong> coprocessorNumber: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetCoprocessorOpcode (<strong>VAR</strong> coprocessorOpcode: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxARMAssembler.Assembler.GetPlainValue">GetPlainValue</a> (<strong>VAR</strong> value: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxARMAssembler.Assembler.GetImmediateValue">GetImmediateValue</a> (<strong>VAR</strong> immediateValue: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Instruction (<strong>CONST</strong> mnemonic: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_FA89E200"><a name="FoxARMAssembler.Assembler.GetRegister"></a><a href="#FoxARMAssembler">FoxARMAssembler</a>.<a href="#FoxARMAssembler.Assembler">Assembler</a>.<a href="#FoxARMAssembler.Assembler.GetRegister">GetRegister</a>
+</h3>
+<p> parse a register name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetRegister* (<strong>VAR</strong> registerNumber: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_FA8A3880"><a name="FoxARMAssembler.Assembler.GetShiftMode"></a><a href="#FoxARMAssembler">FoxARMAssembler</a>.<a href="#FoxARMAssembler.Assembler">Assembler</a>.<a href="#FoxARMAssembler.Assembler.GetShiftMode">GetShiftMode</a>
+</h3>
+<p> parse a shift mode name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetShiftMode* (<strong>VAR</strong> shiftModeNumber: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_FA8A9440"><a name="FoxARMAssembler.Assembler.GetCoprocessor"></a><a href="#FoxARMAssembler">FoxARMAssembler</a>.<a href="#FoxARMAssembler.Assembler">Assembler</a>.<a href="#FoxARMAssembler.Assembler.GetCoprocessor">GetCoprocessor</a>
+</h3>
+<p> parse a coprocessor name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetCoprocessor* (<strong>VAR</strong> coprocessorNumber: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_FA8AEB40"><a name="FoxARMAssembler.Assembler.GetPlainValue"></a><a href="#FoxARMAssembler">FoxARMAssembler</a>.<a href="#FoxARMAssembler.Assembler">Assembler</a>.<a href="#FoxARMAssembler.Assembler.GetPlainValue">GetPlainValue</a>
+</h3>
+<p> parse any expression that evaluates to a constant value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetPlainValue* (<strong>VAR</strong> value: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_FA8B5680"><a name="FoxARMAssembler.Assembler.GetImmediateValue"></a><a href="#FoxARMAssembler">FoxARMAssembler</a>.<a href="#FoxARMAssembler.Assembler">Assembler</a>.<a href="#FoxARMAssembler.Assembler.GetImmediateValue">GetImmediateValue</a>
+</h3>
+<p> parse an ARM immediate value i.e., the '#'-sign followed by any expression that evaluates to a constant value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetImmediateValue* (<strong>VAR</strong> immediateValue: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

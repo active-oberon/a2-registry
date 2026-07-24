@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#GenericSort">GenericSort</a></p>
+<hr><h1 id="#_E5D7D340"><a name="GenericSort"></a><a href="#ModuleList">Module</a> GenericSort
+</h1>
+<p> AUTHOR "Luc Blaeser"; PURPOSE "Generic Sort Functionality"</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>GenericArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> @Any0<tr><td></td><td><a href="#GenericSort.GenericCompareFunct">GenericCompareFunct</a> =<strong>PROCEDURE</strong>{DELEGATE} (obj1, obj2: @Any0): <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> QuickSort (<strong>VAR</strong> genArray: <strong>GenericArray</strong>; compFunc: <strong>GenericCompareFunct</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E5D88C80"><a name="GenericSort.GenericCompareFunct"></a><a href="#GenericSort">GenericSort</a>.<a href="#GenericSort.GenericCompareFunct">GenericCompareFunct</a>
+</h2>
+<p> has to return true iff obj1 occurs before obj2</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GenericCompareFunct* =<strong>PROCEDURE</strong>{DELEGATE} (obj1, obj2: @Any0): <strong>BOOLEAN</strong></pre>
+</body></html>

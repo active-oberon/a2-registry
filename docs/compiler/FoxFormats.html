@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxFormats">FoxFormats</a></p>
+<hr><h1 id="#_E4D59340"><a name="FoxFormats"></a><a href="#ModuleList">Module</a> FoxFormats
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#FoxFormats.GeneratedModule">GeneratedModule</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxFormats.SymbolFileFormat">SymbolFileFormat</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxFormats.ObjectFileFormat">ObjectFileFormat</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> GetSymbolFileFormat (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SymbolFileFormat</strong><tr><td></td><td> GetObjectFileFormat (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ObjectFileFormat</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E4D63400"><a name="FoxFormats.GeneratedModule"></a><a href="#FoxFormats">FoxFormats</a>.<a href="#FoxFormats.GeneratedModule">GeneratedModule</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GeneratedModule* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>module: <strong>SyntaxTree.Module</strong><tr><td></td><td>system: <strong>Global.System</strong><tr><td></td><td>findPC: <strong>SIZE</strong><tr><td></td><td>moduleName: <strong>SectionName</strong><tr><th align='left'>procedures</th><td> SetFindPC (findPC: <strong>SIZE</strong>)<tr><td></td><td>& Init (module: <strong>SyntaxTree.Module</strong>; system: <strong>Global.System</strong>)<tr><td></td><td> SetModuleName (<strong>CONST</strong> moduleName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetSystem (system: <strong>Global.System</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E4D74900"><a name="FoxFormats.SymbolFileFormat"></a><a href="#FoxFormats">FoxFormats</a>.<a href="#FoxFormats.SymbolFileFormat">SymbolFileFormat</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SymbolFileFormat* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>diagnostics: <strong>Diagnostics.Diagnostics</strong><tr><td></td><td>system: <strong>Global.System</strong><tr><td></td><td>path: <strong>Files.FileName</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Initialize (diagnostics: <strong>Diagnostics.Diagnostics</strong>; system: <strong>Global.System</strong>; <strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Export (module: <strong>SyntaxTree.Module</strong>; importCache: <strong>SyntaxTree.ModuleScope</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Import (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; importCache: <strong>SyntaxTree.ModuleScope</strong>): <strong>SyntaxTree.Module</strong><tr><td></td><td> DefineOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> GetOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> GetExtension (<strong>VAR</strong> ext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E4D8C200"><a name="FoxFormats.ObjectFileFormat"></a><a href="#FoxFormats">FoxFormats</a>.<a href="#FoxFormats.ObjectFileFormat">ObjectFileFormat</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ObjectFileFormat* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>diagnostics: <strong>Diagnostics.Diagnostics</strong><tr><td></td><td>path: <strong>Files.FileName</strong><tr><td></td><td>extension: <strong>Files.FileName</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Initialize (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Export (module: <strong>GeneratedModule</strong>; symbolFileFormat: <strong>SymbolFileFormat</strong>): <strong>BOOLEAN</strong><tr><td></td><td> DefineOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> GetOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> DefaultSymbolFileFormat (): <strong>SymbolFileFormat</strong><tr><td></td><td> ForceModuleBodies (): <strong>BOOLEAN</strong><tr><td></td><td> SetExtension (<strong>CONST</strong> ext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetExtension (<strong>VAR</strong> ext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetPath (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetPath (<strong>VAR</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

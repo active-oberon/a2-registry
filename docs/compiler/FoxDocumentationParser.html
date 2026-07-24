@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxDocumentationParser">FoxDocumentationParser</a></p>
+<hr><h1 id="#_7470AEC0"><a name="FoxDocumentationParser"></a><a href="#ModuleList">Module</a> FoxDocumentationParser
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#FoxDocumentationParser.Token">Token</a> =<strong>Scanner.Token</strong><tr><td></td><td><a href="#FoxDocumentationParser.ParagraphType">ParagraphType</a> =<strong>Tree.ParagraphType</strong><tr><td></td><td><a href="#FoxDocumentationParser.ElementType">ElementType</a> =<strong>Tree.ElementType</strong><tr><td></td><td><a href="#FoxDocumentationParser.Parser">Parser</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<a name="description"></a><hr><h1 id="#description">
+</h1>
+<p> The documentation parser parses a documentation comment according to the following EBNF and stores the result in a data structure defined in module <a href="#FoxDocumentationParser">FoxDocumentationParser</a>.</p>
+
+<pre><BR>	Documentation = {Document}.<BR>	Document      = {NewLine} Description {Section}.<BR><BR>	Description   = {Paragraph}.<BR>	Paragraph     = CodeBlock | TextBlock | Heading | ListItem  | Table | Line.<BR><BR>	Section       = SectionMarker Title Contents.<BR>	SectionMarker = "@" | "@@" | "@@@".<BR><BR>	CodeBlock     = "{{{" any text "}}}".<BR><BR>	Contents      = {Paragraph}.<BR>	Title         = Text.<BR>	TextBlock     = Text.<BR><BR>	Heading       = HeadingMarker Text.<BR>	HeadingMarker = "=" | "==" | "===" .<BR><BR>	ListItem      = ItemMarker Text.<BR>	ItemMarker    = NumberMarker | BulletMarker.<BR>	NumberMarker  = "#" | "##" | "###".<BR>	BulletMarker  = "*" | "**" | "***".<BR><BR>	Table         = Row {Row}.<BR>	Row           = Cell {Cell}.<BR>	Cell          = CellMarker {TextElement}.<BR>	CellMarker    = HeaderMarker | DataMarker.<BR>	HeaderMarker  = "|=".<BR>	DataMarker    = "|".<BR>	Line          = "----".<BR><BR>	Text          = {TextElement}.<BR>	TextElement   = Default | Italic | Bold | Link | URL | Label | Code | LineBreak.<BR>	Default       = word.<BR><BR>	Italic        = ItalicMarker {TextElement} ItalicMarker.<BR>	ItalicMarker  = "/".<BR><BR>	Bold          = BoldMarker {TextElement} BoldMarker.<BR>	BoldMarker    = "*".<BR><BR>	Underline          = UnderlineMarker {TextElement} UnderlineMarker.<BR>	UnderlineMarker    = "_".<BR><BR>	Link          = "[[" Target [ "|"  {TextElement} ] "]]".<BR>	Target        = word.<BR><BR>	URL           = "[[" url "]]" |<BR>			"[[" url "|" {TextElement} "]]".<BR><BR>	Label         = "&lt&lt" Target "&gt&gt".<BR><BR>	Code          = "{{{" {TextElement} "}}}".<BR><BR>	LineBreak     = "\\".<BR>	</pre>
+<a name="author"></a><hr><h1 id="#author"> Felix Friedrich
+</h1>
+<p> Parser for documentation comments. Independent of the programming language Oberon.</p>
+<hr><h2 id="#_7471C200"><a name="FoxDocumentationParser.Token"></a><a href="#FoxDocumentationParser">FoxDocumentationParser</a>.<a href="#FoxDocumentationParser.Token">Token</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Token* =<strong>Scanner.Token</strong></pre>
+<hr><h2 id="#_7471E600"><a name="FoxDocumentationParser.ParagraphType"></a><a href="#FoxDocumentationParser">FoxDocumentationParser</a>.<a href="#FoxDocumentationParser.ParagraphType">ParagraphType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ParagraphType* =<strong>Tree.ParagraphType</strong></pre>
+<hr><h2 id="#_74720940"><a name="FoxDocumentationParser.ElementType"></a><a href="#FoxDocumentationParser">FoxDocumentationParser</a>.<a href="#FoxDocumentationParser.ElementType">ElementType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ElementType* =<strong>Tree.ElementType</strong></pre>
+<hr><h2 id="#_74722D40"><a name="FoxDocumentationParser.Parser"></a><a href="#FoxDocumentationParser">FoxDocumentationParser</a>.<a href="#FoxDocumentationParser.Parser">Parser</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parser* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (scanner: <strong>Scanner.Scanner</strong>)<tr><td></td><td> ParseDocument (document: <strong>Tree.Document</strong>)</td></tr>
+</td></tr>
+</table>
+</body></html>

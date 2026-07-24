@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#TFClasses">TFClasses</a></p>
+<hr><h1 id="#_7E730580"><a name="TFClasses"></a><a href="#ModuleList">Module</a> TFClasses
+</h1>
+<p> AUTHOR "TF"; PURPOSE "Generic helper";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>ObjectArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> @Any0<tr><td></td><td><a href="#TFClasses.List">List</a> =<strong>OBJECT</strong> <tr><td></td><td>CompareMethod =<strong>PROCEDURE</strong>{DELEGATE} (first, second: @Any0): <strong>INTEGER</strong><tr><td></td><td><a href="#TFClasses.SortedList">SortedList</a> =<strong>OBJECT</strong> (<strong>List</strong>)<tr><td></td><td><a href="#TFClasses.StringHashMap">StringHashMap</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7E73C040"><a name="TFClasses.List"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>
+</h2>
+<p> Generic Lockable Object List.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> List* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& New<tr><td></td><td> <a href="#TFClasses.List.GetCount">GetCount</a> (): <strong>SIZE</strong><tr><td></td><td> <a href="#TFClasses.List.Add">Add</a> (x: @Any0)<tr><td></td><td> <a href="#TFClasses.List.Replace">Replace</a> (x, y: @Any0)<tr><td></td><td> <a href="#TFClasses.List.IndexOf">IndexOf</a> (x: @Any0): <strong>SIZE</strong><tr><td></td><td> <a href="#TFClasses.List.Remove">Remove</a> (x: @Any0)<tr><td></td><td> <a href="#TFClasses.List.Clear">Clear</a><tr><td></td><td> <a href="#TFClasses.List.GetItem">GetItem</a> (i: <strong>SIZE</strong>): @Any0<tr><td></td><td> <a href="#TFClasses.List.Lock">Lock</a><tr><td></td><td> <a href="#TFClasses.List.Unlock">Unlock</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_7E74E340"><a name="TFClasses.List.GetCount"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>.<a href="#TFClasses.List.GetCount">GetCount</a>
+</h3>
+<p> return the number of objects in the list. If count is used for indexing elements (e.g. FOR - Loop) in a multi-process situation, the process calling the GetCount method should call Lock before GetCount and Unlock after the last use of an index based on GetCount</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetCount* (): <strong>SIZE</strong></pre>
+<hr><h3 id="#_7E75CBC0"><a name="TFClasses.List.Add"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>.<a href="#TFClasses.List.Add">Add</a>
+</h3>
+<p> Add an object to the list. Add may block if number of calls to Lock is bigger than the number of calls to Unlock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (x: @Any0)</pre>
+<hr><h3 id="#_7E766580"><a name="TFClasses.List.Replace"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>.<a href="#TFClasses.List.Replace">Replace</a>
+</h3>
+<p> atomic replace x by y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Replace* (x, y: @Any0)</pre>
+<hr><h3 id="#_7E76BE00"><a name="TFClasses.List.IndexOf"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>.<a href="#TFClasses.List.IndexOf">IndexOf</a>
+</h3>
+<p> return the index of an object. In a multi-process situation, the process calling the IndexOf method should call Lock before IndexOf and Unlock after the last use of an index based on IndexOf. If the object is not found, -1 is returned</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IndexOf* (x: @Any0): <strong>SIZE</strong></pre>
+<hr><h3 id="#_7E77A3C0"><a name="TFClasses.List.Remove"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>.<a href="#TFClasses.List.Remove">Remove</a>
+</h3>
+<p> Remove an object from the list. Remove may block if number of calls to Lock is bigger than the number of calls to Unlock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Remove* (x: @Any0)</pre>
+<hr><h3 id="#_7E783CC0"><a name="TFClasses.List.Clear"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>.<a href="#TFClasses.List.Clear">Clear</a>
+</h3>
+<p> Removes all objects from the list. Clear may block if number of calls to Lock is bigger than the number of calls to Unlock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Clear*</pre>
+<hr><h3 id="#_7E78C440"><a name="TFClasses.List.GetItem"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>.<a href="#TFClasses.List.GetItem">GetItem</a>
+</h3>
+<p> return an object based on an index. In a multi-process situation, GetItem is only safe in a locked region Lock / Unlock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetItem* (i: <strong>SIZE</strong>): @Any0</pre>
+<hr><h3 id="#_7E795CC0"><a name="TFClasses.List.Lock"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>.<a href="#TFClasses.List.Lock">Lock</a>
+</h3>
+<p> Lock prevents modifications to the list. All calls to Lock must be followed by a call to Unlock. Lock can be nested</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Lock*</pre>
+<hr><h3 id="#_7E79DD40"><a name="TFClasses.List.Unlock"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.List">List</a>.<a href="#TFClasses.List.Unlock">Unlock</a>
+</h3>
+<p> Unlock removes one modification lock. All calls to Unlock must be preceeded by a call to Lock.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Unlock*</pre>
+<hr><h2 id="#_7E7A4BC0"><a name="TFClasses.SortedList"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.SortedList">SortedList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SortedList* =<strong>OBJECT</strong> (<strong>List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (m: <strong>CompareMethod</strong>)<tr><td></td><td> SetCompareMethod (m: <strong>CompareMethod</strong>)<tr><td></td><td> <a href="#TFClasses.SortedList.Add">Add</a> (x: @Any0)<tr><td></td><td> <a href="#TFClasses.SortedList.Remove">Remove</a> (x: @Any0)<tr><td></td><td> <a href="#TFClasses.SortedList.Replace">Replace</a> (x, y: @Any0)<tr><td></td><td> SearchByKey (x: @Any0): @Any0</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_7E7B3540"><a name="TFClasses.SortedList.Add"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.SortedList">SortedList</a>.<a href="#TFClasses.SortedList.Add">Add</a>
+</h3>
+<p> Add an object to the list. Add may block if number of calls to Lock is bigger than the number of calls to Unlock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (x: @Any0)</pre>
+<hr><h3 id="#_7E7BCE40"><a name="TFClasses.SortedList.Remove"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.SortedList">SortedList</a>.<a href="#TFClasses.SortedList.Remove">Remove</a>
+</h3>
+<p> Remove an object from the list. Remove may block if number of calls to Lock is bigger than the number of calls to Unlock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Remove* (x: @Any0)</pre>
+<hr><h3 id="#_7E7C6840"><a name="TFClasses.SortedList.Replace"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.SortedList">SortedList</a>.<a href="#TFClasses.SortedList.Replace">Replace</a>
+</h3>
+<p> atomic replace x by y. That means that x is removed and y is added to the SortedList</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Replace* (x, y: @Any0)</pre>
+<hr><h2 id="#_7E7CF340"><a name="TFClasses.StringHashMap"></a><a href="#TFClasses">TFClasses</a>.<a href="#TFClasses.StringHashMap">StringHashMap</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringHashMap* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Find (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): @Any0<tr><td></td><td> Add (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: @Any0)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

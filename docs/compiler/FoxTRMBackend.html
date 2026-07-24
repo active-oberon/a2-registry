@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxTRMBackend">FoxTRMBackend</a></p>
+<hr><h1 id="#_EC662780"><a name="FoxTRMBackend"></a><a href="#ModuleList">Module</a> FoxTRMBackend
+</h1>
+<p> AUTHOR "fof"; PURPOSE "backend for the tiny register machine";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>opBIC= InstructionSet.opBIC<tr><td></td><td>opIRET= InstructionSet.opIRET<tr><td></td><td>opBO= InstructionSet.opBO<tr><td></td><td>opBNO= InstructionSet.opBNO<tr><td></td><td>opBF= InstructionSet.opBF<tr><td></td><td>opSPSR= InstructionSet.opSPSR<tr><th align='left'>type declarations</th><td><a href="#FoxTRMBackend.PhysicalRegisters">PhysicalRegisters</a> =<strong>OBJECT</strong> (<strong>CodeGenerators.PhysicalRegisters</strong>)<tr><th align='left'>procedures</th><td> Get (): <strong>Backend.Backend</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EC673580"><a name="FoxTRMBackend.PhysicalRegisters"></a><a href="#FoxTRMBackend">FoxTRMBackend</a>.<a href="#FoxTRMBackend.PhysicalRegisters">PhysicalRegisters</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PhysicalRegisters* =<strong>OBJECT</strong> (<strong>CodeGenerators.PhysicalRegisters</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> NumberRegisters (): <strong>SIGNED32</strong><tr><td></td><td> Allocate (index: <strong>SIGNED32</strong>; virtualRegister: <strong>Ticket</strong>)<tr><td></td><td> SetReserved (index: <strong>SIGNED32</strong>; res: <strong>BOOLEAN</strong>)<tr><td></td><td> Reserved (index: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Free (index: <strong>SIGNED32</strong>)<tr><td></td><td> NextFree (<strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>): <strong>SIGNED32</strong><tr><td></td><td> AllocationHint (index: <strong>SIGNED32</strong>)<tr><td></td><td> Mapped (physical: <strong>SIGNED32</strong>): <strong>Ticket</strong><tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

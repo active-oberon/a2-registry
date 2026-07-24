@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#TCPServices">TCPServices</a></p>
+<hr><h1 id="#_E47A6000"><a name="TCPServices"></a><a href="#ModuleList">Module</a> TCPServices
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "Abstract TCP services";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Ok= TCP.Ok<tr><th align='left'>type declarations</th><td><a href="#TCPServices.Service">Service</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#TCPServices.TLSService">TLSService</a> =<strong>OBJECT</strong> (<strong>Service</strong>)<tr><td></td><td><a href="#TCPServices.Agent">Agent</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#TCPServices.NewAgent">NewAgent</a> =<strong>PROCEDURE</strong>{DELEGATE} (c: <strong>TCP.Connection</strong>; s: <strong>Service</strong>): <strong>Agent</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_E47B1C40"><a name="TCPServices.Service"></a><a href="#TCPServices">TCPServices</a>.<a href="#TCPServices.Service">Service</a>
+</h2>
+<p> TCP service object - handles opening and closing of connections</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Service* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& <a href="#TCPServices.Service.Start">Start</a> (port: <strong>UNSIGNED32</strong>; new: <strong>NewAgent</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Stop<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E47BCBC0"><a name="TCPServices.Service.Start"></a><a href="#TCPServices">TCPServices</a>.<a href="#TCPServices.Service">Service</a>.<a href="#TCPServices.Service.Start">Start</a>
+</h3>
+<p> Start is called indirectly by OpenService.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Start* (port: <strong>UNSIGNED32</strong>; new: <strong>NewAgent</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_E47C42C0"><a name="TCPServices.TLSService"></a><a href="#TCPServices">TCPServices</a>.<a href="#TCPServices.TLSService">TLSService</a>
+</h2>
+<p> TCP service object - handles opening and closing of connections</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TLSService* =<strong>OBJECT</strong> (<strong>Service</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& <a href="#TCPServices.TLSService.Start">Start</a> (port: <strong>UNSIGNED32</strong>; new: <strong>NewAgent</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</table>
+<hr><h3 id="#_E47CE600"><a name="TCPServices.TLSService.Start"></a><a href="#TCPServices">TCPServices</a>.<a href="#TCPServices.TLSService">TLSService</a>.<a href="#TCPServices.TLSService.Start">Start</a>
+</h3>
+<p> Start is called indirectly by OpenService.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Start* (port: <strong>UNSIGNED32</strong>; new: <strong>NewAgent</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_E47D5D00"><a name="TCPServices.Agent"></a><a href="#TCPServices">TCPServices</a>.<a href="#TCPServices.Agent">Agent</a>
+</h2>
+<p> abstract TCP agent object - should be extended with an active body using "client".</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Agent* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#TCPServices.Agent.client">client</a>: <strong>TCP.Connection</strong><tr><td></td><td>s: <strong>Service</strong><tr><th align='left'>procedures</th><td>& <a href="#TCPServices.Agent.Start">Start</a> (c: <strong>TCP.Connection</strong>; s: <strong>Service</strong>)<tr><td></td><td> <a href="#TCPServices.Agent.Terminate">Terminate</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E47E2040"><a name="TCPServices.Agent.client"></a><a href="#TCPServices">TCPServices</a>.<a href="#TCPServices.Agent">Agent</a>.<a href="#TCPServices.Agent.client">client</a>
+</h3>
+<p> TCP connection to the client</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> client-: <strong>TCP.Connection</strong></pre>
+<hr><h3 id="#_E47E6600"><a name="TCPServices.Agent.Start"></a><a href="#TCPServices">TCPServices</a>.<a href="#TCPServices.Agent">Agent</a>.<a href="#TCPServices.Agent.Start">Start</a>
+</h3>
+<p> Start is called indirectly by the Service object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Start* (c: <strong>TCP.Connection</strong>; s: <strong>Service</strong>)</pre>
+<hr><h3 id="#_E47ED300"><a name="TCPServices.Agent.Terminate"></a><a href="#TCPServices">TCPServices</a>.<a href="#TCPServices.Agent">Agent</a>.<a href="#TCPServices.Agent.Terminate">Terminate</a>
+</h3>
+<p> Terminate is called by the body of the extended object to terminate itself.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Terminate*</pre>
+<hr><h2 id="#_E47F3280"><a name="TCPServices.NewAgent"></a><a href="#TCPServices">TCPServices</a>.<a href="#TCPServices.NewAgent">NewAgent</a>
+</h2>
+<p> A "factory" procedure for agent extensions. Used by a service object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NewAgent* =<strong>PROCEDURE</strong>{DELEGATE} (c: <strong>TCP.Connection</strong>; s: <strong>Service</strong>): <strong>Agent</strong></pre>
+</body></html>

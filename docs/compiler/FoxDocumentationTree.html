@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxDocumentationTree">FoxDocumentationTree</a></p>
+<hr><h1 id="#_98636640"><a name="FoxDocumentationTree"></a><a href="#ModuleList">Module</a> FoxDocumentationTree
+</h1>
+<p> Documentation tree to represent a module documentation. Independent of source language.</p>
+
+<p> The documentation tree represents the <a href="#docuEBNF">EBNF</a> as implemented by <a href="#FoxDocumentationParser">FoxDocumentationParser</a></p>
+
+<dl>
+<dt><strong>author</strong></dt>
+<dd> Felix Friedrich</dd>
+
+
+</dl>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>String =<strong>Scanner.String</strong><tr><td></td><td><a href="#FoxDocumentationTree.ElementType">ElementType</a> =<strong>ENUMERATION</strong> <tr><td></td><td><a href="#FoxDocumentationTree.TextElement">TextElement</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxDocumentationTree.Text">Text</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td>Word =<strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#FoxDocumentationTree.ParagraphType">ParagraphType</a> =<strong>ENUMERATION</strong> <tr><td></td><td><a href="#FoxDocumentationTree.Paragraph">Paragraph</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxDocumentationTree.Paragraphs">Paragraphs</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxDocumentationTree.Section">Section</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxDocumentationTree.Sections">Sections</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxDocumentationTree.Document">Document</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxDocumentationTree.Documents">Documents</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxDocumentationTree.Documentation">Documentation</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> NewText (): <strong>Text</strong><tr><td></td><td> NewTextElement (type: <strong>ElementType</strong>): <strong>TextElement</strong><tr><td></td><td> NewParagraph (type: <strong>ParagraphType</strong>): <strong>Paragraph</strong><tr><td></td><td> NewParagraphs (): <strong>Paragraphs</strong><tr><td></td><td> NewSection (level: <strong>SIGNED32</strong>): <strong>Section</strong><tr><td></td><td> NewSections (level: <strong>SIGNED32</strong>): <strong>Sections</strong><tr><td></td><td> NewDocument (): <strong>Document</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_9865AC80">
+</h1><a name="concept"></a><hr><h1 id="#concept">
+</h1>
+<h2> FoxDocumentationTree</h2>
+
+<p> All information that has been parsed by the documentation parser is stored in a documentation tree. The documentation tree is implemented in module<br> <a href="#FoxDocumentationTree">FoxDocumentationTree</a>. The root of such a documentation is a <a href="#FoxDocumenationTree.Document">Document</a>, it conists of a description and a number of sections. Each <a href="#FoxDocumentationTree.Section">section</a> consist of a title, cotents and<br> can have a label. Sections that actually have a label are merged by the DocumentationBackend. A rough picture is also provided by the <a href="#docuEBNF">EBNF</a>.</p>
+
+<a name="docuEBNF"></a><h3> EBNF of the documentation in a paragraph</h3>
+
+<p> The following EBNF of the documentation cannot be taken literally because some additional rules are implemented in scanner and parser. However it provides a picture<br> of the documentation rules and how they are parsed.</p>
+
+<pre>TextElement = String |BeginItalic Text EndItalic | BeginBold Text EndBold | "[[" string | Text "]]" | "&lt&lt" String "&gt&gt" | "{{{" any text "}}}" | "\\" | "|" Text | "|=" Text | </pre>
+
+<pre>ElementList = {Element} </pre>
+
+<pre>paragraph = Text |  Heading Text | InsertLabel | Bullet Text | Number Text | Description Text | CodeBegin Text CodeEnd | Line | Table Text. </pre>
+
+<pre>Paragraphs = {Paragraph}. </pre>
+
+<pre>Section = "@"{"@"} Title Contents. </pre>
+
+<pre>Contents = {Paragraph}. </pre>
+
+<pre>SectionList = {Section} </pre>
+
+<pre>Document = Description {Section}. </pre>
+
+<pre>Description = {Paragraph}. </pre>
+
+<pre>Documents = {Document}. </pre>
+
+<pre>Documentation =  {Document}. </pre>
+<hr><h2 id="#_9867A980"><a name="FoxDocumentationTree.ElementType"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.ElementType">ElementType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ElementType* =<strong>ENUMERATION</strong> <strong>CONST</strong> Whitespace*= 0, <strong>CONST</strong> Default*= 1, <strong>CONST</strong> Italic*= 2, <strong>CONST</strong> Bold*= 3, <strong>CONST</strong> Underline*= 4, <strong>CONST</strong> Link*= 5, <strong>CONST</strong> WeakLink*= 6, <strong>CONST</strong> Label*= 7, <strong>CONST</strong> Code*= 8, <strong>CONST</strong> LineBreak*= 9, <strong>CONST</strong> DataCell*= 10, <strong>CONST</strong> HeaderCell*= 11, <strong>CONST</strong> Row*= 12</pre>
+<hr><h2 id="#_9868B440"><a name="FoxDocumentationTree.TextElement"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.TextElement">TextElement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TextElement* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>ElementType</strong><tr><td></td><td>string: <strong>String</strong><tr><td></td><td>text: <strong>Text</strong><tr><th align='left'>procedures</th><td>& InitTextElement (type: <strong>ElementType</strong>)<tr><td></td><td> SetString (string: <strong>String</strong>)<tr><td></td><td> SetType (t: <strong>ElementType</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_98697780"><a name="FoxDocumentationTree.Text"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Text">Text</a>
+</h2>
+<p> Comment of Text</p>
+
+<h2> EBNF</h2>
+
+<pre>ElementList = {Element} </pre>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Text* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> AppendNew (type: <strong>ElementType</strong>): <strong>TextElement</strong><tr><td></td><td> AddElement (x: <strong>TextElement</strong>)<tr><td></td><td> GetElement (index: <strong>SIZE</strong>): <strong>TextElement</strong><tr><td></td><td> FindByString (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>TextElement</strong><tr><td></td><td> WriteString (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteWhitespace<tr><td></td><td> WriteLink (<strong>CONST</strong> name, label: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteWeakLink (<strong>CONST</strong> name, label: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteText (t: <strong>Text</strong>)<tr><td></td><td> WriteLabel (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Last (): <strong>TextElement</strong><tr><td></td><td> ForAllElementsDo (this: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>TextElement</strong>))</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_986B7340"><a name="FoxDocumentationTree.ParagraphType"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.ParagraphType">ParagraphType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ParagraphType* =<strong>ENUMERATION</strong> <strong>CONST</strong> TextBlock*= 0, <strong>CONST</strong> Heading*= 1, <strong>CONST</strong> Bullet*= 2, <strong>CONST</strong> Number*= 3, <strong>CONST</strong> Description*= 4, <strong>CONST</strong> Code*= 5, <strong>CONST</strong> Line*= 6, <strong>CONST</strong> Table*= 7</pre>
+<hr><h2 id="#_986C2180"><a name="FoxDocumentationTree.Paragraph"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Paragraph">Paragraph</a>
+</h2>
+<h3> EBNF</h3>
+
+<pre>paragraph = Text |  Heading Text | InsertLabel | Bullet Text | Number Text | Description Text | CodeBegin Text CodeEnd | Line | Table Text. </pre>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Paragraph* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>ParagraphType</strong><tr><td></td><td>level: <strong>SIGNED32</strong><tr><td></td><td>text: <strong>Text</strong><tr><td></td><td>description: <strong>Text</strong><tr><td></td><td>label: <strong>Strings.String</strong><tr><th align='left'>procedures</th><td> SetLabel (label: <strong>String</strong>)<tr><td></td><td>& InitParagraph (type: <strong>ParagraphType</strong>)<tr><td></td><td> SetLevel (level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_986D08C0"><a name="FoxDocumentationTree.Paragraphs"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Paragraphs">Paragraphs</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Paragraphs* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> AppendNew (type: <strong>ParagraphType</strong>): <strong>Paragraph</strong><tr><td></td><td> AddParagraph (x: <strong>Paragraph</strong>)<tr><td></td><td> GetParagraph (index: <strong>SIZE</strong>): <strong>Paragraph</strong><tr><td></td><td> Last (): <strong>Paragraph</strong><tr><td></td><td> ForAllParagraphsDo (this: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>Paragraph</strong>))</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_986DF300"><a name="FoxDocumentationTree.Section"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Section">Section</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Section* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>level: <strong>SIGNED32</strong><tr><td></td><td>title: <strong>Text</strong><tr><td></td><td>contents: <strong>Paragraphs</strong><tr><td></td><td>label: <strong>String</strong><tr><th align='left'>procedures</th><td>& InitSection (level: <strong>SIGNED32</strong>)<tr><td></td><td> SetLabel (label: <strong>String</strong>)<tr><td></td><td> SetContents (paragraphs: <strong>Paragraphs</strong>)<tr><td></td><td> WriteLabel (<strong>CONST</strong> l: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteHeading (level: <strong>SIGNED32</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_986F2240"><a name="FoxDocumentationTree.Sections"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Sections">Sections</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Sections* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> AppendNew (level: <strong>SIGNED32</strong>): <strong>Section</strong><tr><td></td><td> AddSection (x: <strong>Section</strong>)<tr><td></td><td> GetSection (index: <strong>SIZE</strong>): <strong>Section</strong><tr><td></td><td> Last (): <strong>Section</strong><tr><td></td><td> ForAllSectionsDo (this: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>Section</strong>))</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_98700B40"><a name="FoxDocumentationTree.Document"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Document">Document</a>
+</h2>
+<p> a document provides the documentation of a module in a structured way</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Document* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>description: <strong>Paragraphs</strong><tr><td></td><td>sections: <strong>Sections</strong><tr><th align='left'>procedures</th><td>& InitDocument</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_9870AB80"><a name="FoxDocumentationTree.Documents"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Documents">Documents</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Documents* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> AddDocument (x: <strong>Document</strong>)<tr><td></td><td> GetDocument (index: <strong>SIZE</strong>): <strong>Document</strong><tr><td></td><td> ForAllDocumentsDo (this: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>Document</strong>))</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_98715D00"><a name="FoxDocumentationTree.Documentation"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Documentation">Documentation</a>
+</h2>
+<p> a documentation provides the documentation of several modules</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Documentation* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>documents: <strong>Documents</strong><tr><th align='left'>procedures</th><td>& InitDocumentation</td></tr>
+</td></tr>
+</table>
+</body></html>

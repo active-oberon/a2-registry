@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxIntermediateLinker">FoxIntermediateLinker</a></p>
+<hr><h1 id="#_72216CC0"><a name="FoxIntermediateLinker"></a><a href="#ModuleList">Module</a> FoxIntermediateLinker
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>SectionName =<strong>ObjectFile.SectionName</strong><tr><td></td><td><a href="#FoxIntermediateLinker.Linker">Linker</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> GetPriority (block: <strong>Sections.Section</strong>): <strong>INTEGER</strong><tr><td></td><td> CopySections (from, to: <strong>Sections.SectionList</strong>)<tr><td></td><td> Link (context: <strong>Commands.Context</strong>)<tr><td></td><td> WriteCodeAndDataFiles (<strong>CONST</strong> instanceName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> codeFileExtension, dataFileExtension: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; objectFile: <strong>Formats.ObjectFileFormat</strong>; <strong>VAR</strong> instructionMemorySize, dataMemorySize: <strong>BinaryCode.Unit</strong>; backend: <strong>Backend.Backend</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; log: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Test (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7222BAC0"><a name="FoxIntermediateLinker.Linker"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>
+</h2>
+<p> the assemblinker</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Linker* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>backend: <strong>Backend.Backend</strong><tr><td></td><td>objectFile: <strong>IRObjectFile.ObjectFileFormat</strong><tr><th align='left'>procedures</th><td>& Init (diagnostics: <strong>Diagnostics.Diagnostics</strong>; defaultBackend: <strong>Backend.Backend</strong>)<tr><td></td><td> SetInstructionWidth (unit: <strong>Backend.SizeInBits</strong>)<tr><td></td><td> PatchStackSize (<strong>CONST</strong> typeName: <strong>SectionName</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> PatchIntegerValue (<strong>CONST</strong> sectionName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index: <strong>SIZE</strong>; value: <strong>SIGNED64</strong>; type: <strong>SyntaxTree.Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> PatchBooleanValue (<strong>CONST</strong> sectionName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index: <strong>SIZE</strong>; value: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> PatchStringValue (<strong>CONST</strong> sectionName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> LoadModule (<strong>CONST</strong> moduleFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; recursive: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> LinkPrefixed (<strong>CONST</strong> sectionPrefix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxIntermediateLinker.Linker.MarkAsReachableByName">MarkAsReachableByName</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#FoxIntermediateLinker.Linker.MarkAsReachableStartingWith">MarkAsReachableStartingWith</a> (<strong>CONST</strong> prefix: <strong>Basic.SegmentedName</strong>; allowedSections: <strong>SET</strong>)<tr><td></td><td> <a href="#FoxIntermediateLinker.Linker.MarkAsReachable">MarkAsReachable</a> (section: <strong>Sections.Section</strong>)<tr><td></td><td> <a href="#FoxIntermediateLinker.Linker.MarkReachabilityOfAll">MarkReachabilityOfAll</a> (isReachable: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#FoxIntermediateLinker.Linker.DumpSections">DumpSections</a> (writer: <strong>Streams.Writer</strong>; sections: <strong>Sections.SectionList</strong>)<tr><td></td><td> PrearrangeReachableDataSections<tr><td></td><td> PatchValueInSection (<strong>CONST</strong> sectionName: <strong>Basic.SegmentedName</strong>; syntaxTreeValue: <strong>SyntaxTree.Value</strong>)<tr><td></td><td> GenerateObjectFile (objectFileFormat: <strong>Formats.ObjectFileFormat</strong>; log: <strong>Streams.Writer</strong>; <strong>CONST</strong> desiredName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_72260F40"><a name="FoxIntermediateLinker.Linker.MarkAsReachableByName"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkAsReachableByName">MarkAsReachableByName</a>
+</h3>
+<p> mark a section with a certain name as reachable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MarkAsReachableByName* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_72267BC0"><a name="FoxIntermediateLinker.Linker.MarkAsReachableStartingWith"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkAsReachableStartingWith">MarkAsReachableStartingWith</a>
+</h3>
+<p> mark all sections whose names start with a certain prefix as reachable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MarkAsReachableStartingWith* (<strong>CONST</strong> prefix: <strong>Basic.SegmentedName</strong>; allowedSections: <strong>SET</strong>)</pre>
+<hr><h3 id="#_7226FB00"><a name="FoxIntermediateLinker.Linker.MarkAsReachable"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkAsReachable">MarkAsReachable</a>
+</h3>
+<p> mark a section as reachable and do the same recursively for all referenced sections</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MarkAsReachable* (section: <strong>Sections.Section</strong>)</pre>
+<hr><h3 id="#_72276F00"><a name="FoxIntermediateLinker.Linker.MarkReachabilityOfAll"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkReachabilityOfAll">MarkReachabilityOfAll</a>
+</h3>
+<p> mark all sections as either reachable or unreachable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MarkReachabilityOfAll* (isReachable: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_7227CD40"><a name="FoxIntermediateLinker.Linker.DumpSections"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.DumpSections">DumpSections</a>
+</h3>
+<p> dump all sections (both reachable and not)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DumpSections* (writer: <strong>Streams.Writer</strong>; sections: <strong>Sections.SectionList</strong>)</pre>
+</body></html>

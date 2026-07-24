@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CalcD4">CalcD4</a></p>
+<hr><h1 id="#_6317B6C0"><a name="CalcD4"></a><a href="#ModuleList">Module</a> CalcD4
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Computes integer-order, i.e. classical, derivatives";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#CalcD4.Forward">Forward</a>= 9<tr><td></td><td>Central= 10<tr><td></td><td>Backward= 11<tr><th align='left'>procedures</th><td> <a href="#CalcD4.Solve">Solve</a> (f: <strong>CalcFn.ReArg</strong>; atX: <strong>NbrRe.Real</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#CalcD4.SolveCplx">SolveCplx</a> (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong><tr><td></td><td> <a href="#CalcD4.SolveCplxRe">SolveCplxRe</a> (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong><tr><td></td><td> <a href="#CalcD4.SolveCplxIm">SolveCplxIm</a> (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong><tr><td></td><td> <a href="#CalcD4.SolveCplxAbs">SolveCplxAbs</a> (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong><tr><td></td><td> <a href="#CalcD4.SolveCplxArg">SolveCplxArg</a> (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_631992C0"><a name="CalcD4.Forward"></a><a href="#CalcD4">CalcD4</a>.<a href="#CalcD4.Forward">Forward</a>
+</h2>
+<p> Admissible parameters to be passed for establishing the differencing scheme used to compute a derivative.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Forward*= 9</pre>
+<hr><h2 id="#_6319F840"><a name="CalcD4.Solve"></a><a href="#CalcD4">CalcD4</a>.<a href="#CalcD4.Solve">Solve</a>
+</h2>
+<p> Computes d4f(x)/dx4</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Solve* (f: <strong>CalcFn.ReArg</strong>; atX: <strong>NbrRe.Real</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_631A5780"><a name="CalcD4.SolveCplx"></a><a href="#CalcD4">CalcD4</a>.<a href="#CalcD4.SolveCplx">SolveCplx</a>
+</h2>
+<p> Computes d4f(z)/dz4</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveCplx* (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong></pre>
+<hr><h2 id="#_631AB780"><a name="CalcD4.SolveCplxRe"></a><a href="#CalcD4">CalcD4</a>.<a href="#CalcD4.SolveCplxRe">SolveCplxRe</a>
+</h2>
+<p> Computes 64f(z)/6x4, z = x + i y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveCplxRe* (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong></pre>
+<hr><h2 id="#_631B2F40"><a name="CalcD4.SolveCplxIm"></a><a href="#CalcD4">CalcD4</a>.<a href="#CalcD4.SolveCplxIm">SolveCplxIm</a>
+</h2>
+<p> Computes 64f(z)/6y4, z = x + i y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveCplxIm* (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong></pre>
+<hr><h2 id="#_631BA7C0"><a name="CalcD4.SolveCplxAbs"></a><a href="#CalcD4">CalcD4</a>.<a href="#CalcD4.SolveCplxAbs">SolveCplxAbs</a>
+</h2>
+<p> Computes 64f(z)/6r4, z = r exp( i f )</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveCplxAbs* (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong></pre>
+<hr><h2 id="#_631C2380"><a name="CalcD4.SolveCplxArg"></a><a href="#CalcD4">CalcD4</a>.<a href="#CalcD4.SolveCplxArg">SolveCplxArg</a>
+</h2>
+<p> Computes 64f(z)/6f4, z = r exp( i f )</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveCplxArg* (f: <strong>CalcFn.CplxArg</strong>; atZ: <strong>NbrCplx.Complex</strong>; differencing: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong></pre>
+</body></html>

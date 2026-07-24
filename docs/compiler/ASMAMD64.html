@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ASMAMD64">ASMAMD64</a></p>
+<hr><h1 id="#_78AB8F40"><a name="ASMAMD64"></a><a href="#ModuleList">Module</a> ASMAMD64
+</h1>
+<p> AUTHOR "negelef"; PURPOSE "AMD64 instruction set repository ";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>maxOperands= 3<tr><td></td><td>none= -1<tr><td></td><td>cpu8086= 0<tr><td></td><td>cpu186= 1<tr><td></td><td>cpu286= 2<tr><td></td><td>cpu386= 3<tr><td></td><td>cpu486= 4<tr><td></td><td>cpuPentium= 5<tr><td></td><td>cpuP6= 6<tr><td></td><td>cpuKatmai= 7<tr><td></td><td>cpuWillamette= 8<tr><td></td><td>cpuPrescott= 9<tr><td></td><td>cpuAMD64= 10<tr><td></td><td>cpuPrivileged= 20<tr><td></td><td>cpuProtected= 21<tr><td></td><td>cpuSSE= 22<tr><td></td><td>cpuSSE2= 23<tr><td></td><td>cpuSSE3= 24<tr><td></td><td>cpu3DNow= 25<tr><td></td><td>cpuMMX= 26<tr><td></td><td>cpuFPU= 27<tr><td></td><td>cpuOptions= {cpuPrivileged..cpuFPU}<tr><td></td><td>optO16= 0<tr><td></td><td>optO32= 1<tr><td></td><td>optO64= 2<tr><td></td><td>optD64= 3<tr><td></td><td>optI64= 4<tr><td></td><td>optA16= 5<tr><td></td><td>optA32= 6<tr><td></td><td>optPOP= 7<tr><td></td><td>optPLOCK= 8<tr><td></td><td>optPREP= 9<tr><td></td><td>optPREPN= 10<tr><td></td><td>AL= 0<tr><td></td><td>AX= 1<tr><td></td><td>CL= 2<tr><td></td><td>CR8= 3<tr><td></td><td>CRn= 4<tr><td></td><td>CS= 5<tr><td></td><td>DRn= 6<tr><td></td><td>DS= 7<tr><td></td><td>DX= 8<tr><td></td><td>EAX= 9<tr><td></td><td>ECX= 10<tr><td></td><td>ES= 11<tr><td></td><td>FS= 12<tr><td></td><td>GS= 13<tr><td></td><td>RAX= 14<tr><td></td><td>SS= 15<tr><td></td><td>imm16= 16<tr><td></td><td>imm32= 17<tr><td></td><td>imm64= 18<tr><td></td><td>imm8= 19<tr><td></td><td>mem= 20<tr><td></td><td>mem128= 21<tr><td></td><td>mem16= 22<tr><td></td><td>mem32= 23<tr><td></td><td>mem64= 24<tr><td></td><td>mem8= 25<tr><td></td><td>mmx= 26<tr><td></td><td>mmxmem32= 27<tr><td></td><td>mmxmem64= 28<tr><td></td><td>moffset16= 29<tr><td></td><td>moffset32= 30<tr><td></td><td>moffset64= 31<tr><td></td><td>moffset8= 32<tr><td></td><td>one= 33<tr><td></td><td>pntr1616= 34<tr><td></td><td>pntr1632= 35<tr><td></td><td>rAX= 36<tr><td></td><td>reg16= 37<tr><td></td><td>reg32= 38<tr><td></td><td>reg64= 39<tr><td></td><td>reg8= 40<tr><td></td><td>regmem16= 41<tr><td></td><td>regmem32= 42<tr><td></td><td>regmem64= 43<tr><td></td><td>regmem8= 44<tr><td></td><td>rel16off= 45<tr><td></td><td>rel32off= 46<tr><td></td><td>rel8off= 47<tr><td></td><td>segReg= 48<tr><td></td><td>simm16= 49<tr><td></td><td>simm32= 50<tr><td></td><td>simm8= 51<tr><td></td><td>st0= 52<tr><td></td><td>sti= 53<tr><td></td><td>three= 54<tr><td></td><td>uimm16= 55<tr><td></td><td>uimm32= 56<tr><td></td><td>uimm8= 57<tr><td></td><td>xmm= 58<tr><td></td><td>xmmmem128= 59<tr><td></td><td>xmmmem32= 60<tr><td></td><td>xmmmem64= 61<tr><td></td><td>prfOP= 102<tr><td></td><td>prfADR= 103<tr><td></td><td>prfCS= 46<tr><td></td><td>prfDS= 62<tr><td></td><td>prfES= 38<tr><td></td><td>prfFS= 100<tr><td></td><td>prfGS= 101<tr><td></td><td>prfSS= 54<tr><td></td><td>prfLOCK= 240<tr><td></td><td>prfREP= 243<tr><td></td><td>prfREPE= 243<tr><td></td><td>prfREPZ= 243<tr><td></td><td>prfREPNE= 242<tr><td></td><td>prfREPNZ= 242<tr><td></td><td>opADD= 5<tr><td></td><td>opADDSD= 8<tr><td></td><td>opADDSS= 9<tr><td></td><td>opAND= 12<tr><td></td><td>opANDPD= 15<tr><td></td><td>opANDPS= 16<tr><td></td><td>opBT= 22<tr><td></td><td>opBTR= 24<tr><td></td><td>opBTS= 25<tr><td></td><td>opCALL= 26<tr><td></td><td>opCBW= 27<tr><td></td><td>opCDQ= 28<tr><td></td><td>opCLD= 32<tr><td></td><td>opCMP= 67<tr><td></td><td>opCOMISD= 79<tr><td></td><td>opCOMISS= 80<tr><td></td><td>opCQO= 82<tr><td></td><td>opCVTSD2SI= 93<tr><td></td><td>opCVTSD2SS= 94<tr><td></td><td>opCVTSI2SD= 95<tr><td></td><td>opCVTSI2SS= 96<tr><td></td><td>opCVTSS2SD= 97<tr><td></td><td>opCVTSS2SI= 98<tr><td></td><td>opCWD= 105<tr><td></td><td>opDEC= 109<tr><td></td><td>opDIVSD= 113<tr><td></td><td>opDIVSS= 114<tr><td></td><td>opENTER= 116<tr><td></td><td>opIDIV= 218<tr><td></td><td>opIMUL= 219<tr><td></td><td>opIN= 220<tr><td></td><td>opINC= 221<tr><td></td><td>opINT= 226<tr><td></td><td>opINT3= 227<tr><td></td><td>opJA= 235<tr><td></td><td>opJAE= 236<tr><td></td><td>opJB= 237<tr><td></td><td>opJBE= 238<tr><td></td><td>opJC= 239<tr><td></td><td>opJE= 241<tr><td></td><td>opJG= 243<tr><td></td><td>opJGE= 244<tr><td></td><td>opJL= 245<tr><td></td><td>opJLE= 246<tr><td></td><td>opJMP= 247<tr><td></td><td>opJNC= 252<tr><td></td><td>opJNE= 253<tr><td></td><td>opJNZ= 261<tr><td></td><td>opLEAVE= 275<tr><td></td><td>opMOV= 308<tr><td></td><td>opMOVD= 311<tr><td></td><td>opMOVSB= 332<tr><td></td><td>opMOVSD= 333<tr><td></td><td>opMOVSS= 337<tr><td></td><td>opMOVSX= 339<tr><td></td><td>opMOVSXD= 340<tr><td></td><td>opMOVZX= 343<tr><td></td><td>opMUL= 344<tr><td></td><td>opMULSD= 347<tr><td></td><td>opMULSS= 348<tr><td></td><td>opNEG= 349<tr><td></td><td>opNOP= 350<tr><td></td><td>opNOT= 351<tr><td></td><td>opOR= 352<tr><td></td><td>opOUT= 355<tr><td></td><td>opPOP= 417<tr><td></td><td>opPUSH= 464<tr><td></td><td>opRET= 480<tr><td></td><td>opROL= 482<tr><td></td><td>opROR= 483<tr><td></td><td>opSAL= 488<tr><td></td><td>opSAR= 489<tr><td></td><td>opSBB= 490<tr><td></td><td>opSETA= 496<tr><td></td><td>opSETAE= 497<tr><td></td><td>opSETB= 498<tr><td></td><td>opSETBE= 499<tr><td></td><td>opSETC= 500<tr><td></td><td>opSETE= 501<tr><td></td><td>opSETG= 502<tr><td></td><td>opSETGE= 503<tr><td></td><td>opSETL= 504<tr><td></td><td>opSETLE= 505<tr><td></td><td>opSETNC= 510<tr><td></td><td>opSETNE= 511<tr><td></td><td>opSHL= 528<tr><td></td><td>opSHR= 530<tr><td></td><td>opSTD= 543<tr><td></td><td>opSUB= 553<tr><td></td><td>opSUBSD= 556<tr><td></td><td>opSUBSS= 557<tr><td></td><td>opXOR= 583<tr><td></td><td>opXORPD= 584<tr><td></td><td>opXORPS= 585<tr><th align='left'>type declarations</th><td>OperandType =<strong>SIGNED32</strong><tr><td></td><td>CPUOptions =<strong>SET</strong><tr><th align='left'>variables</th><td>mnemonics: <strong>ARRAY</strong> maxMnemonics <strong>OF</strong> <strong>Mnemonic</strong><tr><td></td><td>instructions: <strong>ARRAY</strong> maxInstructions <strong>OF</strong> <strong>Instruction</strong><tr><td></td><td>registers: <strong>ARRAY</strong> maxRegisters <strong>OF</strong> <strong>Register</strong><tr><td></td><td>cpus: <strong>ARRAY</strong> maxCPUs <strong>OF</strong> <strong>CPUType</strong><tr><th align='left'>procedures</th><td> FindMnem (<strong>CONST</strong> mnem: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> FindReg (<strong>CONST</strong> reg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> FindCPU (<strong>CONST</strong> cpu: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

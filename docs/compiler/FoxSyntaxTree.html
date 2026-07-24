@@ -1,0 +1,2816 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxSyntaxTree">FoxSyntaxTree</a></p>
+<hr><h1 id="#_72F45D00"><a name="FoxSyntaxTree"></a><a href="#ModuleList">Module</a> FoxSyntaxTree
+</h1>
+<p> AUTHOR "fof & fn"; PURPOSE "Oberon Compiler: Abstract Syntax Tree";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#FoxSyntaxTree.OberonCallingConvention">OberonCallingConvention</a>= 0<tr><td></td><td>CCallingConvention= 1<tr><td></td><td>WinAPICallingConvention= 2<tr><td></td><td>InterruptCallingConvention= 3<tr><td></td><td>PlatformCallingConvention= 4<tr><td></td><td>UndefinedCallingConvention= 5<tr><td></td><td><a href="#FoxSyntaxTree.InternalRead">InternalRead</a>= 0<tr><td></td><td><a href="#FoxSyntaxTree.InternalWrite">InternalWrite</a>= 1<tr><td></td><td><a href="#FoxSyntaxTree.ProtectedRead">ProtectedRead</a>= 2<tr><td></td><td><a href="#FoxSyntaxTree.ProtectedWrite">ProtectedWrite</a>= 3<tr><td></td><td><a href="#FoxSyntaxTree.PublicRead">PublicRead</a>= 4<tr><td></td><td><a href="#FoxSyntaxTree.PublicWrite">PublicWrite</a>= 5<tr><td></td><td>Hidden= {}<tr><td></td><td>Internal= {InternalRead,InternalWrite}<tr><td></td><td>Protected= {ProtectedRead,ProtectedWrite}<tr><td></td><td>Public= {PublicRead,PublicWrite}<tr><td></td><td>ReadOnly= {InternalRead,ProtectedRead,PublicRead}<tr><td></td><td><a href="#FoxSyntaxTree.ValueParameter">ValueParameter</a>= 0<tr><td></td><td>VarParameter= 1<tr><td></td><td>ConstParameter= 2<tr><td></td><td>InPort= 3<tr><td></td><td>OutPort= 4<tr><td></td><td><a href="#FoxSyntaxTree.Static">Static</a>= 1<tr><td></td><td>Open= 2<tr><td></td><td>Tensor= 3<tr><td></td><td>SemiDynamic= 4<tr><td></td><td><a href="#FoxSyntaxTree.Undefined">Undefined</a>= {}<tr><td></td><td>BeingResolved= 1<tr><td></td><td>Resolved= 2<tr><td></td><td>Fingerprinted= 3<tr><td></td><td>Warned= 4<tr><td></td><td>Initialized= 5<tr><td></td><td>ArrayIndex= 0<tr><td></td><td>SetElement= 1<tr><td></td><td>CaseGuard= 2<tr><td></td><td>FlagProcedureDelegate= 0<tr><td></td><td>FlagProcedureConstructor= 1<tr><td></td><td>FlagParameterVar= 1<tr><td></td><td>FlagParameterConst= 2<tr><th align='left'>type declarations</th><td><a href="#FoxSyntaxTree.Position">Position</a> =<strong>Scanner.Position</strong><tr><td></td><td>SourceCode =<strong>Scanner.StringType</strong><tr><td></td><td><a href="#FoxSyntaxTree.BinaryCode">BinaryCode</a> =<strong>BitSets.BitSet</strong><tr><td></td><td>String =<strong>Scanner.StringType</strong><tr><td></td><td>IdentifierString =<strong>Scanner.IdentifierString</strong><tr><td></td><td>CallingConvention =<strong>SIGNED32</strong><tr><td></td><td>SubType =<strong>Scanner.SubType</strong><tr><td></td><td>Kind =<strong>SIGNED32</strong><tr><td></td><td><a href="#FoxSyntaxTree.Visitor">Visitor</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.ArrayAccessOperators">ArrayAccessOperators</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxSyntaxTree.Fingerprint">Fingerprint</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxSyntaxTree.Identifier">Identifier</a> =<strong>Basic.String</strong><tr><td></td><td><a href="#FoxSyntaxTree.QualifiedIdentifier">QualifiedIdentifier</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.Type">Type</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.BasicType">BasicType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ObjectType">ObjectType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.NilType">NilType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.AnyType">AnyType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.AnyRecordType">AnyRecordType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ByteType">ByteType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.AddressType">AddressType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.SizeType">SizeType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.BooleanType">BooleanType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.SetType">SetType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.CharacterType">CharacterType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.RangeType">RangeType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.NumberType">NumberType</a> =<strong>OBJECT</strong> (<strong>BasicType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.IntegerType">IntegerType</a> =<strong>OBJECT</strong> (<strong>NumberType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.FloatType">FloatType</a> =<strong>OBJECT</strong> (<strong>NumberType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ComplexType">ComplexType</a> =<strong>OBJECT</strong> (<strong>NumberType</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.QualifiedType">QualifiedType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.StringType">StringType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.EnumerationType">EnumerationType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ArrayType">ArrayType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.MathArrayType">MathArrayType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.PointerType">PointerType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.PortType">PortType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.RecordType">RecordType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.CellType">CellType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ProcedureType">ProcedureType</a> =<strong>OBJECT</strong> (<strong>Type</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Expression">Expression</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.ExpressionList">ExpressionList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.Set">Set</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.MathArrayExpression">MathArrayExpression</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.UnaryExpression">UnaryExpression</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.BinaryExpression">BinaryExpression</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.RangeExpression">RangeExpression</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ConditionalExpression">ConditionalExpression</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.TensorRangeExpression">TensorRangeExpression</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Conversion">Conversion</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Designator">Designator</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.IdentifierDesignator">IdentifierDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.SelectorDesignator">SelectorDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ParameterDesignator">ParameterDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ArrowDesignator">ArrowDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.BracketDesignator">BracketDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.SymbolDesignator">SymbolDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.IndexDesignator">IndexDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ProcedureCallDesignator">ProcedureCallDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.InlineCallDesignator">InlineCallDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.BuiltinCallDesignator">BuiltinCallDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.TypeGuardDesignator">TypeGuardDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.DereferenceDesignator">DereferenceDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.SupercallDesignator">SupercallDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.SelfDesignator">SelfDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ResultDesignator">ResultDesignator</a> =<strong>OBJECT</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Value">Value</a> =<strong>OBJECT</strong> (<strong>Expression</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.BooleanValue">BooleanValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.IntegerValue">IntegerValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.CharacterValue">CharacterValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.SetValue">SetValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.MathArrayValue">MathArrayValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.RealValue">RealValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ComplexValue">ComplexValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.StringValue">StringValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.NilValue">NilValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.EnumerationValue">EnumerationValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ProcedureValue">ProcedureValue</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Symbol">Symbol</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.Symbols">Symbols</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.Variables">Variables</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.TypeDeclaration">TypeDeclaration</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Constant">Constant</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Variable">Variable</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Parameter">Parameter</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Property">Property</a> =<strong>OBJECT</strong> (<strong>Variable</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Alias">Alias</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Procedure">Procedure</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Builtin">Builtin</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.CustomBuiltin">CustomBuiltin</a> =<strong>OBJECT</strong> (<strong>Builtin</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Operator">Operator</a> =<strong>OBJECT</strong> (<strong>Procedure</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Import">Import</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.StatementSequence">StatementSequence</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.Statement">Statement</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.DeclarationStatement">DeclarationStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ProcedureCallStatement">ProcedureCallStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Assignment">Assignment</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.CommunicationStatement">CommunicationStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Part">Part</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.IfPart">IfPart</a> =<strong>OBJECT</strong> (<strong>Part</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.IfStatement">IfStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.WithPart">WithPart</a> =<strong>OBJECT</strong> (<strong>Part</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.WithStatement">WithStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.CaseConstant">CaseConstant</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#FoxSyntaxTree.CasePart">CasePart</a> =<strong>OBJECT</strong> (<strong>Part</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.CaseStatement">CaseStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.WhileStatement">WhileStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.RepeatStatement">RepeatStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ForStatement">ForStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ExitableBlock">ExitableBlock</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.LoopStatement">LoopStatement</a> =<strong>OBJECT</strong> (<strong>ExitableBlock</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ExitStatement">ExitStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ReturnStatement">ReturnStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.AwaitStatement">AwaitStatement</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Modifier">Modifier</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.StatementBlock">StatementBlock</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Code">Code</a> =<strong>OBJECT</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Body">Body</a> =<strong>OBJECT</strong> (<strong>StatementBlock</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.Comment">Comment</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.Scope">Scope</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.ProcedureScope">ProcedureScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.BlockScope">BlockScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.EnumerationScope">EnumerationScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.RecordScope">RecordScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.CellScope">CellScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ModuleScope">ModuleScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.TemplateType">TemplateType</a> =<strong>ENUMERATION</strong> <tr><td></td><td><a href="#FoxSyntaxTree.TemplateParameter">TemplateParameter</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxSyntaxTree.TemplateParameters">TemplateParameters</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSyntaxTree.Module">Module</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxSyntaxTree.ProcedureList">ProcedureList</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>invalidIdentifier: <strong>Identifier</strong><tr><td></td><td>invalidQualifiedIdentifier: <strong>QualifiedIdentifier</strong><tr><td></td><td>invalidType: <strong>Type</strong><tr><td></td><td>invalidExpression: <strong>Expression</strong><tr><td></td><td>invalidDesignator: <strong>Designator</strong><tr><td></td><td>invalidValue: <strong>Value</strong><tr><td></td><td>invalidSymbol: <strong>Symbol</strong><tr><td></td><td>invalidPosition: <strong>Position</strong><tr><td></td><td>anonymousIdentifier: <strong>Identifier</strong><tr><td></td><td>importType: <strong>Type</strong><tr><td></td><td>typeDeclarationType: <strong>Type</strong><tr><td></td><td>moduleType: <strong>Type</strong><tr><td></td><td>indexListSeparator: <strong>Expression</strong><tr><th align='left'>procedures</th><td> CloneDesignator (x: <strong>Designator</strong>): <strong>Designator</strong><tr><td></td><td> CloneExpression (x: <strong>Expression</strong>): <strong>Expression</strong><tr><td></td><td> NewModule (<strong>CONST</strong> sourceName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Position</strong>; name: <strong>Identifier</strong>; scope: <strong>ModuleScope</strong>; case: <strong>SIGNED32</strong>): <strong>Module</strong><tr><td></td><td> NewComment (position: <strong>Position</strong>; scope: <strong>Scope</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; length: <strong>SIZE</strong>): <strong>Comment</strong><tr><td></td><td> NewImport (position: <strong>Position</strong>; alias, name: <strong>Identifier</strong>; direct: <strong>BOOLEAN</strong>): <strong>Import</strong><tr><td></td><td> NewConstant (position: <strong>Position</strong>; name: <strong>Identifier</strong>): <strong>Constant</strong><tr><td></td><td> NewProcedure (position: <strong>Position</strong>; name: <strong>Identifier</strong>; scope: <strong>ProcedureScope</strong>): <strong>Procedure</strong><tr><td></td><td> NewAlias (position: <strong>Position</strong>; name: <strong>Identifier</strong>; expression: <strong>Expression</strong>): <strong>Alias</strong><tr><td></td><td> NewBuiltin (position: <strong>Position</strong>; name: <strong>Identifier</strong>; id: <strong>SIGNED32</strong>): <strong>Builtin</strong><tr><td></td><td> NewCustomBuiltin (position: <strong>Position</strong>; name: <strong>Identifier</strong>; id: <strong>SIGNED32</strong>; subType: <strong>SIGNED8</strong>): <strong>CustomBuiltin</strong><tr><td></td><td> NewOperator (position: <strong>Position</strong>; name: <strong>Identifier</strong>; scope: <strong>ProcedureScope</strong>): <strong>Operator</strong><tr><td></td><td> NewType (): <strong>Type</strong><tr><td></td><td> NewByteType (sizeInBits: <strong>SIZE</strong>): <strong>ByteType</strong><tr><td></td><td> NewAnyType (sizeInBits: <strong>SIZE</strong>): <strong>AnyType</strong><tr><td></td><td> NewAnyRecordType (): <strong>AnyRecordType</strong><tr><td></td><td> NewObjectType (sizeInBits: <strong>SIZE</strong>): <strong>ObjectType</strong><tr><td></td><td> NewNilType (sizeInBits: <strong>SIZE</strong>): <strong>NilType</strong><tr><td></td><td> NewAddressType (sizeInBits: <strong>SIZE</strong>): <strong>AddressType</strong><tr><td></td><td> NewSizeType (sizeInBits: <strong>SIZE</strong>): <strong>SizeType</strong><tr><td></td><td> NewBooleanType (sizeInBits: <strong>SIZE</strong>): <strong>BooleanType</strong><tr><td></td><td> NewSetType (sizeInBits: <strong>SIZE</strong>): <strong>SetType</strong><tr><td></td><td> NewCharacterType (sizeInBits: <strong>SIZE</strong>): <strong>CharacterType</strong><tr><td></td><td> NewRangeType (sizeInBits: <strong>SIZE</strong>): <strong>RangeType</strong><tr><td></td><td> NewComplexType (base: <strong>Type</strong>): <strong>ComplexType</strong><tr><td></td><td> NewIntegerType (size: <strong>SIGNED32</strong>; signed: <strong>BOOLEAN</strong>): <strong>IntegerType</strong><tr><td></td><td> NewFloatType (sizeInBits: <strong>SIZE</strong>): <strong>FloatType</strong><tr><td></td><td> NewTypeDeclaration (position: <strong>Position</strong>; name: <strong>Identifier</strong>): <strong>TypeDeclaration</strong><tr><td></td><td> NewStringType (position: <strong>Position</strong>; baseType: <strong>Type</strong>; length: <strong>SIZE</strong>): <strong>StringType</strong><tr><td></td><td> NewEnumerationType (position: <strong>Position</strong>; scope: <strong>Scope</strong>; enumerationScope: <strong>EnumerationScope</strong>): <strong>EnumerationType</strong><tr><td></td><td> NewArrayType (position: <strong>Position</strong>; scope: <strong>Scope</strong>; form: <strong>SIGNED32</strong>): <strong>ArrayType</strong><tr><td></td><td> NewMathArrayType (position: <strong>Position</strong>; scope: <strong>Scope</strong>; form: <strong>SIGNED32</strong>): <strong>MathArrayType</strong><tr><td></td><td> NewPointerType (position: <strong>Position</strong>; scope: <strong>Scope</strong>): <strong>PointerType</strong><tr><td></td><td> NewPortType (position: <strong>Position</strong>; direction: <strong>SIGNED32</strong>; sizeExpression: <strong>Expression</strong>; scope: <strong>Scope</strong>): <strong>PortType</strong><tr><td></td><td> NewRecordType (position: <strong>Position</strong>; scope: <strong>Scope</strong>; recordScope: <strong>RecordScope</strong>): <strong>RecordType</strong><tr><td></td><td> NewCellType (position: <strong>Position</strong>; scope: <strong>Scope</strong>; cellScope: <strong>CellScope</strong>): <strong>CellType</strong><tr><td></td><td> NewProcedureType (position: <strong>Position</strong>; scope: <strong>Scope</strong>): <strong>ProcedureType</strong><tr><td></td><td> NewQualifiedType (position: <strong>Position</strong>; scope: <strong>Scope</strong>; qualifiedIdentifier: <strong>QualifiedIdentifier</strong>): <strong>QualifiedType</strong><tr><td></td><td> NewSymbol (name: <strong>Identifier</strong>): <strong>Symbol</strong><tr><td></td><td> NewVariable (position: <strong>Position</strong>; name: <strong>Identifier</strong>): <strong>Variable</strong><tr><td></td><td> NewQualifiedIdentifier (position: <strong>Position</strong>; prefix, suffix: <strong>Identifier</strong>): <strong>QualifiedIdentifier</strong><tr><td></td><td> NewIdentifier (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Identifier</strong><tr><td></td><td> NewParameter (position: <strong>Position</strong>; ownerType: <strong>Type</strong>; name: <strong>Identifier</strong>; passAs: <strong>SIGNED32</strong>): <strong>Parameter</strong><tr><td></td><td> NewProperty (position: <strong>Position</strong>; name: <strong>Identifier</strong>): <strong>Property</strong><tr><td></td><td> NewExpressionList (): <strong>ExpressionList</strong><tr><td></td><td> CloneExpressionList (l: <strong>ExpressionList</strong>): <strong>ExpressionList</strong><tr><td></td><td> NewDesignator (): <strong>Designator</strong><tr><td></td><td> NewIdentifierDesignator (position: <strong>Position</strong>; identifier: <strong>Identifier</strong>): <strong>IdentifierDesignator</strong><tr><td></td><td> NewSelectorDesignator (position: <strong>Position</strong>; left: <strong>Expression</strong>; name: <strong>Identifier</strong>): <strong>SelectorDesignator</strong><tr><td></td><td> NewParameterDesignator (position: <strong>Position</strong>; left: <strong>Expression</strong>; expressionList: <strong>ExpressionList</strong>): <strong>ParameterDesignator</strong><tr><td></td><td> NewArrowDesignator (position: <strong>Position</strong>; left: <strong>Expression</strong>): <strong>ArrowDesignator</strong><tr><td></td><td> NewBracketDesignator (position: <strong>Position</strong>; left: <strong>Expression</strong>; expressionList: <strong>ExpressionList</strong>): <strong>BracketDesignator</strong><tr><td></td><td> NewSymbolDesignator (position: <strong>Position</strong>; original: <strong>Expression</strong>; left: <strong>Expression</strong>; symbol: <strong>Symbol</strong>): <strong>SymbolDesignator</strong><tr><td></td><td> NewIndexDesignator (position: <strong>Position</strong>; original: <strong>Expression</strong>; left: <strong>Expression</strong>; parameters: <strong>ExpressionList</strong>): <strong>IndexDesignator</strong><tr><td></td><td> NewProcedureCallDesignator (position: <strong>Position</strong>; original: <strong>Expression</strong>; left: <strong>Expression</strong>; parameters: <strong>ExpressionList</strong>): <strong>ProcedureCallDesignator</strong><tr><td></td><td> NewInlineCallDesignator (position: <strong>Position</strong>; o: <strong>Expression</strong>; block: <strong>StatementBlock</strong>): <strong>InlineCallDesignator</strong><tr><td></td><td> NewBuiltinCallDesignator (position: <strong>Position</strong>; original: <strong>Expression</strong>; id: <strong>SIGNED32</strong>; left: <strong>Expression</strong>; parameters: <strong>ExpressionList</strong>): <strong>BuiltinCallDesignator</strong><tr><td></td><td> NewTypeGuardDesignator (position: <strong>Position</strong>; original: <strong>Expression</strong>; left: <strong>Expression</strong>; type: <strong>Type</strong>): <strong>TypeGuardDesignator</strong><tr><td></td><td> NewDereferenceDesignator (position: <strong>Position</strong>; original: <strong>Expression</strong>; left: <strong>Expression</strong>): <strong>DereferenceDesignator</strong><tr><td></td><td> NewSupercallDesignator (position: <strong>Position</strong>; original: <strong>Expression</strong>; left: <strong>Expression</strong>): <strong>SupercallDesignator</strong><tr><td></td><td> NewSelfDesignator (position: <strong>Position</strong>; original: <strong>Expression</strong>): <strong>SelfDesignator</strong><tr><td></td><td> NewResultDesignator (position: <strong>Position</strong>): <strong>ResultDesignator</strong><tr><td></td><td> NewExpression (): <strong>Expression</strong><tr><td></td><td> NewElement (position: <strong>Position</strong>; from, to: <strong>Expression</strong>): <strong>Expression</strong><tr><td></td><td> NewSet (position: <strong>Position</strong>; elements: <strong>ExpressionList</strong>): <strong>Set</strong><tr><td></td><td> NewMathArrayExpression (position: <strong>Position</strong>; elements: <strong>ExpressionList</strong>): <strong>MathArrayExpression</strong><tr><td></td><td> NewBinaryExpression (position: <strong>Position</strong>; left, right: <strong>Expression</strong>; operator: <strong>SIGNED32</strong>): <strong>BinaryExpression</strong><tr><td></td><td> NewRangeExpression (position: <strong>Position</strong>; first, last, step: <strong>Expression</strong>): <strong>RangeExpression</strong><tr><td></td><td> NewConditionalExpression (position: <strong>Position</strong>; cond, exp, alt: <strong>Expression</strong>): <strong>ConditionalExpression</strong><tr><td></td><td> NewTensorRangeExpression (position: <strong>Position</strong>): <strong>TensorRangeExpression</strong><tr><td></td><td> NewUnaryExpression (position: <strong>Position</strong>; operand: <strong>Expression</strong>; operator: <strong>SIGNED32</strong>): <strong>UnaryExpression</strong><tr><td></td><td> NewConversion (position: <strong>Position</strong>; expression: <strong>Expression</strong>; type: <strong>Type</strong>; typeExpression: <strong>Expression</strong>): <strong>Conversion</strong><tr><td></td><td> NewValue (): <strong>Value</strong><tr><td></td><td> NewIntegerValue (position: <strong>Position</strong>; value: <strong>Basic.Integer</strong>): <strong>IntegerValue</strong><tr><td></td><td> NewCharacterValue (position: <strong>Position</strong>; value: <strong>CHAR</strong>): <strong>CharacterValue</strong><tr><td></td><td> NewSetValue (position: <strong>Position</strong>; value: <strong>Basic.Set</strong>): <strong>SetValue</strong><tr><td></td><td> NewMathArrayValue (position: <strong>Position</strong>; arr: <strong>MathArrayExpression</strong>): <strong>MathArrayValue</strong><tr><td></td><td> NewRealValue (position: <strong>Position</strong>; value: <strong>FLOAT64</strong>; subType: <strong>SubType</strong>): <strong>RealValue</strong><tr><td></td><td> NewComplexValue (position: <strong>Position</strong>; realValue, imagValue: <strong>FLOAT64</strong>; subType: <strong>SubType</strong>): <strong>ComplexValue</strong><tr><td></td><td> NewStringValue (position: <strong>Position</strong>; value: <strong>String</strong>): <strong>StringValue</strong><tr><td></td><td> NewBooleanValue (position: <strong>Position</strong>; value: <strong>BOOLEAN</strong>): <strong>BooleanValue</strong><tr><td></td><td> NewNilValue (position: <strong>Position</strong>): <strong>NilValue</strong><tr><td></td><td> NewEnumerationValue (position: <strong>Position</strong>; value: <strong>Basic.Integer</strong>): <strong>EnumerationValue</strong><tr><td></td><td> NewProcedureValue (position: <strong>Position</strong>; value: <strong>Procedure</strong>): <strong>ProcedureValue</strong><tr><td></td><td> NewStatement (outer: <strong>Statement</strong>): <strong>Statement</strong><tr><td></td><td> CloneStatement (statement: <strong>Statement</strong>): <strong>Statement</strong><tr><td></td><td> NewStatementSequence (): <strong>StatementSequence</strong><tr><td></td><td> CloneStatementSequence (statementSequence: <strong>StatementSequence</strong>): <strong>StatementSequence</strong><tr><td></td><td> NewModifier (position: <strong>Position</strong>; identifier: <strong>Identifier</strong>; expression: <strong>Expression</strong>): <strong>Modifier</strong><tr><td></td><td> NewStatementBlock (position: <strong>Position</strong>; outer: <strong>Statement</strong>; scope: <strong>Scope</strong>): <strong>StatementBlock</strong><tr><td></td><td> NewBody (position: <strong>Position</strong>; scope: <strong>ProcedureScope</strong>): <strong>Body</strong><tr><td></td><td> NewIfPart (): <strong>IfPart</strong><tr><td></td><td> NewIfStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>IfStatement</strong><tr><td></td><td> NewAssignment (position: <strong>Position</strong>; left: <strong>Expression</strong>; right: <strong>Expression</strong>; outer: <strong>Statement</strong>): <strong>Assignment</strong><tr><td></td><td> NewCommunicationStatement (position: <strong>Position</strong>; op: <strong>SIGNED32</strong>; left: <strong>Expression</strong>; right: <strong>Expression</strong>; outer: <strong>Statement</strong>): <strong>CommunicationStatement</strong><tr><td></td><td> NewDeclarationStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>DeclarationStatement</strong><tr><td></td><td> NewProcedureCallStatement (position: <strong>Position</strong>; ignore: <strong>BOOLEAN</strong>; call: <strong>Expression</strong>; outer: <strong>Statement</strong>): <strong>ProcedureCallStatement</strong><tr><td></td><td> NewCaseStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>CaseStatement</strong><tr><td></td><td> NewCasePart (): <strong>CasePart</strong><tr><td></td><td> NewWithPart (): <strong>WithPart</strong><tr><td></td><td> NewWithStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>WithStatement</strong><tr><td></td><td> NewWhileStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>WhileStatement</strong><tr><td></td><td> NewRepeatStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>RepeatStatement</strong><tr><td></td><td> NewForStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>ForStatement</strong><tr><td></td><td> NewLoopStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>LoopStatement</strong><tr><td></td><td> NewExitableBlock (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>ExitableBlock</strong><tr><td></td><td> NewExitStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>ExitStatement</strong><tr><td></td><td> NewReturnStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>ReturnStatement</strong><tr><td></td><td> NewAwaitStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>AwaitStatement</strong><tr><td></td><td> NewCode (position: <strong>Position</strong>; outer: <strong>Statement</strong>): <strong>Code</strong><tr><td></td><td> NewProcedureScope (outer: <strong>Scope</strong>): <strong>ProcedureScope</strong><tr><td></td><td> NewBlockScope (outer: <strong>Scope</strong>): <strong>BlockScope</strong><tr><td></td><td> NewModuleScope (): <strong>ModuleScope</strong><tr><td></td><td> NewRecordScope (outer: <strong>Scope</strong>): <strong>RecordScope</strong><tr><td></td><td> NewCellScope (outer: <strong>Scope</strong>): <strong>CellScope</strong><tr><td></td><td> NewEnumerationScope (outer: <strong>Scope</strong>): <strong>EnumerationScope</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_7318C600">
+</h1>
+<p> note on documentation: Most objects in this module are commented with an informal Oberon syntax example indicating which variables of the respective object stand for what symbol <em>expression etc. This syntax example should not be confused with a profound description of the syntax in an EBNF form, which can rather be found in the parser module. The informal Oberon syntax is marked with &lt&lt ... &gt&gt<BR></em></p>
+<hr><h2 id="#_7319D300"><a name="FoxSyntaxTree.OberonCallingConvention"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.OberonCallingConvention">OberonCallingConvention</a>
+</h2>
+<p> general flags: used in statements, procedure types and symbols general flags are unique and may overlap with access flags only flag numbers have no meaning and are not used for object files etc., i.e. flag renumbering is possible without effect</p>
+
+<p> calling conventions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> OberonCallingConvention*= 0</pre>
+<hr><h2 id="#_731AA300"><a name="FoxSyntaxTree.InternalRead"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.InternalRead">InternalRead</a>
+</h2>
+<p> Access Flags</p>
+
+<p> can read symbol in same module</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> InternalRead*= 0</pre>
+<hr><h2 id="#_731AF040"><a name="FoxSyntaxTree.InternalWrite"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.InternalWrite">InternalWrite</a>
+</h2>
+<p> can write symbol in same module</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> InternalWrite*= 1</pre>
+<hr><h2 id="#_731B32C0"><a name="FoxSyntaxTree.ProtectedRead"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ProtectedRead">ProtectedRead</a>
+</h2>
+<p> can read symbol in type extentions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ProtectedRead*= 2</pre>
+<hr><h2 id="#_731B7600"><a name="FoxSyntaxTree.ProtectedWrite"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ProtectedWrite">ProtectedWrite</a>
+</h2>
+<p> can write symbol in type extentions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ProtectedWrite*= 3</pre>
+<hr><h2 id="#_731BB880"><a name="FoxSyntaxTree.PublicRead"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.PublicRead">PublicRead</a>
+</h2>
+<p> can read everywhere</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PublicRead*= 4</pre>
+<hr><h2 id="#_731BEEC0"><a name="FoxSyntaxTree.PublicWrite"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.PublicWrite">PublicWrite</a>
+</h2>
+<p> can write everywhere</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PublicWrite*= 5</pre>
+<hr><h2 id="#_731C2600"><a name="FoxSyntaxTree.ValueParameter"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ValueParameter">ValueParameter</a>
+</h2>
+<p> parameter forms</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ValueParameter*= 0</pre>
+<hr><h2 id="#_731C5800"><a name="FoxSyntaxTree.Static"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Static">Static</a>
+</h2>
+<p> array forms</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Static*= 1</pre>
+<hr><h2 id="#_731C8A00"><a name="FoxSyntaxTree.Undefined"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Undefined">Undefined</a>
+</h2>
+<p> node states, important for checker to avoid cycles</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Undefined*= {}</pre>
+<hr><h2 id="#_731CD7C0"><a name="FoxSyntaxTree.Position"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Position">Position</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Position* =<strong>Scanner.Position</strong></pre>
+<hr><h2 id="#_731CFB00"><a name="FoxSyntaxTree.BinaryCode"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.BinaryCode">BinaryCode</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BinaryCode* =<strong>BitSets.BitSet</strong></pre>
+<hr><h2 id="#_731D1F40"><a name="FoxSyntaxTree.Visitor"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Visitor">Visitor</a>
+</h2>
+<p> visitor pattern implementation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Visitor* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#FoxSyntaxTree.Visitor.VisitType">VisitType</a> (x: <strong>Type</strong>)<tr><td></td><td> VisitBasicType (x: <strong>BasicType</strong>)<tr><td></td><td> VisitByteType (x: <strong>ByteType</strong>)<tr><td></td><td> VisitAnyType (x: <strong>AnyType</strong>)<tr><td></td><td> VisitAnyRecordType (x: <strong>AnyRecordType</strong>)<tr><td></td><td> VisitObjectType (x: <strong>ObjectType</strong>)<tr><td></td><td> VisitNilType (x: <strong>NilType</strong>)<tr><td></td><td> VisitAddressType (x: <strong>AddressType</strong>)<tr><td></td><td> VisitSizeType (x: <strong>SizeType</strong>)<tr><td></td><td> VisitBooleanType (x: <strong>BooleanType</strong>)<tr><td></td><td> VisitSetType (x: <strong>SetType</strong>)<tr><td></td><td> VisitCharacterType (x: <strong>CharacterType</strong>)<tr><td></td><td> VisitIntegerType (x: <strong>IntegerType</strong>)<tr><td></td><td> VisitFloatType (x: <strong>FloatType</strong>)<tr><td></td><td> VisitComplexType (x: <strong>ComplexType</strong>)<tr><td></td><td> VisitQualifiedType (x: <strong>QualifiedType</strong>)<tr><td></td><td> VisitStringType (x: <strong>StringType</strong>)<tr><td></td><td> VisitEnumerationType (x: <strong>EnumerationType</strong>)<tr><td></td><td> VisitRangeType (x: <strong>RangeType</strong>)<tr><td></td><td> VisitArrayType (x: <strong>ArrayType</strong>)<tr><td></td><td> VisitMathArrayType (x: <strong>MathArrayType</strong>)<tr><td></td><td> VisitPointerType (x: <strong>PointerType</strong>)<tr><td></td><td> VisitPortType (x: <strong>PortType</strong>)<tr><td></td><td> VisitRecordType (x: <strong>RecordType</strong>)<tr><td></td><td> VisitCellType (x: <strong>CellType</strong>)<tr><td></td><td> VisitProcedureType (x: <strong>ProcedureType</strong>)<tr><td></td><td> VType (x: <strong>Type</strong>)<tr><td></td><td> <a href="#FoxSyntaxTree.Visitor.VisitExpression">VisitExpression</a> (x: <strong>Expression</strong>)<tr><td></td><td> VisitConditionalExpression (x: <strong>ConditionalExpression</strong>)<tr><td></td><td> VisitSet (x: <strong>Set</strong>)<tr><td></td><td> VisitMathArrayExpression (x: <strong>MathArrayExpression</strong>)<tr><td></td><td> VisitUnaryExpression (x: <strong>UnaryExpression</strong>)<tr><td></td><td> VisitBinaryExpression (x: <strong>BinaryExpression</strong>)<tr><td></td><td> VisitRangeExpression (x: <strong>RangeExpression</strong>)<tr><td></td><td> VisitTensorRangeExpression (x: <strong>TensorRangeExpression</strong>)<tr><td></td><td> VisitConversion (x: <strong>Conversion</strong>)<tr><td></td><td> <a href="#FoxSyntaxTree.Visitor.VisitDesignator">VisitDesignator</a> (x: <strong>Designator</strong>)<tr><td></td><td> VisitIdentifierDesignator (x: <strong>IdentifierDesignator</strong>)<tr><td></td><td> VisitSelectorDesignator (x: <strong>SelectorDesignator</strong>)<tr><td></td><td> VisitParameterDesignator (x: <strong>ParameterDesignator</strong>)<tr><td></td><td> VisitArrowDesignator (x: <strong>ArrowDesignator</strong>)<tr><td></td><td> VisitBracketDesignator (x: <strong>BracketDesignator</strong>)<tr><td></td><td> VisitSymbolDesignator (x: <strong>SymbolDesignator</strong>)<tr><td></td><td> VisitIndexDesignator (x: <strong>IndexDesignator</strong>)<tr><td></td><td> VisitProcedureCallDesignator (x: <strong>ProcedureCallDesignator</strong>)<tr><td></td><td> VisitInlineCallDesignator (x: <strong>InlineCallDesignator</strong>)<tr><td></td><td> VisitBuiltinCallDesignator (x: <strong>BuiltinCallDesignator</strong>)<tr><td></td><td> VisitTypeGuardDesignator (x: <strong>TypeGuardDesignator</strong>)<tr><td></td><td> VisitDereferenceDesignator (x: <strong>DereferenceDesignator</strong>)<tr><td></td><td> VisitSupercallDesignator (x: <strong>SupercallDesignator</strong>)<tr><td></td><td> VisitSelfDesignator (x: <strong>SelfDesignator</strong>)<tr><td></td><td> VisitResultDesignator (x: <strong>ResultDesignator</strong>)<tr><td></td><td> <a href="#FoxSyntaxTree.Visitor.VisitValue">VisitValue</a> (x: <strong>Value</strong>)<tr><td></td><td> VisitBooleanValue (x: <strong>BooleanValue</strong>)<tr><td></td><td> VisitIntegerValue (x: <strong>IntegerValue</strong>)<tr><td></td><td> VisitCharacterValue (x: <strong>CharacterValue</strong>)<tr><td></td><td> VisitSetValue (x: <strong>SetValue</strong>)<tr><td></td><td> VisitMathArrayValue (x: <strong>MathArrayValue</strong>)<tr><td></td><td> VisitRealValue (x: <strong>RealValue</strong>)<tr><td></td><td> VisitComplexValue (x: <strong>ComplexValue</strong>)<tr><td></td><td> VisitStringValue (x: <strong>StringValue</strong>)<tr><td></td><td> VisitNilValue (x: <strong>NilValue</strong>)<tr><td></td><td> VisitEnumerationValue (x: <strong>EnumerationValue</strong>)<tr><td></td><td> VisitProcedureValue (x: <strong>ProcedureValue</strong>)<tr><td></td><td> VExpression (x: <strong>Expression</strong>)<tr><td></td><td> <a href="#FoxSyntaxTree.Visitor.VisitSymbol">VisitSymbol</a> (x: <strong>Symbol</strong>)<tr><td></td><td> VisitModule (x: <strong>Module</strong>)<tr><td></td><td> VisitTypeDeclaration (x: <strong>TypeDeclaration</strong>)<tr><td></td><td> VisitConstant (x: <strong>Constant</strong>)<tr><td></td><td> VisitVariable (x: <strong>Variable</strong>)<tr><td></td><td> VisitParameter (x: <strong>Parameter</strong>)<tr><td></td><td> VisitProperty (x: <strong>Property</strong>)<tr><td></td><td> VisitProcedure (x: <strong>Procedure</strong>)<tr><td></td><td> VisitAlias (x: <strong>Alias</strong>)<tr><td></td><td> VisitBuiltin (x: <strong>Builtin</strong>)<tr><td></td><td> VisitOperator (x: <strong>Operator</strong>)<tr><td></td><td> VisitImport (x: <strong>Import</strong>)<tr><td></td><td> VSymbol (x: <strong>Symbol</strong>)<tr><td></td><td> <a href="#FoxSyntaxTree.Visitor.VisitStatement">VisitStatement</a> (x: <strong>Statement</strong>)<tr><td></td><td> VisitProcedureCallStatement (x: <strong>ProcedureCallStatement</strong>)<tr><td></td><td> VisitAssignment (x: <strong>Assignment</strong>)<tr><td></td><td> VisitDeclarationStatement (x: <strong>DeclarationStatement</strong>)<tr><td></td><td> VisitCommunicationStatement (x: <strong>CommunicationStatement</strong>)<tr><td></td><td> VisitIfStatement (x: <strong>IfStatement</strong>)<tr><td></td><td> VisitWithStatement (x: <strong>WithStatement</strong>)<tr><td></td><td> VisitCaseStatement (x: <strong>CaseStatement</strong>)<tr><td></td><td> VisitWhileStatement (x: <strong>WhileStatement</strong>)<tr><td></td><td> VisitRepeatStatement (x: <strong>RepeatStatement</strong>)<tr><td></td><td> VisitForStatement (x: <strong>ForStatement</strong>)<tr><td></td><td> VisitLoopStatement (x: <strong>LoopStatement</strong>)<tr><td></td><td> VisitExitableBlock (x: <strong>ExitableBlock</strong>)<tr><td></td><td> VisitExitStatement (x: <strong>ExitStatement</strong>)<tr><td></td><td> VisitReturnStatement (x: <strong>ReturnStatement</strong>)<tr><td></td><td> VisitAwaitStatement (x: <strong>AwaitStatement</strong>)<tr><td></td><td> VisitStatementBlock (x: <strong>StatementBlock</strong>)<tr><td></td><td> VisitCode (x: <strong>Code</strong>)<tr><td></td><td> VStatement (x: <strong>Statement</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_7327D740"><a name="FoxSyntaxTree.Visitor.VisitType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Visitor">Visitor</a>.<a href="#FoxSyntaxTree.Visitor.VisitType">VisitType</a>
+</h3>
+<p> types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitType* (x: <strong>Type</strong>)</pre>
+<hr><h3 id="#_732817C0"><a name="FoxSyntaxTree.Visitor.VisitExpression"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Visitor">Visitor</a>.<a href="#FoxSyntaxTree.Visitor.VisitExpression">VisitExpression</a>
+</h3>
+<p> expressions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitExpression* (x: <strong>Expression</strong>)</pre>
+<hr><h3 id="#_73285840"><a name="FoxSyntaxTree.Visitor.VisitDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Visitor">Visitor</a>.<a href="#FoxSyntaxTree.Visitor.VisitDesignator">VisitDesignator</a>
+</h3>
+<p> designators (expressions)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitDesignator* (x: <strong>Designator</strong>)</pre>
+<hr><h3 id="#_73289C40"><a name="FoxSyntaxTree.Visitor.VisitValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Visitor">Visitor</a>.<a href="#FoxSyntaxTree.Visitor.VisitValue">VisitValue</a>
+</h3>
+<p> values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitValue* (x: <strong>Value</strong>)</pre>
+<hr><h3 id="#_7328DCC0"><a name="FoxSyntaxTree.Visitor.VisitSymbol"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Visitor">Visitor</a>.<a href="#FoxSyntaxTree.Visitor.VisitSymbol">VisitSymbol</a>
+</h3>
+<p> symbols</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitSymbol* (x: <strong>Symbol</strong>)</pre>
+<hr><h3 id="#_73291D40"><a name="FoxSyntaxTree.Visitor.VisitStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Visitor">Visitor</a>.<a href="#FoxSyntaxTree.Visitor.VisitStatement">VisitStatement</a>
+</h3>
+<p> statements</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitStatement* (x: <strong>Statement</strong>)</pre>
+<hr><h2 id="#_73295F40"><a name="FoxSyntaxTree.ArrayAccessOperators"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ArrayAccessOperators">ArrayAccessOperators</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArrayAccessOperators* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>len: <strong>Operator</strong><tr><td></td><td>generalRead: <strong>Operator</strong><tr><td></td><td>generalWrite: <strong>Operator</strong><tr><td></td><td>read: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Operator</strong><tr><td></td><td>write: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Operator</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7329F7C0"><a name="FoxSyntaxTree.Fingerprint"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Fingerprint">Fingerprint</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Fingerprint* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>shallow: <strong>Basic.Fingerprint</strong><tr><td></td><td>public: <strong>Basic.Fingerprint</strong><tr><td></td><td>private: <strong>Basic.Fingerprint</strong><tr><td></td><td>shallowAvailable: <strong>BOOLEAN</strong><tr><td></td><td>deepAvailable: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_732A6F80"><a name="FoxSyntaxTree.Identifier"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Identifier">Identifier</a>
+</h2>
+<p> identifiers in a program text</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Identifier* =<strong>Basic.String</strong></pre>
+<hr><h2 id="#_732AAE80"><a name="FoxSyntaxTree.QualifiedIdentifier"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.QualifiedIdentifier">QualifiedIdentifier</a>
+</h2>
+<p> qualified identifiers &lt&lt Identifier.Identifier &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> QualifiedIdentifier* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>prefix: <strong>Identifier</strong><tr><td></td><td>suffix: <strong>Identifier</strong><tr><td></td><td>position: <strong>Position</strong><tr><th align='left'>procedures</th><td> GetName (<strong>VAR</strong> name: <strong>Basic.SegmentedName</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_732B4840"><a name="FoxSyntaxTree.Type"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Type">Type</a>
+</h2>
+<p>* types <strong></strong></p>
+
+<p> Type BasicType ObjectType NilType AnyType ByteType AddressType SizeType BooleanType SetType CharacterType RangeType NumberType IntegerType FloatType ComplexType QualifiedType StringType EnumerationType ArrayType MathArrayType PointerType PortType RecordType CellType ProcedureType</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Type* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>typeDeclaration: <strong>TypeDeclaration</strong><tr><td></td><td>scope: <strong>Scope</strong><tr><td></td><td>resolvedType: <strong>Type</strong><tr><td></td><td>position: <strong>Position</strong><tr><td></td><td>end: <strong>Position</strong><tr><td></td><td>state: <strong>SET</strong><tr><td></td><td>hasPointers: <strong>BOOLEAN</strong><tr><td></td><td>fingerprint: <strong>Fingerprint</strong><tr><td></td><td>isRealtime: <strong>BOOLEAN</strong><tr><td></td><td>sizeInBits: <strong>SIZE</strong><tr><td></td><td>alignmentInBits: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& InitType (position: <strong>Position</strong>)<tr><td></td><td> SetSize (sizeInBits: <strong>SIZE</strong>)<tr><td></td><td> SetAlignmentInBits (alignmentInBits: <strong>SIZE</strong>)<tr><td></td><td> End (position: <strong>SIGNED32</strong>)<tr><td></td><td> SetFingerprint (<strong>CONST</strong> fp: <strong>Fingerprint</strong>)<tr><td></td><td> SetState (state: <strong>SIGNED32</strong>)<tr><td></td><td> SetHasPointers (has: <strong>BOOLEAN</strong>)<tr><td></td><td> RemoveState (state: <strong>SIGNED32</strong>)<tr><td></td><td> SetTypeDeclaration (typeDeclaration: <strong>TypeDeclaration</strong>)<tr><td></td><td> SetScope (scope: <strong>Scope</strong>)<tr><td></td><td> SetRealtime (isRealtime: <strong>BOOLEAN</strong>)<tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxSyntaxTree.Type.CompatibleTo">CompatibleTo</a> (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxSyntaxTree.Type.IsPointer">IsPointer</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxSyntaxTree.Type.IsComposite">IsComposite</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxSyntaxTree.Type.NeedsTrace">NeedsTrace</a> (): <strong>BOOLEAN</strong><tr><td></td><td> IsRecordType (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_732E6AC0"><a name="FoxSyntaxTree.Type.CompatibleTo"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Type">Type</a>.<a href="#FoxSyntaxTree.Type.CompatibleTo">CompatibleTo</a>
+</h3>
+<p> assignment compatibility of this := SELF</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CompatibleTo* (to: <strong>Type</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_732EC540"><a name="FoxSyntaxTree.Type.IsPointer"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Type">Type</a>.<a href="#FoxSyntaxTree.Type.IsPointer">IsPointer</a>
+</h3>
+<p> Returns if the type is a pointer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsPointer* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_732F1840"><a name="FoxSyntaxTree.Type.IsComposite"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Type">Type</a>.<a href="#FoxSyntaxTree.Type.IsComposite">IsComposite</a>
+</h3>
+<p> Returns if the type consists of more than one parts. Implies that an instance of this type cannot be (easily) represented in one register.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsComposite* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_732FAC40"><a name="FoxSyntaxTree.Type.NeedsTrace"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Type">Type</a>.<a href="#FoxSyntaxTree.Type.NeedsTrace">NeedsTrace</a>
+</h3>
+<p> Returns if the type needs to be traced for garbage collection</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NeedsTrace* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_73301040"><a name="FoxSyntaxTree.BasicType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.BasicType">BasicType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BasicType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Identifier</strong><tr><th align='left'>procedures</th><td> SetName (<strong>CONST</strong> id: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetTypeDeclaration (typeDeclaration: <strong>TypeDeclaration</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73309D80"><a name="FoxSyntaxTree.ObjectType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ObjectType">ObjectType</a>
+</h2>
+<p> <a name="OBJECT"></a> object type (base type of all objects)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ObjectType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsPointer (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73315600"><a name="FoxSyntaxTree.NilType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.NilType">NilType</a>
+</h2>
+<p> <a name="NIL"></a> nil type (type of NIL pointers), may be replaced by any type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NilType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsPointer (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73321F80"><a name="FoxSyntaxTree.AnyType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.AnyType">AnyType</a>
+</h2>
+<p> <a name="ANY"></a> any pointer type (pointer to record and pointer to array)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AnyType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsPointer (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7332E200"><a name="FoxSyntaxTree.AnyRecordType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.AnyRecordType">AnyRecordType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AnyRecordType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsRecordType (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73337080"><a name="FoxSyntaxTree.ByteType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ByteType">ByteType</a>
+</h2>
+<p> <a name="SYSTEM.BYTE"></a> byte type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ByteType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7333FBC0"><a name="FoxSyntaxTree.AddressType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.AddressType">AddressType</a>
+</h2>
+<p> <a name="ADDRESS"></a> address type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AddressType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73348700"><a name="FoxSyntaxTree.SizeType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.SizeType">SizeType</a>
+</h2>
+<p> <a name="SIZE"></a> size type (signed address type)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SizeType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73351F00"><a name="FoxSyntaxTree.BooleanType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.BooleanType">BooleanType</a>
+</h2>
+<p> <a name="BOOLEAN"></a> boolean type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BooleanType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7335AA40"><a name="FoxSyntaxTree.SetType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.SetType">SetType</a>
+</h2>
+<p> <a name="SET"></a> set type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SetType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73363580"><a name="FoxSyntaxTree.CharacterType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.CharacterType">CharacterType</a>
+</h2>
+<p> <a name="CHAR"></a> character type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CharacterType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7336C100"><a name="FoxSyntaxTree.RangeType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.RangeType">RangeType</a>
+</h2>
+<p> type of ranges (case constants, set elements, array indices) represented by basic type <a name="RANGE"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RangeType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsComposite (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73378E80"><a name="FoxSyntaxTree.NumberType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.NumberType">NumberType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NumberType* =<strong>OBJECT</strong> (<strong>BasicType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_7337C740"><a name="FoxSyntaxTree.IntegerType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.IntegerType">IntegerType</a>
+</h2>
+<p> <a name="SIGNED8,"></a> SIGNED16, SIGNED32, SIGNED64 integer types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IntegerType* =<strong>OBJECT</strong> (<strong>NumberType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>signed: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73387180"><a name="FoxSyntaxTree.FloatType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.FloatType">FloatType</a>
+</h2>
+<p> <a name="FLOAT32,FLOAT64"></a> real types: FLOAT32, FLOAT64</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FloatType* =<strong>OBJECT</strong> (<strong>NumberType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73390600"><a name="FoxSyntaxTree.ComplexType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ComplexType">ComplexType</a>
+</h2>
+<p> <a name="COMPLEX32,COMPLEX64"></a> complex types: COMPLEX32, COMPLEX64</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ComplexType* =<strong>OBJECT</strong> (<strong>NumberType</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>componentType: <strong>Type</strong><tr><th align='left'>procedures</th><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsComposite (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7339C1C0"><a name="FoxSyntaxTree.QualifiedType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.QualifiedType">QualifiedType</a>
+</h2>
+<p> <a name="qualifiedIdentifier"></a> = resolved named reference to a type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> QualifiedType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>qualifiedIdentifier: <strong>QualifiedIdentifier</strong><tr><th align='left'>procedures</th><td> SetResolved (resolved: <strong>Type</strong>)<tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsPointer (): <strong>BOOLEAN</strong><tr><td></td><td> IsComposite (): <strong>BOOLEAN</strong><tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong><tr><td></td><td> IsRecordType (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_733AEA40"><a name="FoxSyntaxTree.StringType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.StringType">StringType</a>
+</h2>
+<p> string literal type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>length: <strong>SIZE</strong><tr><td></td><td>baseType: <strong>Type</strong><tr><th align='left'>procedures</th><td> SetLength (length: <strong>SIZE</strong>)<tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsComposite (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_733BC9C0"><a name="FoxSyntaxTree.EnumerationType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.EnumerationType">EnumerationType</a>
+</h2>
+<p> enumeration type of the form <a name="enum"></a> (base) red,green,blue end</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EnumerationType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>enumerationScope: <strong>EnumerationScope</strong><tr><td></td><td>enumerationBase: <strong>Type</strong><tr><td></td><td>rangeLowest: <strong>Basic.Integer</strong><tr><td></td><td>rangeHighest: <strong>Basic.Integer</strong><tr><th align='left'>procedures</th><td> SetEnumerationBase (base: <strong>Type</strong>)<tr><td></td><td> SetRange (lowest, highest: <strong>Basic.Integer</strong>)<tr><td></td><td> Extends (this: <strong>EnumerationType</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_733D0CC0"><a name="FoxSyntaxTree.ArrayType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ArrayType">ArrayType</a>
+</h2>
+<p> <a name="ARRAY"></a> <a href="#length]">length]</a> OF baseType</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArrayType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>arrayBase: <strong>Type</strong><tr><td></td><td>length: <strong>Expression</strong><tr><td></td><td>staticLength: <strong>SIGNED32</strong><tr><td></td><td>form: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> SetArrayBase (type: <strong>Type</strong>)<tr><td></td><td> SetForm (f: <strong>SIGNED32</strong>)<tr><td></td><td> SetLength (length: <strong>Expression</strong>)<tr><td></td><td> Child (nr: <strong>SIGNED32</strong>): <strong>Type</strong><tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsComposite (): <strong>BOOLEAN</strong><tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_733E7B40"><a name="FoxSyntaxTree.MathArrayType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.MathArrayType">MathArrayType</a>
+</h2>
+<p> <a name="ARRAY"></a> '[' length</p>
+
+<table><tr><td> '*'</td><td> '?' ']' OF baseType</td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MathArrayType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>modifiers: <strong>Modifier</strong><tr><td></td><td>arrayBase: <strong>Type</strong><tr><td></td><td>length: <strong>Expression</strong><tr><td></td><td>staticLength: <strong>SIGNED32</strong><tr><td></td><td>staticIncrementInBits: <strong>SIZE</strong><tr><td></td><td>form: <strong>SIGNED32</strong><tr><td></td><td>isUnsafe: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> SetModifiers (m: <strong>Modifier</strong>)<tr><td></td><td> SetUnsafe (unsafe: <strong>BOOLEAN</strong>)<tr><td></td><td> SetForm (form: <strong>SIGNED32</strong>)<tr><td></td><td> SetArrayBase (type: <strong>Type</strong>)<tr><td></td><td> SetLength (length: <strong>Expression</strong>)<tr><td></td><td> SetIncrement (increment: <strong>SIZE</strong>)<tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxSyntaxTree.MathArrayType.ElementType">ElementType</a> (): <strong>Type</strong><tr><td></td><td> <a href="#FoxSyntaxTree.MathArrayType.Dimensionality">Dimensionality</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxSyntaxTree.MathArrayType.IsFullyDynamic">IsFullyDynamic</a> (): <strong>BOOLEAN</strong><tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong><tr><td></td><td> IsComposite (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_7340A340"><a name="FoxSyntaxTree.MathArrayType.ElementType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.MathArrayType">MathArrayType</a>.<a href="#FoxSyntaxTree.MathArrayType.ElementType">ElementType</a>
+</h3>
+<p> get the element type of a math array, i.e. the first type in the math array chain that is not a math array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ElementType* (): <strong>Type</strong></pre>
+<hr><h3 id="#_734133C0"><a name="FoxSyntaxTree.MathArrayType.Dimensionality"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.MathArrayType">MathArrayType</a>.<a href="#FoxSyntaxTree.MathArrayType.Dimensionality">Dimensionality</a>
+</h3>
+<p> get the number of dimensions of a math array; 0 in case of tensors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Dimensionality* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_7341A2C0"><a name="FoxSyntaxTree.MathArrayType.IsFullyDynamic"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.MathArrayType">MathArrayType</a>.<a href="#FoxSyntaxTree.MathArrayType.IsFullyDynamic">IsFullyDynamic</a>
+</h3>
+<p> if the math array is of the form ARRAY <a href="#*,">*,</a> <strong>, ..., , i.e. contains no static length and is not a tensor either</strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsFullyDynamic* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_73423EC0"><a name="FoxSyntaxTree.PointerType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.PointerType">PointerType</a>
+</h2>
+<p> <a name="POINTER"></a> TO pointerBase</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PointerType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>modifiers: <strong>Modifier</strong><tr><td></td><td>pointerBase: <strong>Type</strong><tr><td></td><td>isPlain: <strong>BOOLEAN</strong><tr><td></td><td>isUnsafe: <strong>BOOLEAN</strong><tr><td></td><td>isUntraced: <strong>BOOLEAN</strong><tr><td></td><td>isDisposable: <strong>BOOLEAN</strong><tr><td></td><td>isHidden: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> SetHidden (hidden: <strong>BOOLEAN</strong>)<tr><td></td><td> SetModifiers (flags: <strong>Modifier</strong>)<tr><td></td><td> SetPointerBase (type: <strong>Type</strong>)<tr><td></td><td> SetPlain (plain: <strong>BOOLEAN</strong>)<tr><td></td><td> SetUnsafe (unsafe: <strong>BOOLEAN</strong>)<tr><td></td><td> SetUntraced (untraced: <strong>BOOLEAN</strong>)<tr><td></td><td> SetDisposable (disposable: <strong>BOOLEAN</strong>)<tr><td></td><td> Extends (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsPointer (): <strong>BOOLEAN</strong><tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73444440"><a name="FoxSyntaxTree.PortType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.PortType">PortType</a>
+</h2>
+<p> &lt&lt PORT (IN</p>
+
+<table><tr><td> OUT) <a href="#(size)]">(size)]</a> &gt&gt</td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PortType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>direction: <strong>SIGNED32</strong><tr><td></td><td>sizeExpression: <strong>Expression</strong><tr><td></td><td>sizeInBits: <strong>SIZE</strong><tr><td></td><td>cellsAreObjects: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> SetSize (size: <strong>SIZE</strong>)<tr><td></td><td> SetSizeExpression (sizeExpression: <strong>Expression</strong>)<tr><td></td><td> SetCellsAreObjects (b: <strong>BOOLEAN</strong>)<tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsPointer (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_734586C0"><a name="FoxSyntaxTree.RecordType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.RecordType">RecordType</a>
+</h2>
+<p> &lt&lt recordType = <a href="#POINTER">POINTER</a> TO] RECORD (baseType) .. END</p>
+
+<table><tr><td></td></tr>
+</table>
+
+<p> (baseType) .. END &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RecordType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>recordScope: <strong>RecordScope</strong><tr><td></td><td>baseType: <strong>Type</strong><tr><td></td><td>pointerType: <strong>PointerType</strong><tr><td></td><td>modifiers: <strong>Modifier</strong><tr><td></td><td>isObject: <strong>BOOLEAN</strong><tr><td></td><td>isAbstract: <strong>BOOLEAN</strong><tr><td></td><td>isFinal: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> SetAbstract (abstract: <strong>BOOLEAN</strong>)<tr><td></td><td> SetModifiers (flag: <strong>Modifier</strong>)<tr><td></td><td> SetBaseType (type: <strong>Type</strong>)<tr><td></td><td> SetPointerType (pointerType: <strong>PointerType</strong>)<tr><td></td><td> IsObject (isObject: <strong>BOOLEAN</strong>)<tr><td></td><td> IsActive (): <strong>BOOLEAN</strong><tr><td></td><td> IsProtected (): <strong>BOOLEAN</strong><tr><td></td><td> SetProtected (protected: <strong>BOOLEAN</strong>)<tr><td></td><td> Level (): <strong>SIGNED32</strong><tr><td></td><td> GetBaseRecord (): <strong>RecordType</strong><tr><td></td><td> Extends (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsComposite (): <strong>BOOLEAN</strong><tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong><tr><td></td><td> IsRecordType (): <strong>BOOLEAN</strong><tr><td></td><td> SetFinal (final: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73482A40"><a name="FoxSyntaxTree.CellType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.CellType">CellType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CellType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>firstParameter: <strong>Parameter</strong><tr><td></td><td>lastParameter: <strong>Parameter</strong><tr><td></td><td>numberParameters: <strong>SIZE</strong><tr><td></td><td>firstProperty: <strong>Property</strong><tr><td></td><td>lastProperty: <strong>Property</strong><tr><td></td><td>cellScope: <strong>CellScope</strong><tr><td></td><td>isCellNet: <strong>BOOLEAN</strong><tr><td></td><td>modifiers: <strong>Modifier</strong><tr><td></td><td>baseType: <strong>Type</strong><tr><th align='left'>procedures</th><td> SetBaseType (base: <strong>Type</strong>)<tr><td></td><td> GetBaseValueType (): <strong>Type</strong><tr><td></td><td> GetBaseRecord (): <strong>RecordType</strong><tr><td></td><td> AddParameter (p: <strong>Parameter</strong>)<tr><td></td><td> AddProperty (p: <strong>Property</strong>)<tr><td></td><td> FindParameter (identifier: <strong>Identifier</strong>): <strong>Parameter</strong><tr><td></td><td> FindProperty (identifier: <strong>Identifier</strong>): <strong>Property</strong><tr><td></td><td> SetModifiers (flag: <strong>Modifier</strong>)<tr><td></td><td> IsCellNet (t: <strong>BOOLEAN</strong>)<tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsComposite (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_734A3780"><a name="FoxSyntaxTree.ProcedureType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ProcedureType">ProcedureType</a>
+</h2>
+<p> <a name="procedureType"></a> = PROCEDURE <a href="#"></a><code>DELEGATE}] (firstParameter .. lastParameter): returnType&gt&gt<BR>		also used as type for procedures<BR>	</code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureType* =<strong>OBJECT</strong> (<strong>Type</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>modifiers: <strong>Modifier</strong><tr><td></td><td>returnType: <strong>Type</strong><tr><td></td><td>returnTypeModifiers: <strong>Modifier</strong><tr><td></td><td>hasUntracedReturn: <strong>BOOLEAN</strong><tr><td></td><td>firstParameter: <strong>Parameter</strong><tr><td></td><td>lastParameter: <strong>Parameter</strong><tr><td></td><td>numberParameters: <strong>SIGNED32</strong><tr><td></td><td>returnParameter: <strong>Parameter</strong><tr><td></td><td>selfParameter: <strong>Parameter</strong><tr><td></td><td>selfParameterInObject: <strong>Parameter</strong><tr><td></td><td>isDelegate: <strong>BOOLEAN</strong><tr><td></td><td>isInterrupt: <strong>BOOLEAN</strong><tr><td></td><td>noReturn: <strong>BOOLEAN</strong><tr><td></td><td>isNested: <strong>BOOLEAN</strong><tr><td></td><td>pcOffset: <strong>SIZE</strong><tr><td></td><td>callingConvention: <strong>CallingConvention</strong><tr><td></td><td>stackAlignment: <strong>SIZE</strong><tr><td></td><td>parametersOffset: <strong>SIZE</strong><tr><td></td><td>varReturn: <strong>BOOLEAN</strong><tr><td></td><td>isConst: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> SetNoReturn (noReturn: <strong>BOOLEAN</strong>)<tr><td></td><td> SetPcOffset (pcOffset: <strong>SIZE</strong>)<tr><td></td><td> SetInterrupt (isInterrupt: <strong>BOOLEAN</strong>)<tr><td></td><td> SetModifiers (flags: <strong>Modifier</strong>)<tr><td></td><td> SetNested (nested: <strong>BOOLEAN</strong>)<tr><td></td><td> SetReturnTypeModifiers (flags: <strong>Modifier</strong>)<tr><td></td><td> SetDelegate (delegate: <strong>BOOLEAN</strong>)<tr><td></td><td> SetUntracedReturn (untraced: <strong>BOOLEAN</strong>)<tr><td></td><td> SetStackAlignment (alignment: <strong>SIZE</strong>)<tr><td></td><td> SetParametersOffset (ofs: <strong>SIGNED32</strong>)<tr><td></td><td> SetReturnParameter (parameter: <strong>Parameter</strong>)<tr><td></td><td> SetSelfParameter (parameter: <strong>Parameter</strong>)<tr><td></td><td> SetSelfParameterInObject (parameter: <strong>Parameter</strong>)<tr><td></td><td> SetCallingConvention (cc: <strong>CallingConvention</strong>)<tr><td></td><td> SetVarReturn (b: <strong>BOOLEAN</strong>)<tr><td></td><td> SetConst (b: <strong>BOOLEAN</strong>)<tr><td></td><td> AddParameter (p: <strong>Parameter</strong>)<tr><td></td><td> RevertParameters<tr><td></td><td> SetReturnType (type: <strong>Type</strong>)<tr><td></td><td> SameSignature (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SameType (this: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompatibleTo (to: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsComposite (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxSyntaxTree.ProcedureType.NeedsTrace">NeedsTrace</a> (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_734E4200"><a name="FoxSyntaxTree.ProcedureType.NeedsTrace"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ProcedureType">ProcedureType</a>.<a href="#FoxSyntaxTree.ProcedureType.NeedsTrace">NeedsTrace</a>
+</h3>
+<p> Returns if the type needs to be traced for garbage collection</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NeedsTrace* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_734EA600"><a name="FoxSyntaxTree.Expression"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Expression">Expression</a>
+</h2>
+<p>* expressions <strong></strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Expression* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>Type</strong><tr><td></td><td>assignable: <strong>BOOLEAN</strong><tr><td></td><td>position: <strong>Position</strong><tr><td></td><td>end: <strong>Position</strong><tr><td></td><td>state: <strong>SET</strong><tr><td></td><td>resolved: <strong>Value</strong><tr><td></td><td>original: <strong>Expression</strong><tr><td></td><td>isHidden: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> End (position: <strong>Position</strong>)<tr><td></td><td> SetState (state: <strong>SIGNED32</strong>)<tr><td></td><td> SetHidden (hidden: <strong>BOOLEAN</strong>)<tr><td></td><td> SetType (type: <strong>Type</strong>)<tr><td></td><td> SetResolved (value: <strong>Value</strong>)<tr><td></td><td> SetAssignable (assignable: <strong>BOOLEAN</strong>)<tr><td></td><td> SetOriginal (original: <strong>Expression</strong>)<tr><td></td><td> SetRelatedRhs (expression: <strong>Expression</strong>)<tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong><tr><td></td><td> Equals (other: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73507580"><a name="FoxSyntaxTree.ExpressionList"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ExpressionList">ExpressionList</a>
+</h2>
+<p> <a name="expression,"></a> expression, ...</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExpressionList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Length (): <strong>SIZE</strong><tr><td></td><td> AddExpression (d: <strong>Expression</strong>)<tr><td></td><td> GetExpression (index: <strong>SIZE</strong>): <strong>Expression</strong><tr><td></td><td> SetExpression (index: <strong>SIZE</strong>; expression: <strong>Expression</strong>)<tr><td></td><td> RemoveExpression (i: <strong>SIZE</strong>)<tr><td></td><td> Revert</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73515D00"><a name="FoxSyntaxTree.Set"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Set">Set</a>
+</h2>
+<p> &lt&lt <code>elements} &gt&gt  </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Set* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>elements: <strong>ExpressionList</strong></td></tr>
+</table>
+<hr><h2 id="#_7351B000"><a name="FoxSyntaxTree.MathArrayExpression"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.MathArrayExpression">MathArrayExpression</a>
+</h2>
+<p> &lt&lt <a href="#elements]">elements]</a> &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MathArrayExpression* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>elements: <strong>ExpressionList</strong><tr><th align='left'>procedures</th><td> Equals (e: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73522B80"><a name="FoxSyntaxTree.UnaryExpression"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.UnaryExpression">UnaryExpression</a>
+</h2>
+<p> <a name="operator"></a> left</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> UnaryExpression* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>left: <strong>Expression</strong><tr><td></td><td>operator: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> SetLeft (left: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7352ACC0"><a name="FoxSyntaxTree.BinaryExpression"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.BinaryExpression">BinaryExpression</a>
+</h2>
+<p> <a name="left"></a> operator right</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BinaryExpression* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>left: <strong>Expression</strong><tr><td></td><td>right: <strong>Expression</strong><tr><td></td><td>operator: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> SetLeft (left: <strong>Expression</strong>)<tr><td></td><td> SetRight (right: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73535C80"><a name="FoxSyntaxTree.RangeExpression"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.RangeExpression">RangeExpression</a>
+</h2>
+<p> expression that denotes a range <a name=""></a><a href="#first]">first]</a> '..' <a href="#last]">last]</a> <a href="#'by'">'by'</a> step]</p>
+
+<table><tr><td> '*' &gt&gt<BR></td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RangeExpression* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>first: <strong>Expression</strong><tr><td></td><td>last: <strong>Expression</strong><tr><td></td><td>step: <strong>Expression</strong><tr><td></td><td>missingFirst: <strong>BOOLEAN</strong><tr><td></td><td>missingLast: <strong>BOOLEAN</strong><tr><td></td><td>missingStep: <strong>BOOLEAN</strong><tr><td></td><td>context: <strong>SIGNED8</strong><tr><th align='left'>procedures</th><td> SetFirst (first: <strong>Expression</strong>)<tr><td></td><td> SetLast (last: <strong>Expression</strong>)<tr><td></td><td> SetStep (step: <strong>Expression</strong>)<tr><td></td><td> SetContext (context: <strong>SIGNED8</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7354A6C0"><a name="FoxSyntaxTree.ConditionalExpression"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ConditionalExpression">ConditionalExpression</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ConditionalExpression* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>condition: <strong>Expression</strong><tr><td></td><td>expression: <strong>Expression</strong><tr><td></td><td>alternative: <strong>Expression</strong><tr><th align='left'>procedures</th><td> SetCondition (e: <strong>Expression</strong>)<tr><td></td><td> SetExpression (e: <strong>Expression</strong>)<tr><td></td><td> SetAlternative (e: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73555D80"><a name="FoxSyntaxTree.TensorRangeExpression"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.TensorRangeExpression">TensorRangeExpression</a>
+</h2>
+<p> &lt&lt ? &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TensorRangeExpression* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_7355A4C0"><a name="FoxSyntaxTree.Conversion"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Conversion">Conversion</a>
+</h2>
+<p> convert expression from expression.type to Conversion.type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Conversion* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expression: <strong>Expression</strong><tr><td></td><td>typeExpression: <strong>Expression</strong><tr><th align='left'>procedures</th><td> SetExpression (expression: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_735634C0"><a name="FoxSyntaxTree.Designator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Designator">Designator</a>
+</h2>
+<p>* designators <strong></strong></p>
+
+<p> abstract</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Designator* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>left: <strong>Expression</strong><tr><td></td><td>modifiers: <strong>Modifier</strong><tr><td></td><td>relatedRhs: <strong>Expression</strong><tr><th align='left'>procedures</th><td>& InitDesignator (position: <strong>Position</strong>)<tr><td></td><td> SetLeft (l: <strong>Expression</strong>)<tr><td></td><td> SetModifiers (flags: <strong>Modifier</strong>)<tr><td></td><td> SetRelatedRhs (expression: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73572300"><a name="FoxSyntaxTree.IdentifierDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.IdentifierDesignator">IdentifierDesignator</a>
+</h2>
+<p> first phase (parse time) designators <strong></strong></p>
+
+<p> <a name="identifier"></a> may designate any symbol such as Variable, TypeDeclaration, Procedure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IdentifierDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>identifier: <strong>Identifier</strong></td></tr>
+</table>
+<hr><h2 id="#_7357B580"><a name="FoxSyntaxTree.SelectorDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.SelectorDesignator">SelectorDesignator</a>
+</h2>
+<p> <a name="left.identifier"></a> may designate a record / module element (constant, type, variable, procedure)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SelectorDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>identifier: <strong>Identifier</strong></td></tr>
+</table>
+<hr><h2 id="#_735831C0"><a name="FoxSyntaxTree.ParameterDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ParameterDesignator">ParameterDesignator</a>
+</h2>
+<p> <a name="left(arg1,"></a> arg2, ...) may designate a function call or a type guard</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ParameterDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>parameters: <strong>ExpressionList</strong></td></tr>
+</table>
+<hr><h2 id="#_7358AF00"><a name="FoxSyntaxTree.ArrowDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ArrowDesignator">ArrowDesignator</a>
+</h2>
+<p> <a name="left^"></a> may designate a pointer dereference or a method supercall</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArrowDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_73591200"><a name="FoxSyntaxTree.BracketDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.BracketDesignator">BracketDesignator</a>
+</h2>
+<p> <a name="left[parameters]"></a> designates an index designator, before checker</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BracketDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>parameters: <strong>ExpressionList</strong></td></tr>
+</table>
+<hr><h2 id="#_735979C0"><a name="FoxSyntaxTree.SymbolDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.SymbolDesignator">SymbolDesignator</a>
+</h2>
+<p> second phase (after checker) designators <strong></strong></p>
+
+<p> symbol designator emerged from IdentifierDesignator or from Selector</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SymbolDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>symbol: <strong>Symbol</strong><tr><th align='left'>procedures</th><td> SetSymbol (s: <strong>Symbol</strong>)<tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_735A3680"><a name="FoxSyntaxTree.IndexDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.IndexDesignator">IndexDesignator</a>
+</h2>
+<p> <a name="left[parameters]"></a> (ranged) indexer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IndexDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>parameters: <strong>ExpressionList</strong><tr><td></td><td>hasRange: <strong>BOOLEAN</strong><tr><td></td><td>hasTensorRange: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> HasRange<tr><td></td><td> HasTensorRange<tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_735ADA00"><a name="FoxSyntaxTree.ProcedureCallDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ProcedureCallDesignator">ProcedureCallDesignator</a>
+</h2>
+<p> <a name="left(parameters)"></a> procedure call</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureCallDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>parameters: <strong>ExpressionList</strong></td></tr>
+</table>
+<hr><h2 id="#_735B3200"><a name="FoxSyntaxTree.InlineCallDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.InlineCallDesignator">InlineCallDesignator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InlineCallDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>block: <strong>StatementBlock</strong><tr><td></td><td>result: <strong>Expression</strong><tr><th align='left'>procedures</th><td>& InitInlineCall (position: <strong>Position</strong>; orig: <strong>Expression</strong>; b: <strong>StatementBlock</strong>)<tr><td></td><td> SetResult (e: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_735BDC80"><a name="FoxSyntaxTree.BuiltinCallDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.BuiltinCallDesignator">BuiltinCallDesignator</a>
+</h2>
+<p> <a name="procedure(parameters)"></a> builtin procedure call</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BuiltinCallDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>id: <strong>SIGNED32</strong><tr><td></td><td>parameters: <strong>ExpressionList</strong><tr><td></td><td>builtin: <strong>Builtin</strong><tr><td></td><td>returnType: <strong>Type</strong><tr><td></td><td>expression: <strong>Expression</strong><tr><th align='left'>procedures</th><td> SetReturnType (type: <strong>Type</strong>)<tr><td></td><td> SetExpression (e: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_735CADC0"><a name="FoxSyntaxTree.TypeGuardDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.TypeGuardDesignator">TypeGuardDesignator</a>
+</h2>
+<p> <a name="left(type)"></a> resolved parameter designator, designates a type guard</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TypeGuardDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>typeExpression: <strong>Expression</strong><tr><th align='left'>procedures</th><td> SetTypeExpression (typeExpression: <strong>Expression</strong>)<tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_735D4F40"><a name="FoxSyntaxTree.DereferenceDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.DereferenceDesignator">DereferenceDesignator</a>
+</h2>
+<p> <a name="left^"></a> resolved as dereference operation on pointer variable left</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DereferenceDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</table>
+<hr><h2 id="#_735DC780"><a name="FoxSyntaxTree.SupercallDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.SupercallDesignator">SupercallDesignator</a>
+</h2>
+<p> <a name="left^"></a> resolved as supercall operation on method left</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SupercallDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_735E2380"><a name="FoxSyntaxTree.SelfDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.SelfDesignator">SelfDesignator</a>
+</h2>
+<p> <a name="SELF.x"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SelfDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</table>
+<hr><h2 id="#_735E7B80"><a name="FoxSyntaxTree.ResultDesignator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ResultDesignator">ResultDesignator</a>
+</h2>
+<p> <a name="RESULT"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ResultDesignator* =<strong>OBJECT</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_735EBB00"><a name="FoxSyntaxTree.Value"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Value">Value</a>
+</h2>
+<p>* values <strong></strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Value* =<strong>OBJECT</strong> (<strong>Expression</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</table>
+<hr><h2 id="#_735F2700"><a name="FoxSyntaxTree.BooleanValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.BooleanValue">BooleanValue</a>
+</h2>
+<p> <a name="value"></a> = TRUE , FALSE</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BooleanValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> SetValue (value: <strong>BOOLEAN</strong>)<tr><td></td><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_735FC7C0"><a name="FoxSyntaxTree.IntegerValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.IntegerValue">IntegerValue</a>
+</h2>
+<p> <a name="value"></a> = 123456</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IntegerValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>Basic.Integer</strong><tr><th align='left'>procedures</th><td> SetValue (value: <strong>Basic.Integer</strong>)<tr><td></td><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73606080"><a name="FoxSyntaxTree.CharacterValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.CharacterValue">CharacterValue</a>
+</h2>
+<p> <a name="value"></a> = 'c', 65X</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CharacterValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>CHAR</strong><tr><th align='left'>procedures</th><td> SetValue (value: <strong>CHAR</strong>)<tr><td></td><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7360FCC0"><a name="FoxSyntaxTree.SetValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.SetValue">SetValue</a>
+</h2>
+<p> <a name="value"></a> = <code>1,2,3..5}&gt&gt </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SetValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>Basic.Set</strong><tr><th align='left'>procedures</th><td> SetValue (value: <strong>Basic.Set</strong>)<tr><td></td><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73619340"><a name="FoxSyntaxTree.MathArrayValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.MathArrayValue">MathArrayValue</a>
+</h2>
+<p> &lt&lt <a href="#elements]">elements]</a> &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MathArrayValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>array: <strong>MathArrayExpression</strong><tr><th align='left'>procedures</th><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73620E40"><a name="FoxSyntaxTree.RealValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.RealValue">RealValue</a>
+</h2>
+<p> <a name="value"></a> = 1.2345E01</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RealValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>FLOAT64</strong><tr><td></td><td>subtype: <strong>SubType</strong><tr><th align='left'>procedures</th><td> SetValue (value: <strong>FLOAT64</strong>)<tr><td></td><td> SetSubtype (subtype: <strong>SubType</strong>)<tr><td></td><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7362D140"><a name="FoxSyntaxTree.ComplexValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ComplexValue">ComplexValue</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ComplexValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>realValue: <strong>FLOAT64</strong><tr><td></td><td>imagValue: <strong>FLOAT64</strong><tr><td></td><td>subtype: <strong>SubType</strong><tr><th align='left'>procedures</th><td> SetValue (realValue, imagValue: <strong>FLOAT64</strong>)<tr><td></td><td> UpdateSubtype<tr><td></td><td> SetSubtype (subtype: <strong>SubType</strong>)<tr><td></td><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73639EC0"><a name="FoxSyntaxTree.StringValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.StringValue">StringValue</a>
+</h2>
+<p> <a name="value"></a> = "string"</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>String</strong><tr><td></td><td>length: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> SetValue (<strong>CONST</strong> value: <strong>String</strong>)<tr><td></td><td> Append (<strong>CONST</strong> value: <strong>String</strong>)<tr><td></td><td> AppendChar (<strong>CONST</strong> ch: <strong>CHAR</strong>)<tr><td></td><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_736487C0"><a name="FoxSyntaxTree.NilValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.NilValue">NilValue</a>
+</h2>
+<p> <a name="value"></a> = NIL</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NilValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</table>
+<hr><h2 id="#_7364F440"><a name="FoxSyntaxTree.EnumerationValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.EnumerationValue">EnumerationValue</a>
+</h2>
+<p> <a name="value"></a> = enum.x &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EnumerationValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>Basic.Integer</strong><tr><th align='left'>procedures</th><td> SetValue (value: <strong>Basic.Integer</strong>)<tr><td></td><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73658F00"><a name="FoxSyntaxTree.ProcedureValue"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ProcedureValue">ProcedureValue</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureValue* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>Procedure</strong><tr><th align='left'>procedures</th><td> SetValue (value: <strong>Procedure</strong>)<tr><td></td><td> Equals (v: <strong>Expression</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_736611C0"><a name="FoxSyntaxTree.Symbol"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Symbol">Symbol</a>
+</h2>
+<p>* symbols <strong></strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Symbol* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextSymbol: <strong>Symbol</strong><tr><td></td><td>name: <strong>Identifier</strong><tr><td></td><td>extern: <strong>Expression</strong><tr><td></td><td>externName: <strong>Scanner.StringType</strong><tr><td></td><td>access: <strong>SET</strong><tr><td></td><td>type: <strong>Type</strong><tr><td></td><td>scope: <strong>Scope</strong><tr><td></td><td>offsetInBits: <strong>SIZE</strong><tr><td></td><td>used: <strong>BOOLEAN</strong><tr><td></td><td>written: <strong>BOOLEAN</strong><tr><td></td><td>fixed: <strong>BOOLEAN</strong><tr><td></td><td>alignment: <strong>SIZE</strong><tr><td></td><td>position: <strong>Position</strong><tr><td></td><td>end: <strong>Position</strong><tr><td></td><td>state: <strong>SET</strong><tr><td></td><td>fingerprint: <strong>Fingerprint</strong><tr><td></td><td>comment: <strong>Comment</strong><tr><th align='left'>procedures</th><td> SetAlignment (fix: <strong>BOOLEAN</strong>; align: <strong>SIZE</strong>)<tr><td></td><td> SetFingerprint (<strong>CONST</strong> fp: <strong>Fingerprint</strong>)<tr><td></td><td> SetState (state: <strong>SIGNED32</strong>)<tr><td></td><td> SetScope (scope: <strong>Scope</strong>)<tr><td></td><td> SetType (type: <strong>Type</strong>)<tr><td></td><td> SetNext (symbol: <strong>Symbol</strong>)<tr><td></td><td> SetAccess (access: <strong>SET</strong>)<tr><td></td><td> SetOffset (ofs: <strong>SIZE</strong>)<tr><td></td><td> MarkUsed<tr><td></td><td> MarkWritten<tr><td></td><td> GetName (<strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetComment (comment: <strong>Comment</strong>)<tr><td></td><td> SetExtern (e: <strong>Expression</strong>)<tr><td></td><td> SetExternName (name: <strong>Scanner.StringType</strong>)<tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong><tr><td></td><td> NeedsSection (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7368FA80"><a name="FoxSyntaxTree.Symbols"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Symbols">Symbols</a>
+</h2>
+<p> <a name="expression,"></a> expression, ...</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Symbols* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitList<tr><td></td><td> Length (): <strong>SIZE</strong><tr><td></td><td> Add (d: <strong>Symbol</strong>)<tr><td></td><td> Get (index: <strong>SIZE</strong>): <strong>Symbol</strong><tr><td></td><td> Set (index: <strong>SIZE</strong>; symbol: <strong>Symbol</strong>)<tr><td></td><td> Remove (i: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7369E200"><a name="FoxSyntaxTree.Variables"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Variables">Variables</a>
+</h2>
+<p> <a name="expression,"></a> expression, ...</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Variables* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitList<tr><td></td><td> Length (): <strong>SIZE</strong><tr><td></td><td> Add (d: <strong>Variable</strong>)<tr><td></td><td> Get (index: <strong>SIZE</strong>): <strong>Variable</strong><tr><td></td><td> Set (index: <strong>SIZE</strong>; symbol: <strong>Variable</strong>)<tr><td></td><td> Remove (i: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_736AC980"><a name="FoxSyntaxTree.TypeDeclaration"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.TypeDeclaration">TypeDeclaration</a>
+</h2>
+<p> <a name="TYPE"></a> name = declaredType TypeDeclaration symbol represents a type declaration of the form TYPE name = declaredType. Note that the declared type is not stored in the symbol's type field but rather in the declaredType field. The type of a type declaration is set to "typeDeclarationType" in the semantic checker</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TypeDeclaration* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextTypeDeclaration: <strong>TypeDeclaration</strong><tr><td></td><td>declaredType: <strong>Type</strong><tr><th align='left'>procedures</th><td> SetDeclaredType (type: <strong>Type</strong>)<tr><td></td><td> SetType (type: <strong>Type</strong>)<tr><td></td><td> NeedsSection (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_736C3600"><a name="FoxSyntaxTree.Constant"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Constant">Constant</a>
+</h2>
+<p> <a name="CONST"></a> name = value &gt&gt<BR> Constant declaration symbol. Represents a constant being defined in the form CONST name = value The type of the constant is stored in the type field and is resolved by the semantic checker.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Constant* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>Expression</strong><tr><td></td><td>nextConstant: <strong>Constant</strong><tr><th align='left'>procedures</th><td> Clone (): <strong>Constant</strong><tr><td></td><td> SetValue (value: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_736D5880"><a name="FoxSyntaxTree.Variable"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Variable">Variable</a>
+</h2>
+<p> <a name="VAR"></a> name: type &gt&gt<BR> Variable declaration symbol. Represents a variable defined in the form VAR name: Type. The type of the variable is stored in the symbol's type field and is resolved by the semantic checker.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Variable* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextVariable: <strong>Variable</strong><tr><td></td><td>untraced: <strong>BOOLEAN</strong><tr><td></td><td>registerNumber: <strong>SIZE</strong><tr><td></td><td>inRegister: <strong>BOOLEAN</strong><tr><td></td><td>preferRegister: <strong>BOOLEAN</strong><tr><td></td><td>modifiers: <strong>Modifier</strong><tr><td></td><td>initializer: <strong>Expression</strong><tr><td></td><td>usedAsReference: <strong>BOOLEAN</strong><tr><td></td><td>kind: <strong>Kind</strong><tr><th align='left'>procedures</th><td>& InitVariable (position: <strong>Position</strong>; name: <strong>Identifier</strong>)<tr><td></td><td> SetKind (kind: <strong>SIGNED32</strong>)<tr><td></td><td> Clone (): <strong>Variable</strong><tr><td></td><td> UsedAsReference<tr><td></td><td> SetUntraced (u: <strong>BOOLEAN</strong>)<tr><td></td><td> PreferRegister (b: <strong>BOOLEAN</strong>)<tr><td></td><td> InRegister (b: <strong>BOOLEAN</strong>)<tr><td></td><td> RegisterNumber (reg: <strong>SIZE</strong>)<tr><td></td><td> SetModifiers (flag: <strong>Modifier</strong>)<tr><td></td><td> SetInitializer (initializer: <strong>Expression</strong>)<tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_736FC980"><a name="FoxSyntaxTree.Parameter"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Parameter">Parameter</a>
+</h2>
+<p> &lt&lt <a href="#VAR"> CONST] name: type &gt&gt<BR> Parameter declaration symbol. Represents a parameter in the form VAR</a></p>
+
+<table><tr><td> CONST] name: Type.</td></tr>
+</table>
+
+<p> parameter's type is stored in the symbol's type field and is resolved by the semantic checker.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parameter* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextParameter: <strong>Parameter</strong><tr><td></td><td>prevParameter: <strong>Parameter</strong><tr><td></td><td>modifiers: <strong>Modifier</strong><tr><td></td><td>defaultValue: <strong>Expression</strong><tr><td></td><td>assignmentOperator: <strong>Operator</strong><tr><td></td><td>kind: <strong>Kind</strong><tr><td></td><td>ownerType: <strong>Type</strong><tr><td></td><td>untraced: <strong>BOOLEAN</strong><tr><td></td><td>movable: <strong>BOOLEAN</strong><tr><td></td><td>selfParameter: <strong>BOOLEAN</strong><tr><td></td><td>autoConvert: <strong>BOOLEAN</strong><tr><td></td><td>returnByReference: <strong>BOOLEAN</strong><tr><td></td><td>registerNumber: <strong>SIZE</strong><tr><td></td><td>inRegister: <strong>BOOLEAN</strong><tr><td></td><td>preferRegister: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> ReturnByReference (b: <strong>BOOLEAN</strong>)<tr><td></td><td> PreferRegister (b: <strong>BOOLEAN</strong>)<tr><td></td><td> InRegister (b: <strong>BOOLEAN</strong>)<tr><td></td><td> RegisterNumber (reg: <strong>SIZE</strong>)<tr><td></td><td> SetAutoConvert (auto: <strong>BOOLEAN</strong>)<tr><td></td><td> SetModifiers (flag: <strong>Modifier</strong>)<tr><td></td><td> SetUntraced (untraced: <strong>BOOLEAN</strong>)<tr><td></td><td> SetMoveable (movable: <strong>BOOLEAN</strong>)<tr><td></td><td> SetSelfParameter (b: <strong>BOOLEAN</strong>)<tr><td></td><td> SetDefaultValue (e: <strong>Expression</strong>)<tr><td></td><td> SetAssignmentOperator (op: <strong>Operator</strong>)<tr><td></td><td> SetKind (kind: <strong>SIGNED32</strong>)<tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7372DA00"><a name="FoxSyntaxTree.Property"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Property">Property</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Property* =<strong>OBJECT</strong> (<strong>Variable</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextProperty: <strong>Property</strong><tr><td></td><td>prevProperty: <strong>Property</strong><tr><td></td><td>value: <strong>Expression</strong><tr><th align='left'>procedures</th><td> SetValue (e: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73735840"><a name="FoxSyntaxTree.Alias"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Alias">Alias</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Alias* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expression: <strong>Expression</strong><tr><td></td><td>nextAlias: <strong>Alias</strong><tr><th align='left'>procedures</th><td>& InitAlias (position: <strong>Position</strong>; name: <strong>Identifier</strong>; e: <strong>Expression</strong>)<tr><td></td><td> SetExpression (e: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_737401C0"><a name="FoxSyntaxTree.Procedure"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Procedure">Procedure</a>
+</h2>
+<p> Procedure declaration symbol. Represents a procedure being defined in the form PROCEDURE name(parameters): returnType; Note that the type of a procedure is a ProcedureType (and not the return type of the procedure). Parameters, local variables, constants and type declarations are stored in the procedureScope field.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Procedure* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextProcedure: <strong>Procedure</strong><tr><td></td><td>procedureScope: <strong>ProcedureScope</strong><tr><td></td><td>super: <strong>Procedure</strong><tr><td></td><td>level: <strong>SIGNED32</strong><tr><td></td><td>methodNumber: <strong>SIZE</strong><tr><td></td><td>isBodyProcedure: <strong>BOOLEAN</strong><tr><td></td><td>isConstructor: <strong>BOOLEAN</strong><tr><td></td><td>isFinalizer: <strong>BOOLEAN</strong><tr><td></td><td>isInline: <strong>BOOLEAN</strong><tr><td></td><td>isOberonInline: <strong>BOOLEAN</strong><tr><td></td><td>isOpening: <strong>BOOLEAN</strong><tr><td></td><td>isClosing: <strong>BOOLEAN</strong><tr><td></td><td>isFinal: <strong>BOOLEAN</strong><tr><td></td><td>isTest: <strong>BOOLEAN</strong><tr><td></td><td>isAbstract: <strong>BOOLEAN</strong><tr><td></td><td>isOverwritten: <strong>BOOLEAN</strong><tr><td></td><td>isPlain: <strong>BOOLEAN</strong><tr><td></td><td>isOverride: <strong>BOOLEAN</strong><tr><td></td><td>resolving: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> Resolving (r: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetSuper (super: <strong>Procedure</strong>)<tr><td></td><td> SetBodyProcedure (isBodyProcedure: <strong>BOOLEAN</strong>)<tr><td></td><td> SetConstructor (isConstructor: <strong>BOOLEAN</strong>)<tr><td></td><td> SetFinalizer (isFinalizer: <strong>BOOLEAN</strong>)<tr><td></td><td> SetInline (isInline: <strong>BOOLEAN</strong>)<tr><td></td><td> SetOberonInline (isInline: <strong>BOOLEAN</strong>)<tr><td></td><td> SetOpening (opening: <strong>BOOLEAN</strong>)<tr><td></td><td> SetClosing (closing: <strong>BOOLEAN</strong>)<tr><td></td><td> SetPlain (plain: <strong>BOOLEAN</strong>)<tr><td></td><td> SetFinal (final: <strong>BOOLEAN</strong>)<tr><td></td><td> SetTest (test: <strong>BOOLEAN</strong>)<tr><td></td><td> SetOverwritten (locallyOverwritten: <strong>BOOLEAN</strong>)<tr><td></td><td> SetAbstract (abstract: <strong>BOOLEAN</strong>)<tr><td></td><td> SetOverride (override: <strong>BOOLEAN</strong>)<tr><td></td><td> SetLevel (level: <strong>SIGNED32</strong>)<tr><td></td><td> SetMethodNumber (methodNumber: <strong>SIZE</strong>)<tr><td></td><td> NeedsSection (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7377FCC0"><a name="FoxSyntaxTree.Builtin"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Builtin">Builtin</a>
+</h2>
+<p> Builtin symbol stands for a builtin procedure. Is resolved by the semantic checker.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Builtin* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextBuiltin: <strong>Builtin</strong><tr><td></td><td>id: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73788A80"><a name="FoxSyntaxTree.CustomBuiltin"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.CustomBuiltin">CustomBuiltin</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CustomBuiltin* =<strong>OBJECT</strong> (<strong>Builtin</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>subType: <strong>SubType</strong><tr><th align='left'>procedures</th><td> CompatibleTo (otherType: <strong>Type</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7378F200"><a name="FoxSyntaxTree.Operator"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Operator">Operator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Operator* =<strong>OBJECT</strong> (<strong>Procedure</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextOperator: <strong>Operator</strong><tr><td></td><td>isDynamic: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> SetDynamic (isDynamic: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73796180"><a name="FoxSyntaxTree.Import"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Import">Import</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Import* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextImport: <strong>Import</strong><tr><td></td><td>module: <strong>Module</strong><tr><td></td><td>moduleName: <strong>Identifier</strong><tr><td></td><td>context: <strong>Identifier</strong><tr><td></td><td>direct: <strong>BOOLEAN</strong><tr><td></td><td>parameters: <strong>ExpressionList</strong><tr><th align='left'>procedures</th><td> SetType (type: <strong>Type</strong>)<tr><td></td><td> SetModule (module: <strong>Module</strong>)<tr><td></td><td> SetDirect (d: <strong>BOOLEAN</strong>)<tr><td></td><td> SetModuleName (moduleName: <strong>Identifier</strong>)<tr><td></td><td> SetContext (context: <strong>Identifier</strong>)<tr><td></td><td> SetParameters (p: <strong>ExpressionList</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_737A9580"><a name="FoxSyntaxTree.StatementSequence"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.StatementSequence">StatementSequence</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StatementSequence* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Length (): <strong>SIZE</strong><tr><td></td><td> AddStatement (statement: <strong>Statement</strong>)<tr><td></td><td> PrependStatement (statement: <strong>Statement</strong>)<tr><td></td><td> HasStatement (statement: <strong>Statement</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetStatement (index: <strong>SIZE</strong>): <strong>Statement</strong><tr><td></td><td> SetStatement (index: <strong>SIZE</strong>; statement: <strong>Statement</strong>)<tr><td></td><td> RemoveStatement (statement: <strong>Statement</strong>)<tr><td></td><td> InsertBefore (search, new: <strong>Statement</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_737BBD40"><a name="FoxSyntaxTree.Statement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Statement">Statement</a>
+</h2>
+<p>* statements <strong></strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Statement* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>outer: <strong>Statement</strong><tr><td></td><td>position: <strong>Position</strong><tr><td></td><td>end: <strong>Position</strong><tr><td></td><td>isUnreachable: <strong>BOOLEAN</strong><tr><td></td><td>comment: <strong>Comment</strong><tr><th align='left'>procedures</th><td>& InitStatement (position: <strong>Position</strong>; outer: <strong>Statement</strong>)<tr><td></td><td> SetOuter (o: <strong>Statement</strong>)<tr><td></td><td> SetUnreachable (unreachable: <strong>BOOLEAN</strong>)<tr><td></td><td> SetComment (comment: <strong>Comment</strong>)<tr><td></td><td> End (pos: <strong>Position</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_737CE580"><a name="FoxSyntaxTree.DeclarationStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.DeclarationStatement">DeclarationStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DeclarationStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>variables: <strong>Variables</strong><tr><td></td><td>initializers: <strong>ExpressionList</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_737D3840"><a name="FoxSyntaxTree.ProcedureCallStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ProcedureCallStatement">ProcedureCallStatement</a>
+</h2>
+<p> &lt&lt call(...) &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureCallStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ignore: <strong>BOOLEAN</strong><tr><td></td><td>call: <strong>Expression</strong><tr><th align='left'>procedures</th><td> SetIgnore (ignore: <strong>BOOLEAN</strong>)<tr><td></td><td> SetCall (call: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_737DD800"><a name="FoxSyntaxTree.Assignment"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Assignment">Assignment</a>
+</h2>
+<p> &lt&lt left := right &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Assignment* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>left: <strong>Expression</strong><tr><td></td><td>right: <strong>Expression</strong><tr><th align='left'>procedures</th><td>& InitAssignment (position: <strong>Position</strong>; left: <strong>Expression</strong>; right: <strong>Expression</strong>; outer: <strong>Statement</strong>)<tr><td></td><td> SetLeft (left: <strong>Designator</strong>)<tr><td></td><td> SetRight (right: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_737EC680"><a name="FoxSyntaxTree.CommunicationStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.CommunicationStatement">CommunicationStatement</a>
+</h2>
+<p> &lt&lt left ('!'</p>
+
+<table><tr><td> '?'</td><td> '&lt&lt'</td><td> '') right &gt&gt </td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CommunicationStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>left: <strong>Expression</strong><tr><td></td><td>right: <strong>Expression</strong><tr><td></td><td>op: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& InitAssignment (position: <strong>Position</strong>; op: <strong>SIGNED32</strong>; left: <strong>Expression</strong>; right: <strong>Expression</strong>; outer: <strong>Statement</strong>)<tr><td></td><td> SetLeft (left: <strong>Designator</strong>)<tr><td></td><td> SetRight (right: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_737FEAC0"><a name="FoxSyntaxTree.Part"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Part">Part</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Part* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>position: <strong>Position</strong><tr><td></td><td>end: <strong>Position</strong><tr><th align='left'>procedures</th><td> SetPosition (pos: <strong>Position</strong>)<tr><td></td><td> SetEnd (pos: <strong>Position</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73806EC0"><a name="FoxSyntaxTree.IfPart"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.IfPart">IfPart</a>
+</h2>
+<p> &lt&lt ... condition THEN statements ... &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IfPart* =<strong>OBJECT</strong> (<strong>Part</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>condition: <strong>Expression</strong><tr><td></td><td>statements: <strong>StatementSequence</strong><tr><td></td><td>comment: <strong>Comment</strong><tr><th align='left'>procedures</th><td> SetCondition (condition: <strong>Expression</strong>)<tr><td></td><td> SetStatements (statements: <strong>StatementSequence</strong>)<tr><td></td><td> SetComment (comment: <strong>Comment</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73814800"><a name="FoxSyntaxTree.IfStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.IfStatement">IfStatement</a>
+</h2>
+<p> &lt&lt IF ifPart <code>ELSIF elsifParts} ELSE elseParts &gt&gt </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IfStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ifPart: <strong>IfPart</strong><tr><td></td><td>elsePart: <strong>StatementSequence</strong><tr><th align='left'>procedures</th><td> SetElsePart (elsePart: <strong>StatementSequence</strong>)<tr><td></td><td> AddElsifPart (elsifPart: <strong>IfPart</strong>)<tr><td></td><td> GetElsifPart (i: <strong>SIZE</strong>): <strong>IfPart</strong><tr><td></td><td> ElsifParts (): <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_738224C0"><a name="FoxSyntaxTree.WithPart"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.WithPart">WithPart</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WithPart* =<strong>OBJECT</strong> (<strong>Part</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>Type</strong><tr><td></td><td>statements: <strong>StatementSequence</strong><tr><td></td><td>comment: <strong>Comment</strong><tr><th align='left'>procedures</th><td> SetType (type: <strong>Type</strong>)<tr><td></td><td> SetStatements (statements: <strong>StatementSequence</strong>)<tr><td></td><td> SetComment (comment: <strong>Comment</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7382DA00"><a name="FoxSyntaxTree.WithStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.WithStatement">WithStatement</a>
+</h2>
+<p> &lt&lt WITH variable : type DO statements END &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WithStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>variable: <strong>Designator</strong><tr><td></td><td>withParts: <strong>Basic.List</strong><tr><td></td><td>elsePart: <strong>StatementSequence</strong><tr><th align='left'>procedures</th><td> SetVariable (variable: <strong>Designator</strong>)<tr><td></td><td> AddWithPart (withPart: <strong>WithPart</strong>)<tr><td></td><td> GetWithPart (i: <strong>SIZE</strong>): <strong>WithPart</strong><tr><td></td><td> WithParts (): <strong>SIZE</strong><tr><td></td><td> SetElsePart (elsePart: <strong>StatementSequence</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7383F2C0"><a name="FoxSyntaxTree.CaseConstant"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.CaseConstant">CaseConstant</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CaseConstant* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>min: <strong>Basic.Integer</strong><tr><td></td><td>max: <strong>Basic.Integer</strong><tr><td></td><td>next: <strong>CaseConstant</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_738454C0"><a name="FoxSyntaxTree.CasePart"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.CasePart">CasePart</a>
+</h2>
+<p> &lt&lt elements : statements &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CasePart* =<strong>OBJECT</strong> (<strong>Part</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>elements: <strong>ExpressionList</strong><tr><td></td><td>firstConstant: <strong>CaseConstant</strong><tr><td></td><td>statements: <strong>StatementSequence</strong><tr><td></td><td>comment: <strong>Comment</strong><tr><th align='left'>procedures</th><td> SetStatements (statements: <strong>StatementSequence</strong>)<tr><td></td><td> SetConstants (firstConstant: <strong>CaseConstant</strong>)<tr><td></td><td> SetComment (comment: <strong>Comment</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73853540"><a name="FoxSyntaxTree.CaseStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.CaseStatement">CaseStatement</a>
+</h2>
+<p> &lt&lt CASE varaible OF caseParts ELSE elsePart &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CaseStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>variable: <strong>Expression</strong><tr><td></td><td>elsePart: <strong>StatementSequence</strong><tr><td></td><td>caseParts: <strong>Basic.List</strong><tr><td></td><td>min: <strong>Basic.Integer</strong><tr><td></td><td>max: <strong>Basic.Integer</strong><tr><th align='left'>procedures</th><td> SetVariable (expression: <strong>Expression</strong>)<tr><td></td><td> SetElsePart (elsePart: <strong>StatementSequence</strong>)<tr><td></td><td> AddCasePart (casePart: <strong>CasePart</strong>)<tr><td></td><td> GetCasePart (i: <strong>SIZE</strong>): <strong>CasePart</strong><tr><td></td><td> CaseParts (): <strong>SIZE</strong><tr><td></td><td> MaxConstant (): <strong>Basic.Integer</strong><tr><td></td><td> SetMinMax (min, max: <strong>Basic.Integer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7386A280"><a name="FoxSyntaxTree.WhileStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.WhileStatement">WhileStatement</a>
+</h2>
+<p> &lt&lt WHILE condition DO statements END &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WhileStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>condition: <strong>Expression</strong><tr><td></td><td>statements: <strong>StatementSequence</strong><tr><th align='left'>procedures</th><td> SetCondition (condition: <strong>Expression</strong>)<tr><td></td><td> SetStatements (statements: <strong>StatementSequence</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73875200"><a name="FoxSyntaxTree.RepeatStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.RepeatStatement">RepeatStatement</a>
+</h2>
+<p> &lt&lt REPEAT statements UNTIL condition &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RepeatStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>condition: <strong>Expression</strong><tr><td></td><td>statements: <strong>StatementSequence</strong><tr><th align='left'>procedures</th><td> SetCondition (condition: <strong>Expression</strong>)<tr><td></td><td> SetStatements (statements: <strong>StatementSequence</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7387FE40"><a name="FoxSyntaxTree.ForStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ForStatement">ForStatement</a>
+</h2>
+<p> &lt&lt FOR variable := from TO to BY by DO statements END &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ForStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>variable: <strong>Designator</strong><tr><td></td><td>from: <strong>Expression</strong><tr><td></td><td>to: <strong>Expression</strong><tr><td></td><td>by: <strong>Expression</strong><tr><td></td><td>statements: <strong>StatementSequence</strong><tr><th align='left'>procedures</th><td> SetVariable (variable: <strong>Designator</strong>)<tr><td></td><td> SetFrom (from: <strong>Expression</strong>)<tr><td></td><td> SetTo (to: <strong>Expression</strong>)<tr><td></td><td> SetBy (by: <strong>Expression</strong>)<tr><td></td><td> SetStatements (statements: <strong>StatementSequence</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_738943C0"><a name="FoxSyntaxTree.ExitableBlock"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ExitableBlock">ExitableBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExitableBlock* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>statements: <strong>StatementSequence</strong><tr><th align='left'>procedures</th><td> SetStatements (statements: <strong>StatementSequence</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_7389A4C0"><a name="FoxSyntaxTree.LoopStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.LoopStatement">LoopStatement</a>
+</h2>
+<p> &lt&lt LOOP statements END &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LoopStatement* =<strong>OBJECT</strong> (<strong>ExitableBlock</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_7389F4C0"><a name="FoxSyntaxTree.ExitStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ExitStatement">ExitStatement</a>
+</h2>
+<p> &lt&lt EXIT &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExitStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_738A3C00"><a name="FoxSyntaxTree.ReturnStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ReturnStatement">ReturnStatement</a>
+</h2>
+<p> &lt&lt RETURN returnValue &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ReturnStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>returnValue: <strong>Expression</strong><tr><td></td><td>assignmentOperator: <strong>Expression</strong><tr><th align='left'>procedures</th><td> SetReturnValue (returnValue: <strong>Expression</strong>)<tr><td></td><td> SetAssignmentOperator (op: <strong>Expression</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_738AE000"><a name="FoxSyntaxTree.AwaitStatement"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.AwaitStatement">AwaitStatement</a>
+</h2>
+<p> &lt&lt AWAIT condition &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AwaitStatement* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>condition: <strong>Expression</strong><tr><td></td><td>procedure: <strong>Procedure</strong><tr><th align='left'>procedures</th><td> SetCondition (condition: <strong>Expression</strong>)<tr><td></td><td> SetProcedure (p: <strong>Procedure</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_738B8380"><a name="FoxSyntaxTree.Modifier"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Modifier">Modifier</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Modifier* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>identifier: <strong>Identifier</strong><tr><td></td><td>expression: <strong>Expression</strong><tr><td></td><td>resolved: <strong>BOOLEAN</strong><tr><td></td><td>nextModifier: <strong>Modifier</strong><tr><td></td><td>position: <strong>Position</strong><tr><th align='left'>procedures</th><td> Resolved<tr><td></td><td> SetExpression (e: <strong>Expression</strong>)<tr><td></td><td> SetNext (modifier: <strong>Modifier</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_738C4300"><a name="FoxSyntaxTree.StatementBlock"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.StatementBlock">StatementBlock</a>
+</h2>
+<p> &lt&lt BEGIN <code>Modifier, Modifier ... }  statements END &gt&gt </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StatementBlock* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>statements: <strong>StatementSequence</strong><tr><td></td><td>blockModifiers: <strong>Modifier</strong><tr><td></td><td>isExclusive: <strong>BOOLEAN</strong><tr><td></td><td>isRealtime: <strong>BOOLEAN</strong><tr><td></td><td>isUnchecked: <strong>BOOLEAN</strong><tr><td></td><td>isUntracked: <strong>BOOLEAN</strong><tr><td></td><td>isUncooperative: <strong>BOOLEAN</strong><tr><td></td><td>scope: <strong>Scope</strong><tr><th align='left'>procedures</th><td> SetRealtime (b: <strong>BOOLEAN</strong>)<tr><td></td><td> SetUnchecked (unchecked: <strong>BOOLEAN</strong>)<tr><td></td><td> SetUntracked (untracked: <strong>BOOLEAN</strong>)<tr><td></td><td> SetUncooperative (uncooperative: <strong>BOOLEAN</strong>)<tr><td></td><td> SetModifier (modifier: <strong>Modifier</strong>)<tr><td></td><td> SetExclusive (excl: <strong>BOOLEAN</strong>)<tr><td></td><td> SetStatementSequence (statements: <strong>StatementSequence</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_738DC800"><a name="FoxSyntaxTree.Code"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Code">Code</a>
+</h2>
+<p> &lt&lt CODE <code>flags} {character}  END &gt&gt </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Code* =<strong>OBJECT</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sourceCode: <strong>SourceCode</strong><tr><td></td><td>sourceCodeLength: <strong>SIZE</strong><tr><td></td><td>inlineCode: <strong>BinaryCode</strong><tr><th align='left'>procedures</th><td> SetSourceCode (source: <strong>SourceCode</strong>; length: <strong>SIZE</strong>)<tr><td></td><td> SetBinaryCode (code: <strong>BinaryCode</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_738E8400"><a name="FoxSyntaxTree.Body"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Body">Body</a>
+</h2>
+<p> &lt&lt BEGIN <code>flags} statements FINALLY statements END &gt&gt </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Body* =<strong>OBJECT</strong> (<strong>StatementBlock</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>finally: <strong>StatementSequence</strong><tr><td></td><td>priority: <strong>Expression</strong><tr><td></td><td>inScope: <strong>ProcedureScope</strong><tr><td></td><td>code: <strong>Code</strong><tr><td></td><td>isActive: <strong>BOOLEAN</strong><tr><td></td><td>isSafe: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> SetActive (active: <strong>BOOLEAN</strong>)<tr><td></td><td> SetSafe (safe: <strong>BOOLEAN</strong>)<tr><td></td><td> SetFinally (finally: <strong>StatementSequence</strong>)<tr><td></td><td> SetPriority (expression: <strong>Expression</strong>)<tr><td></td><td> SetCode (code: <strong>Code</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_738FB180"><a name="FoxSyntaxTree.Comment"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Comment">Comment</a>
+</h2>
+<p> ( comment <strong>)</strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Comment* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>position: <strong>Position</strong><tr><td></td><td>source: <strong>String</strong><tr><td></td><td>scope: <strong>Scope</strong><tr><td></td><td>item: @Any0<tr><td></td><td>sameLine: <strong>BOOLEAN</strong><tr><td></td><td>nextComment: <strong>Comment</strong><tr><th align='left'>procedures</th><td> SetItem (p: @Any0; sameLine: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73907B80"><a name="FoxSyntaxTree.Scope"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Scope">Scope</a>
+</h2>
+<p>* building blocks <strong></strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scope* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>firstSymbol: <strong>Symbol</strong><tr><td></td><td>numberSymbols: <strong>SIZE</strong><tr><td></td><td>firstConstant: <strong>Constant</strong><tr><td></td><td>lastConstant: <strong>Constant</strong><tr><td></td><td>numberConstants: <strong>SIZE</strong><tr><td></td><td>firstTypeDeclaration: <strong>TypeDeclaration</strong><tr><td></td><td>lastTypeDeclaration: <strong>TypeDeclaration</strong><tr><td></td><td>numberTypeDeclarations: <strong>SIZE</strong><tr><td></td><td>firstVariable: <strong>Variable</strong><tr><td></td><td>lastVariable: <strong>Variable</strong><tr><td></td><td>numberVariables: <strong>SIZE</strong><tr><td></td><td>firstProcedure: <strong>Procedure</strong><tr><td></td><td>lastProcedure: <strong>Procedure</strong><tr><td></td><td>numberProcedures: <strong>SIZE</strong><tr><td></td><td>firstAlias: <strong>Alias</strong><tr><td></td><td>lastAlias: <strong>Alias</strong><tr><td></td><td>numberAliases: <strong>SIGNED32</strong><tr><td></td><td>firstScope: <strong>Scope</strong><tr><td></td><td>lastScope: <strong>Scope</strong><tr><td></td><td>numberScopes: <strong>SIGNED32</strong><tr><td></td><td>procedures: <strong>ProcedureList</strong><tr><td></td><td>outerScope: <strong>Scope</strong><tr><td></td><td>nextScope: <strong>Scope</strong><tr><td></td><td>ownerModule: <strong>Module</strong><tr><td></td><td>currentVariableOffset: <strong>SIZE</strong><tr><td></td><td>minVariableOffset: <strong>SIZE</strong><tr><td></td><td>maxVariableOffset: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> SetMinVariableOffset (o: <strong>SIZE</strong>)<tr><td></td><td> SetCurrentVariableOffset (o: <strong>SIZE</strong>)<tr><td></td><td> Clear<tr><td></td><td> <a href="#FoxSyntaxTree.Scope.EnterSymbol">EnterSymbol</a> (symbol: <strong>Symbol</strong>; <strong>VAR</strong> duplicate: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#FoxSyntaxTree.Scope.FindSymbol">FindSymbol</a> (identifier: <strong>Identifier</strong>): <strong>Symbol</strong><tr><td></td><td> AddConstant (c: <strong>Constant</strong>)<tr><td></td><td> FindConstant (identifier: <strong>Identifier</strong>): <strong>Constant</strong><tr><td></td><td> AddTypeDeclaration (t: <strong>TypeDeclaration</strong>)<tr><td></td><td> FindTypeDeclaration (identifier: <strong>Identifier</strong>): <strong>TypeDeclaration</strong><tr><td></td><td> AddVariable (v: <strong>Variable</strong>)<tr><td></td><td> AddAlias (a: <strong>Alias</strong>)<tr><td></td><td> PushVariable (v: <strong>Variable</strong>)<tr><td></td><td> InsertVariable (v: <strong>Variable</strong>; after: <strong>Variable</strong>)<tr><td></td><td> FindVariable (identifier: <strong>Identifier</strong>): <strong>Variable</strong><tr><td></td><td> AddProcedure (p: <strong>Procedure</strong>)<tr><td></td><td> AddProcedureDeclaration (p: <strong>Procedure</strong>)<tr><td></td><td> FindProcedure (identifier: <strong>Identifier</strong>): <strong>Procedure</strong><tr><td></td><td> FindMethod (number: <strong>SIZE</strong>): <strong>Procedure</strong><tr><td></td><td> Level (): <strong>SIGNED32</strong><tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong><tr><td></td><td> SetOuter (outer: <strong>Scope</strong>)<tr><td></td><td> AddScope (c: <strong>Scope</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_7394D5C0"><a name="FoxSyntaxTree.Scope.EnterSymbol"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Scope">Scope</a>.<a href="#FoxSyntaxTree.Scope.EnterSymbol">EnterSymbol</a>
+</h3>
+<p> Enter a symbol in the scope, aplhabetically sorted, duplicate = TRUE if multiply identifier</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnterSymbol* (symbol: <strong>Symbol</strong>; <strong>VAR</strong> duplicate: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_73955AC0"><a name="FoxSyntaxTree.Scope.FindSymbol"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Scope">Scope</a>.<a href="#FoxSyntaxTree.Scope.FindSymbol">FindSymbol</a>
+</h3>
+<p> Find symbol by name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindSymbol* (identifier: <strong>Identifier</strong>): <strong>Symbol</strong></pre>
+<hr><h2 id="#_7395ACC0"><a name="FoxSyntaxTree.ProcedureScope"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ProcedureScope">ProcedureScope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ownerProcedure: <strong>Procedure</strong><tr><td></td><td>body: <strong>Body</strong><tr><th align='left'>procedures</th><td> SetBody (body: <strong>Body</strong>)<tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73963400"><a name="FoxSyntaxTree.BlockScope"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.BlockScope">BlockScope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BlockScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_73966780"><a name="FoxSyntaxTree.EnumerationScope"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.EnumerationScope">EnumerationScope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EnumerationScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ownerEnumeration: <strong>EnumerationType</strong><tr><th align='left'>procedures</th><td> <a href="#FoxSyntaxTree.EnumerationScope.FindSymbol">FindSymbol</a> (identifier: <strong>Identifier</strong>): <strong>Symbol</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_7396CF40"><a name="FoxSyntaxTree.EnumerationScope.FindSymbol"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.EnumerationScope">EnumerationScope</a>.<a href="#FoxSyntaxTree.EnumerationScope.FindSymbol">FindSymbol</a>
+</h3>
+<p> Find symbol by name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindSymbol* (identifier: <strong>Identifier</strong>): <strong>Symbol</strong></pre>
+<hr><h2 id="#_739721C0"><a name="FoxSyntaxTree.RecordScope"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.RecordScope">RecordScope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RecordScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ownerRecord: <strong>RecordType</strong><tr><td></td><td>bodyProcedure: <strong>Procedure</strong><tr><td></td><td>constructor: <strong>Procedure</strong><tr><td></td><td>finalizer: <strong>Procedure</strong><tr><td></td><td>numberMethods: <strong>SIZE</strong><tr><td></td><td>firstParameter: <strong>Parameter</strong><tr><td></td><td>lastParameter: <strong>Parameter</strong><tr><td></td><td>numberParameters: <strong>SIZE</strong><tr><td></td><td>firstOperator: <strong>Operator</strong><tr><td></td><td>lastOperator: <strong>Operator</strong><tr><th align='left'>procedures</th><td> SetBodyProcedure (body: <strong>Procedure</strong>)<tr><td></td><td> SetConstructor (body: <strong>Procedure</strong>)<tr><td></td><td> SetFinalizer (body: <strong>Procedure</strong>)<tr><td></td><td> SetNumberMethods (numberMethods: <strong>SIZE</strong>)<tr><td></td><td> AddOperator (p: <strong>Operator</strong>)<tr><td></td><td> <a href="#FoxSyntaxTree.RecordScope.FindSymbol">FindSymbol</a> (identifier: <strong>Identifier</strong>): <strong>Symbol</strong><tr><td></td><td> AbstractProcedure (inScope: <strong>Scope</strong>): <strong>Procedure</strong><tr><td></td><td> FindConstant (identifier: <strong>Identifier</strong>): <strong>Constant</strong><tr><td></td><td> FindTypeDeclaration (identifier: <strong>Identifier</strong>): <strong>TypeDeclaration</strong><tr><td></td><td> FindVariable (identifier: <strong>Identifier</strong>): <strong>Variable</strong><tr><td></td><td> FindProcedure (identifier: <strong>Identifier</strong>): <strong>Procedure</strong><tr><td></td><td> FindMethod (number: <strong>SIZE</strong>): <strong>Procedure</strong><tr><td></td><td> NeedsTrace (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_73997580"><a name="FoxSyntaxTree.RecordScope.FindSymbol"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.RecordScope">RecordScope</a>.<a href="#FoxSyntaxTree.RecordScope.FindSymbol">FindSymbol</a>
+</h3>
+<p> Find symbol by name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindSymbol* (identifier: <strong>Identifier</strong>): <strong>Symbol</strong></pre>
+<hr><h2 id="#_7399C780"><a name="FoxSyntaxTree.CellScope"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.CellScope">CellScope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CellScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ownerCell: <strong>CellType</strong><tr><td></td><td>bodyProcedure: <strong>Procedure</strong><tr><td></td><td>constructor: <strong>Procedure</strong><tr><td></td><td>firstImport: <strong>Import</strong><tr><td></td><td>lastImport: <strong>Import</strong><tr><th align='left'>procedures</th><td> Clear<tr><td></td><td> SetOwnerCell (owner: <strong>CellType</strong>)<tr><td></td><td> SetBodyProcedure (bodyProcedure: <strong>Procedure</strong>)<tr><td></td><td> SetConstructor (p: <strong>Procedure</strong>)<tr><td></td><td> AddImport (i: <strong>Import</strong>)<tr><td></td><td> FindImport (identifier: <strong>Identifier</strong>): <strong>Import</strong><tr><td></td><td> GetImport (index: <strong>SIGNED32</strong>): <strong>Import</strong><tr><td></td><td> FindSymbol (identifier: <strong>Identifier</strong>): <strong>Symbol</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_739B2400"><a name="FoxSyntaxTree.ModuleScope"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ModuleScope">ModuleScope</a>
+</h2>
+<p> &lt&lt IMPORT firstImport .. lastImport; ... firstOperator ... lastOperator .... &gt&gt<BR></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ModuleScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>firstImport: <strong>Import</strong><tr><td></td><td>lastImport: <strong>Import</strong><tr><td></td><td>firstOperator: <strong>Operator</strong><tr><td></td><td>lastOperator: <strong>Operator</strong><tr><td></td><td>firstBuiltin: <strong>Builtin</strong><tr><td></td><td>lastBuiltin: <strong>Builtin</strong><tr><td></td><td>firstComment: <strong>Comment</strong><tr><td></td><td>lastComment: <strong>Comment</strong><tr><td></td><td>numberComments: <strong>SIZE</strong><tr><td></td><td>bodyProcedure: <strong>Procedure</strong><tr><th align='left'>procedures</th><td> SetBodyProcedure (body: <strong>Procedure</strong>)<tr><td></td><td> SetGlobalScope (outer: <strong>Scope</strong>)<tr><td></td><td> AddBuiltin (p: <strong>Builtin</strong>)<tr><td></td><td> AddOperator (p: <strong>Operator</strong>)<tr><td></td><td> FindOperator (identifier: <strong>Identifier</strong>): <strong>Operator</strong><tr><td></td><td> AddImport (i: <strong>Import</strong>)<tr><td></td><td> FindImport (identifier: <strong>Identifier</strong>): <strong>Import</strong><tr><td></td><td> GetImport (index: <strong>SIGNED32</strong>): <strong>Import</strong><tr><td></td><td> AddComment (comment: <strong>Comment</strong>)<tr><td></td><td> ImportByModuleName (moduleName, context: <strong>Identifier</strong>): <strong>Import</strong><tr><td></td><td> RemoveImporters (moduleName, context: <strong>Identifier</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_739D7940"><a name="FoxSyntaxTree.TemplateType"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.TemplateType">TemplateType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TemplateType* =<strong>ENUMERATION</strong> <strong>CONST</strong> Type*= 0, <strong>CONST</strong> Const*= 1, <strong>CONST</strong> Import*= 2, <strong>CONST</strong> Automatic*= 3</pre>
+<hr><h2 id="#_739DE2C0"><a name="FoxSyntaxTree.TemplateParameter"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.TemplateParameter">TemplateParameter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TemplateParameter* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>TemplateType</strong><tr><td></td><td>identifier: <strong>Identifier</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_739E2E40"><a name="FoxSyntaxTree.TemplateParameters"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.TemplateParameters">TemplateParameters</a>
+</h2>
+<p> <a name="expression,"></a> expression, ...</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TemplateParameters* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitList<tr><td></td><td> Length (): <strong>SIZE</strong><tr><td></td><td> Add (<strong>CONST</strong> d: <strong>TemplateParameter</strong>)<tr><td></td><td> Get (index: <strong>SIZE</strong>): <strong>TemplateParameter</strong><tr><td></td><td> Set (index: <strong>SIZE</strong>; symbol: <strong>TemplateParameter</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_739EFF00"><a name="FoxSyntaxTree.Module"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.Module">Module</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Module* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sourceName: <strong>Basic.FileName</strong><tr><td></td><td>moduleScope: <strong>ModuleScope</strong><tr><td></td><td>context: <strong>Identifier</strong><tr><td></td><td>case: <strong>SIGNED32</strong><tr><td></td><td>isCellNet: <strong>BOOLEAN</strong><tr><td></td><td>closingComment: <strong>Comment</strong><tr><td></td><td>modifiers: <strong>Modifier</strong><tr><td></td><td>parameters: <strong>TemplateParameters</strong><tr><th align='left'>procedures</th><td> SetCase (case: <strong>SIGNED32</strong>)<tr><td></td><td> SetCellNet (isCellNet: <strong>BOOLEAN</strong>)<tr><td></td><td> SetContext (context: <strong>Identifier</strong>)<tr><td></td><td> SetName (name: <strong>Identifier</strong>)<tr><td></td><td> SetClosingComment (comment: <strong>Comment</strong>)<tr><td></td><td> SetModifiers (modifiers: <strong>Modifier</strong>)<tr><td></td><td> SetParameters (parameters: <strong>TemplateParameters</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_73A07140"><a name="FoxSyntaxTree.ProcedureList"></a><a href="#FoxSyntaxTree">FoxSyntaxTree</a>.<a href="#FoxSyntaxTree.ProcedureList">ProcedureList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitList<tr><td></td><td> Length (): <strong>SIZE</strong><tr><td></td><td> AddProcedure (d: <strong>Procedure</strong>)<tr><td></td><td> GetProcedure (index: <strong>SIZE</strong>): <strong>Procedure</strong><tr><td></td><td> SetProcedure (index: <strong>SIZE</strong>; expression: <strong>Procedure</strong>)<tr><td></td><td> RemoveProcedure (i: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

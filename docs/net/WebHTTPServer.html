@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#WebHTTPServer">WebHTTPServer</a></p>
+<hr><h1 id="#_F0FC64C0"><a name="WebHTTPServer"></a><a href="#ModuleList">Module</a> WebHTTPServer
+</h1>
+<p> AUTHOR "pjm/tf/be"; PURPOSE "HTTP/1.1 Server";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Ok= TCPServices.Ok<tr><td></td><td>Error= -1<tr><td></td><td>Major= 1<tr><td></td><td>Minor= 1<tr><td></td><td>ServerVersion= "A2 HTTP Server/1.0"<tr><td></td><td>DocType= '&lt!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt'<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#WebHTTPServer.HTTPPlugin">HTTPPlugin</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WebHTTPServer.HostList">HostList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WebHTTPServer.Host">Host</a> =<strong>OBJECT</strong> <tr><td></td><td>ListenerProc =<strong>PROCEDURE</strong>{DELEGATE} (request: <strong>WebHTTP.RequestHeader</strong>; response: <strong>WebHTTP.ResponseHeader</strong>)<tr><th align='left'>variables</th><td>nofRequests: <strong>SIGNED32</strong><tr><td></td><td>requestsPerMinute: <strong>SIGNED32</strong><tr><td></td><td>nofConnects: <strong>SIGNED32</strong><tr><td></td><td>listener: <strong>ListenerProc</strong><tr><th align='left'>procedures</th><td> GetRequests (): <strong>SIGNED32</strong><tr><td></td><td> FlushW3CLog<tr><td></td><td> GetDefaultResponseHeader (<strong>VAR</strong> r: <strong>WebHTTP.RequestHeader</strong>; <strong>VAR</strong> h: <strong>WebHTTP.ResponseHeader</strong>)<tr><td></td><td> <a href="#WebHTTPServer.SendData">SendData</a> (src: <strong>Streams.Reader</strong>; dst: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#WebHTTPServer.AddHost">AddHost</a> (host: <strong>Host</strong>)<tr><td></td><td> <a href="#WebHTTPServer.FindHosts">FindHosts</a> (<strong>CONST</strong> host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HostList</strong><tr><td></td><td> <a href="#WebHTTPServer.RemoveHost">RemoveHost</a> (<strong>CONST</strong> host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#WebHTTPServer.StartHTTP">StartHTTP</a> (root: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> logFile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#WebHTTPServer.StartHTTPS">StartHTTPS</a> (root: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> logFile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#WebHTTPServer.StopHTTP">StopHTTP</a> (<strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#WebHTTPServer.StopHTTPS">StopHTTPS</a> (<strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#WebHTTPServer.ShowHosts">ShowHosts</a> (out: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1000CC0"><a name="WebHTTPServer.HTTPPlugin"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.HTTPPlugin">HTTPPlugin</a>
+</h2>
+<p> abstract HTTP plugin</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HTTPPlugin* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Name</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> name: <strong>Name</strong>)<tr><td></td><td> <a href="#WebHTTPServer.HTTPPlugin.CanHandle">CanHandle</a> (host: <strong>Host</strong>; <strong>VAR</strong> header: <strong>WebHTTP.RequestHeader</strong>; secure: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WebHTTPServer.HTTPPlugin.LocateResource">LocateResource</a> (host: <strong>Host</strong>; <strong>VAR</strong> header: <strong>WebHTTP.RequestHeader</strong>; <strong>VAR</strong> reply: <strong>WebHTTP.ResponseHeader</strong>; <strong>VAR</strong> f: <strong>Files.File</strong>)<tr><td></td><td> Handle (host: <strong>Host</strong>; <strong>VAR</strong> request: <strong>WebHTTP.RequestHeader</strong>; <strong>VAR</strong> reply: <strong>WebHTTP.ResponseHeader</strong>; <strong>VAR</strong> in: <strong>Streams.Reader</strong>; <strong>VAR</strong> out: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_F1017540"><a name="WebHTTPServer.HTTPPlugin.CanHandle"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.HTTPPlugin">HTTPPlugin</a>.<a href="#WebHTTPServer.HTTPPlugin.CanHandle">CanHandle</a>
+</h3>
+<p> if CanHandle returns TRUE, the Handler procedure will be called</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CanHandle* (host: <strong>Host</strong>; <strong>VAR</strong> header: <strong>WebHTTP.RequestHeader</strong>; secure: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_F101FEC0"><a name="WebHTTPServer.HTTPPlugin.LocateResource"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.HTTPPlugin">HTTPPlugin</a>.<a href="#WebHTTPServer.HTTPPlugin.LocateResource">LocateResource</a>
+</h3>
+<p> default LocateResource method</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LocateResource* (host: <strong>Host</strong>; <strong>VAR</strong> header: <strong>WebHTTP.RequestHeader</strong>; <strong>VAR</strong> reply: <strong>WebHTTP.ResponseHeader</strong>; <strong>VAR</strong> f: <strong>Files.File</strong>)</pre>
+<hr><h2 id="#_F1027DC0"><a name="WebHTTPServer.HostList"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.HostList">HostList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HostList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>host: <strong>Host</strong><tr><td></td><td>next: <strong>HostList</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F102C900"><a name="WebHTTPServer.Host"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.Host">Host</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Host* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Name</strong><tr><td></td><td>prefix: <strong>Files.FileName</strong><tr><td></td><td>default: <strong>Files.FileName</strong><tr><td></td><td>error: <strong>Files.FileName</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddPlugin (pi: <strong>HTTPPlugin</strong>)<tr><td></td><td> RemovePlugin (pi: <strong>HTTPPlugin</strong>)<tr><td></td><td> SetPrefix (<strong>CONST</strong> Prefix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetDefault (<strong>CONST</strong> Default: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetError (<strong>CONST</strong> Error: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Handle (<strong>VAR</strong> request: <strong>WebHTTP.RequestHeader</strong>; <strong>VAR</strong> reply: <strong>WebHTTP.ResponseHeader</strong>; <strong>VAR</strong> in: <strong>Streams.Reader</strong>; <strong>VAR</strong> out: <strong>Streams.Writer</strong>; secure: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1046C40"><a name="WebHTTPServer.SendData"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.SendData">SendData</a>
+</h2>
+<p> Sends all availabe data from src to dst</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SendData* (src: <strong>Streams.Reader</strong>; dst: <strong>Streams.Writer</strong>)</pre>
+<hr><h2 id="#_F104D080"><a name="WebHTTPServer.AddHost"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.AddHost">AddHost</a>
+</h2>
+<p> Add a new virtual host</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddHost* (host: <strong>Host</strong>)</pre>
+<hr><h2 id="#_F1051AC0"><a name="WebHTTPServer.FindHosts"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.FindHosts">FindHosts</a>
+</h2>
+<p> get a list of matching hosts (wildcards permitted, "*" returns all hosts)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindHosts* (<strong>CONST</strong> host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HostList</strong></pre>
+<hr><h2 id="#_F1059280"><a name="WebHTTPServer.RemoveHost"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.RemoveHost">RemoveHost</a>
+</h2>
+<p> remove the virtual host given by name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveHost* (<strong>CONST</strong> host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_F10601C0"><a name="WebHTTPServer.StartHTTP"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.StartHTTP">StartHTTP</a>
+</h2>
+<p> Start the basic Server functionality.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StartHTTP* (root: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> logFile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_F1069780"><a name="WebHTTPServer.StartHTTPS"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.StartHTTPS">StartHTTPS</a>
+</h2>
+<p> Start the basic Server functionality.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StartHTTPS* (root: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> logFile: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_F1072D40"><a name="WebHTTPServer.StopHTTP"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.StopHTTP">StopHTTP</a>
+</h2>
+<p> Stop the server</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StopHTTP* (<strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_F1078C40"><a name="WebHTTPServer.StopHTTPS"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.StopHTTPS">StopHTTPS</a>
+</h2>
+<p> Stop the server</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StopHTTPS* (<strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_F107EC40"><a name="WebHTTPServer.ShowHosts"></a><a href="#WebHTTPServer">WebHTTPServer</a>.<a href="#WebHTTPServer.ShowHosts">ShowHosts</a>
+</h2>
+<p> enumerate all installed hosts</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ShowHosts* (out: <strong>Streams.Writer</strong>)</pre>
+</body></html>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Attributes">Attributes</a></p>
+<hr><h1 id="#_662C4780"><a name="Attributes"></a><a href="#ModuleList">Module</a> Attributes
+</h1>
+<p> AUTHOR "staubesv"; PURPOSE "Associate attributes with objects";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Attributes.Attribute">Attribute</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Attributes.Attributes">Attributes</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_662CA040"><a name="Attributes.Attribute"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attribute">Attribute</a>
+</h2>
+<p> Attributes associated with <a name="object&gt"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Attribute* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>flags: <strong>SET</strong><tr><td></td><td>data: @Any0</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_662D0380"><a name="Attributes.Attributes"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>
+</h2>
+<p> Manage relationship between objects and attributes. Objects are only stored if there are flags or data associated to it.</p>
+
+<dl>
+<dt><strong>Notes</strong></dt>
+<dd>  not thread-safe  no trick implementation only suited for small number of objects  if needed, objects can be pinned be the use of a flag dedicated to this purpose</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Attributes* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> <a href="#Attributes.Attributes.Get">Get</a> (object: @Any0): <strong>Attribute</strong><tr><td></td><td> <a href="#Attributes.Attributes.Set">Set</a> (object: @Any0; flags: <strong>SET</strong>; data: @Any0)<tr><td></td><td> <a href="#Attributes.Attributes.GetFlags">GetFlags</a> (object: @Any0): <strong>SET</strong><tr><td></td><td> <a href="#Attributes.Attributes.SetFlags">SetFlags</a> (object: @Any0; flags: <strong>SET</strong>)<tr><td></td><td> <a href="#Attributes.Attributes.Include">Include</a> (object: @Any0; flag: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Attributes.Attributes.Exclude">Exclude</a> (object: @Any0; flag: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Attributes.Attributes.GetData">GetData</a> (object: @Any0): @Any0<tr><td></td><td> <a href="#Attributes.Attributes.SetData">SetData</a> (object, data: @Any0)<tr><td></td><td> <a href="#Attributes.Attributes.Clear">Clear</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_662F50C0"><a name="Attributes.Attributes.Get"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>.<a href="#Attributes.Attributes.Get">Get</a>
+</h3>
+<p> Get flags and data associated to object <a name="object&gt"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (object: @Any0): <strong>Attribute</strong></pre>
+<hr><h3 id="#_662FB400"><a name="Attributes.Attributes.Set"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>.<a href="#Attributes.Attributes.Set">Set</a>
+</h3>
+<p> Set flags and data associated to object <a name="object&gt"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Set* (object: @Any0; flags: <strong>SET</strong>; data: @Any0)</pre>
+<hr><h3 id="#_66302D80"><a name="Attributes.Attributes.GetFlags"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>.<a href="#Attributes.Attributes.GetFlags">GetFlags</a>
+</h3>
+<p> Get flags associated to object <a name="object&gt"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetFlags* (object: @Any0): <strong>SET</strong></pre>
+<hr><h3 id="#_663088C0"><a name="Attributes.Attributes.SetFlags"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>.<a href="#Attributes.Attributes.SetFlags">SetFlags</a>
+</h3>
+<p> Set flags associated to object <a name="object&gt"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetFlags* (object: @Any0; flags: <strong>SET</strong>)</pre>
+<hr><h3 id="#_6630EBC0"><a name="Attributes.Attributes.Include"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>.<a href="#Attributes.Attributes.Include">Include</a>
+</h3>
+<p> Include a flag associated to object <a name="object&gt"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Include* (object: @Any0; flag: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_66315240"><a name="Attributes.Attributes.Exclude"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>.<a href="#Attributes.Attributes.Exclude">Exclude</a>
+</h3>
+<p> Exclude a flag associated to <a name="object&gt"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Exclude* (object: @Any0; flag: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_6631B640"><a name="Attributes.Attributes.GetData"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>.<a href="#Attributes.Attributes.GetData">GetData</a>
+</h3>
+<p> Get data associated to object <a name="object&gt"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetData* (object: @Any0): @Any0</pre>
+<hr><h3 id="#_663210C0"><a name="Attributes.Attributes.SetData"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>.<a href="#Attributes.Attributes.SetData">SetData</a>
+</h3>
+<p> Set data associated to object <a name="object&gt"></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetData* (object, data: @Any0)</pre>
+<hr><h3 id="#_66326D40"><a name="Attributes.Attributes.Clear"></a><a href="#Attributes">Attributes</a>.<a href="#Attributes.Attributes">Attributes</a>.<a href="#Attributes.Attributes.Clear">Clear</a>
+</h3>
+<p> Clear all flags / data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Clear*</pre>
+</body></html>

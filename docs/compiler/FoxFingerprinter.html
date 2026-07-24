@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxFingerprinter">FoxFingerprinter</a></p>
+<hr><h1 id="#_44E60F00"><a name="FoxFingerprinter"></a><a href="#ModuleList">Module</a> FoxFingerprinter
+</h1>
+<p> AUTHOR "fof"; PURPOSE "Fingerprinting";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#FoxFingerprinter.Fingerprinter">Fingerprinter</a> =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)<tr><th align='left'>procedures</th><td> FPNumber (<strong>VAR</strong> fp: <strong>Basic.Fingerprint</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> FPSet (<strong>VAR</strong> fp: <strong>Basic.Fingerprint</strong>; set: <strong>SET64</strong>)<tr><td></td><td> FPReal (<strong>VAR</strong> fp: <strong>Basic.Fingerprint</strong>; real: <strong>FLOAT64</strong>)<tr><td></td><td> FPName (<strong>VAR</strong> fp: <strong>Basic.Fingerprint</strong>; x: <strong>SyntaxTree.Identifier</strong>)<tr><td></td><td> FPString (<strong>VAR</strong> fp: <strong>Basic.Fingerprint</strong>; <strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> FPVisibility (<strong>VAR</strong> fp: <strong>Basic.Fingerprint</strong>; vis: <strong>SET</strong>)<tr><td></td><td> DumpFingerprint (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> fp: <strong>SyntaxTree.Fingerprint</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_44E79BC0">
+</h1><hr><h2 id="#_44E7A380"><a name="FoxFingerprinter.Fingerprinter"></a><a href="#FoxFingerprinter">FoxFingerprinter</a>.<a href="#FoxFingerprinter.Fingerprinter">Fingerprinter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Fingerprinter* =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fp: <strong>Basic.Fingerprint</strong><tr><th align='left'>procedures</th><td>& InitFingerprinter<tr><td></td><td> <a href="#FoxFingerprinter.Fingerprinter.VisitBasicType">VisitBasicType</a> (x: <strong>SyntaxTree.BasicType</strong>)<tr><td></td><td> VisitRangeType (x: <strong>SyntaxTree.RangeType</strong>)<tr><td></td><td> VisitBooleanType (x: <strong>SyntaxTree.BooleanType</strong>)<tr><td></td><td> VisitByteType (x: <strong>SyntaxTree.ByteType</strong>)<tr><td></td><td> VisitSetType (x: <strong>SyntaxTree.SetType</strong>)<tr><td></td><td> VisitNilType (x: <strong>SyntaxTree.NilType</strong>)<tr><td></td><td> VisitAnyType (x: <strong>SyntaxTree.AnyType</strong>)<tr><td></td><td> VisitAnyRecordType (x: <strong>SyntaxTree.AnyRecordType</strong>)<tr><td></td><td> VisitAddressType (x: <strong>SyntaxTree.AddressType</strong>)<tr><td></td><td> VisitSizeType (x: <strong>SyntaxTree.SizeType</strong>)<tr><td></td><td> VisitObjectType (x: <strong>SyntaxTree.ObjectType</strong>)<tr><td></td><td> VisitCharacterType (x: <strong>SyntaxTree.CharacterType</strong>)<tr><td></td><td> VisitIntegerType (x: <strong>SyntaxTree.IntegerType</strong>)<tr><td></td><td> VisitFloatType (x: <strong>SyntaxTree.FloatType</strong>)<tr><td></td><td> VisitComplexType (x: <strong>SyntaxTree.ComplexType</strong>)<tr><td></td><td> VisitStringType (x: <strong>SyntaxTree.StringType</strong>)<tr><td></td><td> <a href="#FoxFingerprinter.Fingerprinter.VisitEnumerationType">VisitEnumerationType</a> (x: <strong>SyntaxTree.EnumerationType</strong>)<tr><td></td><td> VisitQualifiedType (x: <strong>SyntaxTree.QualifiedType</strong>)<tr><td></td><td> VisitArrayType (x: <strong>SyntaxTree.ArrayType</strong>)<tr><td></td><td> VisitMathArrayType (x: <strong>SyntaxTree.MathArrayType</strong>)<tr><td></td><td> VisitPointerType (x: <strong>SyntaxTree.PointerType</strong>)<tr><td></td><td> VisitPortType (x: <strong>SyntaxTree.PortType</strong>)<tr><td></td><td> VisitCellType (x: <strong>SyntaxTree.CellType</strong>)<tr><td></td><td> VisitRecordType (x: <strong>SyntaxTree.RecordType</strong>)<tr><td></td><td> VisitProcedureType (x: <strong>SyntaxTree.ProcedureType</strong>)<tr><td></td><td> <a href="#FoxFingerprinter.Fingerprinter.VisitBooleanValue">VisitBooleanValue</a> (x: <strong>SyntaxTree.BooleanValue</strong>)<tr><td></td><td> VisitIntegerValue (x: <strong>SyntaxTree.IntegerValue</strong>)<tr><td></td><td> VisitEnumerationValue (x: <strong>SyntaxTree.EnumerationValue</strong>)<tr><td></td><td> VisitProcedureValue (x: <strong>SyntaxTree.ProcedureValue</strong>)<tr><td></td><td> VisitCharacterValue (x: <strong>SyntaxTree.CharacterValue</strong>)<tr><td></td><td> VisitSetValue (x: <strong>SyntaxTree.SetValue</strong>)<tr><td></td><td> VisitMathArrayExpression (x: <strong>SyntaxTree.MathArrayExpression</strong>)<tr><td></td><td> VisitMathArrayValue (x: <strong>SyntaxTree.MathArrayValue</strong>)<tr><td></td><td> VisitRealValue (x: <strong>SyntaxTree.RealValue</strong>)<tr><td></td><td> VisitComplexValue (x: <strong>SyntaxTree.ComplexValue</strong>)<tr><td></td><td> VisitNilValue (x: <strong>SyntaxTree.NilValue</strong>)<tr><td></td><td> VisitStringValue (x: <strong>SyntaxTree.StringValue</strong>)<tr><td></td><td> <a href="#FoxFingerprinter.Fingerprinter.VisitTypeDeclaration">VisitTypeDeclaration</a> (x: <strong>SyntaxTree.TypeDeclaration</strong>)<tr><td></td><td> VisitConstant (x: <strong>SyntaxTree.Constant</strong>)<tr><td></td><td> VisitVariable (x: <strong>SyntaxTree.Variable</strong>)<tr><td></td><td> VisitProperty (x: <strong>SyntaxTree.Property</strong>)<tr><td></td><td> VisitParameter (x: <strong>SyntaxTree.Parameter</strong>)<tr><td></td><td> VisitProcedure (x: <strong>SyntaxTree.Procedure</strong>)<tr><td></td><td> VisitOperator (x: <strong>SyntaxTree.Operator</strong>)<tr><td></td><td> VisitModule (x: <strong>SyntaxTree.Module</strong>)<tr><td></td><td> VisitSymbol (x: <strong>SyntaxTree.Symbol</strong>)<tr><td></td><td> TypeFP (this: <strong>SyntaxTree.Type</strong>): <strong>SyntaxTree.Fingerprint</strong><tr><td></td><td> SymbolFP (this: <strong>SyntaxTree.Symbol</strong>): <strong>SyntaxTree.Fingerprint</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_44ED3480"><a name="FoxFingerprinter.Fingerprinter.VisitBasicType"></a><a href="#FoxFingerprinter">FoxFingerprinter</a>.<a href="#FoxFingerprinter.Fingerprinter">Fingerprinter</a>.<a href="#FoxFingerprinter.Fingerprinter.VisitBasicType">VisitBasicType</a>
+</h3>
+<p> types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitBasicType* (x: <strong>SyntaxTree.BasicType</strong>)</pre>
+<hr><h3 id="#_44ED7640"><a name="FoxFingerprinter.Fingerprinter.VisitEnumerationType"></a><a href="#FoxFingerprinter">FoxFingerprinter</a>.<a href="#FoxFingerprinter.Fingerprinter">Fingerprinter</a>.<a href="#FoxFingerprinter.Fingerprinter.VisitEnumerationType">VisitEnumerationType</a>
+</h3>
+<p> fp enumeration type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitEnumerationType* (x: <strong>SyntaxTree.EnumerationType</strong>)</pre>
+<hr><h3 id="#_44EDBF00"><a name="FoxFingerprinter.Fingerprinter.VisitBooleanValue"></a><a href="#FoxFingerprinter">FoxFingerprinter</a>.<a href="#FoxFingerprinter.Fingerprinter">Fingerprinter</a>.<a href="#FoxFingerprinter.Fingerprinter.VisitBooleanValue">VisitBooleanValue</a>
+</h3>
+<p> values - used in constant symbols - effects in fingerprint modification of (object) global variable fp</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitBooleanValue* (x: <strong>SyntaxTree.BooleanValue</strong>)</pre>
+<hr><h3 id="#_44EE3B40"><a name="FoxFingerprinter.Fingerprinter.VisitTypeDeclaration"></a><a href="#FoxFingerprinter">FoxFingerprinter</a>.<a href="#FoxFingerprinter.Fingerprinter">Fingerprinter</a>.<a href="#FoxFingerprinter.Fingerprinter.VisitTypeDeclaration">VisitTypeDeclaration</a>
+</h3>
+<p> symbols</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitTypeDeclaration* (x: <strong>SyntaxTree.TypeDeclaration</strong>)</pre>
+</body></html>

@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxARMInstructionSet">FoxARMInstructionSet</a></p>
+<hr><h1 id="#_CC85AC40"><a name="FoxARMInstructionSet"></a><a href="#ModuleList">Module</a> FoxARMInstructionSet
+</h1>
+<p> AUTHOR ""; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>None= -1<tr><td></td><td>conditionEQ= 0<tr><td></td><td>conditionNE= 1<tr><td></td><td>conditionCS= 2<tr><td></td><td>conditionHS= 2<tr><td></td><td>conditionCC= 3<tr><td></td><td>conditionLO= 3<tr><td></td><td>conditionMI= 4<tr><td></td><td>conditionPL= 5<tr><td></td><td>conditionVS= 6<tr><td></td><td>conditionVC= 7<tr><td></td><td>conditionHI= 8<tr><td></td><td>conditionLS= 9<tr><td></td><td>conditionGE= 10<tr><td></td><td>conditionLT= 11<tr><td></td><td>conditionGT= 12<tr><td></td><td>conditionLE= 13<tr><td></td><td>conditionAL= 14<tr><td></td><td>unconditional= conditionAL<tr><td></td><td>conditionNV= 15<tr><td></td><td>NumberConditionEntries= 18<tr><td></td><td>Increment= 0<tr><td></td><td>Decrement= 1<tr><td></td><td>PostIndexed= 2<tr><td></td><td>PreIndexed= 3<tr><td></td><td>opADC= 0<tr><td></td><td>opADD= 1<tr><td></td><td>opAND= 2<tr><td></td><td>opB= 3<tr><td></td><td>opBIC= 4<tr><td></td><td>opBKPT= 5<tr><td></td><td>opBL= 6<tr><td></td><td>opBLX= 7<tr><td></td><td>opBX= 8<tr><td></td><td>opCDP= 9<tr><td></td><td>opCDP2= 10<tr><td></td><td>opCLZ= 11<tr><td></td><td>opCMN= 12<tr><td></td><td>opCMP= 13<tr><td></td><td>opEOR= 14<tr><td></td><td>opFABSD= 15<tr><td></td><td>opFABSS= 16<tr><td></td><td>opFADDD= 17<tr><td></td><td>opFADDS= 18<tr><td></td><td>opFCMPD= 19<tr><td></td><td>opFCMPED= 20<tr><td></td><td>opFCMPES= 21<tr><td></td><td>opFCMPEZD= 22<tr><td></td><td>opFCMPEZS= 23<tr><td></td><td>opFCMPS= 24<tr><td></td><td>opFCMPZD= 25<tr><td></td><td>opFCMPZS= 26<tr><td></td><td>opFCPYD= 27<tr><td></td><td>opFCPYS= 28<tr><td></td><td>opFCVTDS= 29<tr><td></td><td>opFCVTSD= 30<tr><td></td><td>opFDIVD= 31<tr><td></td><td>opFDIVS= 32<tr><td></td><td>opFLDD= 33<tr><td></td><td>opFLDMIAD= 34<tr><td></td><td>opFLDMIAS= 35<tr><td></td><td>opFLDMIAX= 36<tr><td></td><td>opFLDMDBD= 37<tr><td></td><td>opFLDMDBS= 38<tr><td></td><td>opFLDMDBX= 39<tr><td></td><td>opFLDS= 40<tr><td></td><td>opFMACD= 41<tr><td></td><td>opFMACS= 42<tr><td></td><td>opFMDHR= 43<tr><td></td><td>opFMDLR= 44<tr><td></td><td>opFMRDH= 45<tr><td></td><td>opFMRDL= 46<tr><td></td><td>opFMRS= 47<tr><td></td><td>opFMRX= 48<tr><td></td><td>opFMSCD= 49<tr><td></td><td>opFMSCS= 50<tr><td></td><td>opFMSR= 51<tr><td></td><td>opFMSTAT= 52<tr><td></td><td>opFMULD= 53<tr><td></td><td>opFMULS= 54<tr><td></td><td>opFMXR= 55<tr><td></td><td>opFNEGD= 56<tr><td></td><td>opFNEGS= 57<tr><td></td><td>opFNMACD= 58<tr><td></td><td>opFNMACS= 59<tr><td></td><td>opFNMSCD= 60<tr><td></td><td>opFNMSCS= 61<tr><td></td><td>opFNMULD= 62<tr><td></td><td>opFNMULS= 63<tr><td></td><td>opFSITOD= 64<tr><td></td><td>opFSITOS= 65<tr><td></td><td>opFSQRTD= 66<tr><td></td><td>opFSQRTS= 67<tr><td></td><td>opFSTD= 68<tr><td></td><td>opFSTMIAD= 69<tr><td></td><td>opFSTMIAS= 70<tr><td></td><td>opFSTMIAX= 71<tr><td></td><td>opFSTMDBD= 72<tr><td></td><td>opFSTMDBS= 73<tr><td></td><td>opFSTMDBX= 74<tr><td></td><td>opFSTS= 75<tr><td></td><td>opFSUBD= 76<tr><td></td><td>opFSUBS= 77<tr><td></td><td>opFTOSID= 78<tr><td></td><td>opFTOSIZD= 79<tr><td></td><td>opFTOSIS= 80<tr><td></td><td>opFTOSIZS= 81<tr><td></td><td>opFTOUID= 82<tr><td></td><td>opFTOUIZD= 83<tr><td></td><td>opFTOUIS= 84<tr><td></td><td>opFTOUIZS= 85<tr><td></td><td>opFUITOD= 86<tr><td></td><td>opFUITOS= 87<tr><td></td><td>opLDC= 88<tr><td></td><td>opLDC2= 89<tr><td></td><td>opLDM= 90<tr><td></td><td>opLDR= 91<tr><td></td><td>opMCR= 92<tr><td></td><td>opMCR2= 93<tr><td></td><td>opMCRR= 94<tr><td></td><td>opMLA= 95<tr><td></td><td>opMOV= 96<tr><td></td><td>opMRC= 97<tr><td></td><td>opMRC2= 98<tr><td></td><td>opMRRC= 99<tr><td></td><td>opMRS= 100<tr><td></td><td>opMSR= 101<tr><td></td><td>opMUL= 102<tr><td></td><td>opMVN= 103<tr><td></td><td>opORR= 104<tr><td></td><td>opPLD= 105<tr><td></td><td>opQADD= 106<tr><td></td><td>opQDADD= 107<tr><td></td><td>opQDSUB= 108<tr><td></td><td>opQSUB= 109<tr><td></td><td>opRSB= 110<tr><td></td><td>opRSC= 111<tr><td></td><td>opSBC= 112<tr><td></td><td>opSMLABB= 113<tr><td></td><td>opSMLABT= 114<tr><td></td><td>opSMLAL= 115<tr><td></td><td>opSMLATB= 116<tr><td></td><td>opSMLATT= 117<tr><td></td><td>opSMLALBB= 118<tr><td></td><td>opSMLALBT= 119<tr><td></td><td>opSMLALTB= 120<tr><td></td><td>opSMLALTT= 121<tr><td></td><td>opSMLAWB= 122<tr><td></td><td>opSMLAWT= 123<tr><td></td><td>opSMULBB= 124<tr><td></td><td>opSMULBT= 125<tr><td></td><td>opSMULTB= 126<tr><td></td><td>opSMULTT= 127<tr><td></td><td>opSMULWB= 128<tr><td></td><td>opSMULWT= 129<tr><td></td><td>opSMULL= 130<tr><td></td><td>opSTC= 131<tr><td></td><td>opSTC2= 132<tr><td></td><td>opSTM= 133<tr><td></td><td>opSTR= 134<tr><td></td><td>opSUB= 135<tr><td></td><td>opSWI= 136<tr><td></td><td>opSWP= 137<tr><td></td><td>opTEQ= 138<tr><td></td><td>opTST= 139<tr><td></td><td>opUMLAL= 140<tr><td></td><td>opUMULL= 141<tr><td></td><td>opISB= 142<tr><td></td><td>opVADD= 143<tr><td></td><td>opVADDL= 144<tr><td></td><td>opVADDW= 145<tr><td></td><td>opVMUL= 146<tr><td></td><td>opVMULL= 147<tr><td></td><td>opVMSR= 148<tr><td></td><td>opVMRS= 149<tr><td></td><td>opVLDR= 150<tr><td></td><td>opVSTR= 151<tr><td></td><td>opVDIV= 152<tr><td></td><td>opVMLA= 153<tr><td></td><td>opVMLS= 154<tr><td></td><td>opVMIN= 155<tr><td></td><td>opVMAX= 156<tr><td></td><td>opVSUB= 157<tr><td></td><td>opVABS= 158<tr><td></td><td>opVABD= 159<tr><td></td><td>opLSL= 160<tr><td></td><td>opLSR= 161<tr><td></td><td>opVLD1= 162<tr><td></td><td>opVST1= 163<tr><td></td><td>opVPADD= 164<tr><td></td><td>opVMOV= 165<tr><td></td><td>opSEV= 166<tr><td></td><td>opDSB= 167<tr><td></td><td>opLDREX= 168<tr><td></td><td>opSTREX= 169<tr><td></td><td>opADR= 170<tr><td></td><td>opLDREXB= 171<tr><td></td><td>opSTREXB= 172<tr><td></td><td>opDMB= 173<tr><td></td><td>opCLREX= 174<tr><td></td><td>opREV= 175<tr><td></td><td>opREV16= 176<tr><td></td><td>opUXTH= 177<tr><td></td><td>opWFE= 178<tr><td></td><td>opWFI= 179<tr><td></td><td>opMOVW= 180<tr><td></td><td>opUDF= 181<tr><td></td><td>NumberMnemonics= 182<tr><td></td><td>MaxOperands= 6<tr><td></td><td>flagB= 0<tr><td></td><td>flagBT= 1<tr><td></td><td>flagD= 2<tr><td></td><td>flagDA= 3<tr><td></td><td>flagDB= 4<tr><td></td><td>flagH= 5<tr><td></td><td>flagIA= 6<tr><td></td><td>flagIB= 7<tr><td></td><td>flagL= 8<tr><td></td><td>flagS= 9<tr><td></td><td>flagSB= 10<tr><td></td><td>flagSH= 11<tr><td></td><td>flagT= 12<tr><td></td><td>NumberFlags= 23<tr><td></td><td>flagCondition= 23<tr><td></td><td>flagUserMode= 24<tr><td></td><td>flagBaseRegisterUpdate= 25<tr><td></td><td>modeImmediate= 0<tr><td></td><td>modeRegister= 1<tr><td></td><td>modeMemory= 2<tr><td></td><td>modeOpcode= 3<tr><td></td><td>modeCoprocessor= 4<tr><td></td><td>modeRegisterList= 5<tr><td></td><td>modeRegisterWithFields= 6<tr><td></td><td>modeOption= 7<tr><td></td><td>R0= 0<tr><td></td><td>R1= (R0+1)<tr><td></td><td>R2= (R0+2)<tr><td></td><td>R3= (R0+3)<tr><td></td><td>R4= (R0+4)<tr><td></td><td>R5= (R0+5)<tr><td></td><td>R6= (R0+6)<tr><td></td><td>R7= (R0+7)<tr><td></td><td>R8= (R0+8)<tr><td></td><td>R9= (R0+9)<tr><td></td><td>R10= (R0+10)<tr><td></td><td>R11= (R0+11)<tr><td></td><td>R12= (R0+12)<tr><td></td><td>R13= (R0+13)<tr><td></td><td>R14= (R0+14)<tr><td></td><td>R15= (R0+15)<tr><td></td><td>CR0= 16<tr><td></td><td>CR1= (CR0+1)<tr><td></td><td>CR2= (CR0+2)<tr><td></td><td>CR3= (CR0+3)<tr><td></td><td>CR4= (CR0+4)<tr><td></td><td>CR5= (CR0+5)<tr><td></td><td>CR6= (CR0+6)<tr><td></td><td>CR7= (CR0+7)<tr><td></td><td>CR8= (CR0+8)<tr><td></td><td>CR9= (CR0+9)<tr><td></td><td>CR10= (CR0+10)<tr><td></td><td>CR11= (CR0+11)<tr><td></td><td>CR12= (CR0+12)<tr><td></td><td>CR13= (CR0+13)<tr><td></td><td>CR14= (CR0+14)<tr><td></td><td>CR15= (CR0+15)<tr><td></td><td>DR0= 32<tr><td></td><td>DR1= (DR0+1)<tr><td></td><td>DR2= (DR0+2)<tr><td></td><td>DR3= (DR0+3)<tr><td></td><td>DR4= (DR0+4)<tr><td></td><td>DR5= (DR0+5)<tr><td></td><td>DR6= (DR0+6)<tr><td></td><td>DR7= (DR0+7)<tr><td></td><td>DR8= (DR0+8)<tr><td></td><td>DR9= (DR0+9)<tr><td></td><td>DR10= (DR0+10)<tr><td></td><td>DR11= (DR0+11)<tr><td></td><td>DR12= (DR0+12)<tr><td></td><td>DR13= (DR0+13)<tr><td></td><td>DR14= (DR0+14)<tr><td></td><td>DR15= (DR0+15)<tr><td></td><td>DR16= (DR0+16)<tr><td></td><td>DR17= (DR0+17)<tr><td></td><td>DR18= (DR0+18)<tr><td></td><td>DR19= (DR0+19)<tr><td></td><td>DR20= (DR0+20)<tr><td></td><td>DR21= (DR0+21)<tr><td></td><td>DR22= (DR0+22)<tr><td></td><td>DR23= (DR0+23)<tr><td></td><td>DR24= (DR0+24)<tr><td></td><td>DR25= (DR0+25)<tr><td></td><td>DR26= (DR0+26)<tr><td></td><td>DR27= (DR0+27)<tr><td></td><td>DR28= (DR0+28)<tr><td></td><td>DR29= (DR0+29)<tr><td></td><td>DR30= (DR0+30)<tr><td></td><td>DR31= (DR0+31)<tr><td></td><td>SR0= 64<tr><td></td><td>SR1= (SR0+1)<tr><td></td><td>SR2= (SR0+2)<tr><td></td><td>SR3= (SR0+3)<tr><td></td><td>SR4= (SR0+4)<tr><td></td><td>SR5= (SR0+5)<tr><td></td><td>SR6= (SR0+6)<tr><td></td><td>SR7= (SR0+7)<tr><td></td><td>SR8= (SR0+8)<tr><td></td><td>SR9= (SR0+9)<tr><td></td><td>SR10= (SR0+10)<tr><td></td><td>SR11= (SR0+11)<tr><td></td><td>SR12= (SR0+12)<tr><td></td><td>SR13= (SR0+13)<tr><td></td><td>SR14= (SR0+14)<tr><td></td><td>SR15= (SR0+15)<tr><td></td><td>CPSR= 80<tr><td></td><td>SPSR= 81<tr><td></td><td>SR16= 82<tr><td></td><td>SR17= (SR0+17)<tr><td></td><td>SR18= (SR0+18)<tr><td></td><td>SR19= (SR0+19)<tr><td></td><td>SR20= (SR0+20)<tr><td></td><td>SR21= (SR0+21)<tr><td></td><td>SR22= (SR0+22)<tr><td></td><td>SR23= (SR0+23)<tr><td></td><td>SR24= (SR0+24)<tr><td></td><td>SR25= (SR0+25)<tr><td></td><td>SR26= (SR0+26)<tr><td></td><td>SR27= (SR0+27)<tr><td></td><td>SR28= (SR0+28)<tr><td></td><td>SR29= (SR0+29)<tr><td></td><td>SR30= (SR0+30)<tr><td></td><td>SR31= (SR0+31)<tr><td></td><td>QR0= 98<tr><td></td><td>QR1= (QR0+1)<tr><td></td><td>QR2= (QR0+2)<tr><td></td><td>QR3= (QR0+3)<tr><td></td><td>QR4= (QR0+4)<tr><td></td><td>QR5= (QR0+5)<tr><td></td><td>QR6= (QR0+6)<tr><td></td><td>QR7= (QR0+7)<tr><td></td><td>QR8= (QR0+8)<tr><td></td><td>QR9= (QR0+9)<tr><td></td><td>QR10= (QR0+10)<tr><td></td><td>QR11= (QR0+11)<tr><td></td><td>QR12= (QR0+12)<tr><td></td><td>QR13= (QR0+13)<tr><td></td><td>QR14= (QR0+14)<tr><td></td><td>QR15= (QR0+15)<tr><td></td><td>FPSID= 114<tr><td></td><td>FPSCR= 115<tr><td></td><td>FPEXC= 116<tr><td></td><td>PC= R15<tr><td></td><td>LR= R14<tr><td></td><td>SP= R13<tr><td></td><td>FP= R11<tr><td></td><td>AP= R12<tr><td></td><td>RESHI= R1<tr><td></td><td>RES= R0<tr><td></td><td>RESFS= SR0<tr><td></td><td>RESFD= DR0<tr><td></td><td>NumberRegisters= 117<tr><td></td><td>NumberRegisterEntries= 123<tr><td></td><td>shiftLSL= 0<tr><td></td><td>shiftLSR= 1<tr><td></td><td>shiftASR= 2<tr><td></td><td>shiftROR= 3<tr><td></td><td>shiftRRX= 4<tr><td></td><td>NumberShifts= 5<tr><td></td><td>CP0= 0<tr><td></td><td>CP1= 1<tr><td></td><td>CP2= 2<tr><td></td><td>CP3= 3<tr><td></td><td>CP4= 4<tr><td></td><td>CP5= 5<tr><td></td><td>CP6= 6<tr><td></td><td>CP7= 7<tr><td></td><td>CP8= 8<tr><td></td><td>CP9= 9<tr><td></td><td>CP10= 10<tr><td></td><td>CP11= 11<tr><td></td><td>CP12= 12<tr><td></td><td>CP13= 13<tr><td></td><td>CP14= 14<tr><td></td><td>CP15= 15<tr><td></td><td>NumberCoprocessors= 16<tr><td></td><td>fieldC= 0<tr><td></td><td>fieldX= 1<tr><td></td><td>fieldS= 2<tr><td></td><td>fieldF= 3<tr><td></td><td>Bits12= 4096<tr><td></td><td>Bits10= 1024<tr><td></td><td>Bits7= 128<tr><td></td><td>Bits5= 32<tr><th align='left'>type declarations</th><td><a href="#FoxARMInstructionSet.Instruction">Instruction</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxARMInstructionSet.Operand">Operand</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#FoxARMInstructionSet.RegisterNumberFromName">RegisterNumberFromName</a> (registerName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxARMInstructionSet.CoprocessorNumberFromName">CoprocessorNumberFromName</a> (coprocessorName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxARMInstructionSet.ShiftModeNumberFromName">ShiftModeNumberFromName</a> (shiftModeName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> FindMnemonic (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> mnemonic, condition: <strong>SIGNED32</strong>; <strong>VAR</strong> flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> InitInstruction (<strong>VAR</strong> instruction: <strong>Instruction</strong>)<tr><td></td><td> InitFixup (<strong>VAR</strong> operand: <strong>Operand</strong>; bits: <strong>SIGNED8</strong>; fixup: <strong>BinaryCode.Fixup</strong>)<tr><td></td><td> AddFixup (<strong>VAR</strong> operand: <strong>Operand</strong>; fixup: <strong>BinaryCode.Fixup</strong>)<tr><td></td><td> InitOperand (<strong>VAR</strong> operand: <strong>Operand</strong>)<tr><td></td><td> InitRegister (<strong>VAR</strong> operand: <strong>Operand</strong>; registerNumber: <strong>SIGNED32</strong>; shiftMode: <strong>SIGNED32</strong>; shiftAmountRegisterNumber: <strong>SIGNED32</strong>; shiftImmediate: <strong>SIGNED32</strong>)<tr><td></td><td> InitImmediate (<strong>VAR</strong> operand: <strong>Operand</strong>; immediate: <strong>Basic.Integer</strong>)<tr><td></td><td> InitImmediateOffsetMemory (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>SIGNED32</strong>; offset: <strong>SIGNED32</strong>; indexing: <strong>SET</strong>)<tr><td></td><td> InitRegisterOffsetMemory (<strong>VAR</strong> operand: <strong>Operand</strong>; register, offsetRegister: <strong>SIGNED32</strong>; shiftMode: <strong>SIGNED32</strong>; shiftImmediate: <strong>SIGNED32</strong>; indexing: <strong>SET</strong>)<tr><td></td><td> NewRegister (registerNumber: <strong>SIGNED32</strong>; shiftMode: <strong>SIGNED32</strong>; shiftAmountRegisterNumber: <strong>SIGNED32</strong>; shiftImmediate: <strong>SIGNED32</strong>): <strong>Operand</strong><tr><td></td><td> NewImmediate (immediate: <strong>Basic.Integer</strong>): <strong>Operand</strong><tr><td></td><td> NewImmediateOffsetMemory (register: <strong>SIGNED32</strong>; offset: <strong>SIGNED32</strong>; indexing: <strong>SET</strong>): <strong>Operand</strong><tr><td></td><td> NewRegisterOffsetMemory (register, offsetRegister: <strong>SIGNED32</strong>; shiftMode: <strong>SIGNED32</strong>; shiftImmediate: <strong>SIGNED32</strong>; indexing: <strong>SET</strong>): <strong>Operand</strong><tr><td></td><td> NewRegisterList (registerBase: <strong>SIGNED32</strong>; registerList: <strong>SET</strong>): <strong>Operand</strong><tr><td></td><td> InitOption (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>SIGNED32</strong>; option: <strong>SIGNED32</strong>)<tr><td></td><td> InitCoprocessor (<strong>VAR</strong> operand: <strong>Operand</strong>; coprocessor: <strong>SIGNED32</strong>)<tr><td></td><td> InitOpcode (<strong>VAR</strong> operand: <strong>Operand</strong>; opcode: <strong>SIGNED32</strong>)<tr><td></td><td> InitRegisterList (<strong>VAR</strong> operand: <strong>Operand</strong>; registerBase: <strong>SIGNED32</strong>; registerList: <strong>SET</strong>)<tr><td></td><td> InitRegisterWithFields (<strong>VAR</strong> operand: <strong>Operand</strong>; registerNumber: <strong>SIGNED32</strong>; fields: <strong>SET</strong>)<tr><td></td><td> NewRegisterWithFields (registerNumber: <strong>SIGNED32</strong>; fields: <strong>SET</strong>): <strong>Operand</strong><tr><td></td><td> MakeInstruction (<strong>VAR</strong> instruction: <strong>Instruction</strong>; mnemonic, condition: <strong>SIGNED32</strong>; flags: <strong>SET</strong>; <strong>CONST</strong> operands: <strong>ARRAY</strong> <strong>OF</strong> <strong>Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> EncodeImmediate (imm: <strong>SIGNED32</strong>; <strong>VAR</strong> val, rot: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> EmitInstruction (<strong>CONST</strong> instruction: <strong>Instruction</strong>; code: <strong>BinaryCode.Section</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Emit (mnemonic, condition: <strong>SIGNED32</strong>; flags: <strong>SET</strong>; <strong>CONST</strong> operands: <strong>ARRAY</strong> <strong>OF</strong> <strong>Operand</strong>; code: <strong>BinaryCode.Section</strong>)<tr><td></td><td> Init<tr><td></td><td> <a href="#FoxARMInstructionSet.DumpConditionName">DumpConditionName</a> (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> conditionNumber: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#FoxARMInstructionSet.DumpRegisterName">DumpRegisterName</a> (w: <strong>Streams.Writer</strong>; registerNumber: <strong>SIGNED32</strong>)<tr><td></td><td> DumpOperand (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> operand: <strong>Operand</strong>)<tr><td></td><td> DumpInstruction (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> instruction: <strong>Instruction</strong>)<tr><td></td><td> Test (context: <strong>Commands.Context</strong>)<tr><td></td><td> Test2 (context: <strong>Commands.Context</strong>)<tr><td></td><td> Disassemble (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_CE529F80"><a name="FoxARMInstructionSet.Instruction"></a><a href="#FoxARMInstructionSet">FoxARMInstructionSet</a>.<a href="#FoxARMInstructionSet.Instruction">Instruction</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Instruction* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_CE53DB00"><a name="FoxARMInstructionSet.Operand"></a><a href="#FoxARMInstructionSet">FoxARMInstructionSet</a>.<a href="#FoxARMInstructionSet.Operand">Operand</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Operand* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>mode: <strong>SIGNED16</strong><tr><td></td><td>register: <strong>SIGNED32</strong><tr><td></td><td>immediate: <strong>SIGNED32</strong><tr><td></td><td>fixup: <strong>BinaryCode.Fixup</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_CE56DC00"><a name="FoxARMInstructionSet.RegisterNumberFromName"></a><a href="#FoxARMInstructionSet">FoxARMInstructionSet</a>.<a href="#FoxARMInstructionSet.RegisterNumberFromName">RegisterNumberFromName</a>
+</h2>
+<p> get the number of a register by its name  'None' is returned if no such register exists</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RegisterNumberFromName* (registerName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_CE596440"><a name="FoxARMInstructionSet.CoprocessorNumberFromName"></a><a href="#FoxARMInstructionSet">FoxARMInstructionSet</a>.<a href="#FoxARMInstructionSet.CoprocessorNumberFromName">CoprocessorNumberFromName</a>
+</h2>
+<p> get the number of a coprocessor by its name  'None' is returned if no such mode exists</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CoprocessorNumberFromName* (coprocessorName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_CE64E6C0"><a name="FoxARMInstructionSet.ShiftModeNumberFromName"></a><a href="#FoxARMInstructionSet">FoxARMInstructionSet</a>.<a href="#FoxARMInstructionSet.ShiftModeNumberFromName">ShiftModeNumberFromName</a>
+</h2>
+<p> get the number of a shift mode by its name  'None' is returned if no such mode exists</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ShiftModeNumberFromName* (shiftModeName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_CE6E3900"><a name="FoxARMInstructionSet.DumpConditionName"></a><a href="#FoxARMInstructionSet">FoxARMInstructionSet</a>.<a href="#FoxARMInstructionSet.DumpConditionName">DumpConditionName</a>
+</h2>
+<p> dump the name of a condition (the last name entered is preferred)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DumpConditionName* (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> conditionNumber: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_CE6F7700"><a name="FoxARMInstructionSet.DumpRegisterName"></a><a href="#FoxARMInstructionSet">FoxARMInstructionSet</a>.<a href="#FoxARMInstructionSet.DumpRegisterName">DumpRegisterName</a>
+</h2>
+<p> dump the name of a register (the last name entered is preferred)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DumpRegisterName* (w: <strong>Streams.Writer</strong>; registerNumber: <strong>SIGNED32</strong>)</pre>
+</body></html>

@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Inputs">Inputs</a></p>
+<hr><h1 id="#_BC549B40"><a name="Inputs"></a><a href="#ModuleList">Module</a> Inputs
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "Abstract input device";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Inputs.Release">Release</a>= 0<tr><td></td><td><a href="#Inputs.LeftShift">LeftShift</a>= 1<tr><td></td><td>RightShift= 2<tr><td></td><td>LeftCtrl= 3<tr><td></td><td>RightCtrl= 4<tr><td></td><td>LeftAlt= 5<tr><td></td><td>RightAlt= 6<tr><td></td><td>LeftMeta= 7<tr><td></td><td>RightMeta= 8<tr><td></td><td><a href="#Inputs.Shift">Shift</a>= {LeftShift,RightShift}<tr><td></td><td>Ctrl= {LeftCtrl,RightCtrl}<tr><td></td><td>Alt= {LeftAlt,RightAlt}<tr><td></td><td>Meta= {LeftMeta,RightMeta}<tr><td></td><td><a href="#Inputs.SHIFT">SHIFT</a>= 0<tr><td></td><td>CTRL= 1<tr><td></td><td>ALT= 2<tr><td></td><td><a href="#Inputs.KsNil">KsNil</a>= 16777215<tr><td></td><td><a href="#Inputs.KsBackSpace">KsBackSpace</a>= 65288<tr><td></td><td>KsTab= 65289<tr><td></td><td><a href="#Inputs.KsReturn">KsReturn</a>= 65293<tr><td></td><td><a href="#Inputs.KsPause">KsPause</a>= 65299<tr><td></td><td>KsScrollLock= 65300<tr><td></td><td>KsSysReq= 65301<tr><td></td><td>KsEscape= 65307<tr><td></td><td><a href="#Inputs.KsDelete">KsDelete</a>= 65535<tr><td></td><td><a href="#Inputs.KsHome">KsHome</a>= 65360<tr><td></td><td><a href="#Inputs.KsLeft">KsLeft</a>= 65361<tr><td></td><td><a href="#Inputs.KsUp">KsUp</a>= 65362<tr><td></td><td><a href="#Inputs.KsRight">KsRight</a>= 65363<tr><td></td><td><a href="#Inputs.KsDown">KsDown</a>= 65364<tr><td></td><td><a href="#Inputs.KsPageUp">KsPageUp</a>= 65365<tr><td></td><td><a href="#Inputs.KsPageDown">KsPageDown</a>= 65366<tr><td></td><td><a href="#Inputs.KsEnd">KsEnd</a>= 65367<tr><td></td><td><a href="#Inputs.KsPrint">KsPrint</a>= 65377<tr><td></td><td><a href="#Inputs.KsInsert">KsInsert</a>= 65379<tr><td></td><td><a href="#Inputs.KsMenu">KsMenu</a>= 65383<tr><td></td><td>KsBreak= 65387<tr><td></td><td>KsNumLock= 65407<tr><td></td><td><a href="#Inputs.KsKPEnter">KsKPEnter</a>= 65421<tr><td></td><td>KsKPMultiply= 65450<tr><td></td><td>KsKPAdd= 65451<tr><td></td><td>KsKPSubtract= 65453<tr><td></td><td>KsKPDecimal= 65454<tr><td></td><td>KsKPDivide= 65455<tr><td></td><td><a href="#Inputs.KsF1">KsF1</a>= 65470<tr><td></td><td>KsF2= 65471<tr><td></td><td>KsF3= 65472<tr><td></td><td>KsF4= 65473<tr><td></td><td>KsF5= 65474<tr><td></td><td>KsF6= 65475<tr><td></td><td>KsF7= 65476<tr><td></td><td>KsF8= 65477<tr><td></td><td>KsF9= 65478<tr><td></td><td>KsF10= 65479<tr><td></td><td>KsF11= 65480<tr><td></td><td>KsF12= 65481<tr><td></td><td><a href="#Inputs.KsShiftL">KsShiftL</a>= 65505<tr><td></td><td><a href="#Inputs.KsShiftR">KsShiftR</a>= 65506<tr><td></td><td><a href="#Inputs.KsControlL">KsControlL</a>= 65507<tr><td></td><td><a href="#Inputs.KsControlR">KsControlR</a>= 65508<tr><td></td><td><a href="#Inputs.KsCapsLock">KsCapsLock</a>= 65509<tr><td></td><td><a href="#Inputs.KsMetaL">KsMetaL</a>= 65511<tr><td></td><td><a href="#Inputs.KsMetaR">KsMetaR</a>= 65512<tr><td></td><td><a href="#Inputs.KsAltL">KsAltL</a>= 65513<tr><td></td><td><a href="#Inputs.KsAltR">KsAltR</a>= 65514<tr><td></td><td><a href="#Inputs.KsScanPreviousTrack">KsScanPreviousTrack</a>= 16711680<tr><td></td><td>KsScanNextTrack= 16711681<tr><td></td><td>KsALConsumerControl= 16711682<tr><td></td><td>KsMute= 16711683<tr><td></td><td>KsVolumeDecrement= 16711684<tr><td></td><td>KsVolumeIncrement= 16711685<tr><td></td><td>KsPlayPause= 16711686<tr><td></td><td>KsStopOSC= 16711687<tr><td></td><td>KsALEmailReader= 16711688<tr><td></td><td>KsALCalculator= 16711689<tr><td></td><td>KsACSearch= 16711690<tr><td></td><td>KsACHome= 16711691<tr><td></td><td>KsACBack= 16711692<tr><td></td><td>KsACForward= 16711693<tr><td></td><td>KsACBookmarks= 16711694<tr><td></td><td>KsConsumerButtons= 16773120<tr><th align='left'>type declarations</th><td><a href="#Inputs.Message">Message</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Inputs.KeyboardMsg">KeyboardMsg</a> =<strong>RECORD</strong> (<strong>Message</strong>)<tr><td></td><td><a href="#Inputs.MouseMsg">MouseMsg</a> =<strong>RECORD</strong> (<strong>Message</strong>)<tr><td></td><td><a href="#Inputs.AbsMouseMsg">AbsMouseMsg</a> =<strong>RECORD</strong> (<strong>Message</strong>)<tr><td></td><td><a href="#Inputs.PointerMsg">PointerMsg</a> =<strong>RECORD</strong> (<strong>Message</strong>)<tr><td></td><td><a href="#Inputs.Sink">Sink</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Inputs.Group">Group</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Inputs.Pointer">Pointer</a> =<strong>OBJECT</strong> (<strong>Sink</strong>)<tr><td></td><td><a href="#Inputs.OberonInput">OberonInput</a> =<strong>OBJECT</strong> (<strong>Plugins.Plugin</strong>)<tr><th align='left'>variables</th><td>keyboard: <strong>Group</strong><tr><td></td><td>mouse: <strong>Group</strong><tr><td></td><td>pointer: <strong>Group</strong><tr><td></td><td>main: <strong>Pointer</strong><tr><td></td><td>oberonInput: <strong>Plugins.Registry</strong><tr><th align='left'>procedures</th><td> <a href="#Inputs.NewBroadcaster">NewBroadcaster</a> (): <strong>Group</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_BC5ABEC0">
+</h1><hr><h2 id="#_BC5AC680"><a name="Inputs.Release"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Release">Release</a>
+</h2>
+<p> KeyboardMsg flags.</p>
+
+<p> a key release event, otherwise a key press or repeat.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Release*= 0</pre>
+<hr><h2 id="#_BC5B2200"><a name="Inputs.LeftShift"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.LeftShift">LeftShift</a>
+</h2>
+<p> shift key states.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LeftShift*= 1</pre>
+<hr><h2 id="#_BC5B5900"><a name="Inputs.Shift"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Shift">Shift</a>
+</h2>
+<p> combined shift key states.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Shift*= {LeftShift,RightShift}</pre>
+<hr><h2 id="#_BC5B9D40"><a name="Inputs.SHIFT"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.SHIFT">SHIFT</a>
+</h2>
+<p> flags for KeyState</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SHIFT*= 0</pre>
+<hr><h2 id="#_BC5BD440"><a name="Inputs.KsNil"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsNil">KsNil</a>
+</h2>
+<p> keysym values, similar to X11 keysyms</p>
+
+<p> no key</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsNil*= 16777215</pre>
+<hr><h2 id="#_BC5C20C0"><a name="Inputs.KsBackSpace"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsBackSpace">KsBackSpace</a>
+</h2>
+<p> TTY Functions, cleverly chosen to map to ascii</p>
+
+<p> back space, back char</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsBackSpace*= 65288</pre>
+<hr><h2 id="#_BC5C7DC0"><a name="Inputs.KsReturn"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsReturn">KsReturn</a>
+</h2>
+<p> Return, enter</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsReturn*= 65293</pre>
+<hr><h2 id="#_BC5CB0C0"><a name="Inputs.KsPause"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsPause">KsPause</a>
+</h2>
+<p> Pause, hold</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsPause*= 65299</pre>
+<hr><h2 id="#_BC5CE2C0"><a name="Inputs.KsDelete"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsDelete">KsDelete</a>
+</h2>
+<p> Delete, rubout</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsDelete*= 65535</pre>
+<hr><h2 id="#_BC5D14C0"><a name="Inputs.KsHome"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsHome">KsHome</a>
+</h2>
+<p> Cursor control & motion</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsHome*= 65360</pre>
+<hr><h2 id="#_BC5D4F40"><a name="Inputs.KsLeft"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsLeft">KsLeft</a>
+</h2>
+<p> Move left, left arrow</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsLeft*= 65361</pre>
+<hr><h2 id="#_BC5D89C0"><a name="Inputs.KsUp"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsUp">KsUp</a>
+</h2>
+<p> Move up, up arrow</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsUp*= 65362</pre>
+<hr><h2 id="#_BC5DC540"><a name="Inputs.KsRight"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsRight">KsRight</a>
+</h2>
+<p> Move right, right arrow</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsRight*= 65363</pre>
+<hr><h2 id="#_BC5DFFC0"><a name="Inputs.KsDown"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsDown">KsDown</a>
+</h2>
+<p> Move down, down arrow</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsDown*= 65364</pre>
+<hr><h2 id="#_BC5E3A40"><a name="Inputs.KsPageUp"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsPageUp">KsPageUp</a>
+</h2>
+<p> Prior, previous</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsPageUp*= 65365</pre>
+<hr><h2 id="#_BC5E6C40"><a name="Inputs.KsPageDown"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsPageDown">KsPageDown</a>
+</h2>
+<p> Next</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsPageDown*= 65366</pre>
+<hr><h2 id="#_BC5E9AC0"><a name="Inputs.KsEnd"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsEnd">KsEnd</a>
+</h2>
+<p> EOL</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsEnd*= 65367</pre>
+<hr><h2 id="#_BC5EC940"><a name="Inputs.KsPrint"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsPrint">KsPrint</a>
+</h2>
+<p> Misc Functions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsPrint*= 65377</pre>
+<hr><h2 id="#_BC5EFB40"><a name="Inputs.KsInsert"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsInsert">KsInsert</a>
+</h2>
+<p> Insert, insert here</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsInsert*= 65379</pre>
+<hr><h2 id="#_BC5F3300"><a name="Inputs.KsMenu"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsMenu">KsMenu</a>
+</h2>
+<p> Windows menu</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsMenu*= 65383</pre>
+<hr><h2 id="#_BC5F6500"><a name="Inputs.KsKPEnter"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsKPEnter">KsKPEnter</a>
+</h2>
+<p> Keypad functions</p>
+
+<p> enter</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsKPEnter*= 65421</pre>
+<hr><h2 id="#_BC5F9D00"><a name="Inputs.KsF1"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsF1">KsF1</a>
+</h2>
+<p> Function keys</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsF1*= 65470</pre>
+<hr><h2 id="#_BC5FCF00"><a name="Inputs.KsShiftL"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsShiftL">KsShiftL</a>
+</h2>
+<p> Modifiers</p>
+
+<p> Left shift</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsShiftL*= 65505</pre>
+<hr><h2 id="#_BC600700"><a name="Inputs.KsShiftR"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsShiftR">KsShiftR</a>
+</h2>
+<p> Right shift</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsShiftR*= 65506</pre>
+<hr><h2 id="#_BC603900"><a name="Inputs.KsControlL"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsControlL">KsControlL</a>
+</h2>
+<p> Left control</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsControlL*= 65507</pre>
+<hr><h2 id="#_BC606B00"><a name="Inputs.KsControlR"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsControlR">KsControlR</a>
+</h2>
+<p> Right control</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsControlR*= 65508</pre>
+<hr><h2 id="#_BC609D00"><a name="Inputs.KsCapsLock"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsCapsLock">KsCapsLock</a>
+</h2>
+<p> Caps lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsCapsLock*= 65509</pre>
+<hr><h2 id="#_BC60CF00"><a name="Inputs.KsMetaL"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsMetaL">KsMetaL</a>
+</h2>
+<p> Left meta, Left Windows</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsMetaL*= 65511</pre>
+<hr><h2 id="#_BC610980"><a name="Inputs.KsMetaR"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsMetaR">KsMetaR</a>
+</h2>
+<p> Right meta, Right Windows</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsMetaR*= 65512</pre>
+<hr><h2 id="#_BC614400"><a name="Inputs.KsAltL"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsAltL">KsAltL</a>
+</h2>
+<p> Left alt</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsAltL*= 65513</pre>
+<hr><h2 id="#_BC617800"><a name="Inputs.KsAltR"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsAltR">KsAltR</a>
+</h2>
+<p> Right alt</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsAltR*= 65514</pre>
+<hr><h2 id="#_BC61AA00"><a name="Inputs.KsScanPreviousTrack"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KsScanPreviousTrack">KsScanPreviousTrack</a>
+</h2>
+<p> HID Consumer Keys</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> KsScanPreviousTrack*= 16711680</pre>
+<hr><h2 id="#_BC61E040"><a name="Inputs.Message"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Message">Message</a>
+</h2>
+<p> generic message.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Message* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_BC621C40"><a name="Inputs.KeyboardMsg"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KeyboardMsg">KeyboardMsg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> KeyboardMsg* =<strong>RECORD</strong> (<strong>Message</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Inputs.KeyboardMsg.ch">ch</a>: <strong>CHAR</strong><tr><td></td><td><a href="#Inputs.KeyboardMsg.flags">flags</a>: <strong>SET</strong><tr><td></td><td><a href="#Inputs.KeyboardMsg.keysym">keysym</a>: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_BC627D40"><a name="Inputs.KeyboardMsg.ch"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KeyboardMsg">KeyboardMsg</a>.<a href="#Inputs.KeyboardMsg.ch">ch</a>
+</h3>
+<p> extended ASCII key code, or 0X if not relevant</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ch*: <strong>CHAR</strong></pre>
+<hr><h3 id="#_BC62D280"><a name="Inputs.KeyboardMsg.flags"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KeyboardMsg">KeyboardMsg</a>.<a href="#Inputs.KeyboardMsg.flags">flags</a>
+</h3>
+<p> key flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> flags*: <strong>SET</strong></pre>
+<hr><h3 id="#_BC630B40"><a name="Inputs.KeyboardMsg.keysym"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.KeyboardMsg">KeyboardMsg</a>.<a href="#Inputs.KeyboardMsg.keysym">keysym</a>
+</h3>
+<p> X11-compatible key code</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> keysym*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_BC634840"><a name="Inputs.MouseMsg"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.MouseMsg">MouseMsg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MouseMsg* =<strong>RECORD</strong> (<strong>Message</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Inputs.MouseMsg.keys">keys</a>: <strong>SET</strong><tr><td></td><td>dx: <strong>SIGNED32</strong><tr><td></td><td>dy: <strong>SIGNED32</strong><tr><td></td><td><a href="#Inputs.MouseMsg.dz">dz</a>: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_BC63B800"><a name="Inputs.MouseMsg.keys"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.MouseMsg">MouseMsg</a>.<a href="#Inputs.MouseMsg.keys">keys</a>
+</h3>
+<p> mouse key state.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> keys*: <strong>SET</strong></pre>
+<hr><h3 id="#_BC63F500"><a name="Inputs.MouseMsg.dz"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.MouseMsg">MouseMsg</a>.<a href="#Inputs.MouseMsg.dz">dz</a>
+</h3>
+<p> mouse movement vector.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> dz*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_BC643200"><a name="Inputs.AbsMouseMsg"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.AbsMouseMsg">AbsMouseMsg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AbsMouseMsg* =<strong>RECORD</strong> (<strong>Message</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>keys: <strong>SET</strong><tr><td></td><td>x: <strong>SIGNED32</strong><tr><td></td><td>y: <strong>SIGNED32</strong><tr><td></td><td>z: <strong>SIGNED32</strong><tr><td></td><td>dx: <strong>SIGNED32</strong><tr><td></td><td>dy: <strong>SIGNED32</strong><tr><td></td><td>dz: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_BC64CE00"><a name="Inputs.PointerMsg"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.PointerMsg">PointerMsg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PointerMsg* =<strong>RECORD</strong> (<strong>Message</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Inputs.PointerMsg.keys">keys</a>: <strong>SET</strong><tr><td></td><td>x: <strong>SIGNED32</strong><tr><td></td><td>y: <strong>SIGNED32</strong><tr><td></td><td><a href="#Inputs.PointerMsg.z">z</a>: <strong>SIGNED32</strong><tr><td></td><td>mx: <strong>SIGNED32</strong><tr><td></td><td>my: <strong>SIGNED32</strong><tr><td></td><td><a href="#Inputs.PointerMsg.mz">mz</a>: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_BC656A00"><a name="Inputs.PointerMsg.keys"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.PointerMsg">PointerMsg</a>.<a href="#Inputs.PointerMsg.keys">keys</a>
+</h3>
+<p> pointer key state.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> keys*: <strong>SET</strong></pre>
+<hr><h3 id="#_BC65A700"><a name="Inputs.PointerMsg.z"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.PointerMsg">PointerMsg</a>.<a href="#Inputs.PointerMsg.z">z</a>
+</h3>
+<p> pointer position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> z*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_BC65DFC0"><a name="Inputs.PointerMsg.mz"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.PointerMsg">PointerMsg</a>.<a href="#Inputs.PointerMsg.mz">mz</a>
+</h3>
+<p> pointer max values.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> mz*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_BC661CC0"><a name="Inputs.Sink"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Sink">Sink</a>
+</h2>
+<p> a message receiver.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Sink* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#Inputs.Sink.Handle">Handle</a> (<strong>VAR</strong> msg: <strong>Message</strong>)</td></tr>
+</table>
+<hr><h3 id="#_BC6680C0"><a name="Inputs.Sink.Handle"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Sink">Sink</a>.<a href="#Inputs.Sink.Handle">Handle</a>
+</h3>
+<p> Handle is overriden by a concrete receiver.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Handle* (<strong>VAR</strong> msg: <strong>Message</strong>)</pre>
+<hr><h2 id="#_BC66DCC0"><a name="Inputs.Group"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Group">Group</a>
+</h2>
+<p> a group of message receivers.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Group* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#Inputs.Group.Register">Register</a> (s: <strong>Sink</strong>)<tr><td></td><td> <a href="#Inputs.Group.Unregister">Unregister</a> (s: <strong>Sink</strong>)<tr><td></td><td> <a href="#Inputs.Group.Handle">Handle</a> (<strong>VAR</strong> msg: <strong>Message</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_BC677DC0"><a name="Inputs.Group.Register"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Group">Group</a>.<a href="#Inputs.Group.Register">Register</a>
+</h3>
+<p> Add a receiver to a group.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Register* (s: <strong>Sink</strong>)</pre>
+<hr><h3 id="#_BC67D240"><a name="Inputs.Group.Unregister"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Group">Group</a>.<a href="#Inputs.Group.Unregister">Unregister</a>
+</h3>
+<p> Remove a receiver from a group.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Unregister* (s: <strong>Sink</strong>)</pre>
+<hr><h3 id="#_BC6826C0"><a name="Inputs.Group.Handle"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Group">Group</a>.<a href="#Inputs.Group.Handle">Handle</a>
+</h3>
+<p> Send a message to all receivers currently in the group.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Handle* (<strong>VAR</strong> msg: <strong>Message</strong>)</pre>
+<hr><h2 id="#_BC688E40"><a name="Inputs.Pointer"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.Pointer">Pointer</a>
+</h2>
+<p> convert incremental movements into absolute positions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Pointer* =<strong>OBJECT</strong> (<strong>Sink</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Handle (<strong>VAR</strong> m: <strong>Message</strong>)<tr><td></td><td> SetLimits (mx, my, mz: <strong>SIGNED32</strong>)<tr><td></td><td>& Init (t, s: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_BC6953C0"><a name="Inputs.OberonInput"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.OberonInput">OberonInput</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OberonInput* =<strong>OBJECT</strong> (<strong>Plugins.Plugin</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>timer: <strong>Kernel.Timer</strong><tr><th align='left'>procedures</th><td> Mouse (<strong>VAR</strong> x, y: <strong>SIGNED16</strong>; <strong>VAR</strong> keys: <strong>SET</strong>)<tr><td></td><td> Read (<strong>VAR</strong> ch: <strong>CHAR</strong>; <strong>VAR</strong> break: <strong>BOOLEAN</strong>)<tr><td></td><td> Available (<strong>VAR</strong> num: <strong>SIGNED16</strong>; <strong>VAR</strong> break: <strong>BOOLEAN</strong>)<tr><td></td><td> KeyState (<strong>VAR</strong> k: <strong>SET</strong>)<tr><td></td><td>& Init</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_BC6A5F80"><a name="Inputs.NewBroadcaster"></a><a href="#Inputs">Inputs</a>.<a href="#Inputs.NewBroadcaster">NewBroadcaster</a>
+</h2>
+<p> Return a default message broadcaster instance.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewBroadcaster* (): <strong>Group</strong></pre>
+</body></html>

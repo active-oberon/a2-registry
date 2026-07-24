@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxGlobal">FoxGlobal</a></p>
+<hr><h1 id="#_B4ABA180"><a name="FoxGlobal"></a><a href="#ModuleList">Module</a> FoxGlobal
+</h1>
+<p> AUTHOR "fof & fn"; PURPOSE "Oberon Compiler Globally Defined Symbols";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>StringWinAPI= "WINAPI"<tr><td></td><td>StringC= "C"<tr><td></td><td>StringPlatformCC= "PlatformCC"<tr><td></td><td>StringMovable= "MOVABLE"<tr><td></td><td>StringUntraced= "UNTRACED"<tr><td></td><td>StringUntracked= "UNTRACKED"<tr><td></td><td>StringDelegate= "DELEGATE"<tr><td></td><td>StringInterrupt= "INTERRUPT"<tr><td></td><td>StringPcOffset= "PCOFFSET"<tr><td></td><td>StringOpening= "OPENING"<tr><td></td><td>StringClosing= "CLOSING"<tr><td></td><td>StringOffset= "OFFSET"<tr><td></td><td>StringAligned= "ALIGNED"<tr><td></td><td>StringAlignStack= "ALIGNSTACK"<tr><td></td><td>StringFinal= "FINAL"<tr><td></td><td>StringTest= "TEST"<tr><td></td><td>StringAbstract= "ABSTRACT"<tr><td></td><td>StringRegister= "REGISTER"<tr><td></td><td>StringNoReturn= "NORETURN"<tr><td></td><td>StringUnsafe= "UNSAFE"<tr><td></td><td>StringPlain= "PLAIN"<tr><td></td><td>StringDisposable= "DISPOSABLE"<tr><td></td><td>StringUnchecked= "UNCHECKED"<tr><td></td><td>StringUncooperative= "UNCOOPERATIVE"<tr><td></td><td>StringOverride= "OVERRIDE"<tr><td></td><td>StringExclusive= "EXCLUSIVE"<tr><td></td><td>StringActive= "ACTIVE"<tr><td></td><td>StringPriority= "PRIORITY"<tr><td></td><td>StringSafe= "SAFE"<tr><td></td><td>StringRealtime= "REALTIME"<tr><td></td><td>StringDynamic= "DYNAMIC"<tr><td></td><td>StringFingerprint= "Fingerprint"<tr><td></td><td>StringInstructionWidth= "InstructionWidth"<tr><td></td><td>StringDataMemorySize= "DataMemorySize"<tr><td></td><td>StringCodeMemorySize= "CodeMemorySize"<tr><td></td><td>StringChannelWidth= "ChannelWidth"<tr><td></td><td>StringChannelDepth= "ChannelDepth"<tr><td></td><td>StringChannelModule= "Channels"<tr><td></td><td>StringSystemModule= "SYSTEM"<tr><td></td><td>StringsystemModule= "system"<tr><td></td><td>StringBaseMem= "BaseMem"<tr><td></td><td>StringBaseDiv= "BaseDiv"<tr><td></td><td>StringVector= "Vector"<tr><td></td><td>StringFloatingPoint= "FloatingPoint"<tr><td></td><td>StringNoMul= "NoMul"<tr><td></td><td>StringNonBlockingIO= "HasNonBlockingIO"<tr><td></td><td>StringFrequencyDivider= "FrequencyDivider"<tr><td></td><td>StringEngine= "Engine"<tr><td></td><td>StringTRM= "TRM"<tr><td></td><td>StringTRMS= "TRMS"<tr><td></td><td>StringBackend= "Backend"<tr><td></td><td>StringRuntime= "Runtime"<tr><td></td><td>WithTrap= 1<tr><td></td><td>CaseTrap= 2<tr><td></td><td>ReturnTrap= 3<tr><td></td><td>TypeEqualTrap= 5<tr><td></td><td>TypeCheckTrap= 6<tr><td></td><td>IndexCheckTrap= 7<tr><td></td><td>AssertTrap= 8<tr><td></td><td>ArraySizeTrap= 9<tr><td></td><td>ArrayFormTrap= 10<tr><td></td><td>NoReturnTrap= 16<tr><td></td><td><a href="#FoxGlobal.Assert">Assert</a>= (Scanner.EndOfText+1)<tr><td></td><td>Copy= (Assert+1)<tr><td></td><td>Dec= (Copy+1)<tr><td></td><td>Excl= (Dec+1)<tr><td></td><td>Halt= (Excl+1)<tr><td></td><td>Inc= (Halt+1)<tr><td></td><td>Incl= (Inc+1)<tr><td></td><td>New= (Incl+1)<tr><td></td><td>Dispose= (New+1)<tr><td></td><td>GetProcedure= (Dispose+1)<tr><td></td><td>Connect= (GetProcedure+1)<tr><td></td><td>Delegate= (Connect+1)<tr><td></td><td>Read= (Delegate+1)<tr><td></td><td>Write= (Read+1)<tr><td></td><td>Reshape= (Write+1)<tr><td></td><td>Wait= (Reshape+1)<tr><td></td><td>Abs= (Wait+1)<tr><td></td><td>Cap= (Abs+1)<tr><td></td><td>Chr= (Cap+1)<tr><td></td><td>Entier= (Chr+1)<tr><td></td><td>EntierH= (Entier+1)<tr><td></td><td>Incr= (EntierH+1)<tr><td></td><td>Len= (Incr+1)<tr><td></td><td>Long= (Len+1)<tr><td></td><td>Max= (Long+1)<tr><td></td><td>Min= (Max+1)<tr><td></td><td>Odd= (Min+1)<tr><td></td><td>Ord= (Odd+1)<tr><td></td><td>Ord32= (Ord+1)<tr><td></td><td>Short= (Ord32+1)<tr><td></td><td>Size= (Short+1)<tr><td></td><td>Sum= (Size+1)<tr><td></td><td>Dim= (Sum+1)<tr><td></td><td>Cas= (Dim+1)<tr><td></td><td>First= (Cas+1)<tr><td></td><td>Last= (First+1)<tr><td></td><td>Step= (Last+1)<tr><td></td><td>Re= (Step+1)<tr><td></td><td>Im= (Re+1)<tr><td></td><td>Ash= (Im+1)<tr><td></td><td>Lsh= (Ash+1)<tr><td></td><td>Rot= (Lsh+1)<tr><td></td><td>All= (Rot+1)<tr><td></td><td>systemGet= (All+1)<tr><td></td><td>systemPut= (systemGet+1)<tr><td></td><td>systemMove= (systemPut+1)<tr><td></td><td>systemNew= (systemMove+1)<tr><td></td><td>systemRef= (systemNew+1)<tr><td></td><td>systemTypeCode= (systemRef+1)<tr><td></td><td>systemHalt= (systemTypeCode+1)<tr><td></td><td>systemPut8= (systemHalt+1)<tr><td></td><td>systemPut16= (systemPut8+1)<tr><td></td><td>systemPut32= (systemPut16+1)<tr><td></td><td>systemPut64= (systemPut32+1)<tr><td></td><td>systemTrace= (systemPut64+1)<tr><td></td><td>systemSetStackPointer= (systemTrace+1)<tr><td></td><td>systemSetFramePointer= (systemSetStackPointer+1)<tr><td></td><td>systemSetActivity= (systemSetFramePointer+1)<tr><td></td><td>systemAdr= (systemSetActivity+1)<tr><td></td><td>systemSize= (systemAdr+1)<tr><td></td><td>systemBit= (systemSize+1)<tr><td></td><td>systemGet64= (systemBit+1)<tr><td></td><td>systemGet32= (systemGet64+1)<tr><td></td><td>systemGet16= (systemGet32+1)<tr><td></td><td>systemGet8= (systemGet16+1)<tr><td></td><td>systemVal= (systemGet8+1)<tr><td></td><td>systemMsk= (systemVal+1)<tr><td></td><td>systemGetStackPointer= (systemMsk+1)<tr><td></td><td>systemGetFramePointer= (systemGetStackPointer+1)<tr><td></td><td>systemGetActivity= (systemGetFramePointer+1)<tr><td></td><td>Send= (systemGetActivity+1)<tr><td></td><td>Receive= (Send+1)<tr><td></td><td>systemSpecial= (Receive+1)<tr><td></td><td>Shl= (systemSpecial+1)<tr><td></td><td>Shr= (Shl+1)<tr><td></td><td>Rol= (Shr+1)<tr><td></td><td>Ror= (Rol+1)<tr><td></td><td>Flt= (Ror+1)<tr><td></td><td>Conversion= (Flt+1)<tr><td></td><td>DotTimesPlus= (Conversion+1)<tr><td></td><td>AtMulDec= (DotTimesPlus+1)<tr><td></td><td>AtMulInc= (AtMulDec+1)<tr><td></td><td>DecMul= (AtMulInc+1)<tr><td></td><td>IncMul= (DecMul+1)<tr><td></td><td>Indexer= (IncMul+1)<tr><td></td><td>FunctionCallOperator= (Indexer+1)<tr><td></td><td>endFox= (FunctionCallOperator+1)<tr><td></td><td>VectorCapability= 0<tr><td></td><td>FloatingPointCapability= 1<tr><td></td><td>EngineCapability= 2<tr><td></td><td>TRMSCapability= 3<tr><td></td><td>NoMulCapability= 4<tr><td></td><td>NonBlockingIOCapability= 5<tr><td></td><td>LynxChar= "@lynx_char"<tr><td></td><td>LynxSbyte= "@lynx_sbyte"<tr><td></td><td>LynxShort= "@lynx_short"<tr><td></td><td>LynxInt= "@lynx_int"<tr><td></td><td>LynxLong= "@lynx_long"<tr><td></td><td>LynxFloat= "@lynx_float"<tr><td></td><td>LynxDouble= "@lynx_double"<tr><td></td><td>LynxBool= "@lynx_bool"<tr><td></td><td>LynxObject= "@lynx_object"<tr><td></td><td>LynxString= "@lynx_string"<tr><td></td><td>LynxNewobj= "lynx@newobj"<tr><td></td><td>LynxNewarr= "lynx@newarr"<tr><td></td><td>LynxAsop= "lynx@asop"<tr><td></td><td>LynxUnop= "lynx@unop"<tr><td></td><td>LynxBinop= "lynx@binop"<tr><td></td><td>LynxSend= "lynx@send"<tr><td></td><td>LynxReceive= "lynx@receive"<tr><td></td><td>LynxRecvnb= "lynx@recvnb"<tr><td></td><td>LynxConnect= "lynx@connect"<tr><td></td><td>LynxDelegate= "lynx@delegate"<tr><td></td><td>LynxNewsel= "lynx@newsel"<tr><td></td><td>LynxAddsel= "lynx@addsel"<tr><td></td><td>LynxSelect= "lynx@select"<tr><td></td><td>LynxSelidx= "lynx@selidx"<tr><td></td><td>LynxOpAdd= 1<tr><td></td><td>LynxOpSub= 2<tr><td></td><td>LynxOpMul= 3<tr><td></td><td>LynxOpDiv= 4<tr><td></td><td>LynxOpRem= 5<tr><td></td><td>LynxOpAnd= 6<tr><td></td><td>LynxOpOr= 7<tr><td></td><td>LynxOpXor= 8<tr><td></td><td>LynxOpShl= 9<tr><td></td><td>LynxOpShr= 10<tr><td></td><td>LynxOpNot= 11<tr><td></td><td>SymLynxNewobj= endFox<tr><td></td><td>SymLynxNewarr= (endFox+1)<tr><td></td><td>SymLynxAsop= (endFox+2)<tr><td></td><td>SymLynxUnop= (endFox+3)<tr><td></td><td>SymLynxBinop= (endFox+4)<tr><td></td><td>SymLynxRecvnb= (endFox+5)<tr><td></td><td>SymLynxNewsel= (endFox+6)<tr><td></td><td>SymLynxAddsel= (endFox+7)<tr><td></td><td>SymLynxSelect= (endFox+8)<tr><td></td><td>SymLynxSelidx= (endFox+9)<tr><th align='left'>type declarations</th><td><a href="#FoxGlobal.Alignment">Alignment</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxGlobal.System">System</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>SelfParameterName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>ReturnParameterName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>SystemName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>systemName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>PointerReturnName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>ResultName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>A2Name: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>ArrayBaseName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>ComplexNumbersName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>RecordBodyName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>ModuleBodyName: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameWinAPI: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameC: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NamePlatformCC: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameMovable: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameUntraced: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameUntracked: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameDelegate: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameInterrupt: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NamePcOffset: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameOpening: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameClosing: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameOffset: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameAligned: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameStackAligned: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameExclusive: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameActive: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NamePriority: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameSafe: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameRealtime: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameDynamic: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameFingerprint: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameDataMemorySize: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameCodeMemorySize: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameChannelWidth: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameChannelDepth: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameChannelModule: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameVector: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameFloatingPoint: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameNoMul: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameNonBlockingIO: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameTRM: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameTRMS: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameEngine: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameFinal: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameTest: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameAbstract: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameOverride: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameBackend: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameRuntime: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameFrequencyDivider: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameRegister: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameNoReturn: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NamePlain: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameUnsafe: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameDisposable: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameUnchecked: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameUncooperative: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>NameGlobal: <strong>SyntaxTree.Identifier</strong><tr><td></td><td>Signed8: <strong>SyntaxTree.IntegerType</strong><tr><td></td><td>Signed16: <strong>SyntaxTree.IntegerType</strong><tr><td></td><td>Signed32: <strong>SyntaxTree.IntegerType</strong><tr><td></td><td>Signed64: <strong>SyntaxTree.IntegerType</strong><tr><td></td><td>Unsigned8: <strong>SyntaxTree.IntegerType</strong><tr><td></td><td>Unsigned16: <strong>SyntaxTree.IntegerType</strong><tr><td></td><td>Unsigned32: <strong>SyntaxTree.IntegerType</strong><tr><td></td><td>Unsigned64: <strong>SyntaxTree.IntegerType</strong><tr><td></td><td>Set8: <strong>SyntaxTree.SetType</strong><tr><td></td><td>Set16: <strong>SyntaxTree.SetType</strong><tr><td></td><td>Set32: <strong>SyntaxTree.SetType</strong><tr><td></td><td>Set64: <strong>SyntaxTree.SetType</strong><tr><td></td><td>Float32: <strong>SyntaxTree.FloatType</strong><tr><td></td><td>Float64: <strong>SyntaxTree.FloatType</strong><tr><td></td><td>Complex32: <strong>SyntaxTree.ComplexType</strong><tr><td></td><td>Complex64: <strong>SyntaxTree.ComplexType</strong><tr><th align='left'>procedures</th><td> SetDefaultDeclarations (system: <strong>System</strong>; minBits: <strong>SIZE</strong>)<tr><td></td><td> OperatorDefined (system: <strong>System</strong>; op: <strong>SIGNED32</strong>; defined: <strong>BOOLEAN</strong>)<tr><td></td><td> SetDefaultOperators (system: <strong>System</strong>)<tr><td></td><td> DefaultSystem (): <strong>System</strong><tr><td></td><td> IsOberonProcedure (type: <strong>SyntaxTree.Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> AlignedSizeOf (system: <strong>System</strong>; <strong>CONST</strong> alignment: <strong>Alignment</strong>; type: <strong>SyntaxTree.Type</strong>): <strong>SIZE</strong><tr><td></td><td> IsSystemModule (module: <strong>SyntaxTree.Module</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxGlobal.DeclareType">DeclareType</a> (type: <strong>SyntaxTree.Type</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> scope: <strong>ARRAY</strong> <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong>)<tr><td></td><td> DeclareLynxType (type: <strong>SyntaxTree.Type</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> scope: <strong>ARRAY</strong> <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong>)<tr><td></td><td> NewConstant (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; int: <strong>SIGNED32</strong>; type: <strong>SyntaxTree.Type</strong>; <strong>CONST</strong> scope: <strong>ARRAY</strong> <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong>)<tr><td></td><td> NewStringConstant (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; string: <strong>SyntaxTree.String</strong>; type: <strong>SyntaxTree.Type</strong>; <strong>CONST</strong> scope: <strong>ARRAY</strong> <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong>)<tr><td></td><td> NewStringConstantCamelCase (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; string: <strong>SyntaxTree.String</strong>; type: <strong>SyntaxTree.Type</strong>; <strong>CONST</strong> scope: <strong>ARRAY</strong> <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong>)<tr><td></td><td> NewBuiltin (id: <strong>SIGNED32</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> scope: <strong>ARRAY</strong> <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong>; realtime: <strong>BOOLEAN</strong>)<tr><td></td><td> NewBuiltinCamelCase (id: <strong>SIGNED32</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> scope: <strong>ARRAY</strong> <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong>; realtime: <strong>BOOLEAN</strong>)<tr><td></td><td> NewCustomBuiltin (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> scope: <strong>ARRAY</strong> <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong>; subType: <strong>SIGNED8</strong>; procedureType: <strong>SyntaxTree.ProcedureType</strong>)<tr><td></td><td> GetModuleSectionName (name, context: <strong>SyntaxTree.Identifier</strong>; <strong>VAR</strong> n: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ModuleFileName (name, context: <strong>SyntaxTree.Identifier</strong>; <strong>VAR</strong> n: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ModuleSectionIdentifier (name, context: <strong>SyntaxTree.Identifier</strong>): <strong>SyntaxTree.Identifier</strong><tr><td></td><td> ContextFromName (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> module, context: <strong>SyntaxTree.Identifier</strong>)<tr><td></td><td> GetModuleName (module: <strong>SyntaxTree.Module</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetModuleSegmentedName (module: <strong>SyntaxTree.Module</strong>; <strong>VAR</strong> name: <strong>Basic.SegmentedName</strong>)<tr><td></td><td> FindSymbol (<strong>CONST</strong> name: <strong>Basic.SegmentedName</strong>; scope: <strong>SyntaxTree.Scope</strong>): <strong>SyntaxTree.Symbol</strong><tr><td></td><td> GetSymbolNameInScope (symbol: <strong>SyntaxTree.Symbol</strong>; inScope: <strong>SyntaxTree.Scope</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetSymbolName (symbol: <strong>SyntaxTree.Symbol</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetSymbolSegmentedNameInScope (symbol: <strong>SyntaxTree.Symbol</strong>; inScope: <strong>SyntaxTree.Scope</strong>; <strong>VAR</strong> pooledName: <strong>Basic.SegmentedName</strong>)<tr><td></td><td> GetSymbolSegmentedName (symbol: <strong>SyntaxTree.Symbol</strong>; <strong>VAR</strong> pooledName: <strong>Basic.SegmentedName</strong>)<tr><td></td><td> Level (t: <strong>SyntaxTree.Type</strong>): <strong>SIGNED32</strong><tr><td></td><td> ConvertSigned (this: <strong>SIGNED64</strong>; bits: <strong>SIZE</strong>): <strong>SIGNED64</strong><tr><td></td><td> ConvertUnsigned (this: <strong>SIGNED64</strong>; bits: <strong>SIZE</strong>): <strong>SIGNED64</strong><tr><td></td><td> MaxInteger (system: <strong>System</strong>; type: <strong>SyntaxTree.BasicType</strong>; signed: <strong>BOOLEAN</strong>): <strong>SIGNED64</strong><tr><td></td><td> MinInteger (system: <strong>System</strong>; type: <strong>SyntaxTree.BasicType</strong>; signed: <strong>BOOLEAN</strong>): <strong>SIGNED64</strong><tr><td></td><td> MaxFloat (system: <strong>System</strong>; type: <strong>SyntaxTree.FloatType</strong>): <strong>FLOAT64</strong><tr><td></td><td> MinFloat (system: <strong>System</strong>; type: <strong>SyntaxTree.FloatType</strong>): <strong>FLOAT64</strong><tr><td></td><td> ConvertSet (this: <strong>Basic.Set</strong>; bits: <strong>SIZE</strong>): <strong>Basic.Set</strong><tr><td></td><td> IsUnsignedInteger (this: <strong>SIGNED64</strong>; sizeInBits: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsSignedInteger (this: <strong>SIGNED64</strong>; sizeInBits: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetSignedIntegerType (system: <strong>System</strong>; this: <strong>SIGNED64</strong>): <strong>SyntaxTree.IntegerType</strong><tr><td></td><td> GetIntegerType (system: <strong>System</strong>; this: <strong>SIGNED64</strong>): <strong>SyntaxTree.IntegerType</strong><tr><td></td><td> NewIntegerValue (system: <strong>System</strong>; position: <strong>Position</strong>; hugeint: <strong>SIGNED64</strong>): <strong>SyntaxTree.Value</strong><tr><td></td><td> NewBooleanValue (system: <strong>System</strong>; position: <strong>Position</strong>; b: <strong>BOOLEAN</strong>): <strong>SyntaxTree.Value</strong><tr><td></td><td> GetSetType (system: <strong>System</strong>; this: <strong>Basic.Set</strong>): <strong>SyntaxTree.SetType</strong><tr><td></td><td> NewSetValue (system: <strong>System</strong>; position: <strong>Position</strong>; s: <strong>Basic.Set</strong>): <strong>SyntaxTree.Value</strong><tr><td></td><td> NewCharacterValue (system: <strong>System</strong>; position: <strong>Position</strong>; c: <strong>CHAR</strong>): <strong>SyntaxTree.Value</strong><tr><td></td><td> NewNilValue (system: <strong>System</strong>; position: <strong>Position</strong>): <strong>SyntaxTree.Value</strong><tr><td></td><td> BasicTypeDistance (system: <strong>System</strong>; from, to: <strong>SyntaxTree.BasicType</strong>): <strong>SIZE</strong><tr><td></td><td> GetIdentifier (symbol: <strong>SIGNED32</strong>; case: <strong>SIGNED32</strong>): <strong>SyntaxTree.Identifier</strong><tr><td></td><td> GetSymbol (case: <strong>SIGNED32</strong>; id: <strong>SyntaxTree.Identifier</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_B4CA1EC0">
+</h1><hr><h2 id="#_B4CA2680"><a name="FoxGlobal.Assert"></a><a href="#FoxGlobal">FoxGlobal</a>.<a href="#FoxGlobal.Assert">Assert</a>
+</h2>
+<p> builtin procedures</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Assert*= (Scanner.EndOfText+1)</pre>
+<hr><h2 id="#_B4CA6640"><a name="FoxGlobal.Alignment"></a><a href="#FoxGlobal">FoxGlobal</a>.<a href="#FoxGlobal.Alignment">Alignment</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Alignment* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_B4CA9380"><a name="FoxGlobal.System"></a><a href="#FoxGlobal">FoxGlobal</a>.<a href="#FoxGlobal.System">System</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> System* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>systemScope: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong><tr><td></td><td>globalScope: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong><tr><td></td><td>systemModule: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>SyntaxTree.Module</strong><tr><td></td><td>globalModule: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>SyntaxTree.Module</strong><tr><td></td><td>activeCellsCapabilities: <strong>SyntaxTree.Symbol</strong><tr><td></td><td>codeUnit: <strong>SIGNED32</strong><tr><td></td><td>dataUnit: <strong>SIGNED32</strong><tr><td></td><td>variableAlignment: <strong>Alignment</strong><tr><td></td><td>parameterAlignment: <strong>Alignment</strong><tr><td></td><td>offsetFirstParameter: <strong>SIGNED32</strong><tr><td></td><td>offsetFirstVariable: <strong>SIGNED32</strong><tr><td></td><td>operatorDefined: <strong>ARRAY</strong> end <strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td>addressSize: <strong>SIGNED32</strong><tr><td></td><td>addressType: <strong>SyntaxTree.Type</strong><tr><td></td><td>sizeType: <strong>SyntaxTree.Type</strong><tr><td></td><td>integerType: <strong>SyntaxTree.Type</strong><tr><td></td><td>longIntegerType: <strong>SyntaxTree.Type</strong><tr><td></td><td>integerSetType: <strong>SyntaxTree.Type</strong><tr><td></td><td>characterType: <strong>SyntaxTree.Type</strong><tr><td></td><td>setType: <strong>SyntaxTree.Type</strong><tr><td></td><td>booleanType: <strong>SyntaxTree.Type</strong><tr><td></td><td>anyType: <strong>SyntaxTree.Type</strong><tr><td></td><td>byteType: <strong>SyntaxTree.Type</strong><tr><td></td><td>realType: <strong>SyntaxTree.Type</strong><tr><td></td><td>complexType: <strong>SyntaxTree.Type</strong><tr><td></td><td>objectType: <strong>SyntaxTree.Type</strong><tr><td></td><td>nilType: <strong>SyntaxTree.Type</strong><tr><td></td><td>rangeType: <strong>SyntaxTree.Type</strong><tr><td></td><td>CanPassInRegister: <strong>PassInRegisterProc</strong><tr><td></td><td>cellsAreObjects: <strong>BOOLEAN</strong><tr><td></td><td>platformCallingConvention: <strong>SyntaxTree.CallingConvention</strong><tr><td></td><td>maxSize: <strong>Basic.Integer</strong><tr><td></td><td>maxSet: <strong>Basic.Integer</strong><tr><th align='left'>procedures</th><td>& InitSystem (codeUnit, dataUnit: <strong>SIGNED32</strong>; addressSize, minVarAlign, maxVarAlign, minParAlign, maxParAlign, offsetFirstPar, offsetFirstVar: <strong>SIGNED32</strong>; cooperative: <strong>BOOLEAN</strong>)<tr><td></td><td> SetPlatformCallingConvention (callingConvention: <strong>SyntaxTree.CallingConvention</strong>)<tr><td></td><td> SetCellsAreObjects (c: <strong>BOOLEAN</strong>)<tr><td></td><td> SetRegisterPassCallback (canPassInRegister: <strong>PassInRegisterProc</strong>)<tr><td></td><td> AddCapability (name: <strong>SyntaxTree.Identifier</strong>)<tr><td></td><td> GenerateRecordOffsets (x: <strong>SyntaxTree.RecordType</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GenerateVariableOffsets (scope: <strong>SyntaxTree.Scope</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GenerateParameterOffsets (procedure: <strong>SyntaxTree.Procedure</strong>; nestedProcedure: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SizeOf (type: <strong>SyntaxTree.Type</strong>): <strong>SIZE</strong><tr><td></td><td> SizeOfParameter (par: <strong>SyntaxTree.Parameter</strong>): <strong>SIZE</strong><tr><td></td><td> SizeOfVariable (var: <strong>SyntaxTree.Variable</strong>): <strong>SIZE</strong><tr><td></td><td> AlignmentOf (<strong>CONST</strong> alignment: <strong>Alignment</strong>; type: <strong>SyntaxTree.Type</strong>): <strong>SIZE</strong><tr><td></td><td> AlignedSizeOf (type: <strong>SyntaxTree.Type</strong>): <strong>SIZE</strong><tr><td></td><td> IsLynx (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_B4CF1000"><a name="FoxGlobal.DeclareType"></a><a href="#FoxGlobal">FoxGlobal</a>.<a href="#FoxGlobal.DeclareType">DeclareType</a>
+</h2>
+<p> External interface backends can use to add their types etc. to the global scope</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DeclareType* (type: <strong>SyntaxTree.Type</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> scope: <strong>ARRAY</strong> <strong>OF</strong> <strong>SyntaxTree.ModuleScope</strong>)</pre>
+</body></html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FTPClient">FTPClient</a></p>
+<hr><h1 id="#_C5E9D480"><a name="FTPClient"></a><a href="#ModuleList">Module</a> FTPClient
+</h1>
+<p> AUTHOR "TF"; PURPOSE "FTP client services";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#FTPClient.FTPEntry">FTPEntry</a> =<strong>OBJECT</strong> <tr><td></td><td>FTPListing =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>FTPEntry</strong><tr><td></td><td><a href="#FTPClient.FTPClient">FTPClient</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C5EA4840"><a name="FTPClient.FTPEntry"></a><a href="#FTPClient">FTPClient</a>.<a href="#FTPClient.FTPEntry">FTPEntry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FTPEntry* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>full: <strong>ARRAY</strong> 331 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>flags: <strong>ARRAY</strong> 11 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>type: <strong>ARRAY</strong> 4 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>user: <strong>ARRAY</strong> 9 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>group: <strong>ARRAY</strong> 9 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>size: <strong>ARRAY</strong> 9 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>d0: <strong>ARRAY</strong> 13 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>d1: <strong>ARRAY</strong> 13 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>d2: <strong>ARRAY</strong> 13 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>filename: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>visible: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C5EBA6C0"><a name="FTPClient.FTPClient"></a><a href="#FTPClient">FTPClient</a>.<a href="#FTPClient.FTPClient">FTPClient</a>
+</h2>
+<p> FTP client object must be used by a single process</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FTPClient* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>msg: <strong>ARRAY</strong> 4096 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>listing: <strong>FTPListing</strong><tr><td></td><td>nofEntries: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Open (<strong>CONST</strong> host, user, password: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; port: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Close (<strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> IsAlive (): <strong>BOOLEAN</strong><tr><td></td><td> OpenPut (<strong>CONST</strong> remoteName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> outw: <strong>Streams.Writer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> ClosePut (<strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> OpenGet (<strong>CONST</strong> remoteName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> r: <strong>Streams.Reader</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CloseGet (<strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> DeleteFile (<strong>CONST</strong> remoteName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> ChangeDir (<strong>CONST</strong> dir: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> MakeDir (<strong>CONST</strong> dir: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> RemoveDir (<strong>CONST</strong> dir: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> RenameFile (<strong>CONST</strong> currentName, newName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> EnumerateNames<tr><td></td><td> EnumerateDir (<strong>CONST</strong> args: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetCurrentDir (<strong>VAR</strong> dir: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Raw (<strong>CONST</strong> cmd: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#LPR">LPR</a></p>
+<hr><h1 id="#_42645880"><a name="LPR"></a><a href="#ModuleList">Module</a> LPR
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Print (<strong>CONST</strong> host, queue, docName, email: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; banner, mail: <strong>BOOLEAN</strong>; data: <strong>Streams.Reader</strong>; size: <strong>Streams.Position</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#LPR.ShowJobs">ShowJobs</a> (out: <strong>Streams.Writer</strong>; <strong>CONST</strong> host, queue: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#LPR.RemoveJob">RemoveJob</a> (<strong>CONST</strong> host, queue, email, job: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> PrintFile (<strong>CONST</strong> fn: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_4265CF80"><a name="LPR.ShowJobs"></a><a href="#LPR">LPR</a>.<a href="#LPR.ShowJobs">ShowJobs</a>
+</h2>
+<p> LPRPrinter.ShowJobs queue@host Display a list of the waiting jobs in the given queue.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ShowJobs* (out: <strong>Streams.Writer</strong>; <strong>CONST</strong> host, queue: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_42666CC0"><a name="LPR.RemoveJob"></a><a href="#LPR">LPR</a>.<a href="#LPR.RemoveJob">RemoveJob</a>
+</h2>
+<p> LPRPrinter.RemoveJob queue@host <a href="#job-nr">job-nr</a> Remove the specified job or all jobs from queue.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveJob* (<strong>CONST</strong> host, queue, email, job: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+</body></html>

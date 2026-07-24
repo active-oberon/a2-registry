@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxSections">FoxSections</a></p>
+<hr><h1 id="#_2713D140"><a name="FoxSections"></a><a href="#ModuleList">Module</a> FoxSections
+</h1>
+<p> AUTHOR "fof"; PURPOSE "support for code sections and references";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>EntryCodeSection= ObjectFile.EntryCode<tr><td></td><td>ExitCodeSection= ObjectFile.ExitCode<tr><td></td><td>InitCodeSection= ObjectFile.InitCode<tr><td></td><td>BodyCodeSection= ObjectFile.BodyCode<tr><td></td><td>CodeSection= ObjectFile.Code<tr><td></td><td>VarSection= ObjectFile.Data<tr><td></td><td>ConstSection= ObjectFile.Const<tr><td></td><td>InlineCodeSection= 10<tr><td></td><td>UnknownSectionType= 11<tr><td></td><td>LineCommentStart= "; "<tr><td></td><td>UnknownSize= -1<tr><td></td><td>UndefinedFinalPosition= -1<tr><th align='left'>type declarations</th><td><a href="#FoxSections.Identifier">Identifier</a> =<strong>ObjectFile.Identifier</strong><tr><td></td><td>SectionName =<strong>ObjectFile.SegmentedName</strong><tr><td></td><td><a href="#FoxSections.Section">Section</a> =<strong>OBJECT</strong> <tr><td></td><td>CommentStr =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#FoxSections.Comment">Comment</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxSections.CommentWriter">CommentWriter</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td><a href="#FoxSections.SectionList">SectionList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxSections.NameList">NameList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxSections.Module">Module</a> =<strong>OBJECT</strong> (<strong>Formats.GeneratedModule</strong>)<tr><th align='left'>procedures</th><td> DumpFiltered (w: <strong>Streams.Writer</strong>; module: <strong>Module</strong>; <strong>CONST</strong> filter: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> NewCommentWriter (getPC: <strong>GetPCProcedure</strong>): <strong>CommentWriter</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_271607C0"><a name="FoxSections.Identifier"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Identifier">Identifier</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Identifier* =<strong>ObjectFile.Identifier</strong></pre>
+<hr><h2 id="#_27162B00"><a name="FoxSections.Section"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Section">Section</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Section* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>SectionName</strong><tr><td></td><td>type: <strong>SIGNED8</strong><tr><td></td><td>fixed: <strong>BOOLEAN</strong><tr><td></td><td>positionOrAlignment: <strong>SIZE</strong><tr><td></td><td>fingerprint: <strong>Basic.Fingerprint</strong><tr><td></td><td>bitsPerUnit: <strong>SIGNED32</strong><tr><td></td><td>symbol: <strong>SyntaxTree.Symbol</strong><tr><td></td><td>offset: <strong>SIZE</strong><tr><td></td><td>isReachable: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitSection (type: <strong>SIGNED8</strong>; <strong>CONST</strong> n: <strong>ObjectFile.SegmentedName</strong>; symbol: <strong>SyntaxTree.Symbol</strong>)<tr><td></td><td> IsCode (): <strong>BOOLEAN</strong><tr><td></td><td> SetOffset (offset: <strong>SIZE</strong>)<tr><td></td><td> SetReachability (isReachable: <strong>BOOLEAN</strong>)<tr><td></td><td> SetBitsPerUnit (bitsPerUnit: <strong>SIGNED32</strong>)<tr><td></td><td> IsAligned (): <strong>BOOLEAN</strong><tr><td></td><td> SetPositionOrAlignment (isFixed: <strong>BOOLEAN</strong>; positionOrAlignment: <strong>SIZE</strong>)<tr><td></td><td> GetSize (): <strong>SIGNED32</strong><tr><td></td><td> SetFingerprint (fingerprint: <strong>Basic.Fingerprint</strong>)<tr><td></td><td> <a href="#FoxSections.Section.SetType">SetType</a> (type: <strong>SIGNED8</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)<tr><td></td><td> WriteRaw (w: <strong>Streams.Writer</strong>)<tr><td></td><td> DumpName (w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_27186600"><a name="FoxSections.Section.SetType"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Section">Section</a>.<a href="#FoxSections.Section.SetType">SetType</a>
+</h3>
+<p> change the type of a section</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetType* (type: <strong>SIGNED8</strong>)</pre>
+<hr><h2 id="#_2718BB40"><a name="FoxSections.Comment"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Comment">Comment</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Comment* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>str: <strong>CommentStr</strong><tr><td></td><td>pos: <strong>SIZE</strong><tr><td></td><td>nextComment: <strong>Comment</strong><tr><th align='left'>procedures</th><td>& Init (pos: <strong>SIZE</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_27195000"><a name="FoxSections.CommentWriter"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.CommentWriter">CommentWriter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CommentWriter* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>firstComment: <strong>Comment</strong><tr><td></td><td>lastComment: <strong>Comment</strong><tr><td></td><td>comments: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> AppendToLine (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Ln<tr><td></td><td> Reset<tr><td></td><td>& InitCommentWriter (getPC: <strong>GetPCProcedure</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_271A42C0"><a name="FoxSections.SectionList"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.SectionList">SectionList</a>
+</h2>
+<p> a list of sections note a section may be part of multiple lists in this implementation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SectionList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitListOfSections<tr><td></td><td> GetSection (index: <strong>SIZE</strong>): <strong>Section</strong><tr><td></td><td> SetSection (index: <strong>SIZE</strong>; section: <strong>Section</strong>)<tr><td></td><td> AddSection (section: <strong>Section</strong>)<tr><td></td><td> <a href="#FoxSections.SectionList.FindBySymbol">FindBySymbol</a> (<strong>CONST</strong> symbol: <strong>SyntaxTree.Symbol</strong>): <strong>Section</strong><tr><td></td><td> <a href="#FoxSections.SectionList.FindByName">FindByName</a> (<strong>CONST</strong> name: <strong>Basic.SegmentedName</strong>): <strong>Section</strong><tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)<tr><td></td><td> WriteRaw (w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_271BB180"><a name="FoxSections.SectionList.FindBySymbol"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.SectionList">SectionList</a>.<a href="#FoxSections.SectionList.FindBySymbol">FindBySymbol</a>
+</h3>
+<p> finds a section with a certain AST symbol</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindBySymbol* (<strong>CONST</strong> symbol: <strong>SyntaxTree.Symbol</strong>): <strong>Section</strong></pre>
+<hr><h3 id="#_271C1880"><a name="FoxSections.SectionList.FindByName"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.SectionList">SectionList</a>.<a href="#FoxSections.SectionList.FindByName">FindByName</a>
+</h3>
+<p> finds a section with a certain name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindByName* (<strong>CONST</strong> name: <strong>Basic.SegmentedName</strong>): <strong>Section</strong></pre>
+<hr><h2 id="#_271C7C00"><a name="FoxSections.NameList"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.NameList">NameList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NameList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> AddName (<strong>CONST</strong> moduleName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetName (index: <strong>SIZE</strong>): <strong>SyntaxTree.IdentifierString</strong><tr><td></td><td> ContainsName (name: <strong>SyntaxTree.IdentifierString</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_271D1FC0"><a name="FoxSections.Module"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Module">Module</a>
+</h2>
+<p> output of (intermediate) code generation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Module* =<strong>OBJECT</strong> (<strong>Formats.GeneratedModule</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>allSections: <strong>SectionList</strong><tr><td></td><td>importedSections: <strong>SectionList</strong><tr><td></td><td>platformName: <strong>SyntaxTree.IdentifierString</strong><tr><td></td><td>imports: <strong>NameList</strong><tr><td></td><td>exports: <strong>NameList</strong><tr><th align='left'>procedures</th><td>& Init (module: <strong>SyntaxTree.Module</strong>; system: <strong>Global.System</strong>)<tr><td></td><td> SetImports (imports: <strong>NameList</strong>)<tr><td></td><td> SetPlatformName (<strong>CONST</strong> platformName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

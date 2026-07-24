@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxIntermediateCode">FoxIntermediateCode</a></p>
+<hr><h1 id="#_ED730780"><a name="FoxIntermediateCode"></a><a href="#ModuleList">Module</a> FoxIntermediateCode
+</h1>
+<p> AUTHOR "fof"; PURPOSE "Oberon Compiler Abstract Intermediate Code";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Undefined= 0<tr><td></td><td>ModeRegister= 1<tr><td></td><td>ModeMemory= 2<tr><td></td><td>ModeImmediate= 3<tr><td></td><td>ModeNumber= 4<tr><td></td><td>ModeString= 5<tr><td></td><td>Undef= {Undefined}<tr><td></td><td>Imm= {ModeImmediate}<tr><td></td><td>Reg= {ModeRegister}<tr><td></td><td>RegMem= {ModeRegister,ModeMemory}<tr><td></td><td>RegMemImm= {ModeRegister,ModeMemory,ModeImmediate}<tr><td></td><td>UndefReg= {Undefined,ModeRegister}<tr><td></td><td>UndefRegMem= {Undefined,ModeRegister,ModeMemory}<tr><td></td><td>Num= {ModeNumber}<tr><td></td><td>Str= {ModeString}<tr><td></td><td>SignedInteger= 1<tr><td></td><td>UnsignedInteger= 2<tr><td></td><td>Integer= {SignedInteger,UnsignedInteger}<tr><td></td><td>Float= 3<tr><td></td><td>SameType12= 0<tr><td></td><td>SameType23= 1<tr><td></td><td>Op1IsDestination= 2<tr><td></td><td>Commute23= 3<tr><td></td><td>SameSize12= 4<tr><td></td><td>Bits8= 8<tr><td></td><td>Bits16= 16<tr><td></td><td>Bits32= 32<tr><td></td><td>Bits64= 64<tr><td></td><td>Bits128= 128<tr><td></td><td>GeneralPurpose= 0<tr><td></td><td>Parameter= 1<tr><td></td><td>None= -1<tr><td></td><td>SP= -2<tr><td></td><td>FP= -3<tr><td></td><td>AP= -4<tr><td></td><td>LR= -5<tr><td></td><td>HwRegister= -32<tr><td></td><td>nop= 0<tr><td></td><td>mov= 1<tr><td></td><td>conv= 2<tr><td></td><td>call= 3<tr><td></td><td>enter= 4<tr><td></td><td>exit= 5<tr><td></td><td>leave= 6<tr><td></td><td>return= 7<tr><td></td><td>result= 8<tr><td></td><td>trap= 9<tr><td></td><td>br= 10<tr><td></td><td>breq= 11<tr><td></td><td>brne= 12<tr><td></td><td>brge= 13<tr><td></td><td>brlt= 14<tr><td></td><td>pop= 15<tr><td></td><td>push= 16<tr><td></td><td>neg= 17<tr><td></td><td>not= 18<tr><td></td><td>abs= 19<tr><td></td><td>mul= 20<tr><td></td><td>div= 21<tr><td></td><td>mod= 22<tr><td></td><td>sub= 23<tr><td></td><td>add= 24<tr><td></td><td>and= 25<tr><td></td><td>or= 26<tr><td></td><td>xor= 27<tr><td></td><td>shl= 28<tr><td></td><td>shr= 29<tr><td></td><td>rol= 30<tr><td></td><td>ror= 31<tr><td></td><td>cas= 32<tr><td></td><td>copy= 33<tr><td></td><td>fill= 34<tr><td></td><td>asm= 35<tr><td></td><td>data= 36<tr><td></td><td>reserve= 37<tr><td></td><td>label= 38<tr><td></td><td>special= 39<tr><td></td><td>NofOpcodes= 40<tr><th align='left'>type declarations</th><td><a href="#FoxIntermediateCode.Type">Type</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxIntermediateCode.RegisterClass">RegisterClass</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxIntermediateCode.Operand">Operand</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxIntermediateCode.Instruction">Instruction</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#FoxIntermediateCode.InstructionFormat">InstructionFormat</a> =<strong>RECORD</strong> <tr><td></td><td>Instructions =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Instruction</strong><tr><td></td><td><a href="#FoxIntermediateCode.Section">Section</a> =<strong>OBJECT</strong> (<strong>Sections.Section</strong>)<tr><td></td><td><a href="#FoxIntermediateCode.IntermediateBackend">IntermediateBackend</a> =<strong>OBJECT</strong> (<strong>Backend.Backend</strong>)<tr><th align='left'>variables</th><td>instructionFormat: <strong>ARRAY</strong> NofOpcodes <strong>OF</strong> <strong>InstructionFormat</strong><tr><td></td><td>int8: <strong>Type</strong><tr><td></td><td>int16: <strong>Type</strong><tr><td></td><td>int32: <strong>Type</strong><tr><td></td><td>int64: <strong>Type</strong><tr><td></td><td>uint8: <strong>Type</strong><tr><td></td><td>uint16: <strong>Type</strong><tr><td></td><td>uint32: <strong>Type</strong><tr><td></td><td>uint64: <strong>Type</strong><tr><td></td><td>float32: <strong>Type</strong><tr><td></td><td>float64: <strong>Type</strong><tr><td></td><td>undef: <strong>Type</strong><tr><td></td><td>GeneralPurposeRegister: <strong>RegisterClass</strong><tr><th align='left'>procedures</th><td> <a href="#FoxIntermediateCode.NewSection">NewSection</a> (list: <strong>Sections.SectionList</strong>; type: <strong>SIGNED8</strong>; <strong>CONST</strong> name: <strong>Basic.SegmentedName</strong>; syntaxTreeSymbol: <strong>SyntaxTree.Symbol</strong>; dump: <strong>BOOLEAN</strong>): <strong>Section</strong><tr><td></td><td> SameOperand (<strong>CONST</strong> left, right: <strong>Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxIntermediateCode.CheckOperand">CheckOperand</a> (operand: <strong>Operand</strong>; opCode, location: <strong>SIGNED32</strong>; <strong>VAR</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxIntermediateCode.CheckInstruction">CheckInstruction</a> (instruction: <strong>Instruction</strong>; <strong>VAR</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> DumpRegister (w: <strong>Streams.Writer</strong>; registerNumber: <strong>SIZE</strong>; <strong>CONST</strong> registerClass: <strong>RegisterClass</strong>)<tr><td></td><td> DumpType (w: <strong>Streams.Writer</strong>; type: <strong>Type</strong>)<tr><td></td><td> DumpOperand (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> operand: <strong>Operand</strong>)<tr><td></td><td> WriteRawOperand (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> operand: <strong>Operand</strong>)<tr><td></td><td> TypeEquals (<strong>CONST</strong> s1, s2: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> OperandEquals (<strong>CONST</strong> s1, s2: <strong>Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Equals (<strong>CONST</strong> i1, i2: <strong>Instruction</strong>): <strong>BOOLEAN</strong><tr><td></td><td> WriteRawInstruction (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> instr: <strong>Instruction</strong>)<tr><td></td><td> DumpInstruction (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> instr: <strong>Instruction</strong>)<tr><td></td><td> InitInstruction (<strong>VAR</strong> instr: <strong>Instruction</strong>; textPosition: <strong>Basic.Position</strong>; opcode: <strong>SIGNED8</strong>; <strong>CONST</strong> op1, op2, op3: <strong>Operand</strong>)<tr><td></td><td> InitInstruction2 (<strong>VAR</strong> instr: <strong>Instruction</strong>; textPosition: <strong>Basic.Position</strong>; opcode: <strong>SIGNED8</strong>; op1, op2: <strong>Operand</strong>)<tr><td></td><td> InitInstruction1 (<strong>VAR</strong> instr: <strong>Instruction</strong>; textPosition: <strong>Basic.Position</strong>; opcode: <strong>SIGNED8</strong>; op1: <strong>Operand</strong>)<tr><td></td><td> InitInstruction0 (<strong>VAR</strong> instr: <strong>Instruction</strong>; textPosition: <strong>Basic.Position</strong>; opcode: <strong>SIGNED8</strong>)<tr><td></td><td> SetSubType (<strong>VAR</strong> instr: <strong>Instruction</strong>; subType: <strong>SIGNED8</strong>)<tr><td></td><td> InitOperand (<strong>VAR</strong> op: <strong>Operand</strong>)<tr><td></td><td> InitRegister (<strong>VAR</strong> op: <strong>Operand</strong>; type: <strong>Type</strong>; registerClass: <strong>RegisterClass</strong>; register: <strong>SIZE</strong>)<tr><td></td><td> Register (type: <strong>Type</strong>; registerClass: <strong>RegisterClass</strong>; register: <strong>SIZE</strong>): <strong>Operand</strong><tr><td></td><td> RegisterOffset (type: <strong>Type</strong>; registerClass: <strong>RegisterClass</strong>; register: <strong>SIZE</strong>; offset: <strong>SIGNED32</strong>): <strong>Operand</strong><tr><td></td><td> AddOffset (<strong>VAR</strong> op: <strong>Operand</strong>; offset: <strong>SIZE</strong>)<tr><td></td><td> SetOffset (<strong>VAR</strong> op: <strong>Operand</strong>; offset: <strong>SIGNED32</strong>)<tr><td></td><td> SetSymbol (<strong>VAR</strong> op: <strong>Operand</strong>; symbol: <strong>Sections.SectionName</strong>; fp: <strong>Basic.Fingerprint</strong>)<tr><td></td><td> SetScope (<strong>VAR</strong> instr: <strong>Instruction</strong>; scope: <strong>SyntaxTree.Scope</strong>)<tr><td></td><td> SetIntValue (<strong>VAR</strong> op: <strong>Operand</strong>; intValue: <strong>SIGNED64</strong>)<tr><td></td><td> MakeMemory (<strong>VAR</strong> op: <strong>Operand</strong>; type: <strong>Type</strong>)<tr><td></td><td> MakeAddress (<strong>VAR</strong> op: <strong>Operand</strong>; <strong>CONST</strong> type: <strong>Type</strong>)<tr><td></td><td> InitAddress (<strong>VAR</strong> op: <strong>Operand</strong>; type: <strong>Type</strong>; symbol: <strong>Sections.SectionName</strong>; fp: <strong>Basic.Fingerprint</strong>; symbolOffset: <strong>SIZE</strong>)<tr><td></td><td> Address (type: <strong>Type</strong>; symbol: <strong>Sections.SectionName</strong>; fp: <strong>Basic.Fingerprint</strong>; offset: <strong>SIZE</strong>): <strong>Operand</strong><tr><td></td><td> InitMemory (<strong>VAR</strong> op: <strong>Operand</strong>; type: <strong>Type</strong>; base: <strong>Operand</strong>; offset: <strong>SIZE</strong>)<tr><td></td><td> Memory (type: <strong>Type</strong>; base: <strong>Operand</strong>; offset: <strong>SIZE</strong>): <strong>Operand</strong><tr><td></td><td> IsConstantInteger (<strong>CONST</strong> op: <strong>Operand</strong>; <strong>VAR</strong> value: <strong>SIGNED64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> InitImmediate (<strong>VAR</strong> op: <strong>Operand</strong>; type: <strong>Type</strong>; value: <strong>SIGNED64</strong>)<tr><td></td><td> Immediate (type: <strong>Type</strong>; value: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitFloatImmediate (<strong>VAR</strong> op: <strong>Operand</strong>; type: <strong>Type</strong>; value: <strong>FLOAT64</strong>)<tr><td></td><td> FloatImmediate (type: <strong>Type</strong>; value: <strong>FLOAT64</strong>): <strong>Operand</strong><tr><td></td><td> InitNumber (<strong>VAR</strong> op: <strong>Operand</strong>; value: <strong>SIGNED64</strong>)<tr><td></td><td> Number (value: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitString (<strong>VAR</strong> op: <strong>Operand</strong>; string: <strong>SyntaxTree.SourceCode</strong>)<tr><td></td><td> SetString (<strong>VAR</strong> op: <strong>Operand</strong>; string: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> String (string: <strong>SyntaxTree.SourceCode</strong>): <strong>Operand</strong><tr><td></td><td> InitType (<strong>VAR</strong> type: <strong>Type</strong>; form: <strong>SIGNED8</strong>; sizeInBits: <strong>SIGNED16</strong>)<tr><td></td><td> ToVectorType (<strong>VAR</strong> type: <strong>Type</strong>; length: <strong>SIGNED32</strong>)<tr><td></td><td> IsVectorRegister (<strong>CONST</strong> op: <strong>Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> InitRegisterClass (<strong>VAR</strong> registerClass: <strong>RegisterClass</strong>; class: <strong>SIGNED8</strong>; number: <strong>SIZE</strong>)<tr><td></td><td> InitParameterRegisterClass (<strong>VAR</strong> registerClass: <strong>RegisterClass</strong>; number: <strong>SIGNED32</strong>)<tr><td></td><td> NewType (form: <strong>SIGNED8</strong>; sizeInBits: <strong>SIGNED16</strong>): <strong>Type</strong><tr><td></td><td> SetType (<strong>VAR</strong> op: <strong>Operand</strong>; <strong>CONST</strong> type: <strong>Type</strong>)<tr><td></td><td> <a href="#FoxIntermediateCode.FindMnemonic">FindMnemonic</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED8</strong><tr><td></td><td> SetRegister (<strong>VAR</strong> op: <strong>Operand</strong>; reg: <strong>SIZE</strong>)<tr><td></td><td> DenotesRegister (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> registerClass: <strong>RegisterClass</strong>; <strong>VAR</strong> register: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> UnsignedIntegerType (bits: <strong>SIZE</strong>): <strong>Type</strong><tr><td></td><td> SignedIntegerType (bits: <strong>SIZE</strong>): <strong>Type</strong><tr><td></td><td> FloatType (bits: <strong>SIZE</strong>): <strong>Type</strong><tr><td></td><td> <a href="#FoxIntermediateCode.ToUnsigned">ToUnsigned</a> (operand: <strong>Operand</strong>): <strong>Operand</strong><tr><td></td><td> DenotesType (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> type: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetType (system: <strong>Global.System</strong>; type: <strong>SyntaxTree.Type</strong>): <strong>Type</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_ED8B30C0">
+</h1><hr><h2 id="#_ED8B3880"><a name="FoxIntermediateCode.Type"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.Type">Type</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Type* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>form: <strong>SIGNED8</strong><tr><td></td><td>sizeInBits: <strong>SIGNED16</strong><tr><td></td><td>length: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_ED8B9280"><a name="FoxIntermediateCode.RegisterClass"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.RegisterClass">RegisterClass</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RegisterClass* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>class: <strong>SIGNED8</strong><tr><td></td><td>number: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_ED8BDEC0"><a name="FoxIntermediateCode.Operand"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.Operand">Operand</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Operand* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>mode: <strong>SIGNED8</strong><tr><td></td><td>type: <strong>Type</strong><tr><td></td><td>register: <strong>SIZE</strong><tr><td></td><td>registerClass: <strong>RegisterClass</strong><tr><td></td><td>offset: <strong>SIZE</strong><tr><td></td><td>intValue: <strong>SIGNED64</strong><tr><td></td><td>floatValue: <strong>FLOAT64</strong><tr><td></td><td>symbol: <strong>ObjectFile.Identifier</strong><tr><td></td><td>symbolOffset: <strong>SIZE</strong><tr><td></td><td><a href="#FoxIntermediateCode.Operand.resolved">resolved</a>: <strong>Sections.Section</strong><tr><td></td><td>string: <strong>SyntaxTree.SourceCode</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_ED8CAF40"><a name="FoxIntermediateCode.Operand.resolved"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.Operand">Operand</a>.<a href="#FoxIntermediateCode.Operand.resolved">resolved</a>
+</h3>
+<p> only cache !</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> resolved*: <strong>Sections.Section</strong></pre>
+<hr><h2 id="#_ED8CED00"><a name="FoxIntermediateCode.Instruction"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.Instruction">Instruction</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Instruction* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>opcode: <strong>SIGNED8</strong><tr><td></td><td>subtype: <strong>SIGNED8</strong><tr><td></td><td>textPosition: <strong>Basic.Position</strong><tr><td></td><td>pc: <strong>SIZE</strong><tr><td></td><td>scope: <strong>SyntaxTree.Scope</strong><tr><td></td><td>op1: <strong>Operand</strong><tr><td></td><td>op2: <strong>Operand</strong><tr><td></td><td>op3: <strong>Operand</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_ED8F1800"><a name="FoxIntermediateCode.InstructionFormat"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.InstructionFormat">InstructionFormat</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InstructionFormat* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>op1: <strong>SET</strong><tr><td></td><td>op2: <strong>SET</strong><tr><td></td><td>op3: <strong>SET</strong><tr><td></td><td>flags: <strong>SET</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_ED8FE280"><a name="FoxIntermediateCode.Section"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.Section">Section</a>
+</h2>
+<p> code object</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Section* =<strong>OBJECT</strong> (<strong>Sections.Section</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>instructions: <strong>Instructions</strong><tr><td></td><td>pc: <strong>SIZE</strong><tr><td></td><td>finally: <strong>SIZE</strong><tr><td></td><td>resolved: <strong>BinaryCode.Section</strong><tr><td></td><td>alias: <strong>BinaryCode.Section</strong><tr><td></td><td>aliasOffset: <strong>SIZE</strong><tr><td></td><td>comments: <strong>Sections.CommentWriter</strong><tr><td></td><td>exported: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitIntermediateSection (type: <strong>SIGNED8</strong>; <strong>CONST</strong> n: <strong>Basic.SegmentedName</strong>; symbol: <strong>SyntaxTree.Symbol</strong>; comment: <strong>BOOLEAN</strong>)<tr><td></td><td> SetExported (e: <strong>BOOLEAN</strong>)<tr><td></td><td> EnableComments (enabled: <strong>BOOLEAN</strong>)<tr><td></td><td> DeleteComments<tr><td></td><td> SetResolved (section: <strong>BinaryCode.Section</strong>)<tr><td></td><td> SetAlias (section: <strong>BinaryCode.Section</strong>; offset: <strong>SIZE</strong>)<tr><td></td><td> SetFinally (atPc: <strong>SIZE</strong>)<tr><td></td><td> GetSize (): <strong>SIGNED32</strong><tr><td></td><td> Emit (instruction: <strong>Instruction</strong>)<tr><td></td><td> EmitAt (at: <strong>SIZE</strong>; instruction: <strong>Instruction</strong>)<tr><td></td><td> Reset<tr><td></td><td> PatchOperands (pc: <strong>SIZE</strong>; op1, op2, op3: <strong>Operand</strong>)<tr><td></td><td> PatchAddress (pc: <strong>SIZE</strong>; symbolOffset: <strong>SIZE</strong>)<tr><td></td><td> SetPC (at: <strong>SIZE</strong>; pc: <strong>SIZE</strong>)<tr><td></td><td> DumpCode (w: <strong>Streams.Writer</strong>; from, to: <strong>SIZE</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)<tr><td></td><td> WriteRaw (w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_ED931900"><a name="FoxIntermediateCode.IntermediateBackend"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.IntermediateBackend">IntermediateBackend</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IntermediateBackend* =<strong>OBJECT</strong> (<strong>Backend.Backend</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>builtinsModuleName: <strong>SyntaxTree.IdentifierString</strong><tr><th align='left'>procedures</th><td> SupportedInstruction (<strong>CONST</strong> instr: <strong>Instruction</strong>; <strong>VAR</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetBuiltinsModuleName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_ED93CD00"><a name="FoxIntermediateCode.NewSection"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.NewSection">NewSection</a>
+</h2>
+<p> create a new section in a given section list  if the section already exists, reuse the existing section note for compatibility with the old binary object file format, const sections can also be referred to as var sections</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewSection* (list: <strong>Sections.SectionList</strong>; type: <strong>SIGNED8</strong>; <strong>CONST</strong> name: <strong>Basic.SegmentedName</strong>; syntaxTreeSymbol: <strong>SyntaxTree.Symbol</strong>; dump: <strong>BOOLEAN</strong>): <strong>Section</strong></pre>
+<hr><h2 id="#_ED94DC40"><a name="FoxIntermediateCode.CheckOperand"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.CheckOperand">CheckOperand</a>
+</h2>
+<p> check if an operand is valid at a certain location for a given instruction opcode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CheckOperand* (operand: <strong>Operand</strong>; opCode, location: <strong>SIGNED32</strong>; <strong>VAR</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_ED958280"><a name="FoxIntermediateCode.CheckInstruction"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.CheckInstruction">CheckInstruction</a>
+</h2>
+<p> check if an instruction is valid</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CheckInstruction* (instruction: <strong>Instruction</strong>; <strong>VAR</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_ED95EFC0"><a name="FoxIntermediateCode.FindMnemonic"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.FindMnemonic">FindMnemonic</a>
+</h2>
+<p> assembler related part</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindMnemonic* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED8</strong></pre>
+<hr><h2 id="#_ED964340"><a name="FoxIntermediateCode.ToUnsigned"></a><a href="#FoxIntermediateCode">FoxIntermediateCode</a>.<a href="#FoxIntermediateCode.ToUnsigned">ToUnsigned</a>
+</h2>
+<p> make an integer operand unsigned  note that no conversion is done, but only the type is changed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToUnsigned* (operand: <strong>Operand</strong>): <strong>Operand</strong></pre>
+</body></html>

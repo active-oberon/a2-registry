@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#DataLists">DataLists</a></p>
+<hr><h1 id="#_6562EA00"><a name="DataLists"></a><a href="#ModuleList">Module</a> DataLists
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Linked list for storing Data.Datum";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#DataLists.VERSION">VERSION</a>= 1<tr><th align='left'>type declarations</th><td><a href="#DataLists.Rider">Rider</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DataLists.List">List</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#DataLists.Load">Load</a> (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>List</strong>)<tr><td></td><td> Store (W: <strong>DataIO.Writer</strong>; obj: <strong>List</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_6563B080"><a name="DataLists.VERSION"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.VERSION">VERSION</a>
+</h2>
+<p> The version used when reading/writing a list to file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> VERSION*= 1</pre>
+<hr><h2 id="#_6563FF00"><a name="DataLists.Rider"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Rider">Rider</a>
+</h2>
+<p> Used to navigate a list for the purpose of extracting and updating information.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Rider* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#DataLists.Rider.eol">eol</a>: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& Initialize<tr><td></td><td> <a href="#DataLists.Rider.Home">Home</a><tr><td></td><td> <a href="#DataLists.Rider.Previous">Previous</a><tr><td></td><td> <a href="#DataLists.Rider.Next">Next</a><tr><td></td><td> <a href="#DataLists.Rider.Get">Get</a> (): <strong>Data.Datum</strong><tr><td></td><td> <a href="#DataLists.Rider.Inspect">Inspect</a> (): <strong>Data.Datum</strong><tr><td></td><td> <a href="#DataLists.Rider.Retrieve">Retrieve</a> (key: <strong>Data.Key</strong>): <strong>Data.Datum</strong><tr><td></td><td> <a href="#DataLists.Rider.Update">Update</a> (new: <strong>Data.Datum</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_65651EC0"><a name="DataLists.Rider.eol"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Rider">Rider</a>.<a href="#DataLists.Rider.eol">eol</a>
+</h3>
+<p> Is the rider is at the end-of-list?</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> eol-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_65656C40"><a name="DataLists.Rider.Home"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Rider">Rider</a>.<a href="#DataLists.Rider.Home">Home</a>
+</h3>
+<p> Moves the rider to its default position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Home*</pre>
+<hr><h3 id="#_6565B340"><a name="DataLists.Rider.Previous"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Rider">Rider</a>.<a href="#DataLists.Rider.Previous">Previous</a>
+</h3>
+<p> Decrements the position of the rider by 1, unless it is at home.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Previous*</pre>
+<hr><h3 id="#_65661280"><a name="DataLists.Rider.Next"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Rider">Rider</a>.<a href="#DataLists.Rider.Next">Next</a>
+</h3>
+<p> Increments the position of the rider by 1, unless it is at the end-of-list.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Next*</pre>
+<hr><h3 id="#_65667480"><a name="DataLists.Rider.Get"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Rider">Rider</a>.<a href="#DataLists.Rider.Get">Get</a>
+</h3>
+<p> Returns a copy of the datum held by the list at the rider's current position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (): <strong>Data.Datum</strong></pre>
+<hr><h3 id="#_6566E680"><a name="DataLists.Rider.Inspect"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Rider">Rider</a>.<a href="#DataLists.Rider.Inspect">Inspect</a>
+</h3>
+<p> Returns a pointer to the datum held by the list at the rider's current position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Inspect* (): <strong>Data.Datum</strong></pre>
+<hr><h3 id="#_65675980"><a name="DataLists.Rider.Retrieve"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Rider">Rider</a>.<a href="#DataLists.Rider.Retrieve">Retrieve</a>
+</h3>
+<p> Extracts a copy of that datum with key 'key', provided it exists; otherwise NIL is returned.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Retrieve* (key: <strong>Data.Key</strong>): <strong>Data.Datum</strong></pre>
+<hr><h3 id="#_6567D980"><a name="DataLists.Rider.Update"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Rider">Rider</a>.<a href="#DataLists.Rider.Update">Update</a>
+</h3>
+<p> Exchanges a datum held by the list with that of new, provided their keys are equal.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update* (new: <strong>Data.Datum</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_65686580"><a name="DataLists.List"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.List">List</a>
+</h2>
+<p> Type List is a double-linked list that is DataIO.PlugIn registered, i.e., it is persistent.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> List* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>len: <strong>NbrInt.Integer</strong><tr><td></td><td>rider: <strong>Rider</strong><tr><th align='left'>procedures</th><td>& Initialize<tr><td></td><td> Copy (<strong>VAR</strong> copy: <strong>List</strong>)<tr><td></td><td> Read (R: <strong>DataIO.Reader</strong>)<tr><td></td><td> Write (W: <strong>DataIO.Writer</strong>)<tr><td></td><td> <a href="#DataLists.List.Delete">Delete</a> (key: <strong>Data.Key</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#DataLists.List.Insert">Insert</a> (datum: <strong>Data.Datum</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_6569AE80"><a name="DataLists.List.Delete"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.List">List</a>.<a href="#DataLists.List.Delete">Delete</a>
+</h3>
+<p> Attempts to remove an existing datum with identifier key from the list.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Delete* (key: <strong>Data.Key</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_656A2C80"><a name="DataLists.List.Insert"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.List">List</a>.<a href="#DataLists.List.Insert">Insert</a>
+</h3>
+<p> Introduces a new datum into the list, provided that its key is unique.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Insert* (datum: <strong>Data.Datum</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_656AAF00"><a name="DataLists.Load"></a><a href="#DataLists">DataLists</a>.<a href="#DataLists.Load">Load</a>
+</h2>
+<p> Load and Store are procedures for external use that read/write an instance of List from/to a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>List</strong>)</pre>
+</body></html>

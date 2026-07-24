@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#WebHTTP">WebHTTP</a></p>
+<hr><h1 id="#_4E69D2C0"><a name="WebHTTP"></a><a href="#ModuleList">Module</a> WebHTTP
+</h1>
+<p> AUTHOR "tf/be"; PURPOSE "HTTP parsing";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>HTTPPort= 80<tr><td></td><td>HTTPSPort= 443<tr><td></td><td><a href="#WebHTTP.Continue">Continue</a>= 100<tr><td></td><td>SwitchingProtocols= 101<tr><td></td><td>Processing= 102<tr><td></td><td>OK= 200<tr><td></td><td>Created= 201<tr><td></td><td>Accepted= 202<tr><td></td><td>NonAuthoritativeInformation= 203<tr><td></td><td>NoContent= 204<tr><td></td><td>ResetContent= 205<tr><td></td><td>PartialContent= 206<tr><td></td><td>MultiStatus= 207<tr><td></td><td>MultipleChoices= 300<tr><td></td><td>ObjectMoved= 301<tr><td></td><td>ObjectMovedTemporarily= 302<tr><td></td><td>SeeOther= 303<tr><td></td><td>NotModified= 304<tr><td></td><td>UseProxy= 305<tr><td></td><td>TemporaryRedirect= 307<tr><td></td><td>BadRequest= 400<tr><td></td><td>Unauthorized= 401<tr><td></td><td>PaymentRequired= 402<tr><td></td><td>Forbidden= 403<tr><td></td><td>NotFound= 404<tr><td></td><td>MethodNotAllowed= 405<tr><td></td><td>NotAcceptable= 406<tr><td></td><td>ProxyAuthenticationRequested= 407<tr><td></td><td>RequestTimeout= 408<tr><td></td><td>Conflict= 409<tr><td></td><td>Gone= 410<tr><td></td><td>LengthRequired= 411<tr><td></td><td>PreconditionFailed= 412<tr><td></td><td>RequestEntityTooLarge= 413<tr><td></td><td>RequestURITooLong= 414<tr><td></td><td>UnsupportedMediaType= 415<tr><td></td><td>RequestedRangeNotSatisfiable= 416<tr><td></td><td>ExpectationFailed= 417<tr><td></td><td>UnprocessableEntity= 422<tr><td></td><td>Locked= 423<tr><td></td><td>FailedDependency= 424<tr><td></td><td>InternalServerError= 500<tr><td></td><td>NotImplemented= 501<tr><td></td><td>BadGateway= 502<tr><td></td><td>ServiceUnavailable= 503<tr><td></td><td>GatewayTimeout= 504<tr><td></td><td>VersionNotSupported= 505<tr><td></td><td>InsufficientStorage= 507<tr><td></td><td><a href="#WebHTTP.UnknownM">UnknownM</a>= 0<tr><td></td><td>GetM= 1<tr><td></td><td>HeadM= 2<tr><td></td><td>PutM= 3<tr><td></td><td>PostM= 4<tr><td></td><td>OptionsM= 5<tr><td></td><td>TraceM= 6<tr><td></td><td>DeleteM= 7<tr><td></td><td>ConnectM= 8<tr><td></td><td><a href="#WebHTTP.PropfindM">PropfindM</a>= 10<tr><td></td><td>ProppatchM= 11<tr><td></td><td>MkcolM= 12<tr><td></td><td>CopyM= 13<tr><td></td><td>MoveM= 14<tr><td></td><td>LockM= 15<tr><td></td><td>UnlockM= 16<tr><td></td><td><a href="#WebHTTP.VersionControlM">VersionControlM</a>= 17<tr><td></td><td>ReportM= 18<tr><td></td><td>CheckoutM= 19<tr><td></td><td>CheckinM= 20<tr><td></td><td>UncheckoutM= 21<tr><td></td><td>MkworkspaceM= 22<tr><td></td><td>UpdateM= 23<tr><td></td><td>LabelM= 24<tr><td></td><td>MergeM= 25<tr><td></td><td>BaselineControlM= 26<tr><td></td><td>MkactivityM= 27<tr><td></td><td><a href="#WebHTTP.DateTimeFormat">DateTimeFormat</a>= "www, dd mmm yyyy hh:nn:ss GMT"<tr><td></td><td>MaxRequestHeaderFields= (47+10)<tr><td></td><td>DocType= '&lt!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt'<tr><th align='left'>type declarations</th><td><a href="#WebHTTP.AdditionalField">AdditionalField</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#WebHTTP.RequestHeader">RequestHeader</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#WebHTTP.ResponseHeader">ResponseHeader</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#WebHTTP.ChunkedOutStream">ChunkedOutStream</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WebHTTP.ChunkedInStream">ChunkedInStream</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WebHTTP.LimitedOutStream">LimitedOutStream</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WebHTTP.LimitedInStream">LimitedInStream</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#WebHTTP.HasAdditionalField">HasAdditionalField</a> (af: <strong>AdditionalField</strong>; fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WebHTTP.GetAdditionalField">GetAdditionalField</a> (af: <strong>AdditionalField</strong>; fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>AdditionalField</strong><tr><td></td><td> <a href="#WebHTTP.GetAdditionalFieldValue">GetAdditionalFieldValue</a> (af: <strong>AdditionalField</strong>; fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WebHTTP.GetRequestPropertyValue">GetRequestPropertyValue</a> (<strong>VAR</strong> header: <strong>RequestHeader</strong>; propertyName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#WebHTTP.SetAdditionalFieldValue">SetAdditionalFieldValue</a> (<strong>VAR</strong> af: <strong>AdditionalField</strong>; fieldName, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#WebHTTP.Version">Version</a> (<strong>VAR</strong> h: <strong>RequestHeader</strong>; Maj, Min: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetMethod (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> method: <strong>SIGNED32</strong>)<tr><td></td><td> GetMethodName (code: <strong>SIGNED32</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ParseRequest (<strong>VAR</strong> in: <strong>Streams.Reader</strong>; <strong>VAR</strong> header: <strong>RequestHeader</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; log: <strong>TFLog.Log</strong>)<tr><td></td><td> ParseRequestHeaderFields (<strong>VAR</strong> in: <strong>Streams.Reader</strong>; <strong>VAR</strong> header: <strong>RequestHeader</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> ParseReply (<strong>VAR</strong> in: <strong>Streams.Reader</strong>; <strong>VAR</strong> header: <strong>ResponseHeader</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; log: <strong>TFLog.Log</strong>)<tr><td></td><td> ModifyReply (<strong>VAR</strong> in: <strong>Streams.Reader</strong>; <strong>VAR</strong> header: <strong>ResponseHeader</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; log: <strong>TFLog.Log</strong>)<tr><td></td><td> LogRequestHeader (log: <strong>TFLog.Log</strong>; <strong>VAR</strong> header: <strong>RequestHeader</strong>)<tr><td></td><td> LogResponseHeader (log: <strong>TFLog.Log</strong>; <strong>VAR</strong> header: <strong>ResponseHeader</strong>)<tr><td></td><td> WriteRequestLine (s: <strong>Streams.Writer</strong>; maj, min: <strong>SIGNED32</strong>; method: <strong>SIGNED32</strong>; uri, host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetReasonPhrase (code: <strong>SIGNED32</strong>; <strong>VAR</strong> phrase: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteStatus (<strong>VAR</strong> h: <strong>ResponseHeader</strong>; <strong>VAR</strong> dst: <strong>Streams.Writer</strong>)<tr><td></td><td> WriteHTMLStatus (<strong>VAR</strong> h: <strong>ResponseHeader</strong>; dst: <strong>Streams.Writer</strong>)<tr><td></td><td> SendResponseHeader (<strong>VAR</strong> h: <strong>ResponseHeader</strong>; <strong>VAR</strong> dst: <strong>Streams.Writer</strong>)<tr><td></td><td> SendStatusReply (code: <strong>SIGNED32</strong>; <strong>VAR</strong> request: <strong>RequestHeader</strong>; <strong>VAR</strong> reply: <strong>ResponseHeader</strong>; <strong>VAR</strong> out: <strong>Streams.Writer</strong>)<tr><td></td><td> GetPath (<strong>VAR</strong> url, path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SplitHTTPAdr (url: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> host, path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> port: <strong>UNSIGNED32</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_4E748D80">
+</h1><hr><h2 id="#_4E749540"><a name="WebHTTP.Continue"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.Continue">Continue</a>
+</h2>
+<p> HTTP Result Codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Continue*= 100</pre>
+<hr><h2 id="#_4E74CB80"><a name="WebHTTP.UnknownM"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.UnknownM">UnknownM</a>
+</h2>
+<p> HTTP methods RFC 2616 Section 5.1.1</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> UnknownM*= 0</pre>
+<hr><h2 id="#_4E750EC0"><a name="WebHTTP.PropfindM"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.PropfindM">PropfindM</a>
+</h2>
+<p> new HTTP methods RFC 2518 Section 8: HTTP Extensions for Distributed Authoring -- WebDAV</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PropfindM*= 10</pre>
+<hr><h2 id="#_4E757040"><a name="WebHTTP.VersionControlM"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.VersionControlM">VersionControlM</a>
+</h2>
+<p> new HTTP methods RFC 3253 Versioning Extensions to WebDAV</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> VersionControlM*= 17</pre>
+<hr><h2 id="#_4E75BF80"><a name="WebHTTP.DateTimeFormat"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.DateTimeFormat">DateTimeFormat</a>
+</h2>
+<p> HTTP date & time format</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DateTimeFormat*= "www, dd mmm yyyy hh:nn:ss GMT"</pre>
+<hr><h2 id="#_4E75FE80"><a name="WebHTTP.AdditionalField"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.AdditionalField">AdditionalField</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AdditionalField* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>key: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>value: <strong>ARRAY</strong> 1024 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>next: <strong>AdditionalField</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_4E767D00"><a name="WebHTTP.RequestHeader"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.RequestHeader">RequestHeader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RequestHeader* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fadr: <strong>IP.Adr</strong><tr><td></td><td>fport: <strong>UNSIGNED32</strong><tr><td></td><td>method: <strong>SIGNED32</strong><tr><td></td><td>maj: <strong>SIGNED32</strong><tr><td></td><td>min: <strong>SIGNED32</strong><tr><td></td><td>uri: <strong>ARRAY</strong> 4096 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>host: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>referer: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>useragent: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>accept: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>transferencoding: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>additionalFields: <strong>AdditionalField</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_4E77B240"><a name="WebHTTP.ResponseHeader"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.ResponseHeader">ResponseHeader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ResponseHeader* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>maj: <strong>SIGNED32</strong><tr><td></td><td>min: <strong>SIGNED32</strong><tr><td></td><td>statuscode: <strong>SIGNED32</strong><tr><td></td><td>reasonphrase: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>server: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>date: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>location: <strong>ARRAY</strong> 1024 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>contenttype: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>contentlength: <strong>SIZE</strong><tr><td></td><td>contentlocation: <strong>ARRAY</strong> 1024 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>transferencoding: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>lastmodified: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>additionalFields: <strong>AdditionalField</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_4E7911C0"><a name="WebHTTP.ChunkedOutStream"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.ChunkedOutStream">ChunkedOutStream</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ChunkedOutStream* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>VAR</strong> inW: <strong>Streams.Writer</strong>; outW: <strong>Streams.Writer</strong>; <strong>VAR</strong> request: <strong>RequestHeader</strong>; <strong>VAR</strong> reply: <strong>ResponseHeader</strong>)<tr><td></td><td> Update<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_4E79A7C0"><a name="WebHTTP.ChunkedInStream"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.ChunkedInStream">ChunkedInStream</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ChunkedInStream* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>VAR</strong> inR, outR: <strong>Streams.Reader</strong>)</td></tr>
+</table>
+<hr><h2 id="#_4E79FFC0"><a name="WebHTTP.LimitedOutStream"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.LimitedOutStream">LimitedOutStream</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LimitedOutStream* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>remain: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (<strong>VAR</strong> inW, outW: <strong>Streams.Writer</strong>; size: <strong>SIGNED32</strong>)<tr><td></td><td> Update<tr><td></td><td> Padding (ch: <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_4E7AA0C0"><a name="WebHTTP.LimitedInStream"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.LimitedInStream">LimitedInStream</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LimitedInStream* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>remain: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (<strong>VAR</strong> inR, outR: <strong>Streams.Reader</strong>; size: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_4E7B1780"><a name="WebHTTP.HasAdditionalField"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.HasAdditionalField">HasAdditionalField</a>
+</h2>
+<p> Currently only for additional fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HasAdditionalField* (af: <strong>AdditionalField</strong>; fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_4E7B7E40"><a name="WebHTTP.GetAdditionalField"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.GetAdditionalField">GetAdditionalField</a>
+</h2>
+<p> Currently only for additional fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetAdditionalField* (af: <strong>AdditionalField</strong>; fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>AdditionalField</strong></pre>
+<hr><h2 id="#_4E7BE500"><a name="WebHTTP.GetAdditionalFieldValue"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.GetAdditionalFieldValue">GetAdditionalFieldValue</a>
+</h2>
+<p> Currently only for additional fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetAdditionalFieldValue* (af: <strong>AdditionalField</strong>; fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_4E7C6540"><a name="WebHTTP.GetRequestPropertyValue"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.GetRequestPropertyValue">GetRequestPropertyValue</a>
+</h2>
+<p> return request property as a string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetRequestPropertyValue* (<strong>VAR</strong> header: <strong>RequestHeader</strong>; propertyName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_4E7CE680"><a name="WebHTTP.SetAdditionalFieldValue"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.SetAdditionalFieldValue">SetAdditionalFieldValue</a>
+</h2>
+<p> Currently only for additional fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetAdditionalFieldValue* (<strong>VAR</strong> af: <strong>AdditionalField</strong>; fieldName, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_4E7D52C0"><a name="WebHTTP.Version"></a><a href="#WebHTTP">WebHTTP</a>.<a href="#WebHTTP.Version">Version</a>
+</h2>
+<p> Version - returns TRUE iff the HTTP version specified in h.maj/h.min is bigger or equal to Maj/Min</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Version* (<strong>VAR</strong> h: <strong>RequestHeader</strong>; Maj, Min: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

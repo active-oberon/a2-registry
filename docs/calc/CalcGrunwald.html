@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CalcGrunwald">CalcGrunwald</a></p>
+<hr><h1 id="#_C0E2EB80"><a name="CalcGrunwald"></a><a href="#ModuleList">Module</a> CalcGrunwald
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Grünwald-Letnikov algorithms for the fractional calculus";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#CalcGrunwald.OKay">OKay</a>= 0<tr><td></td><td>MaxSubDivReached= 1<tr><td></td><td>Oscillation= 2<tr><th align='left'>variables</th><td><a href="#CalcGrunwald.MaxIntervals">MaxIntervals</a>: <strong>NbrInt.Integer</strong><tr><th align='left'>procedures</th><td> <a href="#CalcGrunwald.SolveD">SolveD</a> (f: <strong>CalcFn.ReArg</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> error: <strong>NbrRe.Real</strong>; <strong>VAR</strong> res: <strong>NbrInt.Integer</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#CalcGrunwald.SolveI">SolveI</a> (f: <strong>CalcFn.ReArg</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> error: <strong>NbrRe.Real</strong>; <strong>VAR</strong> res: <strong>NbrInt.Integer</strong>): <strong>NbrRe.Real</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C0E420C0"><a name="CalcGrunwald.OKay"></a><a href="#CalcGrunwald">CalcGrunwald</a>.<a href="#CalcGrunwald.OKay">OKay</a>
+</h2>
+<p> Status of integration, i.e., admissible values for the returned parameter 'res'.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> OKay*= 0</pre>
+<hr><h2 id="#_C0E477C0"><a name="CalcGrunwald.MaxIntervals"></a><a href="#CalcGrunwald">CalcGrunwald</a>.<a href="#CalcGrunwald.MaxIntervals">MaxIntervals</a>
+</h2>
+<p> Arguments of differ-integration are: f the function being differintegrated, x the argument of f, also the upper limit of differintegration, order (&gt 0) the fractional order of differintegration, i.e., a, error the requested and achieved error tolerances, res status of the differintegration.</p>
+
+<p> Upper bound for the number of subintervals for integration/differentiation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> MaxIntervals-: <strong>NbrInt.Integer</strong></pre>
+<hr><h2 id="#_C0E56BC0"><a name="CalcGrunwald.SolveD"></a><a href="#CalcGrunwald">CalcGrunwald</a>.<a href="#CalcGrunwald.SolveD">SolveD</a>
+</h2>
+<p> Computes a Riemann-Liouville fractional-order derivative. Daf(x) = DnIaf(x) = (1/G(n-a)) dn/dxn x0x (x-y)n-1-a f(y) dy, n-1 <a name="a"></a> # n, n N</p>
+
+<h2>, a N !+</h2>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveD* (f: <strong>CalcFn.ReArg</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> error: <strong>NbrRe.Real</strong>; <strong>VAR</strong> res: <strong>NbrInt.Integer</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h1 id="#_C0E5D440">, a N !+
+</h1><hr><h2 id="#_C0E64840"><a name="CalcGrunwald.SolveI"></a><a href="#CalcGrunwald">CalcGrunwald</a>.<a href="#CalcGrunwald.SolveI">SolveI</a>
+</h2>
+<p> Computes a Riemann-Liouville fractional-order integral. Iaf(x) = (1/G(a)) x0x (x-y)a-1 f(y) dy, a N !+</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveI* (f: <strong>CalcFn.ReArg</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> error: <strong>NbrRe.Real</strong>; <strong>VAR</strong> res: <strong>NbrInt.Integer</strong>): <strong>NbrRe.Real</strong></pre>
+</body></html>

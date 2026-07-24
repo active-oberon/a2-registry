@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#GfxMatrix">GfxMatrix</a></p>
+<hr><h1 id="#_BC44F340"><a name="GfxMatrix"></a><a href="#ModuleList">Module</a> GfxMatrix
+</h1>
+<p> portable</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#GfxMatrix.Matrix">Matrix</a> =<strong>ARRAY</strong> 3 <strong>OF</strong> <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>FLOAT32</strong><tr><th align='left'>variables</th><td><a href="#GfxMatrix.Identity">Identity</a>: <strong>Matrix</strong><tr><th align='left'>procedures</th><td> <a href="#GfxMatrix.Init">Init</a> (<strong>VAR</strong> m: <strong>Matrix</strong>; m00, m01, m10, m11, m20, m21: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxMatrix.Get3PointTransform">Get3PointTransform</a> (px0, py0, px1, py1, qx0, qy0, qx1, qy1, rx0, ry0, rx1, ry1: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)<tr><td></td><td> <a href="#GfxMatrix.Get2PointTransform">Get2PointTransform</a> (px0, py0, px1, py1, qx0, qy0, qx1, qy1: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)<tr><td></td><td> <a href="#GfxMatrix.Invert">Invert</a> (m: <strong>Matrix</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)<tr><td></td><td> <a href="#GfxMatrix.Det">Det</a> (<strong>VAR</strong> m: <strong>Matrix</strong>): <strong>FLOAT32</strong><tr><td></td><td> <a href="#GfxMatrix.Singular">Singular</a> (<strong>VAR</strong> m: <strong>Matrix</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxMatrix.Scaled">Scaled</a> (<strong>VAR</strong> m: <strong>Matrix</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxMatrix.Rotated">Rotated</a> (<strong>VAR</strong> m: <strong>Matrix</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxMatrix.Equal">Equal</a> (<strong>VAR</strong> m, n: <strong>Matrix</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxMatrix.Translate">Translate</a> (m: <strong>Matrix</strong>; dx, dy: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)<tr><td></td><td> <a href="#GfxMatrix.Scale">Scale</a> (m: <strong>Matrix</strong>; sx, sy: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)<tr><td></td><td> <a href="#GfxMatrix.ScaleAt">ScaleAt</a> (m: <strong>Matrix</strong>; ox, oy, sx, sy: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)<tr><td></td><td> <a href="#GfxMatrix.Rotate">Rotate</a> (m: <strong>Matrix</strong>; sin, cos: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)<tr><td></td><td> <a href="#GfxMatrix.RotateAt">RotateAt</a> (m: <strong>Matrix</strong>; ox, oy, sin, cos: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)<tr><td></td><td> <a href="#GfxMatrix.Concat">Concat</a> (m, n: <strong>Matrix</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)<tr><td></td><td> <a href="#GfxMatrix.Atan2">Atan2</a> (x, y: <strong>FLOAT32</strong>): <strong>FLOAT32</strong><tr><td></td><td> <a href="#GfxMatrix.Apply">Apply</a> (<strong>VAR</strong> m: <strong>Matrix</strong>; xin, yin: <strong>FLOAT32</strong>; <strong>VAR</strong> xout, yout: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxMatrix.ApplyToVector">ApplyToVector</a> (<strong>VAR</strong> m: <strong>Matrix</strong>; xin, yin: <strong>FLOAT32</strong>; <strong>VAR</strong> xout, yout: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxMatrix.ApplyToDist">ApplyToDist</a> (<strong>VAR</strong> m: <strong>Matrix</strong>; din: <strong>FLOAT32</strong>; <strong>VAR</strong> dout: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxMatrix.ApplyToRect">ApplyToRect</a> (<strong>VAR</strong> m: <strong>Matrix</strong>; ilx, ily, irx, iuy: <strong>FLOAT32</strong>; <strong>VAR</strong> olx, oly, orx, ouy: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxMatrix.Solve">Solve</a> (<strong>VAR</strong> m: <strong>Matrix</strong>; u, v: <strong>FLOAT32</strong>; <strong>VAR</strong> x, y: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxMatrix.Write">Write</a> (<strong>VAR</strong> w: <strong>Streams.Writer</strong>; <strong>VAR</strong> m: <strong>Matrix</strong>)<tr><td></td><td> Read (<strong>VAR</strong> r: <strong>Streams.Reader</strong>; <strong>VAR</strong> m: <strong>Matrix</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_BC4B4880">
+</h1>
+<p> AUTHOR "eos"; PURPOSE "Affine transformations in 2D";</p>
+<hr><h2 id="#_BC4B6E40"><a name="GfxMatrix.Matrix"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Matrix">Matrix</a>
+</h2>
+<p> Transformation matrix 3x2_matrices can represent any combination of affine transformations, i.e. of translation, rotation, scaling and shearing.</p>
+
+<p> Translate by tx, ty: <a href="#1">1</a> 0  <a href="#0">0</a> 1  <a href="#tx">tx</a> ty </p>
+
+<p> Scale by sx, sy: <a href="#sx">sx</a> 0  <a href="#0">0</a> sy  <a href="#0">0</a> 0 </p>
+
+<p> Rotate counter-clockwise by angle phi: <a href="#cos(phi)">cos(phi)</a> sin(phi)  <a href="#-sin(phi)">-sin(phi)</a> cos(phi)  <a href="#0">0</a> 0 </p>
+
+<p> Shear along x_axis by factor f: <a href="#1">1</a> 0  <a href="#f">f</a> 1  <a href="#0">0</a> 0 </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Matrix* =<strong>ARRAY</strong> 3 <strong>OF</strong> <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_BC4CD640"><a name="GfxMatrix.Identity"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Identity">Identity</a>
+</h2>
+<p> identity matrix (read_only)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Identity*: <strong>Matrix</strong></pre>
+<hr><h2 id="#_BC4D0D40"><a name="GfxMatrix.Init"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Init">Init</a>
+</h2>
+<p>--- Matrix Computation ---</p>
+
+<p> initialize matrix with given values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init* (<strong>VAR</strong> m: <strong>Matrix</strong>; m00, m01, m10, m11, m20, m21: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_BC4DA300"><a name="GfxMatrix.Get3PointTransform"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Get3PointTransform">Get3PointTransform</a>
+</h2>
+<p> Procedures Get3PointTransform, Get2PointTransform and Invert may not be able to find a solution. In that case, they return a singular matrix with all elements set to zero.</p>
+
+<p> calculate matrix that maps p0 to p1, q0 to q1, and r0 to r1</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get3PointTransform* (px0, py0, px1, py1, qx0, qy0, qx1, qy1, rx0, ry0, rx1, ry1: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)</pre>
+<hr><h2 id="#_BC4EE700"><a name="GfxMatrix.Get2PointTransform"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Get2PointTransform">Get2PointTransform</a>
+</h2>
+<p> calculate matrix that maps p0 to p1 and q0 to q1</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get2PointTransform* (px0, py0, px1, py1, qx0, qy0, qx1, qy1: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)</pre>
+<hr><h2 id="#_BC4F92C0"><a name="GfxMatrix.Invert"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Invert">Invert</a>
+</h2>
+<p> calculate inverse of matrix</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Invert* (m: <strong>Matrix</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)</pre>
+<hr><h2 id="#_BC4FEA00"><a name="GfxMatrix.Det"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Det">Det</a>
+</h2>
+<p>--- Detection of Special Cases ---</p>
+
+<p> return determinant of matrix</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Det* (<strong>VAR</strong> m: <strong>Matrix</strong>): <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_BC5053C0"><a name="GfxMatrix.Singular"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Singular">Singular</a>
+</h2>
+<p> return whether matrix is singular</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Singular* (<strong>VAR</strong> m: <strong>Matrix</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_BC50A800"><a name="GfxMatrix.Scaled"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Scaled">Scaled</a>
+</h2>
+<p> return whether matrix changes vector lengths</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Scaled* (<strong>VAR</strong> m: <strong>Matrix</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_BC510040"><a name="GfxMatrix.Rotated"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Rotated">Rotated</a>
+</h2>
+<p> return whether matrix includes rotation, shear, or mirror transformation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rotated* (<strong>VAR</strong> m: <strong>Matrix</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_BC516400"><a name="GfxMatrix.Equal"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Equal">Equal</a>
+</h2>
+<p> return whether matrices should be considered equal</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Equal* (<strong>VAR</strong> m, n: <strong>Matrix</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_BC51C740"><a name="GfxMatrix.Translate"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Translate">Translate</a>
+</h2>
+<p>--- Matrix Concatenation ---</p>
+
+<p> Combinations of single transformations are evaluated from left to right. Executing Translate, Rotate or Scale pre-concatenates a corresponding matrix to the left of the given matrix parameter. This has the effect that the new transformation is applied before all previously accumulated transformations. Every transformation is therefore executed in the context of the coordinate system defined by the concatenation of all transformations to its right.</p>
+
+<p> translation by (dx, dy)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Translate* (m: <strong>Matrix</strong>; dx, dy: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)</pre>
+<hr><h2 id="#_BC534040"><a name="GfxMatrix.Scale"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Scale">Scale</a>
+</h2>
+<p> scale by (sx, sy)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Scale* (m: <strong>Matrix</strong>; sx, sy: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)</pre>
+<hr><h2 id="#_BC53AD80"><a name="GfxMatrix.ScaleAt"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.ScaleAt">ScaleAt</a>
+</h2>
+<p> scale at (ox, oy) by (sx, sy)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ScaleAt* (m: <strong>Matrix</strong>; ox, oy, sx, sy: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)</pre>
+<hr><h2 id="#_BC543740"><a name="GfxMatrix.Rotate"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Rotate">Rotate</a>
+</h2>
+<p> rotate counter-clockwise by angle specified by its sine and cosine</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rotate* (m: <strong>Matrix</strong>; sin, cos: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)</pre>
+<hr><h2 id="#_BC54BC00"><a name="GfxMatrix.RotateAt"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.RotateAt">RotateAt</a>
+</h2>
+<p> rotate counter-clockwise around (ox, oy) by angle specified by its sine and cosine</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RotateAt* (m: <strong>Matrix</strong>; ox, oy, sin, cos: <strong>FLOAT32</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)</pre>
+<hr><h2 id="#_BC555DC0"><a name="GfxMatrix.Concat"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Concat">Concat</a>
+</h2>
+<p> concatenate matrices</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Concat* (m, n: <strong>Matrix</strong>; <strong>VAR</strong> res: <strong>Matrix</strong>)</pre>
+<hr><h2 id="#_BC55B400"><a name="GfxMatrix.Atan2"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Atan2">Atan2</a>
+</h2>
+<p>--- Arctan of Vector ---</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Atan2* (x, y: <strong>FLOAT32</strong>): <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_BC5609C0"><a name="GfxMatrix.Apply"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Apply">Apply</a>
+</h2>
+<p>--- Matrix Application ---</p>
+
+<p> apply transformation matrix to point</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Apply* (<strong>VAR</strong> m: <strong>Matrix</strong>; xin, yin: <strong>FLOAT32</strong>; <strong>VAR</strong> xout, yout: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_BC569900"><a name="GfxMatrix.ApplyToVector"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.ApplyToVector">ApplyToVector</a>
+</h2>
+<p> apply transformation matrix to vector (ignoring translation)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyToVector* (<strong>VAR</strong> m: <strong>Matrix</strong>; xin, yin: <strong>FLOAT32</strong>; <strong>VAR</strong> xout, yout: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_BC571D40"><a name="GfxMatrix.ApplyToDist"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.ApplyToDist">ApplyToDist</a>
+</h2>
+<p> apply transformation matrix to distance</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyToDist* (<strong>VAR</strong> m: <strong>Matrix</strong>; din: <strong>FLOAT32</strong>; <strong>VAR</strong> dout: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_BC578B80"><a name="GfxMatrix.ApplyToRect"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.ApplyToRect">ApplyToRect</a>
+</h2>
+<p> apply transformation matrix to axis-aligned rectangle; result is enclosing axis-aligned rectangle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyToRect* (<strong>VAR</strong> m: <strong>Matrix</strong>; ilx, ily, irx, iuy: <strong>FLOAT32</strong>; <strong>VAR</strong> olx, oly, orx, ouy: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_BC584040"><a name="GfxMatrix.Solve"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Solve">Solve</a>
+</h2>
+<p> apply inverse of matrix to point</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Solve* (<strong>VAR</strong> m: <strong>Matrix</strong>; u, v: <strong>FLOAT32</strong>; <strong>VAR</strong> x, y: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_BC58C080"><a name="GfxMatrix.Write"></a><a href="#GfxMatrix">GfxMatrix</a>.<a href="#GfxMatrix.Write">Write</a>
+</h2>
+<p>--- Matrix I/O ---</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (<strong>VAR</strong> w: <strong>Streams.Writer</strong>; <strong>VAR</strong> m: <strong>Matrix</strong>)</pre>
+</body></html>

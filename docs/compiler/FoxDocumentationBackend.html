@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxDocumentationBackend">FoxDocumentationBackend</a></p>
+<hr><h1 id="#_114AD5C0"><a name="FoxDocumentationBackend"></a><a href="#ModuleList">Module</a> FoxDocumentationBackend
+</h1>
+<p> The special backend in the Fox compiler suite serves as a documentation generator to produce documents from Oberon source files.</p>
+
+<dl>
+<dt><strong>author</strong></dt>
+<dd> Felix Friedrich</dd>
+
+
+<dl>
+<dt><strong>purpose</strong></dt>
+<dd> Documentation Generator</dd>
+
+
+</dl>
+</dl>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#FoxDocumentationBackend.VisibleConstant">VisibleConstant</a>= 3<tr><td></td><td><a href="#FoxDocumentationBackend.SecondVisibleConstant">SecondVisibleConstant</a>= 4<tr><td></td><td>Third= 4<tr><th align='left'>type declarations</th><td><a href="#FoxDocumentationBackend.Generator">Generator</a> =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)<tr><th align='left'>procedures</th><td> WriteReferenceInScope (text: <strong>DocumentationTree.Text</strong>; symbol: <strong>SyntaxTree.Symbol</strong>; inScope: <strong>SyntaxTree.Scope</strong>)<tr><td></td><td> Get (): <strong>Backend.Backend</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_114BF380">
+</h1><a name="concept"></a><hr><h1 id="#concept">
+</h1>
+<h2> Documentation Backend</h2>
+
+<p>The <a href="#FoxDocumentationBackend">documentation backend</a> is mainly a tool to merge different informations, namely:</p>
+
+<ol>
+<li> The information from the symbol and module scope structure</li>
+
+<li> The information provided by documenting comments</li>
+
+</ol>
+<p>Documentation comments that immediately precede a symbol or that are directly in the same line as a symbol are associated with this symbol.Therefore the documentation contained within the respective comment is on the same level as the description of the symbol itself and will bedisplayed together with the information about the symbol.</p>
+
+<p>The following describes how a documentation is generated from a module:</p>
+
+<ul>
+<li> Association to symbols and preprocessing</li>
+
+<ol>
+<li> A comment that follows a symbol X and stands in the same line as X is associated with this symbol X.</li>
+
+<li> Comments that follow the MODULE (or CELLNET) specification are treated separately to describe the module.</li>
+
+<li> Any other comment that stand in front of some symbol Y is associated with this symbol Y.</li>
+
+<li> Consecutive comments are always merged as character arrays mefore being parsed by the comment parser.</li>
+
+</ol>
+<li> Module documentation</li>
+
+<ol>
+<li> Each comment (or sequence of consecutive comments) is parsed by the comment parser into a separate document</li>
+
+<li> During processing of a module, each symbol is described in a separate symbol section. The module itself is described in the module summary section.</li>
+
+<li> Each comment document is merged with the respective symbol section in the overal module document.</li>
+
+</ol>
+<li> Module documentation merging</li>
+
+<ol>
+<li> When more than one modules are processed into one documentation file, the module documentats are merged into one global document.</li>
+
+<li> The header of the document contains a linked list of all involved modules.</li>
+
+</ol>
+</ul>
+<h3> Formatting elements</h3>
+
+<h4> Paragraphs and line breaks</h4>
+
+<p> Text is written in paragraphs. Paragraphs are separated by a blank line. Lines that are not separated by a blank line are considered as contiguous text (such as in LaTex) Explicit line breaks can be inserted using two backslashes:</p>
+
+<pre>This is a line \\ that is broken </pre>
+
+<p> This is a line<br> that is broken</p>
+
+<h4> Text Styles</h4>
+
+<p> Text can be written boldface, underlined or in italics. Left and right delimiters of such emphasized text may not be separated from the text by a whitespace.</p>
+
+<table><tr><th align='left'>Name</th><th align='left'> Code Example</th><th align='left'> Translation</th><td></td></tr>
+<tr><td> Boldface</td><td> <code>*example text*</code></td><td> <strong>Boldface Text</strong></td><td></td></tr>
+<tr><td> Underline</td><td> <code>_example text_</code></td><td> <u>Underline Text</u></td><td></td></tr>
+<tr><td> Italics</td><td> <code>/example text/ </code></td><td> <em>Italics Text</em></td><td></td></tr>
+</table>
+
+<h4> bullets and lists</h4>
+
+<p> Bulleted or numbered lists start with an asterisk or number sign, respectively. Description start with a text that is embraced by number signs.</p>
+
+<pre>* bullet 1<BR>	** sub bullet1<BR>	** sub bullet2<BR>* bullet 2<BR><BR># number 1<BR>	## sub number 1<BR>	## sub number 2<BR># number 2<BR><BR>#description label# description text<BR>#description label2# description text2 </pre>
+
+<p> Result</p>
+
+<ul>
+<li> bullet 1</li>
+
+<ul>
+<li> sub bullet1</li>
+
+<li> sub bullet2</li>
+
+</ul>
+<li> bullet 2</li>
+
+</ul>
+<ol>
+<li> number 1</li>
+
+<ol>
+<li> sub number 1</li>
+
+<li> sub number 2</li>
+
+</ol>
+<li> number 2</li>
+
+<dl>
+<dt><strong>description label</strong></dt>
+<dd> description text</dd>
+
+
+<dl>
+<dt><strong>description label2</strong></dt>
+<dd> description text2</dd>
+
+
+</dl>
+</dl>
+</ol>
+<h4> Labels and links</h4>
+
+<p> A label in the text is denoted as follows</p>
+
+<pre>&lt&ltlabelName&gt&gt </pre>
+
+<p> <a name="labelName"></a></p>
+
+<p> A link in the text is denoted as</p>
+
+<pre>[[labelName]] </pre>
+
+<p> or, if an alternative text should be displayed, it can be written as</p>
+
+<pre>[[labelName|alternative text]] </pre>
+
+<h4> Document Structure</h4>
+
+<p> Documents consist of sections. A section is started with a sequence of <code>@</code> letter as the first characters on a separate line. Examples:</p>
+
+<pre>@ title of a section of level 1 </pre>
+
+<pre>@@ title of a section of level 2 </pre>
+
+<p> If the first text element of the title is a label, then this lable is attributed to the section.</p>
+
+<pre>@ &lt&ltlabel&gt&gt title </pre>
+
+<p> This can be written shorter: If there is no whitespace between the leading section letter and a string, the string is also counted as the label of the section:</p>
+
+<pre>@label title </pre>
+
+<p> For structuring a section, headings are provided. A heading is started with an equal sign as the first character in a separate line. Examples</p>
+
+<pre>= title of a paragraph of level 1<BR>	== title of a paragraph of level 2<BR>	=label title<BR>	= &lt&ltlabel&gt&gt title </pre>
+
+<h4> Tables</h4>
+
+<p> Tables can be written by writing cells in a separate paragraph. A cell is either a header cell or a data cell. Header cells start with a vertical bar and an equal sign while data cells are embraced by vertical lines only:</p>
+
+<pre><BR>	|= header 1 |= header 2 |= header 3<BR>	| data 1 | data 2 | data 3<BR>	| data 4 | data 5 | data 6 </pre>
+
+<dl>
+<dt><strong>Result</strong></dt>
+<dd></dd>
+
+
+</dl>
+<table><tr><th align='left'> header 1</th><th align='left'> header 2</th><th align='left'> header 3</th></tr>
+<tr><td> data 1</td><td> data 2</td><td> data 3</td></tr>
+<tr><td> data 4</td><td> data 5</td><td> data 6 </td></tr>
+</table>
+<hr><h2 id="#_11619640"><a name="FoxDocumentationBackend.VisibleConstant"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.VisibleConstant">VisibleConstant</a>
+</h2>
+<p> visible constant comment</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> VisibleConstant*= 3</pre>
+<hr><h2 id="#_1161CD40"><a name="FoxDocumentationBackend.SecondVisibleConstant"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.SecondVisibleConstant">SecondVisibleConstant</a>
+</h2>
+<p> second visible constant</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SecondVisibleConstant*= 4</pre>
+<hr><h2 id="#_116214C0"><a name="FoxDocumentationBackend.Generator"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>
+</h2>
+<p> Printer object to write the documentation to a stream. Implemented as visitor on the Syntax Tree.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Generator* =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Identifier (x: <strong>SyntaxTree.Identifier</strong>)<tr><td></td><td> <a href="#FoxDocumentationBackend.Generator.QualifiedIdentifier">QualifiedIdentifier</a> (x: <strong>SyntaxTree.QualifiedIdentifier</strong>)<tr><td></td><td> Type (x: <strong>SyntaxTree.Type</strong>)<tr><td></td><td> VisitType (x: <strong>SyntaxTree.Type</strong>)<tr><td></td><td> VisitBasicType (x: <strong>SyntaxTree.BasicType</strong>)<tr><td></td><td> VisitBooleanType (x: <strong>SyntaxTree.BooleanType</strong>)<tr><td></td><td> VisitSetType (x: <strong>SyntaxTree.SetType</strong>)<tr><td></td><td> VisitSizeType (x: <strong>SyntaxTree.SizeType</strong>)<tr><td></td><td> VisitCharacterType (x: <strong>SyntaxTree.CharacterType</strong>)<tr><td></td><td> VisitIntegerType (x: <strong>SyntaxTree.IntegerType</strong>)<tr><td></td><td> VisitFloatType (x: <strong>SyntaxTree.FloatType</strong>)<tr><td></td><td> VisitComplexType (x: <strong>SyntaxTree.ComplexType</strong>)<tr><td></td><td> VisitByteType (x: <strong>SyntaxTree.ByteType</strong>)<tr><td></td><td> VisitQualifiedType (x: <strong>SyntaxTree.QualifiedType</strong>)<tr><td></td><td> VisitStringType (x: <strong>SyntaxTree.StringType</strong>)<tr><td></td><td> VisitEnumerationType (x: <strong>SyntaxTree.EnumerationType</strong>)<tr><td></td><td> VisitRangeType (x: <strong>SyntaxTree.RangeType</strong>)<tr><td></td><td> VisitArrayType (x: <strong>SyntaxTree.ArrayType</strong>)<tr><td></td><td> VisitNilType (x: <strong>SyntaxTree.NilType</strong>)<tr><td></td><td> VisitAddressType (x: <strong>SyntaxTree.AddressType</strong>)<tr><td></td><td> VisitObjectType (x: <strong>SyntaxTree.ObjectType</strong>)<tr><td></td><td> VisitAnyType (x: <strong>SyntaxTree.AnyType</strong>)<tr><td></td><td> VisitMathArrayType (x: <strong>SyntaxTree.MathArrayType</strong>)<tr><td></td><td> VisitPointerType (x: <strong>SyntaxTree.PointerType</strong>)<tr><td></td><td> VisitPortType (x: <strong>SyntaxTree.PortType</strong>)<tr><td></td><td> VisitCellType (x: <strong>SyntaxTree.CellType</strong>)<tr><td></td><td> VisitRecordType (x: <strong>SyntaxTree.RecordType</strong>)<tr><td></td><td> VisitProcedureType (x: <strong>SyntaxTree.ProcedureType</strong>)<tr><td></td><td> Expression (x: <strong>SyntaxTree.Expression</strong>)<tr><td></td><td> VisitExpression (x: <strong>SyntaxTree.Expression</strong>)<tr><td></td><td> VisitSet (x: <strong>SyntaxTree.Set</strong>)<tr><td></td><td> VisitMathArrayExpression (x: <strong>SyntaxTree.MathArrayExpression</strong>)<tr><td></td><td> VisitUnaryExpression (x: <strong>SyntaxTree.UnaryExpression</strong>)<tr><td></td><td> VisitBinaryExpression (x: <strong>SyntaxTree.BinaryExpression</strong>)<tr><td></td><td> VisitRangeExpression (x: <strong>SyntaxTree.RangeExpression</strong>)<tr><td></td><td> VisitTensorRangeExpression (x: <strong>SyntaxTree.TensorRangeExpression</strong>)<tr><td></td><td> VisitConversion (x: <strong>SyntaxTree.Conversion</strong>)<tr><td></td><td> VisitSymbolDesignator (x: <strong>SyntaxTree.SymbolDesignator</strong>)<tr><td></td><td> VisitBuiltinCallDesignator (x: <strong>SyntaxTree.BuiltinCallDesignator</strong>)<tr><td></td><td> VisitValue (x: <strong>SyntaxTree.Value</strong>)<tr><td></td><td> VisitBooleanValue (x: <strong>SyntaxTree.BooleanValue</strong>)<tr><td></td><td> VisitIntegerValue (x: <strong>SyntaxTree.IntegerValue</strong>)<tr><td></td><td> VisitCharacterValue (x: <strong>SyntaxTree.CharacterValue</strong>)<tr><td></td><td> VisitSetValue (x: <strong>SyntaxTree.SetValue</strong>)<tr><td></td><td> VisitMathArrayValue (x: <strong>SyntaxTree.MathArrayValue</strong>)<tr><td></td><td> VisitRealValue (x: <strong>SyntaxTree.RealValue</strong>)<tr><td></td><td> VisitComplexValue (x: <strong>SyntaxTree.ComplexValue</strong>)<tr><td></td><td> VisitStringValue (x: <strong>SyntaxTree.StringValue</strong>)<tr><td></td><td> VisitNilValue (x: <strong>SyntaxTree.NilValue</strong>)<tr><td></td><td> VisitEnumerationValue (x: <strong>SyntaxTree.EnumerationValue</strong>)<tr><td></td><td> <a href="#FoxDocumentationBackend.Generator.VisitParameter">VisitParameter</a> (x: <strong>SyntaxTree.Parameter</strong>)<tr><td></td><td> ParameterList (x: <strong>SyntaxTree.Parameter</strong>)<tr><td></td><td> Symbol (x: <strong>SyntaxTree.Symbol</strong>)<tr><td></td><td> VisitSymbol (x: <strong>SyntaxTree.Symbol</strong>)<tr><td></td><td> VisitTypeDeclaration (x: <strong>SyntaxTree.TypeDeclaration</strong>)<tr><td></td><td> VisitConstant (x: <strong>SyntaxTree.Constant</strong>)<tr><td></td><td> VisitVariable (x: <strong>SyntaxTree.Variable</strong>)<tr><td></td><td> <a href="#FoxDocumentationBackend.Generator.VisitProcedure">VisitProcedure</a> (x: <strong>SyntaxTree.Procedure</strong>)<tr><td></td><td> VisitOperator (x: <strong>SyntaxTree.Operator</strong>)<tr><td></td><td> VisitImport (x: <strong>SyntaxTree.Import</strong>)<tr><td></td><td> VisitBuiltin (x: <strong>SyntaxTree.Builtin</strong>)<tr><td></td><td> <a href="#FoxDocumentationBackend.Generator.Scope">Scope</a> (x: <strong>SyntaxTree.Scope</strong>)<tr><td></td><td> Module (x: <strong>SyntaxTree.Module</strong>; backend: <strong>DocumentationBackend</strong>): <strong>DocumentationTree.Document</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_116A3600"><a name="FoxDocumentationBackend.Generator.QualifiedIdentifier"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.QualifiedIdentifier">QualifiedIdentifier</a>
+</h3>
+<p> Procedure used to traverse qualified identifiers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> QualifiedIdentifier* (x: <strong>SyntaxTree.QualifiedIdentifier</strong>)</pre>
+<hr><h3 id="#_116A8B80"><a name="FoxDocumentationBackend.Generator.VisitParameter"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.VisitParameter">VisitParameter</a>
+</h3>
+<p>* symbols <strong></strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitParameter* (x: <strong>SyntaxTree.Parameter</strong>)</pre>
+<hr><h3 id="#_116CA400"><a name="FoxDocumentationBackend.Generator.VisitProcedure"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.VisitProcedure">VisitProcedure</a>
+</h3>
+<p> process procedure including comments describing the procedure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitProcedure* (x: <strong>SyntaxTree.Procedure</strong>)</pre>
+<hr><h3 id="#_116CFE00"><a name="FoxDocumentationBackend.Generator.Scope"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.Scope">Scope</a>
+</h3>
+<p> scopes <strong></strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Scope* (x: <strong>SyntaxTree.Scope</strong>)</pre>
+</body></html>

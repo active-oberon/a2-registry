@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxAMD64Assembler">FoxAMD64Assembler</a></p>
+<hr><h1 id="#_1EE89440"><a name="FoxAMD64Assembler"></a><a href="#ModuleList">Module</a> FoxAMD64Assembler
+</h1>
+<p> AUTHOR "fn & fof"; PURPOSE "Oberon Compiler:AMD 64 Assembler";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>none= InstructionSet.none<tr><td></td><td>RAX= 0<tr><td></td><td>EAX= 0<tr><td></td><td>AX= 0<tr><td></td><td>AL= 0<tr><td></td><td>RCX= 1<tr><td></td><td>ECX= 1<tr><td></td><td>CX= 1<tr><td></td><td>CL= 1<tr><td></td><td>RDX= 2<tr><td></td><td>EDX= 2<tr><td></td><td>DX= 2<tr><td></td><td>DL= 2<tr><td></td><td>RBX= 3<tr><td></td><td>EBX= 3<tr><td></td><td>BX= 3<tr><td></td><td>BL= 3<tr><td></td><td>RSP= 4<tr><td></td><td>ESP= 4<tr><td></td><td>SP= 5<tr><td></td><td>SPL= 4<tr><td></td><td>AH= 4<tr><td></td><td>RBP= 5<tr><td></td><td>EBP= 5<tr><td></td><td>BP= 5<tr><td></td><td>BPL= 5<tr><td></td><td>CH= 5<tr><td></td><td>RSI= 6<tr><td></td><td>ESI= 6<tr><td></td><td>SI= 6<tr><td></td><td>SIL= 6<tr><td></td><td>DH= 6<tr><td></td><td>RDI= 7<tr><td></td><td>EDI= 7<tr><td></td><td>DI= 7<tr><td></td><td>DIL= 7<tr><td></td><td>BH= 7<tr><td></td><td>R8= 8<tr><td></td><td>R8D= 8<tr><td></td><td>R8W= 8<tr><td></td><td>R8B= 8<tr><td></td><td>R9= 9<tr><td></td><td>R9D= 9<tr><td></td><td>R9W= 9<tr><td></td><td>R9B= 9<tr><td></td><td>R10= 10<tr><td></td><td>R10D= 10<tr><td></td><td>R10W= 10<tr><td></td><td>R10B= 10<tr><td></td><td>R11= 11<tr><td></td><td>R11D= 11<tr><td></td><td>R11W= 11<tr><td></td><td>R11B= 11<tr><td></td><td>R12= 12<tr><td></td><td>R12D= 12<tr><td></td><td>R12W= 12<tr><td></td><td>R12B= 12<tr><td></td><td>R13= 13<tr><td></td><td>R13D= 13<tr><td></td><td>R13W= 13<tr><td></td><td>R13B= 13<tr><td></td><td>R14= 14<tr><td></td><td>R14D= 14<tr><td></td><td>R14W= 14<tr><td></td><td>R14B= 14<tr><td></td><td>R15= 15<tr><td></td><td>R15D= 15<tr><td></td><td>R15W= 15<tr><td></td><td>R15B= 15<tr><td></td><td>RIP= 16<tr><td></td><td>bitsDefault= 0<tr><td></td><td>bits8= 1<tr><td></td><td>bits16= 2<tr><td></td><td>bits32= 4<tr><td></td><td>bits64= 8<tr><td></td><td>bits128= 16<tr><td></td><td>bits256= 32<tr><td></td><td>reg8= InstructionSet.reg8<tr><td></td><td>reg16= InstructionSet.reg16<tr><td></td><td>reg32= InstructionSet.reg32<tr><td></td><td>reg64= InstructionSet.reg64<tr><td></td><td>CRn= InstructionSet.CRn<tr><td></td><td>DRn= InstructionSet.DRn<tr><td></td><td>segReg= InstructionSet.segReg<tr><td></td><td>mmx= InstructionSet.mmx<tr><td></td><td>xmm= InstructionSet.xmm<tr><td></td><td>ymm= InstructionSet.ymm<tr><td></td><td>mem= InstructionSet.mem<tr><td></td><td>sti= InstructionSet.sti<tr><td></td><td>imm= InstructionSet.imm<tr><td></td><td>ioffset= InstructionSet.ioffset<tr><td></td><td>pntr1616= InstructionSet.pntr1616<tr><td></td><td>pntr1632= InstructionSet.pntr1632<tr><th align='left'>type declarations</th><td>Register =<strong>SIGNED32</strong><tr><td></td><td><a href="#FoxAMD64Assembler.Operand">Operand</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxAMD64Assembler.Code">Code</a> =<strong>BinaryCode.Section</strong><tr><td></td><td><a href="#FoxAMD64Assembler.NamedLabel">NamedLabel</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxAMD64Assembler.NamedLabelList">NamedLabelList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxAMD64Assembler.Emitter">Emitter</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxAMD64Assembler.RegisterMap">RegisterMap</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxAMD64Assembler.Assembly">Assembly</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> IsRegisterOperand (<strong>CONST</strong> op: <strong>Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsMemoryOperand (<strong>CONST</strong> op: <strong>Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsImmediateOperand (<strong>CONST</strong> op: <strong>Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> DumpType (w: <strong>Streams.Writer</strong>; type: <strong>SIGNED32</strong>)<tr><td></td><td> DumpOperand (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> operand: <strong>Operand</strong>)<tr><td></td><td> InitOperand (<strong>VAR</strong> operand: <strong>Operand</strong>)<tr><td></td><td> InitRegister (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>Register</strong>)<tr><td></td><td> NewRegister (register: <strong>Register</strong>): <strong>Operand</strong><tr><td></td><td> InitMem (<strong>VAR</strong> operand: <strong>Operand</strong>; size: <strong>Size</strong>; reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>)<tr><td></td><td> SetIndexScale (<strong>VAR</strong> operand: <strong>Operand</strong>; index: <strong>Register</strong>; scale: <strong>SIGNED32</strong>)<tr><td></td><td> NewMem (size: <strong>Size</strong>; reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>): <strong>Operand</strong><tr><td></td><td> InitMem8 (<strong>VAR</strong> operand: <strong>Operand</strong>; reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>)<tr><td></td><td> NewMem8 (reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>): <strong>Operand</strong><tr><td></td><td> InitMem16 (<strong>VAR</strong> operand: <strong>Operand</strong>; reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>)<tr><td></td><td> NewMem16 (reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>): <strong>Operand</strong><tr><td></td><td> InitMem32 (<strong>VAR</strong> operand: <strong>Operand</strong>; reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>)<tr><td></td><td> NewMem32 (reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>): <strong>Operand</strong><tr><td></td><td> InitMem64 (<strong>VAR</strong> operand: <strong>Operand</strong>; reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>)<tr><td></td><td> NewMem64 (reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>): <strong>Operand</strong><tr><td></td><td> InitMem128 (<strong>VAR</strong> operand: <strong>Operand</strong>; reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>)<tr><td></td><td> NewMem128 (reg: <strong>Register</strong>; displacement: <strong>SIGNED32</strong>): <strong>Operand</strong><tr><td></td><td> SetSymbol (<strong>VAR</strong> operand: <strong>Operand</strong>; symbol: <strong>Sections.SectionName</strong>; fingerprint: <strong>Basic.Fingerprint</strong>; symbolOffset: <strong>SIZE</strong>; displacement: <strong>SIZE</strong>)<tr><td></td><td> InitImm (<strong>VAR</strong> operand: <strong>Operand</strong>; size: <strong>SIGNED8</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> InitImm8 (<strong>VAR</strong> operand: <strong>Operand</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> NewImm8 (val: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitImm16 (<strong>VAR</strong> operand: <strong>Operand</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> NewImm16 (val: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitImm32 (<strong>VAR</strong> operand: <strong>Operand</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> NewImm32 (val: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitImm64 (<strong>VAR</strong> operand: <strong>Operand</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> NewImm64 (val: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitOffset (<strong>VAR</strong> operand: <strong>Operand</strong>; size: <strong>SIGNED8</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> InitOffset8 (<strong>VAR</strong> operand: <strong>Operand</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> NewOffset8 (val: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitOffset16 (<strong>VAR</strong> operand: <strong>Operand</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> NewOffset16 (val: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitOffset32 (<strong>VAR</strong> operand: <strong>Operand</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> NewOffset32 (val: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitOffset64 (<strong>VAR</strong> operand: <strong>Operand</strong>; val: <strong>SIGNED64</strong>)<tr><td></td><td> NewOffset64 (val: <strong>SIGNED64</strong>): <strong>Operand</strong><tr><td></td><td> InitPntr1616 (<strong>VAR</strong> operand: <strong>Operand</strong>; s, o: <strong>SIGNED32</strong>)<tr><td></td><td> InitPntr1632 (<strong>VAR</strong> operand: <strong>Operand</strong>; s, o: <strong>SIGNED32</strong>)<tr><td></td><td> SetSize (<strong>VAR</strong> operand: <strong>Operand</strong>; sizeInBytes: <strong>Size</strong>)<tr><td></td><td> SameOperand (<strong>CONST</strong> left, right: <strong>Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Test (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_1EF72A00">
+</h1><hr><h2 id="#_1EF731C0"><a name="FoxAMD64Assembler.Operand"></a><a href="#FoxAMD64Assembler">FoxAMD64Assembler</a>.<a href="#FoxAMD64Assembler.Operand">Operand</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Operand* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>OperandType</strong><tr><td></td><td>register: <strong>Register</strong><tr><td></td><td>sizeInBytes: <strong>Size</strong><tr><td></td><td>segment: <strong>Register</strong><tr><td></td><td>index: <strong>Register</strong><tr><td></td><td>scale: <strong>SIGNED32</strong><tr><td></td><td>displacement: <strong>SIGNED32</strong><tr><td></td><td>symbol: <strong>ObjectFile.Identifier</strong><tr><td></td><td>symbolOffset: <strong>SIZE</strong><tr><td></td><td>val: <strong>SIGNED64</strong><tr><td></td><td>pc: <strong>SIZE</strong><tr><td></td><td>selector: <strong>SIGNED32</strong><tr><td></td><td>offset: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1EF82480"><a name="FoxAMD64Assembler.Code"></a><a href="#FoxAMD64Assembler">FoxAMD64Assembler</a>.<a href="#FoxAMD64Assembler.Code">Code</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Code* =<strong>BinaryCode.Section</strong></pre>
+<hr><h2 id="#_1EF84880"><a name="FoxAMD64Assembler.NamedLabel"></a><a href="#FoxAMD64Assembler">FoxAMD64Assembler</a>.<a href="#FoxAMD64Assembler.NamedLabel">NamedLabel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NamedLabel* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>SyntaxTree.IdentifierString</strong><tr><td></td><td>nextNamedLabel: <strong>NamedLabel</strong><tr><td></td><td>index: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> SetOffset (ofs: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1EF8C000"><a name="FoxAMD64Assembler.NamedLabelList"></a><a href="#FoxAMD64Assembler">FoxAMD64Assembler</a>.<a href="#FoxAMD64Assembler.NamedLabelList">NamedLabelList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NamedLabelList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>first: <strong>NamedLabel</strong><tr><td></td><td>last: <strong>NamedLabel</strong><tr><td></td><td>number: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> Add (n: <strong>NamedLabel</strong>)<tr><td></td><td> Find (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>NamedLabel</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1EF96580"><a name="FoxAMD64Assembler.Emitter"></a><a href="#FoxAMD64Assembler">FoxAMD64Assembler</a>.<a href="#FoxAMD64Assembler.Emitter">Emitter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Emitter* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>code: <strong>Code</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitEmitter (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> SetCode (code: <strong>BinaryCode.Section</strong>)<tr><td></td><td> SetBits (numberBits: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> EmitPrefix (prefix: <strong>SIGNED32</strong>)<tr><td></td><td> Emit (mnem: <strong>SIGNED32</strong>; <strong>VAR</strong> op1, op2, op3: <strong>Operand</strong>)<tr><td></td><td> EmitAt (pc: <strong>SIZE</strong>; mnem: <strong>SIGNED32</strong>; <strong>VAR</strong> op1, op2, op3: <strong>Operand</strong>)<tr><td></td><td> StartEmitAt (<strong>VAR</strong> pc: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> EndEmitAt (pc: <strong>SIZE</strong>)<tr><td></td><td> Emit0 (mnem: <strong>SIGNED32</strong>)<tr><td></td><td> Emit1 (mnem: <strong>SIGNED32</strong>; <strong>VAR</strong> op1: <strong>Operand</strong>)<tr><td></td><td> Emit2 (mnem: <strong>SIGNED32</strong>; <strong>VAR</strong> op1, op2: <strong>Operand</strong>)<tr><td></td><td> Emit3 (mnem: <strong>SIGNED32</strong>; <strong>VAR</strong> op1, op2, op3: <strong>Operand</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1EFBAC80"><a name="FoxAMD64Assembler.RegisterMap"></a><a href="#FoxAMD64Assembler">FoxAMD64Assembler</a>.<a href="#FoxAMD64Assembler.RegisterMap">RegisterMap</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RegisterMap* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Find (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></td></tr>
+</table>
+<hr><h2 id="#_1EFC0780"><a name="FoxAMD64Assembler.Assembly"></a><a href="#FoxAMD64Assembler">FoxAMD64Assembler</a>.<a href="#FoxAMD64Assembler.Assembly">Assembly</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Assembly* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>error: <strong>BOOLEAN</strong><tr><td></td><td>useLineNumbers: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitAssembly (diagnostics: <strong>Diagnostics.Diagnostics</strong>; emit: <strong>Emitter</strong>)<tr><td></td><td> Assemble (reader: <strong>Streams.Reader</strong>; orgPos: <strong>Basic.Position</strong>; scope: <strong>SyntaxTree.Scope</strong>; in: <strong>IntermediateCode.Section</strong>; out: <strong>IntermediateCode.Section</strong>; module: <strong>Sections.Module</strong>; exported, inlined: <strong>BOOLEAN</strong>; map: <strong>RegisterMap</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxAssembler">FoxAssembler</a></p>
+<hr><h1 id="#_90EA5140"><a name="FoxAssembler"></a><a href="#ModuleList">Module</a> FoxAssembler
+</h1>
+<p> AUTHOR "fof"; PURPOSE "Oberon Assembler: Generic Part";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Trace= FALSE<tr><td></td><td>MaxOperands= 3<tr><td></td><td>MaxPasses= 2<tr><td></td><td>ConstantInteger= 0<tr><td></td><td>ConstantFloat= 1<tr><td></td><td>Fixup= 2<tr><td></td><td>Offset= 3<tr><td></td><td>ConstantIntegerOrOffset= {ConstantInteger,Offset}<tr><th align='left'>type declarations</th><td><a href="#FoxAssembler.NamedLabel">NamedLabel</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxAssembler.NamedLabelList">NamedLabelList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxAssembler.Result">Result</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxAssembler.NamedResult">NamedResult</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Result</strong>)<tr><td></td><td><a href="#FoxAssembler.NamedResultList">NamedResultList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxAssembler.Assembler">Assembler</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> DumpResult (w: <strong>Streams.Writer</strong>; result: <strong>Result</strong>)<tr><td></td><td> Test (context: <strong>Commands.Context</strong>)<tr><td></td><td> TestScanner (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_90EBDC00">
+</h1><hr><h2 id="#_90EBE3C0"><a name="FoxAssembler.NamedLabel"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedLabel">NamedLabel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NamedLabel* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Scanner.IdentifierString</strong><tr><td></td><td>nextNamedLabel: <strong>NamedLabel</strong><tr><th align='left'>procedures</th><td> SetOffset (ofs: <strong>BinaryCode.Unit</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_90EC4C40"><a name="FoxAssembler.NamedLabelList"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedLabelList">NamedLabelList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NamedLabelList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>first: <strong>NamedLabel</strong><tr><td></td><td>last: <strong>NamedLabel</strong><tr><th align='left'>procedures</th><td> Add (n: <strong>NamedLabel</strong>)<tr><td></td><td> Find (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>NamedLabel</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_90ECE300"><a name="FoxAssembler.Result"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.Result">Result</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Result* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>SIGNED16</strong><tr><td></td><td>sizeInBits: <strong>SIZE</strong><tr><td></td><td>value: <strong>SIGNED64</strong><tr><td></td><td>valueR: <strong>FLOAT64</strong><tr><td></td><td>fixup: <strong>BinaryCode.Fixup</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_90ED5A80"><a name="FoxAssembler.NamedResult"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedResult">NamedResult</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NamedResult* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Result</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_90ED95C0"><a name="FoxAssembler.NamedResultList"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedResultList">NamedResultList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NamedResultList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Add (n: <strong>NamedResult</strong>)<tr><td></td><td> Find (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>NamedResult</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_90EE0C40"><a name="FoxAssembler.Assembler"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.Assembler">Assembler</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Assembler* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>error: <strong>BOOLEAN</strong><tr><td></td><td>errorPosition: <strong>Position</strong><tr><td></td><td>token: <strong>Scanner.Token</strong><tr><td></td><td>section: <strong>IntermediateCode.Section</strong><tr><td></td><td>code: <strong>BinaryCode.Section</strong><tr><td></td><td>pass: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Error (pos: <strong>SyntaxTree.Position</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ErrorSS (pos: <strong>SyntaxTree.Position</strong>; <strong>CONST</strong> s1, s2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> NextToken<tr><td></td><td> ThisSymbol (x: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetIdentifier (<strong>VAR</strong> pos: <strong>Position</strong>; <strong>VAR</strong> identifier: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ThisIdentifier (<strong>CONST</strong> this: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ExpectIdentifier (<strong>VAR</strong> pos: <strong>Position</strong>; <strong>VAR</strong> identifier: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ExpectSymbol (x: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ExpectConstantInteger (<strong>VAR</strong> x: <strong>Result</strong>; critical: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetNonConstant (pos: <strong>Position</strong>; <strong>CONST</strong> ident: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>Result</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetConstant (pos: <strong>Position</strong>; <strong>CONST</strong> ident: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>Result</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Expression (<strong>VAR</strong> x: <strong>Result</strong>; critical: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Instruction (<strong>CONST</strong> mnemonic: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> InlineAssemble (scanner: <strong>Scanner.AssemblerScanner</strong>; section: <strong>IntermediateCode.Section</strong>; scope: <strong>SyntaxTree.Scope</strong>; module: <strong>Sections.Module</strong>)<tr><td></td><td> Assemble (scanner: <strong>Scanner.AssemblerScanner</strong>)<tr><td></td><td> AllSections<tr><td></td><td> Text (scanner: <strong>Scanner.AssemblerScanner</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

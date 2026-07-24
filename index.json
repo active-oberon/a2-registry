@@ -11,13 +11,14 @@
       "install": "bundled with the SDK",
       "summary": "Sealed A2 runtime: kernel, GC/heaps, module system, object loader, files, streams, shell + shared primitives."
     },
-    "std/math": {
+    "std/base": {
       "status": "bundled",
-      "modules": 17,
-      "path": "packages/std/math",
+      "modules": 6,
+      "path": "packages/std/base",
       "tier": 1,
       "install": "bundled with the SDK",
-      "summary": "Numeric core: fixed/arbitrary number types (Nbr*), base real/complex math, RNG."
+      "doc_pages": 6,
+      "summary": "Shared cross-cutting primitives recovered from the misc pile: input events, dynamic strings, lightweight class/log helpers, an event framework, 16.16 fixed-point."
     },
     "std/compress": {
       "status": "bundled",
@@ -27,6 +28,50 @@
       "install": "bundled with the SDK",
       "summary": "DEFLATE/zlib primitives (inflate/deflate, buffers, readers/writers) + gzip."
     },
+    "std/drivers": {
+      "status": "bundled",
+      "modules": 10,
+      "path": "packages/std/drivers",
+      "tier": 1,
+      "install": "bundled with the SDK",
+      "doc_pages": 7,
+      "summary": "Low-level device drivers: display registry, serial ports (V24), keyboard/mouse, PC speaker, clipboard."
+    },
+    "std/math": {
+      "status": "bundled",
+      "modules": 17,
+      "path": "packages/std/math",
+      "tier": 1,
+      "install": "bundled with the SDK",
+      "summary": "Numeric core: fixed/arbitrary number types (Nbr*), base real/complex math, RNG."
+    },
+    "std/text": {
+      "status": "bundled",
+      "modules": 3,
+      "path": "packages/std/text",
+      "tier": 1,
+      "install": "bundled with the SDK",
+      "doc_pages": 1,
+      "summary": "Rich text model and Unicode text utilities: the Texts piece-list model, TextUtilities (load/store/convert), UTF-8 helpers."
+    },
+    "std/archive": {
+      "status": "bundled",
+      "modules": 5,
+      "path": "packages/std/archive",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "doc_pages": 5,
+      "summary": "ZIP container formats: archive reader/writer, zip-backed file system, zip CLI tool, standalone unzip."
+    },
+    "std/calc": {
+      "status": "bundled",
+      "modules": 9,
+      "path": "packages/std/calc",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "doc_pages": 9,
+      "summary": "Numerical calculus: Gauss/Gr\u00fcnwald/Diethelm quadrature and differentiation kernels over std/math + std/numerics."
+    },
     "std/crypto": {
       "status": "bundled",
       "modules": 30,
@@ -35,6 +80,33 @@
       "install": "bundled with the SDK",
       "summary": "Ciphers, hashes (SHA/Keccak/MD5), public-key (RSA/DSA/DH), big numbers, CSPRNG, ASN.1 / X.509."
     },
+    "std/data": {
+      "status": "bundled",
+      "modules": 17,
+      "path": "packages/std/data",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "doc_pages": 12,
+      "summary": "Data structures and persistence: generic collections/sort, lists/queues/stacks/trees, the Models/Repositories/Types object framework, CSV, persistent objects, versioning."
+    },
+    "std/media": {
+      "status": "bundled",
+      "modules": 16,
+      "path": "packages/std/media",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "doc_pages": 4,
+      "summary": "Audio/video/image codecs: MP3, DivX/MPEG video (+ IDCT, tables), WAV, GIF, AVI container, a codec registry and sound-device abstraction."
+    },
+    "std/net": {
+      "status": "bundled",
+      "modules": 40,
+      "path": "packages/std/net",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "doc_pages": 30,
+      "summary": "Networking: TCP/UDP/IP/DNS/sockets, TLS, an HTTP client/server stack, and protocol clients (FTP, SMTP, POP3, SSH, TFTP, LPR, XModem)."
+    },
     "std/numerics": {
       "status": "bundled",
       "modules": 10,
@@ -42,6 +114,63 @@
       "tier": 2,
       "install": "bundled with the SDK",
       "summary": "Advanced / special functions over std/math: cube root, error/gamma, real & complex series."
+    },
+    "std/web": {
+      "status": "bundled",
+      "modules": 5,
+      "path": "packages/std/web",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "doc_pages": 5,
+      "summary": "XML stack (parser/scanner/DOM objects) and the Configuration settings module built on it."
+    },
+    "std/compiler": {
+      "status": "bundled",
+      "modules": 91,
+      "path": "packages/std/compiler",
+      "tier": 3,
+      "install": "bundled with the SDK",
+      "doc_pages": 61,
+      "summary": "The Fox self-hosting Active Oberon toolchain: frontends (Oberon/C#), semantic checker, intermediate + backends (AMD64/ARM/TRM/interpreter), assemblers, disassemblers, object-file/linker, the older PC* code generators, and CPU instruction decoders."
+    },
+    "std/gui": {
+      "status": "bundled",
+      "modules": 43,
+      "path": "packages/std/gui",
+      "tier": 3,
+      "install": "bundled with the SDK",
+      "doc_pages": 13,
+      "summary": "The A2 graphics + window-manager framework as one irreducible unit: Raster/Gfx rendering, image codecs (PNG/JPEG/SVG/BMP), OpenType fonts, and the WM* component/desktop toolkit. Merged because graphics and the window manager are mutually dependent (see cycle note)."
+    },
+    "community/fftw": {
+      "status": "validated",
+      "modules": 2,
+      "path": "packages/fftw",
+      "requires": [
+        "std/runtime"
+      ],
+      "native": "libfftw3",
+      "summary": "FFI bindings to native FFTW3 (double+single)."
+    },
+    "community/freeimage": {
+      "status": "validated",
+      "modules": 1,
+      "path": "packages/freeimage",
+      "requires": [
+        "std/runtime"
+      ],
+      "native": "libfreeimage",
+      "summary": "FFI to native FreeImage (image load/save)."
+    },
+    "community/generics": {
+      "status": "validated",
+      "modules": 1,
+      "path": "packages/generics",
+      "requires": [
+        "std/runtime"
+      ],
+      "kind": "generic",
+      "summary": "Parametric generic containers (Romanchenko)."
     },
     "community/matrix": {
       "status": "validated",
@@ -54,35 +183,30 @@
       ],
       "summary": "Dense/complex linear algebra, ML, wavelets, PDE, statistics (Hunziker). Headless numeric core."
     },
-    "community/fftw": {
-      "status": "validated",
-      "modules": 2,
-      "path": "packages/fftw",
-      "requires": [
-        "std/runtime"
-      ],
-      "native": "libfftw3",
-      "summary": "FFI bindings to native FFTW3 (double+single)."
+    "community/octk": {
+      "status": "pending-deps",
+      "modules": 77,
+      "summary": "OCTK compute toolkit. NOT a format problem (ob reads the binary Text fine) \u2014 the intra-package chain (octkBase->octkErrorBase->...) bottoms out in 32-bit modules (I386.octk*Optimized) and FFI to AMD CAL GPU compute. Needs 32-bit target + GPU FFI. 0/77 compile on the 64-bit headless SDK."
     },
-    "community/generics": {
-      "status": "validated",
-      "modules": 1,
-      "path": "packages/generics",
-      "requires": [
-        "std/runtime"
-      ],
-      "kind": "generic",
-      "summary": "Parametric generic containers (Romanchenko)."
+    "community/opendocument": {
+      "status": "pending",
+      "modules": 4,
+      "summary": "OpenDocument (ODF) codecs. Needs std/web+compress+crypto+base and GUI (WMDialogs); one file (OpenDocumentTransforms) is a malformed XSL-as-source and must be fixed/dropped."
     },
-    "community/freeimage": {
-      "status": "validated",
-      "modules": 1,
-      "path": "packages/freeimage",
-      "requires": [
-        "std/runtime"
-      ],
-      "native": "libfreeimage",
-      "summary": "FFI to native FreeImage (image load/save)."
+    "community/ph": {
+      "status": "pending-deps",
+      "modules": 4,
+      "summary": "PH utilities (IP monitor, registries, web syndication). Needs std/net + std/crypto + std/base + community SearchTools/NewHTTPClient; IPMonitor uses Windows WSock32."
+    },
+    "community/reanimator": {
+      "status": "pending-deps",
+      "modules": 42,
+      "summary": "A JVM (Java) implemented in A2 (JVM*/jjl* = java.lang). Needs legacy module names AosOut/AosProcessors (renamed in current A2) + std/compiler internals (PCT/PCBT) + its own jjl* chain. Needs an Aos* compat shim + std/compiler. 1/42 compile headless."
+    },
+    "community/sr": {
+      "status": "pending-gui",
+      "modules": 22,
+      "summary": "sr voxel/raytracer engine (binary Text format \u2014 ob reads it). Needs std/gui (WMWindowManager/WMGraphics/Raster) which is not in the headless image. Package once std/gui is installable."
     },
     "community/usb": {
       "status": "validated",
@@ -105,35 +229,10 @@
       "docs": "pending",
       "summary": "Video4Linux2 capture bindings (V4L2 + libv4l2 FFI, Linux). Installable; ob doc hangs on these modules \u2014 docs deferred."
     },
-    "community/ph": {
-      "status": "pending-deps",
-      "modules": 4,
-      "summary": "PH utilities (IP monitor, registries, web syndication). Needs std/net + std/crypto + std/base + community SearchTools/NewHTTPClient; IPMonitor uses Windows WSock32."
-    },
-    "community/opendocument": {
-      "status": "pending",
-      "modules": 4,
-      "summary": "OpenDocument (ODF) codecs. Needs std/web+compress+crypto+base and GUI (WMDialogs); one file (OpenDocumentTransforms) is a malformed XSL-as-source and must be fixed/dropped."
-    },
     "community/work": {
       "status": "pending",
       "modules": 44,
       "summary": "Grab-bag of experiments/tools (incl. stray copies of compiler modules); not a coherent library \u2014 triage before packaging."
-    },
-    "community/octk": {
-      "status": "pending-deps",
-      "modules": 77,
-      "summary": "OCTK compute toolkit. NOT a format problem (ob reads the binary Text fine) \u2014 the intra-package chain (octkBase->octkErrorBase->...) bottoms out in 32-bit modules (I386.octk*Optimized) and FFI to AMD CAL GPU compute. Needs 32-bit target + GPU FFI. 0/77 compile on the 64-bit headless SDK."
-    },
-    "community/reanimator": {
-      "status": "pending-deps",
-      "modules": 42,
-      "summary": "A JVM (Java) implemented in A2 (JVM*/jjl* = java.lang). Needs legacy module names AosOut/AosProcessors (renamed in current A2) + std/compiler internals (PCT/PCBT) + its own jjl* chain. Needs an Aos* compat shim + std/compiler. 1/42 compile headless."
-    },
-    "community/sr": {
-      "status": "pending-gui",
-      "modules": 22,
-      "summary": "sr voxel/raytracer engine (binary Text format \u2014 ob reads it). Needs std/gui (WMWindowManager/WMGraphics/Raster) which is not in the headless image. Package once std/gui is installable."
     }
   },
   "notes": {

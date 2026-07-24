@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Data">Data</a></p>
+<hr><h1 id="#_512F3840"><a name="Data"></a><a href="#ModuleList">Module</a> Data
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Sortable data objects (via a key)";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>VERSION= 1<tr><td></td><td><a href="#Data.CHARACTERS">CHARACTERS</a>= 10<tr><th align='left'>type declarations</th><td><a href="#Data.Key">Key</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Data.Datum">Datum</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Data.Word">Word</a> =<strong>ARRAY</strong> (CHARACTERS+1) <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>variables</th><td><a href="#Data.Sentinel">Sentinel</a>: <strong>Key</strong><tr><th align='left'>procedures</th><td> <a href="#Data.:=">:=</a> (<strong>VAR</strong> l: <strong>Key</strong>; r: <strong>NbrInt.Integer</strong>)<tr><td></td><td> <a href="#Data.:=">:=</a> (<strong>VAR</strong> l: <strong>Key</strong>; r: <strong>NbrInt64.Integer</strong>)<tr><td></td><td> <a href="#Data.=">=</a> (l, r: <strong>Key</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l, r: <strong>Key</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (l, r: <strong>Key</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (l, r: <strong>Key</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (l, r: <strong>Key</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (l, r: <strong>Key</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Data.=">=</a> (l, r: <strong>Datum</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (l, r: <strong>Datum</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (l, r: <strong>Datum</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (l, r: <strong>Datum</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (l, r: <strong>Datum</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (l, r: <strong>Datum</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Data.KeyToInt64">KeyToInt64</a> (key: <strong>Key</strong>; <strong>VAR</strong> x: <strong>NbrInt64.Integer</strong>)<tr><td></td><td> <a href="#Data.KeyToWord">KeyToWord</a> (key: <strong>Key</strong>; <strong>VAR</strong> word: <strong>Word</strong>)<tr><td></td><td> WordToKey (word: <strong>Word</strong>; <strong>VAR</strong> key: <strong>Key</strong>)<tr><td></td><td> <a href="#Data.Load">Load</a> (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>Datum</strong>)<tr><td></td><td> Store (W: <strong>DataIO.Writer</strong>; obj: <strong>Datum</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_51331AC0"><a name="Data.CHARACTERS"></a><a href="#Data">Data</a>.<a href="#Data.CHARACTERS">CHARACTERS</a>
+</h2>
+<p> Maximum number of characters allowed in a Word.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CHARACTERS*= 10</pre>
+<hr><h2 id="#_513365C0"><a name="Data.Key"></a><a href="#Data">Data</a>.<a href="#Data.Key">Key</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Key* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_51339240"><a name="Data.Datum"></a><a href="#Data">Data</a>.<a href="#Data.Datum">Datum</a>
+</h2>
+<p> Class Datum has been DataIO registered, and therefore, any instance of it can be made persistent by using the DataIO Reader and Writer, or more simply, by calling procedures Load and Store below.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Datum* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& <a href="#Data.Datum.Initialize">Initialize</a><tr><td></td><td> <a href="#Data.Datum.Copy">Copy</a> (<strong>VAR</strong> copy: <strong>Datum</strong>)<tr><td></td><td> <a href="#Data.Datum.Read">Read</a> (R: <strong>DataIO.Reader</strong>)<tr><td></td><td> <a href="#Data.Datum.Write">Write</a> (W: <strong>DataIO.Writer</strong>)<tr><td></td><td> <a href="#Data.Datum.GetKey">GetKey</a> (<strong>VAR</strong> k: <strong>Key</strong>)<tr><td></td><td> <a href="#Data.Datum.SetKey">SetKey</a> (k: <strong>Key</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_5134E440"><a name="Data.Datum.Initialize"></a><a href="#Data">Data</a>.<a href="#Data.Datum">Datum</a>.<a href="#Data.Datum.Initialize">Initialize</a>
+</h3>
+<p> Sets the key to its sentinel value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Initialize*</pre>
+<hr><h3 id="#_51352CC0"><a name="Data.Datum.Copy"></a><a href="#Data">Data</a>.<a href="#Data.Datum">Datum</a>.<a href="#Data.Datum.Copy">Copy</a>
+</h3>
+<p> Returns a deep copy of the data; shallow copies are obtained via assignment, i.e., :=.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Copy* (<strong>VAR</strong> copy: <strong>Datum</strong>)</pre>
+<hr><h3 id="#_5135A800"><a name="Data.Datum.Read"></a><a href="#Data">Data</a>.<a href="#Data.Datum">Datum</a>.<a href="#Data.Datum.Read">Read</a>
+</h3>
+<p> Used internally to read data from a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (R: <strong>DataIO.Reader</strong>)</pre>
+<hr><h3 id="#_51360500"><a name="Data.Datum.Write"></a><a href="#Data">Data</a>.<a href="#Data.Datum">Datum</a>.<a href="#Data.Datum.Write">Write</a>
+</h3>
+<p> Used internally to write data to a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (W: <strong>DataIO.Writer</strong>)</pre>
+<hr><h3 id="#_51366200"><a name="Data.Datum.GetKey"></a><a href="#Data">Data</a>.<a href="#Data.Datum">Datum</a>.<a href="#Data.Datum.GetKey">GetKey</a>
+</h3>
+<p> Obtain the key held by an instance of Datum.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetKey* (<strong>VAR</strong> k: <strong>Key</strong>)</pre>
+<hr><h3 id="#_5136C700"><a name="Data.Datum.SetKey"></a><a href="#Data">Data</a>.<a href="#Data.Datum">Datum</a>.<a href="#Data.Datum.SetKey">SetKey</a>
+</h3>
+<p> A datum's key can only be changed when its key = Sentinel. Once set, it cannot be reset.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetKey* (k: <strong>Key</strong>)</pre>
+<hr><h2 id="#_51374A80"><a name="Data.Word"></a><a href="#Data">Data</a>.<a href="#Data.Word">Word</a>
+</h2>
+<p> A word is case sensitive. Admissible characters include: word = char <code>char }.<BR>						char			=	letter | digit | punctuation | arithmetic | alien.<BR>						letter		=	"A" ... "Z" | "a" ... "z".<BR>						digit		=	"0" ... "9".<BR>						punctuation	=	" " | "." | ":" | ";" | "," | "_" | "~" | " ' " | ' " '.<BR>						arithmetic	=	"+" | "-" | "*" | "/" | "^" | "=".<BR>						alien		=	"?".<BR>			Yes, white space is an admissible character.  However, leading and trailing white space is ignored.<BR>			All unknown characters are assigned the alien glyph "?". </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Word* =<strong>ARRAY</strong> (CHARACTERS+1) <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_5137C540"><a name="Data.Sentinel"></a><a href="#Data">Data</a>.<a href="#Data.Sentinel">Sentinel</a>
+</h2>
+<p> The initial key assigned to a Data.Datum. It is the only key that can be overwritten via SetKey.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Sentinel-: <strong>Key</strong></pre>
+<hr><h2 id="#_513836C0"><a name="Data.:="></a><a href="#Data">Data</a>.<a href="#Data.:=">:=</a>
+</h2>
+<p> Assignment operators for Keys.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> ":="* (<strong>VAR</strong> l: <strong>Key</strong>; r: <strong>NbrInt.Integer</strong>)</pre>
+<hr><h2 id="#_51388E00"><a name="Data.="></a><a href="#Data">Data</a>.<a href="#Data.=">=</a>
+</h2>
+<p> Comparison Operators between Keys.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "="* (l, r: <strong>Key</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_5138E2C0"><a name="Data.="></a><a href="#Data">Data</a>.<a href="#Data.=">=</a>
+</h2>
+<p> Comparison Operators between Data.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "="* (l, r: <strong>Datum</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_51393680"><a name="Data.KeyToInt64"></a><a href="#Data">Data</a>.<a href="#Data.KeyToInt64">KeyToInt64</a>
+</h2>
+<p> Conversion procedure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> KeyToInt64* (key: <strong>Key</strong>; <strong>VAR</strong> x: <strong>NbrInt64.Integer</strong>)</pre>
+<hr><h2 id="#_51398540"><a name="Data.KeyToWord"></a><a href="#Data">Data</a>.<a href="#Data.KeyToWord">KeyToWord</a>
+</h2>
+<p> Instead of using integers for sorting against, sometimes it is useful to use words for this purpose, like entries in a dictionary. KetToWord and WordToKey are mappings that allow for this.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> KeyToWord* (key: <strong>Key</strong>; <strong>VAR</strong> word: <strong>Word</strong>)</pre>
+<hr><h2 id="#_513A44C0"><a name="Data.Load"></a><a href="#Data">Data</a>.<a href="#Data.Load">Load</a>
+</h2>
+<p> Load and Store are procedures for external use that read/write an instance of Datum from/to a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>Datum</strong>)</pre>
+</body></html>

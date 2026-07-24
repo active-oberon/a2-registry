@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#HTTPSession">HTTPSession</a></p>
+<hr><h1 id="#_1325A800"><a name="HTTPSession"></a><a href="#ModuleList">Module</a> HTTPSession
+</h1>
+<p> AUTHOR "Luc Blaeser/cs"; PURPOSE "HTTP Session Management"; code parts from CSHTTPSupport of "cs"</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#HTTPSession.HTTPVarSessionIdName">HTTPVarSessionIdName</a>= "sessionid"<tr><th align='left'>type declarations</th><td><a href="#HTTPSession.SessionId">SessionId</a> =<strong>ARRAY</strong> 80 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#HTTPSession.SessionVariable">SessionVariable</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#HTTPSession.Session">Session</a> =<strong>OBJECT</strong> <tr><td></td><td>SessionExpirationHandler =<strong>PROCEDURE</strong>{DELEGATE} (session: <strong>Session</strong>)<tr><th align='left'>procedures</th><td> GetSessionId (request: <strong>HTTPSupport.HTTPRequest</strong>; <strong>VAR</strong> sessionId: <strong>SessionId</strong>)<tr><td></td><td> <a href="#HTTPSession.GetExistingSession">GetExistingSession</a> (request: <strong>HTTPSupport.HTTPRequest</strong>): <strong>Session</strong><tr><td></td><td> <a href="#HTTPSession.GetSession">GetSession</a> (request: <strong>HTTPSupport.HTTPRequest</strong>): <strong>Session</strong><tr><td></td><td> AddExpirationHandler (handler: <strong>SessionExpirationHandler</strong>)<tr><td></td><td> RemoveExpirationHandler (handler: <strong>SessionExpirationHandler</strong>)<tr><td></td><td> StopLeaseManager<tr><td></td><td> StartLeaseManager</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_13273140"><a name="HTTPSession.HTTPVarSessionIdName"></a><a href="#HTTPSession">HTTPSession</a>.<a href="#HTTPSession.HTTPVarSessionIdName">HTTPVarSessionIdName</a>
+</h2>
+<p> variable name for the sesiion id in the HTTP request</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HTTPVarSessionIdName*= "sessionid"</pre>
+<hr><h2 id="#_13278340"><a name="HTTPSession.SessionId"></a><a href="#HTTPSession">HTTPSession</a>.<a href="#HTTPSession.SessionId">SessionId</a>
+</h2>
+<p> fixed length for session id</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SessionId* =<strong>ARRAY</strong> 80 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_1327D080"><a name="HTTPSession.SessionVariable"></a><a href="#HTTPSession">HTTPSession</a>.<a href="#HTTPSession.SessionVariable">SessionVariable</a>
+</h2>
+<p> name must be unique for all variables for a session</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SessionVariable* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Strings.String</strong><tr><td></td><td>value: @Any0</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_13285400"><a name="HTTPSession.Session"></a><a href="#HTTPSession">HTTPSession</a>.<a href="#HTTPSession.Session">Session</a>
+</h2>
+<p> client activated object by leasing concept</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Session* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sessionId: <strong>SessionId</strong><tr><td></td><td><a href="#HTTPSession.Session.sessionVariables">sessionVariables</a>: <strong>TFClasses.List</strong><tr><td></td><td>leaseTime: <strong>FLOAT32</strong><tr><th align='left'>procedures</th><td>& Init (sessionId: <strong>SessionId</strong>)<tr><td></td><td> GetVariableValue (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): @Any0<tr><td></td><td> <a href="#HTTPSession.Session.GetVariableByName">GetVariableByName</a> (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SessionVariable</strong><tr><td></td><td> AddVariableValue (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: @Any0)<tr><td></td><td> RemoveVariable (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> IncreaseLifeTime</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_13299DC0"><a name="HTTPSession.Session.sessionVariables"></a><a href="#HTTPSession">HTTPSession</a>.<a href="#HTTPSession.Session">Session</a>.<a href="#HTTPSession.Session.sessionVariables">sessionVariables</a>
+</h3>
+<p> List of SessionVariable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> sessionVariables*: <strong>TFClasses.List</strong></pre>
+<hr><h3 id="#_1329DB80"><a name="HTTPSession.Session.GetVariableByName"></a><a href="#HTTPSession">HTTPSession</a>.<a href="#HTTPSession.Session">Session</a>.<a href="#HTTPSession.Session.GetVariableByName">GetVariableByName</a>
+</h3>
+<p> returns NIL if the session variable is not present</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetVariableByName* (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SessionVariable</strong></pre>
+<hr><h2 id="#_132A4980"><a name="HTTPSession.GetExistingSession"></a><a href="#HTTPSession">HTTPSession</a>.<a href="#HTTPSession.GetExistingSession">GetExistingSession</a>
+</h2>
+<p> looks for an existing session object of the client - returns NIL IF not existing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetExistingSession* (request: <strong>HTTPSupport.HTTPRequest</strong>): <strong>Session</strong></pre>
+<hr><h2 id="#_132ABF40"><a name="HTTPSession.GetSession"></a><a href="#HTTPSession">HTTPSession</a>.<a href="#HTTPSession.GetSession">GetSession</a>
+</h2>
+<p> looks for an existing session object of the client - if no matching session object is present then a new session will be created</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetSession* (request: <strong>HTTPSupport.HTTPRequest</strong>): <strong>Session</strong></pre>
+</body></html>

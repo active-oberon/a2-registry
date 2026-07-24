@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PKCS1">PKCS1</a></p>
+<hr><h1 id="#_D08F7B80"><a name="PKCS1"></a><a href="#ModuleList">Module</a> PKCS1
+</h1>
+<p> Implementation of the PKCS#1 encryption scheme for RSA. See RFC 2437. Timothée Martiel, 2014</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#PKCS1.Encrypt">Encrypt</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; srcOfs, srcLen: <strong>SIZE</strong>; key: <strong>CryptoRSA.Key</strong>; blockType: <strong>SIGNED32</strong>; <strong>VAR</strong> dest: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; destOfs: <strong>SIZE</strong>; <strong>VAR</strong> destLen: <strong>SIZE</strong>)<tr><td></td><td> <a href="#PKCS1.Decrypt">Decrypt</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; srcOfs, srcLen: <strong>SIZE</strong>; key: <strong>CryptoRSA.Key</strong>; blockType: <strong>SIGNED32</strong>; <strong>VAR</strong> dest: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; destOfs: <strong>SIZE</strong>; <strong>VAR</strong> destLen: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D090F040"><a name="PKCS1.Encrypt"></a><a href="#PKCS1">PKCS1</a>.<a href="#PKCS1.Encrypt">Encrypt</a>
+</h2>
+<p> Encrypts src[srcOfs] .. src[srcOfs + srcLen - 1] with key and writes the result starting from dest[destOfs]. destLen returns the total written length. It uses a block type as specified by blockType. blockType can be 0, 1 or 2. destLen = 0 iff encryption failed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Encrypt* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; srcOfs, srcLen: <strong>SIZE</strong>; key: <strong>CryptoRSA.Key</strong>; blockType: <strong>SIGNED32</strong>; <strong>VAR</strong> dest: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; destOfs: <strong>SIZE</strong>; <strong>VAR</strong> destLen: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_D09248C0"><a name="PKCS1.Decrypt"></a><a href="#PKCS1">PKCS1</a>.<a href="#PKCS1.Decrypt">Decrypt</a>
+</h2>
+<p> Decrypt src[srcOfs] .. src[srcOfs + srcLen - 1] with key, checking for a PKCS#1 formatting with block type blockType. The result is written in dest[destOfs] .. dest[destOfs + destLen - 1]. destLen is written with the data length. destLen = 0 iff decryption failed or PKCS badly formatted.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Decrypt* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; srcOfs, srcLen: <strong>SIZE</strong>; key: <strong>CryptoRSA.Key</strong>; blockType: <strong>SIGNED32</strong>; <strong>VAR</strong> dest: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; destOfs: <strong>SIZE</strong>; <strong>VAR</strong> destLen: <strong>SIZE</strong>)</pre>
+</body></html>

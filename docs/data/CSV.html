@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CSV">CSV</a></p>
+<hr><h1 id="#_69A2B5C0"><a name="CSV"></a><a href="#ModuleList">Module</a> CSV
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#CSV.Field">Field</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#CSV.Line">Line</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#CSV.Scanner">Scanner</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#CSV.CSV">CSV</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#CSV.IsWhiteSpace">IsWhiteSpace</a> (<strong>CONST</strong> ch: <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#CSV.ContainsWhitespace">ContainsWhitespace</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#CSV.GetDefaultCSV">GetDefaultCSV</a> (): <strong>CSV</strong><tr><td></td><td> <a href="#CSV.ScanFromFileName">ScanFromFileName</a> (<strong>CONST</strong> fn: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> csv: <strong>CSV</strong>)<tr><td></td><td> <a href="#CSV.AppendCSVToFileName">AppendCSVToFileName</a> (<strong>CONST</strong> fn: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> csv: <strong>CSV</strong>)<tr><td></td><td> <a href="#CSV.CompareCSVs">CompareCSVs</a> (a, b: <strong>CSV</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_69A411C0">
+</h1>
+<p> AUTHOR "pb" 2009-10-19; PURPOSE "Read and Write CSV (comma separated value files)"; LIMITATIONS "Current limitations are:  empty fields need to be put in quotes to be recognised  escape character is not handled  therefore only limited quoting is supported inside a string (for 2 quote chars, only one can occur inside a string) ";</p>
+<hr><h2 id="#_69A4F400"><a name="CSV.Field"></a><a href="#CSV">CSV</a>.<a href="#CSV.Field">Field</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Field* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>Field</strong><tr><td></td><td>string: <strong>Strings.String</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_69A53F40"><a name="CSV.Line"></a><a href="#CSV">CSV</a>.<a href="#CSV.Line">Line</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Line* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>Line</strong><tr><td></td><td>fields: <strong>Field</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_69A58B40"><a name="CSV.Scanner"></a><a href="#CSV">CSV</a>.<a href="#CSV.Scanner">Scanner</a>
+</h2>
+<p> Responsible for scanning a Stream and interpreting it in CSV format</p>
+
+<p> Configuration is passed via the File:  Field separator character  Quoting Characters  Escape Character</p>
+
+<dl>
+<dt><strong>Scan</strong></dt>
+<dd> The function for scanning the whole file. Scans the content of the stream into the file passed to Init. ScanLine or ScanField just scan a line or a field.</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scanner* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& <a href="#CSV.Scanner.Init">Init</a> (file: <strong>CSV</strong>; r: <strong>Streams.Reader</strong>)<tr><td></td><td> <a href="#CSV.Scanner.Scan">Scan</a><tr><td></td><td> <a href="#CSV.Scanner.ScanLine">ScanLine</a><tr><td></td><td> <a href="#CSV.Scanner.ScanField">ScanField</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_69A6ECC0"><a name="CSV.Scanner.Init"></a><a href="#CSV">CSV</a>.<a href="#CSV.Scanner">Scanner</a>.<a href="#CSV.Scanner.Init">Init</a>
+</h3>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Init* (file: <strong>CSV</strong>; r: <strong>Streams.Reader</strong>)</pre>
+<hr><h3 id="#_69A73800"><a name="CSV.Scanner.Scan"></a><a href="#CSV">CSV</a>.<a href="#CSV.Scanner">Scanner</a>.<a href="#CSV.Scanner.Scan">Scan</a>
+</h3>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Scan*</pre>
+<hr><h3 id="#_69A76100"><a name="CSV.Scanner.ScanLine"></a><a href="#CSV">CSV</a>.<a href="#CSV.Scanner">Scanner</a>.<a href="#CSV.Scanner.ScanLine">ScanLine</a>
+</h3>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ScanLine*</pre>
+<hr><h3 id="#_69A78A00"><a name="CSV.Scanner.ScanField"></a><a href="#CSV">CSV</a>.<a href="#CSV.Scanner">Scanner</a>.<a href="#CSV.Scanner.ScanField">ScanField</a>
+</h3>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ScanField*</pre>
+<hr><h2 id="#_69A7B400"><a name="CSV.CSV"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CSV* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CSV.CSV.separator">separator</a>: <strong>CHAR</strong><tr><td></td><td><a href="#CSV.CSV.escaper">escaper</a>: <strong>CHAR</strong><tr><td></td><td><a href="#CSV.CSV.quoteChars">quoteChars</a>: <strong>Strings.String</strong><tr><td></td><td><a href="#CSV.CSV.lines">lines</a>: <strong>Line</strong><tr><th align='left'>procedures</th><td>& <a href="#CSV.CSV.Init">Init</a> (<strong>CONST</strong> separator, escaper: <strong>CHAR</strong>; <strong>CONST</strong> quotes: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#CSV.CSV.NewLine">NewLine</a><tr><td></td><td> <a href="#CSV.CSV.AddField">AddField</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#CSV.CSV.NeedsQuotes">NeedsQuotes</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#CSV.CSV.GetUnusedQuote">GetUnusedQuote</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>CHAR</strong><tr><td></td><td> <a href="#CSV.CSV.Write">Write</a> (out: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_69A90680"><a name="CSV.CSV.separator"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.separator">separator</a>
+</h3>
+<p> Character for separating the CSV fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> separator-: <strong>CHAR</strong></pre>
+<hr><h3 id="#_69A95040"><a name="CSV.CSV.escaper"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.escaper">escaper</a>
+</h3>
+<p> Escape character to escape quotes inside a quoted string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> escaper-: <strong>CHAR</strong></pre>
+<hr><h3 id="#_69A9A580"><a name="CSV.CSV.quoteChars"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.quoteChars">quoteChars</a>
+</h3>
+<p> List of quote characters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> quoteChars-: <strong>Strings.String</strong></pre>
+<hr><h3 id="#_69A9E6C0"><a name="CSV.CSV.lines"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.lines">lines</a>
+</h3>
+<p> Lines in the CSV file (linked list)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> lines-: <strong>Line</strong></pre>
+<hr><h3 id="#_69AA3480"><a name="CSV.CSV.Init"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.Init">Init</a>
+</h3>
+<p> separator and escaper are not allowed to be the same. This holds also for quoting characters.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Init* (<strong>CONST</strong> separator, escaper: <strong>CHAR</strong>; <strong>CONST</strong> quotes: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_69AAD600"><a name="CSV.CSV.NewLine"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.NewLine">NewLine</a>
+</h3>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewLine*</pre>
+<hr><h3 id="#_69AAFF00"><a name="CSV.CSV.AddField"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.AddField">AddField</a>
+</h3>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddField* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_69AB4500"><a name="CSV.CSV.NeedsQuotes"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.NeedsQuotes">NeedsQuotes</a>
+</h3>
+<p> A string in the CSV file needs to be quoted if  it contains the field separation character  it contains one or more quote characters itself  it contains white space (as white space is otherwise skipped)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NeedsQuotes* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_69AC2580"><a name="CSV.CSV.GetUnusedQuote"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.GetUnusedQuote">GetUnusedQuote</a>
+</h3>
+<p> Return the quote character that can be used to quote the string.  Does not work if all possible quoting chars are used in the string  TODO: resort to use escape character, but requires also escape character to be escaped!</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetUnusedQuote* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>CHAR</strong></pre>
+<hr><h3 id="#_69AD1300"><a name="CSV.CSV.Write"></a><a href="#CSV">CSV</a>.<a href="#CSV.CSV">CSV</a>.<a href="#CSV.CSV.Write">Write</a>
+</h3>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (out: <strong>Streams.Writer</strong>)</pre>
+<hr><h2 id="#_69AD4D80"><a name="CSV.IsWhiteSpace"></a><a href="#CSV">CSV</a>.<a href="#CSV.IsWhiteSpace">IsWhiteSpace</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsWhiteSpace* (<strong>CONST</strong> ch: <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_69AD8CC0"><a name="CSV.ContainsWhitespace"></a><a href="#CSV">CSV</a>.<a href="#CSV.ContainsWhitespace">ContainsWhitespace</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ContainsWhitespace* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_69ADD180"><a name="CSV.GetDefaultCSV"></a><a href="#CSV">CSV</a>.<a href="#CSV.GetDefaultCSV">GetDefaultCSV</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetDefaultCSV* (): <strong>CSV</strong></pre>
+<hr><h2 id="#_69AE0040"><a name="CSV.ScanFromFileName"></a><a href="#CSV">CSV</a>.<a href="#CSV.ScanFromFileName">ScanFromFileName</a>
+</h2>
+<p> Read the content of a (CSV) file system file and interpret it as CSV file content</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ScanFromFileName* (<strong>CONST</strong> fn: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> csv: <strong>CSV</strong>)</pre>
+<hr><h2 id="#_69AE9180"><a name="CSV.AppendCSVToFileName"></a><a href="#CSV">CSV</a>.<a href="#CSV.AppendCSVToFileName">AppendCSVToFileName</a>
+</h2>
+<p> Append the csv content to a File of the file system.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AppendCSVToFileName* (<strong>CONST</strong> fn: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> csv: <strong>CSV</strong>)</pre>
+<hr><h2 id="#_69AF1140"><a name="CSV.CompareCSVs"></a><a href="#CSV">CSV</a>.<a href="#CSV.CompareCSVs">CompareCSVs</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CompareCSVs* (a, b: <strong>CSV</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ZipTool">ZipTool</a></p>
+<hr><h1 id="#_6C127A80"><a name="ZipTool"></a><a href="#ModuleList">Module</a> ZipTool
+</h1>
+<p> AUTHOR "Stefan Walthert"; PURPOSE "Command line front-end for Zip</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#ZipTool.WriteDirectory">WriteDirectory</a> (out, error: <strong>Streams.Writer</strong>; <strong>CONST</strong> archiveName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; details: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#ZipTool.Directory">Directory</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#ZipTool.ExtractFile">ExtractFile</a> (arc: <strong>Zip.Archive</strong>; ent: <strong>Zip.Entry</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; path, overwrite: <strong>BOOLEAN</strong>; log, error: <strong>Streams.Writer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#ZipTool.OpenFile">OpenFile</a> (arc: <strong>Zip.Archive</strong>; ent: <strong>Zip.Entry</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> tempfile: <strong>Files.File</strong>; path, overwrite, show: <strong>BOOLEAN</strong>; log, error: <strong>Streams.Writer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#ZipTool.Extract">Extract</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#ZipTool.ExtractAll">ExtractAll</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#ZipTool.AddFile">AddFile</a> (arc: <strong>Zip.Archive</strong>; <strong>CONST</strong> srcname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> dstname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; level, strategy: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#ZipTool.Add">Add</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#ZipTool.Delete">Delete</a> (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_6C153000"><a name="ZipTool.WriteDirectory"></a><a href="#ZipTool">ZipTool</a>.<a href="#ZipTool.WriteDirectory">WriteDirectory</a>
+</h2>
+<p> Writes the directory of an archive.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteDirectory* (out, error: <strong>Streams.Writer</strong>; <strong>CONST</strong> archiveName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; details: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_6C15BF40"><a name="ZipTool.Directory"></a><a href="#ZipTool">ZipTool</a>.<a href="#ZipTool.Directory">Directory</a>
+</h2>
+<p> Shows the content of the selected zip-archive in a new viewer. ZipTool.Directory <a href="#-d">-d</a> ZipFile ~ Options details: If set, details of entries of selected zip-archive are shown</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Directory* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_6C1660C0"><a name="ZipTool.ExtractFile"></a><a href="#ZipTool">ZipTool</a>.<a href="#ZipTool.ExtractFile">ExtractFile</a>
+</h2>
+<p> Extracts the entry ent from the zip-archive ent and stores as under the filename name. Some log-output is generated. If path is set, the file is stored in the directory according to the relative path in name. If overwrite is set, files with the same name are overwritten, otherwise they are renamed to name.Bak. Possible results: cf. Zip.ExtractEntry</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ExtractFile* (arc: <strong>Zip.Archive</strong>; ent: <strong>Zip.Entry</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; path, overwrite: <strong>BOOLEAN</strong>; log, error: <strong>Streams.Writer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_6C17DD80"><a name="ZipTool.OpenFile"></a><a href="#ZipTool">ZipTool</a>.<a href="#ZipTool.OpenFile">OpenFile</a>
+</h2>
+<p> Extracts the entry ent from the zip-archive ent and stores as under the filename name. Some log-output is generated. If path is set, the file is stored in the directory according to the relative path in name. If overwrite is set, files with the same name are overwritten, otherwise they are renamed to name.Bak. Possible results: cf. Zip.ExtractEntry</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenFile* (arc: <strong>Zip.Archive</strong>; ent: <strong>Zip.Entry</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> tempfile: <strong>Files.File</strong>; path, overwrite, show: <strong>BOOLEAN</strong>; log, error: <strong>Streams.Writer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_6C197180"><a name="ZipTool.Extract"></a><a href="#ZipTool">ZipTool</a>.<a href="#ZipTool.Extract">Extract</a>
+</h2>
+<p> Extracts the selected entries of the selected zip-Archive. The relative path in the file name of the entry is ignored (c.f. option<br>d). ZipTool.Extract <a href="#-d]">-d]</a> <a href="#-o]">-o]</a> ZipFile <code>Entry [=&gt NewName]}<BR>	Options:<BR>	--directory: If set, the file is stored in the directory according to the relative path in the file name of the entry<BR>	--overwrite: If set, files with the same name are overwritten, otherwise they are renamed to filename.Bak<BR>	--ignore: Continue in case of errors<BR>	--prefix: Add prefix to extracted files </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Extract* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_6C1A1DC0"><a name="ZipTool.ExtractAll"></a><a href="#ZipTool">ZipTool</a>.<a href="#ZipTool.ExtractAll">ExtractAll</a>
+</h2>
+<p> Extracts all entries of the selected zip-archives. The relative path in the file name of the entry is ignored (c.f. option<br>d). ZipTool.ExtractAll <a href="#-d]">-d]</a> <a href="#-o]">-o]</a> <a href="#-p=DstPrefix]">-p=DstPrefix]</a> <a href="#-sourcePath=SrcPrefix]">-sourcePath=SrcPrefix]</a> <a href="#-s]">-s]</a> <code>ZipFile} ~<BR>	Options:<BR>	--directory: If set, the file is stored in the directory according to the relative path in the file name of the entry<BR>	--overwrite: If set, files with the same name are overwritten, otherwise they are renamed to filename.Bak<BR>	--ignore: If set, continue extraction in case of an error, otherwise abort<BR>	--prefix: If set, DstPrefix is prefixed to all file names of the entries in the zip-archives<BR>	--sourcePath: If set, SrcPrefix is prefixed to all archive names </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ExtractAll* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_6C1AD280"><a name="ZipTool.AddFile"></a><a href="#ZipTool">ZipTool</a>.<a href="#ZipTool.AddFile">AddFile</a>
+</h2>
+<p> Adds a file to the selected zip-archive. level specifies the compression level (0: no compression, 9: best compression) strategy specifies the compression strategy (from 0 - 2) res = Zip.Ok, Zip.BadName, Zip.EntryAlreadyExists, Zip.DataError</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddFile* (arc: <strong>Zip.Archive</strong>; <strong>CONST</strong> srcname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> dstname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; level, strategy: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_6C1BE340"><a name="ZipTool.Add"></a><a href="#ZipTool">ZipTool</a>.<a href="#ZipTool.Add">Add</a>
+</h2>
+<p> Adds the selected files to the selected zip-archive. ZipTool.Add <a href="#--level=&ltint&gt">--level=&ltint&gt</a> <a href="#--strategy=&ltint&gt">--strategy=&ltint&gt</a> <a href="#--nopath]">--nopath]</a> ZipFile <code>Entry} ~<BR>	Options:<BR>	--level=&ltinteger&gt: specifies the compression level (0: no compression, 9: best compression)<BR>		if not set, default level (-1) is used<BR>	--strategy=&ltinteger&gt: specifies the compression strategy (from 0 - 2)<BR>	--nopath: remove prefix & path from filename<BR>	--removePrefix: remove prefix from filename (but keep path)<BR>	--ignore: continue in case of errors<BR>	--silent: Only error output </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_6C1C5A00"><a name="ZipTool.Delete"></a><a href="#ZipTool">ZipTool</a>.<a href="#ZipTool.Delete">Delete</a>
+</h2>
+<p> Deletes the selected entries from the selected zip-archive. ZipTool.Delete <a href="#--ignore]">--ignore]</a> ZipFile <code>Entry} ~ </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Delete* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

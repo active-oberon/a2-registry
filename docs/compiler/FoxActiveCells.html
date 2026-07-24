@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxActiveCells">FoxActiveCells</a></p>
+<hr><h1 id="#_8B715E00"><a name="FoxActiveCells"></a><a href="#ModuleList">Module</a> FoxActiveCells
+</h1>
+<p> AUTHOR "fof"; PURPOSE "hardware library for the ActiveCells compiler";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>In= SyntaxTree.InPort<tr><td></td><td>Out= SyntaxTree.OutPort<tr><td></td><td>defaultInstructionMemorySize= 0<tr><td></td><td>defaultDataMemorySize= 2048<tr><td></td><td>defaultPortWidth= 32<tr><td></td><td>defaultFifoSize= 32<tr><td></td><td>defaultChannelWidth= 32<tr><td></td><td>CodeFileExtension= "code"<tr><td></td><td>DataFileExtension= "data"<tr><td></td><td>SpecificationFileExtension= "spec"<tr><td></td><td>ObjectFileExtension= "Gof"<tr><td></td><td>VectorCapability= Global.VectorCapability<tr><td></td><td>FloatingPointCapability= Global.FloatingPointCapability<tr><td></td><td>TRMSCapability= Global.TRMSCapability<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#FoxActiveCells.PortInstance">PortInstance</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxActiveCells.Symbol">Symbol</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxActiveCells.SymbolList">SymbolList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxActiveCells.Port">Port</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxActiveCells.PortList">PortList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxActiveCells.Device">Device</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxActiveCells.DeviceList">DeviceList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxActiveCells.Module">Module</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxActiveCells.ModuleList">ModuleList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxActiveCells.Parameter">Parameter</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxActiveCells.ParameterList">ParameterList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxActiveCells.Instance">Instance</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxActiveCells.InstanceList">InstanceList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td>InstanceMethod =<strong>PROCEDURE</strong>{DELEGATE} (instance: <strong>Instance</strong>): <strong>BOOLEAN</strong><tr><td></td><td>TypeMethod =<strong>PROCEDURE</strong>{DELEGATE} (type: <strong>Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td><a href="#FoxActiveCells.Scope">Scope</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxActiveCells.Type">Type</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#FoxActiveCells.TypeList">TypeList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxActiveCells.Channel">Channel</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#FoxActiveCells.ChannelList">ChannelList</a> =<strong>OBJECT</strong> (<strong>Basic.List</strong>)<tr><td></td><td><a href="#FoxActiveCells.Specification">Specification</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><th align='left'>procedures</th><td> <a href="#FoxActiveCells.LoadSpecification">LoadSpecification</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; log: <strong>Streams.Writer</strong>): <strong>Specification</strong><tr><td></td><td> ReadSpecification (context: <strong>Commands.Context</strong>)<tr><td></td><td> CompareSpecification (context: <strong>Commands.Context</strong>)<tr><td></td><td> GetSymbol (scope: <strong>Scope</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Symbol</strong><tr><td></td><td> Clone (symbol: <strong>Symbol</strong>): <strong>Symbol</strong><tr><td></td><td> FlattenNetwork (scope: <strong>Scope</strong>)<tr><td></td><td> NormalizeName (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dest: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteName (w: <strong>Streams.Writer</strong>; scope: <strong>Scope</strong>; <strong>CONST</strong> name, suffix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_8B762600">
+</h1><hr><h2 id="#_8B762DC0"><a name="FoxActiveCells.PortInstance"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.PortInstance">PortInstance</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PortInstance* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>instance: <strong>Instance</strong><tr><td></td><td>port: <strong>Port</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B767900"><a name="FoxActiveCells.Symbol"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Symbol">Symbol</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Symbol* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Name</strong><tr><td></td><td>scope: <strong>Scope</strong><tr><th align='left'>procedures</th><td> GetFullName (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; in: <strong>Scope</strong>)<tr><td></td><td> AppendToMsg (<strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B775880"><a name="FoxActiveCells.SymbolList"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.SymbolList">SymbolList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SymbolList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetSymbol (i: <strong>SIZE</strong>): <strong>Symbol</strong><tr><td></td><td> ByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Symbol</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B77F1C0"><a name="FoxActiveCells.Port"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Port">Port</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Port* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>direction: <strong>SIGNED32</strong><tr><td></td><td>adr: <strong>SIGNED32</strong><tr><td></td><td>width: <strong>SIGNED32</strong><tr><td></td><td>delegate: <strong>PortInstance</strong><tr><td></td><td>index: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td>& InitPort (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; scope: <strong>Scope</strong>; direction: <strong>SIGNED32</strong>; adr: <strong>SIGNED32</strong>)<tr><td></td><td> SetWidth (widthInBits: <strong>SIGNED32</strong>)<tr><td></td><td> Delegate (instance: <strong>Instance</strong>; port: <strong>Port</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; indent: <strong>SIGNED32</strong>)<tr><td></td><td> Read (r: <strong>Streams.Reader</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B79AC40"><a name="FoxActiveCells.PortList"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.PortList">PortList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PortList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetPort (i: <strong>SIZE</strong>): <strong>Port</strong><tr><td></td><td> ByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Port</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B7A3FC0"><a name="FoxActiveCells.Device"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Device">Device</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Device* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>adr: <strong>SIGNED32</strong><tr><td></td><td>index: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td>& InitDevice (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; scope: <strong>Scope</strong>; adr: <strong>SIGNED32</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; indent: <strong>SIGNED32</strong>)<tr><td></td><td> Read (r: <strong>Streams.Reader</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B7B5800"><a name="FoxActiveCells.DeviceList"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.DeviceList">DeviceList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DeviceList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetDevice (i: <strong>SIZE</strong>): <strong>Device</strong><tr><td></td><td> ByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Device</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B7BDC00"><a name="FoxActiveCells.Module"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Module">Module</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Module* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fileName: <strong>Files.FileName</strong><tr><td></td><td>index: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; indent: <strong>SIGNED32</strong>)<tr><td></td><td> Read (r: <strong>Streams.Reader</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B7CAFC0"><a name="FoxActiveCells.ModuleList"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.ModuleList">ModuleList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ModuleList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetModule (i: <strong>SIZE</strong>): <strong>Module</strong><tr><td></td><td> ByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B7D32C0"><a name="FoxActiveCells.Parameter"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Parameter">Parameter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parameter* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>index: <strong>SIZE</strong><tr><td></td><td>parameterType: <strong>SIGNED8</strong><tr><td></td><td>integer: <strong>SIGNED32</strong><tr><td></td><td>boolean: <strong>BOOLEAN</strong><tr><td></td><td>string: <strong>Strings.String</strong><tr><th align='left'>procedures</th><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetBoolean (b: <strong>BOOLEAN</strong>)<tr><td></td><td> SetInteger (i: <strong>SIGNED32</strong>)<tr><td></td><td> SetString (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B7E4640"><a name="FoxActiveCells.ParameterList"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.ParameterList">ParameterList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ParameterList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetParameter (i: <strong>SIZE</strong>): <strong>Parameter</strong><tr><td></td><td> ByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Parameter</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B7EC980"><a name="FoxActiveCells.Instance"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Instance">Instance</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Instance* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>instanceType: <strong>Type</strong><tr><td></td><td>parameters: <strong>ParameterList</strong><tr><td></td><td>capabilityParameters: <strong>ParameterList</strong><tr><td></td><td>index: <strong>SIZE</strong><tr><td></td><td>instructionMemorySize: <strong>SIGNED32</strong><tr><td></td><td>dataMemorySize: <strong>SIGNED32</strong><tr><td></td><td>capabilities: <strong>SET</strong><tr><th align='left'>procedures</th><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsEngine (): <strong>BOOLEAN</strong><tr><td></td><td> SetInstructionMemorySize (value: <strong>SIGNED32</strong>)<tr><td></td><td> SetDataMemorySize (value: <strong>SIGNED32</strong>)<tr><td></td><td> AddParameter (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Parameter</strong><tr><td></td><td> AddCapabilityParameter (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Parameter</strong><tr><td></td><td> AppendToMsg (<strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B806C40"><a name="FoxActiveCells.InstanceList"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.InstanceList">InstanceList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InstanceList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetInstance (i: <strong>SIZE</strong>): <strong>Instance</strong><tr><td></td><td> ByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Instance</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B80EF40"><a name="FoxActiveCells.Scope"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Scope">Scope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scope* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>symbols: <strong>SymbolList</strong><tr><td></td><td>instances: <strong>InstanceList</strong><tr><td></td><td>channels: <strong>ChannelList</strong><tr><td></td><td>types: <strong>TypeList</strong><tr><td></td><td>ports: <strong>PortList</strong><tr><td></td><td>index: <strong>SIZE</strong><tr><td></td><td>specification: <strong>Specification</strong><tr><th align='left'>procedures</th><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> NewInstance (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; type: <strong>Type</strong>): <strong>Instance</strong><tr><td></td><td> NewChannel (): <strong>Channel</strong><tr><td></td><td> NewPort (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; direction: <strong>SIGNED32</strong>; adr: <strong>SIGNED32</strong>): <strong>Port</strong><tr><td></td><td> NewType (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Type</strong><tr><td></td><td> ForEachInstanceDo (method: <strong>InstanceMethod</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ForEachTypeDo (method: <strong>TypeMethod</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B82FC80"><a name="FoxActiveCells.Type"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Type">Type</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Type* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>devices: <strong>DeviceList</strong><tr><td></td><td>modules: <strong>ModuleList</strong><tr><td></td><td>instructionMemorySize: <strong>SIGNED32</strong><tr><td></td><td>dataMemorySize: <strong>SIGNED32</strong><tr><td></td><td>capabilities: <strong>SET</strong><tr><th align='left'>procedures</th><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td>& InitType (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; scope: <strong>Scope</strong>)<tr><td></td><td> AddCapability (capability: <strong>SIGNED32</strong>)<tr><td></td><td> SetInstructionMemorySize (value: <strong>SIGNED32</strong>)<tr><td></td><td> SetDataMemorySize (value: <strong>SIGNED32</strong>)<tr><td></td><td> NewDevice (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; adr: <strong>SIGNED32</strong>): <strong>Device</strong><tr><td></td><td> NewModule (<strong>CONST</strong> moduleName, fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; indent: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B84E740"><a name="FoxActiveCells.TypeList"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.TypeList">TypeList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TypeList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetType (i: <strong>SIZE</strong>): <strong>Type</strong><tr><td></td><td> ByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Type</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B856A40"><a name="FoxActiveCells.Channel"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Channel">Channel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Channel* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>in: <strong>PortInstance</strong><tr><td></td><td>out: <strong>PortInstance</strong><tr><td></td><td>fifoSize: <strong>SIGNED32</strong><tr><td></td><td>widthInBits: <strong>SIGNED32</strong><tr><td></td><td>index: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ConnectIn (instance: <strong>Instance</strong>; port: <strong>Port</strong>)<tr><td></td><td> ConnectOut (instance: <strong>Instance</strong>; port: <strong>Port</strong>)<tr><td></td><td> SetFifoSize (size: <strong>SIGNED32</strong>)<tr><td></td><td> SetWidth (width: <strong>SIGNED32</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; indent: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B86D340"><a name="FoxActiveCells.ChannelList"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.ChannelList">ChannelList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ChannelList* =<strong>OBJECT</strong> (<strong>Basic.List</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetChannel (i: <strong>SIZE</strong>): <strong>Channel</strong><tr><td></td><td> AddChannel (a: <strong>Channel</strong>)<tr><td></td><td> ByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Channel</strong><tr><td></td><td> ByPort (port: <strong>Port</strong>): <strong>Channel</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B8792C0"><a name="FoxActiveCells.Specification"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.Specification">Specification</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Specification* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>instructionSet: <strong>Name</strong><tr><td></td><td>diagnostics: <strong>Diagnostics.Diagnostics</strong><tr><td></td><td>log: <strong>Streams.Writer</strong><tr><td></td><td>supportedDevices: <strong>DeviceList</strong><tr><td></td><td>imports: <strong>SymbolList</strong><tr><td></td><td>frequencyDivider: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> AddDevice (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; adr: <strong>SIGNED64</strong>)<tr><td></td><td> Same (as: <strong>Symbol</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> DefineDevices (system: <strong>Global.System</strong>)<tr><td></td><td>& Init (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; log: <strong>Streams.Writer</strong>)<tr><td></td><td> SetFrequencyDivider (divider: <strong>SIGNED32</strong>)<tr><td></td><td> AddImport (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetInstructionSet (<strong>CONST</strong> instructionSet: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; indent: <strong>SIGNED32</strong>)<tr><td></td><td> Read (r: <strong>Streams.Reader</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetPortAddress (number: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> Emit (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B89DB80"><a name="FoxActiveCells.LoadSpecification"></a><a href="#FoxActiveCells">FoxActiveCells</a>.<a href="#FoxActiveCells.LoadSpecification">LoadSpecification</a>
+</h2>
+<p> Load an ActiveCells specification name - specification name, with or without suffix ".spec"</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadSpecification* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; log: <strong>Streams.Writer</strong>): <strong>Specification</strong></pre>
+</body></html>

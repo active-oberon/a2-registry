@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxBackend">FoxBackend</a></p>
+<hr><h1 id="#_FD520180"><a name="FoxBackend"></a><a href="#ModuleList">Module</a> FoxBackend
+</h1>
+<p> AUTHOR "kaeserm,fof"; PURPOSE "Oberon Compiler: Common backend module";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>SizeInBits =<strong>SIZE</strong><tr><td></td><td><a href="#FoxBackend.Backend">Backend</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> GetDummy (): <strong>Backend</strong><tr><td></td><td> GetBackendByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Backend</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_FD52A240"><a name="FoxBackend.Backend"></a><a href="#FoxBackend">FoxBackend</a>.<a href="#FoxBackend.Backend">Backend</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Backend* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>diagnostics: <strong>Diagnostics.Diagnostics</strong><tr><td></td><td>log: <strong>Streams.Writer</strong><tr><td></td><td>flags: <strong>SET</strong><tr><td></td><td>system: <strong>Global.System</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><td></td><td>checker: <strong>SemanticChecker.Checker</strong><tr><td></td><td>source: <strong>SyntaxTree.String</strong><tr><td></td><td>findSectionName: <strong>SectionName</strong><tr><td></td><td>findSectionOffset: <strong>SIGNED32</strong><tr><td></td><td>capabilities: <strong>SET</strong><tr><td></td><td>oberon07: <strong>BOOLEAN</strong><tr><td></td><td>hasLinkRegister: <strong>BOOLEAN</strong><tr><td></td><td>name: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>codeUnit: <strong>SizeInBits</strong><tr><th align='left'>procedures</th><td>& InitBackend<tr><td></td><td> SetOberon07<tr><td></td><td> SetCapabilities (capabilities: <strong>SET</strong>)<tr><td></td><td> SetHasLinkRegister<tr><td></td><td> SetCodeUnit (unit: <strong>SizeInBits</strong>)<tr><td></td><td> ResetError<tr><td></td><td> Initialize (diagnostics: <strong>Diagnostics.Diagnostics</strong>; log: <strong>Streams.Writer</strong>; flags: <strong>SET</strong>; checker: <strong>SemanticChecker.Checker</strong>; system: <strong>Global.System</strong>)<tr><td></td><td> SetName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetSystem (): <strong>Global.System</strong><tr><td></td><td> Error (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Basic.Position</strong>; errorNumber: <strong>SIGNED32</strong>; <strong>CONST</strong> err: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ProcessSyntaxTreeModule (syntaxTreeModule: <strong>SyntaxTree.Module</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> ProcessIntermediateCodeModule (intermediateCodeModule: <strong>Formats.GeneratedModule</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> Emit (backend: <strong>Backend</strong>): <strong>BOOLEAN</strong><tr><td></td><td> FindPC (x: <strong>SyntaxTree.Module</strong>; <strong>CONST</strong> sectionName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; sectionOffset: <strong>SIGNED32</strong>)<tr><td></td><td> CheckCodeAddress (<strong>VAR</strong> adr: <strong>BinaryCode.Unit</strong>)<tr><td></td><td> GetDescription (<strong>VAR</strong> instructionSet: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> CanPassInRegister (type: <strong>SyntaxTree.Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> DefineOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> GetOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> DefaultObjectFileFormat (): <strong>Formats.ObjectFileFormat</strong><tr><td></td><td> DefaultSymbolFileFormat (): <strong>Formats.SymbolFileFormat</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

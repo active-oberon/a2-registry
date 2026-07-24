@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxBasic">FoxBasic</a></p>
+<hr><h1 id="#_2172D9C0"><a name="FoxBasic"></a><a href="#ModuleList">Module</a> FoxBasic
+</h1>
+<p> AUTHOR "fof"; PURPOSE "Oberon Compiler: basic helpers: strings, lists, hash tables, graphs, indented writer";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>UndeclaredIdentifier= 256<tr><td></td><td>MultiplyDefinedIdentifier= 257<tr><td></td><td>NumberIllegalCharacter= 258<tr><td></td><td>StringIllegalCharacter= 259<tr><td></td><td>NoMatchProcedureName= 260<tr><td></td><td>CommentNotClosed= 261<tr><td></td><td>IllegalCharacterValue= 262<tr><td></td><td>ValueStartIncorrectSymbol= 263<tr><td></td><td>IllegalyMarkedIdentifier= 264<tr><td></td><td>IdentifierNoType= 265<tr><td></td><td>IdentifierNoRecordType= 266<tr><td></td><td>IdentifierNoObjectType= 267<tr><td></td><td>ImportNotAvailable= 268<tr><td></td><td>RecursiveTypeDeclaration= 269<tr><td></td><td>NumberTooLarge= 270<tr><td></td><td>IdentifierTooLong= 271<tr><td></td><td>StringTooLong= 272<tr><td></td><td>invalidString= -1<tr><td></td><td>InvalidCode= -1<tr><th align='left'>type declarations</th><td>String =<strong>StringPool.Index</strong><tr><td></td><td>SegmentedName =<strong>ObjectFile.SegmentedName</strong><tr><td></td><td>FileName =<strong>Files.FileName</strong><tr><td></td><td>SectionName =<strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>MessageString =<strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Integer =<strong>SIGNED64</strong><tr><td></td><td>Set =<strong>SET64</strong><tr><td></td><td>Real =<strong>FLOAT64</strong><tr><td></td><td><a href="#FoxBasic.Position">Position</a> =<strong>RECORD</strong> <tr><td></td><td>ErrorCode =<strong>INTEGER</strong><tr><td></td><td>Fingerprint =<strong>ObjectFile.Fingerprint</strong><tr><td></td><td><a href="#FoxBasic.List">List</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxBasic.HashTable">HashTable</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxBasic.IntIterator">IntIterator</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxBasic.HashTableInt">HashTableInt</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxBasic.HashTableSegmentedName">HashTableSegmentedName</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#FoxBasic.Writer">Writer</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td>DebugWriterFactory =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> title: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Writer</strong><tr><td></td><td>WriterFactory =<strong>PROCEDURE</strong>{DELEGATE} (w: <strong>Streams.Writer</strong>): <strong>Writer</strong><tr><td></td><td>DiagnosticsFactory =<strong>PROCEDURE</strong>{DELEGATE} (w: <strong>Streams.Writer</strong>): <strong>Diagnostics.Diagnostics</strong><tr><th align='left'>variables</th><td>lists: <strong>SIZE</strong><tr><td></td><td>enlarged: <strong>SIZE</strong><tr><td></td><td>strings: <strong>SIZE</strong><tr><td></td><td>emptyString: <strong>String</strong><tr><td></td><td>invalidPosition: <strong>Position</strong><tr><th align='left'>procedures</th><td> MakeString (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> GetString (s: <strong>String</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> StringEqual (s, t: <strong>String</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetErrorMessage (err: <strong>ErrorCode</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AppendDetailedErrorMessage (<strong>VAR</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>Position</strong>; reader: <strong>Streams.Reader</strong>)<tr><td></td><td> AppendPosition (<strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>Position</strong>)<tr><td></td><td> ErrorC (diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>Position</strong>; code: <strong>ErrorCode</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Error (diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>Position</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>Position</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>Position</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#FoxBasic.SetErrorMessage">SetErrorMessage</a> (n: <strong>ErrorCode</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetErrorExpected (n: <strong>ErrorCode</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AppendNumber (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; num: <strong>SIGNED64</strong>)<tr><td></td><td> InitSegmentedName (<strong>VAR</strong> name: <strong>SegmentedName</strong>)<tr><td></td><td> ToSegmentedName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pooledName: <strong>SegmentedName</strong>)<tr><td></td><td> SegmentedNameToString (<strong>CONST</strong> pooledName: <strong>SegmentedName</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteSegmentedName (w: <strong>Streams.Writer</strong>; name: <strong>SegmentedName</strong>)<tr><td></td><td> AppendToSegmentedName (<strong>VAR</strong> name: <strong>SegmentedName</strong>; <strong>CONST</strong> this: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SuffixSegmentedName (<strong>VAR</strong> name: <strong>SegmentedName</strong>; this: <strong>StringPool.Index</strong>)<tr><td></td><td> SegmentedNameEndsWith (<strong>CONST</strong> name: <strong>SegmentedName</strong>; <strong>CONST</strong> this: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> RemoveSuffix (<strong>VAR</strong> name: <strong>SegmentedName</strong>)<tr><td></td><td> GetSuffix (<strong>CONST</strong> name: <strong>SegmentedName</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> IsPrefix (<strong>CONST</strong> prefix, of: <strong>SegmentedName</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Concat (<strong>VAR</strong> result: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> prefix, name, suffix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Lowercase (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Uppercase (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetIntegerObj (value: <strong>SIGNED32</strong>): @Any0<tr><td></td><td> Align (<strong>VAR</strong> offset: <strong>SIZE</strong>; alignment: <strong>SIZE</strong>)<tr><td></td><td> ActivateDebug<tr><td></td><td> GetFileReader (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Reader</strong><tr><td></td><td> GetWriter (w: <strong>Streams.Writer</strong>): <strong>Writer</strong><tr><td></td><td> GetDebugWriter (<strong>CONST</strong> title: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Writer</strong><tr><td></td><td> GetDiagnostics (w: <strong>Streams.Writer</strong>): <strong>Diagnostics.Diagnostics</strong><tr><td></td><td> GetDefaultDiagnostics (): <strong>Diagnostics.Diagnostics</strong><tr><td></td><td> InstallWriterFactory (writer: <strong>WriterFactory</strong>; debug: <strong>DebugWriterFactory</strong>; diagnostics: <strong>DiagnosticsFactory</strong>)<tr><td></td><td> = (<strong>CONST</strong> left: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; right: <strong>String</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (left: <strong>String</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> MessageS (<strong>CONST</strong> format, s0: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>MessageString</strong><tr><td></td><td> MessageSS (<strong>CONST</strong> format, s0, s1: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>MessageString</strong><tr><td></td><td> MessageI (<strong>CONST</strong> format: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; i0: <strong>SIGNED32</strong>): <strong>MessageString</strong><tr><td></td><td> MessageSI (<strong>CONST</strong> format: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> s0: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; i1: <strong>SIGNED32</strong>): <strong>MessageString</strong><tr><td></td><td> GetStringParameter (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetTracingDiagnostics (diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>Diagnostics.Diagnostics</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_1D854CC0">
+</h1><hr><h2 id="#_1D855480"><a name="FoxBasic.Position"></a><a href="#FoxBasic">FoxBasic</a>.<a href="#FoxBasic.Position">Position</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Position* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>start: <strong>Streams.Position</strong><tr><td></td><td>end: <strong>Streams.Position</strong><tr><td></td><td>line: <strong>Streams.Position</strong><tr><td></td><td>linepos: <strong>Streams.Position</strong><tr><td></td><td>reader: <strong>Streams.Reader</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1D85CC00"><a name="FoxBasic.List"></a><a href="#FoxBasic">FoxBasic</a>.<a href="#FoxBasic.List">List</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> List* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>count: <strong>SIZE</strong><tr><td></td><td>multipleAllowed: <strong>BOOLEAN</strong><tr><td></td><td>nilAllowed: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitList (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Length (): <strong>SIZE</strong><tr><td></td><td> Get (i: <strong>SIZE</strong>): @Any0<tr><td></td><td> Set (i: <strong>SIZE</strong>; x: @Any0)<tr><td></td><td> Add (x: @Any0)<tr><td></td><td> Prepend (x: @Any0)<tr><td></td><td> Append (x: <strong>List</strong>)<tr><td></td><td> Remove (x: @Any0)<tr><td></td><td> RemoveByIndex (i: <strong>SIZE</strong>)<tr><td></td><td> Insert (i: <strong>SIZE</strong>; x: @Any0)<tr><td></td><td> Replace (x, y: @Any0)<tr><td></td><td> ReplaceByIndex (i: <strong>SIZE</strong>; x: @Any0)<tr><td></td><td> <a href="#FoxBasic.List.IndexOf">IndexOf</a> (x: @Any0): <strong>SIZE</strong><tr><td></td><td> Contains (x: @Any0): <strong>BOOLEAN</strong><tr><td></td><td> Clear<tr><td></td><td> GrowAndSet (i: <strong>SIZE</strong>; x: @Any0)<tr><td></td><td> Sort (comparisonFunction: <strong>ComparisonFunction</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1D883CC0"><a name="FoxBasic.List.IndexOf"></a><a href="#FoxBasic">FoxBasic</a>.<a href="#FoxBasic.List">List</a>.<a href="#FoxBasic.List.IndexOf">IndexOf</a>
+</h3>
+<p> If the object is not present, -1 is returned</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IndexOf* (x: @Any0): <strong>SIZE</strong></pre>
+<hr><h2 id="#_1D88CA00"><a name="FoxBasic.HashTable"></a><a href="#FoxBasic">FoxBasic</a>.<a href="#FoxBasic.HashTable">HashTable</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HashTable* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>used: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Put (key, value: @Any0)<tr><td></td><td> Get (key: @Any0): @Any0<tr><td></td><td> Has (key: @Any0): <strong>BOOLEAN</strong><tr><td></td><td> Length (): <strong>SIZE</strong><tr><td></td><td> Clear<tr><td></td><td> PutInt (key: @Any0; value: <strong>SIZE</strong>)<tr><td></td><td> GetInt (key: @Any0): <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1D8A18C0"><a name="FoxBasic.IntIterator"></a><a href="#FoxBasic">FoxBasic</a>.<a href="#FoxBasic.IntIterator">IntIterator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IntIterator* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetNext (<strong>VAR</strong> key: <strong>SIZE</strong>; <strong>VAR</strong> value: @Any0): <strong>BOOLEAN</strong></td></tr>
+</table>
+<hr><h2 id="#_1D8A7EC0"><a name="FoxBasic.HashTableInt"></a><a href="#FoxBasic">FoxBasic</a>.<a href="#FoxBasic.HashTableInt">HashTableInt</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HashTableInt* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>used: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Put (key: <strong>SIZE</strong>; value: @Any0)<tr><td></td><td> Get (key: <strong>SIZE</strong>): @Any0<tr><td></td><td> Has (key: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Length (): <strong>SIZE</strong><tr><td></td><td> Clear<tr><td></td><td> PutInt (key, value: <strong>SIZE</strong>)<tr><td></td><td> GetInt (key: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> GetIterator (): <strong>IntIterator</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1D8BE8C0"><a name="FoxBasic.HashTableSegmentedName"></a><a href="#FoxBasic">FoxBasic</a>.<a href="#FoxBasic.HashTableSegmentedName">HashTableSegmentedName</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HashTableSegmentedName* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>used: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Put (<strong>CONST</strong> key: <strong>SegmentedName</strong>; value: @Any0)<tr><td></td><td> Get (<strong>CONST</strong> key: <strong>SegmentedName</strong>): @Any0<tr><td></td><td> Has (<strong>CONST</strong> key: <strong>SegmentedName</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Length (): <strong>SIZE</strong><tr><td></td><td> Clear<tr><td></td><td> Hash (<strong>CONST</strong> name: <strong>SegmentedName</strong>): <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1D8D24C0"><a name="FoxBasic.Writer"></a><a href="#FoxBasic">FoxBasic</a>.<a href="#FoxBasic.Writer">Writer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Writer* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>indent: <strong>SIGNED32</strong><tr><td></td><td>w: <strong>Streams.Writer</strong><tr><th align='left'>procedures</th><td> InitBasicWriter (w: <strong>Streams.Writer</strong>)<tr><td></td><td> Reset<tr><td></td><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Streams.Position</strong>)<tr><td></td><td> Update<tr><td></td><td> Pos (): <strong>Streams.Position</strong><tr><td></td><td> Char (x: <strong>CHAR</strong>)<tr><td></td><td> Bytes (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> RawInt8 (x: <strong>SIGNED8</strong>)<tr><td></td><td> RawInt16 (x: <strong>SIGNED16</strong>)<tr><td></td><td> RawInt32 (x: <strong>SIGNED32</strong>)<tr><td></td><td> RawInt64 (x: <strong>SIGNED64</strong>)<tr><td></td><td> RawSInt (x: <strong>SIGNED8</strong>)<tr><td></td><td> RawInt (x: <strong>SIGNED16</strong>)<tr><td></td><td> RawLInt (x: <strong>SIGNED32</strong>)<tr><td></td><td> RawHInt (x: <strong>SIGNED64</strong>)<tr><td></td><td> Net32 (x: <strong>SIGNED32</strong>)<tr><td></td><td> Net16 (x: <strong>SIGNED32</strong>)<tr><td></td><td> Net8 (x: <strong>SIGNED32</strong>)<tr><td></td><td> RawSet (x: <strong>SET</strong>)<tr><td></td><td> RawBool (x: <strong>BOOLEAN</strong>)<tr><td></td><td> RawFloat32 (x: <strong>FLOAT32</strong>)<tr><td></td><td> RawFloat64 (x: <strong>Real</strong>)<tr><td></td><td> RawReal (x: <strong>FLOAT32</strong>)<tr><td></td><td> RawLReal (x: <strong>Real</strong>)<tr><td></td><td> RawString (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> RawNum (x: <strong>SIGNED64</strong>)<tr><td></td><td> Ln<tr><td></td><td> String (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Int (x: <strong>SIGNED64</strong>; wd: <strong>SIZE</strong>)<tr><td></td><td> Set (s: <strong>SET</strong>)<tr><td></td><td> Hex (x: <strong>SIGNED64</strong>; wd: <strong>SIZE</strong>)<tr><td></td><td> Address (x: <strong>ADDRESS</strong>)<tr><td></td><td> Date (t, d: <strong>SIGNED32</strong>)<tr><td></td><td> Date822 (t, d, tz: <strong>SIGNED32</strong>)<tr><td></td><td> Float (x: <strong>Real</strong>; n: <strong>SIGNED32</strong>)<tr><td></td><td> FloatFix (x: <strong>Real</strong>; n, f, D: <strong>SIGNED32</strong>)<tr><td></td><td> SetIndent (i: <strong>SIGNED32</strong>)<tr><td></td><td> IncIndent<tr><td></td><td> DecIndent<tr><td></td><td> BeginAlert<tr><td></td><td> EndAlert<tr><td></td><td> BeginKeyword<tr><td></td><td> EndKeyword<tr><td></td><td> BeginComment<tr><td></td><td> EndComment<tr><td></td><td> AlertString (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1D967900"><a name="FoxBasic.SetErrorMessage"></a><a href="#FoxBasic">FoxBasic</a>.<a href="#FoxBasic.SetErrorMessage">SetErrorMessage</a>
+</h2>
+<p> SetErrorMsg - Set message for error n</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetErrorMessage* (n: <strong>ErrorCode</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>

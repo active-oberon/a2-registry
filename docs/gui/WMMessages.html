@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#WMMessages">WMMessages</a></p>
+<hr><h1 id="#_3D8CD600"><a name="WMMessages"></a><a href="#ModuleList">Module</a> WMMessages
+</h1>
+<p> AUTHOR "TF"; PURPOSE "Support for messages and events";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#WMMessages.MsgPointer">MsgPointer</a>= 0<tr><td></td><td>MsgKey= 2<tr><td></td><td>MsgClose= 3<tr><td></td><td>MsgStyleChanged= 4<tr><td></td><td>MsgFocus= 5<tr><td></td><td>MsgExt= 6<tr><td></td><td>MsgDrag= 7<tr><td></td><td>MsgInvokeEvent= 8<tr><td></td><td>MsgResized= 9<tr><td></td><td>MsgSetLanguage= 10<tr><td></td><td>MsgInvalidate= 11<tr><td></td><td>MsgSerialize= 12<tr><td></td><td>MsgMerged= 15<tr><td></td><td>MsgMinimize= 16<tr><td></td><td>MsgMaximize= 17<tr><td></td><td>MsgRestore= 18<tr><td></td><td>MsgSubPointerMove= 0<tr><td></td><td>MsgSubPointerDown= 1<tr><td></td><td>MsgSubPointerUp= 2<tr><td></td><td>MsgSubPointerLeave= 3<tr><td></td><td>MsgSubFocusGot= 0<tr><td></td><td>MsgSubFocusLost= 1<tr><td></td><td>MsgSubMasterFocusGot= 2<tr><td></td><td>MsgSubMasterFocusLost= 3<tr><td></td><td>MsgSubAll= 0<tr><td></td><td>MsgSubRectangle= 1<tr><td></td><td>MsgSubNothing= 2<tr><td></td><td>MsgDragOver= 0<tr><td></td><td>MsgDragDropped= 1<tr><td></td><td>MsgSubSerializeView= 0<tr><td></td><td>MsgSubSerializeComponent= 1<tr><td></td><td>MsgSubSerializeData= 2<tr><td></td><td><a href="#WMMessages.Statistics">Statistics</a>= FALSE<tr><td></td><td>MsgTypeMax= 13<tr><th align='left'>type declarations</th><td><a href="#WMMessages.CompCommand">CompCommand</a> =<strong>PROCEDURE</strong>{DELEGATE} (sender, par: @Any0)<tr><td></td><td>String =<strong>Strings.String</strong><tr><td></td><td><a href="#WMMessages.Message">Message</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#WMMessages.MessageExtension">MessageExtension</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#WMMessages.AsyncToken">AsyncToken</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WMMessages.MessageHandler">MessageHandler</a> =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> msg: <strong>Message</strong>)<tr><td></td><td><a href="#WMMessages.TrapHandler">TrapHandler</a> =<strong>PROCEDURE</strong>{DELEGATE} (): <strong>BOOLEAN</strong><tr><td></td><td><a href="#WMMessages.MsgSequencer">MsgSequencer</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>messagesAddedByType: <strong>ARRAY</strong> MsgTypeMax <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td>messagesAdded: <strong>SIGNED32</strong><tr><td></td><td>messagesDiscarded: <strong>SIGNED32</strong><tr><td></td><td>debug: @Any0<tr><th align='left'>procedures</th><td> <a href="#WMMessages.GetAsyncToken">GetAsyncToken</a> (): <strong>AsyncToken</strong><tr><td></td><td> <a href="#WMMessages.RecycleAsyncToken">RecycleAsyncToken</a> (t: <strong>AsyncToken</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_3D905A80"><a name="WMMessages.MsgPointer"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.MsgPointer">MsgPointer</a>
+</h2>
+<p> Predefined Messages</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MsgPointer*= 0</pre>
+<hr><h2 id="#_3D908C80"><a name="WMMessages.Statistics"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.Statistics">Statistics</a>
+</h2>
+<p> Gather statistics about added/discarded messages?</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Statistics*= FALSE</pre>
+<hr><h2 id="#_3D90CC00"><a name="WMMessages.CompCommand"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.CompCommand">CompCommand</a>
+</h2>
+<p> Generic Component Command</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CompCommand* =<strong>PROCEDURE</strong>{DELEGATE} (sender, par: @Any0)</pre>
+<hr><h2 id="#_3D912240"><a name="WMMessages.Message"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.Message">Message</a>
+</h2>
+<p> Generic message structure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Message* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#WMMessages.Message.originator">originator</a>: @Any0<tr><td></td><td><a href="#WMMessages.Message.sender">sender</a>: @Any0<tr><td></td><td>token: <strong>AsyncToken</strong><tr><td></td><td>event: <strong>CompCommand</strong><tr><td></td><td>msgType: <strong>SIGNED32</strong><tr><td></td><td><a href="#WMMessages.Message.msgSubType">msgSubType</a>: <strong>SIGNED32</strong><tr><td></td><td>x: <strong>SIZE</strong><tr><td></td><td>y: <strong>SIZE</strong><tr><td></td><td>z: <strong>SIZE</strong><tr><td></td><td>dx: <strong>SIZE</strong><tr><td></td><td>dy: <strong>SIZE</strong><tr><td></td><td><a href="#WMMessages.Message.dz">dz</a>: <strong>SIZE</strong><tr><td></td><td><a href="#WMMessages.Message.flags">flags</a>: <strong>SET</strong><tr><td></td><td><a href="#WMMessages.Message.ext">ext</a>: @Any0</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_3D923240"><a name="WMMessages.Message.originator"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.Message">Message</a>.<a href="#WMMessages.Message.originator">originator</a>
+</h3>
+<p> the originator if # NIL passes information about the view that directly or indirectely lead to the msg</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> originator*: @Any0</pre>
+<hr><h3 id="#_3D92ABC0"><a name="WMMessages.Message.sender"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.Message">Message</a>.<a href="#WMMessages.Message.sender">sender</a>
+</h3>
+<p> is the sender component. If the message is originated form a component</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> sender*: @Any0</pre>
+<hr><h3 id="#_3D930D00"><a name="WMMessages.Message.msgSubType"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.Message">Message</a>.<a href="#WMMessages.Message.msgSubType">msgSubType</a>
+</h3>
+<p> generic message type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> msgSubType*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_3D934A00"><a name="WMMessages.Message.dz"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.Message">Message</a>.<a href="#WMMessages.Message.dz">dz</a>
+</h3>
+<p> in keyboard messages : ucs value in x, keysym in y</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> dz*: <strong>SIZE</strong></pre>
+<hr><h3 id="#_3D93A8C0"><a name="WMMessages.Message.flags"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.Message">Message</a>.<a href="#WMMessages.Message.flags">flags</a>
+</h3>
+<p> in pointer messages : keys in flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> flags*: <strong>SET</strong></pre>
+<hr><h3 id="#_3D93F580"><a name="WMMessages.Message.ext"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.Message">Message</a>.<a href="#WMMessages.Message.ext">ext</a>
+</h3>
+<p> extended message</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ext*: @Any0</pre>
+<hr><h2 id="#_3D942E40"><a name="WMMessages.MessageExtension"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.MessageExtension">MessageExtension</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MessageExtension* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_3D9462C0"><a name="WMMessages.AsyncToken"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.AsyncToken">AsyncToken</a>
+</h2>
+<p> AsyncToken can be used to synchronize asynchronous method invocation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AsyncToken* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>result: @Any0<tr><th align='left'>procedures</th><td> <a href="#WMMessages.AsyncToken.Reset">Reset</a><tr><td></td><td> <a href="#WMMessages.AsyncToken.AwaitCompletion">AwaitCompletion</a><tr><td></td><td> <a href="#WMMessages.AsyncToken.IsCompleted">IsCompleted</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WMMessages.AsyncToken.Completed">Completed</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_3D950280"><a name="WMMessages.AsyncToken.Reset"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.AsyncToken">AsyncToken</a>.<a href="#WMMessages.AsyncToken.Reset">Reset</a>
+</h3>
+<p> Reset is called in case the token was recycled</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reset*</pre>
+<hr><h3 id="#_3D955280"><a name="WMMessages.AsyncToken.AwaitCompletion"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.AsyncToken">AsyncToken</a>.<a href="#WMMessages.AsyncToken.AwaitCompletion">AwaitCompletion</a>
+</h3>
+<p> wait until the result is completed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AwaitCompletion*</pre>
+<hr><h3 id="#_3D959580"><a name="WMMessages.AsyncToken.IsCompleted"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.AsyncToken">AsyncToken</a>.<a href="#WMMessages.AsyncToken.IsCompleted">IsCompleted</a>
+</h3>
+<p> Return if the result is completed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsCompleted* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_3D95E500"><a name="WMMessages.AsyncToken.Completed"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.AsyncToken">AsyncToken</a>.<a href="#WMMessages.AsyncToken.Completed">Completed</a>
+</h3>
+<p> Called by the asynchronous process to indicate the result is available</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Completed*</pre>
+<hr><h2 id="#_3D963C80"><a name="WMMessages.MessageHandler"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.MessageHandler">MessageHandler</a>
+</h2>
+<p> Message handler that can be called from the sequencer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MessageHandler* =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> msg: <strong>Message</strong>)</pre>
+<hr><h2 id="#_3D96A640"><a name="WMMessages.TrapHandler"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.TrapHandler">TrapHandler</a>
+</h2>
+<p> The TrapHandler must return TRUE if the process should restart. Otherwise the process is stopped</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TrapHandler* =<strong>PROCEDURE</strong>{DELEGATE} (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_3D971F00"><a name="WMMessages.MsgSequencer"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.MsgSequencer">MsgSequencer</a>
+</h2>
+<p> Message sequencer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MsgSequencer* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>lock: <strong>Locks.RWLock</strong><tr><td></td><td>name: <strong>String</strong><tr><th align='left'>procedures</th><td>& New (handler: <strong>MessageHandler</strong>)<tr><td></td><td> <a href="#WMMessages.MsgSequencer.SetTrapHandler">SetTrapHandler</a> (th: <strong>TrapHandler</strong>)<tr><td></td><td> <a href="#WMMessages.MsgSequencer.IsCallFromSequencer">IsCallFromSequencer</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WMMessages.MsgSequencer.GetOriginator">GetOriginator</a> (): @Any0<tr><td></td><td> <a href="#WMMessages.MsgSequencer.Add">Add</a> (<strong>VAR</strong> msg: <strong>Message</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ScheduleEvent (event: <strong>CompCommand</strong>; sender, par: @Any0)<tr><td></td><td> <a href="#WMMessages.MsgSequencer.Stop">Stop</a><tr><td></td><td> WaitFree<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_3D985740"><a name="WMMessages.MsgSequencer.SetTrapHandler"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.MsgSequencer">MsgSequencer</a>.<a href="#WMMessages.MsgSequencer.SetTrapHandler">SetTrapHandler</a>
+</h3>
+<p> Add a trap handler for this process. This handler only decides whether to continue or to abort the process. If continued, the lock will be reset</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetTrapHandler* (th: <strong>TrapHandler</strong>)</pre>
+<hr><h3 id="#_3D98FB80"><a name="WMMessages.MsgSequencer.IsCallFromSequencer"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.MsgSequencer">MsgSequencer</a>.<a href="#WMMessages.MsgSequencer.IsCallFromSequencer">IsCallFromSequencer</a>
+</h3>
+<p> Return true if called from (this) sequencer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsCallFromSequencer* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_3D994F80"><a name="WMMessages.MsgSequencer.GetOriginator"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.MsgSequencer">MsgSequencer</a>.<a href="#WMMessages.MsgSequencer.GetOriginator">GetOriginator</a>
+</h3>
+<p> RETURN the originator (view) of the message that lead directly or indirectly to this request. Returns NIL if the call is not from the sequencer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetOriginator* (): @Any0</pre>
+<hr><h3 id="#_3D99E9C0"><a name="WMMessages.MsgSequencer.Add"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.MsgSequencer">MsgSequencer</a>.<a href="#WMMessages.MsgSequencer.Add">Add</a>
+</h3>
+<p> Add a message to a queue. Discards the message if the queue is full</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (<strong>VAR</strong> msg: <strong>Message</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_3D9A6740"><a name="WMMessages.MsgSequencer.Stop"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.MsgSequencer">MsgSequencer</a>.<a href="#WMMessages.MsgSequencer.Stop">Stop</a>
+</h3>
+<p> Stop the message sequencer. Must be called if the queue is no longer needed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Stop*</pre>
+<hr><h2 id="#_3D9AC940"><a name="WMMessages.GetAsyncToken"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.GetAsyncToken">GetAsyncToken</a>
+</h2>
+<p> Get an AsyncToken from the pool. Create a new one if the pool is empty</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetAsyncToken* (): <strong>AsyncToken</strong></pre>
+<hr><h2 id="#_3D9B3480"><a name="WMMessages.RecycleAsyncToken"></a><a href="#WMMessages">WMMessages</a>.<a href="#WMMessages.RecycleAsyncToken">RecycleAsyncToken</a>
+</h2>
+<p> Recycle an AsyncToken. Must be unused. (is only used to disburden the garbage collector)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RecycleAsyncToken* (t: <strong>AsyncToken</strong>)</pre>
+</body></html>

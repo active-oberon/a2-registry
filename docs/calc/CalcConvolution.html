@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CalcConvolution">CalcConvolution</a></p>
+<hr><h1 id="#_36876740"><a name="CalcConvolution"></a><a href="#ModuleList">Module</a> CalcConvolution
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Accurate computation of a convolution integral";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#CalcConvolution.GetArrayDimension">GetArrayDimension</a> (x, t: <strong>NbrRe.Real</strong>; n: <strong>NbrInt.Integer</strong>): <strong>NbrInt.Integer</strong><tr><td></td><td> <a href="#CalcConvolution.Solve">Solve</a> (k: <strong>CalcFn.ReArg</strong>; f: <strong>CalcFn.Re2Arg</strong>; x, t: <strong>NbrRe.Real</strong>; n, p: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> soln: <strong>ARRAY</strong> <strong>OF</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>NbrRe.Real</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_368856C0">
+</h1><hr><h2 id="#_36885E80"><a name="CalcConvolution.GetArrayDimension"></a><a href="#CalcConvolution">CalcConvolution</a>.<a href="#CalcConvolution.GetArrayDimension">GetArrayDimension</a>
+</h2>
+<p> Returns the smallest dimension (number of rows) of the solution array returned in Solve that is allowed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetArrayDimension* (x, t: <strong>NbrRe.Real</strong>; n: <strong>NbrInt.Integer</strong>): <strong>NbrInt.Integer</strong></pre>
+<hr><h2 id="#_3688F4C0"><a name="CalcConvolution.Solve"></a><a href="#CalcConvolution">CalcConvolution</a>.<a href="#CalcConvolution.Solve">Solve</a>
+</h2>
+<p> Solves the convolution integral y = x0x k(x-u) f(u,x) du. The input parameters are: k is a univariate kernel function, which must be positive and decay monotonically, and k(0) = % is allowed, f is a bivariate forcing function, x is the upper limit of integration, the lower limit is set to zero, x  0, t is the characteristic time affiliated with kernel k, t  0, n is the number of integration steps applied to each interval of characteristic length t, n  3, p is a parameter that balances speed (smaller values) against accuracy (larger values) with typical values ranging between 4 and 6, p  1. The return parameter is: soln is an array of dimension hn*x/ti + 1 4 2 or greater containing pairs <code>xi , yi}  where:<BR>			xi = i*x/J,  yi =  x0xi k(xi- u) f(u,xi) du,  i = 0,1, 2, ..., J,  J = hn*x/ti.<BR>	</code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Solve* (k: <strong>CalcFn.ReArg</strong>; f: <strong>CalcFn.Re2Arg</strong>; x, t: <strong>NbrRe.Real</strong>; n, p: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> soln: <strong>ARRAY</strong> <strong>OF</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>NbrRe.Real</strong>)</pre>
+</body></html>

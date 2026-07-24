@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#OpenType">OpenType</a></p>
+<hr><h1 id="#_1EC11540"><a name="OpenType"></a><a href="#ModuleList">Module</a> OpenType
+</h1>
+<p> AUTHOR "eos, PL"; PURPOSE "Bluebottle port of OpenType";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#OpenType.Copyright">Copyright</a>= 0<tr><td></td><td>Family= 1<tr><td></td><td>Subfamily= 2<tr><td></td><td>UniqueID= 3<tr><td></td><td>FullName= 4<tr><td></td><td>Version= 5<tr><td></td><td>PSName= 6<tr><td></td><td>Trademark= 7<tr><td></td><td>Manufacturer= 8<tr><td></td><td>Designer= 9<tr><td></td><td>Description= 10<tr><td></td><td>VendorURL= 11<tr><td></td><td>DesignerURL= 12<tr><td></td><td><a href="#OpenType.Hinted">Hinted</a>= 0<tr><td></td><td>Width= 1<tr><td></td><td>Outline= 2<tr><td></td><td>Raster= 3<tr><td></td><td>Grey= 4<tr><td></td><td><a href="#OpenType.DefaultCacheSize">DefaultCacheSize</a>= 8<tr><th align='left'>type declarations</th><td>Fixed =<strong>OpenTypeInt.Fixed</strong><tr><td></td><td>F26D6 =<strong>OpenTypeInt.F26D6</strong><tr><td></td><td>F2D14 =<strong>OpenTypeInt.F2D14</strong><tr><td></td><td>FUnit =<strong>OpenTypeInt.FUnit</strong><tr><td></td><td><a href="#OpenType.Cache">Cache</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenType.FontHeader">FontHeader</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenType.HorHeader">HorHeader</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenType.CharMapSegment">CharMapSegment</a> =<strong>RECORD</strong> <tr><td></td><td>CharMapSegments =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CharMapSegment</strong><tr><td></td><td>CharMapGlyphs =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenType.CharMap">CharMap</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenType.MaxProfile">MaxProfile</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenType.Font">Font</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>FontDesc</strong><tr><td></td><td><a href="#OpenType.FontDesc">FontDesc</a> =<strong>RECORD</strong> (<strong>CacheObjDesc</strong>)<tr><td></td><td><a href="#OpenType.Matrix">Matrix</a> =<strong>ARRAY</strong> 4 <strong>OF</strong> <strong>Fixed</strong><tr><td></td><td><a href="#OpenType.Instance">Instance</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>InstanceDesc</strong><tr><td></td><td><a href="#OpenType.InstanceDesc">InstanceDesc</a> =<strong>RECORD</strong> (<strong>CacheObjDesc</strong>)<tr><td></td><td><a href="#OpenType.Glyph">Glyph</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>GlyphDesc</strong><tr><td></td><td><a href="#OpenType.GlyphDesc">GlyphDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenType.OutlineData0">OutlineData0</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenType.OutlineData">OutlineData</a> =<strong>RECORD</strong> (<strong>OutlineData0</strong>)<tr><td></td><td><a href="#OpenType.RasterData0">RasterData0</a> =<strong>RECORD</strong> (<strong>OpenTypeScan.EnumData</strong>)<tr><td></td><td><a href="#OpenType.RasterData">RasterData</a> =<strong>RECORD</strong> (<strong>RasterData0</strong>)<tr><th align='left'>variables</th><td><a href="#OpenType.FontCache">FontCache</a>: <strong>Cache</strong><tr><td></td><td><a href="#OpenType.CharToUnicode">CharToUnicode</a>: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenType.Identity">Identity</a>: <strong>Matrix</strong><tr><th align='left'>procedures</th><td> <a href="#OpenType.InitCache">InitCache</a> (<strong>VAR</strong> cache: <strong>Cache</strong>)<tr><td></td><td> <a href="#OpenType.SetCacheSize">SetCacheSize</a> (<strong>VAR</strong> cache: <strong>Cache</strong>; max: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#OpenType.FindTable">FindTable</a> (font: <strong>Font</strong>; name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> offset, length: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#OpenType.ReadInt">ReadInt</a> (<strong>VAR</strong> r: <strong>Files.Rider</strong>; <strong>VAR</strong> i: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#OpenType.ReadLInt">ReadLInt</a> (<strong>VAR</strong> r: <strong>Files.Rider</strong>; <strong>VAR</strong> l: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#OpenType.Read16U">Read16U</a> (<strong>VAR</strong> r: <strong>Files.Rider</strong>; <strong>VAR</strong> i: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#OpenType.Open">Open</a> (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Font</strong><tr><td></td><td> <a href="#OpenType.GetName">GetName</a> (font: <strong>Font</strong>; id: <strong>SIGNED16</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#OpenType.UnicodeToGlyph">UnicodeToGlyph</a> (font: <strong>Font</strong>; code: <strong>Char32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#OpenType.GetInstance">GetInstance</a> (font: <strong>Font</strong>; ptsize: <strong>F26D6</strong>; xdpi, ydpi: <strong>SIGNED16</strong>; mat: <strong>Matrix</strong>; <strong>VAR</strong> inst: <strong>Instance</strong>)<tr><td></td><td> <a href="#OpenType.InitGlyph">InitGlyph</a> (glyph: <strong>Glyph</strong>; font: <strong>Font</strong>)<tr><td></td><td> <a href="#OpenType.LoadGlyph">LoadGlyph</a> (inst: <strong>Instance</strong>; glyph: <strong>Glyph</strong>; <strong>VAR</strong> ras: <strong>OpenTypeScan.Rasterizer</strong>; num: <strong>SIGNED32</strong>; mode: <strong>SET</strong>)<tr><td></td><td> <a href="#OpenType.EnumOutline">EnumOutline</a> (glyph: <strong>Glyph</strong>; <strong>VAR</strong> data: <strong>OutlineData</strong>)<tr><td></td><td> <a href="#OpenType.EnumRaster">EnumRaster</a> (<strong>VAR</strong> ras: <strong>OpenTypeScan.Rasterizer</strong>; <strong>VAR</strong> data: <strong>RasterData</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_1EC77F40">
+</h1>
+<p> OpenType library (partial implementation; supports only TrueType so far)</p>
+<hr><h2 id="#_1EC7AD00"><a name="OpenType.Copyright"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Copyright">Copyright</a>
+</h2>
+<p> name ids</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Copyright*= 0</pre>
+<hr><h2 id="#_1EC7DF00"><a name="OpenType.Hinted"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Hinted">Hinted</a>
+</h2>
+<p> LoadGlyph modes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Hinted*= 0</pre>
+<hr><h2 id="#_1EC811C0"><a name="OpenType.DefaultCacheSize"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.DefaultCacheSize">DefaultCacheSize</a>
+</h2>
+<p> maximal number of objects per cache</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DefaultCacheSize*= 8</pre>
+<hr><h2 id="#_1EC854C0"><a name="OpenType.Cache"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Cache">Cache</a>
+</h2>
+<p> object cache</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Cache* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_1EC89180"><a name="OpenType.FontHeader"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FontHeader">FontHeader</a>
+</h2>
+<p> header table</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FontHeader* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#OpenType.FontHeader.unitsPerEm">unitsPerEm</a>: <strong>SIGNED16</strong><tr><td></td><td>xMin: <strong>FUnit</strong><tr><td></td><td>yMin: <strong>FUnit</strong><tr><td></td><td>xMax: <strong>FUnit</strong><tr><td></td><td><a href="#OpenType.FontHeader.yMax">yMax</a>: <strong>FUnit</strong><tr><td></td><td><a href="#OpenType.FontHeader.lowestRecPPEM">lowestRecPPEM</a>: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1EC92740"><a name="OpenType.FontHeader.unitsPerEm"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FontHeader">FontHeader</a>.<a href="#OpenType.FontHeader.unitsPerEm">unitsPerEm</a>
+</h3>
+<p> in range 16..16384</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> unitsPerEm*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1EC96440"><a name="OpenType.FontHeader.yMax"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FontHeader">FontHeader</a>.<a href="#OpenType.FontHeader.yMax">yMax</a>
+</h3>
+<p> bounding box of all glyphs</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> yMax*: <strong>FUnit</strong></pre>
+<hr><h3 id="#_1EC9AB00"><a name="OpenType.FontHeader.lowestRecPPEM"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FontHeader">FontHeader</a>.<a href="#OpenType.FontHeader.lowestRecPPEM">lowestRecPPEM</a>
+</h3>
+<p> smallest readable size in pixels</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> lowestRecPPEM*: <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_1EC9F0C0"><a name="OpenType.HorHeader"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.HorHeader">HorHeader</a>
+</h2>
+<p> horizontal header table</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HorHeader* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ascender: <strong>FUnit</strong><tr><td></td><td>descender: <strong>FUnit</strong><tr><td></td><td><a href="#OpenType.HorHeader.lineGap">lineGap</a>: <strong>FUnit</strong><tr><td></td><td>advanceWidthMax: <strong>FUnit</strong><tr><td></td><td>minLeftSideBearing: <strong>FUnit</strong><tr><td></td><td>minRightSideBearing: <strong>FUnit</strong><tr><td></td><td><a href="#OpenType.HorHeader.xMaxExtent">xMaxExtent</a>: <strong>FUnit</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1ECA9980"><a name="OpenType.HorHeader.lineGap"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.HorHeader">HorHeader</a>.<a href="#OpenType.HorHeader.lineGap">lineGap</a>
+</h3>
+<p> typographic ascent, descent and line gap</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> lineGap*: <strong>FUnit</strong></pre>
+<hr><h3 id="#_1ECAE340"><a name="OpenType.HorHeader.xMaxExtent"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.HorHeader">HorHeader</a>.<a href="#OpenType.HorHeader.xMaxExtent">xMaxExtent</a>
+</h3>
+<p> calculated over all glyphs</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> xMaxExtent*: <strong>FUnit</strong></pre>
+<hr><h2 id="#_1ECB2480"><a name="OpenType.CharMapSegment"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.CharMapSegment">CharMapSegment</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CharMapSegment* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>start: <strong>SIGNED16</strong><tr><td></td><td>end: <strong>SIGNED16</strong><tr><td></td><td>delta: <strong>SIGNED16</strong><tr><td></td><td>offset: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1ECB9380"><a name="OpenType.CharMap"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.CharMap">CharMap</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CharMap* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>segCount: <strong>SIGNED16</strong><tr><td></td><td>seg: <strong>CharMapSegments</strong><tr><td></td><td>glyph: <strong>CharMapGlyphs</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1ECBED80"><a name="OpenType.MaxProfile"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.MaxProfile">MaxProfile</a>
+</h2>
+<p> maximum profile table</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MaxProfile* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#OpenType.MaxProfile.numGlyphs">numGlyphs</a>: <strong>SIGNED32</strong></td></tr>
+</table>
+<hr><h3 id="#_1ECC3DC0"><a name="OpenType.MaxProfile.numGlyphs"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.MaxProfile">MaxProfile</a>.<a href="#OpenType.MaxProfile.numGlyphs">numGlyphs</a>
+</h3>
+<p> number of glyphs in font</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> numGlyphs*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_1ECC8380"><a name="OpenType.Font"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Font">Font</a>
+</h2>
+<p> OpenType font object</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Font* =<strong>POINTER</strong> <strong>TO</strong> <strong>FontDesc</strong></pre>
+<hr><h2 id="#_1ECCC280"><a name="OpenType.FontDesc"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FontDesc">FontDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FontDesc* =<strong>RECORD</strong> (<strong>CacheObjDesc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#OpenType.FontDesc.name">name</a>: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#OpenType.FontDesc.file">file</a>: <strong>Files.File</strong><tr><td></td><td><a href="#OpenType.FontDesc.inst">inst</a>: <strong>Cache</strong><tr><td></td><td>head: <strong>FontHeader</strong><tr><td></td><td>hhea: <strong>HorHeader</strong><tr><td></td><td>cmap: <strong>CharMap</strong><tr><td></td><td>maxp: <strong>MaxProfile</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1ECD6CC0"><a name="OpenType.FontDesc.name"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FontDesc">FontDesc</a>.<a href="#OpenType.FontDesc.name">name</a>
+</h3>
+<p> font name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> name*: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="#_1ECDB3C0"><a name="OpenType.FontDesc.file"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FontDesc">FontDesc</a>.<a href="#OpenType.FontDesc.file">file</a>
+</h3>
+<p> font file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> file*: <strong>Files.File</strong></pre>
+<hr><h3 id="#_1ECDEE00"><a name="OpenType.FontDesc.inst"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FontDesc">FontDesc</a>.<a href="#OpenType.FontDesc.inst">inst</a>
+</h3>
+<p> cached instances</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> inst*: <strong>Cache</strong></pre>
+<hr><h2 id="#_1ECE26C0"><a name="OpenType.Matrix"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Matrix">Matrix</a>
+</h2>
+<p> transformation matrix</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Matrix* =<strong>ARRAY</strong> 4 <strong>OF</strong> <strong>Fixed</strong></pre>
+<hr><h2 id="#_1ECE6700"><a name="OpenType.Instance"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Instance">Instance</a>
+</h2>
+<p> resolution specific font instance</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Instance* =<strong>POINTER</strong> <strong>TO</strong> <strong>InstanceDesc</strong></pre>
+<hr><h2 id="#_1ECEAA40"><a name="OpenType.InstanceDesc"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InstanceDesc">InstanceDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InstanceDesc* =<strong>RECORD</strong> (<strong>CacheObjDesc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#OpenType.InstanceDesc.font">font</a>: <strong>Font</strong><tr><td></td><td><a href="#OpenType.InstanceDesc.ptsize">ptsize</a>: <strong>F26D6</strong><tr><td></td><td>xdpi: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenType.InstanceDesc.ydpi">ydpi</a>: <strong>SIGNED16</strong><tr><td></td><td>xppm: <strong>F26D6</strong><tr><td></td><td><a href="#OpenType.InstanceDesc.yppm">yppm</a>: <strong>F26D6</strong><tr><td></td><td><a href="#OpenType.InstanceDesc.mat">mat</a>: <strong>Matrix</strong><tr><td></td><td>xmin: <strong>F26D6</strong><tr><td></td><td>ymin: <strong>F26D6</strong><tr><td></td><td>xmax: <strong>F26D6</strong><tr><td></td><td><a href="#OpenType.InstanceDesc.ymax">ymax</a>: <strong>F26D6</strong><tr><td></td><td>useHints: <strong>BOOLEAN</strong><tr><td></td><td><a href="#OpenType.InstanceDesc.useGrey">useGrey</a>: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1ECF9EC0"><a name="OpenType.InstanceDesc.font"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InstanceDesc">InstanceDesc</a>.<a href="#OpenType.InstanceDesc.font">font</a>
+</h3>
+<p> font that instance is derived from</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> font*: <strong>Font</strong></pre>
+<hr><h3 id="#_1ECFE800"><a name="OpenType.InstanceDesc.ptsize"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InstanceDesc">InstanceDesc</a>.<a href="#OpenType.InstanceDesc.ptsize">ptsize</a>
+</h3>
+<p> point size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ptsize*: <strong>F26D6</strong></pre>
+<hr><h3 id="#_1ED020C0"><a name="OpenType.InstanceDesc.ydpi"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InstanceDesc">InstanceDesc</a>.<a href="#OpenType.InstanceDesc.ydpi">ydpi</a>
+</h3>
+<p> device resolution in dots per inch</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ydpi*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1ED06A00"><a name="OpenType.InstanceDesc.yppm"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InstanceDesc">InstanceDesc</a>.<a href="#OpenType.InstanceDesc.yppm">yppm</a>
+</h3>
+<p> number of pixels per Em square</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> yppm*: <strong>F26D6</strong></pre>
+<hr><h3 id="#_1ED0B340"><a name="OpenType.InstanceDesc.mat"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InstanceDesc">InstanceDesc</a>.<a href="#OpenType.InstanceDesc.mat">mat</a>
+</h3>
+<p> current transform matrix</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> mat*: <strong>Matrix</strong></pre>
+<hr><h3 id="#_1ED0F040"><a name="OpenType.InstanceDesc.ymax"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InstanceDesc">InstanceDesc</a>.<a href="#OpenType.InstanceDesc.ymax">ymax</a>
+</h3>
+<p> union of all character bounding boxes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ymax*: <strong>F26D6</strong></pre>
+<hr><h3 id="#_1ED13A00"><a name="OpenType.InstanceDesc.useGrey"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InstanceDesc">InstanceDesc</a>.<a href="#OpenType.InstanceDesc.useGrey">useGrey</a>
+</h3>
+<p> suggestions for glyphs loaded from this instance</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> useGrey*: <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_1ED18940"><a name="OpenType.Glyph"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Glyph">Glyph</a>
+</h2>
+<p> glyph structure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Glyph* =<strong>POINTER</strong> <strong>TO</strong> <strong>GlyphDesc</strong></pre>
+<hr><h2 id="#_1ED1C400"><a name="OpenType.GlyphDesc"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.GlyphDesc">GlyphDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GlyphDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#OpenType.GlyphDesc.font">font</a>: <strong>Font</strong><tr><td></td><td>awx: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenType.GlyphDesc.awy">awy</a>: <strong>SIGNED16</strong><tr><td></td><td>hbx: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenType.GlyphDesc.hby">hby</a>: <strong>SIGNED16</strong><tr><td></td><td>rw: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenType.GlyphDesc.rh">rh</a>: <strong>SIGNED16</strong><tr><td></td><td>xmin: <strong>F26D6</strong><tr><td></td><td>ymin: <strong>F26D6</strong><tr><td></td><td>xmax: <strong>F26D6</strong><tr><td></td><td><a href="#OpenType.GlyphDesc.ymax">ymax</a>: <strong>F26D6</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1ED29400"><a name="OpenType.GlyphDesc.font"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.GlyphDesc">GlyphDesc</a>.<a href="#OpenType.GlyphDesc.font">font</a>
+</h3>
+<p> font that glyph is compatible with</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> font*: <strong>Font</strong></pre>
+<hr><h3 id="#_1ED2DD40"><a name="OpenType.GlyphDesc.awy"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.GlyphDesc">GlyphDesc</a>.<a href="#OpenType.GlyphDesc.awy">awy</a>
+</h3>
+<p> advance vector</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> awy*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1ED31600"><a name="OpenType.GlyphDesc.hby"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.GlyphDesc">GlyphDesc</a>.<a href="#OpenType.GlyphDesc.hby">hby</a>
+</h3>
+<p> horizontal bearing (vector from origin to lower left corner of bounding box)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> hby*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1ED37740"><a name="OpenType.GlyphDesc.rh"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.GlyphDesc">GlyphDesc</a>.<a href="#OpenType.GlyphDesc.rh">rh</a>
+</h3>
+<p> raster width and height</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> rh*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1ED3B880"><a name="OpenType.GlyphDesc.ymax"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.GlyphDesc">GlyphDesc</a>.<a href="#OpenType.GlyphDesc.ymax">ymax</a>
+</h3>
+<p> outline bounding box</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ymax*: <strong>F26D6</strong></pre>
+<hr><h2 id="#_1ED3F580"><a name="OpenType.OutlineData0"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.OutlineData0">OutlineData0</a>
+</h2>
+<p> glyph outline enumeration</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OutlineData0* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_1ED435C0"><a name="OpenType.OutlineData"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.OutlineData">OutlineData</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OutlineData* =<strong>RECORD</strong> (<strong>OutlineData0</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>moveto: <strong>PROCEDURE</strong> (x, y: <strong>F26D6</strong>; <strong>VAR</strong> data: <strong>OutlineData0</strong>)<tr><td></td><td>lineto: <strong>PROCEDURE</strong> (x, y: <strong>F26D6</strong>; <strong>VAR</strong> data: <strong>OutlineData0</strong>)<tr><td></td><td>bezierto: <strong>PROCEDURE</strong> (x, y: <strong>ARRAY</strong> <strong>OF</strong> <strong>F26D6</strong>; n: <strong>SIGNED16</strong>; <strong>VAR</strong> data: <strong>OutlineData0</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1ED52D40"><a name="OpenType.RasterData0"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.RasterData0">RasterData0</a>
+</h2>
+<p> glyph raster enumeration</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RasterData0* =<strong>RECORD</strong> (<strong>OpenTypeScan.EnumData</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_1ED57480"><a name="OpenType.RasterData"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.RasterData">RasterData</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RasterData* =<strong>RECORD</strong> (<strong>RasterData0</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>rect: <strong>PROCEDURE</strong> (llx, lly, urx, ury, opacity: <strong>SIGNED16</strong>; <strong>VAR</strong> data: <strong>RasterData0</strong>)</td></tr>
+</table>
+<hr><h2 id="#_1ED5FA80"><a name="OpenType.FontCache"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FontCache">FontCache</a>
+</h2>
+<p> cache for font objects</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> FontCache*: <strong>Cache</strong></pre>
+<hr><h2 id="#_1ED63500"><a name="OpenType.CharToUnicode"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.CharToUnicode">CharToUnicode</a>
+</h2>
+<p> mapping from Oberon character codes to Unicodes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CharToUnicode*: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_1ED689C0"><a name="OpenType.Identity"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Identity">Identity</a>
+</h2>
+<p> matrix normally used for generating instances</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Identity*: <strong>Matrix</strong></pre>
+<hr><h2 id="#_1ED6CCC0"><a name="OpenType.InitCache"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InitCache">InitCache</a>
+</h2>
+<p>--- Object Caches ---</p>
+
+<p> initialize object cache</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitCache* (<strong>VAR</strong> cache: <strong>Cache</strong>)</pre>
+<hr><h2 id="#_1ED722C0"><a name="OpenType.SetCacheSize"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.SetCacheSize">SetCacheSize</a>
+</h2>
+<p> set new maximal number of objects that are kept in a cache</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetCacheSize* (<strong>VAR</strong> cache: <strong>Cache</strong>; max: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_1ED79CC0"><a name="OpenType.FindTable"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.FindTable">FindTable</a>
+</h2>
+<p>--- Fonts ---</p>
+
+<p> return location of table within font file (returns whether table was found)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindTable* (font: <strong>Font</strong>; name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> offset, length: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_1ED844C0"><a name="OpenType.ReadInt"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.ReadInt">ReadInt</a>
+</h2>
+<p> read big endian 2 byte integer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReadInt* (<strong>VAR</strong> r: <strong>Files.Rider</strong>; <strong>VAR</strong> i: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_1ED8A780"><a name="OpenType.ReadLInt"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.ReadLInt">ReadLInt</a>
+</h2>
+<p> read big endian 4 byte integer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReadLInt* (<strong>VAR</strong> r: <strong>Files.Rider</strong>; <strong>VAR</strong> l: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_1ED90A40"><a name="OpenType.Read16U"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Read16U">Read16U</a>
+</h2>
+<p> read big endian 2 byte integer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read16U* (<strong>VAR</strong> r: <strong>Files.Rider</strong>; <strong>VAR</strong> i: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_1ED96D00"><a name="OpenType.Open"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.Open">Open</a>
+</h2>
+<p> open a OpenType font file; file name extension and path may be omitted; returns NIL if not found</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Font</strong></pre>
+<hr><h2 id="#_1ED9F740"><a name="OpenType.GetName"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.GetName">GetName</a>
+</h2>
+<p> get entry from name table; whenever possible, a string in English is returned</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetName* (font: <strong>Font</strong>; id: <strong>SIGNED16</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_1EDA8780"><a name="OpenType.UnicodeToGlyph"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.UnicodeToGlyph">UnicodeToGlyph</a>
+</h2>
+<p> map Unicode character code to glyph number</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UnicodeToGlyph* (font: <strong>Font</strong>; code: <strong>Char32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_1EDAECC0"><a name="OpenType.GetInstance"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.GetInstance">GetInstance</a>
+</h2>
+<p> get an instance for an opened font (an instance has fixed point size and resolution)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetInstance* (font: <strong>Font</strong>; ptsize: <strong>F26D6</strong>; xdpi, ydpi: <strong>SIGNED16</strong>; mat: <strong>Matrix</strong>; <strong>VAR</strong> inst: <strong>Instance</strong>)</pre>
+<hr><h2 id="#_1EDBA080"><a name="OpenType.InitGlyph"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.InitGlyph">InitGlyph</a>
+</h2>
+<p>--- Glyphs ---</p>
+
+<p> initialize glyph structure to be compatible with given font</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitGlyph* (glyph: <strong>Glyph</strong>; font: <strong>Font</strong>)</pre>
+<hr><h2 id="#_1EDC1480"><a name="OpenType.LoadGlyph"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.LoadGlyph">LoadGlyph</a>
+</h2>
+<p> load glyph structure with appropriately scaled outline</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadGlyph* (inst: <strong>Instance</strong>; glyph: <strong>Glyph</strong>; <strong>VAR</strong> ras: <strong>OpenTypeScan.Rasterizer</strong>; num: <strong>SIGNED32</strong>; mode: <strong>SET</strong>)</pre>
+<hr><h2 id="#_1EDCA240"><a name="OpenType.EnumOutline"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.EnumOutline">EnumOutline</a>
+</h2>
+<p> enumerate glyph outline</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnumOutline* (glyph: <strong>Glyph</strong>; <strong>VAR</strong> data: <strong>OutlineData</strong>)</pre>
+<hr><h2 id="#_1EDCF540"><a name="OpenType.EnumRaster"></a><a href="#OpenType">OpenType</a>.<a href="#OpenType.EnumRaster">EnumRaster</a>
+</h2>
+<p> enumerate non-transparent pixels of glyph raster image</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnumRaster* (<strong>VAR</strong> ras: <strong>OpenTypeScan.Rasterizer</strong>; <strong>VAR</strong> data: <strong>RasterData</strong>)</pre>
+</body></html>

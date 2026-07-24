@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Configuration">Configuration</a></p>
+<hr><h1 id="#_49ED7780"><a name="Configuration"></a><a href="#ModuleList">Module</a> Configuration
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "XML-based configuration";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Ok= 0<tr><td></td><td>ElementNotFound= 10001<tr><td></td><td>AttributeNotFound= 10002<tr><td></td><td>WrongType= 10003<tr><td></td><td>Error= 10004<tr><th align='left'>type declarations</th><td><a href="#Configuration.Configuration">Configuration</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td><a href="#Configuration.config">config</a>: <strong>XML.Document</strong><tr><td></td><td>system: <strong>Configuration</strong><tr><th align='left'>procedures</th><td> <a href="#Configuration.GetNamedElement">GetNamedElement</a> (parent: <strong>XML.Element</strong>; <strong>CONST</strong> type, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Element</strong><tr><td></td><td> GetSection (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Element</strong><tr><td></td><td> GetSetting (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Element</strong><tr><td></td><td> <a href="#Configuration.Get">Get</a> (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetBoolean (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetColor (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetInteger (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetInteger64 (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED64</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Configuration.Put">Put</a> (<strong>CONST</strong> key, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> PutBoolean (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> PutColor (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> PutInteger (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>SIGNED64</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Configuration.Init">Init</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_49F156C0"><a name="Configuration.Configuration"></a><a href="#Configuration">Configuration</a>.<a href="#Configuration.Configuration">Configuration</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Configuration* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Configuration.Configuration.config">config</a>: <strong>XML.Document</strong><tr><th align='left'>procedures</th><td>& Open (<strong>CONST</strong> name: <strong>Files.FileName</strong>)<tr><td></td><td> GetSection (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Element</strong><tr><td></td><td> GetSetting (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Element</strong><tr><td></td><td> <a href="#Configuration.Configuration.Get">Get</a> (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetBoolean (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetColor (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetInteger (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetInteger64 (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>SIGNED64</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Configuration.Configuration.Put">Put</a> (<strong>CONST</strong> key, val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> PutBoolean (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> PutColor (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> PutInteger (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>SIGNED64</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_49F49B40"><a name="Configuration.Configuration.config"></a><a href="#Configuration">Configuration</a>.<a href="#Configuration.Configuration">Configuration</a>.<a href="#Configuration.Configuration.config">config</a>
+</h3>
+<p> internalized config file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> config-: <strong>XML.Document</strong></pre>
+<hr><h3 id="#_49F4D840"><a name="Configuration.Configuration.Get"></a><a href="#Configuration">Configuration</a>.<a href="#Configuration.Configuration">Configuration</a>.<a href="#Configuration.Configuration.Get">Get</a>
+</h3>
+<p> Find the setting specified by the key, which is a path name through the sections to the setting, and return its value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_49F5A200"><a name="Configuration.Configuration.Put"></a><a href="#Configuration">Configuration</a>.<a href="#Configuration.Configuration">Configuration</a>.<a href="#Configuration.Configuration.Put">Put</a>
+</h3>
+<p> update (or insert if necessairy) the setting specified by the key. if the specified section/setting is not yet existing, it will be created</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Put* (<strong>CONST</strong> key, val: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_49F65C80"><a name="Configuration.config"></a><a href="#Configuration">Configuration</a>.<a href="#Configuration.config">config</a>
+</h2>
+<p> internalized config file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> config*: <strong>XML.Document</strong></pre>
+<hr><h2 id="#_49F69380"><a name="Configuration.GetNamedElement"></a><a href="#Configuration">Configuration</a>.<a href="#Configuration.GetNamedElement">GetNamedElement</a>
+</h2>
+<p> In the children of element "parent", find an element with name "type" and "NameAttr" attribute "name".</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNamedElement* (parent: <strong>XML.Element</strong>; <strong>CONST</strong> type, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Element</strong></pre>
+<hr><h2 id="#_49F72EC0"><a name="Configuration.Get"></a><a href="#Configuration">Configuration</a>.<a href="#Configuration.Get">Get</a>
+</h2>
+<p> Find the setting specified by the key, which is a path name through the sections to the setting, and return its value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_49F7F100"><a name="Configuration.Put"></a><a href="#Configuration">Configuration</a>.<a href="#Configuration.Put">Put</a>
+</h2>
+<p> update (or insert if necessairy) the setting specified by the key. if the specified section/setting is not yet existing, it will be created</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Put* (<strong>CONST</strong> key, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_49F8A5C0"><a name="Configuration.Init"></a><a href="#Configuration">Configuration</a>.<a href="#Configuration.Init">Init</a>
+</h2>
+<p> Internalize the config file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init*</pre>
+</body></html>

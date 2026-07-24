@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#XMLScanner">XMLScanner</a></p>
+<hr><h1 id="#_8B5C57C0"><a name="XMLScanner"></a><a href="#ModuleList">Module</a> XMLScanner
+</h1>
+<p> AUTHOR "swalthert"; PURPOSE "XML scanner";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Str_ElementName= 1<tr><td></td><td>Str_AttributeName= 2<tr><td></td><td>Str_CharRef= 10<tr><td></td><td>Str_EntityRef= 11<tr><td></td><td>Str_EntityValue= 12<tr><td></td><td>Str_AttributeValue= 13<tr><td></td><td>Str_Comment= 20<tr><td></td><td>Str_ProcessingInstruction= 21<tr><td></td><td>Str_CDataSection= 22<tr><td></td><td>Str_SystemLiteral= 23<tr><td></td><td>Str_PublicLiteral= 24<tr><td></td><td>Str_CharData= 25<tr><td></td><td>Str_Other= 30<tr><td></td><td><a href="#XMLScanner.Invalid">Invalid</a>= -1<tr><td></td><td><a href="#XMLScanner.TagElemStartOpen">TagElemStartOpen</a>= 0<tr><td></td><td><a href="#XMLScanner.TagElemEndOpen">TagElemEndOpen</a>= 1<tr><td></td><td><a href="#XMLScanner.TagDeclOpen">TagDeclOpen</a>= 2<tr><td></td><td><a href="#XMLScanner.TagClose">TagClose</a>= 3<tr><td></td><td><a href="#XMLScanner.TagEmptyElemClose">TagEmptyElemClose</a>= 4<tr><td></td><td><a href="#XMLScanner.TagXMLDeclOpen">TagXMLDeclOpen</a>= 5<tr><td></td><td><a href="#XMLScanner.TagPIOpen">TagPIOpen</a>= 6<tr><td></td><td><a href="#XMLScanner.TagPIClose">TagPIClose</a>= 7<tr><td></td><td><a href="#XMLScanner.TagCondSectOpen">TagCondSectOpen</a>= 8<tr><td></td><td><a href="#XMLScanner.TagCondSectClose">TagCondSectClose</a>= 9<tr><td></td><td><a href="#XMLScanner.BracketOpen">BracketOpen</a>= 10<tr><td></td><td><a href="#XMLScanner.BracketClose">BracketClose</a>= 11<tr><td></td><td><a href="#XMLScanner.ParenOpen">ParenOpen</a>= 12<tr><td></td><td><a href="#XMLScanner.ParenClose">ParenClose</a>= 13<tr><td></td><td><a href="#XMLScanner.Comment">Comment</a>= 14<tr><td></td><td><a href="#XMLScanner.CDataSect">CDataSect</a>= 15<tr><td></td><td><a href="#XMLScanner.CharRef">CharRef</a>= 16<tr><td></td><td><a href="#XMLScanner.EntityRef">EntityRef</a>= 17<tr><td></td><td><a href="#XMLScanner.ParamEntityRef">ParamEntityRef</a>= 18<tr><td></td><td><a href="#XMLScanner.CharData">CharData</a>= 19<tr><td></td><td><a href="#XMLScanner.Literal">Literal</a>= 20<tr><td></td><td><a href="#XMLScanner.Name">Name</a>= 21<tr><td></td><td><a href="#XMLScanner.Nmtoken">Nmtoken</a>= 22<tr><td></td><td><a href="#XMLScanner.PoundName">PoundName</a>= 23<tr><td></td><td><a href="#XMLScanner.Question">Question</a>= 24<tr><td></td><td><a href="#XMLScanner.Asterisk">Asterisk</a>= 25<tr><td></td><td><a href="#XMLScanner.Plus">Plus</a>= 26<tr><td></td><td><a href="#XMLScanner.Or">Or</a>= 27<tr><td></td><td><a href="#XMLScanner.Comma">Comma</a>= 28<tr><td></td><td><a href="#XMLScanner.Percent">Percent</a>= 29<tr><td></td><td><a href="#XMLScanner.Equal">Equal</a>= 30<tr><td></td><td>Eof= 31<tr><th align='left'>type declarations</th><td><a href="#XMLScanner.Scanner">Scanner</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8B5F43C0"><a name="XMLScanner.Invalid"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Invalid">Invalid</a>
+</h2>
+<p> Scanner: Tokens</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Invalid*= -1</pre>
+<hr><h2 id="#_8B5F7880"><a name="XMLScanner.TagElemStartOpen"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagElemStartOpen">TagElemStartOpen</a>
+</h2>
+<p> '&lt'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagElemStartOpen*= 0</pre>
+<hr><h2 id="#_8B5FA700"><a name="XMLScanner.TagElemEndOpen"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagElemEndOpen">TagElemEndOpen</a>
+</h2>
+<p> '&lt/'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagElemEndOpen*= 1</pre>
+<hr><h2 id="#_8B5FD640"><a name="XMLScanner.TagDeclOpen"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagDeclOpen">TagDeclOpen</a>
+</h2>
+<p> '&lt!NAME'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagDeclOpen*= 2</pre>
+<hr><h2 id="#_8B6004C0"><a name="XMLScanner.TagClose"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagClose">TagClose</a>
+</h2>
+<p> '&gt'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagClose*= 3</pre>
+<hr><h2 id="#_8B603400"><a name="XMLScanner.TagEmptyElemClose"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagEmptyElemClose">TagEmptyElemClose</a>
+</h2>
+<p> '/&gt'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagEmptyElemClose*= 4</pre>
+<hr><h2 id="#_8B606280"><a name="XMLScanner.TagXMLDeclOpen"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagXMLDeclOpen">TagXMLDeclOpen</a>
+</h2>
+<p> '&lt?xml'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagXMLDeclOpen*= 5</pre>
+<hr><h2 id="#_8B609100"><a name="XMLScanner.TagPIOpen"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagPIOpen">TagPIOpen</a>
+</h2>
+<p> '&lt?', PITarget := GetStr()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagPIOpen*= 6</pre>
+<hr><h2 id="#_8B60CC80"><a name="XMLScanner.TagPIClose"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagPIClose">TagPIClose</a>
+</h2>
+<p> '?&gt'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagPIClose*= 7</pre>
+<hr><h2 id="#_8B60FB00"><a name="XMLScanner.TagCondSectOpen"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagCondSectOpen">TagCondSectOpen</a>
+</h2>
+<p> '&lt!['</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagCondSectOpen*= 8</pre>
+<hr><h2 id="#_8B612980"><a name="XMLScanner.TagCondSectClose"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.TagCondSectClose">TagCondSectClose</a>
+</h2>
+<p> ''</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TagCondSectClose*= 9</pre>
+<hr><h2 id="#_8B615DC0"><a name="XMLScanner.BracketOpen"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.BracketOpen">BracketOpen</a>
+</h2>
+<p> '['</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> BracketOpen*= 10</pre>
+<hr><h2 id="#_8B618C40"><a name="XMLScanner.BracketClose"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.BracketClose">BracketClose</a>
+</h2>
+<p> ']'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> BracketClose*= 11</pre>
+<hr><h2 id="#_8B61BBC0"><a name="XMLScanner.ParenOpen"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.ParenOpen">ParenOpen</a>
+</h2>
+<p> '('</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ParenOpen*= 12</pre>
+<hr><h2 id="#_8B61EA40"><a name="XMLScanner.ParenClose"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.ParenClose">ParenClose</a>
+</h2>
+<p> ')'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ParenClose*= 13</pre>
+<hr><h2 id="#_8B6218C0"><a name="XMLScanner.Comment"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Comment">Comment</a>
+</h2>
+<p> '&lt!--' chars '--&gt', chars := GetStr()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Comment*= 14</pre>
+<hr><h2 id="#_8B625BC0"><a name="XMLScanner.CDataSect"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.CDataSect">CDataSect</a>
+</h2>
+<p> '&lt![CDATA[' chars '', chars := GetStr()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CDataSect*= 15</pre>
+<hr><h2 id="#_8B62A4C0"><a name="XMLScanner.CharRef"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.CharRef">CharRef</a>
+</h2>
+<p> '&#' number ';' or '&#x' hexnumber ';', number, hexnumber := GetStr()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CharRef*= 16</pre>
+<hr><h2 id="#_8B62FBC0"><a name="XMLScanner.EntityRef"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.EntityRef">EntityRef</a>
+</h2>
+<p> '&' name ';', name := GetStr()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EntityRef*= 17</pre>
+<hr><h2 id="#_8B633E40"><a name="XMLScanner.ParamEntityRef"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.ParamEntityRef">ParamEntityRef</a>
+</h2>
+<p> '%' name ';', name := GetStr()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ParamEntityRef*= 18</pre>
+<hr><h2 id="#_8B638240"><a name="XMLScanner.CharData"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.CharData">CharData</a>
+</h2>
+<p> chars := GetStr()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CharData*= 19</pre>
+<hr><h2 id="#_8B63B880"><a name="XMLScanner.Literal"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Literal">Literal</a>
+</h2>
+<p> '"'chars'"' or "'"chars"'", chars := GetStr()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Literal*= 20</pre>
+<hr><h2 id="#_8B63FB80"><a name="XMLScanner.Name"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Name">Name</a>
+</h2>
+<p> Name ::= (Letter</p>
+
+<table><tr><td> '_'</td><td> ':') <code>NameChar}<BR>										NameChar ::= Letter | Digit | '.' | '-' | '_' | ':' | CombiningChar | Extender<BR>										chars := GetStr() </code></td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Name*= 21</pre>
+<hr><h2 id="#_8B644780"><a name="XMLScanner.Nmtoken"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Nmtoken">Nmtoken</a>
+</h2>
+<p> Nmtoken ::= NameChar <code>NameChar}, chars := GetStr() </code></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Nmtoken*= 22</pre>
+<hr><h2 id="#_8B648280"><a name="XMLScanner.PoundName"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.PoundName">PoundName</a>
+</h2>
+<p> '#'name, name := GetStr()</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PoundName*= 23</pre>
+<hr><h2 id="#_8B64BD00"><a name="XMLScanner.Question"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Question">Question</a>
+</h2>
+<p> '?'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Question*= 24</pre>
+<hr><h2 id="#_8B64EB80"><a name="XMLScanner.Asterisk"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Asterisk">Asterisk</a>
+</h2>
+<p> '*'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Asterisk*= 25</pre>
+<hr><h2 id="#_8B651A00"><a name="XMLScanner.Plus"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Plus">Plus</a>
+</h2>
+<p> '+'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Plus*= 26</pre>
+<hr><h2 id="#_8B654880"><a name="XMLScanner.Or"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Or">Or</a>
+</h2>
+<p> '</p>
+
+<table><tr><td>'</td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Or*= 27</pre>
+<hr><h2 id="#_8B657E80"><a name="XMLScanner.Comma"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Comma">Comma</a>
+</h2>
+<p> ','</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Comma*= 28</pre>
+<hr><h2 id="#_8B65AD00"><a name="XMLScanner.Percent"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Percent">Percent</a>
+</h2>
+<p> '%'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Percent*= 29</pre>
+<hr><h2 id="#_8B65DD80"><a name="XMLScanner.Equal"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Equal">Equal</a>
+</h2>
+<p> '='</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Equal*= 30</pre>
+<hr><h2 id="#_8B660C00"><a name="XMLScanner.Scanner"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Scanner">Scanner</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scanner* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#XMLScanner.Scanner.sym">sym</a>: <strong>SIGNED8</strong><tr><td></td><td>line: <strong>SIGNED32</strong><tr><td></td><td>col: <strong>SIGNED32</strong><tr><td></td><td>reportError: <strong>PROCEDURE</strong>{DELEGATE} (pos, line, row: <strong>Streams.Position</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><th align='left'>procedures</th><td>& <a href="#XMLScanner.Scanner.Init">Init</a> (r: <strong>Streams.Reader</strong>)<tr><td></td><td> SetStringPooling (stringPooling: <strong>SET</strong>)<tr><td></td><td> <a href="#XMLScanner.Scanner.ScanPInstruction">ScanPInstruction</a><tr><td></td><td> <a href="#XMLScanner.Scanner.ScanMarkup">ScanMarkup</a><tr><td></td><td> <a href="#XMLScanner.Scanner.ScanContent">ScanContent</a><tr><td></td><td> GetString (type: <strong>SIGNED32</strong>): <strong>String</strong><tr><td></td><td> GetPos (): <strong>SIGNED32</strong><tr><td></td><td> GetOldPos (): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_8B675E40"><a name="XMLScanner.Scanner.sym"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Scanner">Scanner</a>.<a href="#XMLScanner.Scanner.sym">sym</a>
+</h3>
+<p> current token</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> sym-: <strong>SIGNED8</strong></pre>
+<hr><h3 id="#_8B679700"><a name="XMLScanner.Scanner.Init"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Scanner">Scanner</a>.<a href="#XMLScanner.Scanner.Init">Init</a>
+</h3>
+<p> Initialize scanner to read from the given ascii file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Init* (r: <strong>Streams.Reader</strong>)</pre>
+<hr><h3 id="#_8B67F980"><a name="XMLScanner.Scanner.ScanPInstruction"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Scanner">Scanner</a>.<a href="#XMLScanner.Scanner.ScanPInstruction">ScanPInstruction</a>
+</h3>
+<p> possible results: Invalid TagPIClose CharData</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ScanPInstruction*</pre>
+<hr><h3 id="#_8B683980"><a name="XMLScanner.Scanner.ScanMarkup"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Scanner">Scanner</a>.<a href="#XMLScanner.Scanner.ScanMarkup">ScanMarkup</a>
+</h3>
+<p> Possible results: Invalid TagPIOpen TagCondSectOpen TagDeclOpen TagXMLDeclOpen TagClose TagEmptyElemClose TagPIClose TagCondSectClose Comment CharRef EntityRef ParamEntityRef Literal Name Nmtoken PoundName Question Asterisk Plus Or Comma Percent Equal ParenOpen ParenClose BracketOpen BracketClose</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ScanMarkup*</pre>
+<hr><h3 id="#_8B68DAC0"><a name="XMLScanner.Scanner.ScanContent"></a><a href="#XMLScanner">XMLScanner</a>.<a href="#XMLScanner.Scanner">Scanner</a>.<a href="#XMLScanner.Scanner.ScanContent">ScanContent</a>
+</h3>
+<p> possible results: TagElemEndOpen TagPIOpen TagDocTypeOpen CDataSect TagElemStartOpen Comment CharData CharRef EntityRef Eof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ScanContent*</pre>
+</body></html>

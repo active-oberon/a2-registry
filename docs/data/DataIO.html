@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#DataIO">DataIO</a></p>
+<hr><h1 id="#_26531840"><a name="DataIO"></a><a href="#ModuleList">Module</a> DataIO
+</h1>
+<p> AUTHOR "adf, fof"; PURPOSE "File IO for making scientific data types persistent";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#DataIO.Reader">Reader</a> =<strong>OBJECT</strong> (<strong>Files.Reader</strong>)<tr><td></td><td><a href="#DataIO.Writer">Writer</a> =<strong>OBJECT</strong> (<strong>Files.Writer</strong>)<tr><td></td><td><a href="#DataIO.File">File</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DataIO.LoadProc">LoadProc</a> =<strong>PROCEDURE</strong> (R: <strong>Reader</strong>; <strong>VAR</strong> obj: <strong>OBJECT</strong>)<tr><td></td><td><a href="#DataIO.StoreProc">StoreProc</a> =<strong>PROCEDURE</strong> (W: <strong>Writer</strong>; obj: <strong>OBJECT</strong>)<tr><th align='left'>procedures</th><td> <a href="#DataIO.PlugIn">PlugIn</a> (obj: @Any0; load: <strong>LoadProc</strong>; store: <strong>StoreProc</strong>)<tr><td></td><td> <a href="#DataIO.Open">Open</a> (fileName: <strong>Files.FileName</strong>): <strong>File</strong><tr><td></td><td> <a href="#DataIO.Rewind">Rewind</a> (f: <strong>File</strong>)<tr><td></td><td> <a href="#DataIO.Close">Close</a> (f: <strong>File</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_26549240">
+</h1>
+<p> A template exists for creating persistent OBJECT's that use the reader and writer defined in this module. This template is found in: DataTemplate.Mod.</p>
+<hr><h2 id="#_2654F500"><a name="DataIO.Reader"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Reader">Reader</a>
+</h2>
+<p> Reader for reading data from a .Data file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reader* =<strong>OBJECT</strong> (<strong>Files.Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#DataIO.Reader.DateTime">DateTime</a> (<strong>VAR</strong> x: <strong>Dates.DateTime</strong>)<tr><td></td><td> <a href="#DataIO.Reader.Integer">Integer</a> (<strong>VAR</strong> x: <strong>NbrInt.Integer</strong>)<tr><td></td><td> <a href="#DataIO.Reader.Rational">Rational</a> (<strong>VAR</strong> x: <strong>NbrRat.Rational</strong>)<tr><td></td><td> <a href="#DataIO.Reader.Complex">Complex</a> (<strong>VAR</strong> x: <strong>NbrCplx.Complex</strong>)<tr><td></td><td> <a href="#DataIO.Reader.PtrString">PtrString</a> (<strong>VAR</strong> x: <strong>NbrStrings.String</strong>)<tr><td></td><td> <a href="#DataIO.Reader.Object">Object</a> (<strong>VAR</strong> x: <strong>OBJECT</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_26560D00"><a name="DataIO.Reader.DateTime"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Reader">Reader</a>.<a href="#DataIO.Reader.DateTime">DateTime</a>
+</h3>
+<p> Reads a date and time.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DateTime* (<strong>VAR</strong> x: <strong>Dates.DateTime</strong>)</pre>
+<hr><h3 id="#_26566240"><a name="DataIO.Reader.Integer"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Reader">Reader</a>.<a href="#DataIO.Reader.Integer">Integer</a>
+</h3>
+<p> Reads an integer number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Integer* (<strong>VAR</strong> x: <strong>NbrInt.Integer</strong>)</pre>
+<hr><h3 id="#_2656B240"><a name="DataIO.Reader.Rational"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Reader">Reader</a>.<a href="#DataIO.Reader.Rational">Rational</a>
+</h3>
+<p> Reads a rational number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rational* (<strong>VAR</strong> x: <strong>NbrRat.Rational</strong>)</pre>
+<hr><h3 id="#_26570300"><a name="DataIO.Reader.Complex"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Reader">Reader</a>.<a href="#DataIO.Reader.Complex">Complex</a>
+</h3>
+<p> Reads a complex number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Complex* (<strong>VAR</strong> x: <strong>NbrCplx.Complex</strong>)</pre>
+<hr><h3 id="#_26575300"><a name="DataIO.Reader.PtrString"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Reader">Reader</a>.<a href="#DataIO.Reader.PtrString">PtrString</a>
+</h3>
+<p> Reads a dynamic 0X-terminated string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PtrString* (<strong>VAR</strong> x: <strong>NbrStrings.String</strong>)</pre>
+<hr><h3 id="#_2657A800"><a name="DataIO.Reader.Object"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Reader">Reader</a>.<a href="#DataIO.Reader.Object">Object</a>
+</h3>
+<p> Reads a dynamic object whose type has been registered via the PlugIn procedure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Object* (<strong>VAR</strong> x: <strong>OBJECT</strong>)</pre>
+<hr><h2 id="#_26581C80"><a name="DataIO.Writer"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Writer">Writer</a>
+</h2>
+<p> Writer for writing data to a .Data file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Writer* =<strong>OBJECT</strong> (<strong>Files.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#DataIO.Writer.DateTime">DateTime</a> (x: <strong>Dates.DateTime</strong>)<tr><td></td><td> <a href="#DataIO.Writer.Integer">Integer</a> (x: <strong>NbrInt.Integer</strong>)<tr><td></td><td> <a href="#DataIO.Writer.Rational">Rational</a> (x: <strong>NbrRat.Rational</strong>)<tr><td></td><td> <a href="#DataIO.Writer.Real">Real</a> (x: <strong>NbrRe.Real</strong>)<tr><td></td><td> <a href="#DataIO.Writer.Complex">Complex</a> (x: <strong>NbrCplx.Complex</strong>)<tr><td></td><td> <a href="#DataIO.Writer.PtrString">PtrString</a> (x: <strong>NbrStrings.String</strong>)<tr><td></td><td> <a href="#DataIO.Writer.Object">Object</a> (x: <strong>OBJECT</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_26593A00"><a name="DataIO.Writer.DateTime"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Writer">Writer</a>.<a href="#DataIO.Writer.DateTime">DateTime</a>
+</h3>
+<p> Writes a date and time.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DateTime* (x: <strong>Dates.DateTime</strong>)</pre>
+<hr><h3 id="#_26598B00"><a name="DataIO.Writer.Integer"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Writer">Writer</a>.<a href="#DataIO.Writer.Integer">Integer</a>
+</h3>
+<p> Writes an integer number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Integer* (x: <strong>NbrInt.Integer</strong>)</pre>
+<hr><h3 id="#_2659D780"><a name="DataIO.Writer.Rational"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Writer">Writer</a>.<a href="#DataIO.Writer.Rational">Rational</a>
+</h3>
+<p> Writes a rational number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rational* (x: <strong>NbrRat.Rational</strong>)</pre>
+<hr><h3 id="#_265A2400"><a name="DataIO.Writer.Real"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Writer">Writer</a>.<a href="#DataIO.Writer.Real">Real</a>
+</h3>
+<p> Writes a real number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Real* (x: <strong>NbrRe.Real</strong>)</pre>
+<hr><h3 id="#_265A7180"><a name="DataIO.Writer.Complex"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Writer">Writer</a>.<a href="#DataIO.Writer.Complex">Complex</a>
+</h3>
+<p> Writes a complex number.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Complex* (x: <strong>NbrCplx.Complex</strong>)</pre>
+<hr><h3 id="#_265ABE00"><a name="DataIO.Writer.PtrString"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Writer">Writer</a>.<a href="#DataIO.Writer.PtrString">PtrString</a>
+</h3>
+<p> Writes a dynamic 0X-terminated string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PtrString* (x: <strong>NbrStrings.String</strong>)</pre>
+<hr><h3 id="#_265B0F80"><a name="DataIO.Writer.Object"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Writer">Writer</a>.<a href="#DataIO.Writer.Object">Object</a>
+</h3>
+<p> Writes a dynamic object whose type has been registered via the PlugIn procedure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Object* (x: <strong>OBJECT</strong>)</pre>
+<hr><h2 id="#_265B7F80"><a name="DataIO.File"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.File">File</a>
+</h2>
+<p> File type for files with a .Data extension.</p>
+
+<p> Not shareable between multiple processes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> File* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>R: <strong>Reader</strong><tr><td></td><td>W: <strong>Writer</strong><tr><th align='left'>procedures</th><td>& Initialize<tr><td></td><td> Length (): <strong>Files.Size</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_265C2F00"><a name="DataIO.LoadProc"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.LoadProc">LoadProc</a>
+</h2>
+<p> Loading procedure type for registering an object for data IO.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LoadProc* =<strong>PROCEDURE</strong> (R: <strong>Reader</strong>; <strong>VAR</strong> obj: <strong>OBJECT</strong>)</pre>
+<hr><h2 id="#_265CA340"><a name="DataIO.StoreProc"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.StoreProc">StoreProc</a>
+</h2>
+<p> Storing procedure type for registering an object for data IO.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StoreProc* =<strong>PROCEDURE</strong> (W: <strong>Writer</strong>; obj: <strong>OBJECT</strong>)</pre>
+<hr><h2 id="#_265D1400"><a name="DataIO.PlugIn"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.PlugIn">PlugIn</a>
+</h2>
+<p> Register the load and store procedures that belong to the dynamic object to be made persistent.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PlugIn* (obj: @Any0; load: <strong>LoadProc</strong>; store: <strong>StoreProc</strong>)</pre>
+<hr><h2 id="#_265DA5C0"><a name="DataIO.Open"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Open">Open</a>
+</h2>
+<p> Open a .Data file. The reader is placed at the beginning of the file. The writer is placed at the end of the file, which is at the beginning if the file is new, thereby preventing existing data from being overwritten.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (fileName: <strong>Files.FileName</strong>): <strong>File</strong></pre>
+<hr><h2 id="#_265E8000"><a name="DataIO.Rewind"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Rewind">Rewind</a>
+</h2>
+<p> Opening an existing file places the writer at the end of that file, by default, therefore all future writings append the file. Calling Rewind moves the reader and writer to the beginning of the file, and will therefore overwrite all contents previously held by the file. All prior data will be lost.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Rewind* (f: <strong>File</strong>)</pre>
+<hr><h2 id="#_265F7C40"><a name="DataIO.Close"></a><a href="#DataIO">DataIO</a>.<a href="#DataIO.Close">Close</a>
+</h2>
+<p> Close a .Data file. Executing this command attaches a hidden library needed to allocate memory to restore stored PTR variables. It is therefore imperative that every file opened with Open gets physically closed with this command.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close* (f: <strong>File</strong>)</pre>
+</body></html>

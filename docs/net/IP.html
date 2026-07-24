@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#IP">IP</a></p>
+<hr><h1 id="#_EBC7BE40"><a name="IP"></a><a href="#ModuleList">Module</a> IP
+</h1>
+<p> AUTHOR "pjm, mvt, eb, G.F."; PURPOSE "IP (v4 and v6)";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#IP.Ok">Ok</a>= 0<tr><td></td><td>IPv4= 4<tr><td></td><td>IPv6= 6<tr><th align='left'>type declarations</th><td><a href="#IP.Adr">Adr</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#IP.Packet">Packet</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#IP.Name">Name</a> =<strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>ARPHandler =<strong>PROCEDURE</strong>{DELEGATE} (ip: <strong>Adr</strong>; complete: <strong>BOOLEAN</strong>; link: <strong>Network.LinkAdr</strong>; size, sendTime, updateTime, updateDate, hash: <strong>SIGNED32</strong>)<tr><td></td><td><a href="#IP.Interface">Interface</a> =<strong>OBJECT</strong> <tr><td></td><td>InterfaceHandler =<strong>PROCEDURE</strong>{DELEGATE} (int: <strong>Interface</strong>)<tr><th align='left'>variables</th><td>NilAdr: <strong>Adr</strong><tr><td></td><td>Nil4Adr: <strong>Adr</strong><tr><td></td><td>Nil6Adr: <strong>Adr</strong><tr><td></td><td>preferredProtocol: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#IP.IsNilAdr">IsNilAdr</a> (adr: <strong>Adr</strong>): <strong>BOOLEAN</strong><tr><td></td><td> AdrsEqual (adr1, adr2: <strong>Adr</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#IP.StrToAdr">StrToAdr</a> (ipString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Adr</strong><tr><td></td><td> <a href="#IP.AdrToStr">AdrToStr</a> (adr: <strong>Adr</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#IP.ArrayToAdr">ArrayToAdr</a> (<strong>CONST</strong> arr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, protocol: <strong>SIGNED32</strong>; LSBfirst: <strong>BOOLEAN</strong>): <strong>Adr</strong><tr><td></td><td> <a href="#IP.AdrToArray">AdrToArray</a> (adr: <strong>Adr</strong>; <strong>VAR</strong> arr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIGNED32</strong>; LSBfirst: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#IP.IPConfig">IPConfig</a> (par: @Any0): @Any0<tr><td></td><td> MatchPrefix (adr: <strong>Adr</strong>; prefix: <strong>Adr</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_EBCAFCC0">
+</h1><hr><h2 id="#_EBCB0480"><a name="IP.Ok"></a><a href="#IP">IP</a>.<a href="#IP.Ok">Ok</a>
+</h2>
+<p> Error codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_EBCB3680"><a name="IP.Adr"></a><a href="#IP">IP</a>.<a href="#IP.Adr">Adr</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Adr* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ipv4Adr: <strong>UNSIGNED32</strong><tr><td></td><td>ipv6Adr: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>usedProtocol: <strong>SIGNED32</strong><tr><td></td><td>data: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBCBAE40"><a name="IP.Packet"></a><a href="#IP">IP</a>.<a href="#IP.Packet">Packet</a>
+</h2>
+<p> An IP Address. usedProtocol = 0: No protocol yet used usedProtocol = IPv4: IPv4 address stored in field ipv4Adr usedProtocol = IPv6: IPv6 address stored in field ipv6Adr data can be used to store additional informations. I.e. in IPv6 the prefix length is stored in the data field</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Packet* =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_EBCCA100"><a name="IP.Name"></a><a href="#IP">IP</a>.<a href="#IP.Name">Name</a>
+</h2>
+<p> Name type for interface name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Name* =<strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_EBCCEF00"><a name="IP.Interface"></a><a href="#IP">IP</a>.<a href="#IP.Interface">Interface</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Interface* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#IP.Interface.localAdr">localAdr</a>: <strong>Adr</strong><tr><td></td><td>maskAdr: <strong>Adr</strong><tr><td></td><td>gatewayAdr: <strong>Adr</strong><tr><td></td><td>subnetAdr: <strong>Adr</strong><tr><td></td><td>broadAdr: <strong>Adr</strong><tr><td></td><td><a href="#IP.Interface.name">name</a>: <strong>Name</strong><tr><td></td><td><a href="#IP.Interface.dev">dev</a>: <strong>Network.LinkDevice</strong><tr><td></td><td><a href="#IP.Interface.DNS">DNS</a>: <strong>ARRAY</strong> MaxNofDNS <strong>OF</strong> <strong>Adr</strong><tr><td></td><td>DNScount: <strong>SIGNED32</strong><tr><td></td><td>next: <strong>Interface</strong><tr><td></td><td>closed: <strong>BOOLEAN</strong><tr><td></td><td>protocol: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (addr: <strong>Adr</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_EBCDFC40"><a name="IP.Interface.localAdr"></a><a href="#IP">IP</a>.<a href="#IP.Interface">Interface</a>.<a href="#IP.Interface.localAdr">localAdr</a>
+</h3>
+<p> IP addresses of this interface.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> localAdr-: <strong>Adr</strong></pre>
+<hr><h3 id="#_EBCE4200"><a name="IP.Interface.name"></a><a href="#IP">IP</a>.<a href="#IP.Interface">Interface</a>.<a href="#IP.Interface.name">name</a>
+</h3>
+<p> name of the interface</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> name-: <strong>Name</strong></pre>
+<hr><h3 id="#_EBCE8440"><a name="IP.Interface.dev"></a><a href="#IP">IP</a>.<a href="#IP.Interface">Interface</a>.<a href="#IP.Interface.dev">dev</a>
+</h3>
+<p> Device that the interface belongs to</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> dev-: <strong>Network.LinkDevice</strong></pre>
+<hr><h3 id="#_EBCECE00"><a name="IP.Interface.DNS"></a><a href="#IP">IP</a>.<a href="#IP.Interface">Interface</a>.<a href="#IP.Interface.DNS">DNS</a>
+</h3>
+<p> DNS server list - can be used by DNS, not used in IP itself</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DNS-: <strong>ARRAY</strong> MaxNofDNS <strong>OF</strong> <strong>Adr</strong></pre>
+<hr><h2 id="#_EBCF4480"><a name="IP.IsNilAdr"></a><a href="#IP">IP</a>.<a href="#IP.IsNilAdr">IsNilAdr</a>
+</h2>
+<p> Is address not yet specified</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsNilAdr* (adr: <strong>Adr</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_EBCF9440"><a name="IP.StrToAdr"></a><a href="#IP">IP</a>.<a href="#IP.StrToAdr">StrToAdr</a>
+</h2>
+<p> Convert a dotted-decimal string to an ip address. Return NilAdr on failure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StrToAdr* (ipString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Adr</strong></pre>
+<hr><h2 id="#_EBD00780"><a name="IP.AdrToStr"></a><a href="#IP">IP</a>.<a href="#IP.AdrToStr">AdrToStr</a>
+</h2>
+<p> Convert an IP address to a dotted-decimal string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AdrToStr* (adr: <strong>Adr</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_EBD078C0"><a name="IP.ArrayToAdr"></a><a href="#IP">IP</a>.<a href="#IP.ArrayToAdr">ArrayToAdr</a>
+</h2>
+<p> Convert a IP address from an array <a href="#ofs..ofs+x]">ofs..ofs+x]</a> to an Adr-type variable. Example for IPv4: If the LSB (least significant byte) is stored the the beginning <a href="#ofs],">ofs],</a> LSBfirst must be set to TRUE. (address "a.b.c.d" is stored as <a href="#d,c,b,a])">d,c,b,a])</a> If the LSB is stored at the end <a href="#ofs+3],">ofs+3],</a> LSBfirst must be set to FALSE. (address "a.b.c.d" is stored as <a href="#a,b,c,d])">a,b,c,d])</a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ArrayToAdr* (<strong>CONST</strong> arr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, protocol: <strong>SIGNED32</strong>; LSBfirst: <strong>BOOLEAN</strong>): <strong>Adr</strong></pre>
+<hr><h2 id="#_EBD1CD00"><a name="IP.AdrToArray"></a><a href="#IP">IP</a>.<a href="#IP.AdrToArray">AdrToArray</a>
+</h2>
+<p> Convert an Adr-type variable into an array <a href="#ofs..ofs+x]">ofs..ofs+x]</a> Example in IPv4: If the LSB (least significant byte) should be stored the the beginning <a href="#ofs],">ofs],</a> LSBfirst must be set to TRUE. (address "a.b.c.d" is stored as <a href="#d,c,b,a])">d,c,b,a])</a> If the LSB should be stored at the end <a href="#ofs+3],">ofs+3],</a> LSBfirst must be set to FALSE. (address "a.b.c.d" is stored as <a href="#a,b,c,d])">a,b,c,d])</a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AdrToArray* (adr: <strong>Adr</strong>; <strong>VAR</strong> arr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIGNED32</strong>; LSBfirst: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_EBD31A40"><a name="IP.IPConfig"></a><a href="#IP">IP</a>.<a href="#IP.IPConfig">IPConfig</a>
+</h2>
+<p> Aos command: Output statistics and configuration of all installed interfaces.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IPConfig* (par: @Any0): @Any0</pre>
+</body></html>

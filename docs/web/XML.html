@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#XML">XML</a></p>
+<hr><h1 id="#_EBBADA80"><a name="XML"></a><a href="#ModuleList">Module</a> XML
+</h1>
+<p> AUTHOR "swalthert"; PURPOSE "XML base";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Ok= 0<tr><td></td><td>InvalidString= 1<tr><td></td><td>BufferError= 2<tr><td></td><td><a href="#XML.GeneralEntity">GeneralEntity</a>= 0<tr><td></td><td>ParameterEntity= 1<tr><td></td><td><a href="#XML.Any">Any</a>= 0<tr><td></td><td><a href="#XML.Empty">Empty</a>= 1<tr><td></td><td><a href="#XML.ElementContent">ElementContent</a>= 2<tr><td></td><td><a href="#XML.MixedContent">MixedContent</a>= 3<tr><td></td><td><a href="#XML.ZeroOrOnce">ZeroOrOnce</a>= 0<tr><td></td><td><a href="#XML.ZeroOrMore">ZeroOrMore</a>= 1<tr><td></td><td><a href="#XML.Once">Once</a>= 2<tr><td></td><td><a href="#XML.OnceOrMore">OnceOrMore</a>= 3<tr><td></td><td><a href="#XML.Choice">Choice</a>= 1<tr><td></td><td>Sequence= 2<tr><td></td><td><a href="#XML.CData">CData</a>= 0<tr><td></td><td><a href="#XML.Id">Id</a>= 1<tr><td></td><td><a href="#XML.IdRef">IdRef</a>= 2<tr><td></td><td><a href="#XML.IdRefs">IdRefs</a>= 3<tr><td></td><td><a href="#XML.Entity">Entity</a>= 4<tr><td></td><td><a href="#XML.Entities">Entities</a>= 5<tr><td></td><td><a href="#XML.NmToken">NmToken</a>= 6<tr><td></td><td><a href="#XML.NmTokens">NmTokens</a>= 7<tr><td></td><td><a href="#XML.Notation">Notation</a>= 8<tr><td></td><td><a href="#XML.Enumeration">Enumeration</a>= 9<tr><th align='left'>type declarations</th><td>String =<strong>Strings.String</strong><tr><td></td><td><a href="#XML.Content">Content</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#XML.NameContent">NameContent</a> =<strong>OBJECT</strong> (<strong>Content</strong>)<tr><td></td><td><a href="#XML.Container">Container</a> =<strong>OBJECT</strong> (<strong>Content</strong>)<tr><td></td><td><a href="#XML.Document">Document</a> =<strong>OBJECT</strong> (<strong>Container</strong>)<tr><td></td><td><a href="#XML.TextDecl">TextDecl</a> =<strong>OBJECT</strong> (<strong>Content</strong>)<tr><td></td><td><a href="#XML.XMLDecl">XMLDecl</a> =<strong>OBJECT</strong> (<strong>TextDecl</strong>)<tr><td></td><td><a href="#XML.DocTypeDecl">DocTypeDecl</a> =<strong>OBJECT</strong> (<strong>NameContent</strong>)<tr><td></td><td><a href="#XML.NotationDecl">NotationDecl</a> =<strong>OBJECT</strong> (<strong>NameContent</strong>)<tr><td></td><td><a href="#XML.EntityDecl">EntityDecl</a> =<strong>OBJECT</strong> (<strong>NotationDecl</strong>)<tr><td></td><td><a href="#XML.ElementDecl">ElementDecl</a> =<strong>OBJECT</strong> (<strong>NameContent</strong>)<tr><td></td><td><a href="#XML.ContentParticle">ContentParticle</a> =<strong>OBJECT</strong> (<strong>Content</strong>)<tr><td></td><td><a href="#XML.NameContentParticle">NameContentParticle</a> =<strong>OBJECT</strong> (<strong>ContentParticle</strong>)<tr><td></td><td><a href="#XML.CollectionCP">CollectionCP</a> =<strong>OBJECT</strong> (<strong>ContentParticle</strong>)<tr><td></td><td><a href="#XML.AttributeDecl">AttributeDecl</a> =<strong>OBJECT</strong> (<strong>NameContent</strong>)<tr><td></td><td><a href="#XML.CharReference">CharReference</a> =<strong>OBJECT</strong> (<strong>Content</strong>)<tr><td></td><td><a href="#XML.EntityRef">EntityRef</a> =<strong>OBJECT</strong> (<strong>NameContent</strong>)<tr><td></td><td><a href="#XML.InternalEntityRef">InternalEntityRef</a> =<strong>OBJECT</strong> (<strong>EntityRef</strong>)<tr><td></td><td><a href="#XML.ExternalEntityRef">ExternalEntityRef</a> =<strong>OBJECT</strong> (<strong>EntityRef</strong>)<tr><td></td><td><a href="#XML.Chars">Chars</a> =<strong>OBJECT</strong> (<strong>Content</strong>)<tr><td></td><td><a href="#XML.ArrayChars">ArrayChars</a> =<strong>OBJECT</strong> (<strong>Chars</strong>)<tr><td></td><td><a href="#XML.Comment">Comment</a> =<strong>OBJECT</strong> (<strong>ArrayChars</strong>)<tr><td></td><td><a href="#XML.CDataSect">CDataSect</a> =<strong>OBJECT</strong> (<strong>ArrayChars</strong>)<tr><td></td><td><a href="#XML.ProcessingInstruction">ProcessingInstruction</a> =<strong>OBJECT</strong> (<strong>Content</strong>)<tr><td></td><td><a href="#XML.Attribute">Attribute</a> =<strong>OBJECT</strong> (<strong>NameContent</strong>)<tr><td></td><td>TraverseProc =<strong>PROCEDURE</strong>{DELEGATE} (c: <strong>Content</strong>; data: @Any0)<tr><td></td><td><a href="#XML.Element">Element</a> =<strong>OBJECT</strong> (<strong>Container</strong>)<tr><td></td><td>GeneratorProcedure =<strong>PROCEDURE</strong> (): <strong>Element</strong><tr><td></td><td><a href="#XML.ElementEntry">ElementEntry</a> =<strong>OBJECT</strong> <tr><td></td><td>ElementArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>ElementEntry</strong><tr><td></td><td><a href="#XML.ElementRegistry">ElementRegistry</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#XML.UTF8ToStream">UTF8ToStream</a> (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; w: <strong>Streams.Writer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#XML.UTF8FromStream">UTF8FromStream</a> (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; r: <strong>Streams.Reader</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBBFE180"><a name="XML.GeneralEntity"></a><a href="#XML">XML</a>.<a href="#XML.GeneralEntity">GeneralEntity</a>
+</h2>
+<p> EntityDecl.SetType</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> GeneralEntity*= 0</pre>
+<hr><h2 id="#_EBC01000"><a name="XML.Any"></a><a href="#XML">XML</a>.<a href="#XML.Any">Any</a>
+</h2>
+<p> ElementDecl.SetContentType</p>
+
+<p> 'ANY'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Any*= 0</pre>
+<hr><h2 id="#_EBC8F040"><a name="XML.Empty"></a><a href="#XML">XML</a>.<a href="#XML.Empty">Empty</a>
+</h2>
+<p> 'EMPTY'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Empty*= 1</pre>
+<hr><h2 id="#_EBC91F80"><a name="XML.ElementContent"></a><a href="#XML">XML</a>.<a href="#XML.ElementContent">ElementContent</a>
+</h2>
+<p> children</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ElementContent*= 2</pre>
+<hr><h2 id="#_EBC9E480"><a name="XML.MixedContent"></a><a href="#XML">XML</a>.<a href="#XML.MixedContent">MixedContent</a>
+</h2>
+<p> Mixed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MixedContent*= 3</pre>
+<hr><h2 id="#_EBCA13C0"><a name="XML.ZeroOrOnce"></a><a href="#XML">XML</a>.<a href="#XML.ZeroOrOnce">ZeroOrOnce</a>
+</h2>
+<p> ContentParticle.SetOccurence</p>
+
+<p> '?'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ZeroOrOnce*= 0</pre>
+<hr><h2 id="#_EBCA4840"><a name="XML.ZeroOrMore"></a><a href="#XML">XML</a>.<a href="#XML.ZeroOrMore">ZeroOrMore</a>
+</h2>
+<p> '*'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ZeroOrMore*= 1</pre>
+<hr><h2 id="#_EBCA76C0"><a name="XML.Once"></a><a href="#XML">XML</a>.<a href="#XML.Once">Once</a>
+</h2>
+<p> nothing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Once*= 2</pre>
+<hr><h2 id="#_EBCAB700"><a name="XML.OnceOrMore"></a><a href="#XML">XML</a>.<a href="#XML.OnceOrMore">OnceOrMore</a>
+</h2>
+<p> '+'</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> OnceOrMore*= 3</pre>
+<hr><h2 id="#_EBCAF600"><a name="XML.Choice"></a><a href="#XML">XML</a>.<a href="#XML.Choice">Choice</a>
+</h2>
+<p> CollectionCP.SetType</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Choice*= 1</pre>
+<hr><h2 id="#_EBCB2480"><a name="XML.CData"></a><a href="#XML">XML</a>.<a href="#XML.CData">CData</a>
+</h2>
+<p> AttributeDecl.SetType</p>
+
+<p> CDATA</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CData*= 0</pre>
+<hr><h2 id="#_EBCB5900"><a name="XML.Id"></a><a href="#XML">XML</a>.<a href="#XML.Id">Id</a>
+</h2>
+<p> ID</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Id*= 1</pre>
+<hr><h2 id="#_EBCB9800"><a name="XML.IdRef"></a><a href="#XML">XML</a>.<a href="#XML.IdRef">IdRef</a>
+</h2>
+<p> IDREF</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> IdRef*= 2</pre>
+<hr><h2 id="#_EBCBC780"><a name="XML.IdRefs"></a><a href="#XML">XML</a>.<a href="#XML.IdRefs">IdRefs</a>
+</h2>
+<p> IDREFS</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> IdRefs*= 3</pre>
+<hr><h2 id="#_EBCBF600"><a name="XML.Entity"></a><a href="#XML">XML</a>.<a href="#XML.Entity">Entity</a>
+</h2>
+<p> ENTITY</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Entity*= 4</pre>
+<hr><h2 id="#_EBCC2480"><a name="XML.Entities"></a><a href="#XML">XML</a>.<a href="#XML.Entities">Entities</a>
+</h2>
+<p> ENTITIES</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Entities*= 5</pre>
+<hr><h2 id="#_EBCC5300"><a name="XML.NmToken"></a><a href="#XML">XML</a>.<a href="#XML.NmToken">NmToken</a>
+</h2>
+<p> NMTOKEN</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NmToken*= 6</pre>
+<hr><h2 id="#_EBCC8180"><a name="XML.NmTokens"></a><a href="#XML">XML</a>.<a href="#XML.NmTokens">NmTokens</a>
+</h2>
+<p> NMTOKENS</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NmTokens*= 7</pre>
+<hr><h2 id="#_EBCCB000"><a name="XML.Notation"></a><a href="#XML">XML</a>.<a href="#XML.Notation">Notation</a>
+</h2>
+<p> NOTATION</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Notation*= 8</pre>
+<hr><h2 id="#_EBCCDE80"><a name="XML.Enumeration"></a><a href="#XML">XML</a>.<a href="#XML.Enumeration">Enumeration</a>
+</h2>
+<p> Enumeration</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Enumeration*= 9</pre>
+<hr><h2 id="#_EBCD0E80"><a name="XML.Content"></a><a href="#XML">XML</a>.<a href="#XML.Content">Content</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Content* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetPos (): <strong>Streams.Position</strong><tr><td></td><td> SetPos (pos: <strong>Streams.Position</strong>)<tr><td></td><td> <a href="#XML.Content.Write">Write</a> (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_EBCDB180"><a name="XML.Content.Write"></a><a href="#XML">XML</a>.<a href="#XML.Content">Content</a>.<a href="#XML.Content.Write">Write</a>
+</h3>
+<p> write the content to stream w. level is the current hierarchy level. used for formatting</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_EBCE4500"><a name="XML.NameContent"></a><a href="#XML">XML</a>.<a href="#XML.NameContent">NameContent</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NameContent* =<strong>OBJECT</strong> (<strong>Content</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetName (): <strong>String</strong><tr><td></td><td> SetName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetNameAsString (name: <strong>String</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBCF1600"><a name="XML.Container"></a><a href="#XML">XML</a>.<a href="#XML.Container">Container</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Container* =<strong>OBJECT</strong> (<strong>Content</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> MoveContentAfter (this, previous: <strong>Content</strong>)<tr><td></td><td> MoveContentBefore (this, next: <strong>Content</strong>)<tr><td></td><td> AddContent (c: <strong>Content</strong>)<tr><td></td><td> RemoveContent (c: <strong>Content</strong>)<tr><td></td><td> GetContents (): <strong>Objects.Enumerator</strong><tr><td></td><td> GetNumberOfContents (): <strong>SIGNED32</strong><tr><td></td><td> GetFirst (): <strong>Content</strong><tr><td></td><td> GetLast (): <strong>Content</strong><tr><td></td><td> GetNext (content: <strong>Content</strong>): <strong>Content</strong><tr><td></td><td> GetPrevious (content: <strong>Content</strong>): <strong>Content</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBD07080"><a name="XML.Document"></a><a href="#XML">XML</a>.<a href="#XML.Document">Document</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Document* =<strong>OBJECT</strong> (<strong>Container</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetXMLDecl (): <strong>XMLDecl</strong><tr><td></td><td> GetDocTypeDecl (): <strong>DocTypeDecl</strong><tr><td></td><td> GetRoot (): <strong>Element</strong><tr><td></td><td> AddContent (c: <strong>Content</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBD14780"><a name="XML.TextDecl"></a><a href="#XML">XML</a>.<a href="#XML.TextDecl">TextDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TextDecl* =<strong>OBJECT</strong> (<strong>Content</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetVersion (): <strong>String</strong><tr><td></td><td> SetVersion (<strong>CONST</strong> version: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetEncoding (): <strong>String</strong><tr><td></td><td> SetEncoding (<strong>CONST</strong> encoding: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBD23A80"><a name="XML.XMLDecl"></a><a href="#XML">XML</a>.<a href="#XML.XMLDecl">XMLDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> XMLDecl* =<strong>OBJECT</strong> (<strong>TextDecl</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> IsStandalone (): <strong>BOOLEAN</strong><tr><td></td><td> SetStandalone (standalone: <strong>BOOLEAN</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBD2E480"><a name="XML.DocTypeDecl"></a><a href="#XML">XML</a>.<a href="#XML.DocTypeDecl">DocTypeDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DocTypeDecl* =<strong>OBJECT</strong> (<strong>NameContent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> AddMarkupDecl (c: <strong>Content</strong>)<tr><td></td><td> GetElementDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ElementDecl</strong><tr><td></td><td> GetNotationDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>NotationDecl</strong><tr><td></td><td> GetEntityDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; type: <strong>SIGNED8</strong>): <strong>EntityDecl</strong><tr><td></td><td> GetExternalSubset (): <strong>EntityDecl</strong><tr><td></td><td> SetExternalSubset (externalSubset: <strong>EntityDecl</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBD7F9C0"><a name="XML.NotationDecl"></a><a href="#XML">XML</a>.<a href="#XML.NotationDecl">NotationDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NotationDecl* =<strong>OBJECT</strong> (<strong>NameContent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetSystemId (): <strong>String</strong><tr><td></td><td> SetSystemId (<strong>CONST</strong> systemId: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetPublicId (): <strong>String</strong><tr><td></td><td> SetPublicId (<strong>CONST</strong> publicId: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBD90DC0"><a name="XML.EntityDecl"></a><a href="#XML">XML</a>.<a href="#XML.EntityDecl">EntityDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EntityDecl* =<strong>OBJECT</strong> (<strong>NotationDecl</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetType (): <strong>SIGNED8</strong><tr><td></td><td> SetType (type: <strong>SIGNED8</strong>)<tr><td></td><td> GetValue (): <strong>String</strong><tr><td></td><td> SetValue (<strong>CONST</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetNotationName (): <strong>String</strong><tr><td></td><td> SetNotationName (<strong>CONST</strong> notationName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBDA32C0"><a name="XML.ElementDecl"></a><a href="#XML">XML</a>.<a href="#XML.ElementDecl">ElementDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ElementDecl* =<strong>OBJECT</strong> (<strong>NameContent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetContentType (): <strong>SIGNED8</strong><tr><td></td><td> SetContentType (contentType: <strong>SIGNED8</strong>)<tr><td></td><td> GetContent (): <strong>CollectionCP</strong><tr><td></td><td> SetContent (lcp: <strong>CollectionCP</strong>)<tr><td></td><td> GetAttributeDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>AttributeDecl</strong><tr><td></td><td> GetAttributeDecls (): <strong>Objects.Enumerator</strong><tr><td></td><td> AddAttributeDecl (attributeDecl: <strong>AttributeDecl</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBDB6F40"><a name="XML.ContentParticle"></a><a href="#XML">XML</a>.<a href="#XML.ContentParticle">ContentParticle</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ContentParticle* =<strong>OBJECT</strong> (<strong>Content</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetOccurence (): <strong>SIGNED8</strong><tr><td></td><td> SetOccurence (occ: <strong>SIGNED8</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBDBE1C0"><a name="XML.NameContentParticle"></a><a href="#XML">XML</a>.<a href="#XML.NameContentParticle">NameContentParticle</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NameContentParticle* =<strong>OBJECT</strong> (<strong>ContentParticle</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetName (): <strong>String</strong><tr><td></td><td> SetName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetNameAsString (name: <strong>String</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBDCB2C0"><a name="XML.CollectionCP"></a><a href="#XML">XML</a>.<a href="#XML.CollectionCP">CollectionCP</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CollectionCP* =<strong>OBJECT</strong> (<strong>ContentParticle</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetType (): <strong>SIGNED8</strong><tr><td></td><td> SetType (type: <strong>SIGNED8</strong>)<tr><td></td><td> GetChildren (): <strong>Objects.Enumerator</strong><tr><td></td><td> AddChild (cp: <strong>ContentParticle</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBDD8EC0"><a name="XML.AttributeDecl"></a><a href="#XML">XML</a>.<a href="#XML.AttributeDecl">AttributeDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AttributeDecl* =<strong>OBJECT</strong> (<strong>NameContent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetDefaultValue (): <strong>String</strong><tr><td></td><td> SetDefaultValue (<strong>CONST</strong> defaultValue: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetType (): <strong>SIGNED8</strong><tr><td></td><td> SetType (type: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#XML.AttributeDecl.GetAllowedValues">GetAllowedValues</a> (): <strong>Objects.Enumerator</strong><tr><td></td><td> AddAllowedValue (<strong>CONST</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> IsRequired (): <strong>BOOLEAN</strong><tr><td></td><td> SetRequired (required: <strong>BOOLEAN</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_EBDEE5C0"><a name="XML.AttributeDecl.GetAllowedValues"></a><a href="#XML">XML</a>.<a href="#XML.AttributeDecl">AttributeDecl</a>.<a href="#XML.AttributeDecl.GetAllowedValues">GetAllowedValues</a>
+</h3>
+<p> Collection of NameContents</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetAllowedValues* (): <strong>Objects.Enumerator</strong></pre>
+<hr><h2 id="#_EBDF2900"><a name="XML.CharReference"></a><a href="#XML">XML</a>.<a href="#XML.CharReference">CharReference</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CharReference* =<strong>OBJECT</strong> (<strong>Content</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> SetCode (code: <strong>SIGNED32</strong>)<tr><td></td><td> GetCode (): <strong>SIGNED32</strong><tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBDFD300"><a name="XML.EntityRef"></a><a href="#XML">XML</a>.<a href="#XML.EntityRef">EntityRef</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EntityRef* =<strong>OBJECT</strong> (<strong>NameContent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetEntityDecl (): <strong>EntityDecl</strong><tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBE06180"><a name="XML.InternalEntityRef"></a><a href="#XML">XML</a>.<a href="#XML.InternalEntityRef">InternalEntityRef</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InternalEntityRef* =<strong>OBJECT</strong> (<strong>EntityRef</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetValue (): <strong>String</strong></td></tr>
+</table>
+<hr><h2 id="#_EBE0AD80"><a name="XML.ExternalEntityRef"></a><a href="#XML">XML</a>.<a href="#XML.ExternalEntityRef">ExternalEntityRef</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExternalEntityRef* =<strong>OBJECT</strong> (<strong>EntityRef</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetTextDecl (): <strong>TextDecl</strong><tr><td></td><td> GetContents (): <strong>Objects.Enumerator</strong><tr><td></td><td> AddContent (c: <strong>Content</strong>)<tr><td></td><td> IsParsed (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBE14E00"><a name="XML.Chars"></a><a href="#XML">XML</a>.<a href="#XML.Chars">Chars</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Chars* =<strong>OBJECT</strong> (<strong>Content</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetStr (): <strong>String</strong><tr><td></td><td> GetLength (): <strong>SIZE</strong><tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBE1E700"><a name="XML.ArrayChars"></a><a href="#XML">XML</a>.<a href="#XML.ArrayChars">ArrayChars</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArrayChars* =<strong>OBJECT</strong> (<strong>Chars</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetStr (): <strong>String</strong><tr><td></td><td> GetLength (): <strong>SIZE</strong><tr><td></td><td> SetStr (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetStrAsString (str: <strong>String</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBE29700"><a name="XML.Comment"></a><a href="#XML">XML</a>.<a href="#XML.Comment">Comment</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Comment* =<strong>OBJECT</strong> (<strong>ArrayChars</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</table>
+<hr><h2 id="#_EBE30300"><a name="XML.CDataSect"></a><a href="#XML">XML</a>.<a href="#XML.CDataSect">CDataSect</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CDataSect* =<strong>OBJECT</strong> (<strong>ArrayChars</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</table>
+<hr><h2 id="#_EBE36F00"><a name="XML.ProcessingInstruction"></a><a href="#XML">XML</a>.<a href="#XML.ProcessingInstruction">ProcessingInstruction</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcessingInstruction* =<strong>OBJECT</strong> (<strong>Content</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> GetTarget (): <strong>String</strong><tr><td></td><td> SetTarget (<strong>CONST</strong> target: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetInstruction (): <strong>String</strong><tr><td></td><td> SetInstruction (<strong>CONST</strong> instruction: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBE46280"><a name="XML.Attribute"></a><a href="#XML">XML</a>.<a href="#XML.Attribute">Attribute</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Attribute* =<strong>OBJECT</strong> (<strong>NameContent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> IsAllowedValue (<strong>CONST</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetValue (): <strong>String</strong><tr><td></td><td> SetValue (<strong>CONST</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetValueAsString (value: <strong>String</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBE56000"><a name="XML.Element"></a><a href="#XML">XML</a>.<a href="#XML.Element">Element</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Element* =<strong>OBJECT</strong> (<strong>Container</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> AddContent (content: <strong>Content</strong>)<tr><td></td><td> RemoveContent (content: <strong>Content</strong>)<tr><td></td><td> SetName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetNameAsString (name: <strong>String</strong>)<tr><td></td><td> GetName (): <strong>String</strong><tr><td></td><td> GetId (): <strong>String</strong><tr><td></td><td> GetIdElement (<strong>CONST</strong> name, id: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Element</strong><tr><td></td><td> AddAttribute (attribute: <strong>Attribute</strong>)<tr><td></td><td> RemoveAttribute (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetAttributeValue (<strong>CONST</strong> name, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetAttribute (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Attribute</strong><tr><td></td><td> GetAttributeValue (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> GetAttributes (): <strong>Objects.Enumerator</strong><tr><td></td><td> HasAttribute (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetRoot (): <strong>Element</strong><tr><td></td><td> GetParent (): <strong>Element</strong><tr><td></td><td> GetFirstChild (): <strong>Element</strong><tr><td></td><td> GetNextSibling (): <strong>Element</strong><tr><td></td><td> GetPreviousSibling (): <strong>Element</strong><tr><td></td><td> Traverse (traverseProc: <strong>TraverseProc</strong>; data: @Any0)<tr><td></td><td> WriteAttributes (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)<tr><td></td><td> Write (w: <strong>Streams.Writer</strong>; context: @Any0; level: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBE895C0"><a name="XML.ElementEntry"></a><a href="#XML">XML</a>.<a href="#XML.ElementEntry">ElementEntry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ElementEntry* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>generator: <strong>GeneratorProcedure</strong><tr><td></td><td>generatorModule: <strong>Modules.Name</strong><tr><td></td><td>generatorProcedure: <strong>Modules.Name</strong><tr><th align='left'>procedures</th><td>& Init</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EBE91B80"><a name="XML.ElementRegistry"></a><a href="#XML">XML</a>.<a href="#XML.ElementRegistry">ElementRegistry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ElementRegistry* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> RegisterElement (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; generator: <strong>GeneratorProcedure</strong>)<tr><td></td><td> RegisterElementByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> generatorModule, generatorProcedure: <strong>Modules.Name</strong>)<tr><td></td><td> UnregisterElement (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> InstantiateElement (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Element</strong><tr><td></td><td> <a href="#XML.ElementRegistry.InstantiateLate">InstantiateLate</a> (e: <strong>Element</strong>): <strong>Element</strong><tr><td></td><td> GetTimestamp (): <strong>SIGNED32</strong><tr><td></td><td> GetElements (): <strong>ElementArray</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_EBEA6DC0"><a name="XML.ElementRegistry.InstantiateLate"></a><a href="#XML">XML</a>.<a href="#XML.ElementRegistry">ElementRegistry</a>.<a href="#XML.ElementRegistry.InstantiateLate">InstantiateLate</a>
+</h3>
+<p> fof, late time instantiation to be able to react on generator properties</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InstantiateLate* (e: <strong>Element</strong>): <strong>Element</strong></pre>
+<hr><h2 id="#_EBEADFC0"><a name="XML.UTF8ToStream"></a><a href="#XML">XML</a>.<a href="#XML.UTF8ToStream">UTF8ToStream</a>
+</h2>
+<p> Write an 0X-terminated UTF8 string to a stream (excl. 0X). XML special characters are escaped. Also works for ASCII strings.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTF8ToStream* (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; w: <strong>Streams.Writer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_EBEB8E80"><a name="XML.UTF8FromStream"></a><a href="#XML">XML</a>.<a href="#XML.UTF8FromStream">UTF8FromStream</a>
+</h2>
+<p> Read an UTF8 string from a stream and undo escaping of XML special characters. If the string array is to small, the string will be truncated and an error will be reported. <a name="string&gt"></a> is always a valid 0X-terminated string. Also works for ASCII strings.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTF8FromStream* (<strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; r: <strong>Streams.Reader</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+</body></html>

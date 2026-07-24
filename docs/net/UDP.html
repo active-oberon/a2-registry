@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#UDP">UDP</a></p>
+<hr><h1 id="#_2DA8F500"><a name="UDP"></a><a href="#ModuleList">Module</a> UDP
+</h1>
+<p> AUTHOR "pjm, mvt, G.F."; PURPOSE "UDP protocol";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#UDP.Ok">Ok</a>= 0<tr><td></td><td>PortInUse= 3501<tr><td></td><td>Timeout= 3502<tr><td></td><td>BufferOverflow= 3503<tr><td></td><td>NoInterface= 3504<tr><td></td><td>Closed= 3505<tr><td></td><td>Error= 9999<tr><td></td><td>NilPort= 0<tr><th align='left'>type declarations</th><td><a href="#UDP.Socket">Socket</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_2DA9B580"><a name="UDP.Ok"></a><a href="#UDP">UDP</a>.<a href="#UDP.Ok">Ok</a>
+</h2>
+<p> Error codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_2DA9E780"><a name="UDP.Socket"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>
+</h2>
+<p> Socket. Stores the state of a UDP communication endpoint.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Socket* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& <a href="#UDP.Socket.Open">Open</a> (lport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#UDP.Socket.Send">Send</a> (fip: <strong>IP.Adr</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#UDP.Socket.SendBroadcast">SendBroadcast</a> (int: <strong>IP.Interface</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#UDP.Socket.Receive">Receive</a> (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size: <strong>SIZE</strong>; ms: <strong>SIGNED32</strong>; <strong>VAR</strong> fip: <strong>IP.Adr</strong>; <strong>VAR</strong> fport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#UDP.Socket.Close">Close</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_2DABCE40"><a name="UDP.Socket.Open"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Open">Open</a>
+</h3>
+<p> Constructor</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Open* (lport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_2DAC2300"><a name="UDP.Socket.Send"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Send">Send</a>
+</h3>
+<p> Send a UDP datagram to the foreign address specified by "fip" and "fport". The data is in "data[ofs..ofs+len-1]". In case of concurrent sends the datagrams are serialized.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Send* (fip: <strong>IP.Adr</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_2DAD17C0"><a name="UDP.Socket.SendBroadcast"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.SendBroadcast">SendBroadcast</a>
+</h3>
+<p> Send a broadcast UDP datagram via interface "int" to port "lport". Normally only used by DHCP. The data is in "data[ofs..ofs+len-1]". In case of concurrent sends the datagrams are serialized.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SendBroadcast* (int: <strong>IP.Interface</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_2DAE0740"><a name="UDP.Socket.Receive"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Receive">Receive</a>
+</h3>
+<p> Receive a UDP datagram. If none is available, wait up to the specified timeout for one to arrive. "data[ofs..ofs+size-1]" is the data buffer to hold the returned datagram. "ms" is a wait timeout value in milliseconds, 0 means "don't wait", -1 means "infinite wait". On return, "fip" and "fport" hold the foreign address and port. "len" returns the actual datagram size and "data[ofs..ofs+len-1]" returns the data. "res" returns "Timeout" in case of a timeout and "BufferOverflow" if the received datagram was too big.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Receive* (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size: <strong>SIZE</strong>; ms: <strong>SIGNED32</strong>; <strong>VAR</strong> fip: <strong>IP.Adr</strong>; <strong>VAR</strong> fport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_2DAFFB80"><a name="UDP.Socket.Close"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Close">Close</a>
+</h3>
+<p> Close the Socket, freeing its address for re-use.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close*</pre>
+</body></html>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxIntermediateBackend">FoxIntermediateBackend</a></p>
+<hr><h1 id="#_CF940EC0"><a name="FoxIntermediateBackend"></a><a href="#ModuleList">Module</a> FoxIntermediateBackend
+</h1>
+<p> AUTHOR ""; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>TensorFlag= 0<tr><td></td><td>RangeFlag= 1<tr><td></td><td>StackFlag= 2<tr><td></td><td>StaticFlag= 1<tr><td></td><td><a href="#FoxIntermediateBackend.WithTrap">WithTrap</a>= 1<tr><td></td><td>CaseTrap= 2<tr><td></td><td>ReturnTrap= 3<tr><td></td><td>TypeEqualTrap= 5<tr><td></td><td>TypeCheckTrap= 6<tr><td></td><td>IndexCheckTrap= 7<tr><td></td><td>AssertTrap= 8<tr><td></td><td>ArraySizeTrap= 9<tr><td></td><td>ArrayFormTrap= 10<tr><td></td><td>SetElementTrap= 11<tr><td></td><td>NegativeDivisorTrap= 12<tr><td></td><td>NoReturnTrap= 16<tr><td></td><td>NilPointerTrap= 17<tr><td></td><td>RethrowTrap= 18<tr><td></td><td><a href="#FoxIntermediateBackend.NumberSystemCalls">NumberSystemCalls</a>= 12<tr><td></td><td>SysNewRec= 0<tr><td></td><td>SysNewArr= 1<tr><td></td><td>SysNewSys= 2<tr><td></td><td>SysCaseTable= 3<tr><td></td><td>SysProcAddr= 4<tr><td></td><td>SysLock= 5<tr><td></td><td>SysUnlock= 6<tr><td></td><td>SysStart= 7<tr><td></td><td>SysAwait= 8<tr><td></td><td>SysInterfaceLookup= 9<tr><td></td><td>SysRegisterInterface= 10<tr><td></td><td>SysGetProcedure= 11<tr><td></td><td>StackLimitOffset= (BaseObjectTypeSize+3)<tr><th align='left'>type declarations</th><td>SupportedInstructionProcedure =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> instr: <strong>IntermediateCode.Instruction</strong>; <strong>VAR</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SupportedImmediateProcedure =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> op: <strong>IntermediateCode.Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td><a href="#FoxIntermediateBackend.IntermediateBackend">IntermediateBackend</a> =<strong>OBJECT</strong> (<strong>IntermediateCode.IntermediateBackend</strong>)<tr><th align='left'>variables</th><td>int8: <strong>IntermediateCode.Type</strong><tr><td></td><td>int16: <strong>IntermediateCode.Type</strong><tr><td></td><td>int32: <strong>IntermediateCode.Type</strong><tr><td></td><td>int64: <strong>IntermediateCode.Type</strong><tr><td></td><td>uint8: <strong>IntermediateCode.Type</strong><tr><td></td><td>uint16: <strong>IntermediateCode.Type</strong><tr><td></td><td>uint32: <strong>IntermediateCode.Type</strong><tr><td></td><td>uint64: <strong>IntermediateCode.Type</strong><tr><td></td><td>float32: <strong>IntermediateCode.Type</strong><tr><td></td><td>float64: <strong>IntermediateCode.Type</strong><tr><th align='left'>procedures</th><td> ResetStatistics<tr><td></td><td> Statistics<tr><td></td><td> GetSymbol (scope: <strong>SyntaxTree.ModuleScope</strong>; <strong>CONST</strong> moduleName, symbolName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SyntaxTree.Symbol</strong><tr><td></td><td> GetType (system: <strong>Global.System</strong>; type: <strong>SyntaxTree.Type</strong>): <strong>IntermediateCode.Type</strong><tr><td></td><td> PowerOf2 (val: <strong>SIGNED64</strong>; <strong>VAR</strong> exp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ProcedureParametersSize (system: <strong>Global.System</strong>; procedure: <strong>SyntaxTree.Procedure</strong>): <strong>SIGNED32</strong><tr><td></td><td> ToMemoryUnits (system: <strong>Global.System</strong>; size: <strong>SIZE</strong>): <strong>SIGNED32</strong><tr><td></td><td> Get (): <strong>Backend.Backend</strong><tr><td></td><td> Call (position: <strong>Basic.Position</strong>; op: <strong>IntermediateCode.Operand</strong>; parSize: <strong>SIZE</strong>): <strong>IntermediateCode.Instruction</strong><tr><td></td><td> Result (position: <strong>Basic.Position</strong>; res: <strong>IntermediateCode.Operand</strong>): <strong>IntermediateCode.Instruction</strong><tr><td></td><td> Pop (position: <strong>Basic.Position</strong>; op: <strong>IntermediateCode.Operand</strong>): <strong>IntermediateCode.Instruction</strong><tr><td></td><td> Push (position: <strong>Basic.Position</strong>; op: <strong>IntermediateCode.Operand</strong>): <strong>IntermediateCode.Instruction</strong><tr><td></td><td> Data (position: <strong>Basic.Position</strong>; op: <strong>IntermediateCode.Operand</strong>): <strong>IntermediateCode.Instruction</strong><tr><td></td><td> EnterImmediate (data: <strong>IntermediateCode.Section</strong>; <strong>CONST</strong> vop: <strong>IntermediateCode.Operand</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_CF99A840"><a name="FoxIntermediateBackend.WithTrap"></a><a href="#FoxIntermediateBackend">FoxIntermediateBackend</a>.<a href="#FoxIntermediateBackend.WithTrap">WithTrap</a>
+</h2>
+<p> compiler generated traps</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> WithTrap*= 1</pre>
+<hr><h2 id="#_CF99DE80"><a name="FoxIntermediateBackend.NumberSystemCalls"></a><a href="#FoxIntermediateBackend">FoxIntermediateBackend</a>.<a href="#FoxIntermediateBackend.NumberSystemCalls">NumberSystemCalls</a>
+</h2>
+<p> system call numbers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NumberSystemCalls*= 12</pre>
+<hr><h2 id="#_CF9A1540"><a name="FoxIntermediateBackend.IntermediateBackend"></a><a href="#FoxIntermediateBackend">FoxIntermediateBackend</a>.<a href="#FoxIntermediateBackend.IntermediateBackend">IntermediateBackend</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IntermediateBackend* =<strong>OBJECT</strong> (<strong>IntermediateCode.IntermediateBackend</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>trace: <strong>BOOLEAN</strong><tr><td></td><td>traceString: <strong>SyntaxTree.IdentifierString</strong><tr><td></td><td>traceModuleName: <strong>SyntaxTree.IdentifierString</strong><tr><td></td><td>profile: <strong>BOOLEAN</strong><tr><td></td><td>simpleMetaData: <strong>BOOLEAN</strong><tr><td></td><td>optimize: <strong>BOOLEAN</strong><tr><td></td><td>cooperative: <strong>BOOLEAN</strong><tr><td></td><td>preregisterStatic: <strong>BOOLEAN</strong><tr><td></td><td>dump: <strong>Basic.Writer</strong><tr><td></td><td>preciseGC: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitIntermediateBackend<tr><td></td><td> GetParameterRegister (callingConvention: <strong>SyntaxTree.CallingConvention</strong>; type: <strong>IntermediateCode.Type</strong>; <strong>VAR</strong> register: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResetParameterRegisters<tr><td></td><td> GenerateIntermediate (x: <strong>SyntaxTree.Module</strong>; supportedInstruction: <strong>SupportedInstructionProcedure</strong>; supportedImmediate: <strong>SupportedImmediateProcedure</strong>): <strong>Sections.Module</strong><tr><td></td><td> SupportedImmediate (<strong>CONST</strong> op: <strong>IntermediateCode.Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ProcessSyntaxTreeModule (syntaxTreeModule: <strong>SyntaxTree.Module</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> ProcessIntermediateCodeModule (intermediateCodeModule: <strong>Formats.GeneratedModule</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> GetDescription (<strong>VAR</strong> instructionSet: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetSimpleMetaData (simpleMetaData: <strong>BOOLEAN</strong>)<tr><td></td><td> DefineOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> GetOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> DefaultSymbolFileFormat (): <strong>Formats.SymbolFileFormat</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

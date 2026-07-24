@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CalcDiethelm">CalcDiethelm</a></p>
+<hr><h1 id="#_D0CF4B00"><a name="CalcDiethelm"></a><a href="#ModuleList">Module</a> CalcDiethelm
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Diethelm's algorithms for the fractional calculus";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#CalcDiethelm.SolveI">SolveI</a> (f: <strong>CalcFn.ReArg</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> tol: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#CalcDiethelm.SolveD">SolveD</a> (f: <strong>CalcFn.ReArg</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> tol: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#CalcDiethelm.SolveFODE">SolveFODE</a> (f: <strong>CalcFn.Re2Arg</strong>; y0: <strong>ARRAY</strong> <strong>OF</strong> <strong>NbrRe.Real</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> tol: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_D0D07AC0"><a name="CalcDiethelm.SolveI"></a><a href="#CalcDiethelm">CalcDiethelm</a>.<a href="#CalcDiethelm.SolveI">SolveI</a>
+</h2>
+<p> Computes a Riemann-Liouville fractional-order integral. Iaf(x) = (1/G(a)) x0x (x-y)a-1 f(y) dy, where 0 <a name="a."></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveI* (f: <strong>CalcFn.ReArg</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> tol: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_D0D11880"><a name="CalcDiethelm.SolveD"></a><a href="#CalcDiethelm">CalcDiethelm</a>.<a href="#CalcDiethelm.SolveD">SolveD</a>
+</h2>
+<p> Computes a Caputo fractional-order derivative. D*af(x) = IaDnf(x) = (1/G(n-a)) x0x (x-y)n-1-a <a href="#dnf(y)/dyn]">dnf(y)/dyn]</a> dy, f(k)(0+) = f0[k], where 0 <a name="a"></a> <a name="2,"></a> a # 1.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveD* (f: <strong>CalcFn.ReArg</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> tol: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_D0D1D7C0"><a name="CalcDiethelm.SolveFODE"></a><a href="#CalcDiethelm">CalcDiethelm</a>.<a href="#CalcDiethelm.SolveFODE">SolveFODE</a>
+</h2>
+<p> Solves a fractional-order differential equation of the Caputo type. D*ay(x) = f(x,y(x)), y(k)(0+) = y0[k], where 0 <a name="a"></a> <a name="2."></a></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveFODE* (f: <strong>CalcFn.Re2Arg</strong>; y0: <strong>ARRAY</strong> <strong>OF</strong> <strong>NbrRe.Real</strong>; x, order: <strong>NbrRe.Real</strong>; <strong>VAR</strong> tol: <strong>NbrRe.Real</strong>): <strong>NbrRe.Real</strong></pre>
+</body></html>

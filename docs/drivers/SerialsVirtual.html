@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#SerialsVirtual">SerialsVirtual</a></p>
+<hr><h1 id="#_A48B2900"><a name="SerialsVirtual"></a><a href="#ModuleList">Module</a> SerialsVirtual
+</h1>
+<p> AUTHOR "staubesv"; PURPOSE "Virtual serial port driver";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#SerialsVirtual.SendFile">SendFile</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#SerialsVirtual.StopSendFile">StopSendFile</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#SerialsVirtual.Install">Install</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#SerialsVirtual.InstallSniffer">InstallSniffer</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> SetErrorRate (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_A48BE9C0">
+</h1>
+<ul>
+<li> This driver creates two virtual serial port instances that are linked using a virtual null-modem cable, i.e. the data sent to one</li>
+
+<li> port is received by the other and vice versa.</li>
+
+<li> Idea: One of the ports can be used by the application under development and the other is used to send data to this application, for example,</li>
+
+<li> simulated output of a serial port device. <strong></strong></li>
+
+<li> Usage: <strong></strong></li>
+
+<li> SerialsVirtual.Install ~ creates two virtual serial port instances that are cross-linked and registers them at Serials <strong></strong></li>
+
+<li> SerialsVirtual.SendFile portNbr filename <a href="#Loop]">Loop]</a> ~ sends the content of the specified file to the specified virtual serial port.</li>
+
+<li> The data is then received by its companion port.</li>
+
+<li> SerialsVirtual.StopSendFile portNbr ~ stops sending a file for the specified port <strong></strong></li>
+
+<li> SerialsVirtual.InstallSniffer ~ installs a virtal serial port that acts as proxy for the specified port <strong></strong></li>
+
+<li> System.Free SerialsVirtual ~ Unregisters virtual serial ports at Serials <strong></strong></li>
+
+<li> History: <strong></strong></li>
+
+<li> 20.06.2006 Created (staubesv)</li>
+
+<li> 26.06.2006 Speed emulation (staubesv)</li>
+
+<li> 27.06.2006 Implemented PortSniffer (staubesv)</li>
+</ul>
+<hr><h2 id="#_A48E9500"><a name="SerialsVirtual.SendFile"></a><a href="#SerialsVirtual">SerialsVirtual</a>.<a href="#SerialsVirtual.SendFile">SendFile</a>
+</h2>
+<p> Send the content of the specified file to the specified serial port. If the Loop parameter is used, the file is sent in a endless loop. Sending can be stopped using the StopSendFile commands</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SendFile* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_A48F4D80"><a name="SerialsVirtual.StopSendFile"></a><a href="#SerialsVirtual">SerialsVirtual</a>.<a href="#SerialsVirtual.StopSendFile">StopSendFile</a>
+</h2>
+<p> Stop sending a file for the specified port</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StopSendFile* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_A48FA480"><a name="SerialsVirtual.Install"></a><a href="#SerialsVirtual">SerialsVirtual</a>.<a href="#SerialsVirtual.Install">Install</a>
+</h2>
+<p> Installs two virtual serial ports which are linked to each other. Data sent by one port is received by the other and vice versa</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Install* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_A49036C0"><a name="SerialsVirtual.InstallSniffer"></a><a href="#SerialsVirtual">SerialsVirtual</a>.<a href="#SerialsVirtual.InstallSniffer">InstallSniffer</a>
+</h2>
+<p> Install a virtual sniffer port as proxy for the specified serial port</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InstallSniffer* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#SoundDevices">SoundDevices</a></p>
+<hr><h1 id="#_0093FD40"><a name="SoundDevices"></a><a href="#ModuleList">Module</a> SoundDevices
+</h1>
+<p> AUTHOR "TF"; PURPOSE "Abstract sound device driver / Generic sound support";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>ResOK= 0<tr><td></td><td><a href="#SoundDevices.ResQualityReduced">ResQualityReduced</a>= 1<tr><td></td><td>ResNoMoreChannels= 10<tr><td></td><td>ResUnsupportedFrequency= 20<tr><td></td><td>ResUnsupportedSubChannels= 30<tr><td></td><td>ResUnsupportedSamplingRes= 40<tr><td></td><td>ResUnsupportedFormat= 50<tr><td></td><td>ChannelPlay= 0<tr><td></td><td>ChannelRecord= 1<tr><td></td><td><a href="#SoundDevices.FormatPCM">FormatPCM</a>= 0<tr><th align='left'>type declarations</th><td><a href="#SoundDevices.Buffer">Buffer</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#SoundDevices.BufferPool">BufferPool</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#SoundDevices.BufferListener">BufferListener</a> =<strong>PROCEDURE</strong>{DELEGATE} (buffer: <strong>Buffer</strong>)<tr><td></td><td><a href="#SoundDevices.MixerChannel">MixerChannel</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#SoundDevices.MixerChangedProc">MixerChangedProc</a> =<strong>PROCEDURE</strong>{DELEGATE} (channel: <strong>MixerChannel</strong>)<tr><td></td><td><a href="#SoundDevices.Channel">Channel</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#SoundDevices.Driver">Driver</a> =<strong>OBJECT</strong> (<strong>Plugins.Plugin</strong>)<tr><th align='left'>variables</th><td>devices: <strong>Plugins.Registry</strong><tr><th align='left'>procedures</th><td> <a href="#SoundDevices.GetDefaultDevice">GetDefaultDevice</a> (): <strong>Driver</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_0095A9C0"><a name="SoundDevices.ResQualityReduced"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.ResQualityReduced">ResQualityReduced</a>
+</h2>
+<p> ResReducedQuality can be the res value of OpenPlayChannel if the playing quality of the resulting channel may be reduced due to insufficient ressources</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ResQualityReduced*= 1</pre>
+<hr><h2 id="#_00962DC0"><a name="SoundDevices.FormatPCM"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.FormatPCM">FormatPCM</a>
+</h2>
+<p> Currently only PCM defined</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FormatPCM*= 0</pre>
+<hr><h2 id="#_00966840"><a name="SoundDevices.Buffer"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Buffer">Buffer</a>
+</h2>
+<p> a generic buffer. data^ contains the data to be played or space for the data recorded. len contains the length of the buffer. len MOD 4 must be 0 Buffers may be extended by the client application for buffer management. A buffer may only be reused if it is returned to the BufferListener.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Buffer* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>len: <strong>SIZE</strong><tr><td></td><td>data: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_009796C0"><a name="SoundDevices.BufferPool"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.BufferPool">BufferPool</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BufferPool* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (n: <strong>SIGNED32</strong>)<tr><td></td><td> Add (x: <strong>Buffer</strong>)<tr><td></td><td> Remove (): <strong>Buffer</strong><tr><td></td><td> NofBuffers (): <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_00983080"><a name="SoundDevices.BufferListener"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.BufferListener">BufferListener</a>
+</h2>
+<p> A buffer listener is called when a play / or record buffer is completed, the application should reuse eg. process the buffer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BufferListener* =<strong>PROCEDURE</strong>{DELEGATE} (buffer: <strong>Buffer</strong>)</pre>
+<hr><h2 id="#_0098C900"><a name="SoundDevices.MixerChannel"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.MixerChannel">MixerChannel</a>
+</h2>
+<p> Generic MixerChannel object. Allows to set and get volume information</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MixerChannel* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#SoundDevices.MixerChannel.GetName">GetName</a> (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#SoundDevices.MixerChannel.GetDesc">GetDesc</a> (<strong>VAR</strong> desc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#SoundDevices.MixerChannel.SetVolume">SetVolume</a> (volume: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#SoundDevices.MixerChannel.GetVolume">GetVolume</a> (): <strong>INTEGER</strong><tr><td></td><td> <a href="#SoundDevices.MixerChannel.SetMute">SetMute</a> (mute: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#SoundDevices.MixerChannel.GetIsMute">GetIsMute</a> (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_0099D900"><a name="SoundDevices.MixerChannel.GetName"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.MixerChannel">MixerChannel</a>.<a href="#SoundDevices.MixerChannel.GetName">GetName</a>
+</h3>
+<p> Return the name (as UTF-8 Unicode) of this channel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetName* (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_009A4500"><a name="SoundDevices.MixerChannel.GetDesc"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.MixerChannel">MixerChannel</a>.<a href="#SoundDevices.MixerChannel.GetDesc">GetDesc</a>
+</h3>
+<p> Return the description string (as UTF-8 Unicode) of this channel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetDesc* (<strong>VAR</strong> desc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_009AB580"><a name="SoundDevices.MixerChannel.SetVolume"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.MixerChannel">MixerChannel</a>.<a href="#SoundDevices.MixerChannel.SetVolume">SetVolume</a>
+</h3>
+<p> Set the volume of the channel</p>
+
+<p> 0 is silent, 255 is max</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetVolume* (volume: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_009B2480"><a name="SoundDevices.MixerChannel.GetVolume"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.MixerChannel">MixerChannel</a>.<a href="#SoundDevices.MixerChannel.GetVolume">GetVolume</a>
+</h3>
+<p> Get the volume of the channel</p>
+
+<p> 0 is silent, 255 is max</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetVolume* (): <strong>INTEGER</strong></pre>
+<hr><h3 id="#_009B8E80"><a name="SoundDevices.MixerChannel.SetMute"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.MixerChannel">MixerChannel</a>.<a href="#SoundDevices.MixerChannel.SetMute">SetMute</a>
+</h3>
+<p> mute or unmute the channel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetMute* (mute: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_009BDF80"><a name="SoundDevices.MixerChannel.GetIsMute"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.MixerChannel">MixerChannel</a>.<a href="#SoundDevices.MixerChannel.GetIsMute">GetIsMute</a>
+</h3>
+<p> get the "mute - state" of the channel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetIsMute* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_009C3780"><a name="SoundDevices.MixerChangedProc"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.MixerChangedProc">MixerChangedProc</a>
+</h2>
+<p> a MixerChangedProc delegate is called whenever a channel (volume / mute) is changed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MixerChangedProc* =<strong>PROCEDURE</strong>{DELEGATE} (channel: <strong>MixerChannel</strong>)</pre>
+<hr><h2 id="#_009CAE40"><a name="SoundDevices.Channel"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>
+</h2>
+<p> Generic channel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Channel* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#SoundDevices.Channel.GetChannelKind">GetChannelKind</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#SoundDevices.Channel.SetVolume">SetVolume</a> (volume: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#SoundDevices.Channel.GetVolume">GetVolume</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#SoundDevices.Channel.GetPosition">GetPosition</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#SoundDevices.Channel.RegisterBufferListener">RegisterBufferListener</a> (bufferListener: <strong>BufferListener</strong>)<tr><td></td><td> <a href="#SoundDevices.Channel.Start">Start</a><tr><td></td><td> <a href="#SoundDevices.Channel.QueueBuffer">QueueBuffer</a> (x: <strong>Buffer</strong>)<tr><td></td><td> <a href="#SoundDevices.Channel.Pause">Pause</a><tr><td></td><td> <a href="#SoundDevices.Channel.Stop">Stop</a><tr><td></td><td> <a href="#SoundDevices.Channel.Close">Close</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_009DAA80"><a name="SoundDevices.Channel.GetChannelKind"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.GetChannelKind">GetChannelKind</a>
+</h3>
+<p> Return if the channel is ChannelPlay or ChannelRecord</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetChannelKind* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_009E0280"><a name="SoundDevices.Channel.SetVolume"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.SetVolume">SetVolume</a>
+</h3>
+<p> Set the current volume of the channel</p>
+
+<p> Volume is a 8.8 bit fix-point value, 0 is silent</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetVolume* (volume: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_009E8400"><a name="SoundDevices.Channel.GetVolume"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.GetVolume">GetVolume</a>
+</h3>
+<p> Get the current volume of the channel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetVolume* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_009ED780"><a name="SoundDevices.Channel.GetPosition"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.GetPosition">GetPosition</a>
+</h3>
+<p> GetPosition return the current position in samples. MAY CHANGE TO SIGNED64</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetPosition* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_009F3B80"><a name="SoundDevices.Channel.RegisterBufferListener"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.RegisterBufferListener">RegisterBufferListener</a>
+</h3>
+<p> Register a delegate that handles reuse / processing of buffers. Only one Buffer listener can be registered per channel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RegisterBufferListener* (bufferListener: <strong>BufferListener</strong>)</pre>
+<hr><h3 id="#_009FC380"><a name="SoundDevices.Channel.Start"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.Start">Start</a>
+</h3>
+<p> Start playing / recording</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Start*</pre>
+<hr><h3 id="#_00A00000"><a name="SoundDevices.Channel.QueueBuffer"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.QueueBuffer">QueueBuffer</a>
+</h3>
+<p> Queue another buffer for playing / recording</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> QueueBuffer* (x: <strong>Buffer</strong>)</pre>
+<hr><h3 id="#_00A05880"><a name="SoundDevices.Channel.Pause"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.Pause">Pause</a>
+</h3>
+<p> Pause playing / recording, no buffers are returned</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pause*</pre>
+<hr><h3 id="#_00A0A400"><a name="SoundDevices.Channel.Stop"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.Stop">Stop</a>
+</h3>
+<p> Stop the playing / recording and return all buffers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Stop*</pre>
+<hr><h3 id="#_00A0F300"><a name="SoundDevices.Channel.Close"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Channel">Channel</a>.<a href="#SoundDevices.Channel.Close">Close</a>
+</h3>
+<p> The channel is closed, the driver may release any ressources reserved for it. The object is still there but can never be opened again</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close*</pre>
+<hr><h2 id="#_00A17A80"><a name="SoundDevices.Driver"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Driver* =<strong>OBJECT</strong> (<strong>Plugins.Plugin</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>masterIn: <strong>MixerChannel</strong><tr><td></td><td>masterOut: <strong>MixerChannel</strong><tr><th align='left'>procedures</th><td> <a href="#SoundDevices.Driver.Init">Init</a><tr><td></td><td> Enable<tr><td></td><td> Disable<tr><td></td><td> <a href="#SoundDevices.Driver.NofNativeFrequencies">NofNativeFrequencies</a> (): <strong>SIGNED32</strong><tr><td></td><td> GetNativeFrequency (nr: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> NofSamplingResolutions (): <strong>SIGNED32</strong><tr><td></td><td> GetSamplingResolution (nr: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#SoundDevices.Driver.NofSubChannelSettings">NofSubChannelSettings</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#SoundDevices.Driver.GetSubChannelSetting">GetSubChannelSetting</a> (nr: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#SoundDevices.Driver.NofWaveFormats">NofWaveFormats</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#SoundDevices.Driver.GetWaveFormat">GetWaveFormat</a> (nr: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#SoundDevices.Driver.OpenPlayChannel">OpenPlayChannel</a> (<strong>VAR</strong> channel: <strong>Channel</strong>; samplingRate, samplingResolution, nofSubChannels, format: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#SoundDevices.Driver.OpenRecordChannel">OpenRecordChannel</a> (<strong>VAR</strong> channel: <strong>Channel</strong>; samplingRate, samplingResolution, nofSubChannels, format: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#SoundDevices.Driver.RegisterMixerChangeListener">RegisterMixerChangeListener</a> (mixChangedProc: <strong>MixerChangedProc</strong>)<tr><td></td><td> <a href="#SoundDevices.Driver.UnregisterMixerChangeListener">UnregisterMixerChangeListener</a> (mixChangedProc: <strong>MixerChangedProc</strong>)<tr><td></td><td> <a href="#SoundDevices.Driver.GetMixerChannel">GetMixerChannel</a> (channelNr: <strong>SIGNED32</strong>; <strong>VAR</strong> channel: <strong>MixerChannel</strong>)<tr><td></td><td> <a href="#SoundDevices.Driver.GetNofMixerChannels">GetNofMixerChannels</a> (): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_00A3F6C0"><a name="SoundDevices.Driver.Init"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.Init">Init</a>
+</h3>
+<p> Generic functions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init*</pre>
+<hr><h3 id="#_00A42940"><a name="SoundDevices.Driver.NofNativeFrequencies"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.NofNativeFrequencies">NofNativeFrequencies</a>
+</h3>
+<p> Capabilities</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NofNativeFrequencies* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_00A46540"><a name="SoundDevices.Driver.NofSubChannelSettings"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.NofSubChannelSettings">NofSubChannelSettings</a>
+</h3>
+<p> How many different sub channel settings are possible. Default implementation returns 2 for mono and stereo</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NofSubChannelSettings* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_00A4DBC0"><a name="SoundDevices.Driver.GetSubChannelSetting"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.GetSubChannelSetting">GetSubChannelSetting</a>
+</h3>
+<p> Get sub channel setting nr. Default implementation returns mono and stereo</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetSubChannelSetting* (nr: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_00A54AC0"><a name="SoundDevices.Driver.NofWaveFormats"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.NofWaveFormats">NofWaveFormats</a>
+</h3>
+<p> How many different wave formats are possible. Default implementation returns 1</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NofWaveFormats* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_00A5AEC0"><a name="SoundDevices.Driver.GetWaveFormat"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.GetWaveFormat">GetWaveFormat</a>
+</h3>
+<p> Get wave format nr. Default implementation returns FormatPCM</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetWaveFormat* (nr: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_00A61340"><a name="SoundDevices.Driver.OpenPlayChannel"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.OpenPlayChannel">OpenPlayChannel</a>
+</h3>
+<p> Playing</p>
+
+<p> Open a new channel for playing. If more than one channel is opened, the sound driver needs to mix the channels in software or hardware, using the respective volumes. Sampling rate conversion must be done if needed. The driver may respond with res = ResNoMoreChannels, if it can not open more channels. (The driver SHOULD support more play channels (eg. 8 / 16 or more channels)) The driver can also respond with res = ResReducedQuality if the playback quality is reduced due to insufficient ressources. channel is the resulting Play channel, NIL if an error that prevents playing has occured. (Applications only interested in the ability of playing and not in playback quality should only check for channel # NIL and not for res = ResOk) samplingRate is the desired samplingRate samplingResolution = 8 / 16 / 24 / 32 (All drivers should support at least 8 and 16 bit) nofSubChannes = 1 for Mono, 2 for Stereo, 4 for Quadro etc. format is the wave format</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenPlayChannel* (<strong>VAR</strong> channel: <strong>Channel</strong>; samplingRate, samplingResolution, nofSubChannels, format: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_00A90980"><a name="SoundDevices.Driver.OpenRecordChannel"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.OpenRecordChannel">OpenRecordChannel</a>
+</h3>
+<p> Recording</p>
+
+<p> Open a new channel for recording. If more than one channel is opened, the sound driver copies the recorded data to all the recording channels, using the respective volumes. Sampling rate conversion must be done if needed. Support for multichannel recording is possible but NOT required. The driver may respond with res := ResNoMoreChannels, if more than one recording channel is opened. channel is the resulting Recorder channel, NIL if an error occured. samplingRate is the desired samplingRate samplingResolution = 8 / 16 / 24 / 32 (All drivers should support at least 8 and 16 bit) nofSubChannes = 1 for Mono, 2 for Stereo, 4 for Quadro etc. format is the wave format</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenRecordChannel* (<strong>VAR</strong> channel: <strong>Channel</strong>; samplingRate, samplingResolution, nofSubChannels, format: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_00AB3800"><a name="SoundDevices.Driver.RegisterMixerChangeListener"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.RegisterMixerChangeListener">RegisterMixerChangeListener</a>
+</h3>
+<p> Mixer</p>
+
+<p> Register a listener for channel changes, The number of listeners is not limited</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RegisterMixerChangeListener* (mixChangedProc: <strong>MixerChangedProc</strong>)</pre>
+<hr><h3 id="#_00ABAE80"><a name="SoundDevices.Driver.UnregisterMixerChangeListener"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.UnregisterMixerChangeListener">UnregisterMixerChangeListener</a>
+</h3>
+<p> Unregister a previously registered channel change listener</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UnregisterMixerChangeListener* (mixChangedProc: <strong>MixerChangedProc</strong>)</pre>
+<hr><h3 id="#_00AC0780"><a name="SoundDevices.Driver.GetMixerChannel"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.GetMixerChannel">GetMixerChannel</a>
+</h3>
+<p> Return channel object channel 0 is always present and is specified as the master output volume channel 1 is always present and is specified as the master input volume Drivers may ignore channel 0 or 1 but need to return a generic "Channel" object for these channel numbers GetMixerChannel returns NIL if the channelNr is invalid</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetMixerChannel* (channelNr: <strong>SIGNED32</strong>; <strong>VAR</strong> channel: <strong>MixerChannel</strong>)</pre>
+<hr><h3 id="#_00AD2F80"><a name="SoundDevices.Driver.GetNofMixerChannels"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.Driver">Driver</a>.<a href="#SoundDevices.Driver.GetNofMixerChannels">GetNofMixerChannels</a>
+</h3>
+<p> Returns the number of mixer channels available, at least 2</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNofMixerChannels* (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_00AD8E80"><a name="SoundDevices.GetDefaultDevice"></a><a href="#SoundDevices">SoundDevices</a>.<a href="#SoundDevices.GetDefaultDevice">GetDefaultDevice</a>
+</h2>
+<p> Returns the default sound device. (Blocks until at least one sound device is installed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetDefaultDevice* (): <strong>Driver</strong></pre>
+</body></html>

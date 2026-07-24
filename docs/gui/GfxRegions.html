@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#GfxRegions">GfxRegions</a></p>
+<hr><h1 id="#_CE481540"><a name="GfxRegions"></a><a href="#ModuleList">Module</a> GfxRegions
+</h1>
+<p> portable</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#GfxRegions.Winding">Winding</a>= 0<tr><td></td><td><a href="#GfxRegions.EvenOdd">EvenOdd</a>= 1<tr><td></td><td><a href="#GfxRegions.UBound">UBound</a>= (MAX(SIGNED16)DIV2)<tr><td></td><td>LBound= (MIN(SIGNED16)DIV2)<tr><th align='left'>type declarations</th><td><a href="#GfxRegions.Region">Region</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RegionDesc</strong><tr><td></td><td><a href="#GfxRegions.RegionDesc">RegionDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#GfxRegions.EnumData">EnumData</a> =<strong>RECORD</strong> <tr><td></td><td>Enumerator =<strong>PROCEDURE</strong> (llx, lly, urx, ury: <strong>SIGNED16</strong>; <strong>VAR</strong> edata: <strong>EnumData</strong>)<tr><th align='left'>procedures</th><td> <a href="#GfxRegions.IncludePoint">IncludePoint</a> (<strong>VAR</strong> llx, lly, urx, ury: <strong>SIGNED16</strong>; x, y: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.IncludeRect">IncludeRect</a> (<strong>VAR</strong> llx, lly, urx, ury: <strong>SIGNED16</strong>; illx, illy, iurx, iury: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.ClipRect">ClipRect</a> (<strong>VAR</strong> llx, lly, urx, ury: <strong>SIGNED16</strong>; cllx, clly, curx, cury: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.RectEmpty">RectEmpty</a> (llx, lly, urx, ury: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.RectInRect">RectInRect</a> (llx, lly, urx, ury, illx, illy, iurx, iury: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.RectsIntersect">RectsIntersect</a> (llx, lly, urx, ury, illx, illy, iurx, iury: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.PointInRect">PointInRect</a> (x, y: <strong>SIGNED16</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.Empty">Empty</a> (reg: <strong>Region</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.IsRect">IsRect</a> (reg: <strong>Region</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.PointInside">PointInside</a> (x, y: <strong>SIGNED16</strong>; reg: <strong>Region</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.RectInside">RectInside</a> (llx, lly, urx, ury: <strong>SIGNED16</strong>; reg: <strong>Region</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.RectOverlaps">RectOverlaps</a> (llx, lly, urx, ury: <strong>SIGNED16</strong>; reg: <strong>Region</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.RegionInside">RegionInside</a> (inner, outer: <strong>Region</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.RegionOverlaps">RegionOverlaps</a> (reg, arg: <strong>Region</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxRegions.Enumerate">Enumerate</a> (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> edata: <strong>EnumData</strong>)<tr><td></td><td> <a href="#GfxRegions.EnumerateInv">EnumerateInv</a> (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> edata: <strong>EnumData</strong>)<tr><td></td><td> <a href="#GfxRegions.Clear">Clear</a> (reg: <strong>Region</strong>)<tr><td></td><td> <a href="#GfxRegions.SetMode">SetMode</a> (reg: <strong>Region</strong>; mode: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.Init">Init</a> (reg: <strong>Region</strong>; mode: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.SetToRect">SetToRect</a> (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.Shift">Shift</a> (reg: <strong>Region</strong>; dx, dy: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.Copy">Copy</a> (from, to: <strong>Region</strong>)<tr><td></td><td> <a href="#GfxRegions.Add">Add</a> (reg, arg: <strong>Region</strong>)<tr><td></td><td> <a href="#GfxRegions.AddRect">AddRect</a> (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.Subtract">Subtract</a> (reg, arg: <strong>Region</strong>)<tr><td></td><td> <a href="#GfxRegions.SubtractRect">SubtractRect</a> (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.Intersect">Intersect</a> (reg, arg: <strong>Region</strong>)<tr><td></td><td> <a href="#GfxRegions.IntersectRect">IntersectRect</a> (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxRegions.Invert">Invert</a> (reg: <strong>Region</strong>)<tr><td></td><td> <a href="#GfxRegions.AddPoint">AddPoint</a> (reg: <strong>Region</strong>; x, y, dy: <strong>SIGNED16</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_CE4FFA80">
+</h1>
+<p> AUTHOR "eos"; PURPOSE "Arbitrarily shaped two_dimensional regions";</p>
+<hr><h2 id="#_CE502040"><a name="GfxRegions.Winding"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Winding">Winding</a>
+</h2>
+<p> mode for reducing regions to non_overlapping areas</p>
+
+<p> non_zero winding rule</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Winding*= 0</pre>
+<hr><h2 id="#_CE507480"><a name="GfxRegions.EvenOdd"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.EvenOdd">EvenOdd</a>
+</h2>
+<p> exclusive_or rule</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EvenOdd*= 1</pre>
+<hr><h2 id="#_CE50A740"><a name="GfxRegions.UBound"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.UBound">UBound</a>
+</h2>
+<p> interval of valid region coordinates (UBound - LBound is still representable within SIGNED16</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> UBound*= (MAX(SIGNED16)DIV2)</pre>
+<hr><h2 id="#_CE511500"><a name="GfxRegions.Region"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Region">Region</a>
+</h2>
+<p> regions of arbitrary shape</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Region* =<strong>POINTER</strong> <strong>TO</strong> <strong>RegionDesc</strong></pre>
+<hr><h2 id="#_CE515900"><a name="GfxRegions.RegionDesc"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RegionDesc">RegionDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RegionDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>llx: <strong>SIGNED16</strong><tr><td></td><td>lly: <strong>SIGNED16</strong><tr><td></td><td>urx: <strong>SIGNED16</strong><tr><td></td><td><a href="#GfxRegions.RegionDesc.ury">ury</a>: <strong>SIGNED16</strong><tr><td></td><td><a href="#GfxRegions.RegionDesc.mode">mode</a>: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_CE51D080"><a name="GfxRegions.RegionDesc.ury"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RegionDesc">RegionDesc</a>.<a href="#GfxRegions.RegionDesc.ury">ury</a>
+</h3>
+<p> bounding box</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ury*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_CE520940"><a name="GfxRegions.RegionDesc.mode"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RegionDesc">RegionDesc</a>.<a href="#GfxRegions.RegionDesc.mode">mode</a>
+</h3>
+<p> mode for reducing region to non_overlapping areas (Winding/EvenOdd)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> mode*: <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_CE525C00"><a name="GfxRegions.EnumData"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.EnumData">EnumData</a>
+</h2>
+<p> region enumeration</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EnumData* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_CE529800"><a name="GfxRegions.IncludePoint"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.IncludePoint">IncludePoint</a>
+</h2>
+<p>--- Rectangles ---</p>
+
+<p> make rectangle large enough to include a point</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IncludePoint* (<strong>VAR</strong> llx, lly, urx, ury: <strong>SIGNED16</strong>; x, y: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE532B80"><a name="GfxRegions.IncludeRect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.IncludeRect">IncludeRect</a>
+</h2>
+<p> make rectangle large enough to include other rectangle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IncludeRect* (<strong>VAR</strong> llx, lly, urx, ury: <strong>SIGNED16</strong>; illx, illy, iurx, iury: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE53C3C0"><a name="GfxRegions.ClipRect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.ClipRect">ClipRect</a>
+</h2>
+<p> shrink rectangle to area within other rectangle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ClipRect* (<strong>VAR</strong> llx, lly, urx, ury: <strong>SIGNED16</strong>; cllx, clly, curx, cury: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE545780"><a name="GfxRegions.RectEmpty"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RectEmpty">RectEmpty</a>
+</h2>
+<p> return whether rectangle is empty</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RectEmpty* (llx, lly, urx, ury: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE54C140"><a name="GfxRegions.RectInRect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RectInRect">RectInRect</a>
+</h2>
+<p> return whether (non_empty) rectangle is completely inside other rectangle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RectInRect* (llx, lly, urx, ury, illx, illy, iurx, iury: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE555980"><a name="GfxRegions.RectsIntersect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RectsIntersect">RectsIntersect</a>
+</h2>
+<p> return whether (non_empty) rectangle intersects other rectangle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RectsIntersect* (llx, lly, urx, ury, illx, illy, iurx, iury: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE55E9C0"><a name="GfxRegions.PointInRect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.PointInRect">PointInRect</a>
+</h2>
+<p> return whether rectangle contains point</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PointInRect* (x, y: <strong>SIGNED16</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE566780"><a name="GfxRegions.Empty"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Empty">Empty</a>
+</h2>
+<p>--- Region Queries ---</p>
+
+<p> return whether region is empty</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Empty* (reg: <strong>Region</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE56C840"><a name="GfxRegions.IsRect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.IsRect">IsRect</a>
+</h2>
+<p> return whether (non_empty) region is rectangular</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsRect* (reg: <strong>Region</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE571C00"><a name="GfxRegions.PointInside"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.PointInside">PointInside</a>
+</h2>
+<p> return whether point is inside (non_empty) region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PointInside* (x, y: <strong>SIGNED16</strong>; reg: <strong>Region</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE578A40"><a name="GfxRegions.RectInside"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RectInside">RectInside</a>
+</h2>
+<p> return whether (non_empty) rectangle is completely inside (non_empty) region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RectInside* (llx, lly, urx, ury: <strong>SIGNED16</strong>; reg: <strong>Region</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE581100"><a name="GfxRegions.RectOverlaps"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RectOverlaps">RectOverlaps</a>
+</h2>
+<p> return whether (non_empty) rectangle overlaps (non_empty) region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RectOverlaps* (llx, lly, urx, ury: <strong>SIGNED16</strong>; reg: <strong>Region</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE588E40"><a name="GfxRegions.RegionInside"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RegionInside">RegionInside</a>
+</h2>
+<p> return whether region is completely within another region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RegionInside* (inner, outer: <strong>Region</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE58F280"><a name="GfxRegions.RegionOverlaps"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.RegionOverlaps">RegionOverlaps</a>
+</h2>
+<p> return whether two regions intersect each other</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RegionOverlaps* (reg, arg: <strong>Region</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_CE595240"><a name="GfxRegions.Enumerate"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Enumerate">Enumerate</a>
+</h2>
+<p> enumerate region within rectangle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Enumerate* (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> edata: <strong>EnumData</strong>)</pre>
+<hr><h2 id="#_CE59DD80"><a name="GfxRegions.EnumerateInv"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.EnumerateInv">EnumerateInv</a>
+</h2>
+<p> enumerate parts of rectangle not within region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnumerateInv* (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> edata: <strong>EnumData</strong>)</pre>
+<hr><h2 id="#_CE5A74C0"><a name="GfxRegions.Clear"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Clear">Clear</a>
+</h2>
+<p>--- Region Construction ---</p>
+
+<p> make region empty</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Clear* (reg: <strong>Region</strong>)</pre>
+<hr><h2 id="#_CE5AC740"><a name="GfxRegions.SetMode"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.SetMode">SetMode</a>
+</h2>
+<p> set region mode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetMode* (reg: <strong>Region</strong>; mode: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE5B16C0"><a name="GfxRegions.Init"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Init">Init</a>
+</h2>
+<p> initialize region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init* (reg: <strong>Region</strong>; mode: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE5B6200"><a name="GfxRegions.SetToRect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.SetToRect">SetToRect</a>
+</h2>
+<p> make region rectangular</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetToRect* (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE5BC980"><a name="GfxRegions.Shift"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Shift">Shift</a>
+</h2>
+<p> shift region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Shift* (reg: <strong>Region</strong>; dx, dy: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE5C1C40"><a name="GfxRegions.Copy"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Copy">Copy</a>
+</h2>
+<p> copy region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Copy* (from, to: <strong>Region</strong>)</pre>
+<hr><h2 id="#_CE5C6300"><a name="GfxRegions.Add"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Add">Add</a>
+</h2>
+<p> add second region to first</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (reg, arg: <strong>Region</strong>)</pre>
+<hr><h2 id="#_CE5CB4C0"><a name="GfxRegions.AddRect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.AddRect">AddRect</a>
+</h2>
+<p> add rectangle to region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddRect* (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE5D2080"><a name="GfxRegions.Subtract"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Subtract">Subtract</a>
+</h2>
+<p> subtract second region from first</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Subtract* (reg, arg: <strong>Region</strong>)</pre>
+<hr><h2 id="#_CE5D7240"><a name="GfxRegions.SubtractRect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.SubtractRect">SubtractRect</a>
+</h2>
+<p> subtract rectangle from region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SubtractRect* (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE5DDE00"><a name="GfxRegions.Intersect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Intersect">Intersect</a>
+</h2>
+<p> intersect first region with second region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Intersect* (reg, arg: <strong>Region</strong>)</pre>
+<hr><h2 id="#_CE5E33C0"><a name="GfxRegions.IntersectRect"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.IntersectRect">IntersectRect</a>
+</h2>
+<p> intersect region with rectangle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntersectRect* (reg: <strong>Region</strong>; llx, lly, urx, ury: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_CE5E9F80"><a name="GfxRegions.Invert"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.Invert">Invert</a>
+</h2>
+<p> invert region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Invert* (reg: <strong>Region</strong>)</pre>
+<hr><h2 id="#_CE5EDCC0"><a name="GfxRegions.AddPoint"></a><a href="#GfxRegions">GfxRegions</a>.<a href="#GfxRegions.AddPoint">AddPoint</a>
+</h2>
+<p> In addition to creating rectangular regions and using Boolean operations to combine several regions, a region can also be built by tracing its outline with AddPoint. In order to allow the correct handling of self_intersecting contours, a direction parameter is needed which indicates whether the curve is going up (dy = 1) or down (dy = -1) at the given point.</p>
+
+<p> When performing Boolean operations upon regions or when building regions from self_intersecting contours, it is possible that some areas in the resulting region get "covered" more than once. Since most query operations reduce regions to non_overlapping areas, a rule which decides whether a point is inside a region or not is needed. Imagine a ray originating at such a point and counting every intersection of the ray with the boundary curve of the region as +1 if the curve crosses the ray from right to left and as -1 otherwise.  for mode Winding (the default), a point is inside the region if the resulting sum is non_zero  for mode EvenOdd, a point is inside the region if the resulting sum is odd</p>
+
+<p> Behaviour of all region queries and region operations is undefined for contours which are not closed.</p>
+
+<p> add a scanline intersection to a region</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddPoint* (reg: <strong>Region</strong>; x, y, dy: <strong>SIGNED16</strong>)</pre>
+</body></html>

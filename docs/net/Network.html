@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Network">Network</a></p>
+<hr><h1 id="#_C46C1B80"><a name="Network"></a><a href="#ModuleList">Module</a> Network
+</h1>
+<p> AUTHOR "pjm, mvt"; PURPOSE "Abstract network device driver";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Network.MaxLinkAdrSize">MaxLinkAdrSize</a>= 8<tr><td></td><td><a href="#Network.MaxPacketSize">MaxPacketSize</a>= 1600<tr><td></td><td><a href="#Network.TypePointToPoint">TypePointToPoint</a>= 0<tr><td></td><td>TypeEthernet= 1<tr><td></td><td><a href="#Network.LinkNotLinked">LinkNotLinked</a>= 0<tr><td></td><td>LinkLinked= 1<tr><td></td><td>LinkUnknown= 2<tr><td></td><td><a href="#Network.ChecksumIP">ChecksumIP</a>= 0<tr><td></td><td>ChecksumUDP= 1<tr><td></td><td>ChecksumTCP= 2<tr><th align='left'>type declarations</th><td><a href="#Network.LinkAdr">LinkAdr</a> =<strong>ARRAY</strong> MaxLinkAdrSize <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Network.Buffer">Buffer</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Network.LinkDevice">LinkDevice</a> =<strong>OBJECT</strong> (<strong>Plugins.Plugin</strong>)<tr><td></td><td><a href="#Network.Receiver">Receiver</a> =<strong>PROCEDURE</strong>{DELEGATE} (dev: <strong>LinkDevice</strong>; type: <strong>SIGNED32</strong>; buffer: <strong>Buffer</strong>)<tr><td></td><td>IsPacketForSingleRec =<strong>PROCEDURE</strong>{DELEGATE} (buffer: <strong>Buffer</strong>): <strong>BOOLEAN</strong><tr><td></td><td>IsPacketAccepted =<strong>PROCEDURE</strong>{DELEGATE} (buffer: <strong>Buffer</strong>): <strong>BOOLEAN</strong><tr><td></td><td>IsPacketValid =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> buffer: <strong>Buffer</strong>): <strong>BOOLEAN</strong><tr><td></td><td>SendSniffer =<strong>PROCEDURE</strong>{DELEGATE} (dev: <strong>LinkDevice</strong>; <strong>VAR</strong> dst: <strong>LinkAdr</strong>; <strong>VAR</strong> type: <strong>SIGNED32</strong>; <strong>CONST</strong> l3hdr, l4hdr, data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> h3len, h4len, dofs, dlen: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td>ReceiveSniffer =<strong>PROCEDURE</strong>{DELEGATE} (dev: <strong>LinkDevice</strong>; <strong>VAR</strong> type: <strong>SIGNED32</strong>; buffer: <strong>Buffer</strong>): <strong>BOOLEAN</strong><tr><th align='left'>variables</th><td><a href="#Network.registry">registry</a>: <strong>Plugins.Registry</strong><tr><th align='left'>procedures</th><td> <a href="#Network.GetNewBuffer">GetNewBuffer</a> (): <strong>Buffer</strong><tr><td></td><td> <a href="#Network.ReturnBuffer">ReturnBuffer</a> (buf: <strong>Buffer</strong>)<tr><td></td><td> <a href="#Network.Equal">Equal</a> (<strong>VAR</strong> buf1, buf2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs1, ofs2, n: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Network.Put4">Put4</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>; val: <strong>UNSIGNED32</strong>)<tr><td></td><td> <a href="#Network.Put2">Put2</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>; val: <strong>UNSIGNED32</strong>)<tr><td></td><td> <a href="#Network.Get4">Get4</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>): <strong>INTEGER</strong><tr><td></td><td> <a href="#Network.Get2">Get2</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>): <strong>INTEGER</strong><tr><td></td><td> <a href="#Network.PutNet4">PutNet4</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>; val: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Network.PutNet2">PutNet2</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>; val: <strong>UNSIGNED32</strong>)<tr><td></td><td> <a href="#Network.GetNet4">GetNet4</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>): <strong>INTEGER</strong><tr><td></td><td> <a href="#Network.GetNet2">GetNet2</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>): <strong>INTEGER</strong><tr><td></td><td> <a href="#Network.LinkAdrToStr">LinkAdrToStr</a> (<strong>VAR</strong> adr: <strong>LinkAdr</strong>; size: <strong>SIZE</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Network.OutLinkAdr">OutLinkAdr</a> (<strong>VAR</strong> adr: <strong>LinkAdr</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Network.LinkAdrsEqual">LinkAdrsEqual</a> (adr1: <strong>LinkAdr</strong>; adr2: <strong>LinkAdr</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Network.Copy">Copy</a> (<strong>CONST</strong> from: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; fofs, tofs, len: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C4727E40"><a name="Network.MaxLinkAdrSize"></a><a href="#Network">Network</a>.<a href="#Network.MaxLinkAdrSize">MaxLinkAdrSize</a>
+</h2>
+<p> largest link address size in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MaxLinkAdrSize*= 8</pre>
+<hr><h2 id="#_C472C0C0"><a name="Network.MaxPacketSize"></a><a href="#Network">Network</a>.<a href="#Network.MaxPacketSize">MaxPacketSize</a>
+</h2>
+<p> maximum amount of data bytes in a link layer frame</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MaxPacketSize*= 1600</pre>
+<hr><h2 id="#_C47312C0"><a name="Network.TypePointToPoint"></a><a href="#Network">Network</a>.<a href="#Network.TypePointToPoint">TypePointToPoint</a>
+</h2>
+<p> Constants for LinkDevice.type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TypePointToPoint*= 0</pre>
+<hr><h2 id="#_C47349C0"><a name="Network.LinkNotLinked"></a><a href="#Network">Network</a>.<a href="#Network.LinkNotLinked">LinkNotLinked</a>
+</h2>
+<p> Constants for LinkDevice.Linked</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LinkNotLinked*= 0</pre>
+<hr><h2 id="#_C4738000"><a name="Network.ChecksumIP"></a><a href="#Network">Network</a>.<a href="#Network.ChecksumIP">ChecksumIP</a>
+</h2>
+<p> Constants for LinkDevice.calcChecksum and Buffer.calcChecksum</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ChecksumIP*= 0</pre>
+<hr><h2 id="#_C473C040"><a name="Network.LinkAdr"></a><a href="#Network">Network</a>.<a href="#Network.LinkAdr">LinkAdr</a>
+</h2>
+<p> link layer address</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LinkAdr* =<strong>ARRAY</strong> MaxLinkAdrSize <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_C47404C0"><a name="Network.Buffer"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>
+</h2>
+<p> Buffer for passing network packets to upper layer protocols</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Buffer* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>data: <strong>ARRAY</strong> MaxPacketSize <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Network.Buffer.ofs">ofs</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Network.Buffer.len">len</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Network.Buffer.l3ofs">l3ofs</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Network.Buffer.l4ofs">l4ofs</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Network.Buffer.src">src</a>: <strong>LinkAdr</strong><tr><td></td><td><a href="#Network.Buffer.calcChecksum">calcChecksum</a>: <strong>SET</strong><tr><td></td><td><a href="#Network.Buffer.int">int</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Network.Buffer.set">set</a>: <strong>SET</strong><tr><td></td><td>next: <strong>Buffer</strong><tr><td></td><td><a href="#Network.Buffer.prev">prev</a>: <strong>Buffer</strong><tr><td></td><td><a href="#Network.Buffer.nextFragment">nextFragment</a>: <strong>Buffer</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_C47525C0"><a name="Network.Buffer.ofs"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.ofs">ofs</a>
+</h3>
+<p> valid data starts at this offset</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ofs*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_C4757000"><a name="Network.Buffer.len"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.len">len</a>
+</h3>
+<p> length of valid data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> len*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_C475B140"><a name="Network.Buffer.l3ofs"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.l3ofs">l3ofs</a>
+</h3>
+<p> the layer 3 header starts at this offset</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> l3ofs*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_C4760300"><a name="Network.Buffer.l4ofs"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.l4ofs">l4ofs</a>
+</h3>
+<p> the layer 4 header starts at this offset</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> l4ofs*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_C47654C0"><a name="Network.Buffer.src"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.src">src</a>
+</h3>
+<p> link layer source address</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> src*: <strong>LinkAdr</strong></pre>
+<hr><h3 id="#_C4769600"><a name="Network.Buffer.calcChecksum"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.calcChecksum">calcChecksum</a>
+</h3>
+<p> these checksums are already verified by the device</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> calcChecksum*: <strong>SET</strong></pre>
+<hr><h3 id="#_C476E8C0"><a name="Network.Buffer.int"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.int">int</a>
+</h3>
+<p> used in TCP, UDP and ICMP, but can be used by any upper layer protocol</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> int*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_C4775480"><a name="Network.Buffer.set"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.set">set</a>
+</h3>
+<p> used in TCP, but can be used by any upper layer protocol</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> set*: <strong>SET</strong></pre>
+<hr><h3 id="#_C477B5C0"><a name="Network.Buffer.prev"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.prev">prev</a>
+</h3>
+<p> for queueing the buffer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> prev*: <strong>Buffer</strong></pre>
+<hr><h3 id="#_C477F700"><a name="Network.Buffer.nextFragment"></a><a href="#Network">Network</a>.<a href="#Network.Buffer">Buffer</a>.<a href="#Network.Buffer.nextFragment">nextFragment</a>
+</h3>
+<p> next buffer of a fragmented packet</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> nextFragment*: <strong>Buffer</strong></pre>
+<hr><h2 id="#_C4784040"><a name="Network.LinkDevice"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>
+</h2>
+<p> Abstract implementation of a generic network driver object</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LinkDevice* =<strong>OBJECT</strong> (<strong>Plugins.Plugin</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Network.LinkDevice.type">type</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Network.LinkDevice.local">local</a>: <strong>LinkAdr</strong><tr><td></td><td><a href="#Network.LinkDevice.broadcast">broadcast</a>: <strong>LinkAdr</strong><tr><td></td><td><a href="#Network.LinkDevice.mtu">mtu</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Network.LinkDevice.adrSize">adrSize</a>: <strong>SIGNED32</strong><tr><td></td><td>sendCount: <strong>SIGNED64</strong><tr><td></td><td><a href="#Network.LinkDevice.recvCount">recvCount</a>: <strong>SIGNED64</strong><tr><td></td><td><a href="#Network.LinkDevice.calcChecksum">calcChecksum</a>: <strong>SET</strong><tr><th align='left'>procedures</th><td>& <a href="#Network.LinkDevice.Constr">Constr</a> (type, mtu, adrSize: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.Finalize">Finalize</a> (connected: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.Linked">Linked</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Network.LinkDevice.Send">Send</a> (dst: <strong>LinkAdr</strong>; type: <strong>SIGNED32</strong>; <strong>CONST</strong> l3hdr, l4hdr, data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; h3len, h4len, dofs, dlen: <strong>SIGNED32</strong>; loopback: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.DoSend">DoSend</a> (dst: <strong>LinkAdr</strong>; type: <strong>SIGNED32</strong>; <strong>CONST</strong> l3hdr, l4hdr, data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; h3len, h4len, dofs, dlen: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.InstallReceiver">InstallReceiver</a> (owner: @Any0; type: <strong>SIGNED32</strong>; receiver: <strong>Receiver</strong>; isPacketValid: <strong>IsPacketValid</strong>; isPacketForSingleRec: <strong>IsPacketForSingleRec</strong>; isPacketAccepted: <strong>IsPacketAccepted</strong>; isForwardingOn: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.RemoveReceiver">RemoveReceiver</a> (owner: @Any0; type: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.InstallSendSniffer">InstallSendSniffer</a> (s: <strong>SendSniffer</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.RemoveSendSniffer">RemoveSendSniffer</a> (s: <strong>SendSniffer</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.InstallReceiveSniffer">InstallReceiveSniffer</a> (s: <strong>ReceiveSniffer</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.RemoveReceiveSniffer">RemoveReceiveSniffer</a> (s: <strong>ReceiveSniffer</strong>)<tr><td></td><td> <a href="#Network.LinkDevice.QueueBuffer">QueueBuffer</a> (buf: <strong>Buffer</strong>; type: <strong>SIGNED32</strong>)<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_C47BAF80"><a name="Network.LinkDevice.type"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.type">type</a>
+</h3>
+<p> pubic device properties</p>
+
+<dl>
+<dt><strong>LinkType</strong></dt>
+<dd> TypePointToPoint, TypeEthernet</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> type-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_C47BF900"><a name="Network.LinkDevice.local"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.local">local</a>
+</h3>
+<p> local link address</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> local*: <strong>LinkAdr</strong></pre>
+<hr><h3 id="#_C47C3780"><a name="Network.LinkDevice.broadcast"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.broadcast">broadcast</a>
+</h3>
+<p> link address for sending a broadcast</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> broadcast*: <strong>LinkAdr</strong></pre>
+<hr><h3 id="#_C47C8140"><a name="Network.LinkDevice.mtu"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.mtu">mtu</a>
+</h3>
+<p> largest packet size in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> mtu-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_C47CC700"><a name="Network.LinkDevice.adrSize"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.adrSize">adrSize</a>
+</h3>
+<p> link address size in bytes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> adrSize*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_C47D0CC0"><a name="Network.LinkDevice.recvCount"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.recvCount">recvCount</a>
+</h3>
+<p> number of bytes sent and received</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> recvCount-: <strong>SIGNED64</strong></pre>
+<hr><h3 id="#_C47D5600"><a name="Network.LinkDevice.calcChecksum"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.calcChecksum">calcChecksum</a>
+</h3>
+<p> these checksums are calculated by the device hardware when sending.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> calcChecksum*: <strong>SET</strong></pre>
+<hr><h3 id="#_C47DAEC0"><a name="Network.LinkDevice.Constr"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.Constr">Constr</a>
+</h3>
+<p> Constructor - Initialize the driver and the device. NOTE Is normally overridden by device driver. If so, this constructor has to be called at the beginning of the overriding constructor!</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Constr* (type, mtu, adrSize: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_C47E7200"><a name="Network.LinkDevice.Finalize"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.Finalize">Finalize</a>
+</h3>
+<p> Destructor - Finalize driver object. If connected = TRUE, device is still connected and has to be deinitialized. NOTE Is normally overridden by device driver. If so, this method has to be called at the end of the overriding method!</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Finalize* (connected: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_C47F4A80"><a name="Network.LinkDevice.Linked"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.Linked">Linked</a>
+</h3>
+<p> Return the link status of the device. This function has to be overridden by the device driver in order to provide this information.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Linked* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_C47FDB00"><a name="Network.LinkDevice.Send"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.Send">Send</a>
+</h3>
+<p> Send a packet. Called by its user. Can be called concurrently.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Send* (dst: <strong>LinkAdr</strong>; type: <strong>SIGNED32</strong>; <strong>CONST</strong> l3hdr, l4hdr, data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; h3len, h4len, dofs, dlen: <strong>SIGNED32</strong>; loopback: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_C480AF40"><a name="Network.LinkDevice.DoSend"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.DoSend">DoSend</a>
+</h3>
+<p> Do frame send operation. Must be overridden and implemented by device driver!</p>
+
+<p> Must be able to handle concurrent calls. e.g. by declaring itself as EXCLUSIVE!</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DoSend* (dst: <strong>LinkAdr</strong>; type: <strong>SIGNED32</strong>; <strong>CONST</strong> l3hdr, l4hdr, data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; h3len, h4len, dofs, dlen: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_C481AF80"><a name="Network.LinkDevice.InstallReceiver"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.InstallReceiver">InstallReceiver</a>
+</h3>
+<p> Install a receiver for the given type.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InstallReceiver* (owner: @Any0; type: <strong>SIGNED32</strong>; receiver: <strong>Receiver</strong>; isPacketValid: <strong>IsPacketValid</strong>; isPacketForSingleRec: <strong>IsPacketForSingleRec</strong>; isPacketAccepted: <strong>IsPacketAccepted</strong>; isForwardingOn: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_C4825C80"><a name="Network.LinkDevice.RemoveReceiver"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.RemoveReceiver">RemoveReceiver</a>
+</h3>
+<p> Remove the currently installed receiver for the given type.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveReceiver* (owner: @Any0; type: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_C482CB00"><a name="Network.LinkDevice.InstallSendSniffer"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.InstallSendSniffer">InstallSendSniffer</a>
+</h3>
+<p> Install a sniffer for sent packets</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InstallSendSniffer* (s: <strong>SendSniffer</strong>)</pre>
+<hr><h3 id="#_C4831F80"><a name="Network.LinkDevice.RemoveSendSniffer"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.RemoveSendSniffer">RemoveSendSniffer</a>
+</h3>
+<p> Remove a sniffer for sent packets</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveSendSniffer* (s: <strong>SendSniffer</strong>)</pre>
+<hr><h3 id="#_C4837400"><a name="Network.LinkDevice.InstallReceiveSniffer"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.InstallReceiveSniffer">InstallReceiveSniffer</a>
+</h3>
+<p> Install a sniffer for received packets</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InstallReceiveSniffer* (s: <strong>ReceiveSniffer</strong>)</pre>
+<hr><h3 id="#_C483C980"><a name="Network.LinkDevice.RemoveReceiveSniffer"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.RemoveReceiveSniffer">RemoveReceiveSniffer</a>
+</h3>
+<p> Remove a sniffer for received packets</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveReceiveSniffer* (s: <strong>ReceiveSniffer</strong>)</pre>
+<hr><h3 id="#_C4841E80"><a name="Network.LinkDevice.QueueBuffer"></a><a href="#Network">Network</a>.<a href="#Network.LinkDevice">LinkDevice</a>.<a href="#Network.LinkDevice.QueueBuffer">QueueBuffer</a>
+</h3>
+<p> Queue buffer for upcall. Called from inside the LinkDevice object, normally from the interrupt handler.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> QueueBuffer* (buf: <strong>Buffer</strong>; type: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_C484A400"><a name="Network.Receiver"></a><a href="#Network">Network</a>.<a href="#Network.Receiver">Receiver</a>
+</h2>
+<p> Upcall procedures</p>
+
+<p> Packet receiver upcall CAUTION After the buffer has been used, it has to be returned by calling Network.ReturnBuffer(buffer)! The Receiver can do this by itself or delegate this job to other procedures or processes, wherever the buffer is passed to. It has not necessarily to be returned within the receiver upcall.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Receiver* =<strong>PROCEDURE</strong>{DELEGATE} (dev: <strong>LinkDevice</strong>; type: <strong>SIGNED32</strong>; buffer: <strong>Buffer</strong>)</pre>
+<hr><h2 id="#_C485CE40"><a name="Network.registry"></a><a href="#Network">Network</a>.<a href="#Network.registry">registry</a>
+</h2>
+<p> Module variables</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> registry*: <strong>Plugins.Registry</strong></pre>
+<hr><h2 id="#_C4860040"><a name="Network.GetNewBuffer"></a><a href="#Network">Network</a>.<a href="#Network.GetNewBuffer">GetNewBuffer</a>
+</h2>
+<p> Get a new buffer - return NIL if MaxNofBuffers is exceeded</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNewBuffer* (): <strong>Buffer</strong></pre>
+<hr><h2 id="#_C4865D80"><a name="Network.ReturnBuffer"></a><a href="#Network">Network</a>.<a href="#Network.ReturnBuffer">ReturnBuffer</a>
+</h2>
+<p> Return a buffer to be reused</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReturnBuffer* (buf: <strong>Buffer</strong>)</pre>
+<hr><h2 id="#_C486AB40"><a name="Network.Equal"></a><a href="#Network">Network</a>.<a href="#Network.Equal">Equal</a>
+</h2>
+<p> Test whether the n bytes of buf1 and buf2 starting at ofs1 and ofs2 respectively are equal</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Equal* (<strong>VAR</strong> buf1, buf2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs1, ofs2, n: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_C4875C80"><a name="Network.Put4"></a><a href="#Network">Network</a>.<a href="#Network.Put4">Put4</a>
+</h2>
+<p> Procedures to put and get data from and to arrays. No index checks are done due to performance!</p>
+
+<p> Put a 32-bit host value into buf[ofs..ofs+3]</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Put4* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>; val: <strong>UNSIGNED32</strong>)</pre>
+<hr><h2 id="#_C4881E40"><a name="Network.Put2"></a><a href="#Network">Network</a>.<a href="#Network.Put2">Put2</a>
+</h2>
+<p> Put a 16-bit host value into buf[ofs..ofs+1]</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Put2* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>; val: <strong>UNSIGNED32</strong>)</pre>
+<hr><h2 id="#_C4889700"><a name="Network.Get4"></a><a href="#Network">Network</a>.<a href="#Network.Get4">Get4</a>
+</h2>
+<p> Get a 32-bit host value from buf[ofs..ofs+3]</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get4* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_C4890840"><a name="Network.Get2"></a><a href="#Network">Network</a>.<a href="#Network.Get2">Get2</a>
+</h2>
+<p> Get a 16-bit host value from buf[ofs..ofs+1]</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get2* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_C4897980"><a name="Network.PutNet4"></a><a href="#Network">Network</a>.<a href="#Network.PutNet4">PutNet4</a>
+</h2>
+<p> Put a 32-bit host value into buf[ofs..ofs+3] in network byte order</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PutNet4* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>; val: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_C48A0580"><a name="Network.PutNet2"></a><a href="#Network">Network</a>.<a href="#Network.PutNet2">PutNet2</a>
+</h2>
+<p> Put a 16-bit host value into buf[ofs..ofs+1] in network byte order</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PutNet2* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>; val: <strong>UNSIGNED32</strong>)</pre>
+<hr><h2 id="#_C48A8EC0"><a name="Network.GetNet4"></a><a href="#Network">Network</a>.<a href="#Network.GetNet4">GetNet4</a>
+</h2>
+<p> Get a 32-bit network value from buf[ofs..ofs+3] in host byte order</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNet4* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_C48B1080"><a name="Network.GetNet2"></a><a href="#Network">Network</a>.<a href="#Network.GetNet2">GetNet2</a>
+</h2>
+<p> Get a 16-bit network value from buf[ofs..ofs+1] in host byte order</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNet2* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs: <strong>SIZE</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_C48B9240"><a name="Network.LinkAdrToStr"></a><a href="#Network">Network</a>.<a href="#Network.LinkAdrToStr">LinkAdrToStr</a>
+</h2>
+<p> Convert a LinkAdr to a printable string (up to size*3 characters)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LinkAdrToStr* (<strong>VAR</strong> adr: <strong>LinkAdr</strong>; size: <strong>SIZE</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_C48C1F00"><a name="Network.OutLinkAdr"></a><a href="#Network">Network</a>.<a href="#Network.OutLinkAdr">OutLinkAdr</a>
+</h2>
+<p> Write a link address</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OutLinkAdr* (<strong>VAR</strong> adr: <strong>LinkAdr</strong>; size: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_C48C7640"><a name="Network.LinkAdrsEqual"></a><a href="#Network">Network</a>.<a href="#Network.LinkAdrsEqual">LinkAdrsEqual</a>
+</h2>
+<p> Are two link addresses equl</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LinkAdrsEqual* (adr1: <strong>LinkAdr</strong>; adr2: <strong>LinkAdr</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_C48CD400"><a name="Network.Copy"></a><a href="#Network">Network</a>.<a href="#Network.Copy">Copy</a>
+</h2>
+<p> Copy data from array to array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Copy* (<strong>CONST</strong> from: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; fofs, tofs, len: <strong>SIZE</strong>)</pre>
+</body></html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#DisplayNull">DisplayNull</a></p>
+<hr><h1 id="#_8F389BC0"><a name="DisplayNull"></a><a href="#ModuleList">Module</a> DisplayNull
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "Null display driver";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#DisplayNull.Display">Display</a> =<strong>OBJECT</strong> (<strong>Displays.Display</strong>)<tr><th align='left'>procedures</th><td> Install</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8F38F380"><a name="DisplayNull.Display"></a><a href="#DisplayNull">DisplayNull</a>.<a href="#DisplayNull.Display">Display</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Display* =<strong>OBJECT</strong> (<strong>Displays.Display</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Transfer (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, stride, x, y, w, h: <strong>SIZE</strong>; op: <strong>INTEGER</strong>)<tr><td></td><td> Fill (col, x, y, w, h: <strong>SIGNED32</strong>)<tr><td></td><td> Dot (col, x, y: <strong>SIGNED32</strong>)<tr><td></td><td> Mask (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bitofs, stride, fg, bg, x, y, w, h: <strong>SIGNED32</strong>)<tr><td></td><td> Copy (sx, sy, w, h, dx, dy: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

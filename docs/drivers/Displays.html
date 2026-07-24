@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Displays">Displays</a></p>
+<hr><h1 id="#_EB7C6CC0"><a name="Displays"></a><a href="#ModuleList">Module</a> Displays
+</h1>
+<p> AUTHOR "pjm"; PURPOSE "Abstract display device driver";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Displays.index8">index8</a>= 1<tr><td></td><td>color565= 2<tr><td></td><td>color888= 3<tr><td></td><td>color8888= 4<tr><td></td><td><a href="#Displays.get">get</a>= 0<tr><td></td><td>set= 1<tr><td></td><td><a href="#Displays.red">red</a>= 16711680<tr><td></td><td>green= 65280<tr><td></td><td>blue= 255<tr><td></td><td><a href="#Displays.trans">trans</a>= SIGNED32(2147483648)<tr><td></td><td><a href="#Displays.invert">invert</a>= 1073741824<tr><th align='left'>type declarations</th><td><a href="#Displays.Display">Display</a> =<strong>OBJECT</strong> (<strong>Plugins.Plugin</strong>)<tr><th align='left'>variables</th><td>reverse: <strong>BOOLEAN</strong><tr><td></td><td>registry: <strong>Plugins.Registry</strong><tr><th align='left'>procedures</th><td> Reverse</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EB7D9280"><a name="Displays.index8"></a><a href="#Displays">Displays</a>.<a href="#Displays.index8">index8</a>
+</h2>
+<p> formats for Transfer. value = bytes per pixel.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> index8*= 1</pre>
+<hr><h2 id="#_EB7DDD80"><a name="Displays.get"></a><a href="#Displays">Displays</a>.<a href="#Displays.get">get</a>
+</h2>
+<p> operations for Transfer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> get*= 0</pre>
+<hr><h2 id="#_EB7E13C0"><a name="Displays.red"></a><a href="#Displays">Displays</a>.<a href="#Displays.red">red</a>
+</h2>
+<p> color components.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> red*= 16711680</pre>
+<hr><h2 id="#_EB7E4680"><a name="Displays.trans"></a><a href="#Displays">Displays</a>.<a href="#Displays.trans">trans</a>
+</h2>
+<p> transparency for Mask.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> trans*= SIGNED32(2147483648)</pre>
+<hr><h2 id="#_EB7E8380"><a name="Displays.invert"></a><a href="#Displays">Displays</a>.<a href="#Displays.invert">invert</a>
+</h2>
+<p> inverting.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> invert*= 1073741824</pre>
+<hr><h2 id="#_EB7EB2C0"><a name="Displays.Display"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Display* =<strong>OBJECT</strong> (<strong>Plugins.Plugin</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>width: <strong>SIGNED32</strong><tr><td></td><td><a href="#Displays.Display.height">height</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Displays.Display.offscreen">offscreen</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Displays.Display.format">format</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Displays.Display.unit">unit</a>: <strong>SIGNED32</strong><tr><td></td><td>fbadr: <strong>ADDRESS</strong><tr><td></td><td>fbsize: <strong>SIGNED32</strong><tr><td></td><td><a href="#Displays.Display.fbstride">fbstride</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#Displays.Display.Transfer">Transfer</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, stride, x, y, w, h: <strong>SIZE</strong>; op: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Displays.Display.Fill">Fill</a> (col, x, y, w, h: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Displays.Display.Dot">Dot</a> (col, x, y: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Displays.Display.Mask">Mask</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bitof, stride, fg, bg, x, y, w, h: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Displays.Display.Copy">Copy</a> (sx, sy, w, h, dx, dy: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Displays.Display.Update">Update</a><tr><td></td><td> <a href="#Displays.Display.ColorToIndex">ColorToIndex</a> (col: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Displays.Display.IndexToColor">IndexToColor</a> (index: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Displays.Display.InitFrameBuffer">InitFrameBuffer</a> (adr: <strong>ADDRESS</strong>; size, stride: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Displays.Display.Finalize">Finalize</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_EB816840"><a name="Displays.Display.height"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.height">height</a>
+</h3>
+<p> dimensions of visible display.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> height*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_EB81A980"><a name="Displays.Display.offscreen"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.offscreen">offscreen</a>
+</h3>
+<p> number of non-visible lines at the bottom of the display.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> offscreen*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_EB820340"><a name="Displays.Display.format"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.format">format</a>
+</h3>
+<p> format for Transfer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> format*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_EB824040"><a name="Displays.Display.unit"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.unit">unit</a>
+</h3>
+<p> approximate square pixel size = unit/36000 mm.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> unit*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_EB828D80"><a name="Displays.Display.fbstride"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.fbstride">fbstride</a>
+</h3>
+<p> frame buffer address, size and stride</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> fbstride-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_EB82D740"><a name="Displays.Display.Transfer"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.Transfer">Transfer</a>
+</h3>
+<p> Transfer a block of pixels in "raw" display format to (op = set) or from (op = get) the display. Pixels in the rectangular area are transferred from left to right and top to bottom. The pixels are transferred to or from "buf", starting at "ofs". The line byte increment is "stride", which may be positive, negative or zero.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Transfer* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, stride, x, y, w, h: <strong>SIZE</strong>; op: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_EB8446C0"><a name="Displays.Display.Fill"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.Fill">Fill</a>
+</h3>
+<p> Fill a rectangle in color "col".</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Fill* (col, x, y, w, h: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_EB84BCC0"><a name="Displays.Display.Dot"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.Dot">Dot</a>
+</h3>
+<p> Equivalent to Fill(col, x, y, 1, 1).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Dot* (col, x, y: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_EB852540"><a name="Displays.Display.Mask"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.Mask">Mask</a>
+</h3>
+<p> Transfer a block of pixels from a 1-bit mask to the display. Pixels in the rectangular area are transferred from left to right and top to bottom. The pixels are transferred from "buf", starting at bit offset "bitofs". The line byte increment is "stride", which may be positive, negative or zero. "fg" and "bg" specify the colors for value 1 and 0 pixels respectively.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Mask* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bitof, stride, fg, bg, x, y, w, h: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_EB86A8C0"><a name="Displays.Display.Copy"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.Copy">Copy</a>
+</h3>
+<p> Copy source block sx, sy, w, h to destination dx, dy. Overlap is allowed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Copy* (sx, sy, w, h, dx, dy: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_EB874440"><a name="Displays.Display.Update"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.Update">Update</a>
+</h3>
+<p> Update the visible display (if caching is used).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update*</pre>
+<hr><h3 id="#_EB878FC0"><a name="Displays.Display.ColorToIndex"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.ColorToIndex">ColorToIndex</a>
+</h3>
+<p> Map a color value to an 8-bit CLUT index. Only used if format = index8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ColorToIndex* (col: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_EB880C40"><a name="Displays.Display.IndexToColor"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.IndexToColor">IndexToColor</a>
+</h3>
+<p> Map an 8-bit CLUT index to a color value. Only used if format = index8.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IndexToColor* (index: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_EB8888C0"><a name="Displays.Display.InitFrameBuffer"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.InitFrameBuffer">InitFrameBuffer</a>
+</h3>
+<p> Initialize a linear frame buffer for Transfer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitFrameBuffer* (adr: <strong>ADDRESS</strong>; size, stride: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_EB88F840"><a name="Displays.Display.Finalize"></a><a href="#Displays">Displays</a>.<a href="#Displays.Display">Display</a>.<a href="#Displays.Display.Finalize">Finalize</a>
+</h3>
+<p> Finalize the display. Further calls to display methods are not allowed, and may cause exceptions.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Finalize*</pre>
+</body></html>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#SSHPackets">SSHPackets</a></p>
+<hr><h1 id="#_26D9A5C0"><a name="SSHPackets"></a><a href="#ModuleList">Module</a> SSHPackets
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Disconn= 1X<tr><td></td><td>Ignore= 2X<tr><td></td><td>Unimpl= 3X<tr><td></td><td>Debug= 4X<tr><td></td><td>ServiceRequest= 5X<tr><td></td><td>ServiceAccept= 6X<tr><td></td><td>KEXInit= 14X<tr><td></td><td>NewKeys= 15X<tr><td></td><td>DHInit= 1EX<tr><td></td><td>DHReply= 1FX<tr><td></td><td>GEXInit= 20X<tr><td></td><td>GEXReply= 21X<tr><td></td><td>GEXRequest= 22X<tr><td></td><td>GEXGroup= 1FX<tr><td></td><td>UserauthRequest= 32X<tr><td></td><td>UserauthFailure= 33X<tr><td></td><td>UserauthSuccess= 34X<tr><td></td><td>UserauthBanner= 35X<tr><td></td><td>UserauthPkOk= 3CX<tr><td></td><td>GlobalRequest= 50X<tr><td></td><td>RequestSuccess= 51X<tr><td></td><td>RequestFailure= 52X<tr><td></td><td>ChannelOpen= 5AX<tr><td></td><td>OpenConfirm= 5BX<tr><td></td><td>OpenFailure= 5CX<tr><td></td><td>WindAdjust= 5DX<tr><td></td><td>Data= 5EX<tr><td></td><td>ExtData= 5FX<tr><td></td><td>ChannelEOF= 60X<tr><td></td><td>ChannelClose= 61X<tr><td></td><td>ChannelRequest= 62X<tr><td></td><td>ChannelSuccess= 63X<tr><td></td><td>ChannelFailure= 64X<tr><th align='left'>type declarations</th><td><a href="#SSHPackets.Packet">Packet</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>emptyPacket: <strong>Packet</strong><tr><th align='left'>procedures</th><td> MakeReceivedPacket (<strong>CONST</strong> trbuf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>): <strong>Packet</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_26DC06C0"><a name="SSHPackets.Packet"></a><a href="#SSHPackets">SSHPackets</a>.<a href="#SSHPackets.Packet">Packet</a>
+</h2>
+<p> SSH Packet</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Packet* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>buf: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>type: <strong>CHAR</strong><tr><td></td><td>len: <strong>SIZE</strong><tr><td></td><td>pos: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (ptype: <strong>CHAR</strong>; bufsize: <strong>SIZE</strong>)<tr><td></td><td> AppInteger (v: <strong>SIZE</strong>)<tr><td></td><td> AppChar (c: <strong>CHAR</strong>)<tr><td></td><td> AppString (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AppArray (<strong>CONST</strong> arr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, arlen: <strong>SIZE</strong>)<tr><td></td><td> AppBigNumber (b: <strong>B.BigNumber</strong>)<tr><td></td><td> SetPos (p: <strong>SIZE</strong>)<tr><td></td><td> IncPos (i: <strong>INTEGER</strong>)<tr><td></td><td> GetInteger (): <strong>SIGNED32</strong><tr><td></td><td> GetChar (): <strong>CHAR</strong><tr><td></td><td> GetBlobInfo (<strong>VAR</strong> start, size: <strong>SIZE</strong>)<tr><td></td><td> GetString (<strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetArray (<strong>VAR</strong> arr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> arlen: <strong>SIZE</strong>)<tr><td></td><td> GetBigNumber (): <strong>B.BigNumber</strong><tr><td></td><td> Show</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

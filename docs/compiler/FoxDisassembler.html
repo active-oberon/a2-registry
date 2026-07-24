@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxDisassembler">FoxDisassembler</a></p>
+<hr><h1 id="#_5D9D9300"><a name="FoxDisassembler"></a><a href="#ModuleList">Module</a> FoxDisassembler
+</h1>
+<p> AUTHOR ""; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>Unit =<strong>ObjectFile.Unit</strong><tr><td></td><td><a href="#FoxDisassembler.Block">Block</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>ObjectFile.Section</strong>)<tr><td></td><td><a href="#FoxDisassembler.Disassembler">Disassembler</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> FindPC (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5D9E19C0"><a name="FoxDisassembler.Block"></a><a href="#FoxDisassembler">FoxDisassembler</a>.<a href="#FoxDisassembler.Block">Block</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Block* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>ObjectFile.Section</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>to: <strong>Unit</strong><tr><td></td><td>next: <strong>Block</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5D9E7300"><a name="FoxDisassembler.Disassembler"></a><a href="#FoxDisassembler">FoxDisassembler</a>.<a href="#FoxDisassembler.Disassembler">Disassembler</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Disassembler* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>codeDisplacement: <strong>Unit</strong><tr><th align='left'>procedures</th><td>& Init (w: <strong>Streams.Writer</strong>)<tr><td></td><td> GetLogFile (<strong>CONST</strong> binaryFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Files.File</strong><tr><td></td><td> WriteReference (adr: <strong>Unit</strong>; isCode: <strong>BOOLEAN</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> DisassembleInstruction (bitset: <strong>BitSets.BitSet</strong>; <strong>VAR</strong> address: <strong>Unit</strong>; maxInstructionSize: <strong>Unit</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> ParseLogFile (file: <strong>Files.File</strong>): <strong>Block</strong><tr><td></td><td> Disassemble (code, data: <strong>BitSets.BitSet</strong>; codeUnit, dataUnit: <strong>ObjectFile.Bits</strong>; logFile: <strong>Files.File</strong>; address: <strong>ADDRESS</strong>)<tr><td></td><td> SetDisplacements (code, data: <strong>Unit</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

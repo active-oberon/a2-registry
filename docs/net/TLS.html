@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#TLS">TLS</a></p>
+<hr><h1 id="#_D2694D40"><a name="TLS"></a><a href="#ModuleList">Module</a> TLS
+</h1>
+<p> AUTHOR "F.N."; PURPOSE "RFC 2246: Transport Layer Security v1.0";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#TLS.ServerHandshake">ServerHandshake</a>= 12<tr><td></td><td>ClientHandshake= 13<tr><td></td><td><a href="#TLS.TlsRsaWithNullMd5">TlsRsaWithNullMd5</a>= 1<tr><td></td><td>TlsRsaWithNullSha= 2<tr><td></td><td>TlsRsaWithRc4128Md5= 4<tr><td></td><td>TlsRsaWithRc4128Sha= 5<tr><td></td><td>TlsRsaWithIdeaCbcSha= 7<tr><td></td><td>TlsRsaWithDesCbcSha= 9<tr><td></td><td>TlsRsaWith3DesEdeCbcSha= 10<tr><td></td><td>TlsRsaWithAes128CbcSha= 47<tr><td></td><td>TlsRsaWithAes256CbcSha= 53<tr><td></td><td><a href="#TLS.ChangeCipherSpec">ChangeCipherSpec</a>= 20<tr><td></td><td>Alert= 21<tr><td></td><td>Handshake= 22<tr><td></td><td>ApplicationData= 23<tr><td></td><td>SSLv2ClientHello= 128<tr><td></td><td><a href="#TLS.HelloRequest">HelloRequest</a>= 0<tr><td></td><td>ClientHello= 1<tr><td></td><td>ServerHello= 2<tr><td></td><td>Certificate= 11<tr><td></td><td>ServerKeyExchange= 12<tr><td></td><td>CertificateRequest= 13<tr><td></td><td>ServerHelloDone= 14<tr><td></td><td>CertificateVerify= 15<tr><td></td><td>ClientKeyExchange= 16<tr><td></td><td>Finished= 20<tr><td></td><td>V2ClientHello= 30<tr><td></td><td><a href="#TLS.Ok">Ok</a>= 0<tr><td></td><td>TLSHandshakeAborted= 2<tr><td></td><td>Suites= 20<tr><th align='left'>type declarations</th><td><a href="#TLS.Policy">Policy</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#TLS.Context">Context</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#TLS.Connection">Connection</a> =<strong>OBJECT</strong> (<strong>TCP.Connection</strong>)<tr><th align='left'>procedures</th><td> <a href="#TLS.GetConnection">GetConnection</a> (): <strong>Connection</strong><tr><td></td><td> GetServerConnection (<strong>CONST</strong> certificate, pHex, qHex, eHex: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pLen, qLen, eLen: <strong>SIGNED32</strong>): <strong>Connection</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_D26BFC80">
+</h1><hr><h2 id="#_D26C0440"><a name="TLS.ServerHandshake"></a><a href="#TLS">TLS</a>.<a href="#TLS.ServerHandshake">ServerHandshake</a>
+</h2>
+<p> tlsStates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ServerHandshake*= 12</pre>
+<hr><h2 id="#_D26C32C0"><a name="TLS.TlsRsaWithNullMd5"></a><a href="#TLS">TLS</a>.<a href="#TLS.TlsRsaWithNullMd5">TlsRsaWithNullMd5</a>
+</h2>
+<p> available cipher suites</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TlsRsaWithNullMd5*= 1</pre>
+<hr><h2 id="#_D26C69C0"><a name="TLS.ChangeCipherSpec"></a><a href="#TLS">TLS</a>.<a href="#TLS.ChangeCipherSpec">ChangeCipherSpec</a>
+</h2>
+<p> record layer content type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ChangeCipherSpec*= 20</pre>
+<hr><h2 id="#_D26CA440"><a name="TLS.HelloRequest"></a><a href="#TLS">TLS</a>.<a href="#TLS.HelloRequest">HelloRequest</a>
+</h2>
+<p> handshake message types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HelloRequest*= 0</pre>
+<hr><h2 id="#_D26CDB40"><a name="TLS.Ok"></a><a href="#TLS">TLS</a>.<a href="#TLS.Ok">Ok</a>
+</h2>
+<p> error numbers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_D26D0D40"><a name="TLS.Policy"></a><a href="#TLS">TLS</a>.<a href="#TLS.Policy">Policy</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Policy* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>cipherSuites: <strong>ARRAY</strong> Suites <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td><a href="#TLS.Policy.nofCipherSuites">nofCipherSuites</a>: <strong>SIZE</strong><tr><td></td><td>sessionResumptionEnabled: <strong>BOOLEAN</strong><tr><td></td><td><a href="#TLS.Policy.sessionLifetime">sessionLifetime</a>: <strong>SIGNED32</strong><tr><td></td><td>version: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> <a href="#TLS.Policy.SetCipherSuites">SetCipherSuites</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong>; n: <strong>SIZE</strong>)<tr><td></td><td> <a href="#TLS.Policy.IsSupported">IsSupported</a> (s: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#TLS.Policy.EnableSessionResumption">EnableSessionResumption</a> (enable: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#TLS.Policy.SetSessionLifetime">SetSessionLifetime</a> (t: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#TLS.Policy.SetVersion">SetVersion</a> (major, minor: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_D26E6080"><a name="TLS.Policy.nofCipherSuites"></a><a href="#TLS">TLS</a>.<a href="#TLS.Policy">Policy</a>.<a href="#TLS.Policy.nofCipherSuites">nofCipherSuites</a>
+</h3>
+<p> number of enabled cipher-suites</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> nofCipherSuites-: <strong>SIZE</strong></pre>
+<hr><h3 id="#_D26EA2C0"><a name="TLS.Policy.sessionLifetime"></a><a href="#TLS">TLS</a>.<a href="#TLS.Policy">Policy</a>.<a href="#TLS.Policy.sessionLifetime">sessionLifetime</a>
+</h3>
+<p> seconds</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> sessionLifetime-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_D26ED800"><a name="TLS.Policy.SetCipherSuites"></a><a href="#TLS">TLS</a>.<a href="#TLS.Policy">Policy</a>.<a href="#TLS.Policy.SetCipherSuites">SetCipherSuites</a>
+</h3>
+<p> set n negotiable cipher suites in order of preference</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetCipherSuites* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong>; n: <strong>SIZE</strong>)</pre>
+<hr><h3 id="#_D26F5280"><a name="TLS.Policy.IsSupported"></a><a href="#TLS">TLS</a>.<a href="#TLS.Policy">Policy</a>.<a href="#TLS.Policy.IsSupported">IsSupported</a>
+</h3>
+<p> Returns TRUE if the cipher-suite s is supported by this policy</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsSupported* (s: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_D26FC100"><a name="TLS.Policy.EnableSessionResumption"></a><a href="#TLS">TLS</a>.<a href="#TLS.Policy">Policy</a>.<a href="#TLS.Policy.EnableSessionResumption">EnableSessionResumption</a>
+</h3>
+<p> set whether sessions may be resumed; default is TRUE</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnableSessionResumption* (enable: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_D2702180"><a name="TLS.Policy.SetSessionLifetime"></a><a href="#TLS">TLS</a>.<a href="#TLS.Policy">Policy</a>.<a href="#TLS.Policy.SetSessionLifetime">SetSessionLifetime</a>
+</h3>
+<p> lifetime of a session in seconds; default: 3600s</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetSessionLifetime* (t: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_D2707F80"><a name="TLS.Policy.SetVersion"></a><a href="#TLS">TLS</a>.<a href="#TLS.Policy">Policy</a>.<a href="#TLS.Policy.SetVersion">SetVersion</a>
+</h3>
+<p> set TLS version to use</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetVersion* (major, minor: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_D270D800"><a name="TLS.Context"></a><a href="#TLS">TLS</a>.<a href="#TLS.Context">Context</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Context* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>policy: <strong>Policy</strong><tr><th align='left'>procedures</th><td>& Init (p: <strong>Policy</strong>)<tr><td></td><td> Dispose<tr><td></td><td> <a href="#TLS.Context.LoadRsaCertificate">LoadRsaCertificate</a> (filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#TLS.Context.LoadRsaPrivateKey">LoadRsaPrivateKey</a> (pHex, qHex, eHex: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pLen, qLen, eLen: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#TLS.Context.GetRsaPublicKey">GetRsaPublicKey</a><tr><td></td><td> PrintRsaCertificate<tr><td></td><td> <a href="#TLS.Context.GetNewServerSession">GetNewServerSession</a> (): <strong>Session</strong><tr><td></td><td> <a href="#TLS.Context.FindSessionByID">FindSessionByID</a> (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, idLen: <strong>SIZE</strong>): <strong>Session</strong><tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_D2722EC0"><a name="TLS.Context.LoadRsaCertificate"></a><a href="#TLS">TLS</a>.<a href="#TLS.Context">Context</a>.<a href="#TLS.Context.LoadRsaCertificate">LoadRsaCertificate</a>
+</h3>
+<p> Loads the rsa-certificate specified with filename. The certificate must be DER-formatted</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadRsaCertificate* (filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_D272A540"><a name="TLS.Context.LoadRsaPrivateKey"></a><a href="#TLS">TLS</a>.<a href="#TLS.Context">Context</a>.<a href="#TLS.Context.LoadRsaPrivateKey">LoadRsaPrivateKey</a>
+</h3>
+<p> Loads the material needed to establish an rsa private key. Parameters p and q are two big prime numbers, e is the public exponent of the public key of the rsa certificate to be used. p, q and e have to be hexadecimal strings. pLen, qLen and eLen are the lengths of the hex strings</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadRsaPrivateKey* (pHex, qHex, eHex: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pLen, qLen, eLen: <strong>SIGNED16</strong>)</pre>
+<hr><h3 id="#_D273EC40"><a name="TLS.Context.GetRsaPublicKey"></a><a href="#TLS">TLS</a>.<a href="#TLS.Context">Context</a>.<a href="#TLS.Context.GetRsaPublicKey">GetRsaPublicKey</a>
+</h3>
+<p> Fills rsaPublicKey from server certificate.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetRsaPublicKey*</pre>
+<hr><h3 id="#_D2742C40"><a name="TLS.Context.GetNewServerSession"></a><a href="#TLS">TLS</a>.<a href="#TLS.Context">Context</a>.<a href="#TLS.Context.GetNewServerSession">GetNewServerSession</a>
+</h3>
+<p> A new server-side Session-object is created and returned according to the policy settings</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNewServerSession* (): <strong>Session</strong></pre>
+<hr><h3 id="#_D2749740"><a name="TLS.Context.FindSessionByID"></a><a href="#TLS">TLS</a>.<a href="#TLS.Context">Context</a>.<a href="#TLS.Context.FindSessionByID">FindSessionByID</a>
+</h3>
+<p> look up the session cache for a stored cache associated with the session-id of length len, starting at ofs in data. If no session is found, NIL is returned. This method is invoked by a TLS-server.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindSessionByID* (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, idLen: <strong>SIZE</strong>): <strong>Session</strong></pre>
+<hr><h2 id="#_D2758600"><a name="TLS.Connection"></a><a href="#TLS">TLS</a>.<a href="#TLS.Connection">Connection</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Connection* =<strong>OBJECT</strong> (<strong>TCP.Connection</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#TLS.Connection.tlsErrorCause">tlsErrorCause</a>: <strong>SIGNED32</strong><tr><td></td><td>version: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>sniName: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> AwaitStateNotEqual (s: <strong>SIGNED32</strong>)<tr><td></td><td> AwaitStateEqual (s: <strong>SIGNED32</strong>)<tr><td></td><td> SetState (s: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#TLS.Connection.SetContext">SetContext</a> (ctx: <strong>Context</strong>)<tr><td></td><td> <a href="#TLS.Connection.Open">Open</a> (lport: <strong>UNSIGNED32</strong>; fip: <strong>IP.Adr</strong>; fport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> SetSniName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetDefaultPolicy<tr><td></td><td> SetConnection (c: <strong>TCP.Connection</strong>)<tr><td></td><td> <a href="#TLS.Connection.Accept">Accept</a> (<strong>VAR</strong> client: <strong>TCP.Connection</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#TLS.Connection.Connect">Connect</a><tr><td></td><td> <a href="#TLS.Connection.Close">Close</a><tr><td></td><td> <a href="#TLS.Connection.Send">Send</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#TLS.Connection.Receive">Receive</a> (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_D27827C0"><a name="TLS.Connection.tlsErrorCause"></a><a href="#TLS">TLS</a>.<a href="#TLS.Connection">Connection</a>.<a href="#TLS.Connection.tlsErrorCause">tlsErrorCause</a>
+</h3>
+<p> alert type that lead to failure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> tlsErrorCause-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_D2787100"><a name="TLS.Connection.SetContext"></a><a href="#TLS">TLS</a>.<a href="#TLS.Connection">Connection</a>.<a href="#TLS.Connection.SetContext">SetContext</a>
+</h3>
+<p> Must be called before Open</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetContext* (ctx: <strong>Context</strong>)</pre>
+<hr><h3 id="#_D278C200"><a name="TLS.Connection.Open"></a><a href="#TLS">TLS</a>.<a href="#TLS.Connection">Connection</a>.<a href="#TLS.Connection.Open">Open</a>
+</h3>
+<p> open a TLS connection (only use once per Connection instance). Use IP.NilPort for lport to automatically assign an unused local port. Use IP.NilAdr for fip to open a passive connection.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (lport: <strong>UNSIGNED32</strong>; fip: <strong>IP.Adr</strong>; fport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_D279A040"><a name="TLS.Connection.Accept"></a><a href="#TLS">TLS</a>.<a href="#TLS.Connection">Connection</a>.<a href="#TLS.Connection.Accept">Accept</a>
+</h3>
+<p> Call this method only on a passive (listenig server-side) TLS.Connection. Non blocking</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Accept* (<strong>VAR</strong> client: <strong>TCP.Connection</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_D27A21C0"><a name="TLS.Connection.Connect"></a><a href="#TLS">TLS</a>.<a href="#TLS.Connection">Connection</a>.<a href="#TLS.Connection.Connect">Connect</a>
+</h3>
+<p> Sets up the TCP connection for a client-side connection.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Connect*</pre>
+<hr><h3 id="#_D27A70C0"><a name="TLS.Connection.Close"></a><a href="#TLS">TLS</a>.<a href="#TLS.Connection">Connection</a>.<a href="#TLS.Connection.Close">Close</a>
+</h3>
+<p> Close this TLS.Connection</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close*</pre>
+<hr><h3 id="#_D27AA780"><a name="TLS.Connection.Send"></a><a href="#TLS">TLS</a>.<a href="#TLS.Connection">Connection</a>.<a href="#TLS.Connection.Send">Send</a>
+</h3>
+<p> Send secured data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Send* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_D27B30C0"><a name="TLS.Connection.Receive"></a><a href="#TLS">TLS</a>.<a href="#TLS.Connection">Connection</a>.<a href="#TLS.Connection.Receive">Receive</a>
+</h3>
+<p> Receive secured data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Receive* (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_D27BC500"><a name="TLS.GetConnection"></a><a href="#TLS">TLS</a>.<a href="#TLS.GetConnection">GetConnection</a>
+</h2>
+<p> Returns a new connection with a reasonnable default policy</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetConnection* (): <strong>Connection</strong></pre>
+</body></html>

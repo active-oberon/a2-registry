@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#DynamicStrings">DynamicStrings</a></p>
+<hr><h1 id="#_375F7680"><a name="DynamicStrings"></a><a href="#ModuleList">Module</a> DynamicStrings
+</h1>
+<p> Stefan Walthert</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#DynamicStrings.CR">CR</a>= 0DX<tr><td></td><td><a href="#DynamicStrings.Tab">Tab</a>= 9X<tr><td></td><td><a href="#DynamicStrings.LF">LF</a>= 0AX<tr><th align='left'>type declarations</th><td>String =<strong>Strings.String</strong><tr><td></td><td><a href="#DynamicStrings.DynamicString">DynamicString</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DynamicStrings.Pool">Pool</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> StringLength (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> StringAppend (<strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> this: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Lower (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lstr: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> LowerCh (ch: <strong>CHAR</strong>): <strong>CHAR</strong><tr><td></td><td> Search (<strong>CONST</strong> pat, src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>)<tr><td></td><td> ClearStatistics</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_376111C0">
+</h1>
+<p> AUTHOR "swalthert"; PURPOSE "Dynamic strings";</p>
+<hr><h2 id="#_37613080"><a name="DynamicStrings.CR"></a><a href="#DynamicStrings">DynamicStrings</a>.<a href="#DynamicStrings.CR">CR</a>
+</h2>
+<p> the Oberon end of line character</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CR*= 0DX</pre>
+<hr><h2 id="#_37617300"><a name="DynamicStrings.Tab"></a><a href="#DynamicStrings">DynamicStrings</a>.<a href="#DynamicStrings.Tab">Tab</a>
+</h2>
+<p> the horizontal tab character</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Tab*= 9X</pre>
+<hr><h2 id="#_3761AE40"><a name="DynamicStrings.LF"></a><a href="#DynamicStrings">DynamicStrings</a>.<a href="#DynamicStrings.LF">LF</a>
+</h2>
+<p> the UNIX end of line character</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LF*= 0AX</pre>
+<hr><h2 id="#_3761F0C0"><a name="DynamicStrings.DynamicString"></a><a href="#DynamicStrings">DynamicStrings</a>.<a href="#DynamicStrings.DynamicString">DynamicString</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DynamicString* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Clear<tr><td></td><td> Put (ch: <strong>CHAR</strong>; at: <strong>SIZE</strong>)<tr><td></td><td> Get (at: <strong>SIZE</strong>): <strong>CHAR</strong><tr><td></td><td> AppendCharacter (ch: <strong>CHAR</strong>)<tr><td></td><td> Append (<strong>CONST</strong> this: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Extract (offset, len: <strong>SIZE</strong>): <strong>String</strong><tr><td></td><td> Length (): <strong>SIZE</strong><tr><td></td><td> ToArrOfChar (): <strong>String</strong><tr><td></td><td> FromArrOfChar (s: <strong>String</strong>)<tr><td></td><td> <a href="#DynamicStrings.DynamicString.CopyFrom">CopyFrom</a> (ds: <strong>DynamicString</strong>; offset, len: <strong>SIZE</strong>)<tr><td></td><td> EqualsTo (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ignoreCase: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_3763A1C0"><a name="DynamicStrings.DynamicString.CopyFrom"></a><a href="#DynamicStrings">DynamicStrings</a>.<a href="#DynamicStrings.DynamicString">DynamicString</a>.<a href="#DynamicStrings.DynamicString.CopyFrom">CopyFrom</a>
+</h3>
+<p> Copy <a name="len&gt"></a> characters starting at <a name="offset&gt"></a> from string <a name="ds&gt"></a> into this dynamic string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CopyFrom* (ds: <strong>DynamicString</strong>; offset, len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_37642740"><a name="DynamicStrings.Pool"></a><a href="#DynamicStrings">DynamicStrings</a>.<a href="#DynamicStrings.Pool">Pool</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Pool* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Clear<tr><td></td><td> <a href="#DynamicStrings.Pool.Get">Get</a> (ds: <strong>DynamicString</strong>): <strong>Strings.String</strong><tr><td></td><td> Dump (out: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_3764A740"><a name="DynamicStrings.Pool.Get"></a><a href="#DynamicStrings">DynamicStrings</a>.<a href="#DynamicStrings.Pool">Pool</a>.<a href="#DynamicStrings.Pool.Get">Get</a>
+</h3>
+<p> Get string from pool. If the string is not contained in the pool, a copy of it is added to the pool</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (ds: <strong>DynamicString</strong>): <strong>Strings.String</strong></pre>
+</body></html>

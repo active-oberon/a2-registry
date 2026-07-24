@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#TCP">TCP</a></p>
+<hr><h1 id="#_BD4A15C0"><a name="TCP"></a><a href="#ModuleList">Module</a> TCP
+</h1>
+<p> AUTHOR "pjm, mvt, G.F."; PURPOSE "TCP protocol";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>NilPort= 0<tr><td></td><td><a href="#TCP.Ok">Ok</a>= 0<tr><td></td><td>ConnectionRefused= 3701<tr><td></td><td>ConnectionReset= 3702<tr><td></td><td>WrongInterface= 3703<tr><td></td><td>TimedOut= 3704<tr><td></td><td>NotConnected= 3705<tr><td></td><td>NoInterface= 3706<tr><td></td><td>InterfaceClosed= 3707<tr><td></td><td><a href="#TCP.NumStates">NumStates</a>= 4<tr><td></td><td>Closed= 0<tr><td></td><td>Listen= 1<tr><td></td><td>Established= 2<tr><td></td><td>Unused= 4<tr><td></td><td>OpenStates= {Listen,Established}<tr><td></td><td>ClosedStates= {Unused,Closed}<tr><td></td><td>HalfClosedStates= (ClosedStates+{})<tr><td></td><td>FinStates= {Unused,Closed}<tr><th align='left'>type declarations</th><td><a href="#TCP.Connection">Connection</a> =<strong>OBJECT</strong> (<strong>Streams.Connection</strong>)<tr><th align='left'>procedures</th><td> <a href="#TCP.DisplayErrors">DisplayErrors</a> (par: @Any0): @Any0<tr><td></td><td> <a href="#TCP.DiscardAll">DiscardAll</a> (par: @Any0): @Any0<tr><td></td><td> <a href="#TCP.ToggleTrace">ToggleTrace</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_BD4BE480">
+</h1><hr><h2 id="#_BD4BEC40"><a name="TCP.Ok"></a><a href="#TCP">TCP</a>.<a href="#TCP.Ok">Ok</a>
+</h2>
+<p> Error codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_BD4C1E40"><a name="TCP.NumStates"></a><a href="#TCP">TCP</a>.<a href="#TCP.NumStates">NumStates</a>
+</h2>
+<p> TCP connection states</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NumStates*= 4</pre>
+<hr><h2 id="#_BD4C5540"><a name="TCP.Connection"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>
+</h2>
+<p> Connection object. NOTE Only one process should access a Connection!</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Connection* =<strong>OBJECT</strong> (<strong>Streams.Connection</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>int: <strong>IP.Interface</strong><tr><td></td><td>lport: <strong>UNSIGNED32</strong><tr><td></td><td>fip: <strong>IP.Adr</strong><tr><td></td><td>fport: <strong>UNSIGNED32</strong><tr><td></td><td>state: <strong>SIGNED8</strong><tr><td></td><td>irs: <strong>SIGNED32</strong><tr><td></td><td>rcvnxt: <strong>SIGNED32</strong><tr><td></td><td>iss: <strong>SIGNED32</strong><tr><td></td><td>sndnxt: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> <a href="#TCP.Connection.Open">Open</a> (lport: <strong>UNSIGNED32</strong>; fip: <strong>IP.Adr</strong>; fport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#TCP.Connection.Send">Send</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#TCP.Connection.Receive">Receive</a> (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#TCP.Connection.DelaySend">DelaySend</a> (enable: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#TCP.Connection.KeepAlive">KeepAlive</a> (enable: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#TCP.Connection.Available">Available</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#TCP.Connection.State">State</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#TCP.Connection.AwaitState">AwaitState</a> (good, bad: <strong>SET</strong>; ms: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#TCP.Connection.Close">Close</a><tr><td></td><td> <a href="#TCP.Connection.Discard">Discard</a><tr><td></td><td> <a href="#TCP.Connection.Accept">Accept</a> (<strong>VAR</strong> client: <strong>Connection</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#TCP.Connection.Requested">Requested</a> (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_BD4F5B80"><a name="TCP.Connection.Open"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.Open">Open</a>
+</h3>
+<p> Open a TCP connection (only use once per Connection instance). Use TCP.NilPort for lport to automatically assign an unused local port.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (lport: <strong>UNSIGNED32</strong>; fip: <strong>IP.Adr</strong>; fport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_BD5017C0"><a name="TCP.Connection.Send"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.Send">Send</a>
+</h3>
+<p> Send data on a TCP connection.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Send* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_BD50AD40"><a name="TCP.Connection.Receive"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.Receive">Receive</a>
+</h3>
+<p> Receive data on a TCP connection. The data parameter specifies the buffer. The ofs parameters specify the position in the buffer where data should be received (usually 0), and the size parameters specifies how many bytes of data can be received in the buffer. The min parameter specifies the minimum number of bytes to receive before Receive returns and must by <a name="="></a> size. The len parameter returns the number of bytes received, and the res parameter returns 0 if ok, or a non-zero error code otherwise (e.g. if the connection is closed by the communication partner, or by a call of the Close method).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Receive* (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_BD52C240"><a name="TCP.Connection.DelaySend"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.DelaySend">DelaySend</a>
+</h3>
+<p> Enable or disable delayed send (Nagle algorithm). If enabled, the sending of a segment is delayed if it is not filled by one call to Send, in order to be able to be filled by further calls to Send. This is the default option. If disabled, a segment is sent immediatly after a call to Send, even if it is not filled. This option is normally chosen by applications like telnet or VNC client, which send verly little data but shall not be delayed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DelaySend* (enable: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_BD5444C0"><a name="TCP.Connection.KeepAlive"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.KeepAlive">KeepAlive</a>
+</h3>
+<p> Enable or disable keep-alive. (default: disabled)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> KeepAlive* (enable: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_BD5499C0"><a name="TCP.Connection.Available"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.Available">Available</a>
+</h3>
+<p> Return number of bytes that may be read without blocking.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Available* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_BD54F8C0"><a name="TCP.Connection.State"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.State">State</a>
+</h3>
+<p> Return connection state.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> State* (): <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_BD553C00"><a name="TCP.Connection.AwaitState"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.AwaitState">AwaitState</a>
+</h3>
+<p> Wait until the connection state is either in the good or bad set, up to "ms" milliseconds.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AwaitState* (good, bad: <strong>SET</strong>; ms: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_BD55E380"><a name="TCP.Connection.Close"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.Close">Close</a>
+</h3>
+<p> Close a TCP connection (half-close).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close*</pre>
+<hr><h3 id="#_BD562480"><a name="TCP.Connection.Discard"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.Discard">Discard</a>
+</h3>
+<p> Discard a TCP connection (shutdown).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Discard*</pre>
+<hr><h3 id="#_BD566480"><a name="TCP.Connection.Accept"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.Accept">Accept</a>
+</h3>
+<p> Accept a client waiting on a listening connection. Blocks until a client is available or the connection is closed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Accept* (<strong>VAR</strong> client: <strong>Connection</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_BD570100"><a name="TCP.Connection.Requested"></a><a href="#TCP">TCP</a>.<a href="#TCP.Connection">Connection</a>.<a href="#TCP.Connection.Requested">Requested</a>
+</h3>
+<p> Return TRUE iff a listening connection has clients waiting to be accepted.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Requested* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_BD576880"><a name="TCP.DisplayErrors"></a><a href="#TCP">TCP</a>.<a href="#TCP.DisplayErrors">DisplayErrors</a>
+</h2>
+<p> Aos command - display all errors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DisplayErrors* (par: @Any0): @Any0</pre>
+<hr><h2 id="#_BD57BBC0"><a name="TCP.DiscardAll"></a><a href="#TCP">TCP</a>.<a href="#TCP.DiscardAll">DiscardAll</a>
+</h2>
+<p> Aos command - discard and finalize all connections</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DiscardAll* (par: @Any0): @Any0</pre>
+<hr><h2 id="#_BD581780"><a name="TCP.ToggleTrace"></a><a href="#TCP">TCP</a>.<a href="#TCP.ToggleTrace">ToggleTrace</a>
+</h2>
+<p> Temporary trace procedure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToggleTrace*</pre>
+</body></html>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxCSharpScanner">FoxCSharpScanner</a></p>
+<hr><h1 id="#_85934FC0"><a name="FoxCSharpScanner"></a><a href="#ModuleList">Module</a> FoxCSharpScanner
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>MaxIdentifierLength= FoxScanner.MaxIdentifierLength<tr><td></td><td>MaxHexDigits= FoxScanner.MaxHexDigits<tr><td></td><td>MaxHugeHexDigits= FoxScanner.MaxHugeHexDigits<tr><td></td><td>MaxRealExponent= FoxScanner.MaxRealExponent<tr><td></td><td>MaxLongrealExponent= FoxScanner.MaxLongrealExponent<tr><td></td><td>EOT= 0X<tr><td></td><td>LF= 0AX<tr><td></td><td>CR= 0DX<tr><td></td><td>TAB= 9X<tr><td></td><td>None= 0<tr><td></td><td>Exclamation= 1<tr><td></td><td>ExclamationEqual= 2<tr><td></td><td>Percent= 3<tr><td></td><td>PercentEqual= 4<tr><td></td><td>And= 5<tr><td></td><td>AndEqual= 6<tr><td></td><td>AndAnd= 7<tr><td></td><td>LeftParenthesis= 8<tr><td></td><td>RightParenthesis= 9<tr><td></td><td>Times= 10<tr><td></td><td>TimesEqual= 11<tr><td></td><td>Plus= 12<tr><td></td><td>PlusEqual= 13<tr><td></td><td>PlusPlus= 14<tr><td></td><td>Comma= 15<tr><td></td><td>Minus= 16<tr><td></td><td>MinusEqual= 17<tr><td></td><td>MinusMinus= 18<tr><td></td><td>Period= 19<tr><td></td><td>Slash= 20<tr><td></td><td>SlashEqual= 21<tr><td></td><td>Colon= 22<tr><td></td><td>Semicolon= 23<tr><td></td><td>Less= 24<tr><td></td><td>LessEqual= 25<tr><td></td><td>LeftShift= 26<tr><td></td><td>LeftShiftEqual= 27<tr><td></td><td>Equal= 28<tr><td></td><td>EqualEqual= 29<tr><td></td><td>Greater= 30<tr><td></td><td>GreaterEqual= 31<tr><td></td><td>RightShift= 32<tr><td></td><td>RightShiftEqual= 33<tr><td></td><td>LeftBracket= 34<tr><td></td><td>RightBracket= 35<tr><td></td><td>Arrow= 36<tr><td></td><td>ArrowEqual= 37<tr><td></td><td>LeftBrace= 38<tr><td></td><td>Bar= 39<tr><td></td><td>BarEqual= 40<tr><td></td><td>BarBar= 41<tr><td></td><td>RightBrace= 42<tr><td></td><td>Tilde= 43<tr><td></td><td>As= 44<tr><td></td><td>Base= 45<tr><td></td><td>Bool= 46<tr><td></td><td>Break= 47<tr><td></td><td>Case= 48<tr><td></td><td>Char= 49<tr><td></td><td>Class= 50<tr><td></td><td>Const= 51<tr><td></td><td>Default= 52<tr><td></td><td>Delegate= 53<tr><td></td><td>Do= 54<tr><td></td><td>Double= 55<tr><td></td><td>Else= 56<tr><td></td><td>False= 57<tr><td></td><td>Float= 58<tr><td></td><td>For= 59<tr><td></td><td>If= 60<tr><td></td><td>Import= 61<tr><td></td><td>Int= 62<tr><td></td><td>Internal= 63<tr><td></td><td>Is= 64<tr><td></td><td>Long= 65<tr><td></td><td>Module= 66<tr><td></td><td>New= 67<tr><td></td><td>Null= 68<tr><td></td><td>Object= 69<tr><td></td><td>Public= 70<tr><td></td><td>Readonly= 71<tr><td></td><td>Ref= 72<tr><td></td><td>Return= 73<tr><td></td><td>Sbyte= 74<tr><td></td><td>Short= 75<tr><td></td><td>String= 76<tr><td></td><td>Struct= 77<tr><td></td><td>Switch= 78<tr><td></td><td>This= 79<tr><td></td><td>True= 80<tr><td></td><td>Void= 81<tr><td></td><td>While= 82<tr><td></td><td>Identifier= 83<tr><td></td><td>IntegerLiteral= 84<tr><td></td><td>RealLiteral= 85<tr><td></td><td>CharacterLiteral= 86<tr><td></td><td>StringLiteral= 87<tr><td></td><td>Comment= 88<tr><td></td><td>Cell= 89<tr><td></td><td>Cellnet= 90<tr><td></td><td>In= 91<tr><td></td><td>Out= 92<tr><td></td><td>Select= 93<tr><td></td><td>Question= 94<tr><td></td><td>QuestionQuestion= 95<tr><td></td><td>EndOfText= 96<tr><td></td><td>IntNumber= 1<tr><td></td><td>LongNumber= 2<tr><td></td><td>FloatNumber= 3<tr><td></td><td>DoubleNumber= 4<tr><td></td><td>DoubleQuote= 22X<tr><th align='left'>type declarations</th><td>StringType =<strong>FoxScanner.StringType</strong><tr><td></td><td>IdentifierType =<strong>FoxScanner.IdentifierType</strong><tr><td></td><td>IdentifierString =<strong>FoxScanner.IdentifierString</strong><tr><td></td><td>Keyword =<strong>FoxScanner.Keyword</strong><tr><td></td><td><a href="#FoxCSharpScanner.KeywordTable">KeywordTable</a> =<strong>FoxScanner.KeywordTable</strong><tr><td></td><td>Symbol =<strong>SIGNED32</strong><tr><td></td><td><a href="#FoxCSharpScanner.Position">Position</a> =<strong>Basic.Position</strong><tr><td></td><td><a href="#FoxCSharpScanner.Token">Token</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxCSharpScanner.StringMaker">StringMaker</a> =<strong>FoxScanner.StringMaker</strong><tr><td></td><td><a href="#FoxCSharpScanner.Scanner">Scanner</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>symbols: <strong>ARRAY</strong> (EndOfText+1) <strong>OF</strong> <strong>Keyword</strong><tr><th align='left'>procedures</th><td> <a href="#FoxCSharpScanner.NewScanner">NewScanner</a> (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>SIGNED32</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>Scanner</strong><tr><td></td><td> TokenToString (<strong>CONST</strong> token: <strong>Token</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#FoxCSharpScanner.OutToken">OutToken</a> (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> token: <strong>Token</strong>)<tr><td></td><td> GetKeyword (symbol: <strong>SIGNED32</strong>; <strong>VAR</strong> identifier: <strong>IdentifierType</strong>)<tr><td></td><td> <a href="#FoxCSharpScanner.ReportKeywords">ReportKeywords</a> (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_859BA8C0"><a name="FoxCSharpScanner.KeywordTable"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.KeywordTable">KeywordTable</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> KeywordTable* =<strong>FoxScanner.KeywordTable</strong></pre>
+<hr><h2 id="#_859BCC00"><a name="FoxCSharpScanner.Position"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Position">Position</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Position* =<strong>Basic.Position</strong></pre>
+<hr><h2 id="#_859BEF40"><a name="FoxCSharpScanner.Token"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Token">Token</a>
+</h2>
+<dl>
+<dt><strong>token</strong></dt>
+<dd> data structure for the data transfer of the last read input from the scanner to the parser</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Token* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>position: <strong>Position</strong><tr><td></td><td>symbol: <strong>Symbol</strong><tr><td></td><td>identifier: <strong>IdentifierType</strong><tr><td></td><td>identifierString: <strong>IdentifierString</strong><tr><td></td><td>string: <strong>StringType</strong><tr><td></td><td>stringLength: <strong>SIZE</strong><tr><td></td><td>numberType: <strong>FoxScanner.SubType</strong><tr><td></td><td>integer: <strong>SIGNED64</strong><tr><td></td><td>character: <strong>CHAR</strong><tr><td></td><td>real: <strong>FLOAT64</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_859CFFC0"><a name="FoxCSharpScanner.StringMaker"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.StringMaker">StringMaker</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringMaker* =<strong>FoxScanner.StringMaker</strong></pre>
+<hr><h2 id="#_859D2300"><a name="FoxCSharpScanner.Scanner"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Scanner">Scanner</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scanner* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>source: <strong>StringType</strong><tr><td></td><td>position: <strong>Position</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitializeScanner (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>SIGNED32</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> <a href="#FoxCSharpScanner.Scanner.GetNextToken">GetNextToken</a> (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResetError<tr><td></td><td> <a href="#FoxCSharpScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a> (<strong>VAR</strong> diagnostics: <strong>Diagnostics.Diagnostics</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_859E2300"><a name="FoxCSharpScanner.Scanner.GetNextToken"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Scanner">Scanner</a>.<a href="#FoxCSharpScanner.Scanner.GetNextToken">GetNextToken</a>
+</h3>
+<p> get next token</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNextToken* (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_859E7540"><a name="FoxCSharpScanner.Scanner.ResetErrorDiagnostics"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Scanner">Scanner</a>.<a href="#FoxCSharpScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a>
+</h3>
+<p> set the diagnostics mode of the scanner (diagnostics = NIL ==&gt no report) and reset the error state intended for silent token peeeking after the end of a module</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ResetErrorDiagnostics* (<strong>VAR</strong> diagnostics: <strong>Diagnostics.Diagnostics</strong>)</pre>
+<hr><h2 id="#_859F2700"><a name="FoxCSharpScanner.NewScanner"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.NewScanner">NewScanner</a>
+</h2>
+<p> return a new scanner on a stream, error output via diagnostics</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewScanner* (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>SIGNED32</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>Scanner</strong></pre>
+<hr><h2 id="#_859FC5C0"><a name="FoxCSharpScanner.OutToken"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.OutToken">OutToken</a>
+</h2>
+<p> debugging output</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OutToken* (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> token: <strong>Token</strong>)</pre>
+<hr><h2 id="#_85A01480"><a name="FoxCSharpScanner.ReportKeywords"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.ReportKeywords">ReportKeywords</a>
+</h2>
+<p> debugging / reporting</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReportKeywords* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

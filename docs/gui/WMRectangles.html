@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#WMRectangles">WMRectangles</a></p>
+<hr><h1 id="#_4DFB1480"><a name="WMRectangles"></a><a href="#ModuleList">Module</a> WMRectangles
+</h1>
+<p> AUTHOR "TF"; PURPOSE "Basic rectangles that are used by the WM and visual components";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WMRectangles.Rectangle">Rectangle</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#WMRectangles.MoveRel">MoveRel</a> (<strong>VAR</strong> x: <strong>Rectangle</strong>; deltaX, deltaY: <strong>SIZE</strong>)<tr><td></td><td> <a href="#WMRectangles.ClipRect">ClipRect</a> (<strong>VAR</strong> rect, bounds: <strong>Rectangle</strong>)<tr><td></td><td> <a href="#WMRectangles.RectEmpty">RectEmpty</a> (x: <strong>Rectangle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WMRectangles.PointInRect">PointInRect</a> (x, y: <strong>SIZE</strong>; rect: <strong>Rectangle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WMRectangles.IsContained">IsContained</a> (<strong>VAR</strong> outer, inner: <strong>Rectangle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsEqual (<strong>CONST</strong> a, b: <strong>Rectangle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WMRectangles.Intersect">Intersect</a> (<strong>VAR</strong> a, b: <strong>Rectangle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WMRectangles.SetRect">SetRect</a> (<strong>VAR</strong> rect: <strong>Rectangle</strong>; l, t, r, b: <strong>SIZE</strong>)<tr><td></td><td> <a href="#WMRectangles.Area">Area</a> (<strong>VAR</strong> r: <strong>Rectangle</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#WMRectangles.ExtendRect">ExtendRect</a> (<strong>VAR</strong> old, addition: <strong>Rectangle</strong>)<tr><td></td><td> <a href="#WMRectangles.MakeRect">MakeRect</a> (l, t, r, b: <strong>SIZE</strong>): <strong>Rectangle</strong><tr><td></td><td> <a href="#WMRectangles.ResizeRect">ResizeRect</a> (x: <strong>Rectangle</strong>; units: <strong>SIZE</strong>): <strong>Rectangle</strong><tr><td></td><td> Normalize (<strong>VAR</strong> rect: <strong>Rectangle</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_4DFDD000"><a name="WMRectangles.Rectangle"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.Rectangle">Rectangle</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Rectangle* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>l: <strong>SIZE</strong><tr><td></td><td>t: <strong>SIZE</strong><tr><td></td><td>r: <strong>SIZE</strong><tr><td></td><td>b: <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_4DFE38C0"><a name="WMRectangles.MoveRel"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.MoveRel">MoveRel</a>
+</h2>
+<p> move the rectangle by deltaX, deltaY</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MoveRel* (<strong>VAR</strong> x: <strong>Rectangle</strong>; deltaX, deltaY: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_4DFEA000"><a name="WMRectangles.ClipRect"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.ClipRect">ClipRect</a>
+</h2>
+<p> Clip rectangle rect at the boundary bounds</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ClipRect* (<strong>VAR</strong> rect, bounds: <strong>Rectangle</strong>)</pre>
+<hr><h2 id="#_4DFEFE80"><a name="WMRectangles.RectEmpty"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.RectEmpty">RectEmpty</a>
+</h2>
+<p> return true if rectangle x is empty</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RectEmpty* (x: <strong>Rectangle</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_4DFF5540"><a name="WMRectangles.PointInRect"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.PointInRect">PointInRect</a>
+</h2>
+<p> return true if x and y are inside rect</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PointInRect* (x, y: <strong>SIZE</strong>; rect: <strong>Rectangle</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_4DFFCC40"><a name="WMRectangles.IsContained"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.IsContained">IsContained</a>
+</h2>
+<p> return true if the inner rectangle is completely inside the outer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsContained* (<strong>VAR</strong> outer, inner: <strong>Rectangle</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_4E004000"><a name="WMRectangles.Intersect"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.Intersect">Intersect</a>
+</h2>
+<p> return whether a and be intersect and not only touche</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Intersect* (<strong>VAR</strong> a, b: <strong>Rectangle</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_4E00AEC0"><a name="WMRectangles.SetRect"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.SetRect">SetRect</a>
+</h2>
+<p> Set rect to (l, t, r, b)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetRect* (<strong>VAR</strong> rect: <strong>Rectangle</strong>; l, t, r, b: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_4E012A80"><a name="WMRectangles.Area"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.Area">Area</a>
+</h2>
+<p> return the area of r. Overflow if r w * h  MAX(SIZE)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Area* (<strong>VAR</strong> r: <strong>Rectangle</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_4E019D40"><a name="WMRectangles.ExtendRect"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.ExtendRect">ExtendRect</a>
+</h2>
+<p> Extend old to contain addition</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ExtendRect* (<strong>VAR</strong> old, addition: <strong>Rectangle</strong>)</pre>
+<hr><h2 id="#_4E01F380"><a name="WMRectangles.MakeRect"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.MakeRect">MakeRect</a>
+</h2>
+<p> return the Rectangle (l, t, r, b)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MakeRect* (l, t, r, b: <strong>SIZE</strong>): <strong>Rectangle</strong></pre>
+<hr><h2 id="#_4E026340"><a name="WMRectangles.ResizeRect"></a><a href="#WMRectangles">WMRectangles</a>.<a href="#WMRectangles.ResizeRect">ResizeRect</a>
+</h2>
+<p> extend the rectangle by units in each direction</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ResizeRect* (x: <strong>Rectangle</strong>; units: <strong>SIZE</strong>): <strong>Rectangle</strong></pre>
+</body></html>

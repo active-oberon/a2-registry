@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#DataQueues">DataQueues</a></p>
+<hr><h1 id="#_3EF6DE40"><a name="DataQueues"></a><a href="#ModuleList">Module</a> DataQueues
+</h1>
+<p> AUTHOR "adf"; PURPOSE "A FIFO queue.";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>VERSION= 1<tr><th align='left'>type declarations</th><td><a href="#DataQueues.Queue">Queue</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#DataQueues.Load">Load</a> (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>Queue</strong>)<tr><td></td><td> Store (W: <strong>DataIO.Writer</strong>; obj: <strong>Queue</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_3EF78C80"><a name="DataQueues.Queue"></a><a href="#DataQueues">DataQueues</a>.<a href="#DataQueues.Queue">Queue</a>
+</h2>
+<p> Type Queue is DataIO.PlugIn registered. The type(s) corresponding to the data inserted into a queue need to also be registered via DataIO.PlugIn in order for the whole queue to be persistent.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Queue* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>len: <strong>NbrInt.Integer</strong><tr><th align='left'>procedures</th><td> <a href="#DataQueues.Queue.Read">Read</a> (R: <strong>DataIO.Reader</strong>)<tr><td></td><td> <a href="#DataQueues.Queue.Write">Write</a> (W: <strong>DataIO.Writer</strong>)<tr><td></td><td> <a href="#DataQueues.Queue.Pop">Pop</a> (<strong>VAR</strong> obj: <strong>OBJECT</strong>)<tr><td></td><td> <a href="#DataQueues.Queue.Push">Push</a> (obj: <strong>OBJECT</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_3EF8BC80"><a name="DataQueues.Queue.Read"></a><a href="#DataQueues">DataQueues</a>.<a href="#DataQueues.Queue">Queue</a>.<a href="#DataQueues.Queue.Read">Read</a>
+</h3>
+<p> Used internally to read data from a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (R: <strong>DataIO.Reader</strong>)</pre>
+<hr><h3 id="#_3EF91980"><a name="DataQueues.Queue.Write"></a><a href="#DataQueues">DataQueues</a>.<a href="#DataQueues.Queue">Queue</a>.<a href="#DataQueues.Queue.Write">Write</a>
+</h3>
+<p> Used internally to write data to a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (W: <strong>DataIO.Writer</strong>)</pre>
+<hr><h3 id="#_3EF97740"><a name="DataQueues.Queue.Pop"></a><a href="#DataQueues">DataQueues</a>.<a href="#DataQueues.Queue">Queue</a>.<a href="#DataQueues.Queue.Pop">Pop</a>
+</h3>
+<p> Extracts an object from the bottom of the queue.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pop* (<strong>VAR</strong> obj: <strong>OBJECT</strong>)</pre>
+<hr><h3 id="#_3EF9DB40"><a name="DataQueues.Queue.Push"></a><a href="#DataQueues">DataQueues</a>.<a href="#DataQueues.Queue">Queue</a>.<a href="#DataQueues.Queue.Push">Push</a>
+</h3>
+<p> Places an object at the top of the queue.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Push* (obj: <strong>OBJECT</strong>)</pre>
+<hr><h2 id="#_3EFA3C80"><a name="DataQueues.Load"></a><a href="#DataQueues">DataQueues</a>.<a href="#DataQueues.Load">Load</a>
+</h2>
+<p> Load and Store are procedures for external use that read/write an instance of Queue from/to a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>Queue</strong>)</pre>
+</body></html>

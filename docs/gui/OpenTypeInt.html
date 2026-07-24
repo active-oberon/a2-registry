@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#OpenTypeInt">OpenTypeInt</a></p>
+<hr><h1 id="#_1B47ED80"><a name="OpenTypeInt"></a><a href="#ModuleList">Module</a> OpenTypeInt
+</h1>
+<p> AUTHOR "eos, PL"; PURPOSE "Bluebottle port of OpenType";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>X= 1<tr><td></td><td><a href="#OpenTypeInt.Y">Y</a>= 0<tr><td></td><td>StackSize= 8192<tr><th align='left'>type declarations</th><td><a href="#OpenTypeInt.F26D6">F26D6</a> =<strong>SIGNED32</strong><tr><td></td><td><a href="#OpenTypeInt.F2D14">F2D14</a> =<strong>SIGNED16</strong><tr><td></td><td><a href="#OpenTypeInt.FUnit">FUnit</a> =<strong>SIGNED16</strong><tr><td></td><td><a href="#OpenTypeInt.Fixed">Fixed</a> =<strong>SIGNED32</strong><tr><td></td><td><a href="#OpenTypeInt.Code">Code</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#OpenTypeInt.Stack">Stack</a> =<strong>ARRAY</strong> StackSize <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td><a href="#OpenTypeInt.Address">Address</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenTypeInt.Functions">Functions</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Address</strong><tr><td></td><td><a href="#OpenTypeInt.Instruction">Instruction</a> =<strong>RECORD</strong> <tr><td></td><td>Instructions =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Instruction</strong><tr><td></td><td><a href="#OpenTypeInt.Frame">Frame</a> =<strong>RECORD</strong> <tr><td></td><td>CallStack =<strong>ARRAY</strong> 32 <strong>OF</strong> <strong>Frame</strong><tr><td></td><td><a href="#OpenTypeInt.Store">Store</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td><a href="#OpenTypeInt.CVT">CVT</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>F26D6</strong><tr><td></td><td><a href="#OpenTypeInt.Contours">Contours</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td>Coord =<strong>ARRAY</strong> 2 <strong>OF</strong> <strong>F26D6</strong><tr><td></td><td><a href="#OpenTypeInt.Point">Point</a> =<strong>RECORD</strong> <tr><td></td><td>Points =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Point</strong><tr><td></td><td><a href="#OpenTypeInt.Zone">Zone</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ZoneDesc</strong><tr><td></td><td><a href="#OpenTypeInt.ZoneDesc">ZoneDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenTypeInt.Vector">Vector</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenTypeInt.Context">Context</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenTypeInt.State">State</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenTypeInt.NotifierData">NotifierData</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>NotifierDesc</strong><tr><td></td><td><a href="#OpenTypeInt.NotifierDesc">NotifierDesc</a> =<strong>RECORD</strong> <tr><td></td><td>Notifier =<strong>PROCEDURE</strong> (<strong>VAR</strong> c: <strong>Context</strong>; data: <strong>NotifierData</strong>)<tr><th align='left'>variables</th><td><a href="#OpenTypeInt.EmptyZone">EmptyZone</a>: <strong>Zone</strong><tr><th align='left'>procedures</th><td> <a href="#OpenTypeInt.ShiftDiv">ShiftDiv</a> (a, n, d: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> MulShift (a, b, n: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> MulDiv (a, b, c: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> Norm (x, y: <strong>F26D6</strong>): <strong>F26D6</strong><tr><td></td><td> <a href="#OpenTypeInt.NewCode">NewCode</a> (<strong>VAR</strong> code: <strong>Code</strong>; size: <strong>SIGNED32</strong>)<tr><td></td><td> NewFunctions (<strong>VAR</strong> func: <strong>Functions</strong>; size: <strong>SIGNED32</strong>)<tr><td></td><td> NewInstructions (<strong>VAR</strong> instr: <strong>Instructions</strong>; size: <strong>SIGNED32</strong>)<tr><td></td><td> NewStore (<strong>VAR</strong> store: <strong>Store</strong>; size: <strong>SIGNED32</strong>)<tr><td></td><td> NewCVT (<strong>VAR</strong> cvt: <strong>CVT</strong>; size: <strong>SIGNED32</strong>)<tr><td></td><td> NewZone (<strong>VAR</strong> zone: <strong>Zone</strong>; contours, points: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#OpenTypeInt.SetStacks">SetStacks</a> (<strong>VAR</strong> c: <strong>Context</strong>; stack: <strong>Stack</strong>; callStack: <strong>CallStack</strong>)<tr><td></td><td> <a href="#OpenTypeInt.SetStructures">SetStructures</a> (<strong>VAR</strong> c: <strong>Context</strong>; func: <strong>Functions</strong>; instr: <strong>Instructions</strong>; store: <strong>Store</strong>; cvt: <strong>CVT</strong>)<tr><td></td><td> <a href="#OpenTypeInt.SetResolution">SetResolution</a> (<strong>VAR</strong> c: <strong>Context</strong>; ptsize, xppm, yppm: <strong>F26D6</strong>; upm: <strong>SIGNED16</strong>; rotated, stretched: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#OpenTypeInt.InitState">InitState</a> (<strong>VAR</strong> c: <strong>Context</strong>)<tr><td></td><td> <a href="#OpenTypeInt.SaveState">SaveState</a> (<strong>VAR</strong> c: <strong>Context</strong>; <strong>VAR</strong> s: <strong>State</strong>)<tr><td></td><td> <a href="#OpenTypeInt.RestoreState">RestoreState</a> (<strong>VAR</strong> c: <strong>Context</strong>; <strong>VAR</strong> s: <strong>State</strong>)<tr><td></td><td> <a href="#OpenTypeInt.Execute">Execute</a> (<strong>VAR</strong> c: <strong>Context</strong>; code: <strong>Code</strong>; len: <strong>SIGNED32</strong>; z0, z1: <strong>Zone</strong>)<tr><td></td><td> <a href="#OpenTypeInt.InstallNotifier">InstallNotifier</a> (notify: <strong>Notifier</strong>; data: <strong>NotifierData</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1B4E8480"><a name="OpenTypeInt.Y"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Y">Y</a>
+</h2>
+<p> indices for coordinates into Coord structure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Y*= 0</pre>
+<hr><h2 id="#_1B4EC780"><a name="OpenTypeInt.F26D6"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.F26D6">F26D6</a>
+</h2>
+<p> fixed point format 26.6 used for fractional pixel coordinates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> F26D6* =<strong>SIGNED32</strong></pre>
+<hr><h2 id="#_1B4F1600"><a name="OpenTypeInt.F2D14"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.F2D14">F2D14</a>
+</h2>
+<p> fixed point format 2.14 used for unit vectors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> F2D14* =<strong>SIGNED16</strong></pre>
+<hr><h2 id="#_1B4F61C0"><a name="OpenTypeInt.FUnit"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.FUnit">FUnit</a>
+</h2>
+<p> unscaled point coordinates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FUnit* =<strong>SIGNED16</strong></pre>
+<hr><h2 id="#_1B4F9800"><a name="OpenTypeInt.Fixed"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Fixed">Fixed</a>
+</h2>
+<p> fixed point format 16.16 used for scalar fixed point numbers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Fixed* =<strong>SIGNED32</strong></pre>
+<hr><h2 id="#_1B4FEAC0"><a name="OpenTypeInt.Code"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Code">Code</a>
+</h2>
+<p> program code</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Code* =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_1B502C80"><a name="OpenTypeInt.Stack"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Stack">Stack</a>
+</h2>
+<p> program stack</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Stack* =<strong>ARRAY</strong> StackSize <strong>OF</strong> <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_1B506CC0"><a name="OpenTypeInt.Address"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Address">Address</a>
+</h2>
+<p> addresses within code blocks</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Address* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#OpenTypeInt.Address.code">code</a>: <strong>Code</strong><tr><td></td><td><a href="#OpenTypeInt.Address.len">len</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#OpenTypeInt.Address.pc">pc</a>: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1B50DFC0"><a name="OpenTypeInt.Address.code"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Address">Address</a>.<a href="#OpenTypeInt.Address.code">code</a>
+</h3>
+<p> instruction sequence</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> code*: <strong>Code</strong></pre>
+<hr><h3 id="#_1B511880"><a name="OpenTypeInt.Address.len"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Address">Address</a>.<a href="#OpenTypeInt.Address.len">len</a>
+</h3>
+<p> code length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> len*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_1B515140"><a name="OpenTypeInt.Address.pc"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Address">Address</a>.<a href="#OpenTypeInt.Address.pc">pc</a>
+</h3>
+<p> location within code</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> pc*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_1B518E40"><a name="OpenTypeInt.Functions"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Functions">Functions</a>
+</h2>
+<p> user defined functions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Functions* =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Address</strong></pre>
+<hr><h2 id="#_1B51D440"><a name="OpenTypeInt.Instruction"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Instruction">Instruction</a>
+</h2>
+<p> user defined instructions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Instruction* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>beg: <strong>Address</strong><tr><td></td><td>opcode: <strong>CHAR</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1B523440"><a name="OpenTypeInt.Frame"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Frame">Frame</a>
+</h2>
+<p> call stack</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Frame* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ret: <strong>Address</strong><tr><td></td><td>start: <strong>SIGNED32</strong><tr><td></td><td>count: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1B529DC0"><a name="OpenTypeInt.Store"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Store">Store</a>
+</h2>
+<p> program store</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Store* =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_1B52DF80"><a name="OpenTypeInt.CVT"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.CVT">CVT</a>
+</h2>
+<p> control value table</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CVT* =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>F26D6</strong></pre>
+<hr><h2 id="#_1B532580"><a name="OpenTypeInt.Contours"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Contours">Contours</a>
+</h2>
+<p> glyph zone</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Contours* =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_1B536740"><a name="OpenTypeInt.Point"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Point">Point</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Point* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>org: <strong>Coord</strong><tr><td></td><td><a href="#OpenTypeInt.Point.cur">cur</a>: <strong>Coord</strong><tr><td></td><td><a href="#OpenTypeInt.Point.onCurve">onCurve</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#OpenTypeInt.Point.touched">touched</a>: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1B53DF00"><a name="OpenTypeInt.Point.cur"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Point">Point</a>.<a href="#OpenTypeInt.Point.cur">cur</a>
+</h3>
+<p> original and current point coordinates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> cur*: <strong>Coord</strong></pre>
+<hr><h3 id="#_1B542540"><a name="OpenTypeInt.Point.onCurve"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Point">Point</a>.<a href="#OpenTypeInt.Point.onCurve">onCurve</a>
+</h3>
+<p> is point on or off the curve?</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> onCurve*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_1B547380"><a name="OpenTypeInt.Point.touched"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Point">Point</a>.<a href="#OpenTypeInt.Point.touched">touched</a>
+</h3>
+<p> is point touched in x/y direction?</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> touched*: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_1B54CB00"><a name="OpenTypeInt.Zone"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Zone">Zone</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Zone* =<strong>POINTER</strong> <strong>TO</strong> <strong>ZoneDesc</strong></pre>
+<hr><h2 id="#_1B54F700"><a name="OpenTypeInt.ZoneDesc"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.ZoneDesc">ZoneDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ZoneDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#OpenTypeInt.ZoneDesc.contours">contours</a>: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenTypeInt.ZoneDesc.first">first</a>: <strong>Contours</strong><tr><td></td><td><a href="#OpenTypeInt.ZoneDesc.pt">pt</a>: <strong>Points</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1B555100"><a name="OpenTypeInt.ZoneDesc.contours"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.ZoneDesc">ZoneDesc</a>.<a href="#OpenTypeInt.ZoneDesc.contours">contours</a>
+</h3>
+<p> number of contours in this zone</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> contours*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1B559A40"><a name="OpenTypeInt.ZoneDesc.first"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.ZoneDesc">ZoneDesc</a>.<a href="#OpenTypeInt.ZoneDesc.first">first</a>
+</h3>
+<p> starting points of each contour; first[contours] contains total number of points in zone</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> first*: <strong>Contours</strong></pre>
+<hr><h3 id="#_1B55FF00"><a name="OpenTypeInt.ZoneDesc.pt"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.ZoneDesc">ZoneDesc</a>.<a href="#OpenTypeInt.ZoneDesc.pt">pt</a>
+</h3>
+<p> points in this zone</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> pt*: <strong>Points</strong></pre>
+<hr><h2 id="#_1B564040"><a name="OpenTypeInt.Vector"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Vector">Vector</a>
+</h2>
+<p> unit vector</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Vector* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>x: <strong>F2D14</strong><tr><td></td><td>y: <strong>F2D14</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1B569B00"><a name="OpenTypeInt.Context"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>
+</h2>
+<p> execution context</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Context* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#OpenTypeInt.Context.code">code</a>: <strong>Code</strong><tr><td></td><td>codeLen: <strong>SIGNED32</strong><tr><td></td><td><a href="#OpenTypeInt.Context.stack">stack</a>: <strong>Stack</strong><tr><td></td><td><a href="#OpenTypeInt.Context.callStack">callStack</a>: <strong>CallStack</strong><tr><td></td><td>pc: <strong>SIGNED32</strong><tr><td></td><td>tos: <strong>SIGNED16</strong><tr><td></td><td>ctos: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenTypeInt.Context.func">func</a>: <strong>Functions</strong><tr><td></td><td><a href="#OpenTypeInt.Context.instr">instr</a>: <strong>Instructions</strong><tr><td></td><td><a href="#OpenTypeInt.Context.store">store</a>: <strong>Store</strong><tr><td></td><td><a href="#OpenTypeInt.Context.cvt">cvt</a>: <strong>CVT</strong><tr><td></td><td><a href="#OpenTypeInt.Context.zone">zone</a>: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>Zone</strong><tr><td></td><td><a href="#OpenTypeInt.Context.ptsize">ptsize</a>: <strong>F26D6</strong><tr><td></td><td>xppm: <strong>F26D6</strong><tr><td></td><td>yppm: <strong>F26D6</strong><tr><td></td><td><a href="#OpenTypeInt.Context.upm">upm</a>: <strong>SIGNED16</strong><tr><td></td><td>rotated: <strong>BOOLEAN</strong><tr><td></td><td>stretched: <strong>BOOLEAN</strong><tr><td></td><td><a href="#OpenTypeInt.Context.ratio">ratio</a>: <strong>Fixed</strong><tr><td></td><td><a href="#OpenTypeInt.Context.minDist">minDist</a>: <strong>F26D6</strong><tr><td></td><td><a href="#OpenTypeInt.Context.cvtCutIn">cvtCutIn</a>: <strong>F26D6</strong><tr><td></td><td>swVal: <strong>F26D6</strong><tr><td></td><td><a href="#OpenTypeInt.Context.swCutIn">swCutIn</a>: <strong>F26D6</strong><tr><td></td><td>deltaBase: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenTypeInt.Context.deltaShift">deltaShift</a>: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenTypeInt.Context.autoFlip">autoFlip</a>: <strong>BOOLEAN</strong><tr><td></td><td>inhibitFit: <strong>BOOLEAN</strong><tr><td></td><td><a href="#OpenTypeInt.Context.ignorePrep">ignorePrep</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#OpenTypeInt.Context.fixDropouts">fixDropouts</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#OpenTypeInt.Context.scanType">scanType</a>: <strong>SIGNED16</strong><tr><td></td><td>rp0: <strong>SIGNED16</strong><tr><td></td><td>rp1: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenTypeInt.Context.rp2">rp2</a>: <strong>SIGNED16</strong><tr><td></td><td>gep0: <strong>SIGNED16</strong><tr><td></td><td>gep1: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenTypeInt.Context.gep2">gep2</a>: <strong>SIGNED16</strong><tr><td></td><td>free: <strong>Vector</strong><tr><td></td><td>proj: <strong>Vector</strong><tr><td></td><td><a href="#OpenTypeInt.Context.proj2">proj2</a>: <strong>Vector</strong><tr><td></td><td>period: <strong>F26D6</strong><tr><td></td><td>phase: <strong>F26D6</strong><tr><td></td><td><a href="#OpenTypeInt.Context.threshold">threshold</a>: <strong>F26D6</strong><tr><td></td><td><a href="#OpenTypeInt.Context.loop">loop</a>: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_1B5960C0"><a name="OpenTypeInt.Context.code"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.code">code</a>
+</h3>
+<p> program code</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> code*: <strong>Code</strong></pre>
+<hr><h3 id="#_1B599980"><a name="OpenTypeInt.Context.stack"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.stack">stack</a>
+</h3>
+<p> program stack</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> stack*: <strong>Stack</strong></pre>
+<hr><h3 id="#_1B59D240"><a name="OpenTypeInt.Context.callStack"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.callStack">callStack</a>
+</h3>
+<p> call stack of program</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> callStack*: <strong>CallStack</strong></pre>
+<hr><h3 id="#_1B5A1580"><a name="OpenTypeInt.Context.func"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.func">func</a>
+</h3>
+<p> user defined functions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> func*: <strong>Functions</strong></pre>
+<hr><h3 id="#_1B5A5280"><a name="OpenTypeInt.Context.instr"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.instr">instr</a>
+</h3>
+<p> user defined instructions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> instr*: <strong>Instructions</strong></pre>
+<hr><h3 id="#_1B5A8F80"><a name="OpenTypeInt.Context.store"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.store">store</a>
+</h3>
+<p> program store</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> store*: <strong>Store</strong></pre>
+<hr><h3 id="#_1B5AC840"><a name="OpenTypeInt.Context.cvt"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.cvt">cvt</a>
+</h3>
+<p> control value table</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> cvt*: <strong>CVT</strong></pre>
+<hr><h3 id="#_1B5B0540"><a name="OpenTypeInt.Context.zone"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.zone">zone</a>
+</h3>
+<p> twilight and glyph zone</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> zone*: <strong>ARRAY</strong> 2 <strong>OF</strong> <strong>Zone</strong></pre>
+<hr><h3 id="#_1B5B54C0"><a name="OpenTypeInt.Context.ptsize"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.ptsize">ptsize</a>
+</h3>
+<p> current point size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ptsize*: <strong>F26D6</strong></pre>
+<hr><h3 id="#_1B5B91C0"><a name="OpenTypeInt.Context.upm"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.upm">upm</a>
+</h3>
+<p> units per Em</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> upm*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1B5BCEC0"><a name="OpenTypeInt.Context.ratio"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.ratio">ratio</a>
+</h3>
+<p> aspect ratio</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ratio*: <strong>Fixed</strong></pre>
+<hr><h3 id="#_1B5C0780"><a name="OpenTypeInt.Context.minDist"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.minDist">minDist</a>
+</h3>
+<p> feature preserving minimum distance</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> minDist*: <strong>F26D6</strong></pre>
+<hr><h3 id="#_1B5C4940"><a name="OpenTypeInt.Context.cvtCutIn"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.cvtCutIn">cvtCutIn</a>
+</h3>
+<p> control value table cut in</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> cvtCutIn*: <strong>F26D6</strong></pre>
+<hr><h3 id="#_1B5C8F00"><a name="OpenTypeInt.Context.swCutIn"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.swCutIn">swCutIn</a>
+</h3>
+<p> single width cut in and single width value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> swCutIn*: <strong>F26D6</strong></pre>
+<hr><h3 id="#_1B5CE0C0"><a name="OpenTypeInt.Context.deltaShift"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.deltaShift">deltaShift</a>
+</h3>
+<p> delta exception parameters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> deltaShift*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1B5D1DC0"><a name="OpenTypeInt.Context.autoFlip"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.autoFlip">autoFlip</a>
+</h3>
+<p> whether to make CVT entries sign independent</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> autoFlip*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_1B5D6B00"><a name="OpenTypeInt.Context.ignorePrep"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.ignorePrep">ignorePrep</a>
+</h3>
+<p> instruction control flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ignorePrep*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_1B5DA800"><a name="OpenTypeInt.Context.fixDropouts"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.fixDropouts">fixDropouts</a>
+</h3>
+<p> scan control flag</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> fixDropouts*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_1B5DE500"><a name="OpenTypeInt.Context.scanType"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.scanType">scanType</a>
+</h3>
+<p> current scan type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> scanType*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1B5E24C0"><a name="OpenTypeInt.Context.rp2"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.rp2">rp2</a>
+</h3>
+<p> reference points</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> rp2*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1B5E5D80"><a name="OpenTypeInt.Context.gep2"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.gep2">gep2</a>
+</h3>
+<p> zone indices</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> gep2*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_1B5E9640"><a name="OpenTypeInt.Context.proj2"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.proj2">proj2</a>
+</h3>
+<p> freedom vector, projection vector, and dual projection vector</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> proj2*: <strong>Vector</strong></pre>
+<hr><h3 id="#_1B5EE800"><a name="OpenTypeInt.Context.threshold"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.threshold">threshold</a>
+</h3>
+<p> parameters of current round state</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> threshold*: <strong>F26D6</strong></pre>
+<hr><h3 id="#_1B5F2DC0"><a name="OpenTypeInt.Context.loop"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Context">Context</a>.<a href="#OpenTypeInt.Context.loop">loop</a>
+</h3>
+<p> number of times to execute the next loop-aware instruction</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> loop*: <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_1B5F8300"><a name="OpenTypeInt.State"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.State">State</a>
+</h2>
+<p> static part of graphics state</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> State* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_1B5FCC00"><a name="OpenTypeInt.NotifierData"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.NotifierData">NotifierData</a>
+</h2>
+<p> debug upcalls</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NotifierData* =<strong>POINTER</strong> <strong>TO</strong> <strong>NotifierDesc</strong></pre>
+<hr><h2 id="#_1B6006C0"><a name="OpenTypeInt.NotifierDesc"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.NotifierDesc">NotifierDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NotifierDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_1B603340"><a name="OpenTypeInt.EmptyZone"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.EmptyZone">EmptyZone</a>
+</h2>
+<p> zone containing zero contours and zero points</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> EmptyZone*: <strong>Zone</strong></pre>
+<hr><h2 id="#_1B6079C0"><a name="OpenTypeInt.ShiftDiv"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.ShiftDiv">ShiftDiv</a>
+</h2>
+<p>--- Arithmetic ---</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ShiftDiv* (a, n, d: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_1B60CF40"><a name="OpenTypeInt.NewCode"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.NewCode">NewCode</a>
+</h2>
+<p> allocation procedures for all dynamically sized memory structures</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewCode* (<strong>VAR</strong> code: <strong>Code</strong>; size: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_1B613700"><a name="OpenTypeInt.SetStacks"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.SetStacks">SetStacks</a>
+</h2>
+<p> set context stacks</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetStacks* (<strong>VAR</strong> c: <strong>Context</strong>; stack: <strong>Stack</strong>; callStack: <strong>CallStack</strong>)</pre>
+<hr><h2 id="#_1B619880"><a name="OpenTypeInt.SetStructures"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.SetStructures">SetStructures</a>
+</h2>
+<p> set context structures</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetStructures* (<strong>VAR</strong> c: <strong>Context</strong>; func: <strong>Functions</strong>; instr: <strong>Instructions</strong>; store: <strong>Store</strong>; cvt: <strong>CVT</strong>)</pre>
+<hr><h2 id="#_1B621600"><a name="OpenTypeInt.SetResolution"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.SetResolution">SetResolution</a>
+</h2>
+<p> set instance specific context parameters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetResolution* (<strong>VAR</strong> c: <strong>Context</strong>; ptsize, xppm, yppm: <strong>F26D6</strong>; upm: <strong>SIGNED16</strong>; rotated, stretched: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_1B62A640"><a name="OpenTypeInt.InitState"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.InitState">InitState</a>
+</h2>
+<p> initialize graphic state default values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitState* (<strong>VAR</strong> c: <strong>Context</strong>)</pre>
+<hr><h2 id="#_1B62F480"><a name="OpenTypeInt.SaveState"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.SaveState">SaveState</a>
+</h2>
+<p> save static part of graphic state (e.g. after executing CVT program)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SaveState* (<strong>VAR</strong> c: <strong>Context</strong>; <strong>VAR</strong> s: <strong>State</strong>)</pre>
+<hr><h2 id="#_1B636BC0"><a name="OpenTypeInt.RestoreState"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.RestoreState">RestoreState</a>
+</h2>
+<p> restore static part of graphic state (e.g. before executing a glyph program)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RestoreState* (<strong>VAR</strong> c: <strong>Context</strong>; <strong>VAR</strong> s: <strong>State</strong>)</pre>
+<hr><h2 id="#_1B63E680"><a name="OpenTypeInt.Execute"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.Execute">Execute</a>
+</h2>
+<p> execute program</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Execute* (<strong>VAR</strong> c: <strong>Context</strong>; code: <strong>Code</strong>; len: <strong>SIGNED32</strong>; z0, z1: <strong>Zone</strong>)</pre>
+<hr><h2 id="#_1B645A40"><a name="OpenTypeInt.InstallNotifier"></a><a href="#OpenTypeInt">OpenTypeInt</a>.<a href="#OpenTypeInt.InstallNotifier">InstallNotifier</a>
+</h2>
+<p> install notify procedure for debug events</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InstallNotifier* (notify: <strong>Notifier</strong>; data: <strong>NotifierData</strong>)</pre>
+</body></html>

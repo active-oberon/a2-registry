@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Events">Events</a></p>
+<hr><h1 id="#_5D409DC0"><a name="Events"></a><a href="#ModuleList">Module</a> Events
+</h1>
+<p> AUTHOR "staubesv"; PURPOSE "System events interface";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Events.Unknown">Unknown</a>= -1<tr><td></td><td>Undefined= 0<tr><td></td><td>Information= 1<tr><td></td><td>Warning= 2<tr><td></td><td>Error= 3<tr><td></td><td>Critical= 4<tr><td></td><td>Alert= 5<tr><td></td><td>Failure= 6<tr><th align='left'>type declarations</th><td><a href="#Events.Name">Name</a> =<strong>Modules.Name</strong><tr><td></td><td>Message =<strong>ARRAY</strong> 468 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Events.Event">Event</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Events.Sink">Sink</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Events.FilterO">FilterO</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Events.Filter">Filter</a> =<strong>FilterO</strong><tr><th align='left'>variables</th><td>NnofEvents: <strong>SIGNED32</strong><tr><td></td><td>NnofDiscarded: <strong>SIGNED32</strong><tr><td></td><td>NnofEventsHandled: <strong>SIGNED32</strong><tr><td></td><td>NnofEventsNotHandled: <strong>SIGNED32</strong><tr><td></td><td>NnofUnknown: <strong>SIGNED32</strong><tr><td></td><td>NnofUndefined: <strong>SIGNED32</strong><tr><td></td><td>NnofInformation: <strong>SIGNED32</strong><tr><td></td><td>NnofWarning: <strong>SIGNED32</strong><tr><td></td><td>NnofError: <strong>SIGNED32</strong><tr><td></td><td>NnofCritical: <strong>SIGNED32</strong><tr><td></td><td>NnofFailure: <strong>SIGNED32</strong><tr><td></td><td>NnofListeners: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#Events.Register">Register</a> (sink: <strong>Sink</strong>)<tr><td></td><td> <a href="#Events.Unregister">Unregister</a> (sink: <strong>Sink</strong>)<tr><td></td><td> <a href="#Events.Add">Add</a> (event: <strong>Event</strong>; showOnKernelLog: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Events.AddEvent">AddEvent</a> (<strong>CONST</strong> originator: <strong>Name</strong>; type, class, subclass, code: <strong>SIGNED8</strong>; <strong>CONST</strong> message: <strong>Message</strong>; showOnKernelLog: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Events.NewEvent">NewEvent</a> (<strong>CONST</strong> originator: <strong>Name</strong>; type, class, subclass, code: <strong>SIGNED8</strong>; <strong>CONST</strong> message: <strong>Message</strong>): <strong>Event</strong><tr><td></td><td> <a href="#Events.ClearStats">ClearStats</a><tr><td></td><td> <a href="#Events.Install">Install</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_5D43A2C0">
+</h1>
+<ul>
+<li> Simple framework for system event logging. <strong></strong></li>
+
+<li> The main purpose of this framework is to enable simple event logging. Although it would be possible to use it as a kind</li>
+
+<li> of general event system, the user is discouraged in doing so. <strong></strong></li>
+
+<li> Notes:</li>
+
+<li> - This module is considered to be really low-level. Don't import any other modules</li>
+
+<li> - The definition of event classes/subclasses/codes is done on higher level (see Events.XML) <strong></strong></li>
+
+<li> History: <strong></strong></li>
+
+<li> 06.03.2007 First release (staubesv)</li>
+</ul>
+<hr><h2 id="#_5D44EB00"><a name="Events.Unknown"></a><a href="#Events">Events</a>.<a href="#Events.Unknown">Unknown</a>
+</h2>
+<p> Event types. All other numbers are considered to be of an unknown type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Unknown*= -1</pre>
+<hr><h2 id="#_5D454BC0"><a name="Events.Name"></a><a href="#Events">Events</a>.<a href="#Events.Name">Name</a>
+</h2>
+<p> Must not contain any quote characters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Name* =<strong>Modules.Name</strong></pre>
+<hr><h2 id="#_5D458F80"><a name="Events.Event"></a><a href="#Events">Events</a>.<a href="#Events.Event">Event</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Event* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Events.Event.originator">originator</a>: <strong>Name</strong><tr><td></td><td>type: <strong>SIGNED8</strong><tr><td></td><td>class: <strong>SIGNED8</strong><tr><td></td><td>subclass: <strong>SIGNED8</strong><tr><td></td><td>code: <strong>SIGNED8</strong><tr><td></td><td>message: <strong>Message</strong><tr><td></td><td>date: <strong>SIGNED32</strong><tr><td></td><td>time: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_5D463340"><a name="Events.Event.originator"></a><a href="#Events">Events</a>.<a href="#Events.Event">Event</a>.<a href="#Events.Event.originator">originator</a>
+</h3>
+<p> name of module that generated event</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> originator*: <strong>Name</strong></pre>
+<hr><h2 id="#_5D467D40"><a name="Events.Sink"></a><a href="#Events">Events</a>.<a href="#Events.Sink">Sink</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Sink* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Name</strong><tr><th align='left'>procedures</th><td> AddFilter (filter: <strong>Filter</strong>)<tr><td></td><td> RemoveFilter (filter: <strong>Filter</strong>)<tr><td></td><td> Handle (event: <strong>Event</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5D470E00"><a name="Events.FilterO"></a><a href="#Events">Events</a>.<a href="#Events.FilterO">FilterO</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FilterO* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Filter (event: <strong>Event</strong>; <strong>VAR</strong> discard: <strong>BOOLEAN</strong>)</td></tr>
+</table>
+<hr><h2 id="#_5D476980"><a name="Events.Filter"></a><a href="#Events">Events</a>.<a href="#Events.Filter">Filter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Filter* =<strong>FilterO</strong></pre>
+<hr><h2 id="#_5D478DC0"><a name="Events.Register"></a><a href="#Events">Events</a>.<a href="#Events.Register">Register</a>
+</h2>
+<p> Register an event sink at the event dispatcher</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Register* (sink: <strong>Sink</strong>)</pre>
+<hr><h2 id="#_5D47E400"><a name="Events.Unregister"></a><a href="#Events">Events</a>.<a href="#Events.Unregister">Unregister</a>
+</h2>
+<p> Unregister an event sink at the event dispatcher</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Unregister* (sink: <strong>Sink</strong>)</pre>
+<hr><h2 id="#_5D483A40"><a name="Events.Add"></a><a href="#Events">Events</a>.<a href="#Events.Add">Add</a>
+</h2>
+<p> Add an event record to the event queue. If showOnKernenLog is TRUE, a simplified representation of the event (originator + ": " + message) is displayed on the kernel log. This operation is non-blocking if showOnKernelLog is FALSE, blocking otherwise</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (event: <strong>Event</strong>; showOnKernelLog: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_5D491A00"><a name="Events.AddEvent"></a><a href="#Events">Events</a>.<a href="#Events.AddEvent">AddEvent</a>
+</h2>
+<p> Generate an new event record and add it to the event queue. If showOnKernenLog is TRUE, a simplified representation of the event (originator + ": " + message) is displayed on the kernel log. This operation is non-blocking if showOnKernelLog is FALSE, blocking otherwise</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddEvent* (<strong>CONST</strong> originator: <strong>Name</strong>; type, class, subclass, code: <strong>SIGNED8</strong>; <strong>CONST</strong> message: <strong>Message</strong>; showOnKernelLog: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_5D4A42C0"><a name="Events.NewEvent"></a><a href="#Events">Events</a>.<a href="#Events.NewEvent">NewEvent</a>
+</h2>
+<p> Generate an new event record</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewEvent* (<strong>CONST</strong> originator: <strong>Name</strong>; type, class, subclass, code: <strong>SIGNED8</strong>; <strong>CONST</strong> message: <strong>Message</strong>): <strong>Event</strong></pre>
+<hr><h2 id="#_5D4ACF80"><a name="Events.ClearStats"></a><a href="#Events">Events</a>.<a href="#Events.ClearStats">ClearStats</a>
+</h2>
+<p> ~</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ClearStats*</pre>
+<hr><h2 id="#_5D4AF7C0"><a name="Events.Install"></a><a href="#Events">Events</a>.<a href="#Events.Install">Install</a>
+</h2>
+<p> Start the event dispatcher</p>
+
+<p> ~</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Install*</pre>
+</body></html>

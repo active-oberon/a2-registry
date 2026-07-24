@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Archives">Archives</a></p>
+<hr><h1 id="#_CDFBCE40"><a name="Archives"></a><a href="#ModuleList">Module</a> Archives
+</h1>
+<p> AUTHOR "FN"; PURPOSE "Abstract Archive Object";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Archives.StringObject">StringObject</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Archives.EntryInfo">EntryInfo</a> =<strong>OBJECT</strong> <tr><td></td><td>Index =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>EntryInfo</strong><tr><td></td><td><a href="#Archives.Archive">Archive</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> Old (<strong>CONST</strong> name, type: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Archive</strong><tr><td></td><td> New (<strong>CONST</strong> name, type: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Archive</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_CDFCBDC0"><a name="Archives.StringObject"></a><a href="#Archives">Archives</a>.<a href="#Archives.StringObject">StringObject</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringObject* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_CDFD3440"><a name="Archives.EntryInfo"></a><a href="#Archives">Archives</a>.<a href="#Archives.EntryInfo">EntryInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EntryInfo* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetName (): <strong>Strings.String</strong><tr><td></td><td> GetSize (): <strong>SIGNED32</strong><tr><td></td><td> GetInfoString (): <strong>Strings.String</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_CDFDA640"><a name="Archives.Archive"></a><a href="#Archives">Archives</a>.<a href="#Archives.Archive">Archive</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Archive* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> ArchiveNameSize <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> Acquire<tr><td></td><td> Release<tr><td></td><td> GetIndex (): <strong>Index</strong><tr><td></td><td> GetEntryInfo (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>EntryInfo</strong><tr><td></td><td> RemoveEntry (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> RenameEntry (<strong>CONST</strong> from, to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>EntryInfo</strong><tr><td></td><td> OpenSender (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Sender</strong><tr><td></td><td> OpenReceiver (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Receiver</strong><tr><td></td><td> Copy (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Archive</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

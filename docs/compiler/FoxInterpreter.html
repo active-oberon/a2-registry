@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxInterpreter">FoxInterpreter</a></p>
+<hr><h1 id="#_5DB5FCC0"><a name="FoxInterpreter"></a><a href="#ModuleList">Module</a> FoxInterpreter
+</h1>
+<p> AUTHOR ""; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#FoxInterpreter.Result">Result</a> =<strong>InterpreterSymbols.Result</strong><tr><td></td><td><a href="#FoxInterpreter.Value">Value</a> =<strong>InterpreterSymbols.Value</strong><tr><td></td><td><a href="#FoxInterpreter.Integer">Integer</a> =<strong>InterpreterSymbols.IntegerValue</strong><tr><td></td><td><a href="#FoxInterpreter.Real">Real</a> =<strong>InterpreterSymbols.RealValue</strong><tr><td></td><td><a href="#FoxInterpreter.String">String</a> =<strong>InterpreterSymbols.StringValue</strong><tr><td></td><td><a href="#FoxInterpreter.Boolean">Boolean</a> =<strong>InterpreterSymbols.BooleanValue</strong><tr><td></td><td><a href="#FoxInterpreter.Set">Set</a> =<strong>InterpreterSymbols.SetValue</strong><tr><td></td><td><a href="#FoxInterpreter.Range">Range</a> =<strong>InterpreterSymbols.RangeValue</strong><tr><td></td><td><a href="#FoxInterpreter.Char">Char</a> =<strong>InterpreterSymbols.CharValue</strong><tr><td></td><td><a href="#FoxInterpreter.Any">Any</a> =<strong>InterpreterSymbols.AnyValue</strong><tr><td></td><td><a href="#FoxInterpreter.MathArrayValue">MathArrayValue</a> =<strong>InterpreterSymbols.MathArrayValue</strong><tr><td></td><td><a href="#FoxInterpreter.Scope">Scope</a> =<strong>InterpreterSymbols.Scope</strong><tr><td></td><td><a href="#FoxInterpreter.Container">Container</a> =<strong>InterpreterSymbols.Container</strong><tr><td></td><td><a href="#FoxInterpreter.Builtin">Builtin</a> =<strong>OBJECT</strong> (<strong>InterpreterSymbols.Object</strong>)<tr><td></td><td><a href="#FoxInterpreter.Item">Item</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxInterpreter.Parser">Parser</a> =<strong>OBJECT</strong> (<strong>FoxParser.Parser</strong>)<tr><td></td><td><a href="#FoxInterpreter.Interpreter">Interpreter</a> =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)<tr><td></td><td><a href="#FoxInterpreter.Resolver">Resolver</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>global: <strong>Scope</strong><tr><th align='left'>procedures</th><td> Statements (context: <strong>Commands.Context</strong>)<tr><td></td><td> Expression (context: <strong>Commands.Context</strong>)<tr><td></td><td> TranslateString (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5DB7B280"><a name="FoxInterpreter.Result"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Result">Result</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Result* =<strong>InterpreterSymbols.Result</strong></pre>
+<hr><h2 id="#_5DB7D5C0"><a name="FoxInterpreter.Value"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Value">Value</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Value* =<strong>InterpreterSymbols.Value</strong></pre>
+<hr><h2 id="#_5DB7F900"><a name="FoxInterpreter.Integer"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Integer">Integer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Integer* =<strong>InterpreterSymbols.IntegerValue</strong></pre>
+<hr><h2 id="#_5DB81D00"><a name="FoxInterpreter.Real"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Real">Real</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Real* =<strong>InterpreterSymbols.RealValue</strong></pre>
+<hr><h2 id="#_5DB84040"><a name="FoxInterpreter.String"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.String">String</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> String* =<strong>InterpreterSymbols.StringValue</strong></pre>
+<hr><h2 id="#_5DB86440"><a name="FoxInterpreter.Boolean"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Boolean">Boolean</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Boolean* =<strong>InterpreterSymbols.BooleanValue</strong></pre>
+<hr><h2 id="#_5DB88780"><a name="FoxInterpreter.Set"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Set">Set</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Set* =<strong>InterpreterSymbols.SetValue</strong></pre>
+<hr><h2 id="#_5DB8AAC0"><a name="FoxInterpreter.Range"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Range">Range</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Range* =<strong>InterpreterSymbols.RangeValue</strong></pre>
+<hr><h2 id="#_5DB8CF00"><a name="FoxInterpreter.Char"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Char">Char</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Char* =<strong>InterpreterSymbols.CharValue</strong></pre>
+<hr><h2 id="#_5DB8F240"><a name="FoxInterpreter.Any"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Any">Any</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Any* =<strong>InterpreterSymbols.AnyValue</strong></pre>
+<hr><h2 id="#_5DB91580"><a name="FoxInterpreter.MathArrayValue"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.MathArrayValue">MathArrayValue</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MathArrayValue* =<strong>InterpreterSymbols.MathArrayValue</strong></pre>
+<hr><h2 id="#_5DB938C0"><a name="FoxInterpreter.Scope"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Scope">Scope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scope* =<strong>InterpreterSymbols.Scope</strong></pre>
+<hr><h2 id="#_5DB95C00"><a name="FoxInterpreter.Container"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Container">Container</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Container* =<strong>InterpreterSymbols.Container</strong></pre>
+<hr><h2 id="#_5DB98040"><a name="FoxInterpreter.Builtin"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Builtin">Builtin</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Builtin* =<strong>OBJECT</strong> (<strong>InterpreterSymbols.Object</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_5DB9B3C0"><a name="FoxInterpreter.Item"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Item">Item</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Item* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>object: <strong>InterpreterSymbols.Item</strong><tr><td></td><td>in: <strong>InterpreterSymbols.Item</strong><tr><td></td><td>name: <strong>StringPool.Index</strong><tr><td></td><td>i: <strong>ARRAY</strong> MaxIndex <strong>OF</strong> <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5DBA2B80"><a name="FoxInterpreter.Parser"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Parser">Parser</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parser* =<strong>OBJECT</strong> (<strong>FoxParser.Parser</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Statement (statements: <strong>SyntaxTree.StatementSequence</strong>; outer: <strong>SyntaxTree.Statement</strong>): <strong>BOOLEAN</strong></td></tr>
+</table>
+<hr><h2 id="#_5DBA9000"><a name="FoxInterpreter.Interpreter"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Interpreter">Interpreter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Interpreter* =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>item: <strong>Item</strong><tr><td></td><td>module: <strong>Modules.Module</strong><tr><td></td><td>typeDesc: <strong>Modules.TypeDesc</strong><tr><td></td><td>scope: <strong>Scope</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><td></td><td>context: <strong>Commands.Context</strong><tr><th align='left'>procedures</th><td>& Init (scope: <strong>Scope</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; context: <strong>Commands.Context</strong>)<tr><td></td><td> SetScope (s: <strong>Scope</strong>)<tr><td></td><td> Reset<tr><td></td><td> <a href="#FoxInterpreter.Interpreter.VisitSet">VisitSet</a> (x: <strong>SyntaxTree.Set</strong>)<tr><td></td><td> VisitMathArrayExpression (x: <strong>SyntaxTree.MathArrayExpression</strong>)<tr><td></td><td> VisitUnaryExpression (x: <strong>SyntaxTree.UnaryExpression</strong>)<tr><td></td><td> VisitBinaryExpression (x: <strong>SyntaxTree.BinaryExpression</strong>)<tr><td></td><td> VisitRangeExpression (x: <strong>SyntaxTree.RangeExpression</strong>)<tr><td></td><td> VisitTensorRangeExpression (x: <strong>SyntaxTree.TensorRangeExpression</strong>)<tr><td></td><td> VisitConversion (x: <strong>SyntaxTree.Conversion</strong>)<tr><td></td><td> <a href="#FoxInterpreter.Interpreter.VisitDesignator">VisitDesignator</a> (x: <strong>SyntaxTree.Designator</strong>)<tr><td></td><td> VisitQualifiedType (x: <strong>SyntaxTree.QualifiedType</strong>)<tr><td></td><td> VisitIdentifierDesignator (x: <strong>SyntaxTree.IdentifierDesignator</strong>)<tr><td></td><td> VisitSelectorDesignator (x: <strong>SyntaxTree.SelectorDesignator</strong>)<tr><td></td><td> VisitParameterDesignator (x: <strong>SyntaxTree.ParameterDesignator</strong>)<tr><td></td><td> VisitArrowDesignator (x: <strong>SyntaxTree.ArrowDesignator</strong>)<tr><td></td><td> VisitBracketDesignator (x: <strong>SyntaxTree.BracketDesignator</strong>)<tr><td></td><td> VisitSymbolDesignator (x: <strong>SyntaxTree.SymbolDesignator</strong>)<tr><td></td><td> VisitIndexDesignator (x: <strong>SyntaxTree.IndexDesignator</strong>)<tr><td></td><td> VisitProcedureCallDesignator (x: <strong>SyntaxTree.ProcedureCallDesignator</strong>)<tr><td></td><td> VisitBuiltinCallDesignator (x: <strong>SyntaxTree.BuiltinCallDesignator</strong>)<tr><td></td><td> VisitTypeGuardDesignator (x: <strong>SyntaxTree.TypeGuardDesignator</strong>)<tr><td></td><td> VisitDereferenceDesignator (x: <strong>SyntaxTree.DereferenceDesignator</strong>)<tr><td></td><td> VisitSupercallDesignator (x: <strong>SyntaxTree.SupercallDesignator</strong>)<tr><td></td><td> VisitSelfDesignator (x: <strong>SyntaxTree.SelfDesignator</strong>)<tr><td></td><td> VisitResultDesignator (x: <strong>SyntaxTree.ResultDesignator</strong>)<tr><td></td><td> <a href="#FoxInterpreter.Interpreter.VisitValue">VisitValue</a> (x: <strong>SyntaxTree.Value</strong>)<tr><td></td><td> VisitBooleanValue (x: <strong>SyntaxTree.BooleanValue</strong>)<tr><td></td><td> VisitIntegerValue (x: <strong>SyntaxTree.IntegerValue</strong>)<tr><td></td><td> VisitCharacterValue (x: <strong>SyntaxTree.CharacterValue</strong>)<tr><td></td><td> VisitSetValue (x: <strong>SyntaxTree.SetValue</strong>)<tr><td></td><td> VisitMathArrayValue (x: <strong>SyntaxTree.MathArrayValue</strong>)<tr><td></td><td> VisitRealValue (x: <strong>SyntaxTree.RealValue</strong>)<tr><td></td><td> VisitComplexValue (x: <strong>SyntaxTree.ComplexValue</strong>)<tr><td></td><td> VisitStringValue (x: <strong>SyntaxTree.StringValue</strong>)<tr><td></td><td> VisitNilValue (x: <strong>SyntaxTree.NilValue</strong>)<tr><td></td><td> VisitEnumerationValue (x: <strong>SyntaxTree.EnumerationValue</strong>)<tr><td></td><td> <a href="#FoxInterpreter.Interpreter.VisitSymbol">VisitSymbol</a> (x: <strong>SyntaxTree.Symbol</strong>)<tr><td></td><td> VisitTypeDeclaration (x: <strong>SyntaxTree.TypeDeclaration</strong>)<tr><td></td><td> VisitConstant (x: <strong>SyntaxTree.Constant</strong>)<tr><td></td><td> VisitVariable (x: <strong>SyntaxTree.Variable</strong>)<tr><td></td><td> VisitParameter (x: <strong>SyntaxTree.Parameter</strong>)<tr><td></td><td> VisitProcedure (x: <strong>SyntaxTree.Procedure</strong>)<tr><td></td><td> VisitBuiltin (x: <strong>SyntaxTree.Builtin</strong>)<tr><td></td><td> VisitOperator (x: <strong>SyntaxTree.Operator</strong>)<tr><td></td><td> VisitImport (x: <strong>SyntaxTree.Import</strong>)<tr><td></td><td> TranslateString (cmd: <strong>CHAR</strong>; <strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dest: <strong>Strings.String</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxInterpreter.Interpreter.VisitStatement">VisitStatement</a> (x: <strong>SyntaxTree.Statement</strong>)<tr><td></td><td> VisitProcedureCallStatement (x: <strong>SyntaxTree.ProcedureCallStatement</strong>)<tr><td></td><td> GetValue (x: <strong>SyntaxTree.Expression</strong>; <strong>VAR</strong> w: <strong>Value</strong>): <strong>BOOLEAN</strong><tr><td></td><td> VisitAssignment (x: <strong>SyntaxTree.Assignment</strong>)<tr><td></td><td> VisitIfStatement (x: <strong>SyntaxTree.IfStatement</strong>)<tr><td></td><td> VisitWithStatement (x: <strong>SyntaxTree.WithStatement</strong>)<tr><td></td><td> VisitCaseStatement (x: <strong>SyntaxTree.CaseStatement</strong>)<tr><td></td><td> VisitWhileStatement (x: <strong>SyntaxTree.WhileStatement</strong>)<tr><td></td><td> VisitRepeatStatement (x: <strong>SyntaxTree.RepeatStatement</strong>)<tr><td></td><td> VisitForStatement (x: <strong>SyntaxTree.ForStatement</strong>)<tr><td></td><td> VisitLoopStatement (x: <strong>SyntaxTree.LoopStatement</strong>)<tr><td></td><td> VisitExitStatement (x: <strong>SyntaxTree.ExitStatement</strong>)<tr><td></td><td> VisitReturnStatement (x: <strong>SyntaxTree.ReturnStatement</strong>)<tr><td></td><td> VisitAwaitStatement (x: <strong>SyntaxTree.AwaitStatement</strong>)<tr><td></td><td> VisitStatementBlock (x: <strong>SyntaxTree.StatementBlock</strong>)<tr><td></td><td> VisitCode (x: <strong>SyntaxTree.Code</strong>)<tr><td></td><td> Statement (x: <strong>SyntaxTree.Statement</strong>)<tr><td></td><td> StatementSequence (x: <strong>SyntaxTree.StatementSequence</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_5DC65B00"><a name="FoxInterpreter.Interpreter.VisitSet"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Interpreter">Interpreter</a>.<a href="#FoxInterpreter.Interpreter.VisitSet">VisitSet</a>
+</h3>
+<p> syntax tree types omitted -- unused</p>
+
+<p> expressions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitSet* (x: <strong>SyntaxTree.Set</strong>)</pre>
+<hr><h3 id="#_5DC6B600"><a name="FoxInterpreter.Interpreter.VisitDesignator"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Interpreter">Interpreter</a>.<a href="#FoxInterpreter.Interpreter.VisitDesignator">VisitDesignator</a>
+</h3>
+<p> designators (expressions)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitDesignator* (x: <strong>SyntaxTree.Designator</strong>)</pre>
+<hr><h3 id="#_5DC6FA80"><a name="FoxInterpreter.Interpreter.VisitValue"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Interpreter">Interpreter</a>.<a href="#FoxInterpreter.Interpreter.VisitValue">VisitValue</a>
+</h3>
+<p> values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitValue* (x: <strong>SyntaxTree.Value</strong>)</pre>
+<hr><h3 id="#_5DC73C80"><a name="FoxInterpreter.Interpreter.VisitSymbol"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Interpreter">Interpreter</a>.<a href="#FoxInterpreter.Interpreter.VisitSymbol">VisitSymbol</a>
+</h3>
+<p> symbols</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitSymbol* (x: <strong>SyntaxTree.Symbol</strong>)</pre>
+<hr><h3 id="#_5DC77D00"><a name="FoxInterpreter.Interpreter.VisitStatement"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Interpreter">Interpreter</a>.<a href="#FoxInterpreter.Interpreter.VisitStatement">VisitStatement</a>
+</h3>
+<p> statements</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> VisitStatement* (x: <strong>SyntaxTree.Statement</strong>)</pre>
+<hr><h2 id="#_5DC7BE00"><a name="FoxInterpreter.Resolver"></a><a href="#FoxInterpreter">FoxInterpreter</a>.<a href="#FoxInterpreter.Resolver">Resolver</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Resolver* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& InitResolver<tr><td></td><td> DoResolve (scope: <strong>Scope</strong>)<tr><td></td><td> Resolve (scope: <strong>Scope</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

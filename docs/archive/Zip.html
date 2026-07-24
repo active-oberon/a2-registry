@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Zip">Zip</a></p>
+<hr><h1 id="#_32C48BC0"><a name="Zip"></a><a href="#ModuleList">Module</a> Zip
+</h1>
+<p> AUTHOR "Stefan Walthert"; PURPOSE "ZIP codec"</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Zip.Ok">Ok</a>= 0<tr><td></td><td><a href="#Zip.FileError">FileError</a>= -1<tr><td></td><td><a href="#Zip.NotZipArchiveError">NotZipArchiveError</a>= -2<tr><td></td><td><a href="#Zip.EntryNotFound">EntryNotFound</a>= -3<tr><td></td><td><a href="#Zip.EntryAlreadyExists">EntryAlreadyExists</a>= -4<tr><td></td><td><a href="#Zip.NotSupportedError">NotSupportedError</a>= -5<tr><td></td><td><a href="#Zip.DataError">DataError</a>= -6<tr><td></td><td><a href="#Zip.BadName">BadName</a>= -7<tr><td></td><td><a href="#Zip.ReaderError">ReaderError</a>= -8<tr><td></td><td><a href="#Zip.DefaultCompression">DefaultCompression</a>= ZlibWriters.DefaultCompression<tr><td></td><td>NoCompression= ZlibWriters.NoCompression<tr><td></td><td>BestSpeed= ZlibWriters.BestSpeed<tr><td></td><td>BestCompression= ZlibWriters.BestCompression<tr><td></td><td><a href="#Zip.DefaultStrategy">DefaultStrategy</a>= ZlibWriters.DefaultStrategy<tr><td></td><td>Filtered= ZlibWriters.Filtered<tr><td></td><td>HuffmanOnly= ZlibWriters.HuffmanOnly<tr><th align='left'>type declarations</th><td><a href="#Zip.Entry">Entry</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>EntryDesc</strong><tr><td></td><td><a href="#Zip.EntryDesc">EntryDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Zip.Archive">Archive</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ArchiveDesc</strong><tr><td></td><td><a href="#Zip.ArchiveDesc">ArchiveDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Zip.Reader">Reader</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ReaderDesc</strong><tr><td></td><td><a href="#Zip.ReaderDesc">ReaderDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Zip.EntryInfo">EntryInfo</a> =<strong>OBJECT</strong> (<strong>Archives.EntryInfo</strong>)<tr><td></td><td><a href="#Zip.ArchiveObj">ArchiveObj</a> =<strong>OBJECT</strong> (<strong>Archives.Archive</strong>)<tr><th align='left'>procedures</th><td> ShowError (errorCode: <strong>INTEGER</strong>; out: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#Zip.OpenArchive">OpenArchive</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Archive</strong><tr><td></td><td> <a href="#Zip.CreateArchive">CreateArchive</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Archive</strong><tr><td></td><td> <a href="#Zip.FirstEntry">FirstEntry</a> (arc: <strong>Archive</strong>): <strong>Entry</strong><tr><td></td><td> <a href="#Zip.NextEntry">NextEntry</a> (ent: <strong>Entry</strong>): <strong>Entry</strong><tr><td></td><td> <a href="#Zip.GetEntry">GetEntry</a> (arc: <strong>Archive</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Entry</strong><tr><td></td><td> <a href="#Zip.ExtractEntry">ExtractEntry</a> (arc: <strong>Archive</strong>; ent: <strong>Entry</strong>; <strong>VAR</strong> dst: <strong>Files.Rider</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Zip.AddEntry">AddEntry</a> (arc: <strong>Archive</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> src: <strong>Files.Rider</strong>; len: <strong>SIGNED32</strong>; level, strategy: <strong>SIGNED8</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Zip.DeleteEntry">DeleteEntry</a> (arc: <strong>Archive</strong>; <strong>VAR</strong> ent: <strong>Entry</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Zip.OpenReader">OpenReader</a> (arc: <strong>Archive</strong>; ent: <strong>Entry</strong>): <strong>Reader</strong><tr><td></td><td> <a href="#Zip.ReadBytes">ReadBytes</a> (r: <strong>Reader</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>; <strong>VAR</strong> read: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Zip.Read">Read</a> (r: <strong>Reader</strong>; <strong>VAR</strong> ch: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Zip.Close">Close</a> (r: <strong>Reader</strong>)<tr><td></td><td> <a href="#Zip.Old">Old</a> (name: <strong>Archives.StringObject</strong>): <strong>Archives.Archive</strong><tr><td></td><td> <a href="#Zip.New">New</a> (name: <strong>Archives.StringObject</strong>): <strong>Archives.Archive</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_32C9D7C0"><a name="Zip.Ok"></a><a href="#Zip">Zip</a>.<a href="#Zip.Ok">Ok</a>
+</h2>
+<p> result codes</p>
+
+<p> operation on zip-file was successful</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_32CA20C0"><a name="Zip.FileError"></a><a href="#Zip">Zip</a>.<a href="#Zip.FileError">FileError</a>
+</h2>
+<p> file not found</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FileError*= -1</pre>
+<hr><h2 id="#_32CA59C0"><a name="Zip.NotZipArchiveError"></a><a href="#Zip">Zip</a>.<a href="#Zip.NotZipArchiveError">NotZipArchiveError</a>
+</h2>
+<p> file is not in zip format</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NotZipArchiveError*= -2</pre>
+<hr><h2 id="#_32CA9FC0"><a name="Zip.EntryNotFound"></a><a href="#Zip">Zip</a>.<a href="#Zip.EntryNotFound">EntryNotFound</a>
+</h2>
+<p> specified file was not found in zip-file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EntryNotFound*= -3</pre>
+<hr><h2 id="#_32CAE900"><a name="Zip.EntryAlreadyExists"></a><a href="#Zip">Zip</a>.<a href="#Zip.EntryAlreadyExists">EntryAlreadyExists</a>
+</h2>
+<p> file is already stored in zip-file -&gt can not add specified file to zip-file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EntryAlreadyExists*= -4</pre>
+<hr><h2 id="#_32CB4E00"><a name="Zip.NotSupportedError"></a><a href="#Zip">Zip</a>.<a href="#Zip.NotSupportedError">NotSupportedError</a>
+</h2>
+<p> can not extract specified file (compression method not supported/file is encrypted)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NotSupportedError*= -5</pre>
+<hr><h2 id="#_32CBA7C0"><a name="Zip.DataError"></a><a href="#Zip">Zip</a>.<a href="#Zip.DataError">DataError</a>
+</h2>
+<p> file is corrupted</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DataError*= -6</pre>
+<hr><h2 id="#_32CBE0C0"><a name="Zip.BadName"></a><a href="#Zip">Zip</a>.<a href="#Zip.BadName">BadName</a>
+</h2>
+<p> bad file name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> BadName*= -7</pre>
+<hr><h2 id="#_32CC1AC0"><a name="Zip.ReaderError"></a><a href="#Zip">Zip</a>.<a href="#Zip.ReaderError">ReaderError</a>
+</h2>
+<p> e.g. Reader not opened before Read</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ReaderError*= -8</pre>
+<hr><h2 id="#_32CC6000"><a name="Zip.DefaultCompression"></a><a href="#Zip">Zip</a>.<a href="#Zip.DefaultCompression">DefaultCompression</a>
+</h2>
+<p> compression levels</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DefaultCompression*= ZlibWriters.DefaultCompression</pre>
+<hr><h2 id="#_32CC96C0"><a name="Zip.DefaultStrategy"></a><a href="#Zip">Zip</a>.<a href="#Zip.DefaultStrategy">DefaultStrategy</a>
+</h2>
+<p> compression strategies</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DefaultStrategy*= ZlibWriters.DefaultStrategy</pre>
+<hr><h2 id="#_32CCCD80"><a name="Zip.Entry"></a><a href="#Zip">Zip</a>.<a href="#Zip.Entry">Entry</a>
+</h2>
+<p> description of a file stored in the zip-archive</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Entry* =<strong>POINTER</strong> <strong>TO</strong> <strong>EntryDesc</strong></pre>
+<hr><h2 id="#_32CD2140"><a name="Zip.EntryDesc"></a><a href="#Zip">Zip</a>.<a href="#Zip.EntryDesc">EntryDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EntryDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Zip.EntryDesc.name">name</a>: <strong>ARRAY</strong> EntryNameSize <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>time: <strong>SIGNED32</strong><tr><td></td><td><a href="#Zip.EntryDesc.date">date</a>: <strong>SIGNED32</strong><tr><td></td><td>compSize: <strong>SIGNED32</strong><tr><td></td><td><a href="#Zip.EntryDesc.uncompSize">uncompSize</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Zip.EntryDesc.comment">comment</a>: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_32CDC740"><a name="Zip.EntryDesc.name"></a><a href="#Zip">Zip</a>.<a href="#Zip.EntryDesc">EntryDesc</a>.<a href="#Zip.EntryDesc.name">name</a>
+</h3>
+<p> name of file stored in the zip-archive</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> name-: <strong>ARRAY</strong> EntryNameSize <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="#_32CE22C0"><a name="Zip.EntryDesc.date"></a><a href="#Zip">Zip</a>.<a href="#Zip.EntryDesc">EntryDesc</a>.<a href="#Zip.EntryDesc.date">date</a>
+</h3>
+<p> (Oberon) time and date when file was last modified</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> date-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_32CE7800"><a name="Zip.EntryDesc.uncompSize"></a><a href="#Zip">Zip</a>.<a href="#Zip.EntryDesc">EntryDesc</a>.<a href="#Zip.EntryDesc.uncompSize">uncompSize</a>
+</h3>
+<p> size of compressed / uncompressed file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> uncompSize-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_32CEC1C0"><a name="Zip.EntryDesc.comment"></a><a href="#Zip">Zip</a>.<a href="#Zip.EntryDesc">EntryDesc</a>.<a href="#Zip.EntryDesc.comment">comment</a>
+</h3>
+<p> comment for this file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> comment-: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_32CF12C0"><a name="Zip.Archive"></a><a href="#Zip">Zip</a>.<a href="#Zip.Archive">Archive</a>
+</h2>
+<p> description of a zipfile</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Archive* =<strong>POINTER</strong> <strong>TO</strong> <strong>ArchiveDesc</strong></pre>
+<hr><h2 id="#_32CF5600"><a name="Zip.ArchiveDesc"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveDesc">ArchiveDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArchiveDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Zip.ArchiveDesc.nofEntries">nofEntries</a>: <strong>SIGNED16</strong><tr><td></td><td><a href="#Zip.ArchiveDesc.comment">comment</a>: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>file: <strong>Files.File</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_32CFBFC0"><a name="Zip.ArchiveDesc.nofEntries"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveDesc">ArchiveDesc</a>.<a href="#Zip.ArchiveDesc.nofEntries">nofEntries</a>
+</h3>
+<p> total number of files stored in the zipfile</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> nofEntries-: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_32D01300"><a name="Zip.ArchiveDesc.comment"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveDesc">ArchiveDesc</a>.<a href="#Zip.ArchiveDesc.comment">comment</a>
+</h3>
+<p> comment for zipfile</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> comment-: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_32D05FC0"><a name="Zip.Reader"></a><a href="#Zip">Zip</a>.<a href="#Zip.Reader">Reader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reader* =<strong>POINTER</strong> <strong>TO</strong> <strong>ReaderDesc</strong></pre>
+<hr><h2 id="#_32D08BC0"><a name="Zip.ReaderDesc"></a><a href="#Zip">Zip</a>.<a href="#Zip.ReaderDesc">ReaderDesc</a>
+</h2>
+<p> structure for reading from a zip-file into a buffer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ReaderDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Zip.ReaderDesc.res">res</a>: <strong>INTEGER</strong></td></tr>
+</table>
+<hr><h3 id="#_32D0F440"><a name="Zip.ReaderDesc.res"></a><a href="#Zip">Zip</a>.<a href="#Zip.ReaderDesc">ReaderDesc</a>.<a href="#Zip.ReaderDesc.res">res</a>
+</h3>
+<p> result of last operation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> res-: <strong>INTEGER</strong></pre>
+<hr><h2 id="#_32D13580"><a name="Zip.EntryInfo"></a><a href="#Zip">Zip</a>.<a href="#Zip.EntryInfo">EntryInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EntryInfo* =<strong>OBJECT</strong> (<strong>Archives.EntryInfo</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIGNED32</strong>)<tr><td></td><td> GetName (): <strong>Strings.String</strong><tr><td></td><td> GetSize (): <strong>SIGNED32</strong><tr><td></td><td> GetInfoString (): <strong>Strings.String</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_32D1E600"><a name="Zip.ArchiveObj"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveObj">ArchiveObj</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArchiveObj* =<strong>OBJECT</strong> (<strong>Archives.Archive</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (f: <strong>Files.File</strong>)<tr><td></td><td> Acquire<tr><td></td><td> Release<tr><td></td><td> <a href="#Zip.ArchiveObj.GetIndex">GetIndex</a> (): <strong>Archives.Index</strong><tr><td></td><td> <a href="#Zip.ArchiveObj.GetEntryInfo">GetEntryInfo</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Archives.EntryInfo</strong><tr><td></td><td> <a href="#Zip.ArchiveObj.RemoveEntry">RemoveEntry</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Zip.ArchiveObj.RenameEntry">RenameEntry</a> (<strong>CONST</strong> from, to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Archives.EntryInfo</strong><tr><td></td><td> <a href="#Zip.ArchiveObj.OpenSender">OpenSender</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Sender</strong><tr><td></td><td> <a href="#Zip.ArchiveObj.OpenReceiver">OpenReceiver</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Receiver</strong><tr><td></td><td> <a href="#Zip.ArchiveObj.Copy">Copy</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Archives.Archive</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_32D37200"><a name="Zip.ArchiveObj.GetIndex"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveObj">ArchiveObj</a>.<a href="#Zip.ArchiveObj.GetIndex">GetIndex</a>
+</h3>
+<p> return list of archive entries</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetIndex* (): <strong>Archives.Index</strong></pre>
+<hr><h3 id="#_32D3BE00"><a name="Zip.ArchiveObj.GetEntryInfo"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveObj">ArchiveObj</a>.<a href="#Zip.ArchiveObj.GetEntryInfo">GetEntryInfo</a>
+</h3>
+<p> get info for a specific entry. return NIL if no such entry exists</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetEntryInfo* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Archives.EntryInfo</strong></pre>
+<hr><h3 id="#_32D43F00"><a name="Zip.ArchiveObj.RemoveEntry"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveObj">ArchiveObj</a>.<a href="#Zip.ArchiveObj.RemoveEntry">RemoveEntry</a>
+</h3>
+<p> remove named entry</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveEntry* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="#_32D492C0"><a name="Zip.ArchiveObj.RenameEntry"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveObj">ArchiveObj</a>.<a href="#Zip.ArchiveObj.RenameEntry">RenameEntry</a>
+</h3>
+<p> rename an archive entry. return new EntryInfo or NIL if failed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RenameEntry* (<strong>CONST</strong> from, to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Archives.EntryInfo</strong></pre>
+<hr><h3 id="#_32D515C0"><a name="Zip.ArchiveObj.OpenSender"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveObj">ArchiveObj</a>.<a href="#Zip.ArchiveObj.OpenSender">OpenSender</a>
+</h3>
+<p> open a sender to write an entry with name to archive. the data will be written when Update is called</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenSender* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Sender</strong></pre>
+<hr><h3 id="#_32D5B3C0"><a name="Zip.ArchiveObj.OpenReceiver"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveObj">ArchiveObj</a>.<a href="#Zip.ArchiveObj.OpenReceiver">OpenReceiver</a>
+</h3>
+<p> read entry from archive</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenReceiver* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Receiver</strong></pre>
+<hr><h3 id="#_32D61140"><a name="Zip.ArchiveObj.Copy"></a><a href="#Zip">Zip</a>.<a href="#Zip.ArchiveObj">ArchiveObj</a>.<a href="#Zip.ArchiveObj.Copy">Copy</a>
+</h3>
+<p> save a clone of the archive under a different name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Copy* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Archives.Archive</strong></pre>
+<hr><h2 id="#_32D68640"><a name="Zip.OpenArchive"></a><a href="#Zip">Zip</a>.<a href="#Zip.OpenArchive">OpenArchive</a>
+</h2>
+<p> Returns an Archive data structure corresponding to the specified zipfile; possible results:  Ok: operation was successful  FileError: file with specified name does not exist  NotZipArchiveError: file is not a correct zipfile</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenArchive* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Archive</strong></pre>
+<hr><h2 id="#_32D760C0"><a name="Zip.CreateArchive"></a><a href="#Zip">Zip</a>.<a href="#Zip.CreateArchive">CreateArchive</a>
+</h2>
+<p> Returns an Archive that corresponds to a file with specified name; if there is already a zip-file with the same name, this already existing archive is returned; possible results: cf. OpenArchive</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CreateArchive* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Archive</strong></pre>
+<hr><h2 id="#_32D831C0"><a name="Zip.FirstEntry"></a><a href="#Zip">Zip</a>.<a href="#Zip.FirstEntry">FirstEntry</a>
+</h2>
+<p> Returns the first entry of the Archive arc (NIL if there is no Entry)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FirstEntry* (arc: <strong>Archive</strong>): <strong>Entry</strong></pre>
+<hr><h2 id="#_32D8A400"><a name="Zip.NextEntry"></a><a href="#Zip">Zip</a>.<a href="#Zip.NextEntry">NextEntry</a>
+</h2>
+<p> Returns the next Entry after ent</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NextEntry* (ent: <strong>Entry</strong>): <strong>Entry</strong></pre>
+<hr><h2 id="#_32D8F740"><a name="Zip.GetEntry"></a><a href="#Zip">Zip</a>.<a href="#Zip.GetEntry">GetEntry</a>
+</h2>
+<p> Returns the Entry that corresponds to the file with the specified name and that is stored in the Archive arc; possible results:  Ok: Operation was successful  NotZipArchiveError: arc is not a valid Archive  EntryNotFound: no Entry corresponding to name was found</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetEntry* (arc: <strong>Archive</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Entry</strong></pre>
+<hr><h2 id="#_32DA0780"><a name="Zip.ExtractEntry"></a><a href="#Zip">Zip</a>.<a href="#Zip.ExtractEntry">ExtractEntry</a>
+</h2>
+<p> Uncompresses and writes the data of Entry ent to Files.Rider dst; possible results:  Ok: Data extracted  NotZipArchiveError: arc is not a valid zip-archive  EntryNotFound: ent is not an Entry of arc  NotSupportedError: data of ent are encrypted or compression method is not supported  DataError: zipfile is corrupted  BadName: entry has a bad file name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ExtractEntry* (arc: <strong>Archive</strong>; ent: <strong>Entry</strong>; <strong>VAR</strong> dst: <strong>Files.Rider</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_32DB5340"><a name="Zip.AddEntry"></a><a href="#Zip">Zip</a>.<a href="#Zip.AddEntry">AddEntry</a>
+</h2>
+<p> Reads and compresses len bytes from Files.Rider src with specified level and strategy and writes them to a new Entry in the Archive arc; possible results:  Ok: file was added to arc  NotZipArchiveError: arc is not a valid zip-archive  EntryAlreadyExists: there is already an Entry in arc with the same name  DataError: error during compression  BadName: src is not based on a valid file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddEntry* (arc: <strong>Archive</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> src: <strong>Files.Rider</strong>; len: <strong>SIGNED32</strong>; level, strategy: <strong>SIGNED8</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_32DCEFC0"><a name="Zip.DeleteEntry"></a><a href="#Zip">Zip</a>.<a href="#Zip.DeleteEntry">DeleteEntry</a>
+</h2>
+<p> Deletes Entry ent from Archive arc; Possible results:  Ok: ent was deleted, ent is set to NIL  NotZipArchiveError: arc is not a valid zip-archive  EntryNotFound: ent is not an Entry of Archive arc</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DeleteEntry* (arc: <strong>Archive</strong>; <strong>VAR</strong> ent: <strong>Entry</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_32DDD140"><a name="Zip.OpenReader"></a><a href="#Zip">Zip</a>.<a href="#Zip.OpenReader">OpenReader</a>
+</h2>
+<p> open a Reader to read uncompressed data from a zip entry directly to memory</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenReader* (arc: <strong>Archive</strong>; ent: <strong>Entry</strong>): <strong>Reader</strong></pre>
+<hr><h2 id="#_32DE5180"><a name="Zip.ReadBytes"></a><a href="#Zip">Zip</a>.<a href="#Zip.ReadBytes">ReadBytes</a>
+</h2>
+<p> read len bytes of uncompressed data into buf[offset] and return number of bytes actually read; Reader must be opened</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ReadBytes* (r: <strong>Reader</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>; <strong>VAR</strong> read: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_32DF1340"><a name="Zip.Read"></a><a href="#Zip">Zip</a>.<a href="#Zip.Read">Read</a>
+</h2>
+<p> read decompressed byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (r: <strong>Reader</strong>; <strong>VAR</strong> ch: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_32DF6640"><a name="Zip.Close"></a><a href="#Zip">Zip</a>.<a href="#Zip.Close">Close</a>
+</h2>
+<p> close Reader</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close* (r: <strong>Reader</strong>)</pre>
+<hr><h2 id="#_32DFA380"><a name="Zip.Old"></a><a href="#Zip">Zip</a>.<a href="#Zip.Old">Old</a>
+</h2>
+<p> open an existing archive. applications should use the method Old in the superclass</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Old* (name: <strong>Archives.StringObject</strong>): <strong>Archives.Archive</strong></pre>
+<hr><h2 id="#_32E01240"><a name="Zip.New"></a><a href="#Zip">Zip</a>.<a href="#Zip.New">New</a>
+</h2>
+<p> create a new archive, overwrite existing. applications should use the method New in the superclass</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> New* (name: <strong>Archives.StringObject</strong>): <strong>Archives.Archive</strong></pre>
+</body></html>

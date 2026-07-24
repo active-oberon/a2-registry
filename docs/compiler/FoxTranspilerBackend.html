@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxTranspilerBackend">FoxTranspilerBackend</a></p>
+<hr><h1 id="#_A7CD7CC0"><a name="FoxTranspilerBackend"></a><a href="#ModuleList">Module</a> FoxTranspilerBackend
+</h1>
+<p> AUTHOR "negelef"; PURPOSE "Oberon to C transpiler";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#FoxTranspilerBackend.Transpiler">Transpiler</a> =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)<tr><td></td><td><a href="#FoxTranspilerBackend.TranspilerBackend">TranspilerBackend</a> =<strong>OBJECT</strong> (<strong>Backend.Backend</strong>)<tr><th align='left'>procedures</th><td> Get (): <strong>Backend.Backend</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A7CDFB80"><a name="FoxTranspilerBackend.Transpiler"></a><a href="#FoxTranspilerBackend">FoxTranspilerBackend</a>.<a href="#FoxTranspilerBackend.Transpiler">Transpiler</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Transpiler* =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> VisitAssignment (statement: <strong>SyntaxTree.Assignment</strong>)<tr><td></td><td> VisitIfStatement (statement: <strong>SyntaxTree.IfStatement</strong>)<tr><td></td><td> VisitWithStatement (statement: <strong>SyntaxTree.WithStatement</strong>)<tr><td></td><td> VisitWhileStatement (statement: <strong>SyntaxTree.WhileStatement</strong>)<tr><td></td><td> VisitRepeatStatement (statement: <strong>SyntaxTree.RepeatStatement</strong>)<tr><td></td><td> VisitLoopStatement (statement: <strong>SyntaxTree.LoopStatement</strong>)<tr><td></td><td> VisitExitStatement (statement: <strong>SyntaxTree.ExitStatement</strong>)<tr><td></td><td> VisitReturnStatement (statement: <strong>SyntaxTree.ReturnStatement</strong>)<tr><td></td><td> VisitStatementBlock (statement: <strong>SyntaxTree.StatementBlock</strong>)<tr><td></td><td> VisitAwaitStatement (statement: <strong>SyntaxTree.AwaitStatement</strong>)<tr><td></td><td> VisitCaseStatement (statement: <strong>SyntaxTree.CaseStatement</strong>)<tr><td></td><td> VisitForStatement (statement: <strong>SyntaxTree.ForStatement</strong>)<tr><td></td><td> VisitProcedureCallStatement (statement: <strong>SyntaxTree.ProcedureCallStatement</strong>)<tr><td></td><td> VisitSymbolDesignator (expression: <strong>SyntaxTree.SymbolDesignator</strong>)<tr><td></td><td> VisitBuiltinCallDesignator (expression: <strong>SyntaxTree.BuiltinCallDesignator</strong>)<tr><td></td><td> VisitProcedureCallDesignator (expression: <strong>SyntaxTree.ProcedureCallDesignator</strong>)<tr><td></td><td> VisitBooleanValue (expression: <strong>SyntaxTree.BooleanValue</strong>)<tr><td></td><td> VisitIntegerValue (expression: <strong>SyntaxTree.IntegerValue</strong>)<tr><td></td><td> VisitCharacterValue (expression: <strong>SyntaxTree.CharacterValue</strong>)<tr><td></td><td> VisitSetValue (expression: <strong>SyntaxTree.SetValue</strong>)<tr><td></td><td> VisitRealValue (expression: <strong>SyntaxTree.RealValue</strong>)<tr><td></td><td> VisitStringValue (expression: <strong>SyntaxTree.StringValue</strong>)<tr><td></td><td> VisitNilValue (expression: <strong>SyntaxTree.NilValue</strong>)<tr><td></td><td> VisitEnumerationValue (expression: <strong>SyntaxTree.EnumerationValue</strong>)<tr><td></td><td> VisitUnaryExpression (expression: <strong>SyntaxTree.UnaryExpression</strong>)<tr><td></td><td> VisitTypeGuardDesignator (expression: <strong>SyntaxTree.TypeGuardDesignator</strong>)<tr><td></td><td> VisitSupercallDesignator (expression: <strong>SyntaxTree.SupercallDesignator</strong>)<tr><td></td><td> VisitBinaryExpression (expression: <strong>SyntaxTree.BinaryExpression</strong>)<tr><td></td><td> VisitSelfDesignator (expression: <strong>SyntaxTree.SelfDesignator</strong>)<tr><td></td><td> VisitIndexDesignator (expression: <strong>SyntaxTree.IndexDesignator</strong>)<tr><td></td><td> VisitConversion (expression: <strong>SyntaxTree.Conversion</strong>)<tr><td></td><td> VisitDereferenceDesignator (expression: <strong>SyntaxTree.DereferenceDesignator</strong>)<tr><td></td><td> VisitSet (expression: <strong>SyntaxTree.Set</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A7D1C3C0"><a name="FoxTranspilerBackend.TranspilerBackend"></a><a href="#FoxTranspilerBackend">FoxTranspilerBackend</a>.<a href="#FoxTranspilerBackend.TranspilerBackend">TranspilerBackend</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TranspilerBackend* =<strong>OBJECT</strong> (<strong>Backend.Backend</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> ProcessSyntaxTreeModule (module: <strong>SyntaxTree.Module</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> DefineOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> GetOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> DefaultSymbolFileFormat (): <strong>Formats.SymbolFileFormat</strong><tr><td></td><td> GetSystem (): <strong>Global.System</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

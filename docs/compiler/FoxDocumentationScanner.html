@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxDocumentationScanner">FoxDocumentationScanner</a></p>
+<hr><h1 id="#_A905E240"><a name="FoxDocumentationScanner"></a><a href="#ModuleList">Module</a> FoxDocumentationScanner
+</h1>
+<p> AUTHOR ""; PURPOSE "";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>EOT= 0X<tr><td></td><td>LF= 0AX<tr><td></td><td>CR= 0DX<tr><th align='left'>type declarations</th><td><a href="#FoxDocumentationScanner.Token">Token</a> =<strong>ENUMERATION</strong> <tr><td></td><td>String =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#FoxDocumentationScanner.Symbol">Symbol</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxDocumentationScanner.Scanner">Scanner</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A9068C00"><a name="FoxDocumentationScanner.Token"></a><a href="#FoxDocumentationScanner">FoxDocumentationScanner</a>.<a href="#FoxDocumentationScanner.Token">Token</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Token* =<strong>ENUMERATION</strong> <strong>CONST</strong> EndOfText*= 0, <strong>CONST</strong> NewLine*= 1, <strong>CONST</strong> Header*= 2, <strong>CONST</strong> Pipe*= 3, <strong>CONST</strong> LeftItalic*= 4, <strong>CONST</strong> RightItalic*= 5, <strong>CONST</strong> LeftBold*= 6, <strong>CONST</strong> RightBold*= 7, <strong>CONST</strong> LeftUnderline*= 8, <strong>CONST</strong> RightUnderline*= 9, <strong>CONST</strong> LinkBegin*= 10, <strong>CONST</strong> LinkEnd*= 11, <strong>CONST</strong> Heading*= 12, <strong>CONST</strong> Number*= 13, <strong>CONST</strong> LeftDescription*= 14, <strong>CONST</strong> RightDescription*= 15, <strong>CONST</strong> Description*= 16, <strong>CONST</strong> Bullet*= 17, <strong>CONST</strong> Line*= 18, <strong>CONST</strong> CodeBegin*= 19, <strong>CONST</strong> CodeEnd*= 20, <strong>CONST</strong> LabelBegin*= 21, <strong>CONST</strong> LabelEnd*= 22, <strong>CONST</strong> LineBreak*= 23, <strong>CONST</strong> Section*= 24, <strong>CONST</strong> String*= 25</pre>
+<hr><h2 id="#_A9087480"><a name="FoxDocumentationScanner.Symbol"></a><a href="#FoxDocumentationScanner">FoxDocumentationScanner</a>.<a href="#FoxDocumentationScanner.Symbol">Symbol</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Symbol* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>position: <strong>SIGNED32</strong><tr><td></td><td>token: <strong>Token</strong><tr><td></td><td>level: <strong>SIGNED32</strong><tr><td></td><td>string: <strong>String</strong><tr><td></td><td>stringLength: <strong>SIGNED32</strong><tr><td></td><td>hasWhitespace: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A908FB40"><a name="FoxDocumentationScanner.Scanner"></a><a href="#FoxDocumentationScanner">FoxDocumentationScanner</a>.<a href="#FoxDocumentationScanner.Scanner">Scanner</a>
+</h2>
+<p> scanner reflects the following EBNF</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scanner* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>position: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& InitializeScanner (reader: <strong>Streams.Reader</strong>; position: <strong>SIGNED32</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> <a href="#FoxDocumentationScanner.Scanner.GetNextSymbol">GetNextSymbol</a> (<strong>VAR</strong> symbol: <strong>Symbol</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_A909B200"><a name="FoxDocumentationScanner.Scanner.GetNextSymbol"></a><a href="#FoxDocumentationScanner">FoxDocumentationScanner</a>.<a href="#FoxDocumentationScanner.Scanner">Scanner</a>.<a href="#FoxDocumentationScanner.Scanner.GetNextSymbol">GetNextSymbol</a>
+</h3>
+<p> get next symbol</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNextSymbol* (<strong>VAR</strong> symbol: <strong>Symbol</strong>)</pre>
+</body></html>

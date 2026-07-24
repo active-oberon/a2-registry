@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PCM">PCM</a></p>
+<hr><h1 id="#_105C6280"><a name="PCM"></a><a href="#ModuleList">Module</a> PCM
+</h1>
+<p> AUTHOR "prk"; PURPOSE "Parallel Compiler: input and output module";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>nilval= 0<tr><td></td><td>MinSInt= -128<tr><td></td><td>MinInt= -32768<tr><td></td><td>MinLInt= SIGNED32(2147483648)<tr><td></td><td>MaxSInt= 127<tr><td></td><td>MaxInt= 32767<tr><td></td><td>MaxLInt= 2147483647<tr><td></td><td>MaxSet= 31<tr><td></td><td>MaxHDig= 8<tr><td></td><td>MaxHHDig= 16<tr><td></td><td>MaxRExp= 38<tr><td></td><td>MaxLExp= 308<tr><td></td><td><a href="#PCM.ArrayCheck">ArrayCheck</a>= 0<tr><td></td><td>OverflowCheck= 1<tr><td></td><td>NilCheck= 2<tr><td></td><td>TypeCheck= 3<tr><td></td><td>PtrInit= 5<tr><td></td><td>AssertCheck= 6<tr><td></td><td>Optimize= 13<tr><td></td><td>FullStackInit= 20<tr><td></td><td>AlignedStack= 21<tr><td></td><td>ExportDefinitions= 30<tr><td></td><td>UseDefinitions= 31<tr><td></td><td><a href="#PCM.NewSF">NewSF</a>= 16<tr><td></td><td>ExtSF= 17<tr><td></td><td>Breakpoint= 18<tr><td></td><td>CacheImports= 19<tr><td></td><td>NoFiles= 21<tr><td></td><td>NoOpOverloading= 22<tr><td></td><td>BigEndian= 23<tr><td></td><td>Warnings= 24<tr><td></td><td>SkipOldSFImport= 25<tr><td></td><td>MultipleModules= 26<tr><td></td><td><a href="#PCM.Untraced">Untraced</a>= 4<tr><td></td><td>WinAPIParam= 13<tr><td></td><td>CParam= 14<tr><td></td><td>ReadOnly= 15<tr><td></td><td>RealtimeProc= 21<tr><td></td><td>RealtimeProcType= 21<tr><td></td><td><a href="#PCM.WithTrap">WithTrap</a>= 1<tr><td></td><td>CaseTrap= 2<tr><td></td><td>ReturnTrap= 3<tr><td></td><td>TypeEqualTrap= 5<tr><td></td><td>TypeCheckTrap= 6<tr><td></td><td>IndexCheckTrap= 7<tr><td></td><td>AssertTrap= 8<tr><td></td><td>ArraySizeTrap= 9<tr><td></td><td>ArrayFormTrap= 10<tr><td></td><td>FileVersion= 0B1X<tr><td></td><td>FileVersionOC= 0B2X<tr><td></td><td>LocalUnicodeSupport= TRUE<tr><td></td><td>ExportedUnicodeSupport= FALSE<tr><td></td><td>InvalidCode= -1<tr><td></td><td>InvalidPosition= Streams.Invalid<tr><th align='left'>type declarations</th><td><a href="#PCM.SymReader">SymReader</a> =<strong>Files.Reader</strong><tr><td></td><td><a href="#PCM.Rider">Rider</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#PCM.Attribute">Attribute</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>bigEndian: <strong>BOOLEAN</strong><tr><td></td><td><a href="#PCM.codeOptions">codeOptions</a>: <strong>SET</strong><tr><td></td><td>parserOptions: <strong>SET</strong><tr><td></td><td><a href="#PCM.error">error</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#PCM.breakpc">breakpc</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#PCM.breakpos">breakpos</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#PCM.prefix">prefix</a>: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>suffix: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#PCM.dump">dump</a>: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>source: <strong>Files.FileName</strong><tr><td></td><td>log: <strong>Streams.Writer</strong><tr><td></td><td>diagnostics: <strong>Diagnostics.Diagnostics</strong><tr><th align='left'>procedures</th><td> <a href="#PCM.GetProcessID">GetProcessID</a> (): <strong>ADDRESS</strong><tr><td></td><td> <a href="#PCM.OpenSymFile">OpenSymFile</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> r: <strong>SymReader</strong>; <strong>VAR</strong> version: <strong>CHAR</strong>; <strong>VAR</strong> zeroCompress: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SymW (<strong>VAR</strong> R: <strong>Rider</strong>; ch: <strong>CHAR</strong>)<tr><td></td><td> SymWNum (<strong>VAR</strong> R: <strong>Rider</strong>; i: <strong>SIGNED32</strong>)<tr><td></td><td> SymWSet (<strong>VAR</strong> R: <strong>Rider</strong>; s: <strong>SET</strong>)<tr><td></td><td> SymWString (<strong>VAR</strong> R: <strong>Rider</strong>; <strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SymWMod (<strong>VAR</strong> R: <strong>Rider</strong>; <strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SymWReal (<strong>VAR</strong> R: <strong>Rider</strong>; r: <strong>FLOAT32</strong>)<tr><td></td><td> SymWLReal (<strong>VAR</strong> R: <strong>Rider</strong>; r: <strong>FLOAT64</strong>)<tr><td></td><td> ObjWGetPos (<strong>VAR</strong> R: <strong>Rider</strong>; <strong>VAR</strong> pos: <strong>Files.Position</strong>)<tr><td></td><td> ObjW (<strong>VAR</strong> R: <strong>Rider</strong>; ch: <strong>CHAR</strong>)<tr><td></td><td> ObjWNum (<strong>VAR</strong> R: <strong>Rider</strong>; i: <strong>SIGNED32</strong>)<tr><td></td><td> ObjWInt (<strong>VAR</strong> R: <strong>Rider</strong>; i: <strong>SIGNED16</strong>)<tr><td></td><td> ObjWIntAt (<strong>VAR</strong> R: <strong>Rider</strong>; pos: <strong>SIGNED32</strong>; i: <strong>SIGNED16</strong>)<tr><td></td><td> ObjWLInt (<strong>VAR</strong> R: <strong>Rider</strong>; i: <strong>SIGNED32</strong>)<tr><td></td><td> ObjWLIntAt (<strong>VAR</strong> R: <strong>Rider</strong>; pos: <strong>Files.Position</strong>; i: <strong>SIGNED32</strong>)<tr><td></td><td> ObjWName (<strong>VAR</strong> R: <strong>Rider</strong>; <strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> RefW (<strong>VAR</strong> R: <strong>Rider</strong>; ch: <strong>CHAR</strong>)<tr><td></td><td> RefWNum (<strong>VAR</strong> R: <strong>Rider</strong>; i: <strong>SIGNED32</strong>)<tr><td></td><td> RefWString (<strong>VAR</strong> R: <strong>Rider</strong>; <strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Open (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> R: <strong>Rider</strong>; <strong>VAR</strong> version: <strong>CHAR</strong>)<tr><td></td><td> CloseSym (<strong>VAR</strong> R: <strong>Rider</strong>)<tr><td></td><td> CloseObj (<strong>VAR</strong> R: <strong>Rider</strong>)<tr><td></td><td> RefSize (<strong>VAR</strong> R: <strong>Rider</strong>): <strong>SIGNED32</strong><tr><td></td><td> TraceBack<tr><td></td><td> Error (err: <strong>INTEGER</strong>; pos: <strong>SIGNED32</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ErrorN (err: <strong>INTEGER</strong>; pos: <strong>SIGNED32</strong>; msg: <strong>StringPool.Index</strong>)<tr><td></td><td> Warning (err, pos: <strong>SIGNED32</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> LogW (ch: <strong>CHAR</strong>)<tr><td></td><td> LogWStr (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> LogWStr0 (str: <strong>StringPool.Index</strong>)<tr><td></td><td> LogWHex (i: <strong>SIGNED32</strong>)<tr><td></td><td> LogWNum (i: <strong>SIGNED64</strong>)<tr><td></td><td> LogWBool (b: <strong>BOOLEAN</strong>)<tr><td></td><td> LogWType (p: @Any0)<tr><td></td><td> LogWLn<tr><td></td><td> LogFlush<tr><td></td><td> <a href="#PCM.Init">Init</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; l: <strong>Streams.Writer</strong>; d: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> <a href="#PCM.Reset">Reset</a><tr><td></td><td> <a href="#PCM.SetErrorMsg">SetErrorMsg</a> (n: <strong>SIGNED32</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SwapBytes (<strong>VAR</strong> p: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; offset, len: <strong>SIGNED32</strong>)<tr><td></td><td> MakeErrorFile<tr><td></td><td> <a href="#PCM.TracebackOnError">TracebackOnError</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1067F5C0"><a name="PCM.ArrayCheck"></a><a href="#PCM">PCM</a>.<a href="#PCM.ArrayCheck">ArrayCheck</a>
+</h2>
+<p> code generator options</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ArrayCheck*= 0</pre>
+<hr><h2 id="#_10682C00"><a name="PCM.NewSF"></a><a href="#PCM">PCM</a>.<a href="#PCM.NewSF">NewSF</a>
+</h2>
+<p> parser options</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NewSF*= 16</pre>
+<hr><h2 id="#_10685E00"><a name="PCM.Untraced"></a><a href="#PCM">PCM</a>.<a href="#PCM.Untraced">Untraced</a>
+</h2>
+<p> sysflags and objflags written to and read from symbol file</p>
+
+<p> global vars + fields - weak pointer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Untraced*= 4</pre>
+<hr><h2 id="#_1068CE40"><a name="PCM.WithTrap"></a><a href="#PCM">PCM</a>.<a href="#PCM.WithTrap">WithTrap</a>
+</h2>
+<p> compiler generated traps</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> WithTrap*= 1</pre>
+<hr><h2 id="#_10690480"><a name="PCM.SymReader"></a><a href="#PCM">PCM</a>.<a href="#PCM.SymReader">SymReader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SymReader* =<strong>Files.Reader</strong></pre>
+<hr><h2 id="#_10692880"><a name="PCM.Rider"></a><a href="#PCM">PCM</a>.<a href="#PCM.Rider">Rider</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Rider* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_10695500"><a name="PCM.Attribute"></a><a href="#PCM">PCM</a>.<a href="#PCM.Attribute">Attribute</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Attribute* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_10698180"><a name="PCM.codeOptions"></a><a href="#PCM">PCM</a>.<a href="#PCM.codeOptions">codeOptions</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<p> status</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> codeOptions*: <strong>SET</strong></pre>
+<hr><h2 id="#_1069BA80"><a name="PCM.error"></a><a href="#PCM">PCM</a>.<a href="#PCM.error">error</a>
+</h2>
+<p> actual compilation status</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> error*: <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_1069F0C0"><a name="PCM.breakpc"></a><a href="#PCM">PCM</a>.<a href="#PCM.breakpc">breakpc</a>
+</h2>
+<p> input</p>
+
+<p> code offset to be found or MAX(SIGNED32)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> breakpc*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_106A3D40"><a name="PCM.breakpos"></a><a href="#PCM">PCM</a>.<a href="#PCM.breakpos">breakpos</a>
+</h2>
+<p> text pos corresponding to breakpc (err 400 pos)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> breakpos*: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_106A8840"><a name="PCM.prefix"></a><a href="#PCM">PCM</a>.<a href="#PCM.prefix">prefix</a>
+</h2>
+<p> output</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> prefix*: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_106AC500"><a name="PCM.dump"></a><a href="#PCM">PCM</a>.<a href="#PCM.dump">dump</a>
+</h2>
+<p> procedure to dump (/D option)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> dump*: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_106B1340"><a name="PCM.GetProcessID"></a><a href="#PCM">PCM</a>.<a href="#PCM.GetProcessID">GetProcessID</a>
+</h2>
+<p> ---------- low level functions ---------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetProcessID* (): <strong>ADDRESS</strong></pre>
+<hr><h2 id="#_106B5900"><a name="PCM.OpenSymFile"></a><a href="#PCM">PCM</a>.<a href="#PCM.OpenSymFile">OpenSymFile</a>
+</h2>
+<p> OpenSymFile - Open a symfile for reading</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OpenSymFile* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> r: <strong>SymReader</strong>; <strong>VAR</strong> version: <strong>CHAR</strong>; <strong>VAR</strong> zeroCompress: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_106BF0C0"><a name="PCM.Init"></a><a href="#PCM">PCM</a>.<a href="#PCM.Init">Init</a>
+</h2>
+<p> ---------- configuration functions ---------------------</p>
+
+<p> Init - Prepare module for a new compilation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; l: <strong>Streams.Writer</strong>; d: <strong>Diagnostics.Diagnostics</strong>)</pre>
+<hr><h2 id="#_106C8080"><a name="PCM.Reset"></a><a href="#PCM">PCM</a>.<a href="#PCM.Reset">Reset</a>
+</h2>
+<p> Reset - allow deallocation of structures</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reset*</pre>
+<hr><h2 id="#_106CBD40"><a name="PCM.SetErrorMsg"></a><a href="#PCM">PCM</a>.<a href="#PCM.SetErrorMsg">SetErrorMsg</a>
+</h2>
+<p> SetErrorMsg - Set message for error n</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetErrorMsg* (n: <strong>SIGNED32</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_106D2900"><a name="PCM.TracebackOnError"></a><a href="#PCM">PCM</a>.<a href="#PCM.TracebackOnError">TracebackOnError</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TracebackOnError*</pre>
+</body></html>

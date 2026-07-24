@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxCSharpParser">FoxCSharpParser</a></p>
+<hr><h1 id="#_F78FB500"><a name="FoxCSharpParser"></a><a href="#ModuleList">Module</a> FoxCSharpParser
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#FoxCSharpParser.Position">Position</a> =<strong>Scanner.Position</strong><tr><td></td><td><a href="#FoxCSharpParser.Parser">Parser</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#FoxCSharpParser.NewParser">NewParser</a> (scanner: <strong>Scanner.Scanner</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>Parser</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_F7904C40">
+</h1><hr><h2 id="#_F7905400"><a name="FoxCSharpParser.Position"></a><a href="#FoxCSharpParser">FoxCSharpParser</a>.<a href="#FoxCSharpParser.Position">Position</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Position* =<strong>Scanner.Position</strong></pre>
+<hr><h2 id="#_F7907740"><a name="FoxCSharpParser.Parser"></a><a href="#FoxCSharpParser">FoxCSharpParser</a>.<a href="#FoxCSharpParser.Parser">Parser</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parser* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>token: <strong>Scanner.Token</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& <a href="#FoxCSharpParser.Parser.Init">Init</a> (scanner: <strong>Scanner.Scanner</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> <a href="#FoxCSharpParser.Parser.Module">Module</a> (): <strong>SyntaxTree.Module</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_F7910800"><a name="FoxCSharpParser.Parser.Init"></a><a href="#FoxCSharpParser">FoxCSharpParser</a>.<a href="#FoxCSharpParser.Parser">Parser</a>.<a href="#FoxCSharpParser.Parser.Init">Init</a>
+</h3>
+<p> constructor, init parser with scanner providing input and with diagnostics for error output</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& Init* (scanner: <strong>Scanner.Scanner</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)</pre>
+<hr><h3 id="#_F7918800"><a name="FoxCSharpParser.Parser.Module"></a><a href="#FoxCSharpParser">FoxCSharpParser</a>.<a href="#FoxCSharpParser.Parser">Parser</a>.<a href="#FoxCSharpParser.Parser.Module">Module</a>
+</h3>
+<dl>
+<dt><strong>compilation-unit</strong></dt>
+<dd> 'module' identifier '{' <a href="#import-directives]">import-directives]</a> <a href="#class-member-declarations]">class-member-declarations]</a> '}' <a href="#';']">';']</a> 'cellnet' identifier '{' <a href="#import-directives]">import-directives]</a> <a href="#class-member-declarations]">class-member-declarations]</a> '}' <a href="#';']">';']</a></dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Module* (): <strong>SyntaxTree.Module</strong></pre>
+<hr><h2 id="#_F791FB40"><a name="FoxCSharpParser.NewParser"></a><a href="#FoxCSharpParser">FoxCSharpParser</a>.<a href="#FoxCSharpParser.NewParser">NewParser</a>
+</h2>
+<p> parser retrieval</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewParser* (scanner: <strong>Scanner.Scanner</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>Parser</strong></pre>
+</body></html>

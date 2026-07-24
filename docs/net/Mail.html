@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Mail">Mail</a></p>
+<hr><h1 id="#_DF084C40"><a name="Mail"></a><a href="#ModuleList">Module</a> Mail
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>MailAddress =<strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Mail.Recipient">Recipient</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Mail.Header">Header</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Mail.Line">Line</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Mail.Message">Message</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Mail.Sender">Sender</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_DF08CF80">
+</h1>
+<p> AUTHOR "TF"; PURPOSE "Mail data structures";</p>
+<hr><h2 id="#_DF08F1C0"><a name="Mail.Recipient"></a><a href="#Mail">Mail</a>.<a href="#Mail.Recipient">Recipient</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Recipient* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>MailAddress</strong><tr><td></td><td>address: <strong>MailAddress</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DF093D00"><a name="Mail.Header"></a><a href="#Mail">Mail</a>.<a href="#Mail.Header">Header</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Header* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>id: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>content: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DF09A640"><a name="Mail.Line"></a><a href="#Mail">Mail</a>.<a href="#Mail.Line">Line</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Line* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>data: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</table>
+<hr><h2 id="#_DF09F340"><a name="Mail.Message"></a><a href="#Mail">Mail</a>.<a href="#Mail.Message">Message</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Message* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> SetFrom (<strong>CONST</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetFrom (<strong>VAR</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetSender (<strong>CONST</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetSender (<strong>VAR</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetSubject (<strong>CONST</strong> subject: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetSubject (<strong>VAR</strong> subject: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetDate (<strong>CONST</strong> date: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetDate (<strong>VAR</strong> date: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddTo (<strong>CONST</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetNofTo (): <strong>SIZE</strong><tr><td></td><td> GetTo (nr: <strong>SIZE</strong>; <strong>VAR</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddReplyTo (<strong>CONST</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetNofReplyTo (): <strong>SIZE</strong><tr><td></td><td> GetReplyTo (nr: <strong>SIZE</strong>; <strong>VAR</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddCc (<strong>CONST</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetNofCc (): <strong>SIZE</strong><tr><td></td><td> GetCc (nr: <strong>SIZE</strong>; <strong>VAR</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddBcc (<strong>CONST</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetNofBcc (): <strong>SIZE</strong><tr><td></td><td> GetBcc (nr: <strong>SIZE</strong>; <strong>VAR</strong> name, address: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddHeader (<strong>CONST</strong> id, content: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetNofHeaders (): <strong>SIZE</strong><tr><td></td><td> GetHeader (nr: <strong>SIZE</strong>; <strong>VAR</strong> id, content: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddLine (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetNofLines (): <strong>SIZE</strong><tr><td></td><td> GetLine (nr: <strong>SIZE</strong>; <strong>VAR</strong> l: <strong>Line</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_DF0E7900"><a name="Mail.Sender"></a><a href="#Mail">Mail</a>.<a href="#Mail.Sender">Sender</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Sender* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Send (m: <strong>Message</strong>; <strong>VAR</strong> result: <strong>INTEGER</strong>)</td></tr>
+</table>
+</body></html>

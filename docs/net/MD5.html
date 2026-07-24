@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#MD5">MD5</a></p>
+<hr><h1 id="#_477EA900"><a name="MD5"></a><a href="#ModuleList">Module</a> MD5
+</h1>
+<p> portable</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#MD5.Context">Context</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ContextDesc</strong><tr><td></td><td>Digest =<strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> <a href="#MD5.New">New</a> (): <strong>Context</strong><tr><td></td><td> Init (cont: <strong>Context</strong>)<tr><td></td><td> <a href="#MD5.Write">Write</a> (context: <strong>Context</strong>; ch: <strong>CHAR</strong>)<tr><td></td><td> <a href="#MD5.WriteBytes">WriteBytes</a> (context: <strong>Context</strong>; <strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#MD5.Close">Close</a> (context: <strong>Context</strong>; <strong>VAR</strong> digest: <strong>Digest</strong>)<tr><td></td><td> <a href="#MD5.ToString">ToString</a> (digest: <strong>Digest</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_477FFDC0">
+</h1><hr><h2 id="#_47800580"><a name="MD5.Context"></a><a href="#MD5">MD5</a>.<a href="#MD5.Context">Context</a>
+</h2>
+<p> The MD5 Message-Digest Algorithm (RFC1321)</p>
+
+<p>The algorithm takes as input a message of arbitrary length and producesas output a 128-bit "fingerprint" or "message digest" of the input. It isconjectured that it is computationally infeasible to produce two messageshaving the same message digest, or to produce any message having agiven prespecified target message digest. The MD5 algorithm is intendedfor digital signature applications, where a large file must be "compressed"in a secure manner before being encrypted with a private (secret) keyunder a public-key cryptosystem such as RSA.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Context* =<strong>POINTER</strong> <strong>TO</strong> <strong>ContextDesc</strong></pre>
+<hr><h2 id="#_478193C0"><a name="MD5.New"></a><a href="#MD5">MD5</a>.<a href="#MD5.New">New</a>
+</h2>
+<p> Begin an MD5 operation, with a new context.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> New* (): <strong>Context</strong></pre>
+<hr><h2 id="#_4781E5C0"><a name="MD5.Write"></a><a href="#MD5">MD5</a>.<a href="#MD5.Write">Write</a>
+</h2>
+<p> Continues an MD5 message-digest operation, processing another message block, and updating the context.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (context: <strong>Context</strong>; ch: <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_47825D80"><a name="MD5.WriteBytes"></a><a href="#MD5">MD5</a>.<a href="#MD5.WriteBytes">WriteBytes</a>
+</h2>
+<p> Continues an MD5 message-digest operation, processing another message block, and updating the context.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteBytes* (context: <strong>Context</strong>; <strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_4782EF00"><a name="MD5.Close"></a><a href="#MD5">MD5</a>.<a href="#MD5.Close">Close</a>
+</h2>
+<p> Ends an MD5 message-digest operation, writing the message digest.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close* (context: <strong>Context</strong>; <strong>VAR</strong> digest: <strong>Digest</strong>)</pre>
+<hr><h2 id="#_47835A40"><a name="MD5.ToString"></a><a href="#MD5">MD5</a>.<a href="#MD5.ToString">ToString</a>
+</h2>
+<p> Convert the digest into an hexadecimal string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToString* (digest: <strong>Digest</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#DataStacks">DataStacks</a></p>
+<hr><h1 id="#_34DE5B40"><a name="DataStacks"></a><a href="#ModuleList">Module</a> DataStacks
+</h1>
+<p> AUTHOR "adf"; PURPOSE "A FILO stack";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>VERSION= 1<tr><th align='left'>type declarations</th><td><a href="#DataStacks.Stack">Stack</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#DataStacks.Load">Load</a> (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>Stack</strong>)<tr><td></td><td> Store (W: <strong>DataIO.Writer</strong>; obj: <strong>Stack</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_34DF0980"><a name="DataStacks.Stack"></a><a href="#DataStacks">DataStacks</a>.<a href="#DataStacks.Stack">Stack</a>
+</h2>
+<p> Type Stack is DataIO.PlugIn registered. The type(s) corresponding to the data inserted into a stack need to also be registered via DataIO.PlugIn in order for a stack to be persistent.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Stack* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>len: <strong>NbrInt.Integer</strong><tr><th align='left'>procedures</th><td> <a href="#DataStacks.Stack.Read">Read</a> (R: <strong>DataIO.Reader</strong>)<tr><td></td><td> <a href="#DataStacks.Stack.Write">Write</a> (W: <strong>DataIO.Writer</strong>)<tr><td></td><td> <a href="#DataStacks.Stack.Pop">Pop</a> (<strong>VAR</strong> obj: <strong>OBJECT</strong>)<tr><td></td><td> <a href="#DataStacks.Stack.Push">Push</a> (obj: <strong>OBJECT</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_34E03600"><a name="DataStacks.Stack.Read"></a><a href="#DataStacks">DataStacks</a>.<a href="#DataStacks.Stack">Stack</a>.<a href="#DataStacks.Stack.Read">Read</a>
+</h3>
+<p> Used internally to read data from a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (R: <strong>DataIO.Reader</strong>)</pre>
+<hr><h3 id="#_34E09300"><a name="DataStacks.Stack.Write"></a><a href="#DataStacks">DataStacks</a>.<a href="#DataStacks.Stack">Stack</a>.<a href="#DataStacks.Stack.Write">Write</a>
+</h3>
+<p> Used internally to write data to a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (W: <strong>DataIO.Writer</strong>)</pre>
+<hr><h3 id="#_34E0F0C0"><a name="DataStacks.Stack.Pop"></a><a href="#DataStacks">DataStacks</a>.<a href="#DataStacks.Stack">Stack</a>.<a href="#DataStacks.Stack.Pop">Pop</a>
+</h3>
+<p> Extracts an object from the top of the stack.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pop* (<strong>VAR</strong> obj: <strong>OBJECT</strong>)</pre>
+<hr><h3 id="#_34E154C0"><a name="DataStacks.Stack.Push"></a><a href="#DataStacks">DataStacks</a>.<a href="#DataStacks.Stack">Stack</a>.<a href="#DataStacks.Stack.Push">Push</a>
+</h3>
+<p> Places an object at the top of the stack.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Push* (obj: <strong>OBJECT</strong>)</pre>
+<hr><h2 id="#_34E1B600"><a name="DataStacks.Load"></a><a href="#DataStacks">DataStacks</a>.<a href="#DataStacks.Load">Load</a>
+</h2>
+<p> Load and Store are procedures for external use that read/write an instance of Stack from/to a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>Stack</strong>)</pre>
+</body></html>

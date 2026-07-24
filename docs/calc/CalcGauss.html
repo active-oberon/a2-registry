@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CalcGauss">CalcGauss</a></p>
+<hr><h1 id="#_75B0CA80"><a name="CalcGauss"></a><a href="#ModuleList">Module</a> CalcGauss
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Accurate computation of an integral";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#CalcGauss.Coarse">Coarse</a>= 99<tr><td></td><td>Medium= 100<tr><td></td><td>Fine= 101<tr><td></td><td><a href="#CalcGauss.OKay">OKay</a>= 0<tr><td></td><td>MaxSubDivReached= 1<tr><td></td><td>RoundoffError= 2<tr><td></td><td>RoughIntegrand= 3<tr><th align='left'>variables</th><td><a href="#CalcGauss.MaxIntervals">MaxIntervals</a>: <strong>NbrInt.Integer</strong><tr><th align='left'>procedures</th><td> <a href="#CalcGauss.Solve">Solve</a> (f: <strong>CalcFn.ReArg</strong>; a, b: <strong>NbrRe.Real</strong>; integrator: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> error: <strong>NbrRe.Real</strong>; <strong>VAR</strong> res: <strong>NbrInt.Integer</strong>): <strong>NbrRe.Real</strong><tr><td></td><td> <a href="#CalcGauss.SolveCplx">SolveCplx</a> (f: <strong>CalcFn.MixedArg</strong>; a, b: <strong>NbrRe.Real</strong>; z: <strong>NbrCplx.Complex</strong>; integrator: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> error: <strong>NbrRe.Real</strong>; <strong>VAR</strong> res: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_75B26100">
+</h1>
+<p> Gauss-Kronrod integrators that solve to a specified error tolerance achieved by automatic subdivision.</p>
+<hr><h2 id="#_75B29EC0"><a name="CalcGauss.Coarse"></a><a href="#CalcGauss">CalcGauss</a>.<a href="#CalcGauss.Coarse">Coarse</a>
+</h2>
+<p> Admissible parameters to pass that select the 'integrator'. Coarse should only be selected for smooth integrands. Medium should be used as the default. Fine should be selected for oscillating integrands.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Coarse*= 99</pre>
+<hr><h2 id="#_75B33E00"><a name="CalcGauss.OKay"></a><a href="#CalcGauss">CalcGauss</a>.<a href="#CalcGauss.OKay">OKay</a>
+</h2>
+<p> Status of an integration, i.e., the admissible values for the returned parameter 'res'.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> OKay*= 0</pre>
+<hr><h2 id="#_75B39CC0"><a name="CalcGauss.MaxIntervals"></a><a href="#CalcGauss">CalcGauss</a>.<a href="#CalcGauss.MaxIntervals">MaxIntervals</a>
+</h2>
+<p> Upper bound on the number of subintervals of integration.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> MaxIntervals-: <strong>NbrInt.Integer</strong></pre>
+<hr><h2 id="#_75B3EB40"><a name="CalcGauss.Solve"></a><a href="#CalcGauss">CalcGauss</a>.<a href="#CalcGauss.Solve">Solve</a>
+</h2>
+<p> Computes I(f) = xab f(x) dx to a specified error tolerance.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Solve* (f: <strong>CalcFn.ReArg</strong>; a, b: <strong>NbrRe.Real</strong>; integrator: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> error: <strong>NbrRe.Real</strong>; <strong>VAR</strong> res: <strong>NbrInt.Integer</strong>): <strong>NbrRe.Real</strong></pre>
+<hr><h2 id="#_75B49AC0"><a name="CalcGauss.SolveCplx"></a><a href="#CalcGauss">CalcGauss</a>.<a href="#CalcGauss.SolveCplx">SolveCplx</a>
+</h2>
+<p> Computes I(f) = xab f(x,z) dx to a specified error tolerance.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SolveCplx* (f: <strong>CalcFn.MixedArg</strong>; a, b: <strong>NbrRe.Real</strong>; z: <strong>NbrCplx.Complex</strong>; integrator: <strong>NbrInt.Integer</strong>; <strong>VAR</strong> error: <strong>NbrRe.Real</strong>; <strong>VAR</strong> res: <strong>NbrInt.Integer</strong>): <strong>NbrCplx.Complex</strong></pre>
+</body></html>

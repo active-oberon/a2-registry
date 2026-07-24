@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#DNS">DNS</a></p>
+<hr><h1 id="#_F2693880"><a name="DNS"></a><a href="#ModuleList">Module</a> DNS
+</h1>
+<p> AUTHOR "pjm, mvt, gf"; PURPOSE "DNS client";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#DNS.Ok">Ok</a>= 0<tr><td></td><td>NotFound= 3601<tr><td></td><td>BadName= 3602<tr><td></td><td>MaxNofServer= 10<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>variables</th><td><a href="#DNS.domain">domain</a>: <strong>Name</strong><tr><td></td><td>NDNSReceived: <strong>SIGNED32</strong><tr><td></td><td>NDNSSent: <strong>SIGNED32</strong><tr><td></td><td>NDNSMismatchID: <strong>SIGNED32</strong><tr><td></td><td>NDNSError: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#DNS.MailHostByDomain">MailHostByDomain</a> (<strong>CONST</strong> domain: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> hostname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#DNS.HostByName">HostByName</a> (<strong>CONST</strong> hostname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> addr: <strong>IP.Adr</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#DNS.HostByNumber">HostByNumber</a> (addr: <strong>IP.Adr</strong>; <strong>VAR</strong> hostname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetHostName (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F26B3380"><a name="DNS.Ok"></a><a href="#DNS">DNS</a>.<a href="#DNS.Ok">Ok</a>
+</h2>
+<p> Error codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_F26B6580"><a name="DNS.domain"></a><a href="#DNS">DNS</a>.<a href="#DNS.domain">domain</a>
+</h2>
+<p> Local domain name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> domain*: <strong>Name</strong></pre>
+<hr><h2 id="#_F26B9BC0"><a name="DNS.MailHostByDomain"></a><a href="#DNS">DNS</a>.<a href="#DNS.MailHostByDomain">MailHostByDomain</a>
+</h2>
+<p> Find the host responsible for mail exchange of the specified domain.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MailHostByDomain* (<strong>CONST</strong> domain: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> hostname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_F26C35C0"><a name="DNS.HostByName"></a><a href="#DNS">DNS</a>.<a href="#DNS.HostByName">HostByName</a>
+</h2>
+<p> Find the IP address of the specified host.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HostByName* (<strong>CONST</strong> hostname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> addr: <strong>IP.Adr</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_F26CBA00"><a name="DNS.HostByNumber"></a><a href="#DNS">DNS</a>.<a href="#DNS.HostByNumber">HostByNumber</a>
+</h2>
+<p> Find the host name of the specified IP address.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HostByNumber* (addr: <strong>IP.Adr</strong>; <strong>VAR</strong> hostname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+</body></html>

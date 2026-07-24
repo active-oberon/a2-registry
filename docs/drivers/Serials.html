@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Serials">Serials</a></p>
+<hr><h1 id="#_29690600"><a name="Serials"></a><a href="#ModuleList">Module</a> Serials
+</h1>
+<p> AUTHOR "afi"; PURPOSE "Generic serial communication ports driver";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>MaxPorts= 64<tr><td></td><td><a href="#Serials.ParNo">ParNo</a>= 0<tr><td></td><td>ParOdd= 1<tr><td></td><td>ParEven= 2<tr><td></td><td>ParMark= 3<tr><td></td><td>ParSpace= 4<tr><td></td><td><a href="#Serials.Stop1">Stop1</a>= 1<tr><td></td><td>Stop2= 2<tr><td></td><td>Stop1dot5= 3<tr><td></td><td><a href="#Serials.DTR">DTR</a>= 0<tr><td></td><td><a href="#Serials.RTS">RTS</a>= 1<tr><td></td><td><a href="#Serials.Break">Break</a>= 2<tr><td></td><td>DSR= 3<tr><td></td><td>CTS= 4<tr><td></td><td>RI= 5<tr><td></td><td><a href="#Serials.DCD">DCD</a>= 6<tr><td></td><td><a href="#Serials.OverrunError">OverrunError</a>= 10<tr><td></td><td>ParityError= 11<tr><td></td><td>FramingError= 12<tr><td></td><td>BreakInterrupt= 13<tr><td></td><td><a href="#Serials.Ok">Ok</a>= 0<tr><td></td><td>Closed= -1<tr><td></td><td><a href="#Serials.TransportError">TransportError</a>= -2<tr><td></td><td><a href="#Serials.TimeoutExpired">TimeoutExpired</a>= -3<tr><td></td><td><a href="#Serials.PortInUse">PortInUse</a>= 1<tr><td></td><td>NoSuchPort= 2<tr><td></td><td>WrongBPS= 3<tr><td></td><td>WrongData= 4<tr><td></td><td>WrongParity= 5<tr><td></td><td>WrongStop= 6<tr><th align='left'>type declarations</th><td><a href="#Serials.Port">Port</a> =<strong>OBJECT</strong> (<strong>Streams.Connection</strong>)<tr><th align='left'>procedures</th><td> <a href="#Serials.RegisterPort">RegisterPort</a> (port: <strong>Port</strong>; <strong>CONST</strong> description: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Serials.UnRegisterPort">UnRegisterPort</a> (port: <strong>Port</strong>)<tr><td></td><td> <a href="#Serials.RegisterOnboardPort">RegisterOnboardPort</a> (portNumber: <strong>SIGNED32</strong>; port: <strong>Port</strong>; <strong>CONST</strong> name, description: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetPort (portNumber: <strong>SIGNED32</strong>): <strong>Port</strong><tr><td></td><td> <a href="#Serials.SetTracePort">SetTracePort</a> (portNumber: <strong>SIGNED32</strong>; bps, data, parity, stop: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Serials.IsTracePort">IsTracePort</a> (port: <strong>Port</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Serials.GetPortParameters">GetPortParameters</a> (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> portNumber, bps, data, parity, stop: <strong>SIGNED32</strong>; <strong>VAR</strong> params: <strong>SET</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Serials.SetTrace">SetTrace</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Show (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#Serials.Test">Test</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#Serials.CloseAllPorts">CloseAllPorts</a> (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_296D2BC0">
+</h1>
+<ul>
+<li> Designed to support serial communication via the conventional RS232-type serial communication ports COM1 to COM8 and</li>
+
+<li> via a USB port with a USB to serial adapter. Hot plug-in of the device is possible. For that reason, devices are registered/unregistered</li>
+
+<li> by procedures located in this module. <strong></strong></li>
+
+<li> Usage: <strong></strong></li>
+
+<li> Serials.Show ~ displays a list of all available serial ports <strong></strong></li>
+
+<li> Serials.CloseAllPorts ~ forces closing all serials ports <strong></strong></li>
+
+<li> History: <strong></strong></li>
+
+<li> 20.01.2006 First Release (afi)</li>
+
+<li> 14.06.2006 Fixed Port.Send, introduced result value for Port.SendChar, implemented termination handler, cleanup (staubesv)</li>
+
+<li> 26.06.2006 Added charactersSent, characterReceived for tracking (staubesv)</li>
+
+<li> 04.08.2006 Removed SetPortState from Port interface (staubesv)</li>
+</ul>
+<hr><h2 id="#_296ED800"><a name="Serials.ParNo"></a><a href="#Serials">Serials</a>.<a href="#Serials.ParNo">ParNo</a>
+</h2>
+<p> Parity</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ParNo*= 0</pre>
+<hr><h2 id="#_296F0680"><a name="Serials.Stop1"></a><a href="#Serials">Serials</a>.<a href="#Serials.Stop1">Stop1</a>
+</h2>
+<p> Stop bits</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Stop1*= 1</pre>
+<hr><h2 id="#_296F3940"><a name="Serials.DTR"></a><a href="#Serials">Serials</a>.<a href="#Serials.DTR">DTR</a>
+</h2>
+<p> Modem control lines</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DTR*= 0</pre>
+<hr><h2 id="#_296F6F80"><a name="Serials.RTS"></a><a href="#Serials">Serials</a>.<a href="#Serials.RTS">RTS</a>
+</h2>
+<p> output</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> RTS*= 1</pre>
+<hr><h2 id="#_296F9EC0"><a name="Serials.Break"></a><a href="#Serials">Serials</a>.<a href="#Serials.Break">Break</a>
+</h2>
+<p> input/output - Bit 6 in LCR</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Break*= 2</pre>
+<hr><h2 id="#_296FE140"><a name="Serials.DCD"></a><a href="#Serials">Serials</a>.<a href="#Serials.DCD">DCD</a>
+</h2>
+<p> input</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DCD*= 6</pre>
+<hr><h2 id="#_29700FC0"><a name="Serials.OverrunError"></a><a href="#Serials">Serials</a>.<a href="#Serials.OverrunError">OverrunError</a>
+</h2>
+<p> Receive error diagnostic</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> OverrunError*= 10</pre>
+<hr><h2 id="#_29704700"><a name="Serials.Ok"></a><a href="#Serials">Serials</a>.<a href="#Serials.Ok">Ok</a>
+</h2>
+<p> Error conditions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_29707900"><a name="Serials.TransportError"></a><a href="#Serials">Serials</a>.<a href="#Serials.TransportError">TransportError</a>
+</h2>
+<p> Error on transport layer, e.g. USB error in RS-232 over USB</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TransportError*= -2</pre>
+<hr><h2 id="#_2970D2C0"><a name="Serials.TimeoutExpired"></a><a href="#Serials">Serials</a>.<a href="#Serials.TimeoutExpired">TimeoutExpired</a>
+</h2>
+<p> Timeout expired</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TimeoutExpired*= -3</pre>
+<hr><h2 id="#_29710780"><a name="Serials.PortInUse"></a><a href="#Serials">Serials</a>.<a href="#Serials.PortInUse">PortInUse</a>
+</h2>
+<p> Errors for Port.Open procedure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PortInUse*= 1</pre>
+<hr><h2 id="#_29714200"><a name="Serials.Port"></a><a href="#Serials">Serials</a>.<a href="#Serials.Port">Port</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Port* =<strong>OBJECT</strong> (<strong>Streams.Connection</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> 6 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>description: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Serials.Port.charactersSent">charactersSent</a>: <strong>Streams.Position</strong><tr><td></td><td>charactersReceived: <strong>Streams.Position</strong><tr><th align='left'>procedures</th><td> Open (bps, data, parity, stop: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Close<tr><td></td><td> SendChar (ch: <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Serials.Port.Send">Send</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> ReceiveChar (<strong>VAR</strong> ch: <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Serials.Port.Receive">Receive</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Available (): <strong>SIZE</strong><tr><td></td><td> <a href="#Serials.Port.GetPortState">GetPortState</a> (<strong>VAR</strong> openstat: <strong>BOOLEAN</strong>; <strong>VAR</strong> bps, data, parity, stop: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Serials.Port.ClearMC">ClearMC</a> (s: <strong>SET</strong>)<tr><td></td><td> <a href="#Serials.Port.SetMC">SetMC</a> (s: <strong>SET</strong>)<tr><td></td><td> <a href="#Serials.Port.GetMC">GetMC</a> (<strong>VAR</strong> s: <strong>SET</strong>)<tr><td></td><td> <a href="#Serials.Port.SetReceiveTimeout">SetReceiveTimeout</a> (timeout: <strong>SIGNED32</strong>)<tr><td></td><td> Show</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_29741D00"><a name="Serials.Port.charactersSent"></a><a href="#Serials">Serials</a>.<a href="#Serials.Port">Port</a>.<a href="#Serials.Port.charactersSent">charactersSent</a>
+</h3>
+<p> Characters sent/read since port has been opened. Consider these fields read-only!</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> charactersSent*: <strong>Streams.Position</strong></pre>
+<hr><h3 id="#_29747AC0"><a name="Serials.Port.Send"></a><a href="#Serials">Serials</a>.<a href="#Serials.Port">Port</a>.<a href="#Serials.Port.Send">Send</a>
+</h3>
+<p> Send len characters from buf to output, starting at ofs. res is non-zero on error.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Send* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_297532C0"><a name="Serials.Port.Receive"></a><a href="#Serials">Serials</a>.<a href="#Serials.Port">Port</a>.<a href="#Serials.Port.Receive">Receive</a>
+</h3>
+<p> Receive size characters into buf, starting at ofs and return the effective number of bytes read in len. Wait until at least min bytes (possibly zero) are available. res is non-zero on error.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Receive* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size, min: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_29763A80"><a name="Serials.Port.GetPortState"></a><a href="#Serials">Serials</a>.<a href="#Serials.Port">Port</a>.<a href="#Serials.Port.GetPortState">GetPortState</a>
+</h3>
+<p> Get the port state: state (open, closed), speed in bps, no. of data bits, parity, stop bit length.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetPortState* (<strong>VAR</strong> openstat: <strong>BOOLEAN</strong>; <strong>VAR</strong> bps, data, parity, stop: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="#_2976EB00"><a name="Serials.Port.ClearMC"></a><a href="#Serials">Serials</a>.<a href="#Serials.Port">Port</a>.<a href="#Serials.Port.ClearMC">ClearMC</a>
+</h3>
+<p> Clear the specified modem control lines. s may contain DTR, RTS & Break.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ClearMC* (s: <strong>SET</strong>)</pre>
+<hr><h3 id="#_29775B00"><a name="Serials.Port.SetMC"></a><a href="#Serials">Serials</a>.<a href="#Serials.Port">Port</a>.<a href="#Serials.Port.SetMC">SetMC</a>
+</h3>
+<p> Set the specified modem control lines. s may contain DTR, RTS & Break.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetMC* (s: <strong>SET</strong>)</pre>
+<hr><h3 id="#_2977CB00"><a name="Serials.Port.GetMC"></a><a href="#Serials">Serials</a>.<a href="#Serials.Port">Port</a>.<a href="#Serials.Port.GetMC">GetMC</a>
+</h3>
+<p> Return the state of the specified modem control lines. s contains the current state of DSR, CTS, RI, DCD & Break Interrupt.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetMC* (<strong>VAR</strong> s: <strong>SET</strong>)</pre>
+<hr><h3 id="#_29786200"><a name="Serials.Port.SetReceiveTimeout"></a><a href="#Serials">Serials</a>.<a href="#Serials.Port">Port</a>.<a href="#Serials.Port.SetReceiveTimeout">SetReceiveTimeout</a>
+</h3>
+<p> Setup receive timeout (maximum time allowed to elapse before arrival of the next data byte) in ms. Use timeout <a name="="></a> 0 to disable receive timeout handling</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetReceiveTimeout* (timeout: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_297904C0"><a name="Serials.RegisterPort"></a><a href="#Serials">Serials</a>.<a href="#Serials.RegisterPort">RegisterPort</a>
+</h2>
+<p> At the disposal of the USB driver modules for hot plug-in of a device.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RegisterPort* (port: <strong>Port</strong>; <strong>CONST</strong> description: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_29798B80"><a name="Serials.UnRegisterPort"></a><a href="#Serials">Serials</a>.<a href="#Serials.UnRegisterPort">UnRegisterPort</a>
+</h2>
+<p> At the disposal of the USB driver modules for hot plug-in of a device.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UnRegisterPort* (port: <strong>Port</strong>)</pre>
+<hr><h2 id="#_2979F840"><a name="Serials.RegisterOnboardPort"></a><a href="#Serials">Serials</a>.<a href="#Serials.RegisterOnboardPort">RegisterOnboardPort</a>
+</h2>
+<p> COM1 to COM8 are reserved for RS-232 / V24 communication ports. Other ports will be named COM9, COM9 and so on as needed. The idea is that the onboard COM ports get the same port numbers as in the BIOS</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RegisterOnboardPort* (portNumber: <strong>SIGNED32</strong>; port: <strong>Port</strong>; <strong>CONST</strong> name, description: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_297AF800"><a name="Serials.SetTracePort"></a><a href="#Serials">Serials</a>.<a href="#Serials.SetTracePort">SetTracePort</a>
+</h2>
+<p> Setup serial port for kernel trace output</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetTracePort* (portNumber: <strong>SIGNED32</strong>; bps, data, parity, stop: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+
+<h3>Parameters</h3>
+
+<dl>
+<dt><strong>portNumber</strong></dt>
+<dd> serial port number, or 0 to disable trace output, or a negative value for rolling back to the initial trace output configuration bps, data, parity, stop: serial port settings</dd>
+
+</dl>
+<hr><h2 id="#_297BFFC0"><a name="Serials.IsTracePort"></a><a href="#Serials">Serials</a>.<a href="#Serials.IsTracePort">IsTracePort</a>
+</h2>
+<p> Returns TRUE if a given port is currently used for kernel trace output</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsTracePort* (port: <strong>Port</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_297C6E80"><a name="Serials.GetPortParameters"></a><a href="#Serials">Serials</a>.<a href="#Serials.GetPortParameters">GetPortParameters</a>
+</h2>
+<p> Get serial port parameters from an input stream</p>
+
+<p> The format of the stream is expected to be as <a href="#portNumber">portNumber</a> bps data parity stop] exactly in this predefined order;</p>
+
+<p> portNumber is obligatory parameter, the othe parameters are optional; if not specified they will be assigned to default values (DefaultBPS, DefaultDataBits, DefaultParity, DefaultStop)</p>
+
+<p> The format of parity and stop parameters is as follows:</p>
+
+<p> parity = "odd"</p>
+
+<table><tr><td>"even"</td><td>"mark"</td><td>"space"</td><td>"no"</td></tr>
+</table>
+
+<p> = "1"</p>
+
+<table><tr><td>"1.5"</td><td>"2"</td></tr>
+</table>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetPortParameters* (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> portNumber, bps, data, parity, stop: <strong>SIGNED32</strong>; <strong>VAR</strong> params: <strong>SET</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+
+<h3>Parameters</h3>
+
+<dl>
+<dt><strong>params</strong></dt>
+<dd> set of parameters specified by the user (0-bps, 1-data, 2-parity, 3-stop)</dd>
+
+
+<dl>
+<dt><strong>res</strong></dt>
+<dd> error code, 0 in case of success</dd>
+
+</dl>
+</dl>
+<hr><h2 id="#_297E8080"><a name="Serials.SetTrace"></a><a href="#Serials">Serials</a>.<a href="#Serials.SetTrace">SetTrace</a>
+</h2>
+<p> Setup trace over a given serial port</p>
+
+<p> SetTrace portNumber bps data parity stop~</p>
+
+<dl>
+<dt><strong>portNumber</strong></dt>
+<dd> serial port number, or 0 to disable trace output, or a negative value for rolling back to the initial trace output configuration</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetTrace* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_297F4700"><a name="Serials.Test"></a><a href="#Serials">Serials</a>.<a href="#Serials.Test">Test</a>
+</h2>
+<p> Test serial ports COM1 and if present COM2 with the generic driver</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Test* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_297FACC0"><a name="Serials.CloseAllPorts"></a><a href="#Serials">Serials</a>.<a href="#Serials.CloseAllPorts">CloseAllPorts</a>
+</h2>
+<p> Close all serial ports</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CloseAllPorts* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

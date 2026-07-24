@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#DataTrees">DataTrees</a></p>
+<hr><h1 id="#_489B82C0"><a name="DataTrees"></a><a href="#ModuleList">Module</a> DataTrees
+</h1>
+<p> AUTHOR "adf"; PURPOSE "Binary tree for storing Data.Datum";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#DataTrees.VERSION">VERSION</a>= 1<tr><th align='left'>type declarations</th><td><a href="#DataTrees.Rider">Rider</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DataTrees.Tree">Tree</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#DataTrees.Load">Load</a> (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>Tree</strong>)<tr><td></td><td> Store (W: <strong>DataIO.Writer</strong>; obj: <strong>Tree</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_489C4940">
+</h1><hr><h2 id="#_489C5100"><a name="DataTrees.VERSION"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.VERSION">VERSION</a>
+</h2>
+<p> The version used when reading/writing a tree to file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> VERSION*= 1</pre>
+<hr><h2 id="#_489C9F80"><a name="DataTrees.Rider"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>
+</h2>
+<p> Used to navigate a tree for the purpose of extracting and updating information.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Rider* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#DataTrees.Rider.eotl">eotl</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#DataTrees.Rider.eotr">eotr</a>: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& Initialize<tr><td></td><td> <a href="#DataTrees.Rider.Home">Home</a><tr><td></td><td> <a href="#DataTrees.Rider.Left">Left</a><tr><td></td><td> <a href="#DataTrees.Rider.Right">Right</a><tr><td></td><td> <a href="#DataTrees.Rider.Get">Get</a> (): <strong>Data.Datum</strong><tr><td></td><td> <a href="#DataTrees.Rider.Inspect">Inspect</a> (): <strong>Data.Datum</strong><tr><td></td><td> <a href="#DataTrees.Rider.Retrieve">Retrieve</a> (key: <strong>Data.Key</strong>): <strong>Data.Datum</strong><tr><td></td><td> <a href="#DataTrees.Rider.Update">Update</a> (new: <strong>Data.Datum</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_489DCEC0"><a name="DataTrees.Rider.eotl"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>.<a href="#DataTrees.Rider.eotl">eotl</a>
+</h3>
+<p> Is the rider at the end-of-tree for the left branch?</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> eotl-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_489E2780"><a name="DataTrees.Rider.eotr"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>.<a href="#DataTrees.Rider.eotr">eotr</a>
+</h3>
+<p> Is the rider at the end-of-tree for the right branch?</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> eotr-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_489E8100"><a name="DataTrees.Rider.Home"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>.<a href="#DataTrees.Rider.Home">Home</a>
+</h3>
+<p> Moves the rider to its default position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Home*</pre>
+<hr><h3 id="#_489EC800"><a name="DataTrees.Rider.Left"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>.<a href="#DataTrees.Rider.Left">Left</a>
+</h3>
+<p> Moves the rider to the left node, provided eotl = FALSE.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Left*</pre>
+<hr><h3 id="#_489F1F80"><a name="DataTrees.Rider.Right"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>.<a href="#DataTrees.Rider.Right">Right</a>
+</h3>
+<p> Moves the rider to the right node, provided eotr = FALSE.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Right*</pre>
+<hr><h3 id="#_489F7800"><a name="DataTrees.Rider.Get"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>.<a href="#DataTrees.Rider.Get">Get</a>
+</h3>
+<p> Returns a copy of the datum held by the tree at the rider's current position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (): <strong>Data.Datum</strong></pre>
+<hr><h3 id="#_489FEA00"><a name="DataTrees.Rider.Inspect"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>.<a href="#DataTrees.Rider.Inspect">Inspect</a>
+</h3>
+<p> Returns a pointer to the datum held by the tree at the rider's current position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Inspect* (): <strong>Data.Datum</strong></pre>
+<hr><h3 id="#_48A05C00"><a name="DataTrees.Rider.Retrieve"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>.<a href="#DataTrees.Rider.Retrieve">Retrieve</a>
+</h3>
+<p> Extracts a copy of that datum with key 'key', provided it exists; otherwise NIL is returned.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Retrieve* (key: <strong>Data.Key</strong>): <strong>Data.Datum</strong></pre>
+<hr><h3 id="#_48A0DC00"><a name="DataTrees.Rider.Update"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Rider">Rider</a>.<a href="#DataTrees.Rider.Update">Update</a>
+</h3>
+<p> Exchanges a datum held by the tree with that of 'new', provided their keys are equal.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update* (new: <strong>Data.Datum</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_48A16800"><a name="DataTrees.Tree"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Tree">Tree</a>
+</h2>
+<p> Type Tree is an AVL (Adelson-Velskii-Landis) balanced binary tree that is DataIO.PlugIn registered.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tree* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>entries: <strong>NbrInt.Integer</strong><tr><td></td><td>rider: <strong>Rider</strong><tr><th align='left'>procedures</th><td>& Initialize<tr><td></td><td> Copy (<strong>VAR</strong> copy: <strong>Tree</strong>)<tr><td></td><td> Read (R: <strong>DataIO.Reader</strong>)<tr><td></td><td> Write (W: <strong>DataIO.Writer</strong>)<tr><td></td><td> <a href="#DataTrees.Tree.Delete">Delete</a> (key: <strong>Data.Key</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)<tr><td></td><td> Insert (datum: <strong>Data.Datum</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#DataTrees.Tree.Height">Height</a> (): <strong>NbrInt.Integer</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_48A2C580"><a name="DataTrees.Tree.Delete"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Tree">Tree</a>.<a href="#DataTrees.Tree.Delete">Delete</a>
+</h3>
+<p> Attempts to remove an existing datum with identifier key from the tree.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Delete* (key: <strong>Data.Key</strong>; <strong>VAR</strong> successful: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="#_48A34380"><a name="DataTrees.Tree.Height"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Tree">Tree</a>.<a href="#DataTrees.Tree.Height">Height</a>
+</h3>
+<p> Returns the verticle height of the tree. A returned value of 0 means the tree is empty.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Height* (): <strong>NbrInt.Integer</strong></pre>
+<hr><h2 id="#_48A3BE80"><a name="DataTrees.Load"></a><a href="#DataTrees">DataTrees</a>.<a href="#DataTrees.Load">Load</a>
+</h2>
+<p> Load and Store are procedures for external use that read/write an instance of Tree from/to a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Load* (R: <strong>DataIO.Reader</strong>; <strong>VAR</strong> obj: <strong>Tree</strong>)</pre>
+</body></html>

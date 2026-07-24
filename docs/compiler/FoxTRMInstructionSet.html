@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxTRMInstructionSet">FoxTRMInstructionSet</a></p>
+<hr><h1 id="#_A64428C0"><a name="FoxTRMInstructionSet"></a><a href="#ModuleList">Module</a> FoxTRMInstructionSet
+</h1>
+<p> AUTHOR "fof"; PURPOSE "Tiny Register Machine Instruction Set";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>opMOV= 0<tr><td></td><td>opNOT= 1<tr><td></td><td>opADD= 2<tr><td></td><td>opFADD= 3<tr><td></td><td>opSUB= 4<tr><td></td><td>opFSUB= 5<tr><td></td><td>opAND= 6<tr><td></td><td>opBIC= 7<tr><td></td><td>opOR= 8<tr><td></td><td>opXOR= 9<tr><td></td><td>opMUL= 10<tr><td></td><td>opFMUL= 11<tr><td></td><td>opLDH= 12<tr><td></td><td>opROR= 13<tr><td></td><td>opBLR= 14<tr><td></td><td>opBR= 15<tr><td></td><td>opSPSR= 16<tr><td></td><td>opIRET= 17<tr><td></td><td>opLD= 18<tr><td></td><td>opST= 19<tr><td></td><td>opBL= 20<tr><td></td><td>opBEQ= 21<tr><td></td><td>opBNE= 22<tr><td></td><td>opBAE= 23<tr><td></td><td>opBB= 24<tr><td></td><td>opBN= 25<tr><td></td><td>opBNN= 26<tr><td></td><td>opBO= 27<tr><td></td><td>opBNO= 28<tr><td></td><td>opBA= 29<tr><td></td><td>opBBE= 30<tr><td></td><td>opBGE= 31<tr><td></td><td>opBLT= 32<tr><td></td><td>opBGT= 33<tr><td></td><td>opBLE= 34<tr><td></td><td>opBT= 35<tr><td></td><td>opBF= 36<tr><td></td><td>opBZS= 37<tr><td></td><td>opBZC= 38<tr><td></td><td>opBCS= 39<tr><td></td><td>opBCC= 40<tr><td></td><td>opBNS= 41<tr><td></td><td>opBNC= 42<tr><td></td><td>opBVS= 43<tr><td></td><td>opBVC= 44<tr><td></td><td>opHADD= 45<tr><td></td><td>opFHADD= 46<tr><td></td><td>numberMnemonics= 47<tr><td></td><td>None= -1<tr><td></td><td>ZeroRegister= 7<tr><td></td><td>Register= 1<tr><td></td><td>Immediate= 2<tr><td></td><td>Memory= 3<tr><td></td><td>LR= 7<tr><td></td><td>SP= 6<tr><td></td><td>globalP= 5<tr><td></td><td>FP= 4<tr><th align='left'>type declarations</th><td><a href="#FoxTRMInstructionSet.InstructionFormat">InstructionFormat</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxTRMInstructionSet.Mnemonic">Mnemonic</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxTRMInstructionSet.Operand">Operand</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxTRMInstructionSet.Instruction">Instruction</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxTRMInstructionSet.InstructionSet">InstructionSet</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> Disassemble (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A6482000"><a name="FoxTRMInstructionSet.InstructionFormat"></a><a href="#FoxTRMInstructionSet">FoxTRMInstructionSet</a>.<a href="#FoxTRMInstructionSet.InstructionFormat">InstructionFormat</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InstructionFormat* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>mnemonic: <strong>SIGNED32</strong><tr><td></td><td>capabilities: <strong>SET</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A6486BC0"><a name="FoxTRMInstructionSet.Mnemonic"></a><a href="#FoxTRMInstructionSet">FoxTRMInstructionSet</a>.<a href="#FoxTRMInstructionSet.Mnemonic">Mnemonic</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Mnemonic* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> maxMnemonicNameLength <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>number: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A648C540"><a name="FoxTRMInstructionSet.Operand"></a><a href="#FoxTRMInstructionSet">FoxTRMInstructionSet</a>.<a href="#FoxTRMInstructionSet.Operand">Operand</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Operand* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>OperandType</strong><tr><td></td><td>register: <strong>RegisterIndex</strong><tr><td></td><td>imm: <strong>SIGNED32</strong><tr><td></td><td>fixup: <strong>BinaryCode.Fixup</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A6492EC0"><a name="FoxTRMInstructionSet.Instruction"></a><a href="#FoxTRMInstructionSet">FoxTRMInstructionSet</a>.<a href="#FoxTRMInstructionSet.Instruction">Instruction</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Instruction* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>format: <strong>SIGNED32</strong><tr><td></td><td>op1: <strong>Operand</strong><tr><td></td><td>op2: <strong>Operand</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A64988C0"><a name="FoxTRMInstructionSet.InstructionSet"></a><a href="#FoxTRMInstructionSet">FoxTRMInstructionSet</a>.<a href="#FoxTRMInstructionSet.InstructionSet">InstructionSet</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InstructionSet* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>mnemonics: <strong>ARRAY</strong> numberMnemonics <strong>OF</strong> <strong>Mnemonic</strong><tr><td></td><td>mnemonicsSorted: <strong>ARRAY</strong> numberMnemonics <strong>OF</strong> <strong>NumberedName</strong><tr><td></td><td>instructionFormats: <strong>ARRAY</strong> maxNumberInstructions <strong>OF</strong> <strong>InstructionFormat</strong><tr><td></td><td>numberInstructionFormats: <strong>SIGNED32</strong><tr><td></td><td>inverseCondition: <strong>ARRAY</strong> numberMnemonics <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td>instructionW: <strong>SIGNED32</strong><tr><td></td><td>RelativeBranchFixupBits: <strong>SIGNED32</strong><tr><td></td><td>BranchAndLinkFixupBits: <strong>SIGNED32</strong><tr><td></td><td>ImmediateFixupBits: <strong>SIGNED32</strong><tr><td></td><td>MemoryOffsetFixupBits: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& InitInstructionSet (instructionWidth: <strong>SIGNED32</strong>)<tr><td></td><td> MakeInstruction (<strong>VAR</strong> instruction: <strong>Instruction</strong>; mnemonic: <strong>SIGNED32</strong>; op1, op2: <strong>Operand</strong>)<tr><td></td><td> IsValidInstruction (<strong>CONST</strong> instruction: <strong>Instruction</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Encode (<strong>CONST</strong> instruction: <strong>Instruction</strong>): <strong>SIGNED32</strong><tr><td></td><td> Decode (code: <strong>SIGNED32</strong>; <strong>VAR</strong> instruction: <strong>Instruction</strong>)<tr><td></td><td> EmitInstruction (<strong>CONST</strong> instruction: <strong>Instruction</strong>; mnem: <strong>SIGNED32</strong>; code: <strong>BinaryCode.Section</strong>)<tr><td></td><td> Emit (mnem: <strong>SIGNED32</strong>; <strong>CONST</strong> op1, op2: <strong>Operand</strong>; code: <strong>BinaryCode.Section</strong>)<tr><td></td><td> FindMnemonic (<strong>CONST</strong> mnem: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> FindRegister (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED8</strong><tr><td></td><td> InitRegister (<strong>VAR</strong> operand: <strong>Operand</strong>; reg: <strong>SIGNED32</strong>)<tr><td></td><td> InitImmediate (<strong>VAR</strong> operand: <strong>Operand</strong>; bits: <strong>SIGNED32</strong>; imm: <strong>SIGNED32</strong>)<tr><td></td><td> InitMemory (<strong>VAR</strong> operand: <strong>Operand</strong>; reg1: <strong>RegisterIndex</strong>; imm: <strong>SIGNED32</strong>)<tr><td></td><td> InitFixup (<strong>VAR</strong> operand: <strong>Operand</strong>; bits: <strong>SIGNED8</strong>; fixup: <strong>BinaryCode.Fixup</strong>)<tr><td></td><td> AddFixup (<strong>VAR</strong> operand: <strong>Operand</strong>; fixup: <strong>BinaryCode.Fixup</strong>)<tr><td></td><td> InitOperand (<strong>VAR</strong> operand: <strong>Operand</strong>)<tr><td></td><td> DumpOperand (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> operand: <strong>Operand</strong>)<tr><td></td><td> DumpInstruction (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> instruction: <strong>Instruction</strong>)<tr><td></td><td> DumpBits (w: <strong>Streams.Writer</strong>; set: <strong>SET</strong>; numberBits: <strong>SIGNED32</strong>)<tr><td></td><td> DumpInstructionFormats (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

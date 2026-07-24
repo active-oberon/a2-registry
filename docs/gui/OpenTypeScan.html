@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#OpenTypeScan">OpenTypeScan</a></p>
+<hr><h1 id="#_7DE063C0"><a name="OpenTypeScan"></a><a href="#ModuleList">Module</a> OpenTypeScan
+</h1>
+<p> AUTHOR "eos, PL"; PURPOSE "Bluebottle port of OpenType";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#OpenTypeScan.Round">Round</a>= 0<tr><td></td><td><a href="#OpenTypeScan.Dropouts">Dropouts</a>= 1<tr><td></td><td><a href="#OpenTypeScan.Stubs">Stubs</a>= 2<tr><td></td><td><a href="#OpenTypeScan.Smart">Smart</a>= 3<tr><th align='left'>type declarations</th><td><a href="#OpenTypeScan.Rasterizer">Rasterizer</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#OpenTypeScan.EnumData">EnumData</a> =<strong>RECORD</strong> <tr><td></td><td>Enumerator =<strong>PROCEDURE</strong> (rowcol: <strong>SIGNED16</strong>; beg, end: <strong>F26D6</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)<tr><th align='left'>procedures</th><td> DisposeRasterizer (<strong>VAR</strong> ras: <strong>Rasterizer</strong>)<tr><td></td><td> <a href="#OpenTypeScan.Convert">Convert</a> (outline: <strong>OpenTypeInt.Zone</strong>; rules: <strong>SET</strong>; <strong>VAR</strong> r: <strong>Rasterizer</strong>)<tr><td></td><td> <a href="#OpenTypeScan.EnumerateRows">EnumerateRows</a> (<strong>VAR</strong> r: <strong>Rasterizer</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)<tr><td></td><td> EnumerateColumns (<strong>VAR</strong> r: <strong>Rasterizer</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_7DE21F80">
+</h1>
+<p> Scan conversion for TrueType contours</p>
+<hr><h2 id="#_7DE23E40"><a name="OpenTypeScan.Round"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.Round">Round</a>
+</h2>
+<p> enumeration rules</p>
+
+<p> if included, coordinates are rounded to integer grid (leave out for grey scales)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Round*= 0</pre>
+<hr><h2 id="#_7DE2A640"><a name="OpenTypeScan.Dropouts"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.Dropouts">Dropouts</a>
+</h2>
+<p> if included, dropouts are detected and fixed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Dropouts*= 1</pre>
+<hr><h2 id="#_7DE2ED80"><a name="OpenTypeScan.Stubs"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.Stubs">Stubs</a>
+</h2>
+<p> if included, only dropouts which intersect other pixels are fixed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Stubs*= 2</pre>
+<hr><h2 id="#_7DE33F80"><a name="OpenTypeScan.Smart"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.Smart">Smart</a>
+</h2>
+<p> if included, dropout pixels are positioned more intelligently</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Smart*= 3</pre>
+<hr><h2 id="#_7DE38B40"><a name="OpenTypeScan.Rasterizer"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.Rasterizer">Rasterizer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Rasterizer* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>width: <strong>SIGNED16</strong><tr><td></td><td><a href="#OpenTypeScan.Rasterizer.height">height</a>: <strong>SIGNED16</strong><tr><td></td><td>xmin: <strong>F26D6</strong><tr><td></td><td>ymin: <strong>F26D6</strong><tr><td></td><td>xmax: <strong>F26D6</strong><tr><td></td><td><a href="#OpenTypeScan.Rasterizer.ymax">ymax</a>: <strong>F26D6</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_7DE41180"><a name="OpenTypeScan.Rasterizer.height"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.Rasterizer">Rasterizer</a>.<a href="#OpenTypeScan.Rasterizer.height">height</a>
+</h3>
+<p> dimensions of pixel matrix</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> height*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_7DE452C0"><a name="OpenTypeScan.Rasterizer.ymax"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.Rasterizer">Rasterizer</a>.<a href="#OpenTypeScan.Rasterizer.ymax">ymax</a>
+</h3>
+<p> bounding box</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ymax*: <strong>F26D6</strong></pre>
+<hr><h2 id="#_7DE48C80"><a name="OpenTypeScan.EnumData"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.EnumData">EnumData</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EnumData* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_7DE4B900"><a name="OpenTypeScan.Convert"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.Convert">Convert</a>
+</h2>
+<p> convert outline to scanlines</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Convert* (outline: <strong>OpenTypeInt.Zone</strong>; rules: <strong>SET</strong>; <strong>VAR</strong> r: <strong>Rasterizer</strong>)</pre>
+<hr><h2 id="#_7DE51EC0"><a name="OpenTypeScan.EnumerateRows"></a><a href="#OpenTypeScan">OpenTypeScan</a>.<a href="#OpenTypeScan.EnumerateRows">EnumerateRows</a>
+</h2>
+<p> enumerate rows or columns of scan-converted outline</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnumerateRows* (<strong>VAR</strong> r: <strong>Rasterizer</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)</pre>
+</body></html>

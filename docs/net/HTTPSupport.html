@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#HTTPSupport">HTTPSupport</a></p>
+<hr><h1 id="#_781F3500"><a name="HTTPSupport"></a><a href="#ModuleList">Module</a> HTTPSupport
+</h1>
+<p> AUTHOR "Luc Blaeser/cs"; PURPOSE "HTTP Webserver Support Module for HTTP-Request Handling"; contains also code parts from "CSHTTPSupport" by "cs"</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#HTTPSupport.HTTPVariable">HTTPVariable</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#HTTPSupport.HTTPRequest">HTTPRequest</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> RemoveVariablesFromURI (olduri: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> newuri: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#HTTPSupport.HTTPEncode">HTTPEncode</a> (in: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> enc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_78204080">
+</h1><hr><h2 id="#_78204840"><a name="HTTPSupport.HTTPVariable"></a><a href="#HTTPSupport">HTTPSupport</a>.<a href="#HTTPSupport.HTTPVariable">HTTPVariable</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HTTPVariable* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> 1024 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>value: <strong>ARRAY</strong> 1024 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#HTTPSupport.HTTPVariable.isUrlEncoded">isUrlEncoded</a>: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_7820C6C0"><a name="HTTPSupport.HTTPVariable.isUrlEncoded"></a><a href="#HTTPSupport">HTTPSupport</a>.<a href="#HTTPSupport.HTTPVariable">HTTPVariable</a>.<a href="#HTTPSupport.HTTPVariable.isUrlEncoded">isUrlEncoded</a>
+</h3>
+<p> true iff url encoded if the HTTP request</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> isUrlEncoded*: <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_78211940"><a name="HTTPSupport.HTTPRequest"></a><a href="#HTTPSupport">HTTPSupport</a>.<a href="#HTTPSupport.HTTPRequest">HTTPRequest</a>
+</h2>
+<p> encapsulates the HTTP request header and the variables from POST ord GET</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HTTPRequest* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>header: <strong>WebHTTP.RequestHeader</strong><tr><td></td><td><a href="#HTTPSupport.HTTPRequest.shortUri">shortUri</a>: <strong>ARRAY</strong> 4096 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#HTTPSupport.HTTPRequest.variables">variables</a>: <strong>TFClasses.List</strong><tr><th align='left'>procedures</th><td>& Init (<strong>VAR</strong> requestHeader: <strong>WebHTTP.RequestHeader</strong>; bodyReader: <strong>Streams.Reader</strong>)<tr><td></td><td> <a href="#HTTPSupport.HTTPRequest.GetVariableByName">GetVariableByName</a> (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HTTPVariable</strong><tr><td></td><td> WriteEncodedUri (encUri: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_78223700"><a name="HTTPSupport.HTTPRequest.shortUri"></a><a href="#HTTPSupport">HTTPSupport</a>.<a href="#HTTPSupport.HTTPRequest">HTTPRequest</a>.<a href="#HTTPSupport.HTTPRequest.shortUri">shortUri</a>
+</h3>
+<p> uri without variables</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> shortUri*: <strong>ARRAY</strong> 4096 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="#_78228300"><a name="HTTPSupport.HTTPRequest.variables"></a><a href="#HTTPSupport">HTTPSupport</a>.<a href="#HTTPSupport.HTTPRequest">HTTPRequest</a>.<a href="#HTTPSupport.HTTPRequest.variables">variables</a>
+</h3>
+<p> List of HTTPVariable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> variables*: <strong>TFClasses.List</strong></pre>
+<hr><h3 id="#_7822C000"><a name="HTTPSupport.HTTPRequest.GetVariableByName"></a><a href="#HTTPSupport">HTTPSupport</a>.<a href="#HTTPSupport.HTTPRequest">HTTPRequest</a>.<a href="#HTTPSupport.HTTPRequest.GetVariableByName">GetVariableByName</a>
+</h3>
+<p> returns NIL if variable is not present</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetVariableByName* (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HTTPVariable</strong></pre>
+<hr><h2 id="#_78232680"><a name="HTTPSupport.HTTPEncode"></a><a href="#HTTPSupport">HTTPSupport</a>.<a href="#HTTPSupport.HTTPEncode">HTTPEncode</a>
+</h2>
+<p> HTTPEncode in by escaping illegal chars , author: "cs"</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HTTPEncode* (in: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> enc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>

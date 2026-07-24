@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#CLUTs">CLUTs</a></p>
+<hr><h1 id="#_60470A40"><a name="CLUTs"></a><a href="#ModuleList">Module</a> CLUTs
+</h1>
+<p> portable</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>colors= 256<tr><th align='left'>type declarations</th><td>Color =<strong>SIGNED32</strong><tr><td></td><td><a href="#CLUTs.CLUT">CLUT</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#CLUTs.Set">Set</a> (<strong>VAR</strong> clut: <strong>CLUT</strong>; n: <strong>SIZE</strong>; col: <strong>Color</strong>)<tr><td></td><td> <a href="#CLUTs.Get">Get</a> (<strong>VAR</strong> clut: <strong>CLUT</strong>; n: <strong>SIZE</strong>; <strong>VAR</strong> col: <strong>Color</strong>)<tr><td></td><td> <a href="#CLUTs.Init">Init</a> (<strong>VAR</strong> clut: <strong>CLUT</strong>; size, bits: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#CLUTs.Match">Match</a> (<strong>VAR</strong> clut: <strong>CLUT</strong>; col: <strong>Color</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#CLUTs.Copy">Copy</a> (from, to: <strong>CLUT</strong>)<tr><td></td><td> <a href="#CLUTs.Write">Write</a> (<strong>VAR</strong> w: <strong>Streams.Writer</strong>; <strong>VAR</strong> clut: <strong>CLUT</strong>)<tr><td></td><td> <a href="#CLUTs.Read">Read</a> (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> clut: <strong>CLUT</strong>; size: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_6048CCC0">
+</h1>
+<p> AUTHOR "eos"; PURPOSE "Color lookup tables";</p>
+
+<p> Color lookup tables with reverse lookup</p>
+<hr><h2 id="#_60490900"><a name="CLUTs.CLUT"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.CLUT">CLUT</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CLUT* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#CLUTs.CLUT.col">col</a>: <strong>ARRAY</strong> colors <strong>OF</strong> <strong>Color</strong><tr><td></td><td><a href="#CLUTs.CLUT.size">size</a>: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_60496280"><a name="CLUTs.CLUT.col"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.CLUT">CLUT</a>.<a href="#CLUTs.CLUT.col">col</a>
+</h3>
+<p> blue: bit 0..7; green: bit 8..15; red: bit 16..23</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> col*: <strong>ARRAY</strong> colors <strong>OF</strong> <strong>Color</strong></pre>
+<hr><h3 id="#_6049C6C0"><a name="CLUTs.CLUT.size"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.CLUT">CLUT</a>.<a href="#CLUTs.CLUT.size">size</a>
+</h3>
+<p> number of valid colors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> size*: <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_604A0800"><a name="CLUTs.Set"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.Set">Set</a>
+</h2>
+<p> set CLUT entry to specific color (invalidates existing reverse lookup structure)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Set* (<strong>VAR</strong> clut: <strong>CLUT</strong>; n: <strong>SIZE</strong>; col: <strong>Color</strong>)</pre>
+<hr><h2 id="#_604A8B00"><a name="CLUTs.Get"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.Get">Get</a>
+</h2>
+<p> get CLUT entry</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (<strong>VAR</strong> clut: <strong>CLUT</strong>; n: <strong>SIZE</strong>; <strong>VAR</strong> col: <strong>Color</strong>)</pre>
+<hr><h2 id="#_604AF000"><a name="CLUTs.Init"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.Init">Init</a>
+</h2>
+<p> initialize CLUT with number of valid colors and number of bits per component for reverse lookup table</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init* (<strong>VAR</strong> clut: <strong>CLUT</strong>; size, bits: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_604B82C0"><a name="CLUTs.Match"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.Match">Match</a>
+</h2>
+<p> return index of color that best matches the given RGB triple</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Match* (<strong>VAR</strong> clut: <strong>CLUT</strong>; col: <strong>Color</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_604BFD00"><a name="CLUTs.Copy"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.Copy">Copy</a>
+</h2>
+<p> copy color lookup table</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Copy* (from, to: <strong>CLUT</strong>)</pre>
+<hr><h2 id="#_604C4A40"><a name="CLUTs.Write"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.Write">Write</a>
+</h2>
+<p> write colors to file (only the color values themselves are written)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (<strong>VAR</strong> w: <strong>Streams.Writer</strong>; <strong>VAR</strong> clut: <strong>CLUT</strong>)</pre>
+<hr><h2 id="#_604CC180"><a name="CLUTs.Read"></a><a href="#CLUTs">CLUTs</a>.<a href="#CLUTs.Read">Read</a>
+</h2>
+<p> read up to size colors from file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> clut: <strong>CLUT</strong>; size: <strong>SIGNED32</strong>)</pre>
+</body></html>

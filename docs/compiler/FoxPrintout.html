@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxPrintout">FoxPrintout</a></p>
+<hr><h1 id="#_BD5C7840"><a name="FoxPrintout"></a><a href="#ModuleList">Module</a> FoxPrintout
+</h1>
+<p> AUTHOR "fof & fn"; PURPOSE "Oberon Compiler Module Output for SymbolFile, Pretty Printing and Testing";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Exported= 0<tr><td></td><td>SymbolFile= 1<tr><td></td><td>SourceCode= 2<tr><td></td><td>All= 3<tr><th align='left'>type declarations</th><td><a href="#FoxPrintout.Printer">Printer</a> =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)<tr><th align='left'>procedures</th><td> NewPrinter (w: <strong>Streams.Writer</strong>; mode: <strong>SIGNED32</strong>; info: <strong>BOOLEAN</strong>): <strong>Printer</strong><tr><td></td><td> Info (<strong>CONST</strong> info: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; a: @Any0)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_BD5D9700">
+</h1><hr><h2 id="#_BD5D9EC0"><a name="FoxPrintout.Printer"></a><a href="#FoxPrintout">FoxPrintout</a>.<a href="#FoxPrintout.Printer">Printer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Printer* =<strong>OBJECT</strong> (<strong>SyntaxTree.Visitor</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>w: <strong>Basic.Writer</strong><tr><th align='left'>procedures</th><td> Identifier (x: <strong>SyntaxTree.Identifier</strong>)<tr><td></td><td> QualifiedIdentifier (x: <strong>SyntaxTree.QualifiedIdentifier</strong>)<tr><td></td><td> Type (x: <strong>SyntaxTree.Type</strong>)<tr><td></td><td> VisitType (x: <strong>SyntaxTree.Type</strong>)<tr><td></td><td> VisitBasicType (x: <strong>SyntaxTree.BasicType</strong>)<tr><td></td><td> VisitBooleanType (x: <strong>SyntaxTree.BooleanType</strong>)<tr><td></td><td> VisitSetType (x: <strong>SyntaxTree.SetType</strong>)<tr><td></td><td> VisitSizeType (x: <strong>SyntaxTree.SizeType</strong>)<tr><td></td><td> VisitCharacterType (x: <strong>SyntaxTree.CharacterType</strong>)<tr><td></td><td> VisitIntegerType (x: <strong>SyntaxTree.IntegerType</strong>)<tr><td></td><td> VisitFloatType (x: <strong>SyntaxTree.FloatType</strong>)<tr><td></td><td> VisitComplexType (x: <strong>SyntaxTree.ComplexType</strong>)<tr><td></td><td> VisitByteType (x: <strong>SyntaxTree.ByteType</strong>)<tr><td></td><td> VisitQualifiedType (x: <strong>SyntaxTree.QualifiedType</strong>)<tr><td></td><td> VisitStringType (x: <strong>SyntaxTree.StringType</strong>)<tr><td></td><td> VisitEnumerationType (x: <strong>SyntaxTree.EnumerationType</strong>)<tr><td></td><td> VisitRangeType (x: <strong>SyntaxTree.RangeType</strong>)<tr><td></td><td> VisitArrayType (x: <strong>SyntaxTree.ArrayType</strong>)<tr><td></td><td> VisitNilType (x: <strong>SyntaxTree.NilType</strong>)<tr><td></td><td> VisitAddressType (x: <strong>SyntaxTree.AddressType</strong>)<tr><td></td><td> VisitObjectType (x: <strong>SyntaxTree.ObjectType</strong>)<tr><td></td><td> VisitAnyType (x: <strong>SyntaxTree.AnyType</strong>)<tr><td></td><td> VisitAnyRecordType (x: <strong>SyntaxTree.AnyRecordType</strong>)<tr><td></td><td> VisitMathArrayType (x: <strong>SyntaxTree.MathArrayType</strong>)<tr><td></td><td> VisitPointerType (x: <strong>SyntaxTree.PointerType</strong>)<tr><td></td><td> VisitPortType (x: <strong>SyntaxTree.PortType</strong>)<tr><td></td><td> VisitCellType (x: <strong>SyntaxTree.CellType</strong>)<tr><td></td><td> VisitRecordType (x: <strong>SyntaxTree.RecordType</strong>)<tr><td></td><td> VisitProcedureType (x: <strong>SyntaxTree.ProcedureType</strong>)<tr><td></td><td> Expression (x: <strong>SyntaxTree.Expression</strong>)<tr><td></td><td> VisitExpression (x: <strong>SyntaxTree.Expression</strong>)<tr><td></td><td> VisitSet (x: <strong>SyntaxTree.Set</strong>)<tr><td></td><td> VisitMathArrayExpression (x: <strong>SyntaxTree.MathArrayExpression</strong>)<tr><td></td><td> VisitUnaryExpression (x: <strong>SyntaxTree.UnaryExpression</strong>)<tr><td></td><td> VisitBinaryExpression (x: <strong>SyntaxTree.BinaryExpression</strong>)<tr><td></td><td> VisitRangeExpression (x: <strong>SyntaxTree.RangeExpression</strong>)<tr><td></td><td> VisitConditionalExpression (x: <strong>SyntaxTree.ConditionalExpression</strong>)<tr><td></td><td> VisitTensorRangeExpression (x: <strong>SyntaxTree.TensorRangeExpression</strong>)<tr><td></td><td> VisitConversion (x: <strong>SyntaxTree.Conversion</strong>)<tr><td></td><td> VisitDesignator (x: <strong>SyntaxTree.Designator</strong>)<tr><td></td><td> VisitIdentifierDesignator (x: <strong>SyntaxTree.IdentifierDesignator</strong>)<tr><td></td><td> VisitSelectorDesignator (x: <strong>SyntaxTree.SelectorDesignator</strong>)<tr><td></td><td> VisitBracketDesignator (x: <strong>SyntaxTree.BracketDesignator</strong>)<tr><td></td><td> VisitParameterDesignator (x: <strong>SyntaxTree.ParameterDesignator</strong>)<tr><td></td><td> VisitIndexDesignator (x: <strong>SyntaxTree.IndexDesignator</strong>)<tr><td></td><td> VisitArrowDesignator (x: <strong>SyntaxTree.ArrowDesignator</strong>)<tr><td></td><td> VisitSymbolDesignator (x: <strong>SyntaxTree.SymbolDesignator</strong>)<tr><td></td><td> VisitSupercallDesignator (x: <strong>SyntaxTree.SupercallDesignator</strong>)<tr><td></td><td> VisitSelfDesignator (x: <strong>SyntaxTree.SelfDesignator</strong>)<tr><td></td><td> VisitResultDesignator (x: <strong>SyntaxTree.ResultDesignator</strong>)<tr><td></td><td> VisitDereferenceDesignator (x: <strong>SyntaxTree.DereferenceDesignator</strong>)<tr><td></td><td> VisitTypeGuardDesignator (x: <strong>SyntaxTree.TypeGuardDesignator</strong>)<tr><td></td><td> VisitProcedureCallDesignator (x: <strong>SyntaxTree.ProcedureCallDesignator</strong>)<tr><td></td><td> VisitInlineCallDesignator (x: <strong>SyntaxTree.InlineCallDesignator</strong>)<tr><td></td><td> VisitBuiltinCallDesignator (x: <strong>SyntaxTree.BuiltinCallDesignator</strong>)<tr><td></td><td> VisitValue (x: <strong>SyntaxTree.Value</strong>)<tr><td></td><td> VisitBooleanValue (x: <strong>SyntaxTree.BooleanValue</strong>)<tr><td></td><td> VisitIntegerValue (x: <strong>SyntaxTree.IntegerValue</strong>)<tr><td></td><td> VisitCharacterValue (x: <strong>SyntaxTree.CharacterValue</strong>)<tr><td></td><td> VisitSetValue (x: <strong>SyntaxTree.SetValue</strong>)<tr><td></td><td> VisitMathArrayValue (x: <strong>SyntaxTree.MathArrayValue</strong>)<tr><td></td><td> VisitRealValue (x: <strong>SyntaxTree.RealValue</strong>)<tr><td></td><td> VisitComplexValue (x: <strong>SyntaxTree.ComplexValue</strong>)<tr><td></td><td> VisitStringValue (x: <strong>SyntaxTree.StringValue</strong>)<tr><td></td><td> VisitNilValue (x: <strong>SyntaxTree.NilValue</strong>)<tr><td></td><td> VisitEnumerationValue (x: <strong>SyntaxTree.EnumerationValue</strong>)<tr><td></td><td> VisitProcedureValue (x: <strong>SyntaxTree.ProcedureValue</strong>)<tr><td></td><td> <a href="#FoxPrintout.Printer.Symbol">Symbol</a> (x: <strong>SyntaxTree.Symbol</strong>)<tr><td></td><td> VisitSymbol (x: <strong>SyntaxTree.Symbol</strong>)<tr><td></td><td> VisitTypeDeclaration (x: <strong>SyntaxTree.TypeDeclaration</strong>)<tr><td></td><td> VisitConstant (x: <strong>SyntaxTree.Constant</strong>)<tr><td></td><td> VisitVariable (x: <strong>SyntaxTree.Variable</strong>)<tr><td></td><td> VisitParameter (x: <strong>SyntaxTree.Parameter</strong>)<tr><td></td><td> ParameterList (x: <strong>SyntaxTree.Parameter</strong>)<tr><td></td><td> VisitProcedure (x: <strong>SyntaxTree.Procedure</strong>)<tr><td></td><td> VisitOperator (x: <strong>SyntaxTree.Operator</strong>)<tr><td></td><td> VisitImport (x: <strong>SyntaxTree.Import</strong>)<tr><td></td><td> VisitBuiltin (x: <strong>SyntaxTree.Builtin</strong>)<tr><td></td><td> <a href="#FoxPrintout.Printer.Scope">Scope</a> (x: <strong>SyntaxTree.Scope</strong>)<tr><td></td><td> Statement (x: <strong>SyntaxTree.Statement</strong>)<tr><td></td><td> StatementSequence (x: <strong>SyntaxTree.StatementSequence</strong>)<tr><td></td><td> VisitStatement (x: <strong>SyntaxTree.Statement</strong>)<tr><td></td><td> VisitProcedureCallStatement (x: <strong>SyntaxTree.ProcedureCallStatement</strong>)<tr><td></td><td> VisitAssignment (x: <strong>SyntaxTree.Assignment</strong>)<tr><td></td><td> VisitDeclarationStatement (x: <strong>SyntaxTree.DeclarationStatement</strong>)<tr><td></td><td> VisitCommunicationStatement (x: <strong>SyntaxTree.CommunicationStatement</strong>)<tr><td></td><td> VisitIfStatement (x: <strong>SyntaxTree.IfStatement</strong>)<tr><td></td><td> VisitWithStatement (x: <strong>SyntaxTree.WithStatement</strong>)<tr><td></td><td> VisitCaseStatement (x: <strong>SyntaxTree.CaseStatement</strong>)<tr><td></td><td> VisitWhileStatement (x: <strong>SyntaxTree.WhileStatement</strong>)<tr><td></td><td> VisitRepeatStatement (x: <strong>SyntaxTree.RepeatStatement</strong>)<tr><td></td><td> VisitForStatement (x: <strong>SyntaxTree.ForStatement</strong>)<tr><td></td><td> VisitLoopStatement (x: <strong>SyntaxTree.LoopStatement</strong>)<tr><td></td><td> VisitExitableBlock (x: <strong>SyntaxTree.ExitableBlock</strong>)<tr><td></td><td> VisitExitStatement (x: <strong>SyntaxTree.ExitStatement</strong>)<tr><td></td><td> VisitReturnStatement (x: <strong>SyntaxTree.ReturnStatement</strong>)<tr><td></td><td> VisitAwaitStatement (x: <strong>SyntaxTree.AwaitStatement</strong>)<tr><td></td><td> VisitStatementBlock (x: <strong>SyntaxTree.StatementBlock</strong>)<tr><td></td><td> VisitCode (x: <strong>SyntaxTree.Code</strong>)<tr><td></td><td> VisitModule (x: <strong>SyntaxTree.Module</strong>)<tr><td></td><td> Module (x: <strong>SyntaxTree.Module</strong>)<tr><td></td><td> SingleStatement (b: <strong>BOOLEAN</strong>)<tr><td></td><td>& Init (w: <strong>Streams.Writer</strong>; mode: <strong>SIGNED32</strong>; info: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_BD691B00"><a name="FoxPrintout.Printer.Symbol"></a><a href="#FoxPrintout">FoxPrintout</a>.<a href="#FoxPrintout.Printer">Printer</a>.<a href="#FoxPrintout.Printer.Symbol">Symbol</a>
+</h3>
+<p>* symbols <strong></strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Symbol* (x: <strong>SyntaxTree.Symbol</strong>)</pre>
+<hr><h3 id="#_BD6965C0"><a name="FoxPrintout.Printer.Scope"></a><a href="#FoxPrintout">FoxPrintout</a>.<a href="#FoxPrintout.Printer">Printer</a>.<a href="#FoxPrintout.Printer.Scope">Scope</a>
+</h3>
+<p> scopes <strong></strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Scope* (x: <strong>SyntaxTree.Scope</strong>)</pre>
+</body></html>

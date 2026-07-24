@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#GfxPaths">GfxPaths</a></p>
+<hr><h1 id="#_404D6000"><a name="GfxPaths"></a><a href="#ModuleList">Module</a> GfxPaths
+</h1>
+<p> portable</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Stop= 0<tr><td></td><td>Enter= 1<tr><td></td><td>Line= 2<tr><td></td><td>Arc= 3<tr><td></td><td>Bezier= 4<tr><td></td><td><a href="#GfxPaths.Exit">Exit</a>= 5<tr><td></td><td><a href="#GfxPaths.MaxSplinePoints">MaxSplinePoints</a>= 128<tr><th align='left'>type declarations</th><td><a href="#GfxPaths.Path">Path</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>PathDesc</strong><tr><td></td><td><a href="#GfxPaths.PathDesc">PathDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#GfxPaths.Scanner">Scanner</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#GfxPaths.EnumData">EnumData</a> =<strong>RECORD</strong> <tr><td></td><td>Enumerator =<strong>PROCEDURE</strong> (<strong>VAR</strong> data: <strong>EnumData</strong>)<tr><th align='left'>procedures</th><td> <a href="#GfxPaths.Clear">Clear</a> (path: <strong>Path</strong>)<tr><td></td><td> <a href="#GfxPaths.AddEnter">AddEnter</a> (path: <strong>Path</strong>; x, y, dx, dy: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.AddLine">AddLine</a> (path: <strong>Path</strong>; x, y: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.AddArc">AddArc</a> (path: <strong>Path</strong>; x, y, x0, y0, x1, y1, x2, y2: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.AddBezier">AddBezier</a> (path: <strong>Path</strong>; x, y, x1, y1, x2, y2: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.AddExit">AddExit</a> (path: <strong>Path</strong>; dx, dy: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.AddRect">AddRect</a> (path: <strong>Path</strong>; llx, lly, urx, ury: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.Append">Append</a> (to, from: <strong>Path</strong>)<tr><td></td><td> <a href="#GfxPaths.Open">Open</a> (<strong>VAR</strong> s: <strong>Scanner</strong>; path: <strong>Path</strong>; pos: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#GfxPaths.Scan">Scan</a> (<strong>VAR</strong> s: <strong>Scanner</strong>)<tr><td></td><td> <a href="#GfxPaths.EnumArc">EnumArc</a> (x0, y0, x1, y1, x2, y2, x, y, flatness: <strong>FLOAT32</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)<tr><td></td><td> <a href="#GfxPaths.EnumBezier">EnumBezier</a> (x1, y1, x2, y2, x, y, flatness: <strong>FLOAT32</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)<tr><td></td><td> <a href="#GfxPaths.EnumSpline">EnumSpline</a> (<strong>VAR</strong> x, y: <strong>ARRAY</strong> <strong>OF</strong> <strong>FLOAT32</strong>; n: <strong>SIGNED32</strong>; closed: <strong>BOOLEAN</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)<tr><td></td><td> <a href="#GfxPaths.Enumerate">Enumerate</a> (path: <strong>Path</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)<tr><td></td><td> <a href="#GfxPaths.EnumFlattened">EnumFlattened</a> (path: <strong>Path</strong>; flatness: <strong>FLOAT32</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)<tr><td></td><td> <a href="#GfxPaths.Empty">Empty</a> (path: <strong>Path</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxPaths.InPath">InPath</a> (llx, lly, urx, ury: <strong>FLOAT32</strong>; path: <strong>Path</strong>; evenOdd: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxPaths.OnPath">OnPath</a> (llx, lly, urx, ury: <strong>FLOAT32</strong>; path: <strong>Path</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#GfxPaths.GetBox">GetBox</a> (path: <strong>Path</strong>; <strong>VAR</strong> llx, lly, urx, ury: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.LineLength">LineLength</a> (x0, y0, x1, y1: <strong>FLOAT32</strong>): <strong>FLOAT32</strong><tr><td></td><td> <a href="#GfxPaths.ArcLength">ArcLength</a> (sx, sy, ex, ey, x0, y0, x1, y1, x2, y2, flatness: <strong>FLOAT32</strong>): <strong>FLOAT32</strong><tr><td></td><td> <a href="#GfxPaths.BezierLength">BezierLength</a> (x0, y0, x1, y1, x2, y2, x3, y3, flatness: <strong>FLOAT32</strong>): <strong>FLOAT32</strong><tr><td></td><td> <a href="#GfxPaths.Length">Length</a> (path: <strong>Path</strong>; flatness: <strong>FLOAT32</strong>): <strong>FLOAT32</strong><tr><td></td><td> <a href="#GfxPaths.Reverse">Reverse</a> (src, dst: <strong>Path</strong>)<tr><td></td><td> <a href="#GfxPaths.Copy">Copy</a> (src, dst: <strong>Path</strong>)<tr><td></td><td> <a href="#GfxPaths.Apply">Apply</a> (path: <strong>Path</strong>; <strong>VAR</strong> mat: <strong>GfxMatrix.Matrix</strong>)<tr><td></td><td> <a href="#GfxPaths.Close">Close</a> (path: <strong>Path</strong>)<tr><td></td><td> <a href="#GfxPaths.Split">Split</a> (path: <strong>Path</strong>; offset: <strong>FLOAT32</strong>; head, tail: <strong>Path</strong>)<tr><td></td><td> <a href="#GfxPaths.IntersectLines">IntersectLines</a> (x1, y1, dx1, dy1, x2, y2, dx2, dy2: <strong>FLOAT32</strong>; <strong>VAR</strong> x, y: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.IntersectLineCircle">IntersectLineCircle</a> (sx, sy, tx, ty, mx, my, r: <strong>FLOAT32</strong>; <strong>VAR</strong> x1, y1, x2, y2: <strong>FLOAT32</strong>; <strong>VAR</strong> nsol: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#GfxPaths.ProjectToLine">ProjectToLine</a> (px, py, qx, qy, x, y: <strong>FLOAT32</strong>; <strong>VAR</strong> u, v: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.ProjectToEllipse">ProjectToEllipse</a> (ax, ay, bx, by, x, y: <strong>FLOAT32</strong>; <strong>VAR</strong> u, v: <strong>FLOAT32</strong>)<tr><td></td><td> <a href="#GfxPaths.ProjectToPath">ProjectToPath</a> (path: <strong>Path</strong>; x, y: <strong>FLOAT32</strong>; <strong>VAR</strong> u, v: <strong>FLOAT32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_40575C80">
+</h1>
+<p> AUTHOR "eos"; PURPOSE "Two_dimensional paths consisting of lines, arcs and bezier curves";</p>
+<hr><h2 id="#_40579640"><a name="GfxPaths.Exit"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Exit">Exit</a>
+</h2>
+<p> path element types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Exit*= 5</pre>
+<hr><h2 id="#_4057CC80"><a name="GfxPaths.MaxSplinePoints"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.MaxSplinePoints">MaxSplinePoints</a>
+</h2>
+<p> maximal number of control points in a spline</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MaxSplinePoints*= 128</pre>
+<hr><h2 id="#_40581840"><a name="GfxPaths.Path"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Path">Path</a>
+</h2>
+<p> path abstraction</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Path* =<strong>POINTER</strong> <strong>TO</strong> <strong>PathDesc</strong></pre>
+<hr><h2 id="#_40585300"><a name="GfxPaths.PathDesc"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.PathDesc">PathDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PathDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>elems: <strong>SIGNED16</strong><tr><td></td><td><a href="#GfxPaths.PathDesc.coords">coords</a>: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_40589F00"><a name="GfxPaths.PathDesc.coords"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.PathDesc">PathDesc</a>.<a href="#GfxPaths.PathDesc.coords">coords</a>
+</h3>
+<p> number of elements/coordinate pairs in path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> coords*: <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_4058E8C0"><a name="GfxPaths.Scanner"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Scanner">Scanner</a>
+</h2>
+<p> path scanner</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scanner* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#GfxPaths.Scanner.path">path</a>: <strong>Path</strong><tr><td></td><td><a href="#GfxPaths.Scanner.pos">pos</a>: <strong>SIGNED16</strong><tr><td></td><td><a href="#GfxPaths.Scanner.elem">elem</a>: <strong>SIGNED16</strong><tr><td></td><td>x: <strong>FLOAT32</strong><tr><td></td><td><a href="#GfxPaths.Scanner.y">y</a>: <strong>FLOAT32</strong><tr><td></td><td>dx: <strong>FLOAT32</strong><tr><td></td><td><a href="#GfxPaths.Scanner.dy">dy</a>: <strong>FLOAT32</strong><tr><td></td><td>x0: <strong>FLOAT32</strong><tr><td></td><td>y0: <strong>FLOAT32</strong><tr><td></td><td>x1: <strong>FLOAT32</strong><tr><td></td><td>y1: <strong>FLOAT32</strong><tr><td></td><td>x2: <strong>FLOAT32</strong><tr><td></td><td><a href="#GfxPaths.Scanner.y2">y2</a>: <strong>FLOAT32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_4059E5C0"><a name="GfxPaths.Scanner.path"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Scanner">Scanner</a>.<a href="#GfxPaths.Scanner.path">path</a>
+</h3>
+<p> visited path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> path*: <strong>Path</strong></pre>
+<hr><h3 id="#_405A1F80"><a name="GfxPaths.Scanner.pos"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Scanner">Scanner</a>.<a href="#GfxPaths.Scanner.pos">pos</a>
+</h3>
+<p> element position</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> pos*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_405A5840"><a name="GfxPaths.Scanner.elem"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Scanner">Scanner</a>.<a href="#GfxPaths.Scanner.elem">elem</a>
+</h3>
+<p> current path element</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> elem*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_405A9540"><a name="GfxPaths.Scanner.y"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Scanner">Scanner</a>.<a href="#GfxPaths.Scanner.y">y</a>
+</h3>
+<p> current end coordinates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> y*: <strong>FLOAT32</strong></pre>
+<hr><h3 id="#_405AD240"><a name="GfxPaths.Scanner.dy"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Scanner">Scanner</a>.<a href="#GfxPaths.Scanner.dy">dy</a>
+</h3>
+<p> direction vector</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> dy*: <strong>FLOAT32</strong></pre>
+<hr><h3 id="#_405B0B00"><a name="GfxPaths.Scanner.y2"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Scanner">Scanner</a>.<a href="#GfxPaths.Scanner.y2">y2</a>
+</h3>
+<p> additional control point coordinates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> y2*: <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_405B4DC0"><a name="GfxPaths.EnumData"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.EnumData">EnumData</a>
+</h2>
+<p> path enumeration</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EnumData* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#GfxPaths.EnumData.elem">elem</a>: <strong>SIGNED16</strong><tr><td></td><td>x: <strong>FLOAT32</strong><tr><td></td><td>y: <strong>FLOAT32</strong><tr><td></td><td>dx: <strong>FLOAT32</strong><tr><td></td><td>dy: <strong>FLOAT32</strong><tr><td></td><td>x0: <strong>FLOAT32</strong><tr><td></td><td>y0: <strong>FLOAT32</strong><tr><td></td><td>x1: <strong>FLOAT32</strong><tr><td></td><td>y1: <strong>FLOAT32</strong><tr><td></td><td>x2: <strong>FLOAT32</strong><tr><td></td><td><a href="#GfxPaths.EnumData.y2">y2</a>: <strong>FLOAT32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_405C2D40"><a name="GfxPaths.EnumData.elem"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.EnumData">EnumData</a>.<a href="#GfxPaths.EnumData.elem">elem</a>
+</h3>
+<p> current path element</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> elem*: <strong>SIGNED16</strong></pre>
+<hr><h3 id="#_405C6A40"><a name="GfxPaths.EnumData.y2"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.EnumData">EnumData</a>.<a href="#GfxPaths.EnumData.y2">y2</a>
+</h3>
+<p> element parameters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> y2*: <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_405CA300"><a name="GfxPaths.Clear"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Clear">Clear</a>
+</h2>
+<p> discard previous contents and start new path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Clear* (path: <strong>Path</strong>)</pre>
+<hr><h2 id="#_405CF4C0"><a name="GfxPaths.AddEnter"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.AddEnter">AddEnter</a>
+</h2>
+<p> append enter element</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddEnter* (path: <strong>Path</strong>; x, y, dx, dy: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_405D5C40"><a name="GfxPaths.AddLine"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.AddLine">AddLine</a>
+</h2>
+<p> append line element</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddLine* (path: <strong>Path</strong>; x, y: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_405DB340"><a name="GfxPaths.AddArc"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.AddArc">AddArc</a>
+</h2>
+<p> append arc element</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddArc* (path: <strong>Path</strong>; x, y, x0, y0, x1, y1, x2, y2: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_405E3C40"><a name="GfxPaths.AddBezier"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.AddBezier">AddBezier</a>
+</h2>
+<p> append bezier element</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddBezier* (path: <strong>Path</strong>; x, y, x1, y1, x2, y2: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_405EB2C0"><a name="GfxPaths.AddExit"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.AddExit">AddExit</a>
+</h2>
+<p> append exit element</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddExit* (path: <strong>Path</strong>; dx, dy: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_405F09C0"><a name="GfxPaths.AddRect"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.AddRect">AddRect</a>
+</h2>
+<p> append subpath for axis-aligned rectangle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddRect* (path: <strong>Path</strong>; llx, lly, urx, ury: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_405F7A80"><a name="GfxPaths.Append"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Append">Append</a>
+</h2>
+<p> append one path to another</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Append* (to, from: <strong>Path</strong>)</pre>
+<hr><h2 id="#_405FCC40"><a name="GfxPaths.Open"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Open">Open</a>
+</h2>
+<p>--- Path Scanners ---</p>
+
+<p> Path scanners can be used to iterate over a path under client control. The scanner's elem field specifies what the current element is, whereas the remaining fields contain the parameters for that element. A Stop element indicates that the end of the path has been reached.</p>
+
+<p> open scanner on path and load parameters of element at given position</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (<strong>VAR</strong> s: <strong>Scanner</strong>; path: <strong>Path</strong>; pos: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_406116C0"><a name="GfxPaths.Scan"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Scan">Scan</a>
+</h2>
+<p> advance to next element and load its parameters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Scan* (<strong>VAR</strong> s: <strong>Scanner</strong>)</pre>
+<hr><h2 id="#_40617080"><a name="GfxPaths.EnumArc"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.EnumArc">EnumArc</a>
+</h2>
+<p>--- Enumerating (Flattened) Paths ---</p>
+
+<p> In addition to being scanned, path elements may also be enumerated. The advantage of enumerating path elements is that arcs and bezier curves can be enumerated as a sequence of lines approximating the original curve. Besides, natural splines can enumerated in terms of regular path elements.</p>
+
+<p> enumerate arc as a sequence of lines with maximal error 'flatness'; current point must be in (data.x, data.y)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnumArc* (x0, y0, x1, y1, x2, y2, x, y, flatness: <strong>FLOAT32</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)</pre>
+<hr><h2 id="#_40631400"><a name="GfxPaths.EnumBezier"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.EnumBezier">EnumBezier</a>
+</h2>
+<p> enumerate bezier curve as a sequence of lines with maximal error 'flatness'; current point must be in (data.x, data.y)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnumBezier* (x1, y1, x2, y2, x, y, flatness: <strong>FLOAT32</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)</pre>
+<hr><h2 id="#_4063E3C0"><a name="GfxPaths.EnumSpline"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.EnumSpline">EnumSpline</a>
+</h2>
+<p> enumerate natural spline as sequence of path elements; current point must be in (data.x, data.y)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnumSpline* (<strong>VAR</strong> x, y: <strong>ARRAY</strong> <strong>OF</strong> <strong>FLOAT32</strong>; n: <strong>SIGNED32</strong>; closed: <strong>BOOLEAN</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)</pre>
+<hr><h2 id="#_4064A200"><a name="GfxPaths.Enumerate"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Enumerate">Enumerate</a>
+</h2>
+<p> enumerate path elements</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Enumerate* (path: <strong>Path</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)</pre>
+<hr><h2 id="#_40650380"><a name="GfxPaths.EnumFlattened"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.EnumFlattened">EnumFlattened</a>
+</h2>
+<p> enumerate flattened path, i.e. arcs and bezier curves will be approximated with lines</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EnumFlattened* (path: <strong>Path</strong>; flatness: <strong>FLOAT32</strong>; enum: <strong>Enumerator</strong>; <strong>VAR</strong> data: <strong>EnumData</strong>)</pre>
+<hr><h2 id="#_40659BC0"><a name="GfxPaths.Empty"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Empty">Empty</a>
+</h2>
+<p>--- Path Queries ---</p>
+
+<p> return whether path is empty</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Empty* (path: <strong>Path</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_4065FC80"><a name="GfxPaths.InPath"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.InPath">InPath</a>
+</h2>
+<p> return whether rectangle is completely inside (closed) path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InPath* (llx, lly, urx, ury: <strong>FLOAT32</strong>; path: <strong>Path</strong>; evenOdd: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_40668D40"><a name="GfxPaths.OnPath"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.OnPath">OnPath</a>
+</h2>
+<p> return whether rectangle intersects path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OnPath* (llx, lly, urx, ury: <strong>FLOAT32</strong>; path: <strong>Path</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_40670380"><a name="GfxPaths.GetBox"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.GetBox">GetBox</a>
+</h2>
+<p> calculate bounding box of path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetBox* (path: <strong>Path</strong>; <strong>VAR</strong> llx, lly, urx, ury: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_40677740"><a name="GfxPaths.LineLength"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.LineLength">LineLength</a>
+</h2>
+<p> calculate line length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LineLength* (x0, y0, x1, y1: <strong>FLOAT32</strong>): <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_4067D740"><a name="GfxPaths.ArcLength"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.ArcLength">ArcLength</a>
+</h2>
+<p> calculate arc length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ArcLength* (sx, sy, ex, ey, x0, y0, x1, y1, x2, y2, flatness: <strong>FLOAT32</strong>): <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_40686DC0"><a name="GfxPaths.BezierLength"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.BezierLength">BezierLength</a>
+</h2>
+<p> calculate bezier length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> BezierLength* (x0, y0, x1, y1, x2, y2, x3, y3, flatness: <strong>FLOAT32</strong>): <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_4068F540"><a name="GfxPaths.Length"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Length">Length</a>
+</h2>
+<p> calculate path length</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Length* (path: <strong>Path</strong>; flatness: <strong>FLOAT32</strong>): <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_40694A40"><a name="GfxPaths.Reverse"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Reverse">Reverse</a>
+</h2>
+<p>--- Path Operations ---</p>
+
+<p> put reversed source path into destination path; dst remains unchanged if src is empty</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reverse* (src, dst: <strong>Path</strong>)</pre>
+<hr><h2 id="#_4069CF80"><a name="GfxPaths.Copy"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Copy">Copy</a>
+</h2>
+<p> return copy of source path in destination path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Copy* (src, dst: <strong>Path</strong>)</pre>
+<hr><h2 id="#_406A2D40"><a name="GfxPaths.Apply"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Apply">Apply</a>
+</h2>
+<p> apply transformation to all coordinates in path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Apply* (path: <strong>Path</strong>; <strong>VAR</strong> mat: <strong>GfxMatrix.Matrix</strong>)</pre>
+<hr><h2 id="#_406A9080"><a name="GfxPaths.Close"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Close">Close</a>
+</h2>
+<p> try to close disconnected enter/exit points by modifying their direction vectors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close* (path: <strong>Path</strong>)</pre>
+<hr><h2 id="#_406AF2C0"><a name="GfxPaths.Split"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.Split">Split</a>
+</h2>
+<p> split subpath in two at given offset (resulting subpaths may be flattened in the process)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Split* (path: <strong>Path</strong>; offset: <strong>FLOAT32</strong>; head, tail: <strong>Path</strong>)</pre>
+<hr><h2 id="#_406B8700"><a name="GfxPaths.IntersectLines"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.IntersectLines">IntersectLines</a>
+</h2>
+<p>--- Geometry Support ---</p>
+
+<p> compute intersection of two lines</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntersectLines* (x1, y1, dx1, dy1, x2, y2, dx2, dy2: <strong>FLOAT32</strong>; <strong>VAR</strong> x, y: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_406C3340"><a name="GfxPaths.IntersectLineCircle"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.IntersectLineCircle">IntersectLineCircle</a>
+</h2>
+<p> compute intersection(s) of line with circle; returns number of solutions in nsol</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntersectLineCircle* (sx, sy, tx, ty, mx, my, r: <strong>FLOAT32</strong>; <strong>VAR</strong> x1, y1, x2, y2: <strong>FLOAT32</strong>; <strong>VAR</strong> nsol: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_406D04C0"><a name="GfxPaths.ProjectToLine"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.ProjectToLine">ProjectToLine</a>
+</h2>
+<p> return projection of point onto line</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ProjectToLine* (px, py, qx, qy, x, y: <strong>FLOAT32</strong>; <strong>VAR</strong> u, v: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_406D97C0"><a name="GfxPaths.ProjectToEllipse"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.ProjectToEllipse">ProjectToEllipse</a>
+</h2>
+<p> return projection of point onto ellipse at origin</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ProjectToEllipse* (ax, ay, bx, by, x, y: <strong>FLOAT32</strong>; <strong>VAR</strong> u, v: <strong>FLOAT32</strong>)</pre>
+<hr><h2 id="#_406E3000"><a name="GfxPaths.ProjectToPath"></a><a href="#GfxPaths">GfxPaths</a>.<a href="#GfxPaths.ProjectToPath">ProjectToPath</a>
+</h2>
+<p> return projection of point onto path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ProjectToPath* (path: <strong>Path</strong>; x, y: <strong>FLOAT32</strong>; <strong>VAR</strong> u, v: <strong>FLOAT32</strong>)</pre>
+</body></html>

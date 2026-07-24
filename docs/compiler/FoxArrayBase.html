@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxArrayBase">FoxArrayBase</a></p>
+<hr><h1 id="#_8E7DF280"><a name="FoxArrayBase"></a><a href="#ModuleList">Module</a> FoxArrayBase
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>TensorFlag= 0<tr><td></td><td>RangeFlag= 1<tr><td></td><td>TemporaryFlag= 2<tr><th align='left'>type declarations</th><td>FastMatMul =<strong>PROCEDURE</strong> (matrixA, matrixB, matrixC: <strong>ADDRESS</strong>; IncA, StrideA, IncB, StrideB, IncC, StrideC, RowsA, ColsA, RowsB, ColsB: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td>TransposeP =<strong>PROCEDURE</strong> (ladr, dadr: <strong>ADDRESS</strong>; lstride, linc, dstride, dinc, rows, cols: <strong>SIZE</strong>)<tr><td></td><td><a href="#FoxArrayBase.LenInc">LenInc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxArrayBase.ArrayDescriptor">ArrayDescriptor</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxArrayBase.Tensor">Tensor</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ArrayDescriptor</strong><tr><td></td><td><a href="#FoxArrayBase.UnsafeArray">UnsafeArray</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>ArrayDescriptor</strong>)<tr><td></td><td><a href="#FoxArrayBase.UnsafeArrayT">UnsafeArrayT</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>ArrayDescriptor</strong>)<tr><td></td><td>SmallMatMul =<strong>PROCEDURE</strong> (dadr, ladr, radr: <strong>ADDRESS</strong>)<tr><th align='left'>variables</th><td>temporary: <strong>T0</strong><tr><td></td><td>alloc: <strong>SIGNED32</strong><tr><td></td><td>allocTemp: <strong>SIGNED32</strong><tr><td></td><td>loopSPAXAX: <strong>BinaryAASLoop</strong><tr><td></td><td>loopSPARAR: <strong>BinaryAASLoop</strong><tr><td></td><td>loopAddAXAX: <strong>BinaryAAALoop</strong><tr><td></td><td>loopAddARAR: <strong>BinaryAAALoop</strong><tr><td></td><td>loopAddAZAZ: <strong>BinaryAAALoop</strong><tr><td></td><td>loopAddALZALZ: <strong>BinaryAAALoop</strong><tr><td></td><td>loopSubAXAX: <strong>BinaryAAALoop</strong><tr><td></td><td>loopSubARAR: <strong>BinaryAAALoop</strong><tr><td></td><td>loopSubAZAZ: <strong>BinaryAAALoop</strong><tr><td></td><td>loopSubALZALZ: <strong>BinaryAAALoop</strong><tr><td></td><td>loopEMulAXAX: <strong>BinaryAAALoop</strong><tr><td></td><td>loopEMulARAR: <strong>BinaryAAALoop</strong><tr><td></td><td>loopEMulAZAZ: <strong>BinaryAAALoop</strong><tr><td></td><td>loopEMulALZALZ: <strong>BinaryAAALoop</strong><tr><td></td><td>loopEMulARAB: <strong>BinaryAAALoop</strong><tr><td></td><td>loopEMulAXAB: <strong>BinaryAAALoop</strong><tr><td></td><td>loopSumAXAB: <strong>BinaryAASLoop</strong><tr><td></td><td>loopMatMulAXAX: <strong>BinaryAASLoop</strong><tr><td></td><td>loopMatMulARAR: <strong>BinaryAASLoop</strong><tr><td></td><td>loopMatMulIncAXAX: <strong>BinaryAASLoop</strong><tr><td></td><td>loopMatMulIncARAR: <strong>BinaryAASLoop</strong><tr><td></td><td>loopMulAXSX: <strong>BinaryASALoop</strong><tr><td></td><td>loopMulARSR: <strong>BinaryASALoop</strong><tr><td></td><td>loopMulAZSZ: <strong>BinaryASALoop</strong><tr><td></td><td>loopMulALZSLZ: <strong>BinaryASALoop</strong><tr><td></td><td>loopIncMulAXSX: <strong>BinaryASALoop</strong><tr><td></td><td>loopIncMulARSR: <strong>BinaryASALoop</strong><tr><td></td><td>matMulX: <strong>FastMatMul</strong><tr><td></td><td>matMulR: <strong>FastMatMul</strong><tr><td></td><td>matMulIncX: <strong>FastMatMul</strong><tr><td></td><td>matMulIncR: <strong>FastMatMul</strong><tr><td></td><td>transpose4: <strong>TransposeP</strong><tr><td></td><td>transpose8: <strong>TransposeP</strong><tr><td></td><td>matMulR2x2: <strong>SmallMatMul</strong><tr><td></td><td>matMulR3x3: <strong>SmallMatMul</strong><tr><td></td><td>matMulR4x4: <strong>SmallMatMul</strong><tr><td></td><td>matVecMulR2x2: <strong>SmallMatMul</strong><tr><td></td><td>matVecMulR3x3: <strong>SmallMatMul</strong><tr><td></td><td>matVecMulR4x4: <strong>SmallMatMul</strong><tr><td></td><td>matMulLR2x2: <strong>SmallMatMul</strong><tr><td></td><td>matMulLR3x3: <strong>SmallMatMul</strong><tr><td></td><td>matMulLR4x4: <strong>SmallMatMul</strong><tr><td></td><td>matVecMulLR2x2: <strong>SmallMatMul</strong><tr><td></td><td>matVecMulLR3x3: <strong>SmallMatMul</strong><tr><td></td><td>matVecMulLR4x4: <strong>SmallMatMul</strong><tr><th align='left'>procedures</th><td> SetDefaults<tr><td></td><td> GetArrayDesc (dim: <strong>SIZE</strong>): <strong>Tensor</strong><tr><td></td><td> EnsureArrayDesc (dim: <strong>SIZE</strong>; <strong>VAR</strong> d: <strong>Tensor</strong>)<tr><td></td><td> <a href="#FoxArrayBase.ApplyUnaryAOp">ApplyUnaryAOp</a> (<strong>CONST</strong> left: <strong>UnsafeArrayT</strong>; Loop: <strong>UnaryALoop</strong>)<tr><td></td><td> <a href="#FoxArrayBase.ApplyUnaryAAOp">ApplyUnaryAAOp</a> (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> left: <strong>UnsafeArrayT</strong>; elementSize: <strong>SIZE</strong>; Loop: <strong>UnaryAALoop</strong>)<tr><td></td><td> <a href="#FoxArrayBase.ApplyUnaryASOp">ApplyUnaryASOp</a> (dest: <strong>ADDRESS</strong>; <strong>CONST</strong> left: <strong>UnsafeArrayT</strong>; Loop: <strong>UnaryASLoop</strong>)<tr><td></td><td> <a href="#FoxArrayBase.ApplyUnarySAOp">ApplyUnarySAOp</a> (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; right: <strong>ADDRESS</strong>; Loop: <strong>UnarySALoop</strong>)<tr><td></td><td> <a href="#FoxArrayBase.ApplyBinaryAAAOp">ApplyBinaryAAAOp</a> (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> left, right: <strong>UnsafeArrayT</strong>; elementSize: <strong>SIZE</strong>; Loop: <strong>BinaryAAALoop</strong>)<tr><td></td><td> <a href="#FoxArrayBase.ApplyBinaryASAOp">ApplyBinaryASAOp</a> (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> left: <strong>UnsafeArrayT</strong>; right: <strong>ADDRESS</strong>; elementSize: <strong>SIZE</strong>; Loop: <strong>BinaryASALoop</strong>)<tr><td></td><td> <a href="#FoxArrayBase.ApplyBinaryAASOp">ApplyBinaryAASOp</a> (dest: <strong>ADDRESS</strong>; <strong>CONST</strong> left, right: <strong>UnsafeArrayT</strong>; Loop: <strong>BinaryAASLoop</strong>)<tr><td></td><td> <a href="#FoxArrayBase.ApplyBinaryAABOp">ApplyBinaryAABOp</a> (<strong>CONST</strong> left, right: <strong>UnsafeArrayT</strong>; Loop: <strong>BinaryAABLoop</strong>; geometryMismatchDefault: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> MoveB (srcadr, destadr, len: <strong>SIZE</strong>)<tr><td></td><td> Assign (<strong>VAR</strong> dest: <strong>ADDRESS</strong>; src: <strong>ADDRESS</strong>)<tr><td></td><td> CopyArraySelf (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> src: <strong>UnsafeArrayT</strong>; elementsize: <strong>SIZE</strong>)<tr><td></td><td> CopyArray (dest: <strong>UnsafeArray</strong>; <strong>CONST</strong> src: <strong>UnsafeArrayT</strong>; elementsize: <strong>SIZE</strong>)<tr><td></td><td> CopyTensorSelf (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> src: <strong>UnsafeArrayT</strong>; elementsize: <strong>SIZE</strong>)<tr><td></td><td> CopyTensor (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> src: <strong>UnsafeArrayT</strong>; elementsize: <strong>SIZE</strong>)<tr><td></td><td> ShallowCopy (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> src: <strong>UnsafeArrayT</strong>)<tr><td></td><td> ZeroCopy (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]; <strong>VAR</strong> dest: <strong>ARRAY</strong> [?])<tr><td></td><td> ALIAS (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]): <strong>ARRAY</strong> [?]<tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> LONG (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> SHORT (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> LONG (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> SHORT (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> ENTIER (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> LONG (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> SHORT (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> ENTIER (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> @Convert (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ~ (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> + (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> + (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> + (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> + (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> + (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> + (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> + (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong><tr><td></td><td> + (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> + (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> + (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> + (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> + (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> + (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> + (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> + (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> + (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> + (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> + (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> + (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> + (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; right: <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> + (left: <strong>COMPLEX32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> + (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong>; right: <strong>SIGNED64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong><tr><td></td><td> + (left: <strong>SIGNED64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong><tr><td></td><td> + (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> + (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> + (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; right: <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> + (left: <strong>COMPLEX64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; right: <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; right: <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (left: <strong>COMPLEX32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> <a href="#FoxArrayBase.-">-</a> (left: <strong>COMPLEX64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> .* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> .* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> .* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> .* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> .* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> .* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> .* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> .* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> .* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> +* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>FLOAT64</strong><tr><td></td><td> SUM (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>SIZE</strong><tr><td></td><td> .*+ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> .*+ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> .*+ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> .*+ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> .*+ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; right: <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (left: <strong>COMPLEX32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; right: <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (left: <strong>COMPLEX64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> INCMUL (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> DECMUL (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> INCMUL (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> DECMUL (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> INCMUL (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> DECMUL (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> INCMUL (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> DECMUL (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> INCMUL (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> DECMUL (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> ./ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ./ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ./ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ./ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ./ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> ./ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> ./ (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> / (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> / (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> / (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> / (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> / (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> / (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> / (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> / (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> / (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> / (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> / (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; right: <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> / (left: <strong>COMPLEX32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> / (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; right: <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> / (left: <strong>COMPLEX64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> DIV (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> DIV (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> DIV (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> DIV (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> DIV (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> DIV (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> DIV (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> DIV (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> DIV (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> DIV (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> DIV (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> DIV (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> MOD (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> MOD (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> MOD (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> MOD (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> MOD (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> MOD (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> MOD (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> MOD (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> MOD (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> MOD (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> MOD (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> MOD (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> +* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>SIGNED32</strong><tr><td></td><td> +* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>SIGNED32</strong><tr><td></td><td> +* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> +* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>FLOAT32</strong><tr><td></td><td> +* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>FLOAT64</strong><tr><td></td><td> +* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>COMPLEX32</strong><tr><td></td><td> +* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>COMPLEX64</strong><tr><td></td><td> .= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>; right: <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (left: <strong>BOOLEAN</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .= (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>; right: <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (left: <strong>BOOLEAN</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .# (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> .&gt= (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> OR (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> & (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> OR (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>; right: <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> OR (left: <strong>BOOLEAN</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> & (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>; right: <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> & (left: <strong>BOOLEAN</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>; right: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (left: <strong>BOOLEAN</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>; right: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (left: <strong>BOOLEAN</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> = (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> # (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt= (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt= (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (left: <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (left: <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (left: <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (left: <strong>SIZE</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (left: <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &lt (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> &gt (left: <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> MAX (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> MAX (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> MAX (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> MAX (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> MAX (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> MIN (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> MIN (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> MIN (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> MIN (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> MIN (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> MIN (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>SIGNED8</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>SIGNED16</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>FLOAT32</strong><tr><td></td><td> MIN (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>FLOAT64</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>SIGNED8</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>SIGNED16</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>FLOAT32</strong><tr><td></td><td> MAX (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.LEN">LEN</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong><tr><td></td><td> SUM (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>SIGNED8</strong><tr><td></td><td> SUM (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>SIGNED16</strong><tr><td></td><td> SUM (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> SUM (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> SUM (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>FLOAT32</strong><tr><td></td><td> SUM (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>FLOAT64</strong><tr><td></td><td> SUM (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>COMPLEX32</strong><tr><td></td><td> SUM (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>COMPLEX64</strong><tr><td></td><td> ABS (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> ABS (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> ABS (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> ABS (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ABS (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> ABS (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ABS (<strong>CONST</strong> src: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>BOOLEAN</strong>; right: <strong>BOOLEAN</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>UNSIGNED8</strong>; right: <strong>UNSIGNED8</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>CHAR</strong>; right: <strong>CHAR</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>UNSIGNED16</strong>; right: <strong>UNSIGNED16</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>UNSIGNED32</strong>; right: <strong>UNSIGNED32</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong>; right: <strong>SIGNED64</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>UNSIGNED64</strong>; right: <strong>UNSIGNED64</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; right: <strong>COMPLEX32</strong>)<tr><td></td><td> := (<strong>VAR</strong> dest: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; right: <strong>COMPLEX64</strong>)<tr><td></td><td> ApplyMatMulLoop (dest, left, right: <strong>ADDRESS</strong>; Size: <strong>SIZE</strong>; loop: <strong>BinaryAASLoop</strong>; increment: <strong>BOOLEAN</strong>; fast: <strong>FastMatMul</strong>)<tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> INCMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> DECMUL (<strong>CONST</strong> left: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong>; <strong>CONST</strong> right: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> <a href="#FoxArrayBase.*">*</a> (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> Transpose (dest: <strong>UnsafeArray</strong>; <strong>CONST</strong> left: <strong>UnsafeArrayT</strong>; Size: <strong>SIZE</strong>)<tr><td></td><td> ` (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> ` (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> ` (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> ` (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ` (<strong>CONST</strong> left: <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [*,*] <strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> DoReshape (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> src: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> shape: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>)<tr><td></td><td> AllocateTensorA (<strong>CONST</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIZE</strong>; elementSize: <strong>SIZE</strong>; tag: <strong>ADDRESS</strong>; <strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>)<tr><td></td><td> AllocateArrayA (<strong>CONST</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIZE</strong>; elementSize: <strong>SIZE</strong>; tag: <strong>ADDRESS</strong>; dest: <strong>UnsafeArray</strong>)<tr><td></td><td> DoAllocateTensorX (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> a: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>; Size: <strong>SIZE</strong>; tag: <strong>ADDRESS</strong>)<tr><td></td><td> LenA (<strong>VAR</strong> dest: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>; src: <strong>ADDRESS</strong>)<tr><td></td><td> IncrA (<strong>VAR</strong> dest: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>; src: <strong>ADDRESS</strong>)<tr><td></td><td> Len (src: <strong>ADDRESS</strong>; d: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> Incr (src: <strong>ADDRESS</strong>; d: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> ** (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> ** (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> ** (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> ** (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ** (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> ** (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> ** (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> CopyDescriptor (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> src: <strong>UnsafeArrayT</strong>; prefixIndices, prefixRanges, suffixIndices, suffixRanges: <strong>SIZE</strong>)<tr><td></td><td> Reshape (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]; <strong>CONST</strong> right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<tr><td></td><td> <a href="#FoxArrayBase.RangeFromInteger">RangeFromInteger</a> (<strong>CONST</strong> integer: <strong>SIZE</strong>): <strong>RANGE</strong><tr><td></td><td> <a href="#FoxArrayBase.ExpandDimensions">ExpandDimensions</a> (<strong>CONST</strong> sourceArray: <strong>ARRAY</strong> [?]; <strong>CONST</strong> keptDimensions: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]<tr><td></td><td> <a href="#FoxArrayBase.LEN">LEN</a> (<strong>CONST</strong> range: <strong>RANGE</strong>): <strong>SIZE</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>SIGNED8</strong>): <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>SIGNED16</strong>): <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>SIGNED32</strong>): <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>SIGNED64</strong>): <strong>SIGNED64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>FLOAT32</strong>): <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>FLOAT64</strong>): <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>COMPLEX32</strong>): <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>COMPLEX64</strong>): <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>SIGNED8</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>SIGNED16</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>SIGNED32</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>SIGNED64</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>FLOAT32</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>FLOAT64</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>COMPLEX32</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; op: <strong>PROCEDURE</strong>{DELEGATE} (x: <strong>COMPLEX64</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; map: <strong>PROCEDURE</strong> (ladr, dadr: <strong>ADDRESS</strong>; linc, dinc, len: <strong>SIZE</strong>)): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; map: <strong>PROCEDURE</strong> (ladr, dadr: <strong>ADDRESS</strong>; linc, dinc, len: <strong>SIZE</strong>)): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; map: <strong>PROCEDURE</strong> (ladr, dadr: <strong>ADDRESS</strong>; linc, dinc, len: <strong>SIZE</strong>)): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong>; map: <strong>PROCEDURE</strong> (ladr, dadr: <strong>ADDRESS</strong>; linc, dinc, len: <strong>SIZE</strong>)): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; map: <strong>PROCEDURE</strong> (ladr, dadr: <strong>ADDRESS</strong>; linc, dinc, len: <strong>SIZE</strong>)): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; map: <strong>PROCEDURE</strong> (ladr, dadr: <strong>ADDRESS</strong>; linc, dinc, len: <strong>SIZE</strong>)): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; map: <strong>PROCEDURE</strong> (ladr, dadr: <strong>ADDRESS</strong>; linc, dinc, len: <strong>SIZE</strong>)): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; map: <strong>PROCEDURE</strong> (ladr, dadr: <strong>ADDRESS</strong>; linc, dinc, len: <strong>SIZE</strong>)): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong><tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; map: <strong>PROCEDURE</strong> (ladr: <strong>ADDRESS</strong>; linc, len: <strong>SIZE</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; map: <strong>PROCEDURE</strong> (ladr: <strong>ADDRESS</strong>; linc, len: <strong>SIZE</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; map: <strong>PROCEDURE</strong> (ladr: <strong>ADDRESS</strong>; linc, len: <strong>SIZE</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED64</strong>; map: <strong>PROCEDURE</strong> (ladr: <strong>ADDRESS</strong>; linc, len: <strong>SIZE</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; map: <strong>PROCEDURE</strong> (ladr: <strong>ADDRESS</strong>; linc, len: <strong>SIZE</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; map: <strong>PROCEDURE</strong> (ladr: <strong>ADDRESS</strong>; linc, len: <strong>SIZE</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; map: <strong>PROCEDURE</strong> (ladr: <strong>ADDRESS</strong>; linc, len: <strong>SIZE</strong>))<tr><td></td><td> ALL (<strong>CONST</strong> x: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; map: <strong>PROCEDURE</strong> (ladr: <strong>ADDRESS</strong>; linc, len: <strong>SIZE</strong>))</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_8F23E1C0">
+</h1><hr><h2 id="#_8F23E980"><a name="FoxArrayBase.LenInc"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.LenInc">LenInc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LenInc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>len: <strong>SIZE</strong><tr><td></td><td>inc: <strong>SIZE</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8F2434C0"><a name="FoxArrayBase.ArrayDescriptor"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ArrayDescriptor">ArrayDescriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArrayDescriptor* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ptr: @Any0<tr><td></td><td>adr: <strong>ADDRESS</strong><tr><td></td><td>flags: <strong>SET</strong><tr><td></td><td>dim: <strong>SIZE</strong><tr><td></td><td>elementSize: <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8F24AD40"><a name="FoxArrayBase.Tensor"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.Tensor">Tensor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tensor* =<strong>POINTER</strong> <strong>TO</strong> <strong>ArrayDescriptor</strong></pre>
+<hr><h2 id="#_8F24D940"><a name="FoxArrayBase.UnsafeArray"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.UnsafeArray">UnsafeArray</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> UnsafeArray* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>ArrayDescriptor</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>lens: <strong>ARRAY</strong> 8 <strong>OF</strong> <strong>LenInc</strong></td></tr>
+</table>
+<hr><h2 id="#_8F253380"><a name="FoxArrayBase.UnsafeArrayT"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.UnsafeArrayT">UnsafeArrayT</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> UnsafeArrayT* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>ArrayDescriptor</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>lens: <strong>ARRAY</strong> 8 <strong>OF</strong> <strong>LenInc</strong></td></tr>
+</table>
+<hr><h2 id="#_8F258D00"><a name="FoxArrayBase.ApplyUnaryAOp"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ApplyUnaryAOp">ApplyUnaryAOp</a>
+</h2>
+<p> apply unary operator to array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyUnaryAOp* (<strong>CONST</strong> left: <strong>UnsafeArrayT</strong>; Loop: <strong>UnaryALoop</strong>)</pre>
+<hr><h2 id="#_8F25E8C0"><a name="FoxArrayBase.ApplyUnaryAAOp"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ApplyUnaryAAOp">ApplyUnaryAAOp</a>
+</h2>
+<p> apply unary operator to array: array -&gt array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyUnaryAAOp* (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> left: <strong>UnsafeArrayT</strong>; elementSize: <strong>SIZE</strong>; Loop: <strong>UnaryAALoop</strong>)</pre>
+<hr><h2 id="#_8F267080"><a name="FoxArrayBase.ApplyUnaryASOp"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ApplyUnaryASOp">ApplyUnaryASOp</a>
+</h2>
+<p> apply unary operator to array: array -&gt scalar</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyUnaryASOp* (dest: <strong>ADDRESS</strong>; <strong>CONST</strong> left: <strong>UnsafeArrayT</strong>; Loop: <strong>UnaryASLoop</strong>)</pre>
+<hr><h2 id="#_8F26E6C0"><a name="FoxArrayBase.ApplyUnarySAOp"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ApplyUnarySAOp">ApplyUnarySAOp</a>
+</h2>
+<p> apply unary operator to array: scalar -&gt array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyUnarySAOp* (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; right: <strong>ADDRESS</strong>; Loop: <strong>UnarySALoop</strong>)</pre>
+<hr><h2 id="#_8F275D00"><a name="FoxArrayBase.ApplyBinaryAAAOp"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ApplyBinaryAAAOp">ApplyBinaryAAAOp</a>
+</h2>
+<p> apply binary operator : array x array -&gt array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyBinaryAAAOp* (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> left, right: <strong>UnsafeArrayT</strong>; elementSize: <strong>SIZE</strong>; Loop: <strong>BinaryAAALoop</strong>)</pre>
+<hr><h2 id="#_8F27F0C0"><a name="FoxArrayBase.ApplyBinaryASAOp"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ApplyBinaryASAOp">ApplyBinaryASAOp</a>
+</h2>
+<p> apply binary operator: array x scalar -&gt array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyBinaryASAOp* (<strong>VAR</strong> dest: <strong>UnsafeArrayT</strong>; <strong>CONST</strong> left: <strong>UnsafeArrayT</strong>; right: <strong>ADDRESS</strong>; elementSize: <strong>SIZE</strong>; Loop: <strong>BinaryASALoop</strong>)</pre>
+<hr><h2 id="#_8F288680"><a name="FoxArrayBase.ApplyBinaryAASOp"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ApplyBinaryAASOp">ApplyBinaryAASOp</a>
+</h2>
+<p> apply binary operator: array x array -&gt scalar</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyBinaryAASOp* (dest: <strong>ADDRESS</strong>; <strong>CONST</strong> left, right: <strong>UnsafeArrayT</strong>; Loop: <strong>BinaryAASLoop</strong>)</pre>
+<hr><h2 id="#_8F290540"><a name="FoxArrayBase.ApplyBinaryAABOp"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ApplyBinaryAABOp">ApplyBinaryAABOp</a>
+</h2>
+<p> special binary operator: array x array -&gt boolean</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ApplyBinaryAABOp* (<strong>CONST</strong> left, right: <strong>UnsafeArrayT</strong>; Loop: <strong>BinaryAABLoop</strong>; geometryMismatchDefault: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8F298880"><a name="FoxArrayBase.-"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.-">-</a>
+</h2>
+<p> subtraction array-scalar -&gt array <strong>****************************************************************</strong></p>
+
+<p> SIGNED8</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong>; right: <strong>SIGNED8</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED8</strong></pre>
+<hr><h2 id="#_8F2A0A80"><a name="FoxArrayBase.-"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.-">-</a>
+</h2>
+<p> SIGNED16</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong>; right: <strong>SIGNED16</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_8F2A6EC0"><a name="FoxArrayBase.-"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.-">-</a>
+</h2>
+<p> SIGNED32</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong>; right: <strong>SIGNED32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_8F2AD300"><a name="FoxArrayBase.-"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.-">-</a>
+</h2>
+<p> SIGNED32</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong>; right: <strong>SIZE</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>SIZE</strong></pre>
+<hr><h2 id="#_8F2B3740"><a name="FoxArrayBase.-"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.-">-</a>
+</h2>
+<p> FLOAT32</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong>; right: <strong>FLOAT32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT32</strong></pre>
+<hr><h2 id="#_8F2B9B80"><a name="FoxArrayBase.-"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.-">-</a>
+</h2>
+<p> FLOAT64</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong>; right: <strong>FLOAT64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>FLOAT64</strong></pre>
+<hr><h2 id="#_8F2C0140"><a name="FoxArrayBase.-"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.-">-</a>
+</h2>
+<p> COMPLEX32</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong>; right: <strong>COMPLEX32</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX32</strong></pre>
+<hr><h2 id="#_8F2C6580"><a name="FoxArrayBase.-"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.-">-</a>
+</h2>
+<p> COMPLEX64</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "-"* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong>; right: <strong>COMPLEX64</strong>): <strong>ARRAY</strong> [?]<strong>OF</strong> <strong>COMPLEX64</strong></pre>
+<hr><h2 id="#_8F2CC9C0"><a name="FoxArrayBase.LEN"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.LEN">LEN</a>
+</h2>
+<p> LEN: array -&gt array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "LEN"* (<strong>CONST</strong> left: <strong>ARRAY</strong> [?]): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIZE</strong></pre>
+<hr><h2 id="#_8F2D2E80"><a name="FoxArrayBase.*"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.*">*</a>
+</h2>
+<p> Cross product <strong>****************************************************************</strong></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>OPERATOR</strong> "*"* (<strong>CONST</strong> left, right: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong>): <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>SIGNED8</strong></pre>
+<hr><h2 id="#_8F2DA980"><a name="FoxArrayBase.RangeFromInteger"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.RangeFromInteger">RangeFromInteger</a>
+</h2>
+<p> creates a degenerated range from an integer.  makes it possible to convert the result of an integer-valued procedure F() into a range without executing the procedure twice as it would happen in "(F() .. F() BY 1)"</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RangeFromInteger* (<strong>CONST</strong> integer: <strong>SIZE</strong>): <strong>RANGE</strong></pre>
+<hr><h2 id="#_8F2E7D40"><a name="FoxArrayBase.ExpandDimensions"></a><a href="#FoxArrayBase">FoxArrayBase</a>.<a href="#FoxArrayBase.ExpandDimensions">ExpandDimensions</a>
+</h2>
+<p> create an array with the same data but with more dimensions  each element in the array 'keptDimensions' corresponds to a dimension in the resulting array  if element = TRUE: use a dimension from the source array, i.e. reuse length and increment  if element = FALSE: insert a new dimension having length = 1 and increment = 0</p>
+
+<dl>
+<dt><strong>e.g.</strong></dt>
+<dd> ExpandDimensions(array, <a href="#FALSE,">FALSE,</a> TRUE, FALSE, FALSE, TRUE]) performs the following type transformation: ARRAY <a href="#10,">10,</a> 20] OF FLOAT32 -&gt ARRAY <a href="#1,">1,</a> 10, 1, 1, 20] OF FLOAT32</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ExpandDimensions* (<strong>CONST</strong> sourceArray: <strong>ARRAY</strong> [?]; <strong>CONST</strong> keptDimensions: <strong>ARRAY</strong> [*] <strong>OF</strong> <strong>BOOLEAN</strong>): <strong>ARRAY</strong> [?]</pre>
+</body></html>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#UTF8Strings">UTF8Strings</a></p>
+<hr><h1 id="#_8C1B1380"><a name="UTF8Strings"></a><a href="#ModuleList">Module</a> UTF8Strings
+</h1>
+<p> pjm</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>CmpLess= -1<tr><td></td><td>CmpEqual= 0<tr><td></td><td>CmpGreater= 1<tr><td></td><td><a href="#UTF8Strings.CmpError">CmpError</a>= 2<tr><th align='left'>type declarations</th><td>Char32 =<strong>UNSIGNED32</strong><tr><th align='left'>variables</th><td><a href="#UTF8Strings.CodeLength">CodeLength</a>: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> <a href="#UTF8Strings.EncodeChar">EncodeChar</a> (ucs: <strong>Char32</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#UTF8Strings.DecodeChar">DecodeChar</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>; <strong>VAR</strong> ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#UTF8Strings.Valid">Valid</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#UTF8Strings.Size">Size</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#UTF8Strings.SetSize">SetSize</a> (<strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> <a href="#UTF8Strings.OffsetOfIndex">OffsetOfIndex</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#UTF8Strings.Length">Length</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#UTF8Strings.Assign">Assign</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#UTF8Strings.Extract">Extract</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx, num: <strong>SIZE</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#UTF8Strings.Delete">Delete</a> (<strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx, num: <strong>SIZE</strong>)<tr><td></td><td> <a href="#UTF8Strings.Append">Append</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#UTF8Strings.Concat">Concat</a> (<strong>CONST</strong> src1, src2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#UTF8Strings.Insert">Insert</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx: <strong>SIZE</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#UTF8Strings.UTF8toASCII">UTF8toASCII</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; substitute: <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#UTF8Strings.ASCIItoUTF8">ASCIItoUTF8</a> (<strong>CONST</strong> ascii: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> utf8: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#UTF8Strings.UTF8toUnicode">UTF8toUnicode</a> (<strong>CONST</strong> utf8: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> ucs: <strong>ARRAY</strong> <strong>OF</strong> <strong>Char32</strong>; <strong>VAR</strong> idx: <strong>SIZE</strong>)<tr><td></td><td> <a href="#UTF8Strings.UnicodetoUTF8">UnicodetoUTF8</a> (<strong>CONST</strong> ucs: <strong>ARRAY</strong> <strong>OF</strong> <strong>Char32</strong>; <strong>VAR</strong> utf8: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#UTF8Strings.UpperCase">UpperCase</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#UTF8Strings.CanAssign">CanAssign</a> (<strong>CONST</strong> src, dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#UTF8Strings.CanExtract">CanExtract</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx, num: <strong>SIZE</strong>; <strong>CONST</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#UTF8Strings.CanDelete">CanDelete</a> (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx, num: <strong>SIZE</strong>)<tr><td></td><td> <a href="#UTF8Strings.CanAppend">CanAppend</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#UTF8Strings.CanConcat">CanConcat</a> (<strong>CONST</strong> src1, src2, dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#UTF8Strings.CanInsert">CanInsert</a> (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx: <strong>SIZE</strong>; <strong>CONST</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#UTF8Strings.Compare">Compare</a> (<strong>CONST</strong> str1, str2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>INTEGER</strong><tr><td></td><td> LessString (l, r: <strong>Strings.String</strong>): <strong>BOOLEAN</strong><tr><td></td><td> CompareToUnicode (<strong>CONST</strong> utf8: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> unicode: <strong>ARRAY</strong> <strong>OF</strong> <strong>Char32</strong>): <strong>INTEGER</strong><tr><td></td><td> <a href="#UTF8Strings.FindNext">FindNext</a> (<strong>CONST</strong> pat, str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; startidx: <strong>SIZE</strong>; <strong>VAR</strong> found: <strong>BOOLEAN</strong>; <strong>VAR</strong> patidx: <strong>SIZE</strong>)<tr><td></td><td> <a href="#UTF8Strings.FindPrev">FindPrev</a> (<strong>CONST</strong> pat, str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; startidx: <strong>SIZE</strong>; <strong>VAR</strong> found: <strong>BOOLEAN</strong>; <strong>VAR</strong> patidx: <strong>SIZE</strong>)<tr><td></td><td> <a href="#UTF8Strings.FindDiff">FindDiff</a> (<strong>CONST</strong> str1, str2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> different: <strong>BOOLEAN</strong>; <strong>VAR</strong> idx: <strong>SIZE</strong>)<tr><td></td><td> HexStrToChar32 (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>Char32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> StrToChar32 (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> val: <strong>Char32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_8C242780">
+</h1>
+<p> UTF-8 encoded 0X-terminated UCS-32 strings.</p>
+<hr><h2 id="#_8C244640"><a name="UTF8Strings.CmpError"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.CmpError">CmpError</a>
+</h2>
+<p> results for Compare.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CmpError*= 2</pre>
+<hr><h2 id="#_8C247C80"><a name="UTF8Strings.CodeLength"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.CodeLength">CodeLength</a>
+</h2>
+<p> UTF-8 encoding length table.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CodeLength-: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h2 id="#_8C24C600"><a name="UTF8Strings.EncodeChar"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.EncodeChar">EncodeChar</a>
+</h2>
+<p> -- Help procedures --</p>
+
+<p> Encode one UCS-32 value in ucs into one well-formed UTF-8 character at str[p..]. The parameter p is incremented by the number of characters needed to encode the UCS-32 value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EncodeChar* (ucs: <strong>Char32</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8C25B100"><a name="UTF8Strings.DecodeChar"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.DecodeChar">DecodeChar</a>
+</h2>
+<p> Decode one well-formed UTF-8 character at str[i..] and return its UCS-32 value in ucs. When successful, parameter i is incremented to the start of the next UTF-8 character. Otherwise, parameter i points to the byte where the error was detected (this will also be the next character in the case of a minimal coding error). Return TRUE iff decoding succeeds.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DecodeChar* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> i: <strong>SIZE</strong>; <strong>VAR</strong> ucs: <strong>Char32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8C270580"><a name="UTF8Strings.Valid"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Valid">Valid</a>
+</h2>
+<p> Check whether str is a 0X-terminated well-formed UTF-8 string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Valid* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8C277040"><a name="UTF8Strings.Size"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Size">Size</a>
+</h2>
+<p> Return the size of a string in bytes, excluding the terminating 0X. Another way of seeing this is that the function returns the byte offset of the terminating 0X.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Size* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_8C2827C0"><a name="UTF8Strings.SetSize"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.SetSize">SetSize</a>
+</h2>
+<p> Set the size (in bytes) of a UTF-8 string by setting the terminating 0X. If the specified size is larger than LEN(str)-1, the size will be set to this. If the 0X falls in the middle of a UTF-8 character, the string is truncated before this character.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetSize* (<strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_8C292D00"><a name="UTF8Strings.OffsetOfIndex"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.OffsetOfIndex">OffsetOfIndex</a>
+</h2>
+<p> Return the byte offset of the UTF-8 character with index idx, counting from 0. If idx is past the end of the string, return the offset of the terminating 0X, and if idx is negative, return 0. This is also the definition of an UTF-8 index used by the other procedures.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> OffsetOfIndex* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx: <strong>SIZE</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_8C2A44C0"><a name="UTF8Strings.Length"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Length">Length</a>
+</h2>
+<p> -- String manipulation. --</p>
+
+<p> Return the number of UTF-8 characters in str, excluding the terminating 0X.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Length* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_8C2ACE00"><a name="UTF8Strings.Assign"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Assign">Assign</a>
+</h2>
+<p> Copy src to dst. Unlike COPY, ensure that dst is not truncated in the middle of a UTF-8 character.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Assign* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_8C2B72C0"><a name="UTF8Strings.Extract"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Extract">Extract</a>
+</h2>
+<p> Copy at most num UTF-8 characters from src to dst, starting at UTF-8 index idx. If num is negative, treat it as 0.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Extract* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx, num: <strong>SIZE</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_8C2C3C80"><a name="UTF8Strings.Delete"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Delete">Delete</a>
+</h2>
+<p> Delete num UTF-8 characters from str, starting at UTF-8 index idx. The characters following the deleted characters are shifted down to index idx. If less than num characters are present at idx, delete all characters up to the end of the string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Delete* (<strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx, num: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_8C2D37C0"><a name="UTF8Strings.Append"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Append">Append</a>
+</h2>
+<p> Append src to dst.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Append* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_8C2DA200"><a name="UTF8Strings.Concat"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Concat">Concat</a>
+</h2>
+<p> Concatenate src2 onto src1 and copy the result to dst.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Concat* (<strong>CONST</strong> src1, src2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_8C2E2B40"><a name="UTF8Strings.Insert"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Insert">Insert</a>
+</h2>
+<p> Insert src into dst at UTF-8 index idx. The characters from idx onwards are shifted up to make space for the inserted characters.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Insert* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx: <strong>SIZE</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_8C2EED80"><a name="UTF8Strings.UTF8toASCII"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.UTF8toASCII">UTF8toASCII</a>
+</h2>
+<p> Transform a well-formed UTF-8 string into an 8-bit ASCII representation. Characters not present in the ASCII format are replaced by 'substitute' if it is # 0X.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTF8toASCII* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; substitute: <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_8C2FC280"><a name="UTF8Strings.ASCIItoUTF8"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.ASCIItoUTF8">ASCIItoUTF8</a>
+</h2>
+<p> Transform an 8-bit ASCII string into a well-formed UTF-8 string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ASCIItoUTF8* (<strong>CONST</strong> ascii: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> utf8: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_8C304440"><a name="UTF8Strings.UTF8toUnicode"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.UTF8toUnicode">UTF8toUnicode</a>
+</h2>
+<p> Transform a well-formed UTF-8 string into an array of UCS-32 values, ucs[idx...]. The UCS-32 representation is terminated with a 0 value. The parameter idx points to the next free entry after the conversion.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTF8toUnicode* (<strong>CONST</strong> utf8: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> ucs: <strong>ARRAY</strong> <strong>OF</strong> <strong>Char32</strong>; <strong>VAR</strong> idx: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_8C313040"><a name="UTF8Strings.UnicodetoUTF8"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.UnicodetoUTF8">UnicodetoUTF8</a>
+</h2>
+<p> Transform a 4-byte, 0-terminated unicode character 'ucs' into a well-formed UTF-8 representation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UnicodetoUTF8* (<strong>CONST</strong> ucs: <strong>ARRAY</strong> <strong>OF</strong> <strong>Char32</strong>; <strong>VAR</strong> utf8: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_8C31BC00"><a name="UTF8Strings.UpperCase"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.UpperCase">UpperCase</a>
+</h2>
+<p> Convert all simple lower-case letters in a well-formed UTF-8 string to upper case. The resulting string is still in UTF-8 form</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UpperCase* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_8C326840"><a name="UTF8Strings.CanAssign"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.CanAssign">CanAssign</a>
+</h2>
+<p> -- Test procedures --</p>
+
+<p> Return TRUE iff Assign can be performed without truncation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CanAssign* (<strong>CONST</strong> src, dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8C32EE00"><a name="UTF8Strings.CanExtract"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.CanExtract">CanExtract</a>
+</h2>
+<p> todo: Return TRUE iff Extract can be performed without truncation, and src contains at least num UTF-8 characters.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CanExtract* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx, num: <strong>SIZE</strong>; <strong>CONST</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8C33ABC0"><a name="UTF8Strings.CanDelete"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.CanDelete">CanDelete</a>
+</h2>
+<p> todo: Return TRUE iff there are num UTF-8 characters to delete at UTF-8 index idx in str.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CanDelete* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx, num: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_8C344680"><a name="UTF8Strings.CanAppend"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.CanAppend">CanAppend</a>
+</h2>
+<p> todo: Return TRUE iff Append can be performed without truncation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CanAppend* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8C34CDC0"><a name="UTF8Strings.CanConcat"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.CanConcat">CanConcat</a>
+</h2>
+<p> todo: Return TRUE iff Concat can be performed without truncation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CanConcat* (<strong>CONST</strong> src1, src2, dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8C354C80"><a name="UTF8Strings.CanInsert"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.CanInsert">CanInsert</a>
+</h2>
+<p> todo: Return TRUE iff Insert can be performed without truncation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CanInsert* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; idx: <strong>SIZE</strong>; <strong>CONST</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8C35E2C0"><a name="UTF8Strings.Compare"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.Compare">Compare</a>
+</h2>
+<hr/>
+
+<p> Comparison and searching. --</p>
+
+<p> Compare str1 and str2 lexically, and return CmpLess if str1 is less than str2, CmpEqual if str1 and str2 are equal, or CmpGreater if str1 is greater than str2.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Compare* (<strong>CONST</strong> str1, str2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_8C36B900"><a name="UTF8Strings.FindNext"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.FindNext">FindNext</a>
+</h2>
+<dl>
+<dt><strong>todo</strong></dt>
+<dd> Search forward for the next occurrance of UTF-8 string pat in UTF-8 string str, starting at UTF-8 index startidx. Return found = TRUE iff the pattern was found. If found, patidx is the UTF-8 index where the pattern was found, otherwise it is unchanged.</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindNext* (<strong>CONST</strong> pat, str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; startidx: <strong>SIZE</strong>; <strong>VAR</strong> found: <strong>BOOLEAN</strong>; <strong>VAR</strong> patidx: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_8C37DFC0"><a name="UTF8Strings.FindPrev"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.FindPrev">FindPrev</a>
+</h2>
+<p> todo: Search backward for the previous occurrance of UTF-8 string pat in UTF-8 string str, starting at UTF-8 index startidx. Return found = TRUE iff the pattern was found. If found, patidx is the UTF-8 index where the pattern was found (in the range 0..startidx), otherwise it is unchanged.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindPrev* (<strong>CONST</strong> pat, str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; startidx: <strong>SIZE</strong>; <strong>VAR</strong> found: <strong>BOOLEAN</strong>; <strong>VAR</strong> patidx: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_8C391600"><a name="UTF8Strings.FindDiff"></a><a href="#UTF8Strings">UTF8Strings</a>.<a href="#UTF8Strings.FindDiff">FindDiff</a>
+</h2>
+<p> Compare str1 and str2 and return different = TRUE iff a difference was found. If the strings are different, idx is set to the UTF-8 index of the first mismatching character, otherwise it is unchanged.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindDiff* (<strong>CONST</strong> str1, str2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> different: <strong>BOOLEAN</strong>; <strong>VAR</strong> idx: <strong>SIZE</strong>)</pre>
+</body></html>

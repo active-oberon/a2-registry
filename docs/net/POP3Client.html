@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#POP3Client">POP3Client</a></p>
+<hr><h1 id="#_02295A00"><a name="POP3Client"></a><a href="#ModuleList">Module</a> POP3Client
+</h1>
+<p> AUTHOR "TF"; PURPOSE "Simple POP3 Client";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>ResOk= 0<tr><td></td><td>ResFailed= 1<tr><td></td><td>ResAlreadyOpen= 2<tr><td></td><td>ResServerNotFound= 3<tr><td></td><td>ResNoConnection= 4<tr><td></td><td>ResUserPassError= 5<tr><td></td><td>ResServerNotReady= 6<tr><td></td><td>ResServerFailed= 7<tr><th align='left'>type declarations</th><td><a href="#POP3Client.POP3Client">POP3Client</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_022A2300"><a name="POP3Client.POP3Client"></a><a href="#POP3Client">POP3Client</a>.<a href="#POP3Client.POP3Client">POP3Client</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> POP3Client* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Connect (<strong>CONST</strong> host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; port: <strong>SIGNED32</strong>; <strong>CONST</strong> user, password: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Login (<strong>CONST</strong> user, password: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Quit<tr><td></td><td> List<tr><td></td><td> GetMessage (nr: <strong>SIGNED32</strong>; <strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> NOOP</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

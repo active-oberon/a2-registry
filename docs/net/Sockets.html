@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Sockets">Sockets</a></p>
+<hr><h1 id="#_EF760E80"><a name="Sockets"></a><a href="#ModuleList">Module</a> Sockets
+</h1>
+<p> AUTHOR "G.F."; PURPOSE "Interface to Unix sockets"</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Sockets.SocketAdr">SocketAdr</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Sockets.SocketAdrV4">SocketAdrV4</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>SocketAdr</strong>)<tr><td></td><td><a href="#Sockets.SocketAdrV6">SocketAdrV6</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>SocketAdr</strong>)<tr><th align='left'>procedures</th><td> NewSocketAdr (ip: <strong>IP.Adr</strong>; port: <strong>UNSIGNED32</strong>): <strong>SocketAdr</strong><tr><td></td><td> SockAdrToIPAdr (sadr: <strong>SocketAdr</strong>): <strong>IP.Adr</strong><tr><td></td><td> GetPortNumber (sadr: <strong>SocketAdr</strong>): <strong>SIGNED32</strong><tr><td></td><td> Accept (s: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td> Bind (s: <strong>INTEGER</strong>; addr: <strong>SocketAdr</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Close (s: <strong>INTEGER</strong>)<tr><td></td><td> Connect (s: <strong>INTEGER</strong>; addr: <strong>SocketAdr</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetSockName (s: <strong>INTEGER</strong>): <strong>SocketAdr</strong><tr><td></td><td> GetPeerName (s: <strong>INTEGER</strong>): <strong>SocketAdr</strong><tr><td></td><td> Listen (s: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Recv (s: <strong>INTEGER</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; flags: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Send (s: <strong>INTEGER</strong>; <strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> RecvFrom (s: <strong>INTEGER</strong>; <strong>VAR</strong> from: <strong>SocketAdr</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SendTo (s: <strong>INTEGER</strong>; dest: <strong>SocketAdr</strong>; <strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Socket (af, typ, protocol: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td> Available (s: <strong>INTEGER</strong>): <strong>SIGNED32</strong><tr><td></td><td> Requested (s: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> AwaitPacket (s: <strong>INTEGER</strong>; ms: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetLinger (s: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> KeepAlive (s: <strong>INTEGER</strong>; enable: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> NoDelay (s: <strong>INTEGER</strong>; enable: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> NetToInt (x: <strong>UNSIGNED16</strong>): <strong>UNSIGNED16</strong><tr><td></td><td> IntToNet (x: <strong>UNSIGNED16</strong>): <strong>UNSIGNED16</strong><tr><td></td><td> NetToLInt (x: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> LIntToNet (x: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_EF7B3EC0">
+</h1><hr><h2 id="#_EF7B4680"><a name="Sockets.SocketAdr"></a><a href="#Sockets">Sockets</a>.<a href="#Sockets.SocketAdr">SocketAdr</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SocketAdr* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>family: <strong>SIGNED16</strong><tr><td></td><td>port: <strong>UNSIGNED16</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EF7B99C0"><a name="Sockets.SocketAdrV4"></a><a href="#Sockets">Sockets</a>.<a href="#Sockets.SocketAdrV4">SocketAdrV4</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SocketAdrV4* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>SocketAdr</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>v4Adr: <strong>UNSIGNED32</strong><tr><td></td><td>zero: <strong>ARRAY</strong> 8 <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EF7C02C0"><a name="Sockets.SocketAdrV6"></a><a href="#Sockets">Sockets</a>.<a href="#Sockets.SocketAdrV6">SocketAdrV6</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SocketAdrV6* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>SocketAdr</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>flowinfo: <strong>SIGNED32</strong><tr><td></td><td>v6Adr: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>scopeId: <strong>SIGNED32</strong><tr><td></td><td>srcId: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Unzip">Unzip</a></p>
+<hr><h1 id="#_A4339A40"><a name="Unzip"></a><a href="#ModuleList">Module</a> Unzip
+</h1>
+<p> AUTHOR "ejz"; PURPOSE "Aos unzip program";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Unzip.Entry">Entry</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Unzip.ZipFile">ZipFile</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> Extract (context: <strong>Commands.Context</strong>)<tr><td></td><td> ExtractAll (context: <strong>Commands.Context</strong>)<tr><td></td><td> Directory (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A4344BC0"><a name="Unzip.Entry"></a><a href="#Unzip">Unzip</a>.<a href="#Unzip.Entry">Entry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Entry* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>crc: <strong>SIGNED32</strong><tr><td></td><td>csize: <strong>SIGNED32</strong><tr><td></td><td>size: <strong>SIGNED32</strong><tr><td></td><td>td: <strong>Dates.DateTime</strong><tr><td></td><td>name: <strong>Strings.String</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A434CB40"><a name="Unzip.ZipFile"></a><a href="#Unzip">Unzip</a>.<a href="#Unzip.ZipFile">ZipFile</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ZipFile* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> FindEntry (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Entry</strong><tr><td></td><td> GetFirst (): <strong>Entry</strong><tr><td></td><td> GetNext (e: <strong>Entry</strong>): <strong>Entry</strong><tr><td></td><td> NoOfEntries (): <strong>SIGNED32</strong><tr><td></td><td> OpenReceiver (<strong>VAR</strong> R: <strong>Streams.Receiver</strong>; entry: <strong>Entry</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Extract (entry: <strong>Entry</strong>; dest: <strong>Streams.Writer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td>& New (F: <strong>Files.File</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#WMEvents">WMEvents</a></p>
+<hr><h1 id="#_087214C0"><a name="WMEvents"></a><a href="#ModuleList">Module</a> WMEvents
+</h1>
+<p> AUTHOR "TF"; PURPOSE "Events";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WMEvents.EventListener">EventListener</a> =<strong>PROCEDURE</strong>{DELEGATE} (sender, par: @Any0)<tr><td></td><td><a href="#WMEvents.CompCommandFinder">CompCommandFinder</a> =<strong>PROCEDURE</strong>{DELEGATE} (str: <strong>String</strong>): <strong>EventListener</strong><tr><td></td><td><a href="#WMEvents.EventSource">EventSource</a> =<strong>OBJECT</strong> <tr><td></td><td>EventSourceArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>EventSource</strong><tr><td></td><td><a href="#WMEvents.EventSourceList">EventSourceList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WMEvents.EventListenerInfo">EventListenerInfo</a> =<strong>OBJECT</strong> <tr><td></td><td>EventListenerArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>EventListenerInfo</strong><tr><td></td><td><a href="#WMEvents.EventListenerList">EventListenerList</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_08731900">
+</h1><hr><h2 id="#_087320C0"><a name="WMEvents.EventListener"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventListener">EventListener</a>
+</h2>
+<p> Generic Event Listener</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EventListener* =<strong>PROCEDURE</strong>{DELEGATE} (sender, par: @Any0)</pre>
+<hr><h2 id="#_08737640"><a name="WMEvents.CompCommandFinder"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.CompCommandFinder">CompCommandFinder</a>
+</h2>
+<p> EventListenerFinder searches an EventListener by string in its context and returns the EventListener or NIL</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CompCommandFinder* =<strong>PROCEDURE</strong>{DELEGATE} (str: <strong>String</strong>): <strong>EventListener</strong></pre>
+<hr><h2 id="#_0873F9C0"><a name="WMEvents.EventSource"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventSource">EventSource</a>
+</h2>
+<p> Event info class. CompCommand can be registered and unregistered to/from this class.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EventSource* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& <a href="#WMEvents.EventSource.New">New</a> (owner: @Any0; name, info: <strong>String</strong>; finder: <strong>CompCommandFinder</strong>)<tr><td></td><td> SetMinimalDelay (ms: <strong>SIGNED32</strong>)<tr><td></td><td> GetName (): <strong>String</strong><tr><td></td><td> GetInfo (): <strong>String</strong><tr><td></td><td> <a href="#WMEvents.EventSource.Add">Add</a> (observer: <strong>EventListener</strong>)<tr><td></td><td> <a href="#WMEvents.EventSource.AddByString">AddByString</a> (link: <strong>String</strong>)<tr><td></td><td> <a href="#WMEvents.EventSource.Remove">Remove</a> (observer: <strong>EventListener</strong>)<tr><td></td><td> <a href="#WMEvents.EventSource.RemoveByString">RemoveByString</a> (string: <strong>String</strong>)<tr><td></td><td> CallWithSender (sender, par: @Any0)<tr><td></td><td> <a href="#WMEvents.EventSource.Call">Call</a> (par: @Any0)<tr><td></td><td> <a href="#WMEvents.EventSource.HasListeners">HasListeners</a> (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_0875AD40"><a name="WMEvents.EventSource.New"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventSource">EventSource</a>.<a href="#WMEvents.EventSource.New">New</a>
+</h3>
+<p> create an EventInfo for a component owner. Report name as the name of this event</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong>& New* (owner: @Any0; name, info: <strong>String</strong>; finder: <strong>CompCommandFinder</strong>)</pre>
+<hr><h3 id="#_08764B00"><a name="WMEvents.EventSource.Add"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventSource">EventSource</a>.<a href="#WMEvents.EventSource.Add">Add</a>
+</h3>
+<p> Add a command to this event. Observers can be added more then once.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (observer: <strong>EventListener</strong>)</pre>
+<hr><h3 id="#_0876BB00"><a name="WMEvents.EventSource.AddByString"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventSource">EventSource</a>.<a href="#WMEvents.EventSource.AddByString">AddByString</a>
+</h3>
+<p> Add an listener to this event. The listener is found by findig the component referenced in the string and then querying the component for the listener. Listeners can be added more then once. The dereferencing is done on demand at the first call. If the EventListener can not be found, the call to the respective listener is ignored. On each call, the EventListener is searched again</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddByString* (link: <strong>String</strong>)</pre>
+<hr><h3 id="#_0877F500"><a name="WMEvents.EventSource.Remove"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventSource">EventSource</a>.<a href="#WMEvents.EventSource.Remove">Remove</a>
+</h3>
+<p> Remove the first found entry of event</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Remove* (observer: <strong>EventListener</strong>)</pre>
+<hr><h3 id="#_08784E80"><a name="WMEvents.EventSource.RemoveByString"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventSource">EventSource</a>.<a href="#WMEvents.EventSource.RemoveByString">RemoveByString</a>
+</h3>
+<p> Remove the first found entry of event, specified as a string</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveByString* (string: <strong>String</strong>)</pre>
+<hr><h3 id="#_0878B780"><a name="WMEvents.EventSource.Call"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventSource">EventSource</a>.<a href="#WMEvents.EventSource.Call">Call</a>
+</h3>
+<p> Call the event with parameter par. The owner of the EventInfo class will be added in the event's sender parameter. The rate of triggered events can be limited by setting minimalDelay&gt0.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Call* (par: @Any0)</pre>
+<hr><h3 id="#_08796C40"><a name="WMEvents.EventSource.HasListeners"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventSource">EventSource</a>.<a href="#WMEvents.EventSource.HasListeners">HasListeners</a>
+</h3>
+<p> return true if listeners are installed; Can be used to avoid calculating parameters, if there are no listeners</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HasListeners* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_0879EB40"><a name="WMEvents.EventSourceList"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventSourceList">EventSourceList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EventSourceList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& New<tr><td></td><td> Add (x: <strong>EventSource</strong>)<tr><td></td><td> Remove (x: <strong>EventSource</strong>)<tr><td></td><td> Enumerate (): <strong>EventSourceArray</strong><tr><td></td><td> GetEventSourceByName (name: <strong>String</strong>): <strong>EventSource</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_087A9480"><a name="WMEvents.EventListenerInfo"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventListenerInfo">EventListenerInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EventListenerInfo* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (name, info: <strong>String</strong>; handler: <strong>EventListener</strong>)<tr><td></td><td> GetName (): <strong>String</strong><tr><td></td><td> GetInfo (): <strong>String</strong><tr><td></td><td> GetHandler (): <strong>EventListener</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_087B3A80"><a name="WMEvents.EventListenerList"></a><a href="#WMEvents">WMEvents</a>.<a href="#WMEvents.EventListenerList">EventListenerList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EventListenerList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& New<tr><td></td><td> Add (x: <strong>EventListenerInfo</strong>)<tr><td></td><td> Remove (x: <strong>EventListenerInfo</strong>)<tr><td></td><td> Enumerate (): <strong>EventListenerArray</strong><tr><td></td><td> GetHandlerByName (name: <strong>String</strong>): <strong>EventListener</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>
