@@ -55,9 +55,15 @@
       "summary": "FFI to libusb + FTDI FTD2XX."
     },
     "community/v4l2": {
-      "status": "pending-manifest",
+      "status": "validated",
       "modules": 2,
-      "summary": "Video4Linux2 FFI (Unix.V4L2/Unix.libv4l2). Compiles; needs platform-prefixed-filename handling in packaging; GUI VideoExample excluded."
+      "path": "packages/v4l2",
+      "requires": [
+        "std/runtime"
+      ],
+      "native": "libv4l2",
+      "docs": "pending",
+      "summary": "Video4Linux2 capture bindings (V4L2 + libv4l2 FFI, Linux). Installable; ob doc hangs on these modules \u2014 docs deferred."
     },
     "community/ph": {
       "status": "pending-deps",
