@@ -1,15 +1,22 @@
 {
   "name": "std/web",
-  "tier": 2,
+  "tier": 3,
   "context": "A2",
+  "headless": true,
   "status": "draft",
   "description": "XML stack (parser/scanner/DOM objects) and the Configuration settings module built on it.",
   "provides": [
-    "Configuration", "XML", "XMLObjects", "XMLScanner", "XMLParser"
+    "Configuration",
+    "XML",
+    "XMLObjects",
+    "XMLScanner",
+    "XMLParser",
+    "JSON"
   ],
   "requires": {
+    "std/base": "*",
     "std/runtime": "*",
-    "std/text": "*"
+    "std/system": "*"
   },
   "residual": [
     "This is the XML/config core only; the HTTP stack lives in std/net and HTML/CSS/DynamicWebpage rendering is a separate future std/html pass.",

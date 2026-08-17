@@ -1,19 +1,39 @@
 {
   "name": "std/drivers",
-  "tier": 1,
+  "tier": 5,
   "context": "A2",
+  "headless": true,
   "status": "draft",
   "description": "Low-level device drivers: display registry, serial ports (V24), keyboard/mouse, PC speaker, clipboard.",
   "provides": [
-    "Displays", "Serials", "SerialsVirtual", "V24", "KbdMouse",
-    "Display", "DisplayGTF", "DisplayNull", "DisplayRefresher", "Clipboard"
+    "Clipboard",
+    "Display",
+    "DisplayGTF",
+    "DisplayNull",
+    "Displays",
+    "HostClipboard",
+    "KbdMouse",
+    "Serials",
+    "SerialsVirtual",
+    "V24"
+  ],
+  "graphical": [
+    "Display",
+    "DisplayNull",
+    "Displays",
+    "KbdMouse"
   ],
   "requires": {
-    "std/runtime": "*"
+    "std/base": "*",
+    "std/math": "*",
+    "std/runtime": "*",
+    "std/system": "*",
+    "std/text": "*"
   },
   "residual": [
+    "The modules under `graphical` belong to this package but cannot travel in the headless SDK: their own import closure reaches the window system. The list is checked against the import graph by docker/gen-headless-core.sh, so it cannot go quietly out of date.",
     "Library cores (Displays, Serials) resolve to std/runtime only. The rest are thin device shims.",
-    "WARNING: Beep is intentionally NOT included — Unix Beep imports X11/Displays (see the DataErrors fix). If a real cross-platform PC-speaker driver is wanted it needs a headless backend first.",
+    "WARNING: Beep is intentionally NOT included \u2014 Unix Beep imports X11/Displays (see the DataErrors fix). If a real cross-platform PC-speaker driver is wanted it needs a headless backend first.",
     "App/tool members of the driver family (BootManager, HotKeys, CPUID, V24Tracer, TVDriver, VfW, WSock32) are commands/apps -> packages/apps, not this library."
   ]
 }

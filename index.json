@@ -1,146 +1,93 @@
 {
   "registry": "a2-registry",
-  "description": "Catalogue and docs for the whole A2 / Active Oberon module world \u2014 the bundled standard library (std/*) and installable community packages (community/*, via `ob get`).",
+  "description": "Catalogue and docs for the whole A2 / Active Oberon module world — the bundled standard library (std/*) and installable community packages (community/*, via `ob get`).",
   "updated": "2026-07-24",
   "packages": {
-    "std/runtime": {
-      "status": "bundled",
-      "modules": 42,
-      "path": "packages/std/runtime",
-      "tier": 0,
-      "install": "bundled with the SDK",
-      "summary": "Sealed A2 runtime: kernel, GC/heaps, module system, object loader, files, streams, shell + shared primitives."
+    "attic/activecells-hardware": {
+      "status": "in-tree",
+      "modules": 2,
+      "path": "packages/attic/activecells-hardware",
+      "tier": 8,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "The hardware synthesis back end for ActiveCells: cells and ports turned into an FPGA design rather than into code.",
+      "requires": [
+        "std/base",
+        "std/compiler",
+        "std/runtime",
+        "std/system"
+      ]
     },
-    "std/base": {
-      "status": "bundled",
-      "modules": 6,
-      "path": "packages/std/base",
-      "tier": 1,
-      "install": "bundled with the SDK",
-      "doc_pages": 6,
-      "summary": "Shared cross-cutting primitives recovered from the misc pile: input events, dynamic strings, lightweight class/log helpers, an event framework, 16.16 fixed-point."
-    },
-    "std/compress": {
-      "status": "bundled",
-      "modules": 8,
-      "path": "packages/std/compress",
-      "tier": 1,
-      "install": "bundled with the SDK",
-      "summary": "DEFLATE/zlib primitives (inflate/deflate, buffers, readers/writers) + gzip."
-    },
-    "std/drivers": {
-      "status": "bundled",
-      "modules": 10,
-      "path": "packages/std/drivers",
-      "tier": 1,
-      "install": "bundled with the SDK",
-      "doc_pages": 7,
-      "summary": "Low-level device drivers: display registry, serial ports (V24), keyboard/mouse, PC speaker, clipboard."
-    },
-    "std/math": {
-      "status": "bundled",
-      "modules": 17,
-      "path": "packages/std/math",
-      "tier": 1,
-      "install": "bundled with the SDK",
-      "summary": "Numeric core: fixed/arbitrary number types (Nbr*), base real/complex math, RNG."
-    },
-    "std/text": {
-      "status": "bundled",
+    "attic/activecells-sharp": {
+      "status": "in-tree",
       "modules": 3,
-      "path": "packages/std/text",
-      "tier": 1,
-      "install": "bundled with the SDK",
-      "doc_pages": 1,
-      "summary": "Rich text model and Unicode text utilities: the Texts piece-list model, TextUtilities (load/store/convert), UTF-8 helpers."
+      "path": "packages/attic/activecells-sharp",
+      "tier": 8,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "ActiveCells# -- a C#-flavoured syntax over the ActiveCells model, from Alexey Gokhberg's parser.",
+      "requires": [
+        "std/base",
+        "std/compiler",
+        "std/runtime",
+        "std/system"
+      ]
     },
-    "std/archive": {
-      "status": "bundled",
-      "modules": 5,
-      "path": "packages/std/archive",
-      "tier": 2,
-      "install": "bundled with the SDK",
-      "doc_pages": 5,
-      "summary": "ZIP container formats: archive reader/writer, zip-backed file system, zip CLI tool, standalone unzip."
+    "attic/arm32": {
+      "status": "in-tree",
+      "modules": 4,
+      "path": "packages/attic/arm32",
+      "tier": 8,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "The 32-bit ARM back end, assembler and disassembler.",
+      "requires": [
+        "std/base",
+        "std/compiler",
+        "std/runtime",
+        "std/system"
+      ]
     },
-    "std/calc": {
-      "status": "bundled",
-      "modules": 9,
-      "path": "packages/std/calc",
-      "tier": 2,
-      "install": "bundled with the SDK",
-      "doc_pages": 9,
-      "summary": "Numerical calculus: Gauss/Gr\u00fcnwald/Diethelm quadrature and differentiation kernels over std/math + std/numerics."
+    "attic/interpreter": {
+      "status": "in-tree",
+      "modules": 3,
+      "path": "packages/attic/interpreter",
+      "tier": 9,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "An interpreting back end: runs the intermediate code instead of generating machine code.",
+      "requires": [
+        "std/base",
+        "std/compiler",
+        "std/data",
+        "std/runtime",
+        "std/system"
+      ]
     },
-    "std/crypto": {
-      "status": "bundled",
-      "modules": 30,
-      "path": "packages/std/crypto",
-      "tier": 2,
-      "install": "bundled with the SDK",
-      "summary": "Ciphers, hashes (SHA/Keccak/MD5), public-key (RSA/DSA/DH), big numbers, CSPRNG, ASN.1 / X.509."
+    "attic/oberon2": {
+      "status": "in-tree",
+      "modules": 27,
+      "path": "packages/attic/oberon2",
+      "tier": 8,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "The Oberon-2 compiler of the old system, and the Minos object format and linker beside it.",
+      "requires": [
+        "std/base",
+        "std/compiler",
+        "std/gui",
+        "std/runtime",
+        "std/system",
+        "std/text"
+      ]
     },
-    "std/data": {
-      "status": "bundled",
-      "modules": 17,
-      "path": "packages/std/data",
-      "tier": 2,
-      "install": "bundled with the SDK",
-      "doc_pages": 12,
-      "summary": "Data structures and persistence: generic collections/sort, lists/queues/stacks/trees, the Models/Repositories/Types object framework, CSV, persistent objects, versioning."
-    },
-    "std/media": {
-      "status": "bundled",
-      "modules": 16,
-      "path": "packages/std/media",
-      "tier": 2,
-      "install": "bundled with the SDK",
-      "doc_pages": 4,
-      "summary": "Audio/video/image codecs: MP3, DivX/MPEG video (+ IDCT, tables), WAV, GIF, AVI container, a codec registry and sound-device abstraction."
-    },
-    "std/net": {
-      "status": "bundled",
-      "modules": 40,
-      "path": "packages/std/net",
-      "tier": 2,
-      "install": "bundled with the SDK",
-      "doc_pages": 30,
-      "summary": "Networking: TCP/UDP/IP/DNS/sockets, TLS, an HTTP client/server stack, and protocol clients (FTP, SMTP, POP3, SSH, TFTP, LPR, XModem)."
-    },
-    "std/numerics": {
-      "status": "bundled",
-      "modules": 10,
-      "path": "packages/std/numerics",
-      "tier": 2,
-      "install": "bundled with the SDK",
-      "summary": "Advanced / special functions over std/math: cube root, error/gamma, real & complex series."
-    },
-    "std/web": {
-      "status": "bundled",
-      "modules": 5,
-      "path": "packages/std/web",
-      "tier": 2,
-      "install": "bundled with the SDK",
-      "doc_pages": 5,
-      "summary": "XML stack (parser/scanner/DOM objects) and the Configuration settings module built on it."
-    },
-    "std/compiler": {
-      "status": "bundled",
-      "modules": 91,
-      "path": "packages/std/compiler",
-      "tier": 3,
-      "install": "bundled with the SDK",
-      "doc_pages": 61,
-      "summary": "The Fox self-hosting Active Oberon toolchain: frontends (Oberon/C#), semantic checker, intermediate + backends (AMD64/ARM/TRM/interpreter), assemblers, disassemblers, object-file/linker, the older PC* code generators, and CPU instruction decoders."
-    },
-    "std/gui": {
-      "status": "bundled",
-      "modules": 43,
-      "path": "packages/std/gui",
-      "tier": 3,
-      "install": "bundled with the SDK",
-      "doc_pages": 13,
-      "summary": "The A2 graphics + window-manager framework as one irreducible unit: Raster/Gfx rendering, image codecs (PNG/JPEG/SVG/BMP), OpenType fonts, and the WM* component/desktop toolkit. Merged because graphics and the window manager are mutually dependent (see cycle note)."
+    "attic/trm": {
+      "status": "in-tree",
+      "modules": 3,
+      "path": "packages/attic/trm",
+      "tier": 8,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "Back end for the Tiny Register Machine.",
+      "requires": [
+        "std/base",
+        "std/compiler",
+        "std/system"
+      ]
     },
     "community/fftw": {
       "status": "validated",
@@ -186,7 +133,7 @@
     "community/octk": {
       "status": "pending-deps",
       "modules": 77,
-      "summary": "OCTK compute toolkit. NOT a format problem (ob reads the binary Text fine) \u2014 the intra-package chain (octkBase->octkErrorBase->...) bottoms out in 32-bit modules (I386.octk*Optimized) and FFI to AMD CAL GPU compute. Needs 32-bit target + GPU FFI. 0/77 compile on the 64-bit headless SDK."
+      "summary": "OCTK compute toolkit. NOT a format problem (ob reads the binary Text fine) — the intra-package chain (octkBase->octkErrorBase->...) bottoms out in 32-bit modules (I386.octk*Optimized) and FFI to AMD CAL GPU compute. Needs 32-bit target + GPU FFI. 0/77 compile on the 64-bit headless SDK."
     },
     "community/opendocument": {
       "status": "pending",
@@ -206,7 +153,7 @@
     "community/sr": {
       "status": "pending-gui",
       "modules": 22,
-      "summary": "sr voxel/raytracer engine (binary Text format \u2014 ob reads it). Needs std/gui (WMWindowManager/WMGraphics/Raster) which is not in the headless image. Package once std/gui is installable."
+      "summary": "sr voxel/raytracer engine (binary Text format — ob reads it). Needs std/gui (WMWindowManager/WMGraphics/Raster) which is not in the headless image. Package once std/gui is installable."
     },
     "community/usb": {
       "status": "validated",
@@ -227,19 +174,296 @@
       ],
       "native": "libv4l2",
       "docs": "pending",
-      "summary": "Video4Linux2 capture bindings (V4L2 + libv4l2 FFI, Linux). Installable; ob doc hangs on these modules \u2014 docs deferred."
+      "summary": "Video4Linux2 capture bindings (V4L2 + libv4l2 FFI, Linux). Installable; ob doc hangs on these modules — docs deferred."
     },
     "community/work": {
       "status": "pending",
       "modules": 44,
-      "summary": "Grab-bag of experiments/tools (incl. stray copies of compiler modules); not a coherent library \u2014 triage before packaging."
+      "summary": "Grab-bag of experiments/tools (incl. stray copies of compiler modules); not a coherent library — triage before packaging."
+    },
+    "std/archive": {
+      "status": "bundled",
+      "modules": 5,
+      "path": "packages/std/archive",
+      "tier": 5,
+      "install": "bundled with the SDK",
+      "summary": "ZIP container formats: archive reader/writer, zip-backed file system, zip CLI tool, standalone unzip.",
+      "requires": [
+        "std/base",
+        "std/compress",
+        "std/runtime",
+        "std/system",
+        "std/web"
+      ],
+      "doc_pages": 5
+    },
+    "std/base": {
+      "status": "bundled",
+      "modules": 21,
+      "path": "packages/std/base",
+      "tier": 1,
+      "install": "bundled with the SDK",
+      "summary": "The library that needs no host: strings and their pool, streams and number conversion, dates, bit sets, options, locks, pipes, the plugin registry, and the small collections.",
+      "requires": [
+        "std/runtime"
+      ],
+      "doc_pages": 6
+    },
+    "std/calc": {
+      "status": "bundled",
+      "modules": 9,
+      "path": "packages/std/calc",
+      "tier": 9,
+      "install": "bundled with the SDK",
+      "summary": "Numerical calculus: Gauss/Grünwald/Diethelm quadrature and differentiation kernels over std/math + std/numerics.",
+      "requires": [
+        "std/data",
+        "std/math",
+        "std/numerics"
+      ],
+      "doc_pages": 9
+    },
+    "std/compiler": {
+      "status": "bundled",
+      "modules": 52,
+      "path": "packages/std/compiler",
+      "tier": 7,
+      "install": "bundled with the SDK",
+      "summary": "The Active Oberon compiler: the Oberon front end, the semantic checker and syntax tree, the intermediate code and its textual form, the AMD64 and AArch64 back ends and assemblers, the linker, the disassembler, the documentation back end, and the language server.",
+      "requires": [
+        "std/base",
+        "std/gui",
+        "std/runtime",
+        "std/system",
+        "std/text",
+        "std/web"
+      ],
+      "doc_pages": 61
+    },
+    "std/compress": {
+      "status": "bundled",
+      "modules": 8,
+      "path": "packages/std/compress",
+      "tier": 4,
+      "install": "bundled with the SDK",
+      "summary": "DEFLATE/zlib primitives (inflate + deflate, buffers, stream readers/writers) and gzip. Container formats (ZIP) live in std/archive.",
+      "requires": [
+        "std/base",
+        "std/math",
+        "std/system"
+      ]
+    },
+    "std/crypto": {
+      "status": "bundled",
+      "modules": 30,
+      "path": "packages/std/crypto",
+      "tier": 4,
+      "install": "bundled with the SDK",
+      "summary": "Ciphers (AES/DES/Blowfish/CAST/IDEA/Twofish/ARC4), hashes (MD5/SHA1/SHA256/SHA3/Keccak), public-key (RSA/DSA/DH), big numbers, CSPRNG (Fortuna), ASN.1 / X.509.",
+      "requires": [
+        "std/base",
+        "std/math",
+        "std/runtime",
+        "std/system"
+      ]
+    },
+    "std/data": {
+      "status": "bundled",
+      "modules": 13,
+      "path": "packages/std/data",
+      "tier": 8,
+      "install": "bundled with the SDK",
+      "summary": "Data structures and persistence: generic collections/sort, lists/queues/stacks/trees, the Models/Repositories/Types object framework, CSV, persistent objects, versioning.",
+      "requires": [
+        "std/base",
+        "std/compiler",
+        "std/math",
+        "std/numerics",
+        "std/runtime",
+        "std/system",
+        "std/web"
+      ],
+      "doc_pages": 12
+    },
+    "std/drivers": {
+      "status": "bundled",
+      "modules": 10,
+      "path": "packages/std/drivers",
+      "tier": 5,
+      "install": "bundled with the SDK",
+      "summary": "Low-level device drivers: display registry, serial ports (V24), keyboard/mouse, PC speaker, clipboard.",
+      "requires": [
+        "std/base",
+        "std/math",
+        "std/runtime",
+        "std/system",
+        "std/text"
+      ],
+      "doc_pages": 7
+    },
+    "std/gui": {
+      "status": "in-tree",
+      "modules": 49,
+      "path": "packages/std/gui",
+      "tier": 6,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "The A2 graphics + window-manager framework as one irreducible unit: Raster/Gfx rendering, image codecs (PNG/JPEG/SVG/BMP), OpenType fonts, and the WM* component/desktop toolkit. Merged because graphics and the window manager are mutually dependent (see cycle note).",
+      "requires": [
+        "std/archive",
+        "std/base",
+        "std/compress",
+        "std/drivers",
+        "std/math",
+        "std/media",
+        "std/runtime",
+        "std/system",
+        "std/text",
+        "std/web"
+      ],
+      "doc_pages": 13
+    },
+    "std/math": {
+      "status": "bundled",
+      "modules": 20,
+      "path": "packages/std/math",
+      "tier": 3,
+      "install": "bundled with the SDK",
+      "summary": "Numeric core: fixed/arbitrary number types (Nbr*), base real/complex math (Math, Math32/64/L), RNG. Advanced/special functions live in std/numerics.",
+      "requires": [
+        "std/base",
+        "std/runtime",
+        "std/system"
+      ]
+    },
+    "std/media": {
+      "status": "in-tree",
+      "modules": 15,
+      "path": "packages/std/media",
+      "tier": 6,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "Audio/video/image codecs: MP3, DivX/MPEG video (+ IDCT, tables), WAV, GIF, AVI container, a codec registry and sound-device abstraction.",
+      "requires": [
+        "std/base",
+        "std/gui",
+        "std/math",
+        "std/runtime",
+        "std/system",
+        "std/web"
+      ],
+      "doc_pages": 4
+    },
+    "std/net": {
+      "status": "bundled",
+      "modules": 41,
+      "path": "packages/std/net",
+      "tier": 7,
+      "install": "bundled with the SDK",
+      "summary": "Networking: TCP/UDP/IP/DNS/sockets, TLS, an HTTP client/server stack, and protocol clients (FTP, SMTP, POP3, SSH, TFTP, LPR, XModem).",
+      "requires": [
+        "std/base",
+        "std/crypto",
+        "std/gui",
+        "std/math",
+        "std/runtime",
+        "std/system",
+        "std/text",
+        "std/web"
+      ],
+      "doc_pages": 30
+    },
+    "std/numerics": {
+      "status": "bundled",
+      "modules": 10,
+      "path": "packages/std/numerics",
+      "tier": 4,
+      "install": "bundled with the SDK",
+      "summary": "Advanced / special functions over the std/math number types: cube root, error/gamma functions, real & complex series, rational/real/integer numeric routines.",
+      "requires": [
+        "std/math",
+        "std/runtime",
+        "std/system"
+      ]
+    },
+    "std/process": {
+      "status": "bundled",
+      "modules": 2,
+      "path": "packages/std/process",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "summary": "Other programs on this machine: starting one with its input and output on pipes or with the terminal, waiting for it or killing it, reading the environment, and sockets named by a path -- the way a program is driven when a port would be the wrong thing.",
+      "requires": [
+        "std/base",
+        "std/runtime"
+      ]
+    },
+    "std/runtime": {
+      "status": "bundled",
+      "modules": 15,
+      "path": "packages/std/runtime",
+      "tier": 0,
+      "install": "bundled with the SDK",
+      "summary": "The closed kernel: what the compiler emits calls into without the programmer naming it, and what must exist before any module can load. Allocation and the collector, module loading and type descriptors, activities and AWAIT, the platform binding, the clock."
+    },
+    "std/system": {
+      "status": "bundled",
+      "modules": 19,
+      "path": "packages/std/system",
+      "tier": 2,
+      "install": "bundled with the SDK",
+      "summary": "The host a program runs on: files, the trap handler and its stack traces, the dynamic loader and the object file it reads, the command interpreter and the standard streams, and what a process can say about itself.",
+      "requires": [
+        "std/base",
+        "std/runtime"
+      ]
+    },
+    "std/terminal": {
+      "status": "bundled",
+      "modules": 3,
+      "path": "packages/std/terminal",
+      "tier": 3,
+      "install": "bundled with the SDK",
+      "summary": "Full-screen terminal programs: what a terminal sends and understands, the terminal as a device, and Oberon's model of a screen drawn into it -- tiled frames of text with a caret, and any line runnable as a command.",
+      "requires": [
+        "std/base",
+        "std/runtime",
+        "std/system"
+      ]
+    },
+    "std/text": {
+      "status": "bundled",
+      "modules": 1,
+      "path": "packages/std/text",
+      "tier": 4,
+      "install": "bundled with the SDK",
+      "summary": "Rich text model and Unicode text utilities: the Texts piece-list model, TextUtilities (load/store/convert), UTF-8 helpers.",
+      "requires": [
+        "std/base",
+        "std/runtime",
+        "std/system",
+        "std/web"
+      ],
+      "doc_pages": 1
+    },
+    "std/web": {
+      "status": "bundled",
+      "modules": 6,
+      "path": "packages/std/web",
+      "tier": 3,
+      "install": "bundled with the SDK",
+      "summary": "XML stack (parser/scanner/DOM objects) and the Configuration settings module built on it.",
+      "requires": [
+        "std/base",
+        "std/runtime",
+        "std/system"
+      ],
+      "doc_pages": 5
     }
   },
   "notes": {
     "canonical_source": "github.com/sergundo/A2Community",
-    "ocp_extras": "a2oberon/ocp adds 33 modules not in A2Community (Rubik, VolumeRaytracer, Wedgelets, Miniscript, ants*, ...) \u2014 union candidates.",
+    "ocp_extras": "a2oberon/ocp adds 33 modules not in A2Community (Rubik, VolumeRaytracer, Wedgelets, Miniscript, ants*, ...) — union candidates.",
     "binary_format": "CONFIRMED harmless: ob compile/doc READ A2 binary Text format directly (Fox Text subsystem). OCTK/Reanimator/sr fail to build NOT because of the format but because of capability gaps: 32-bit (OCTK I386.*), GPU FFI (OCTK AMD CAL), legacy Aos* names + std/compiler (Reanimator JVM), std/gui (sr). Only our own grep/python text analysis is blocked by the format; use ob doc / .SymUu interface dumps to inspect these instead.",
     "platform_prefixed": "Files like Unix.V4L2.Mod carry a [Platform.] filename prefix; the module inside is V4L2. Packaging must resolve the module name from the MODULE header, not the filename stem.",
-    "embedded_excluded": "a2oberon/ARM (73 modules: Enet stack, DMA330, Zynq EMAC) is a bare-metal/embedded track, not a library \u2014 excluded."
+    "embedded_excluded": "a2oberon/ARM (73 modules: Enet stack, DMA330, Zynq EMAC) is a bare-metal/embedded track, not a library — excluded."
   }
 }
