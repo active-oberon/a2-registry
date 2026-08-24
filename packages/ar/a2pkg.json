@@ -1,0 +1,25 @@
+{
+  "name": "community/ar",
+  "version": "0.0.0",
+  "tier": 2,
+  "context": "A2",
+  "headless": true,
+  "description": "Yaroslav Romanchenko's reader and writer for Unix ar archives, which is what a .deb is made of.",
+  "provides": [
+    "Ar"
+  ],
+  "requires": {
+    "std/base": "*",
+    "std/runtime": "*",
+    "std/system": "*"
+  },
+  "upstream": "ocp/YR",
+  "excludes": {
+    "GenericsUse": "the instantiation example of community/generics",
+    "SmallPT": "a path tracer, and it needs Codecs (std/media); a demo, not a library"
+  },
+  "residual": [
+    "Entered 2026-08-24 out of the tail of ocp/YR: it compiles against the headless SDK as it stands, and an archive format is a library rather than a demo.",
+    "G is community/generics and is not in this directory at all -- its author sent it, the tree never had it."
+  ]
+}

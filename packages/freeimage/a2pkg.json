@@ -1,6 +1,28 @@
-{ "name":"community/freeimage","version":"0.0.0","tier":2,"context":"A2",
-  "description":"FFI bindings to the native FreeImage library (image load/save across formats) via HostLibs.",
-  "provides":["FreeImageDll"],
-  "requires":{"std/runtime":"*"},
-  "native":{"library":"libfreeimage.so","note":"runtime dependency loaded via HostLibs."},
-  "residual":["TestFreeMemIO/TestFreeMeta are examples, not API."] }
+{
+  "name": "community/freeimage",
+  "version": "0.0.0",
+  "tier": 2,
+  "context": "A2",
+  "description": "FFI bindings to the native FreeImage library (image load/save across formats) via HostLibs.",
+  "provides": [
+    "FreeImageDll"
+  ],
+  "requires": {
+    "std/runtime": "*"
+  },
+  "native": {
+    "library": "libfreeimage.so",
+    "note": "runtime dependency loaded via HostLibs."
+  },
+  "residual": [
+    "Same as fftw: nothing here compiled until HostLibs entered the payload (2026-08-24).",
+    "FreeImageUtils is the piece a user actually wants (a FreeImage bitmap as an A2 image) and it is exactly the piece that needs std/gui. It waits for the same package the matrix GUI layer waits for."
+  ],
+  "upstream": "ocp/FreeImage",
+  "excludes": {
+    "FreeImageUtils": "needs Raster (std/gui): it converts to A2 images, which is the point of it, so it belongs with a graphical package",
+    "TestFreeImage": "a test program, and it needs Raster as well",
+    "TestFreeMemIO": "a test program",
+    "TestFreeMeta": "a test program"
+  }
+}

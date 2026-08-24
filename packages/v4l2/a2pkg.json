@@ -1,6 +1,23 @@
-{ "name":"community/v4l2","version":"0.0.0","tier":2,"context":"A2",
-  "description":"Video4Linux2 capture bindings for Linux (V4L2 + libv4l2 FFI).",
-  "provides":["V4L2","libv4l2"],
-  "requires":{"std/runtime":"*"},
-  "native":{"library":"libv4l2.so","note":"Linux V4L2 userspace; VideoExample (GUI) excluded — headless bindings only."},
-  "residual":[] }
+{
+  "name": "community/v4l2",
+  "version": "0.0.0",
+  "tier": 2,
+  "context": "A2",
+  "description": "Video4Linux2 capture bindings for Linux (V4L2 + libv4l2 FFI).",
+  "provides": [
+    "V4L2",
+    "libv4l2"
+  ],
+  "requires": {
+    "std/runtime": "*"
+  },
+  "native": {
+    "library": "libv4l2.so",
+    "note": "Linux V4L2 userspace; VideoExample (GUI) excluded — headless bindings only."
+  },
+  "residual": [],
+  "upstream": "ocp/V4L2",
+  "excludes": {
+    "VideoExample": "needs WMWindowManager (std/gui): it shows the captured frames in a window"
+  }
+}

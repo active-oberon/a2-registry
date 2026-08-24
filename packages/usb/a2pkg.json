@@ -1,6 +1,25 @@
-{ "name":"community/usb","version":"0.0.0","tier":2,"context":"A2",
-  "description":"FFI bindings to native USB libraries: libusb + FTDI FTD2XX.",
-  "provides":["libusb","FTD2XX"],
-  "requires":{"std/runtime":"*"},
-  "native":{"library":"libusb-1.0.so / libftd2xx.so","note":"runtime dependencies loaded via HostLibs."},
-  "residual":["Testlibusb is an example, not API."] }
+{
+  "name": "community/usb",
+  "version": "0.0.0",
+  "tier": 2,
+  "context": "A2",
+  "description": "FFI bindings to native USB libraries: libusb + FTDI FTD2XX.",
+  "provides": [
+    "libusb",
+    "FTD2XX"
+  ],
+  "requires": {
+    "std/runtime": "*"
+  },
+  "native": {
+    "library": "libusb-1.0.so / libftd2xx.so",
+    "note": "runtime dependencies loaded via HostLibs."
+  },
+  "residual": [
+    "Same as fftw: nothing here compiled until HostLibs entered the payload (2026-08-24)."
+  ],
+  "upstream": "ocp/Usb",
+  "excludes": {
+    "Testlibusb": "a test program, not part of the binding"
+  }
+}

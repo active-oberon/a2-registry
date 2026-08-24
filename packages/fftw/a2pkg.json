@@ -16,6 +16,11 @@
     "note": "runtime dependency loaded via HostLibs; must be present on the host/container to run (compile-only needs nothing)."
   },
   "residual": [
-    "FFTWTest/FFTWTestf are examples, not part of the library API."
-  ]
+    "The bindings needed HostLibs, which no package claimed and the payload therefore lacked until 2026-08-24: until then nothing in this package compiled at all. Both test programs compile too, and are left out as tests."
+  ],
+  "upstream": "ocp/FFTW",
+  "excludes": {
+    "FFTWTest": "a test program, not part of the binding",
+    "FFTWTestf": "a test program, not part of the binding"
+  }
 }

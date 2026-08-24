@@ -12,6 +12,13 @@
   },
   "kind": "generic",
   "residual": [
-    "G is a PARAMETRIC/generic module: compiles to a .SymUu interface but produces no .GofUu until instantiated. The package manager/build must treat generic modules as symbol-only (no object). GenericsUse.Mod is an instantiation example."
-  ]
+    "G is a PARAMETRIC/generic module: compiles to a .SymUu interface but produces no .GofUu until instantiated. The package manager/build must treat generic modules as symbol-only (no object). GenericsUse.Mod is an instantiation example.",
+    "G.Mod itself is not in ocp/YR -- it came from its author, not from the tree, which is why the directory named as upstream accounts for three other modules and none of them is G."
+  ],
+  "upstream": "ocp/YR",
+  "excludes": {
+    "GenericsUse": "the instantiation example, kept in the tree rather than shipped",
+    "Ar": "a package of its own: community/ar, Unix ar/deb archives, nothing to do with generics",
+    "SmallPT": "a path tracer, and it needs Codecs (std/media) to write its image; a demo, not a library"
+  }
 }
