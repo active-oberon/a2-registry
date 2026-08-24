@@ -1,8 +1,38 @@
 {
   "registry": "a2-registry",
   "description": "Catalogue and docs for the whole A2 / Active Oberon module world — the bundled standard library (std/*) and installable community packages (community/*, via `ob get`).",
-  "updated": "2026-07-24",
+  "updated": "2026-08-24",
   "packages": {
+    "apps/desktop": {
+      "status": "in-tree",
+      "modules": 109,
+      "path": "packages/apps/desktop",
+      "tier": 9,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "The desktop's own programs and tools: viewers and players, the editors and converters, the inspectors and monitors, the installers, and what draws the desktop itself.",
+      "requires": [
+        "std/base",
+        "std/gui",
+        "std/net",
+        "std/runtime",
+        "std/system"
+      ]
+    },
+    "apps/perfmon": {
+      "status": "in-tree",
+      "modules": 24,
+      "path": "packages/apps/perfmon",
+      "tier": 9,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "The performance monitor: the application, its tabs and components, the alert machinery, and a plugin per thing worth watching -- CPU, memory, heap, disks, network, processes, messages, module variables, the servers.",
+      "requires": [
+        "std/base",
+        "std/gui",
+        "std/net",
+        "std/runtime",
+        "std/system"
+      ]
+    },
     "attic/activecells-hardware": {
       "status": "in-tree",
       "modules": 2,
@@ -60,6 +90,20 @@
         "std/system"
       ]
     },
+    "attic/legacy-services": {
+      "status": "in-tree",
+      "modules": 2,
+      "path": "packages/attic/legacy-services",
+      "tier": 8,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "Network services of another era, kept because they are in the tree and they work: a Fidonet client and a stock-quote server.",
+      "requires": [
+        "std/base",
+        "std/net",
+        "std/runtime",
+        "std/system"
+      ]
+    },
     "attic/oberon2": {
       "status": "in-tree",
       "modules": 27,
@@ -76,6 +120,49 @@
         "std/text"
       ]
     },
+    "attic/sr-voxel": {
+      "status": "in-tree",
+      "modules": 26,
+      "path": "packages/attic/sr-voxel",
+      "tier": 8,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "The sr voxel and ray engine: volume textures, ray casting, the voxel spaces and the demos over them.",
+      "requires": [
+        "std/base",
+        "std/gui",
+        "std/runtime",
+        "std/system"
+      ]
+    },
+    "attic/subversion": {
+      "status": "in-tree",
+      "modules": 12,
+      "path": "packages/attic/subversion",
+      "tier": 8,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "A Subversion client over WebDAV/DeltaV: the HTTP authentication, the XML of the DeltaV methods, the working-copy bookkeeping and the command line above them.",
+      "requires": [
+        "std/base",
+        "std/net",
+        "std/runtime",
+        "std/system",
+        "std/web"
+      ]
+    },
+    "attic/tf-tools": {
+      "status": "in-tree",
+      "modules": 3,
+      "path": "packages/attic/tf-tools",
+      "tier": 8,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "Thomas Frey's own semantic tooling for Active Oberon: a type system and scope tools independent of the Fox front end, and the checker over them.",
+      "requires": [
+        "std/archive",
+        "std/base",
+        "std/runtime",
+        "std/system"
+      ]
+    },
     "attic/trm": {
       "status": "in-tree",
       "modules": 3,
@@ -88,6 +175,17 @@
         "std/compiler",
         "std/system"
       ]
+    },
+    "community/ar": {
+      "status": "validated",
+      "modules": 1,
+      "path": "packages/ar",
+      "requires": [
+        "std/base",
+        "std/runtime",
+        "std/system"
+      ],
+      "summary": "Unix ar archives (the container inside a .deb): read and write."
     },
     "community/fftw": {
       "status": "validated",
@@ -183,7 +281,7 @@
     },
     "std/archive": {
       "status": "bundled",
-      "modules": 5,
+      "modules": 6,
       "path": "packages/std/archive",
       "tier": 5,
       "install": "bundled with the SDK",
@@ -199,7 +297,7 @@
     },
     "std/base": {
       "status": "bundled",
-      "modules": 21,
+      "modules": 26,
       "path": "packages/std/base",
       "tier": 1,
       "install": "bundled with the SDK",
@@ -211,7 +309,7 @@
     },
     "std/calc": {
       "status": "bundled",
-      "modules": 9,
+      "modules": 10,
       "path": "packages/std/calc",
       "tier": 9,
       "install": "bundled with the SDK",
@@ -225,7 +323,7 @@
     },
     "std/compiler": {
       "status": "bundled",
-      "modules": 52,
+      "modules": 56,
       "path": "packages/std/compiler",
       "tier": 7,
       "install": "bundled with the SDK",
@@ -242,7 +340,7 @@
     },
     "std/compress": {
       "status": "bundled",
-      "modules": 8,
+      "modules": 11,
       "path": "packages/std/compress",
       "tier": 4,
       "install": "bundled with the SDK",
@@ -255,7 +353,7 @@
     },
     "std/crypto": {
       "status": "bundled",
-      "modules": 30,
+      "modules": 32,
       "path": "packages/std/crypto",
       "tier": 4,
       "install": "bundled with the SDK",
@@ -269,7 +367,7 @@
     },
     "std/data": {
       "status": "bundled",
-      "modules": 13,
+      "modules": 16,
       "path": "packages/std/data",
       "tier": 8,
       "install": "bundled with the SDK",
@@ -285,9 +383,23 @@
       ],
       "doc_pages": 12
     },
+    "std/disk": {
+      "status": "bundled",
+      "modules": 28,
+      "path": "packages/std/disk",
+      "tier": 3,
+      "install": "bundled with the SDK",
+      "summary": "Block devices and the file systems on them: the disk and volume abstractions and their cache, FAT, ISO 9660, the old Oberon file system, partitions, a RAM volume, and file systems reached over a network.",
+      "requires": [
+        "std/base",
+        "std/net",
+        "std/runtime",
+        "std/system"
+      ]
+    },
     "std/drivers": {
       "status": "bundled",
-      "modules": 10,
+      "modules": 19,
       "path": "packages/std/drivers",
       "tier": 5,
       "install": "bundled with the SDK",
@@ -303,7 +415,7 @@
     },
     "std/gui": {
       "status": "in-tree",
-      "modules": 49,
+      "modules": 112,
       "path": "packages/std/gui",
       "tier": 6,
       "install": "in the tree, not in the SDK payload",
@@ -322,9 +434,24 @@
       ],
       "doc_pages": 13
     },
+    "std/ime": {
+      "status": "in-tree",
+      "modules": 16,
+      "path": "packages/std/ime",
+      "tier": 6,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "Typing the world's scripts: the input-method framework and its methods -- Arabic, Armenian, Ethiopic, Hebrew, Pinyin, Russian, Ukrainian and a Unicode fallback -- with the language switcher, the Unicode character databases behind them and the Unihan parser.",
+      "requires": [
+        "std/base",
+        "std/gui",
+        "std/runtime",
+        "std/system",
+        "std/text"
+      ]
+    },
     "std/math": {
       "status": "bundled",
-      "modules": 20,
+      "modules": 22,
       "path": "packages/std/math",
       "tier": 3,
       "install": "bundled with the SDK",
@@ -337,7 +464,7 @@
     },
     "std/media": {
       "status": "in-tree",
-      "modules": 15,
+      "modules": 14,
       "path": "packages/std/media",
       "tier": 6,
       "install": "in the tree, not in the SDK payload",
@@ -347,6 +474,7 @@
         "std/gui",
         "std/math",
         "std/runtime",
+        "std/sound",
         "std/system",
         "std/web"
       ],
@@ -354,7 +482,7 @@
     },
     "std/net": {
       "status": "bundled",
-      "modules": 41,
+      "modules": 51,
       "path": "packages/std/net",
       "tier": 7,
       "install": "bundled with the SDK",
@@ -404,9 +532,24 @@
       "install": "bundled with the SDK",
       "summary": "The closed kernel: what the compiler emits calls into without the programmer naming it, and what must exist before any module can load. Allocation and the collector, module loading and type descriptors, activities and AWAIT, the platform binding, the clock."
     },
+    "std/sound": {
+      "status": "bundled",
+      "modules": 5,
+      "path": "packages/std/sound",
+      "tier": 4,
+      "install": "bundled with the SDK",
+      "summary": "Sound out of this machine: the device abstraction, the cross-platform OpenAL driver behind it, and the Ogg/Vorbis decoder and stream player that reach a speaker without touching the codec registry.",
+      "requires": [
+        "std/base",
+        "std/math",
+        "std/net",
+        "std/runtime",
+        "std/system"
+      ]
+    },
     "std/system": {
       "status": "bundled",
-      "modules": 19,
+      "modules": 51,
       "path": "packages/std/system",
       "tier": 2,
       "install": "bundled with the SDK",
@@ -446,7 +589,7 @@
     },
     "std/web": {
       "status": "bundled",
-      "modules": 6,
+      "modules": 21,
       "path": "packages/std/web",
       "tier": 3,
       "install": "bundled with the SDK",
