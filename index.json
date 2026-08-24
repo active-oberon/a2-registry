@@ -231,27 +231,27 @@
     "community/octk": {
       "status": "pending-deps",
       "modules": 77,
-      "summary": "OCTK compute toolkit. NOT a format problem (ob reads the binary Text fine) — the intra-package chain (octkBase->octkErrorBase->...) bottoms out in 32-bit modules (I386.octk*Optimized) and FFI to AMD CAL GPU compute. Needs 32-bit target + GPU FFI. 0/77 compile on the 64-bit headless SDK."
+      "summary": "OCTK compute toolkit. Remeasured 2026-08-24 against the SDK payload of that day (340 modules, HostLibs and Out included): still 0 of 77. The chain bottoms out inside the package -- octkBase needs octkErrorBase, which needs the 32-bit I386.octk*Optimized kernels and FFI to AMD CAL GPU compute. Needs a 32-bit target and a GPU binding, not a package of ours."
     },
     "community/opendocument": {
       "status": "pending",
       "modules": 4,
-      "summary": "OpenDocument (ODF) codecs. Needs std/web+compress+crypto+base and GUI (WMDialogs); one file (OpenDocumentTransforms) is a malformed XSL-as-source and must be fixed/dropped."
+      "summary": "OpenDocument (ODF) codecs. Remeasured 2026-08-24: 0 of 4. XMLSignatures needs WMDialogs (std/gui) and everything else here imports XMLSignatures, so the whole package waits on the graphical package -- plus OpenDocumentTransforms is still a malformed XSL-as-source."
     },
     "community/ph": {
-      "status": "pending-deps",
+      "status": "pending",
       "modules": 4,
-      "summary": "PH utilities (IP monitor, registries, web syndication). Needs std/net + std/crypto + std/base + community SearchTools/NewHTTPClient; IPMonitor uses Windows WSock32."
+      "summary": "PH utilities (IP monitor, registries, web syndication). Remeasured 2026-08-24: what blocks it is no longer missing std packages -- NewHTTPClient is in the payload now. PHRegistries fails on its own source ('step value of incompatible type', the older array dialect) and PHUserRegistry and PHWebSyndication follow it out; IPMonitor imports WSock32, so it is Windows-only. Fix the one module and three of four compile."
     },
     "community/reanimator": {
       "status": "pending-deps",
       "modules": 42,
-      "summary": "A JVM (Java) implemented in A2 (JVM*/jjl* = java.lang). Needs legacy module names AosOut/AosProcessors (renamed in current A2) + std/compiler internals (PCT/PCBT) + its own jjl* chain. Needs an Aos* compat shim + std/compiler. 1/42 compile headless."
+      "summary": "A JVM implemented in A2 (JVM*/jjl* = java.lang). Remeasured 2026-08-24: 1 of 42, unchanged. It asks for the names of the old system -- PCDebug, AosKernel, AosOut, AosProcessors -- so it needs an Aos* compatibility shim before anything else."
     },
     "community/sr": {
       "status": "pending-gui",
       "modules": 22,
-      "summary": "sr voxel/raytracer engine (binary Text format — ob reads it). Needs std/gui (WMWindowManager/WMGraphics/Raster) which is not in the headless image. Package once std/gui is installable."
+      "summary": "sr voxel/raytracer engine. Remeasured 2026-08-24: 0 of 22. srBase needs Raster (std/gui) and DbgOut, which is in no tree we have. The sources are also in minia2 (attic/sr-voxel), which is how every module there stays claimed."
     },
     "community/usb": {
       "status": "validated",
@@ -277,7 +277,7 @@
     "community/work": {
       "status": "pending",
       "modules": 44,
-      "summary": "Grab-bag of experiments/tools (incl. stray copies of compiler modules); not a coherent library — triage before packaging."
+      "summary": "Grab-bag of experiments and tools. Remeasured 2026-08-24: 6 of 81 compile against the payload -- BASS and BassSound (FFI to the native BASS audio library, a second road to sound beside std/sound), Containers, PascalPreprocessor, ReflectionTools and its test. The rest needs the window system or names that no longer exist. Triage before packaging still stands, but those six are a package's worth."
     },
     "std/archive": {
       "status": "bundled",
