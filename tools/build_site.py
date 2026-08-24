@@ -96,6 +96,10 @@ h1.title .m{font-family:var(--mono);color:var(--accent-strong);font-weight:600}
 .chip{font-family:var(--mono);font-size:11px;letter-spacing:.03em;padding:3px 8px;border-radius:20px;white-space:nowrap}
 .chip.ok{color:var(--ok);background:var(--ok-bg)} .chip.pending{color:var(--warn);background:var(--warn-bg)}
 .chip.bundled{color:var(--accent);background:var(--accent-glow)}
+/* `in-tree` is not `pending`: it is a finished package the SDK deliberately does not carry,
+   because the window system is not in a headless image. Painting both orange said "unfinished"
+   about a third of the catalogue. */
+.chip.intree{color:var(--faint);background:rgba(255,255,255,.06)}
 .modindex{list-style:none;padding:0;margin:14px 0 0;columns:2;column-gap:32px}
 @media(max-width:640px){.modindex{columns:1}}
 .modindex li{margin:0 0 7px;break-inside:avoid}
@@ -151,7 +155,8 @@ APP_JS = r"""
     list.forEach(function(p){
       var chip=p.status==='bundled'?'<span class="chip bundled">bundled</span>':
                p.status==='validated'?'<span class="chip ok">validated</span>':
-               '<span class="chip pending">pending</span>';
+               p.status==='in-tree'?'<span class="chip intree">in tree</span>':
+               '<span class="chip pending">'+(p.status||'pending')+'</span>';
       var hit='';
       if(query){var m=(p.syms||[]).filter(function(s){return s.toLowerCase().indexOf(query)>=0});
         if(m.length&&p.n.indexOf(query)<0) hit='<div class="sym-hit show">↳ symbol · <b>'+m.slice(0,3).join('</b>, <b>')+'</b>'+(m.length>3?' …':'')+'</div>';}
@@ -241,7 +246,7 @@ def module_body(fox_html, name, short, module, modules, rel):
 
 def package_index_body(name, short, meta, modules, rel):
     status = meta.get("status", "pending")
-    chipcls = {"bundled": "bundled", "validated": "ok"}.get(status, "pending")
+    chipcls = {"bundled": "bundled", "validated": "ok", "in-tree": "intree"}.get(status, "pending")
     req = meta.get("requires", [])
     reqhtml = (" · requires " + ", ".join(req)) if req else ""
     if status == "validated":
@@ -300,9 +305,10 @@ def build():
                       "native": meta.get("native", ""), "syms": modules or [short],
                       "href": href})
 
-    # order: bundled stdlib first, then validated community, then pending; tier then size
-    rank = {"bundled": 0, "validated": 1}
-    cards.sort(key=lambda c: (rank.get(c["status"], 2), c["tier"], -c["mods"]))
+    # order: bundled stdlib first, then validated community, then what is in the tree on purpose,
+    # then what is actually pending; tier then size
+    rank = {"bundled": 0, "validated": 1, "in-tree": 2}
+    cards.sort(key=lambda c: (rank.get(c["status"], 3), c["tier"], -c["mods"]))
 
     hero_moon = ('<svg class="moon" viewBox="0 0 200 200" aria-hidden="true">'
       '<defs><radialGradient id="hg" cx="38%" cy="34%" r="72%"><stop offset="0%" stop-color="var(--accent-strong)"/>'
