@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "tier": 1,
   "context": "A2",
-  "description": "Yaroslav Romanchenko's generic containers (parametric module).",
+  "description": "Yaroslav Romanchenko's generic containers (parametric module) -- the earlier edition. std/data carries the same author's same containers as GenericCollections; new code should use that.",
   "provides": [
     "G"
   ],
@@ -13,12 +13,14 @@
   "kind": "generic",
   "residual": [
     "G is a PARAMETRIC/generic module: compiles to a .SymUu interface but produces no .GofUu until instantiated. The package manager/build must treat generic modules as symbol-only (no object). GenericsUse.Mod is an instantiation example.",
-    "G.Mod itself is not in ocp/YR -- it came from its author, not from the tree, which is why the directory named as upstream accounts for three other modules and none of them is G."
+    "G.Mod itself is not in ocp/YR -- it came from its author, not from the tree, which is why the directory named as upstream accounts for three other modules and none of them is G.",
+    "Superseded by std/data on 2026-08-27. G and GenericCollections are the same set from the same author: MODULE G(TYPE T, CONST L) and MODULE GenericCollections(TYPE T, CONST Less), both with Container, Stack, Queue, DEQue and Vector, 399 lines against 419 -- GenericCollections adds a LinearContainer between Container and its descendants and spells the comparator out. The standard library picked one set of containers; this is kept rather than deleted because something may already name it, but it is not where new code should start."
   ],
   "upstream": "ocp/YR",
   "excludes": {
     "GenericsUse": "the instantiation example, kept in the tree rather than shipped",
     "Ar": "a package of its own: community/ar, Unix ar/deb archives, nothing to do with generics",
     "SmallPT": "a path tracer, and it needs Codecs (std/media) to write its image; a demo, not a library"
-  }
+  },
+  "status": "superseded"
 }

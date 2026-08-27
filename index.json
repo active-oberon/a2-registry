@@ -247,14 +247,14 @@
       "summary": "FFI to native FreeImage (image load/save)."
     },
     "community/generics": {
-      "status": "validated",
+      "status": "superseded",
       "modules": 1,
       "path": "packages/generics",
       "requires": [
         "std/runtime"
       ],
       "kind": "generic",
-      "summary": "Parametric generic containers (Romanchenko)."
+      "summary": "Generic containers (Romanchenko), the earlier edition -- std/data has the same set as GenericCollections."
     },
     "community/matrix": {
       "status": "validated",
