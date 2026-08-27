@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#SVNArgument">SVNArgument</a></p>
+<hr><h1 id="#_7175D580"><a name="SVNArgument"></a><a href="#ModuleList">Module</a> SVNArgument
+</h1>
+<p> AUTHOR "rstoll"; PURPOSE "parse context and provide query methods";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>ResOK= 0<tr><td></td><td>ResKEYNOTFOUND= -1<tr><td></td><td>ResEXPECTEDPARAMCOUNTFAILED= -2<tr><th align='left'>type declarations</th><td><a href="#SVNArgument.Argument">Argument</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_71765840">
+</h1><hr><h2 id="#_71766000"><a name="SVNArgument.Argument"></a><a href="#SVNArgument">SVNArgument</a>.<a href="#SVNArgument.Argument">Argument</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Argument* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>error: <strong>SIGNED16</strong><tr><td></td><td>msg: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Push (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; expParams: <strong>SIGNED16</strong>)<tr><td></td><td> GetKeyedArgument (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index: <strong>SIGNED16</strong>)<tr><td></td><td> GetUnkeyedArgument (<strong>VAR</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; index: <strong>SIGNED16</strong>)<tr><td></td><td> CountUnkeyedArguments (): <strong>SIGNED16</strong><tr><td></td><td> IsSet (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Read (context: <strong>Commands.Context</strong>)<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

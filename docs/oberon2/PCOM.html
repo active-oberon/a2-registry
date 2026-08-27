@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PCOM">PCOM</a></p>
+<hr><h1 id="#_1B3FC040"><a name="PCOM"></a><a href="#ModuleList">Module</a> PCOM
+</h1>
+<p> AUTHOR "prk"; PURPOSE "Parallel Compiler: symbol file plug-in";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#PCOM.Symbol">Symbol</a> =<strong>OBJECT</strong> (<strong>PCM.Attribute</strong>)<tr><td></td><td><a href="#PCOM.Struct">Struct</a> =<strong>OBJECT</strong> (<strong>PCM.Attribute</strong>)<tr><td></td><td><a href="#PCOM.Module">Module</a> =<strong>OBJECT</strong> (<strong>PCM.Attribute</strong>)<tr><th align='left'>procedures</th><td> FPrintName (<strong>VAR</strong> fp: <strong>SIGNED32</strong>; name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> FPrintTyp (typ: <strong>PCT.Struct</strong>; current: <strong>PCT.Module</strong>)<tr><td></td><td> <a href="#PCOM.FPrintObj">FPrintObj</a> (obj: <strong>PCT.Symbol</strong>; current: <strong>PCT.Module</strong>)<tr><td></td><td> Export (<strong>VAR</strong> r: <strong>PCM.Rider</strong>; M: <strong>PCT.Module</strong>; new, extend, skipImport: <strong>BOOLEAN</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#PCOM.ExtendStructArray">ExtendStructArray</a> (<strong>VAR</strong> a: <strong>StructArray</strong>)<tr><td></td><td> <a href="#PCOM.Import">Import</a> (self: <strong>PCT.Module</strong>; <strong>VAR</strong> M: <strong>PCT.Module</strong>; modname: <strong>StringPool.Index</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_1B418B00">
+</h1><hr><h2 id="#_1B4192C0"><a name="PCOM.Symbol"></a><a href="#PCOM">PCOM</a>.<a href="#PCOM.Symbol">Symbol</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Symbol* =<strong>OBJECT</strong> (<strong>PCM.Attribute</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fp: <strong>SIGNED32</strong></td></tr>
+</table>
+<hr><h2 id="#_1B41DB80"><a name="PCOM.Struct"></a><a href="#PCOM">PCOM</a>.<a href="#PCOM.Struct">Struct</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Struct* =<strong>OBJECT</strong> (<strong>PCM.Attribute</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fp: <strong>SIGNED32</strong><tr><td></td><td>pbfp: <strong>SIGNED32</strong><tr><td></td><td>pvfp: <strong>SIGNED32</strong><tr><td></td><td>fpdone: <strong>PCT.Module</strong><tr><td></td><td>strref: <strong>SIGNED32</strong><tr><td></td><td>uref: <strong>SIGNED32</strong><tr><td></td><td>mod: <strong>PCT.Module</strong><tr><th align='left'>procedures</th><td>& Init (mod: <strong>PCT.Module</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1B429DC0"><a name="PCOM.Module"></a><a href="#PCOM">PCOM</a>.<a href="#PCOM.Module">Module</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Module* =<strong>OBJECT</strong> (<strong>PCM.Attribute</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init</td></tr>
+</table>
+<hr><h2 id="#_1B42E480"><a name="PCOM.FPrintObj"></a><a href="#PCOM">PCOM</a>.<a href="#PCOM.FPrintObj">FPrintObj</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FPrintObj* (obj: <strong>PCT.Symbol</strong>; current: <strong>PCT.Module</strong>)</pre>
+<hr><h2 id="#_1B433080"><a name="PCOM.ExtendStructArray"></a><a href="#PCOM">PCOM</a>.<a href="#PCOM.ExtendStructArray">ExtendStructArray</a>
+</h2>
+<p> Double structure size, copy elements into new structure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ExtendStructArray* (<strong>VAR</strong> a: <strong>StructArray</strong>)</pre>
+<hr><h2 id="#_1B438A40"><a name="PCOM.Import"></a><a href="#PCOM">PCOM</a>.<a href="#PCOM.Import">Import</a>
+</h2>
+<p> Import - Symbol Table Loader Plugin</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Import* (self: <strong>PCT.Module</strong>; <strong>VAR</strong> M: <strong>PCT.Module</strong>; modname: <strong>StringPool.Index</strong>)</pre>
+</body></html>

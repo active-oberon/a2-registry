@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#FoxIntermediateLinker">FoxIntermediateLinker</a></p>
-<hr><h1 id="#_72216CC0"><a name="FoxIntermediateLinker"></a><a href="#ModuleList">Module</a> FoxIntermediateLinker
+<hr><h1 id="#_2C9230C0"><a name="FoxIntermediateLinker"></a><a href="#ModuleList">Module</a> FoxIntermediateLinker
 </h1>
 <h3>Summary</h3>
 
@@ -44,7 +44,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_7222BAC0"><a name="FoxIntermediateLinker.Linker"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>
+<hr><h2 id="#_2C937EC0"><a name="FoxIntermediateLinker.Linker"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>
 </h2>
 <p> the assemblinker</p>
 
@@ -73,35 +73,35 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_72260F40"><a name="FoxIntermediateLinker.Linker.MarkAsReachableByName"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkAsReachableByName">MarkAsReachableByName</a>
+<hr><h3 id="#_2C96D340"><a name="FoxIntermediateLinker.Linker.MarkAsReachableByName"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkAsReachableByName">MarkAsReachableByName</a>
 </h3>
 <p> mark a section with a certain name as reachable</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> MarkAsReachableByName* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h3 id="#_72267BC0"><a name="FoxIntermediateLinker.Linker.MarkAsReachableStartingWith"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkAsReachableStartingWith">MarkAsReachableStartingWith</a>
+<hr><h3 id="#_2C973FC0"><a name="FoxIntermediateLinker.Linker.MarkAsReachableStartingWith"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkAsReachableStartingWith">MarkAsReachableStartingWith</a>
 </h3>
 <p> mark all sections whose names start with a certain prefix as reachable</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> MarkAsReachableStartingWith* (<strong>CONST</strong> prefix: <strong>Basic.SegmentedName</strong>; allowedSections: <strong>SET</strong>)</pre>
-<hr><h3 id="#_7226FB00"><a name="FoxIntermediateLinker.Linker.MarkAsReachable"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkAsReachable">MarkAsReachable</a>
+<hr><h3 id="#_2C97BF00"><a name="FoxIntermediateLinker.Linker.MarkAsReachable"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkAsReachable">MarkAsReachable</a>
 </h3>
 <p> mark a section as reachable and do the same recursively for all referenced sections</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> MarkAsReachable* (section: <strong>Sections.Section</strong>)</pre>
-<hr><h3 id="#_72276F00"><a name="FoxIntermediateLinker.Linker.MarkReachabilityOfAll"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkReachabilityOfAll">MarkReachabilityOfAll</a>
+<hr><h3 id="#_2C983300"><a name="FoxIntermediateLinker.Linker.MarkReachabilityOfAll"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.MarkReachabilityOfAll">MarkReachabilityOfAll</a>
 </h3>
 <p> mark all sections as either reachable or unreachable</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> MarkReachabilityOfAll* (isReachable: <strong>BOOLEAN</strong>)</pre>
-<hr><h3 id="#_7227CD40"><a name="FoxIntermediateLinker.Linker.DumpSections"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.DumpSections">DumpSections</a>
+<hr><h3 id="#_2C989140"><a name="FoxIntermediateLinker.Linker.DumpSections"></a><a href="#FoxIntermediateLinker">FoxIntermediateLinker</a>.<a href="#FoxIntermediateLinker.Linker">Linker</a>.<a href="#FoxIntermediateLinker.Linker.DumpSections">DumpSections</a>
 </h3>
 <p> dump all sections (both reachable and not)</p>
 

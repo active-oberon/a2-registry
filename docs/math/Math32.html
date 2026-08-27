@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#Math32">Math32</a></p>
-<hr><h1 id="#_A5A17D40"><a name="Math32"></a><a href="#ModuleList">Module</a> Math32
+<hr><h1 id="#_C92E9B80"><a name="Math32"></a><a href="#ModuleList">Module</a> Math32
 </h1>
 <p> portable</p>
 
@@ -104,10 +104,10 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_A5AA4400">
+<hr><h1 id="#_C9376240">
 </h1>
 <p> AUTHOR "?"; PURPOSE "Math utility module (FLOAT32)";</p>
-<hr><h2 id="#_A5AA69C0"><a name="Math32.ValueRec"></a><a href="#Math32">Math32</a>.<a href="#Math32.ValueRec">ValueRec</a>
+<hr><h2 id="#_C9378800"><a name="Math32.ValueRec"></a><a href="#Math32">Math32</a>.<a href="#Math32.ValueRec">ValueRec</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -119,91 +119,91 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_A5AAC3C0"><a name="Math32.Zero"></a><a href="#Math32">Math32</a>.<a href="#Math32.Zero">Zero</a>
+<hr><h2 id="#_C937E200"><a name="Math32.Zero"></a><a href="#Math32">Math32</a>.<a href="#Math32.Zero">Zero</a>
 </h2>
 <p> returns positive zero if "sign" = 0 (default), negative zero if sign <a name="0"></a></p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Zero* (sign= 0: <strong>INTEGER</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_A5AB3B40"><a name="Math32.Inf"></a><a href="#Math32">Math32</a>.<a href="#Math32.Inf">Inf</a>
+<hr><h2 id="#_C9385980"><a name="Math32.Inf"></a><a href="#Math32">Math32</a>.<a href="#Math32.Inf">Inf</a>
 </h2>
 <p> returns positive infinity if "sign" = 0 (default), negative infinity if sign <a name="0"></a></p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Inf* (sign= 0: <strong>INTEGER</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_A5ABB200"><a name="Math32.NaN"></a><a href="#Math32">Math32</a>.<a href="#Math32.NaN">NaN</a>
+<hr><h2 id="#_C938D040"><a name="Math32.NaN"></a><a href="#Math32">Math32</a>.<a href="#Math32.NaN">NaN</a>
 </h2>
 <p> returns NaN value</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NaN* (): <strong>Value</strong></pre>
-<hr><h2 id="#_A5ABEF40"><a name="Math32.iszero"></a><a href="#Math32">Math32</a>.<a href="#Math32.iszero">iszero</a>
+<hr><h2 id="#_C9390D80"><a name="Math32.iszero"></a><a href="#Math32">Math32</a>.<a href="#Math32.iszero">iszero</a>
 </h2>
 <p> reports whether "x" is zero. "sign" = 0: "x" is zero (default)? "sign"  0: "x" is positive zero? "sign" <a name="0:"></a> "x" is negative zero?</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> iszero* (x: <strong>Value</strong>; sign= 0: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_A5ACA1C0"><a name="Math32.isinf"></a><a href="#Math32">Math32</a>.<a href="#Math32.isinf">isinf</a>
+<hr><h2 id="#_C939C000"><a name="Math32.isinf"></a><a href="#Math32">Math32</a>.<a href="#Math32.isinf">isinf</a>
 </h2>
 <p> reports whether "x" is infinity. "sign" = 0: "x" is infinity (default)? "sign"  0: "x" is positive infinity? "sign" <a name="0:"></a> "x" is negative infinity?</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> isinf* (x: <strong>Value</strong>; sign= 0: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_A5AD5440"><a name="Math32.isnan"></a><a href="#Math32">Math32</a>.<a href="#Math32.isnan">isnan</a>
+<hr><h2 id="#_C93A7280"><a name="Math32.isnan"></a><a href="#Math32">Math32</a>.<a href="#Math32.isnan">isnan</a>
 </h2>
 <p> reports whether "x" is a "NaN" value.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> isnan* (x: <strong>Value</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_A5ADAC80"><a name="Math32.copysign"></a><a href="#Math32">Math32</a>.<a href="#Math32.copysign">copysign</a>
+<hr><h2 id="#_C93ACAC0"><a name="Math32.copysign"></a><a href="#Math32">Math32</a>.<a href="#Math32.copysign">copysign</a>
 </h2>
 <p> returns a value with the magnitude of `x` and the sign of `s`</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> copysign* (x, s: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_A5AE23C0"><a name="Math32.nextafter"></a><a href="#Math32">Math32</a>.<a href="#Math32.nextafter">nextafter</a>
+<hr><h2 id="#_C93B4200"><a name="Math32.nextafter"></a><a href="#Math32">Math32</a>.<a href="#Math32.nextafter">nextafter</a>
 </h2>
 <p> returns the next value after x towards to y</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> nextafter* (x, y: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_A5AE8B80"><a name="Math32.trunc"></a><a href="#Math32">Math32</a>.<a href="#Math32.trunc">trunc</a>
+<hr><h2 id="#_C93BA9C0"><a name="Math32.trunc"></a><a href="#Math32">Math32</a>.<a href="#Math32.trunc">trunc</a>
 </h2>
 <p> returns the integer part of "x"</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> trunc* (x: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_A5AEDEC0"><a name="Math32.modf"></a><a href="#Math32">Math32</a>.<a href="#Math32.modf">modf</a>
+<hr><h2 id="#_C93BFD00"><a name="Math32.modf"></a><a href="#Math32">Math32</a>.<a href="#Math32.modf">modf</a>
 </h2>
 <p> Splits "x" into integer and fractional parts. Both parts have the same sign as "x". The integer part is stored in the "int" parameter, and the fractional part is returned by the function.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> modf* (x: <strong>Value</strong>; <strong>VAR</strong> int: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_A5AFAAC0"><a name="Math32.floor"></a><a href="#Math32">Math32</a>.<a href="#Math32.floor">floor</a>
+<hr><h2 id="#_C93CC900"><a name="Math32.floor"></a><a href="#Math32">Math32</a>.<a href="#Math32.floor">floor</a>
 </h2>
 <p> Rounds the value of "x" and returns the greatest value less than or equal to "x"</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> floor* (x: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_A5B02500"><a name="Math32.ceil"></a><a href="#Math32">Math32</a>.<a href="#Math32.ceil">ceil</a>
+<hr><h2 id="#_C93D4340"><a name="Math32.ceil"></a><a href="#Math32">Math32</a>.<a href="#Math32.ceil">ceil</a>
 </h2>
 <p> Rounds the value of "x" and returns the least value greater than or equal to x</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ceil* (x: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_A5B09E40"><a name="Math32.frac"></a><a href="#Math32">Math32</a>.<a href="#Math32.frac">frac</a>
+<hr><h2 id="#_C93DBC80"><a name="Math32.frac"></a><a href="#Math32">Math32</a>.<a href="#Math32.frac">frac</a>
 </h2>
 <p> returns the fractional part of "x"</p>
 

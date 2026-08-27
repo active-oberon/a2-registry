@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#StreamUtilities">StreamUtilities</a></p>
+<hr><h1 id="#_1344D440"><a name="StreamUtilities"></a><a href="#ModuleList">Module</a> StreamUtilities
+</h1>
+<p> AUTHOR "Patrick Hunziker"; PURPOSE "stream utilities";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#StreamUtilities.WriterMonitor">WriterMonitor</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td>Encryptor =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td><a href="#StreamUtilities.EncryptingWriter">EncryptingWriter</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td>Decryptor =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td><a href="#StreamUtilities.DecryptingReader">DecryptingReader</a> =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)<tr><td></td><td><a href="#StreamUtilities.AsynchronousForwarder">AsynchronousForwarder</a> =<strong>OBJECT</strong> (<strong>AsynchronousWriter</strong>)<tr><td></td><td><a href="#StreamUtilities.ReaderMonitor">ReaderMonitor</a> =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)<tr><td></td><td><a href="#StreamUtilities.LimitedWriter">LimitedWriter</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td><a href="#StreamUtilities.LimitedReader">LimitedReader</a> =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)<tr><td></td><td><a href="#StreamUtilities.Base64Writer">Base64Writer</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><td></td><td><a href="#StreamUtilities.Base64Reader">Base64Reader</a> =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)<tr><td></td><td><a href="#StreamUtilities.DumpWriter">DumpWriter</a> =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)<tr><th align='left'>procedures</th><td> OpenWriterMonitor (<strong>VAR</strong> w: <strong>Streams.Writer</strong>; out: <strong>Streams.Writer</strong>; monitor: <strong>Streams.Writer</strong>)<tr><td></td><td> OpenAsynchronousForwarder (out: <strong>Streams.Writer</strong>): <strong>Streams.Writer</strong><tr><td></td><td> OpenReaderMonitor (<strong>VAR</strong> r: <strong>Streams.Reader</strong>; in: <strong>Streams.Reader</strong>; monitor: <strong>Streams.Writer</strong>)<tr><td></td><td> OpenLimitedWriter (<strong>VAR</strong> w: <strong>Streams.Writer</strong>; out: <strong>Streams.Writer</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> OpenLimitedReader (<strong>VAR</strong> r: <strong>Streams.Reader</strong>; in: <strong>Streams.Reader</strong>; size: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_13478E40">
+</h1><hr><h2 id="#_13479600"><a name="StreamUtilities.WriterMonitor"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.WriterMonitor">WriterMonitor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WriterMonitor* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (out: <strong>Streams.Writer</strong>; monitor: <strong>Streams.Writer</strong>)<tr><td></td><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Streams.Position</strong>)<tr><td></td><td> Pos (): <strong>Streams.Position</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_134844C0"><a name="StreamUtilities.EncryptingWriter"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.EncryptingWriter">EncryptingWriter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EncryptingWriter* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (out: <strong>Streams.Writer</strong>; encrypt: <strong>Encryptor</strong>)<tr><td></td><td> Pos (): <strong>Streams.Position</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1348C240"><a name="StreamUtilities.DecryptingReader"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.DecryptingReader">DecryptingReader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DecryptingReader* =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (in: <strong>Streams.Reader</strong>; decrypt: <strong>Decryptor</strong>)<tr><td></td><td> Pos (): <strong>Streams.Position</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_13493F00"><a name="StreamUtilities.AsynchronousForwarder"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.AsynchronousForwarder">AsynchronousForwarder</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AsynchronousForwarder* =<strong>OBJECT</strong> (<strong>AsynchronousWriter</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (out: <strong>Streams.Writer</strong>)<tr><td></td><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Streams.Position</strong>)<tr><td></td><td> Pos (): <strong>Streams.Position</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_1349DC40"><a name="StreamUtilities.ReaderMonitor"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.ReaderMonitor">ReaderMonitor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ReaderMonitor* =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (in: <strong>Streams.Reader</strong>; monitor: <strong>Streams.Writer</strong>)<tr><td></td><td> CanSetPos (): <strong>BOOLEAN</strong><tr><td></td><td> SetPos (pos: <strong>Streams.Position</strong>)<tr><td></td><td> Pos (): <strong>Streams.Position</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_134A8B00"><a name="StreamUtilities.LimitedWriter"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.LimitedWriter">LimitedWriter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LimitedWriter* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>remain: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (out: <strong>Streams.Writer</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> Reset</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_134B06C0"><a name="StreamUtilities.LimitedReader"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.LimitedReader">LimitedReader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LimitedReader* =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>remain: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (in: <strong>Streams.Reader</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> Reset</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_134B8380"><a name="StreamUtilities.Base64Writer"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.Base64Writer">Base64Writer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Base64Writer* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (out: <strong>Streams.Writer</strong>)<tr><td></td><td> Reset<tr><td></td><td> Close<tr><td></td><td> Pos (): <strong>Streams.Position</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_134C0640"><a name="StreamUtilities.Base64Reader"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.Base64Reader">Base64Reader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Base64Reader* =<strong>OBJECT</strong> (<strong>Streams.Reader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (in: <strong>Streams.Reader</strong>)<tr><td></td><td> Reset<tr><td></td><td> Pos (): <strong>Streams.Position</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_134C7F00"><a name="StreamUtilities.DumpWriter"></a><a href="#StreamUtilities">StreamUtilities</a>.<a href="#StreamUtilities.DumpWriter">DumpWriter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DumpWriter* =<strong>OBJECT</strong> (<strong>Streams.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Send (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</table>
+</body></html>

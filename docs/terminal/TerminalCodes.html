@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#TerminalCodes">TerminalCodes</a></p>
+<hr><h1 id="#_EF8FFEC0"><a name="TerminalCodes"></a><a href="#ModuleList">Module</a> TerminalCodes
+</h1>
+<p> AUTHOR "Andrii Puhachenko"; PURPOSE "What a terminal sends and understands: keys in, escape sequences out"</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>ESC= 1BX<tr><td></td><td><a href="#TerminalCodes.None">None</a>= 0<tr><td></td><td><a href="#TerminalCodes.Character">Character</a>= 1<tr><td></td><td><a href="#TerminalCodes.Key">Key</a>= 2<tr><td></td><td><a href="#TerminalCodes.Mouse">Mouse</a>= 3<tr><td></td><td><a href="#TerminalCodes.Unknown">Unknown</a>= 4<tr><td></td><td><a href="#TerminalCodes.Escape">Escape</a>= 1<tr><td></td><td>Enter= 2<tr><td></td><td>Tab= 3<tr><td></td><td>Backspace= 4<tr><td></td><td>Insert= 5<tr><td></td><td>Delete= 6<tr><td></td><td>Home= 7<tr><td></td><td>End= 8<tr><td></td><td>PageUp= 9<tr><td></td><td>PageDown= 10<tr><td></td><td>Up= 11<tr><td></td><td>Down= 12<tr><td></td><td>Right= 13<tr><td></td><td>Left= 14<tr><td></td><td>F1= 21<tr><td></td><td>F2= 22<tr><td></td><td>F3= 23<tr><td></td><td>F4= 24<tr><td></td><td>F5= 25<tr><td></td><td>F6= 26<tr><td></td><td>F7= 27<tr><td></td><td>F8= 28<tr><td></td><td>F9= 29<tr><td></td><td>F10= 30<tr><td></td><td>F11= 31<tr><td></td><td>F12= 32<tr><td></td><td><a href="#TerminalCodes.Shift">Shift</a>= 0<tr><td></td><td>Alt= 1<tr><td></td><td>Ctrl= 2<tr><td></td><td><a href="#TerminalCodes.LeftButton">LeftButton</a>= 0<tr><td></td><td>MiddleButton= 1<tr><td></td><td>RightButton= 2<tr><td></td><td>Released= 3<tr><td></td><td>Moved= 4<tr><td></td><td>WheelUp= 5<tr><td></td><td>WheelDown= 6<tr><th align='left'>type declarations</th><td>Char32 =<strong>UTF8Strings.Char32</strong><tr><td></td><td><a href="#TerminalCodes.Event">Event</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#TerminalCodes.Read">Read</a> (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> e: <strong>Event</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#TerminalCodes.MoveTo">MoveTo</a> (w: <strong>Streams.Writer</strong>; row, column: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#TerminalCodes.Clear">Clear</a> (w: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#TerminalCodes.ClearLine">ClearLine</a> (w: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#TerminalCodes.Foreground">Foreground</a> (w: <strong>Streams.Writer</strong>; red, green, blue: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#TerminalCodes.Background">Background</a> (w: <strong>Streams.Writer</strong>; red, green, blue: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#TerminalCodes.Bold">Bold</a> (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#TerminalCodes.Inverse">Inverse</a> (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#TerminalCodes.Plain">Plain</a> (w: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#TerminalCodes.AltScreen">AltScreen</a> (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#TerminalCodes.ShowCursor">ShowCursor</a> (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#TerminalCodes.TrackMouse">TrackMouse</a> (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#TerminalCodes.CharTo">CharTo</a> (c: <strong>Char32</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#TerminalCodes.WriteChar">WriteChar</a> (w: <strong>Streams.Writer</strong>; c: <strong>Char32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_EF953D00">
+</h1><hr><h2 id="#_EF9544C0"><a name="TerminalCodes.None"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.None">None</a>
+</h2>
+<p> what an event is</p>
+
+<p> nothing was read</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> None*= 0</pre>
+<hr><h2 id="#_EF958D80"><a name="TerminalCodes.Character"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Character">Character</a>
+</h2>
+<p> a character was typed: `char`</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Character*= 1</pre>
+<hr><h2 id="#_EF95CD40"><a name="TerminalCodes.Key"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Key">Key</a>
+</h2>
+<p> a key with no character of its own: `key`</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Key*= 2</pre>
+<hr><h2 id="#_EF961BC0"><a name="TerminalCodes.Mouse"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Mouse">Mouse</a>
+</h2>
+<p> the pointer did something: `button`, `x`, `y`</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Mouse*= 3</pre>
+<hr><h2 id="#_EF966300"><a name="TerminalCodes.Unknown"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Unknown">Unknown</a>
+</h2>
+<p> a sequence this module does not name; a program may ignore it</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Unknown*= 4</pre>
+<hr><h2 id="#_EF96BD80"><a name="TerminalCodes.Escape"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Escape">Escape</a>
+</h2>
+<p> keys, for events of kind Key</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Escape*= 1</pre>
+<hr><h2 id="#_EF970000"><a name="TerminalCodes.Shift"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Shift">Shift</a>
+</h2>
+<p> modifiers, as reported for keys and for the mouse</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Shift*= 0</pre>
+<hr><h2 id="#_EF974F80"><a name="TerminalCodes.LeftButton"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.LeftButton">LeftButton</a>
+</h2>
+<p> what the mouse did, in `button`</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LeftButton*= 0</pre>
+<hr><h2 id="#_EF979200"><a name="TerminalCodes.Event"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Event">Event</a>
+</h2>
+<p> One thing that happened at the terminal. `kind` says which of the other fields mean anything Character uses `char`, Key uses `key`, Mouse uses `button` and `x`, `y` -- which count from one, as the terminal reports them. `modifiers` holds Shift, Alt and Ctrl.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Event* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>kind: <strong>SIGNED32</strong><tr><td></td><td>char: <strong>Char32</strong><tr><td></td><td>key: <strong>SIGNED32</strong><tr><td></td><td>modifiers: <strong>SET</strong><tr><td></td><td>button: <strong>SIGNED32</strong><tr><td></td><td>x: <strong>SIGNED32</strong><tr><td></td><td>y: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_EF98D900"><a name="TerminalCodes.Read"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Read">Read</a>
+</h2>
+<p> The next event, read from whatever the terminal (or a test) is sending. FALSE when there is nothing more to read.</p>
+
+<p> A lone escape is the Escape key, and an escape with more behind it starts a sequence: the difference is whether anything follows, which is why this asks the reader what it has. A terminal sends a sequence in one burst, so a caller reading a real one should let the bytes arrive before deciding -- Terminal.Read does that waiting.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> e: <strong>Event</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_EF9A61C0"><a name="TerminalCodes.MoveTo"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.MoveTo">MoveTo</a>
+</h2>
+<p> Put the cursor there. Rows and columns count from one, as the terminal counts them.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MoveTo* (w: <strong>Streams.Writer</strong>; row, column: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_EF9AE780"><a name="TerminalCodes.Clear"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Clear">Clear</a>
+</h2>
+<p> Erase the whole screen.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Clear* (w: <strong>Streams.Writer</strong>)</pre>
+<hr><h2 id="#_EF9B2E40"><a name="TerminalCodes.ClearLine"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.ClearLine">ClearLine</a>
+</h2>
+<p> Erase from the cursor to the end of its line.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ClearLine* (w: <strong>Streams.Writer</strong>)</pre>
+<hr><h2 id="#_EF9B8B80"><a name="TerminalCodes.Foreground"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Foreground">Foreground</a>
+</h2>
+<p> Colour the characters that follow, as red, green and blue from 0 to 255.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Foreground* (w: <strong>Streams.Writer</strong>; red, green, blue: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_EF9C16C0"><a name="TerminalCodes.Background"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Background">Background</a>
+</h2>
+<p> Colour the ground behind them.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Background* (w: <strong>Streams.Writer</strong>; red, green, blue: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_EF9C7F80"><a name="TerminalCodes.Bold"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Bold">Bold</a>
+</h2>
+<p> Bold, and off again.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Bold* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_EF9CD340"><a name="TerminalCodes.Inverse"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Inverse">Inverse</a>
+</h2>
+<p> Swap the two colours, and back.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Inverse* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_EF9D2F00"><a name="TerminalCodes.Plain"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Plain">Plain</a>
+</h2>
+<p> Plain characters again: no colour, no attribute.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Plain* (w: <strong>Streams.Writer</strong>)</pre>
+<hr><h2 id="#_EF9D80C0"><a name="TerminalCodes.AltScreen"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.AltScreen">AltScreen</a>
+</h2>
+<p> Draw on a screen of its own, and give the one underneath back when done. A program that does this leaves the terminal looking as it did before it started.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AltScreen* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_EF9E3A40"><a name="TerminalCodes.ShowCursor"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.ShowCursor">ShowCursor</a>
+</h2>
+<p> Show the cursor, or hide it while drawing.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ShowCursor* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_EF9E9E80"><a name="TerminalCodes.TrackMouse"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.TrackMouse">TrackMouse</a>
+</h2>
+<p> Ask for the mouse: presses, releases, motion while pressed, and the wheel, reported the way SGR 1006 reports them -- which is the only way that works past column 223.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TrackMouse* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_EF9F5700"><a name="TerminalCodes.CharTo"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.CharTo">CharTo</a>
+</h2>
+<p> One character as the string of UTF-8 bytes it is, for putting it inside a line of text.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CharTo* (c: <strong>Char32</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_EF9FEDC0"><a name="TerminalCodes.WriteChar"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.WriteChar">WriteChar</a>
+</h2>
+<p> One character, in UTF-8, which is what a terminal expects and what box drawing needs.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteChar* (w: <strong>Streams.Writer</strong>; c: <strong>Char32</strong>)</pre>
+</body></html>

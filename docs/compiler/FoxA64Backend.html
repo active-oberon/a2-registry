@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxA64Backend">FoxA64Backend</a></p>
+<hr><h1 id="#_E2BF7000"><a name="FoxA64Backend"></a><a href="#ModuleList">Module</a> FoxA64Backend
+</h1>
+<p> AUTHOR "Andrii Puhachenko; co-author Claude (Opus 5)"; PURPOSE "backend for AArch64 (ARMv8-A, A64 instruction set)";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>X0= 0<tr><td></td><td>FP= 29<tr><td></td><td>LR= 30<tr><td></td><td>SP= 31<tr><td></td><td>ZR= 31<tr><td></td><td>V0= 32<tr><th align='left'>type declarations</th><td><a href="#FoxA64Backend.BackendA64">BackendA64</a> =<strong>OBJECT</strong> (<strong>IntermediateBackend.IntermediateBackend</strong>)<tr><th align='left'>procedures</th><td> <a href="#FoxA64Backend.Get">Get</a> (): <strong>Backend.Backend</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_E2C05140">
+</h1><hr><h2 id="#_E2C05900"><a name="FoxA64Backend.BackendA64"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BackendA64* =<strong>OBJECT</strong> (<strong>IntermediateBackend.IntermediateBackend</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>initLocals: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> Initialize (diagnostics: <strong>Diagnostics.Diagnostics</strong>; log: <strong>Streams.Writer</strong>; flags: <strong>SET</strong>; checker: <strong>SemanticChecker.Checker</strong>; system: <strong>Global.System</strong>)<tr><td></td><td> GetSystem (): <strong>Global.System</strong><tr><td></td><td> <a href="#FoxA64Backend.BackendA64.CanPassInRegister">CanPassInRegister</a> (type: <strong>SyntaxTree.Type</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResetParameterRegisters<tr><td></td><td> <a href="#FoxA64Backend.BackendA64.GetParameterRegister">GetParameterRegister</a> (callingConvention: <strong>SyntaxTree.CallingConvention</strong>; type: <strong>IntermediateCode.Type</strong>; <strong>VAR</strong> register: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxA64Backend.BackendA64.SupportedInstruction">SupportedInstruction</a> (<strong>CONST</strong> instruction: <strong>IntermediateCode.Instruction</strong>; <strong>VAR</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SupportedImmediate (<strong>CONST</strong> op: <strong>IntermediateCode.Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ProcessIntermediateCodeModule (intermediateCodeModule: <strong>Formats.GeneratedModule</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> DefineOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> GetOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> DefaultObjectFileFormat (): <strong>Formats.ObjectFileFormat</strong><tr><td></td><td> DefaultSymbolFileFormat (): <strong>Formats.SymbolFileFormat</strong><tr><td></td><td> <a href="#FoxA64Backend.BackendA64.GetDescription">GetDescription</a> (<strong>VAR</strong> instructionSet: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_E2C28F40"><a name="FoxA64Backend.BackendA64.CanPassInRegister"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.CanPassInRegister">CanPassInRegister</a>
+</h3>
+<p> whether a whole aggregate may travel in a register rather than by address</p>
+
+<p> AAPCS64 does have a rule for this -- a homogeneous floating-point aggregate of up to four members goes in consecutive V registers -- but A2 passes records and arrays by address anyway, so nothing reaches here that the rule would apply to. Left FALSE until a case turns up that needs it; saying TRUE without a code generator behind it would only produce wrong code later.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CanPassInRegister* (type: <strong>SyntaxTree.Type</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_E2C40580"><a name="FoxA64Backend.BackendA64.GetParameterRegister"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.GetParameterRegister">GetParameterRegister</a>
+</h3>
+<p> the AAPCS64 argument allocation, as far as the intermediate code models it</p>
+
+<p> Two independent counters, x0..x7 for everything integer or pointer shaped and v0..v7 for everything floating point -- the same shape as the SysV rule on AMD64 and not the WINAPI one, where a float consumes an integer slot too.</p>
+
+<p> The counters only ever increase, which is the other half of the rule: once an argument of a class has gone to the stack, every later argument of that class goes to the stack as well, even if a register of that class fell free. AAPCS64 says this explicitly (NGRN and NSRN are set to 8 rather than left alone), and the shared caller and prologue loops in FoxIntermediateBackend do it by construction.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetParameterRegister* (callingConvention: <strong>SyntaxTree.CallingConvention</strong>; type: <strong>IntermediateCode.Type</strong>; <strong>VAR</strong> register: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_E2C64B40"><a name="FoxA64Backend.BackendA64.SupportedInstruction"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.SupportedInstruction">SupportedInstruction</a>
+</h3>
+<p> whether the code generator can emit an intermediate code instruction directly</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SupportedInstruction* (<strong>CONST</strong> instruction: <strong>IntermediateCode.Instruction</strong>; <strong>VAR</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="#_E2C6E000"><a name="FoxA64Backend.BackendA64.GetDescription"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.GetDescription">GetDescription</a>
+</h3>
+<p> the name that lands in the intermediate code module header and in the object file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetDescription* (<strong>VAR</strong> instructionSet: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_E2C76280"><a name="FoxA64Backend.Get"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.Get">Get</a>
+</h2>
+<p> get an instance of the A64 backend</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (): <strong>Backend.Backend</strong></pre>
+</body></html>

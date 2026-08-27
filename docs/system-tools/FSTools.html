@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FSTools">FSTools</a></p>
+<hr><h1 id="#_8EA3BF00"><a name="FSTools"></a><a href="#ModuleList">Module</a> FSTools
+</h1>
+<p> AUTHOR "be"; PURPOSE "Files Tools";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Mount (context: <strong>Commands.Context</strong>)<tr><td></td><td> Unmount (context: <strong>Commands.Context</strong>)<tr><td></td><td> SetDefault (context: <strong>Commands.Context</strong>)<tr><td></td><td> Watch (context: <strong>Commands.Context</strong>)<tr><td></td><td> Directory (context: <strong>Commands.Context</strong>)<tr><td></td><td> Enumerate (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#FSTools.CreateFile">CreateFile</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> CopyTo (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#FSTools.CopyFiles">CopyFiles</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Backup (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#FSTools.DeleteFiles">DeleteFiles</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#FSTools.RenameFiles">RenameFiles</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> CreateDirectory (context: <strong>Commands.Context</strong>)<tr><td></td><td> DeleteDirectory (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#FSTools.CompareDirectories">CompareDirectories</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#FSTools.CompareFiles">CompareFiles</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Safe (context: <strong>Commands.Context</strong>)<tr><td></td><td> Unsafe (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#FSTools.CloseFiles">CloseFiles</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Exists (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> fullName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> flags: <strong>SET</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_8EA652C0">
+</h1>
+<ul>
+<li> Usage: <strong></strong></li>
+
+<li> FSTools.Mount prefix alias <a href="#volpar]">volpar]</a> <a href="#"">" fspar] ~ Mount the specified volume.</a></li>
+
+<li> FSTools.Unmount prefix <a href="#"></a><br>f] ~ Unmount the specified volume. Use <em>f to force unmounting. <strong></strong></em></li>
+
+<li> FSTools.SetDefault prefix ~ Set the specified volume as default volume.</li>
+
+<li> FSTools.Watch ~ Diplays a list of all mounted file systems <strong></strong></li>
+
+<li> FSTools.CopyFiles <a href="#-ioq]">-ioq]</a> <code>sourcefile " =&gt " destfile} ~	Copy the specified files to<BR> *	FSTools.RenameFiles [-i] {oldname " =&gt " newname} ~	Rename files<BR> *	FSTools.DeleteFiles [-i] {file} ~						Delete the specified files<BR> * 	FSTools.Directory [-ts] ~								Show Directory (t: show creation times, s: show file sizes)<BR> *<BR> *	FSTools.Safe ~ 										disallow pattern matching<BR> *	FSTools.Unsafe ~ 										allow pattern matching<BR> *<BR> *	Options i, o and q:<BR> *<BR> *	i: 	ignore errors, e.g. continue with deletion of files if a file could not be deleted<BR> *	o:	force overwriting existing files<BR> *	q:	quiet mode<BR> *<BR> * Examples:<BR> *<BR> *	FSTools.Mount FAT FatFS IDE0#4~<BR> * 	FSTools.Unmount FAT~<BR> *<BR> *	FSTools.CopyFiles AOS:Configuration.XML =&gt FAT:Configuration.XML AOS:Test.Mod =&gt FAT:Test.Mod ~<BR> *	FSTools.RenameFiles Configuration.XML =&gt Configuration.Bak ~<BR> *	FSTools.DeleteFiles Test.Mod Bimbo.Mod ~<BR> *	FSTools.Directory -s ~<BR> *<BR> * Pattern matching:<BR> *<BR> *	Supported by: CopyFiles, RenameFiles, DeleteFiles and Directory<BR> *<BR> *	WARNING: If no prefix is specified, the source mask if checked against all files on all mounted volumes, i.e. the command<BR> *				FSTools.DeleteFiles * ~ would DELETE ALL FILES ON ALL MOUNTED partitions.<BR> *<BR> *	The source mask may contain an arbitrary number of '*' (matches any string) and '?' (matches any character) characters.<BR> *	For operations that have a target, the target mask semantics is the following:<BR> *<BR> *		- '?' characters are not allowed in the target mask<BR> *		- '*' characters are not allowed in the prefix and path<BR> *		- every occurence of the character '*' is replaced by ...<BR> *				... the source file name if there is no '.' character on the left side of the '*' character<BR> *				... the source file extension if there is at least one '.' character on the left side of the '*' character<BR> *<BR> *	Notes:<BR> *		- Files treats the right-most '.*' as file extension, e.g. the file extension of 'AosBimbo.Test.00.Bak.Mod' is '.Mod'<BR> *<BR> </code></li>
+</ul>
+<hr><h2 id="#_8EA76A80"><a name="FSTools.CreateFile"></a><a href="#FSTools">FSTools</a>.<a href="#FSTools.CreateFile">CreateFile</a>
+</h2>
+<p> Create a new file and optionally fill it with content Option c: Transform <a name="LF&gt"></a> into <a name="CR&gt&ltLF&gt"></a> Option r: Remove whitespace at beginning of line Option a: Append to file instead of creating new file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CreateFile* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_8EA82300"><a name="FSTools.CopyFiles"></a><a href="#FSTools">FSTools</a>.<a href="#FSTools.CopyFiles">CopyFiles</a>
+</h2>
+<p> Copy files</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CopyFiles* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_8EA86100"><a name="FSTools.DeleteFiles"></a><a href="#FSTools">FSTools</a>.<a href="#FSTools.DeleteFiles">DeleteFiles</a>
+</h2>
+<p> Delete files</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DeleteFiles* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_8EA89E40"><a name="FSTools.RenameFiles"></a><a href="#FSTools">FSTools</a>.<a href="#FSTools.RenameFiles">RenameFiles</a>
+</h2>
+<p> Rename files.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RenameFiles* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_8EA8DC40"><a name="FSTools.CompareDirectories"></a><a href="#FSTools">FSTools</a>.<a href="#FSTools.CompareDirectories">CompareDirectories</a>
+</h2>
+<p> Compare filenames of two directories and display files that are not present in both directories</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CompareDirectories* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_8EA94C80"><a name="FSTools.CompareFiles"></a><a href="#FSTools">FSTools</a>.<a href="#FSTools.CompareFiles">CompareFiles</a>
+</h2>
+<p> Compare two files by byte-wise comparison of contents</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CompareFiles* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_8EA9A2C0"><a name="FSTools.CloseFiles"></a><a href="#FSTools">FSTools</a>.<a href="#FSTools.CloseFiles">CloseFiles</a>
+</h2>
+<p> Close files -- paradox: open (old) file and call Close method. Intended for systems in a host environment to explicitely release a file handle.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CloseFiles* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

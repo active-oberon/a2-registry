@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#CryptoSHA1">CryptoSHA1</a></p>
-<hr><h1 id="#_6EF37B00"><a name="CryptoSHA1"></a><a href="#ModuleList">Module</a> CryptoSHA1
+<hr><h1 id="#_D6076500"><a name="CryptoSHA1"></a><a href="#ModuleList">Module</a> CryptoSHA1
 </h1>
 <p> AUTHOR "G.F."; PURPOSE "SHA-1";</p>
 
@@ -44,21 +44,21 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_6EF40680"><a name="CryptoSHA1.HashSize"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.HashSize">HashSize</a>
+<hr><h2 id="#_D607F080"><a name="CryptoSHA1.HashSize"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.HashSize">HashSize</a>
 </h2>
 <p> hash size in bytes</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> HashSize*= 20</pre>
-<hr><h2 id="#_6EF44100"><a name="CryptoSHA1.BlockSize"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.BlockSize">BlockSize</a>
+<hr><h2 id="#_D6082B00"><a name="CryptoSHA1.BlockSize"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.BlockSize">BlockSize</a>
 </h2>
 <p> hash block size in bytes</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> BlockSize*= 64</pre>
-<hr><h2 id="#_6EF48000"><a name="CryptoSHA1.SHA1"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.SHA1">SHA1</a>
+<hr><h2 id="#_D6086A00"><a name="CryptoSHA1.SHA1"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.SHA1">SHA1</a>
 </h2>
 <p> SHA1 hash (value type implementation)</p>
 
@@ -72,7 +72,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_6EF54740"><a name="CryptoSHA1.SHA1.()"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.SHA1">SHA1</a>.<a href="#CryptoSHA1.SHA1.()">()</a>
+<hr><h3 id="#_D6093140"><a name="CryptoSHA1.SHA1.()"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.SHA1">SHA1</a>.<a href="#CryptoSHA1.SHA1.()">()</a>
 </h3>
 <p> Update the hash with a given data chunk</p>
 
@@ -87,14 +87,14 @@
 <dd> value to be hashed</dd>
 
 </dl>
-<hr><h3 id="#_6EF5E200"><a name="CryptoSHA1.SHA1.GetHash"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.SHA1">SHA1</a>.<a href="#CryptoSHA1.SHA1.GetHash">GetHash</a>
+<hr><h3 id="#_D609CC00"><a name="CryptoSHA1.SHA1.GetHash"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.SHA1">SHA1</a>.<a href="#CryptoSHA1.SHA1.GetHash">GetHash</a>
 </h3>
 <p> get the hashvalue of length HashSize</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetHash* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_6EF651C0"><a name="CryptoSHA1.Hash"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.Hash">Hash</a>
+<hr><h2 id="#_D60A3BC0"><a name="CryptoSHA1.Hash"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.Hash">Hash</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -107,21 +107,21 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_6EF70E40"><a name="CryptoSHA1.Hash.Update"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.Hash">Hash</a>.<a href="#CryptoSHA1.Hash.Update">Update</a>
+<hr><h3 id="#_D60AF840"><a name="CryptoSHA1.Hash.Update"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.Hash">Hash</a>.<a href="#CryptoSHA1.Hash.Update">Update</a>
 </h3>
 <p> data: value to be hashed</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Update* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)</pre>
-<hr><h3 id="#_6EF780C0"><a name="CryptoSHA1.Hash.GetHash"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.Hash">Hash</a>.<a href="#CryptoSHA1.Hash.GetHash">GetHash</a>
+<hr><h3 id="#_D60B6AC0"><a name="CryptoSHA1.Hash.GetHash"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.Hash">Hash</a>.<a href="#CryptoSHA1.Hash.GetHash">GetHash</a>
 </h3>
 <p> get the hashvalue of length SELF.size</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetHash* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_6EF7F0C0"><a name="CryptoSHA1.NewHash"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.NewHash">NewHash</a>
+<hr><h2 id="#_D60BDAC0"><a name="CryptoSHA1.NewHash"></a><a href="#CryptoSHA1">CryptoSHA1</a>.<a href="#CryptoSHA1.NewHash">NewHash</a>
 </h2>
 <p> get an instance of SHA1</p>
 

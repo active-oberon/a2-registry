@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#BitStreams">BitStreams</a></p>
+<hr><h1 id="#_A7E4B3C0"><a name="BitStreams"></a><a href="#ModuleList">Module</a> BitStreams
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#BitStreams.BitReader">BitReader</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#BitStreams.BitWriter">BitWriter</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A7E4EE80"><a name="BitStreams.BitReader"></a><a href="#BitStreams">BitStreams</a>.<a href="#BitStreams.BitReader">BitReader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BitReader* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& New (arch: <strong>Streams.Reader</strong>)<tr><td></td><td> Reset<tr><td></td><td> InBit (): <strong>INTEGER</strong><tr><td></td><td> InBits (n: <strong>INTEGER</strong>): <strong>INTEGER</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A7E57C00"><a name="BitStreams.BitWriter"></a><a href="#BitStreams">BitStreams</a>.<a href="#BitStreams.BitWriter">BitWriter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BitWriter* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (arch: <strong>Streams.Writer</strong>)<tr><td></td><td> OutBit (b: <strong>INTEGER</strong>)<tr><td></td><td> OutBits (c, n: <strong>INTEGER</strong>)<tr><td></td><td> Finish</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

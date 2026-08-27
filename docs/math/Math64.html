@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#Math64">Math64</a></p>
-<hr><h1 id="#_3069FE40"><a name="Math64"></a><a href="#ModuleList">Module</a> Math64
+<hr><h1 id="#_8A2F5280"><a name="Math64"></a><a href="#ModuleList">Module</a> Math64
 </h1>
 <p> portable</p>
 
@@ -104,10 +104,10 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_3072C500">
+<hr><h1 id="#_8A381940">
 </h1>
 <p> AUTHOR "?"; PURPOSE "Math utility module (FLOAT64)";</p>
-<hr><h2 id="#_3072EAC0"><a name="Math64.ValueRec"></a><a href="#Math64">Math64</a>.<a href="#Math64.ValueRec">ValueRec</a>
+<hr><h2 id="#_8A383F00"><a name="Math64.ValueRec"></a><a href="#Math64">Math64</a>.<a href="#Math64.ValueRec">ValueRec</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -119,84 +119,84 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_307344C0"><a name="Math64.Inf"></a><a href="#Math64">Math64</a>.<a href="#Math64.Inf">Inf</a>
+<hr><h2 id="#_8A389900"><a name="Math64.Inf"></a><a href="#Math64">Math64</a>.<a href="#Math64.Inf">Inf</a>
 </h2>
 <p> returns positive infinity if "sign" = 0 (default), negative infinity if sign <a name="0"></a></p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Inf* (sign= 0: <strong>INTEGER</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_3073BC40"><a name="Math64.NaN"></a><a href="#Math64">Math64</a>.<a href="#Math64.NaN">NaN</a>
+<hr><h2 id="#_8A391080"><a name="Math64.NaN"></a><a href="#Math64">Math64</a>.<a href="#Math64.NaN">NaN</a>
 </h2>
 <p> returns NaN value</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NaN* (): <strong>Value</strong></pre>
-<hr><h2 id="#_3073F8C0"><a name="Math64.iszero"></a><a href="#Math64">Math64</a>.<a href="#Math64.iszero">iszero</a>
+<hr><h2 id="#_8A394D00"><a name="Math64.iszero"></a><a href="#Math64">Math64</a>.<a href="#Math64.iszero">iszero</a>
 </h2>
 <p> reports whether "x" is zero. "sign" = 0: "x" is zero (default)? "sign"  0: "x" is positive zero? "sign" <a name="0:"></a> "x" is negative zero?</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> iszero* (x: <strong>Value</strong>; sign= 0: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_3074AC00"><a name="Math64.isinf"></a><a href="#Math64">Math64</a>.<a href="#Math64.isinf">isinf</a>
+<hr><h2 id="#_8A3A0040"><a name="Math64.isinf"></a><a href="#Math64">Math64</a>.<a href="#Math64.isinf">isinf</a>
 </h2>
 <p> reports whether "x" is infinity. "sign" = 0: "x" is infinity (default)? "sign"  0: "x" is positive infinity? "sign" <a name="0:"></a> "x" is negative infinity?</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> isinf* (x: <strong>Value</strong>; sign= 0: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_30755E80"><a name="Math64.isnan"></a><a href="#Math64">Math64</a>.<a href="#Math64.isnan">isnan</a>
+<hr><h2 id="#_8A3AB2C0"><a name="Math64.isnan"></a><a href="#Math64">Math64</a>.<a href="#Math64.isnan">isnan</a>
 </h2>
 <p> reports whether "x" is a "NaN" value.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> isnan* (x: <strong>Value</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_3075B5C0"><a name="Math64.copysign"></a><a href="#Math64">Math64</a>.<a href="#Math64.copysign">copysign</a>
+<hr><h2 id="#_8A3B0A00"><a name="Math64.copysign"></a><a href="#Math64">Math64</a>.<a href="#Math64.copysign">copysign</a>
 </h2>
 <p> returns a value with the magnitude of `x` and the sign of `s`</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> copysign* (x, s: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_30762E00"><a name="Math64.nextafter"></a><a href="#Math64">Math64</a>.<a href="#Math64.nextafter">nextafter</a>
+<hr><h2 id="#_8A3B8240"><a name="Math64.nextafter"></a><a href="#Math64">Math64</a>.<a href="#Math64.nextafter">nextafter</a>
 </h2>
 <p> returns the next value after x towards to y</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> nextafter* (x, y: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_307695C0"><a name="Math64.trunc"></a><a href="#Math64">Math64</a>.<a href="#Math64.trunc">trunc</a>
+<hr><h2 id="#_8A3BEA00"><a name="Math64.trunc"></a><a href="#Math64">Math64</a>.<a href="#Math64.trunc">trunc</a>
 </h2>
 <p> returns the integer part of "x"</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> trunc* (x: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_3076E900"><a name="Math64.modf"></a><a href="#Math64">Math64</a>.<a href="#Math64.modf">modf</a>
+<hr><h2 id="#_8A3C3D40"><a name="Math64.modf"></a><a href="#Math64">Math64</a>.<a href="#Math64.modf">modf</a>
 </h2>
 <p> Splits "x" into integer and fractional parts. Both parts have the same sign as "x". The integer part is stored in the "int" parameter, and the fractional part is returned by the function.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> modf* (x: <strong>Value</strong>; <strong>VAR</strong> int: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_3077B500"><a name="Math64.floor"></a><a href="#Math64">Math64</a>.<a href="#Math64.floor">floor</a>
+<hr><h2 id="#_8A3D0940"><a name="Math64.floor"></a><a href="#Math64">Math64</a>.<a href="#Math64.floor">floor</a>
 </h2>
 <p> Rounds the value of "x" and returns the greatest value less than or equal to "x"</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> floor* (x: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_30782E40"><a name="Math64.ceil"></a><a href="#Math64">Math64</a>.<a href="#Math64.ceil">ceil</a>
+<hr><h2 id="#_8A3D8280"><a name="Math64.ceil"></a><a href="#Math64">Math64</a>.<a href="#Math64.ceil">ceil</a>
 </h2>
 <p> Rounds the value of "x" and returns the least value greater than or equal to x</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ceil* (x: <strong>Value</strong>): <strong>Value</strong></pre>
-<hr><h2 id="#_3078A880"><a name="Math64.frac"></a><a href="#Math64">Math64</a>.<a href="#Math64.frac">frac</a>
+<hr><h2 id="#_8A3DFCC0"><a name="Math64.frac"></a><a href="#Math64">Math64</a>.<a href="#Math64.frac">frac</a>
 </h2>
 <p> returns the fractional part of "x"</p>
 

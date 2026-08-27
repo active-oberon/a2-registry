@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#User32">User32</a></p>
+<hr><h1 id="#_F1464C00"><a name="User32"></a><a href="#ModuleList">Module</a> User32
+</h1>
+<p> non-portable / source: Windows.User32.Mod</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#User32.WMCreate">WMCreate</a>= 1<tr><td></td><td>WMDestroy= 2<tr><td></td><td>WMMove= 3<tr><td></td><td>WMSize= 5<tr><td></td><td>WMActivate= 6<tr><td></td><td>WMSetFocus= 7<tr><td></td><td>WMKillFocus= 8<tr><td></td><td>WMPaint= 15<tr><td></td><td>WMClose= 16<tr><td></td><td>WMQuit= 18<tr><td></td><td>WMSetCursor= 32<tr><td></td><td>WMMouseActivate= 33<tr><td></td><td>WMGetMinMaxInfo= 36<tr><td></td><td>WMWindowPosChanging= 70<tr><td></td><td>WMGetIcon= 127<tr><td></td><td>WMSetIcon= 128<tr><td></td><td>WMNCHitTest= 132<tr><td></td><td>WMKeyFirst= 256<tr><td></td><td>WMKeyDown= 256<tr><td></td><td>WMKeyUp= 257<tr><td></td><td>WMChar= 258<tr><td></td><td>WMDeadChar= 259<tr><td></td><td>WMSysKeyDown= 260<tr><td></td><td>WMSysKeyUp= 261<tr><td></td><td>WMSysChar= 262<tr><td></td><td>WMSysDeadChar= 263<tr><td></td><td>WMKeyLast= 264<tr><td></td><td>WMCommand= 273<tr><td></td><td>WMMouseFirst= 512<tr><td></td><td>WMMouseMove= 512<tr><td></td><td>WMMouseLast= 525<tr><td></td><td>WMLButtonDown= 513<tr><td></td><td>WMLButtonUp= 514<tr><td></td><td>WMRButtonDown= 516<tr><td></td><td>WMRButtonUp= 517<tr><td></td><td>WMMButtonDown= 519<tr><td></td><td>WMMButtonUp= 520<tr><td></td><td>WMMouseWheel= 522<tr><td></td><td>WMXButtonDown= 523<tr><td></td><td>WMXButtonUp= 524<tr><td></td><td>WMDropFiles= 563<tr><td></td><td>WMCut= 768<tr><td></td><td>WMCopy= 769<tr><td></td><td>WMPaste= 302<tr><td></td><td>WMClear= 771<tr><td></td><td>WMUndo= 772<tr><td></td><td>WMUser= 1024<tr><td></td><td><a href="#User32.CSVRedraw">CSVRedraw</a>= 0<tr><td></td><td>CSHRedraw= 1<tr><td></td><td>CSOwnDC= 5<tr><td></td><td>CSSaveBits= 11<tr><td></td><td>CSGlobalClass= 14<tr><td></td><td><a href="#User32.WSMaximizeBox">WSMaximizeBox</a>= 16<tr><td></td><td>WSMinimizeBox= 17<tr><td></td><td>WSThickFrame= 18<tr><td></td><td>WSSysMenu= 19<tr><td></td><td>WSBorder= 23<tr><td></td><td>WSMaximize= 24<tr><td></td><td>WSVisible= 28<tr><td></td><td>WSMinimize= 29<tr><td></td><td>WSChild= 30<tr><td></td><td><a href="#User32.CWUseDefault">CWUseDefault</a>= SIGNED32(2147483648)<tr><td></td><td><a href="#User32.SizeRestored">SizeRestored</a>= 0<tr><td></td><td>SizeMinimized= 1<tr><td></td><td>SizeMaximized= 2<tr><td></td><td>SizeMaxshow= 3<tr><td></td><td>SizeMaxhide= 4<tr><td></td><td><a href="#User32.WAInactive">WAInactive</a>= 0<tr><td></td><td>WAActive= 1<tr><td></td><td>WAClickActive= 2<tr><td></td><td><a href="#User32.MAActivate">MAActivate</a>= 1<tr><td></td><td>MANoActivate= 3<tr><td></td><td><a href="#User32.SMCXScreen">SMCXScreen</a>= 0<tr><td></td><td>SMCYScreen= 1<tr><td></td><td>SMCYCaption= 4<tr><td></td><td>SMCXDlgFrame= 7<tr><td></td><td>SMCYDlgFrame= 8<tr><td></td><td>SMCXFixedFrame= SMCXDlgFrame<tr><td></td><td>SMCYFixedFrame= SMCYDlgFrame<tr><td></td><td>SMCYMenu= 15<tr><td></td><td>SMCXFrame= 32<tr><td></td><td>SMCYFrame= 33<tr><td></td><td>SMCMouseButtons= 43<tr><td></td><td><a href="#User32.HWNDDesktop">HWNDDesktop</a>= 0<tr><td></td><td>HWNDBroadcast= 65535<tr><td></td><td><a href="#User32.VKCancel">VKCancel</a>= 3<tr><td></td><td>VKBack= 8<tr><td></td><td>VKTab= 9<tr><td></td><td>VKClear= 12<tr><td></td><td>VKReturn= 13<tr><td></td><td>VKShift= 16<tr><td></td><td>VKControl= 17<tr><td></td><td>VKMenu= 18<tr><td></td><td>VKPause= 19<tr><td></td><td>VKCapital= 20<tr><td></td><td>VKEscape= 27<tr><td></td><td>VKPrior= 33<tr><td></td><td>VKNext= 34<tr><td></td><td>VKEnd= 35<tr><td></td><td>VKHome= 36<tr><td></td><td>VKLeft= 37<tr><td></td><td>VKUp= 38<tr><td></td><td>VKRight= 39<tr><td></td><td>VKDown= 40<tr><td></td><td>VKSelect= 41<tr><td></td><td>VKPrint= 42<tr><td></td><td>VKExecute= 43<tr><td></td><td>VKSnapshot= 44<tr><td></td><td>VKInsert= 45<tr><td></td><td>VKDelete= 46<tr><td></td><td>VKHelp= 47<tr><td></td><td>VKLWin= 91<tr><td></td><td>VKRWin= 92<tr><td></td><td>VKApps= 93<tr><td></td><td>VKF1= 112<tr><td></td><td>VKF2= 113<tr><td></td><td>VKF3= 114<tr><td></td><td>VKF4= 115<tr><td></td><td>VKF5= 116<tr><td></td><td>VKF6= 117<tr><td></td><td>VKF7= 118<tr><td></td><td>VKF8= 119<tr><td></td><td>VKF9= 120<tr><td></td><td>VKF10= 121<tr><td></td><td>VKF11= 122<tr><td></td><td>VKF12= 123<tr><td></td><td><a href="#User32.MKLButton">MKLButton</a>= 0<tr><td></td><td>MKRButton= 1<tr><td></td><td>MKShift= 2<tr><td></td><td>MKControl= 3<tr><td></td><td>MKMButton= 4<tr><td></td><td><a href="#User32.IDCArrow">IDCArrow</a>= 32512<tr><td></td><td>IDCWait= 32514<tr><td></td><td><a href="#User32.HTClient">HTClient</a>= 1<tr><td></td><td><a href="#User32.SWHide">SWHide</a>= 0<tr><td></td><td>SWShow= 5<tr><td></td><td>SWNormal= 1<tr><td></td><td>SWShowNormal= 1<tr><td></td><td>SWMinimize= 6<tr><td></td><td>SWShowMinimized= 2<tr><td></td><td>SWMaximize= 3<tr><td></td><td>SWShowMaximized= 3<tr><td></td><td>SWRestore= 9<tr><td></td><td>SWShowDefault= 10<tr><td></td><td><a href="#User32.SWPNoSize">SWPNoSize</a>= 0<tr><td></td><td>SWPNoMove= 1<tr><td></td><td>SWPNoZOrder= 2<tr><td></td><td>SWPNoRedraw= 3<tr><td></td><td>SWPNoActivate= 4<tr><td></td><td>SWPFrameChanged= 5<tr><td></td><td>SWPShowWindow= 6<tr><td></td><td>SWPHideWindow= 7<tr><td></td><td><a href="#User32.CFText">CFText</a>= 1<tr><td></td><td>CFBitmap= 2<tr><td></td><td>CFMetafilePict= 3<tr><td></td><td>CFDIB= 8<tr><td></td><td>CFUnicodeText= 13<tr><td></td><td>CFEnhMetafile= 14<tr><td></td><td>CFHDrop= 15<tr><td></td><td><a href="#User32.MFByCommand">MFByCommand</a>= {}<tr><td></td><td>MFByPosition= 10<tr><td></td><td>MFPopup= 4<tr><td></td><td>MFSeparator= 11<tr><td></td><td>MFEnabled= {}<tr><td></td><td>MFGrayed= 0<tr><td></td><td>MFDisabled= 1<tr><td></td><td>MFUnchecked= {}<tr><td></td><td>MFChecked= 3<tr><td></td><td>MFString= {}<tr><td></td><td><a href="#User32.MIIMID">MIIMID</a>= 1<tr><td></td><td>MIIMType= 4<tr><td></td><td><a href="#User32.IconSmall">IconSmall</a>= 0<tr><td></td><td>IconBig= 1<tr><td></td><td><a href="#User32.GWLWndProc">GWLWndProc</a>= -4<tr><td></td><td>GWLStyle= -16<tr><td></td><td>GWLExStyle= -20<tr><td></td><td><a href="#User32.MBOk">MBOk</a>= {}<tr><td></td><td>MBOkCancel= {0}<tr><td></td><td>MBAbortRetryIgnore= {1}<tr><td></td><td>MBYesNoCancel= {0,1}<tr><td></td><td>MBYesNo= {2}<tr><td></td><td>MBRetryCancel= {0,2}<tr><td></td><td>MBIconHand= {4}<tr><td></td><td>MBIconQuestion= {5}<tr><td></td><td>MBIconExclamation= {4,5}<tr><td></td><td>MBIconAsterisk= {6}<tr><td></td><td>MBIconWarning= MBIconExclamation<tr><td></td><td>MBIconError= MBIconHand<tr><td></td><td>MBIconInformation= MBIconAsterisk<tr><td></td><td>MBIconStop= MBIconHand<tr><td></td><td><a href="#User32.TPMLeftButton">TPMLeftButton</a>= {}<tr><td></td><td>TPMRightButton= 1<tr><td></td><td>TPMLeftAlign= {}<tr><td></td><td>TPMCenterAlign= 2<tr><td></td><td>TPMRightAlign= 3<tr><td></td><td>TPMTopAlign= {}<tr><td></td><td>TPMVCenterAlign= 4<tr><td></td><td>TPMBottomAlign= 5<tr><td></td><td>TPMHorizontal= {}<tr><td></td><td>TPMVertical= 6<tr><td></td><td>TPMNoNotify= 7<tr><td></td><td>TPMReturnCmd= 8<tr><td></td><td><a href="#User32.WHKeyboard">WHKeyboard</a>= 2<tr><td></td><td><a href="#User32.ColorWindow">ColorWindow</a>= 5<tr><td></td><td>ColorWindowText= 8<tr><td></td><td>ColorBtnFace= 15<tr><td></td><td>ColorBtnShadow= 16<tr><td></td><td>Color3DLight= 22<tr><td></td><td>Color3DFace= ColorBtnFace<tr><td></td><td>Color3DShadow= ColorBtnShadow<tr><th align='left'>type declarations</th><td><a href="#User32.HWND">HWND</a> =<strong>Kernel32.HANDLE</strong><tr><td></td><td>HDC =<strong>Kernel32.HANDLE</strong><tr><td></td><td>HGDIObj =<strong>Kernel32.HANDLE</strong><tr><td></td><td>HFont =<strong>HGDIObj</strong><tr><td></td><td>HBrush =<strong>HGDIObj</strong><tr><td></td><td>HRgn =<strong>HGDIObj</strong><tr><td></td><td>HBitmap =<strong>HGDIObj</strong><tr><td></td><td>HIcon =<strong>Kernel32.HANDLE</strong><tr><td></td><td>HCursor =<strong>Kernel32.HANDLE</strong><tr><td></td><td>HMenu =<strong>Kernel32.HANDLE</strong><tr><td></td><td>HPalette =<strong>Kernel32.HANDLE</strong><tr><td></td><td>HAccel =<strong>Kernel32.HANDLE</strong><tr><td></td><td>HHook =<strong>Kernel32.HANDLE</strong><tr><td></td><td><a href="#User32.ColorRef">ColorRef</a> =<strong>SIGNED32</strong><tr><td></td><td><a href="#User32.Point">Point</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.PointL">PointL</a> =<strong>Point</strong><tr><td></td><td><a href="#User32.PointF">PointF</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.Rect">Rect</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.RectL">RectL</a> =<strong>Rect</strong><tr><td></td><td><a href="#User32.Size">Size</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.SizeL">SizeL</a> =<strong>Size</strong><tr><td></td><td><a href="#User32.MinMaxInfo">MinMaxInfo</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.Msg">Msg</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.WParam">WParam</a> =<strong>SIZE</strong><tr><td></td><td>LParam =<strong>SIZE</strong><tr><td></td><td><a href="#User32.LResult">LResult</a> =<strong>ADDRESS</strong><tr><td></td><td><a href="#User32.WndProc">WndProc</a> =<strong>PROCEDURE</strong>{WINAPI} (hwnd: <strong>HWND</strong>; uMsg: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>LResult</strong><tr><td></td><td><a href="#User32.WndClassEx">WndClassEx</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.WndEnumProc">WndEnumProc</a> =<strong>PROCEDURE</strong>{WINAPI} (hwnd: <strong>HWND</strong>; lParam: <strong>LParam</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.WindowPos">WindowPos</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.WindowPlacement">WindowPlacement</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.MenuItemInfo">MenuItemInfo</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.Accel">Accel</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#User32.HookProc">HookProc</a> =<strong>PROCEDURE</strong>{WINAPI} (code: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>LResult</strong><tr><td></td><td><a href="#User32.PaintStruct">PaintStruct</a> =<strong>RECORD</strong> <tr><th align='left'>variables</th><td><a href="#User32.BeginPaint">BeginPaint</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpPaint: <strong>PaintStruct</strong>): <strong>HDC</strong><tr><td></td><td><a href="#User32.BringWindowToTop">BringWindowToTop</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.CallNextHookEx">CallNextHookEx</a>: <strong>PROCEDURE</strong>{WINAPI} (hhk: <strong>HHook</strong>; nCode: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>LResult</strong><tr><td></td><td><a href="#User32.CloseClipboard">CloseClipboard</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.CountClipboardFormats">CountClipboardFormats</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.CreateAcceleratorTable">CreateAcceleratorTable</a>: <strong>PROCEDURE</strong>{WINAPI} (lpaccl: <strong>ADDRESS</strong>; cEntries: <strong>SIGNED32</strong>): <strong>HAccel</strong><tr><td></td><td><a href="#User32.CreateMenu">CreateMenu</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HMenu</strong><tr><td></td><td><a href="#User32.CreateWindowEx">CreateWindowEx</a>: <strong>PROCEDURE</strong>{WINAPI} (dwExStyle: <strong>SIGNED32</strong>; <strong>VAR</strong> lpClassName, lpWindowName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dwStyle: <strong>INTEGERSET</strong>; x, y, nWidth, nHeight: <strong>SIGNED32</strong>; hWndParent: <strong>HWND</strong>; hMenu: <strong>HMenu</strong>; hInstance: <strong>Kernel32.HINSTANCE</strong>; lpParam: <strong>LParam</strong>): <strong>HWND</strong><tr><td></td><td><a href="#User32.DefWindowProc">DefWindowProc</a>: <strong>WndProc</strong><tr><td></td><td><a href="#User32.DestroyAcceleratorTable">DestroyAcceleratorTable</a>: <strong>PROCEDURE</strong>{WINAPI} (hAccel: <strong>HAccel</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.DestroyCursor">DestroyCursor</a>: <strong>PROCEDURE</strong>{WINAPI} (hCursor: <strong>HCursor</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.DestroyIcon">DestroyIcon</a>: <strong>PROCEDURE</strong>{WINAPI} (hIcon: <strong>HIcon</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.DestroyMenu">DestroyMenu</a>: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.DestroyWindow">DestroyWindow</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.DispatchMessage">DispatchMessage</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpMsg: <strong>Msg</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.DrawMenuBar">DrawMenuBar</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.EmptyClipboard">EmptyClipboard</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.EnableWindow">EnableWindow</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; bEnable: <strong>Kernel32.BOOL</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.EndPaint">EndPaint</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpPaint: <strong>PaintStruct</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td>EnumClipboardFormats: <strong>PROCEDURE</strong>{WINAPI} (format: <strong>UNSIGNED32</strong>): <strong>UNSIGNED32</strong><tr><td></td><td><a href="#User32.EnumWindows">EnumWindows</a>: <strong>PROCEDURE</strong>{WINAPI} (lpEnumProc: <strong>WndEnumProc</strong>; lParam: <strong>LParam</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.EqualRect">EqualRect</a>: <strong>PROCEDURE</strong>{WINAPI} (lprc1, lprc2: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.GetAsyncKeyState">GetAsyncKeyState</a>: <strong>PROCEDURE</strong>{WINAPI} (vKey: <strong>SIGNED32</strong>): <strong>SIGNED16</strong><tr><td></td><td><a href="#User32.GetClientRect">GetClientRect</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpRect: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.GetClipboardData">GetClipboardData</a>: <strong>PROCEDURE</strong>{WINAPI} (uFormat: <strong>UNSIGNED32</strong>): <strong>Kernel32.HANDLE</strong><tr><td></td><td><a href="#User32.GetClipboardFormatName">GetClipboardFormatName</a>: <strong>PROCEDURE</strong>{WINAPI} (format: <strong>UNSIGNED32</strong>; <strong>VAR</strong> lpszFormatName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; cchMaxCount: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.GetCursorPos">GetCursorPos</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPoint: <strong>Point</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.GetDC">GetDC</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HDC</strong><tr><td></td><td><a href="#User32.GetFocus">GetFocus</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HWND</strong><tr><td></td><td><a href="#User32.GetForegroundWindow">GetForegroundWindow</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HWND</strong><tr><td></td><td><a href="#User32.GetKeyState">GetKeyState</a>: <strong>PROCEDURE</strong>{WINAPI} (vKey: <strong>SIGNED32</strong>): <strong>SIGNED16</strong><tr><td></td><td><a href="#User32.GetMenu">GetMenu</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HMenu</strong><tr><td></td><td><a href="#User32.GetMenuItemInfo">GetMenuItemInfo</a>: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uItem: <strong>SIGNED32</strong>; fyByPosition: <strong>Kernel32.BOOL</strong>; <strong>VAR</strong> lpmii: <strong>MenuItemInfo</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.GetMenuString">GetMenuString</a>: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uIDItem: <strong>SIGNED32</strong>; <strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nMaxCount: <strong>SIGNED32</strong>; uFlag: <strong>DWORD</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.GetMessage">GetMessage</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpMsg: <strong>Msg</strong>; hWnd: <strong>HWND</strong>; wMsgFilterMin, wMsgFilterMax: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.GetParent">GetParent</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HWND</strong><tr><td></td><td><a href="#User32.GetProp">GetProp</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; lpString: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.GetSysColor">GetSysColor</a>: <strong>PROCEDURE</strong>{WINAPI} (nIndex: <strong>SIGNED32</strong>): <strong>ColorRef</strong><tr><td></td><td><a href="#User32.GetSystemMetrics">GetSystemMetrics</a>: <strong>PROCEDURE</strong>{WINAPI} (nIndex: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.GetWindowLong">GetWindowLong</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nIndex: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.GetWindowLongPtr">GetWindowLongPtr</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nIndex: <strong>SIGNED32</strong>): <strong>ADDRESS</strong><tr><td></td><td><a href="#User32.GetWindowPlacement">GetWindowPlacement</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpwndpl: <strong>WindowPlacement</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.GetWindowRect">GetWindowRect</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpRect: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.GetWindowRgn">GetWindowRgn</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> hRgn: <strong>HRgn</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.GetWindowText">GetWindowText</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nMaxCount: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.GetUpdateRect">GetUpdateRect</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpRect: <strong>Rect</strong>; bErase: <strong>Kernel32.BOOL</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.GetUpdateRgn">GetUpdateRgn</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> hRgn: <strong>HRgn</strong>; bErase: <strong>Kernel32.BOOL</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.InsertMenu">InsertMenu</a>: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uPosition: <strong>SIGNED32</strong>; uFlags: <strong>DWORD</strong>; uIDNewItem: <strong>SIGNED32</strong>; <strong>VAR</strong> lpNewItem: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.IntersectRect">IntersectRect</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lprcDst: <strong>Rect</strong>; lprcSrc1, lprcSrc2: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.InvalidateRect">InvalidateRect</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; lpRect: <strong>Rect</strong>; bErase: <strong>Kernel32.BOOL</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.IsChild">IsChild</a>: <strong>PROCEDURE</strong>{WINAPI} (hWndParent, hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.IsClipboardFormatAvailable">IsClipboardFormatAvailable</a>: <strong>PROCEDURE</strong>{WINAPI} (format: <strong>UNSIGNED32</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.LoadCursor">LoadCursor</a>: <strong>PROCEDURE</strong>{WINAPI} (hInstance: <strong>Kernel32.HINSTANCE</strong>; <strong>VAR</strong> lpCursorName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HCursor</strong><tr><td></td><td><a href="#User32.LoadCursorFromFile">LoadCursorFromFile</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HCursor</strong><tr><td></td><td><a href="#User32.LoadIcon">LoadIcon</a>: <strong>PROCEDURE</strong>{WINAPI} (hInstance: <strong>Kernel32.HINSTANCE</strong>; <strong>VAR</strong> lpIconName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HIcon</strong><tr><td></td><td><a href="#User32.MessageBeep">MessageBeep</a>: <strong>PROCEDURE</strong>{WINAPI} (uType: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.MessageBox">MessageBox</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpText, lpCaption: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; uType: <strong>DWORD</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.MoveWindow">MoveWindow</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; X, Y, nWidth, nHeight: <strong>SIGNED32</strong>; bRepaint: <strong>Kernel32.BOOL</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.OffsetRect">OffsetRect</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lprc: <strong>Rect</strong>; dx, dy: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.OpenClipboard">OpenClipboard</a>: <strong>PROCEDURE</strong>{WINAPI} (hWndNewOwner: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.PtInRect">PtInRect</a>: <strong>PROCEDURE</strong>{WINAPI} (lprc: <strong>Rect</strong>; ptx, pty: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.PostMessage">PostMessage</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; Msg: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.PostQuitMessage">PostQuitMessage</a>: <strong>PROCEDURE</strong>{WINAPI} (nExitCode: <strong>SIGNED32</strong>)<tr><td></td><td><a href="#User32.RegisterClassEx">RegisterClassEx</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpwcx: <strong>WndClassEx</strong>): <strong>Kernel32.ATOM</strong><tr><td></td><td><a href="#User32.RegisterHotKey">RegisterHotKey</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; id: <strong>SIGNED32</strong>; fsmodifiers, vk: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.RegisterClipboardFormat">RegisterClipboardFormat</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpszFormat: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>UNSIGNED32</strong><tr><td></td><td><a href="#User32.RegisterWindowMessage">RegisterWindowMessage</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.ReleaseCapture">ReleaseCapture</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.ReleaseDC">ReleaseDC</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; hDC: <strong>HDC</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.RemoveProp">RemoveProp</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; lpString: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.ScreenToClient">ScreenToClient</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpPoint: <strong>Point</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.SendMessage">SendMessage</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; Msg: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>LResult</strong><tr><td></td><td><a href="#User32.SetCapture">SetCapture</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HWND</strong><tr><td></td><td><a href="#User32.SetClipboardData">SetClipboardData</a>: <strong>PROCEDURE</strong>{WINAPI} (uFormat: <strong>UNSIGNED32</strong>; hMem: <strong>Kernel32.HANDLE</strong>): <strong>Kernel32.HANDLE</strong><tr><td></td><td><a href="#User32.SetCursor">SetCursor</a>: <strong>PROCEDURE</strong>{WINAPI} (hCursor: <strong>HCursor</strong>): <strong>HCursor</strong><tr><td></td><td><a href="#User32.SetCursorPos">SetCursorPos</a>: <strong>PROCEDURE</strong>{WINAPI} (X, Y: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.SetFocus">SetFocus</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HWND</strong><tr><td></td><td><a href="#User32.SetForegroundWindow">SetForegroundWindow</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.SetMenu">SetMenu</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; hMenu: <strong>HMenu</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.SetMenuItemInfo">SetMenuItemInfo</a>: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uItem: <strong>SIGNED32</strong>; fyByPosition: <strong>Kernel32.BOOL</strong>; <strong>VAR</strong> lpmii: <strong>MenuItemInfo</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.SetProcessDPIAware">SetProcessDPIAware</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.SetProp">SetProp</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; lpString, hData: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.SetWindowsHookEx">SetWindowsHookEx</a>: <strong>PROCEDURE</strong>{WINAPI} (idHook: <strong>SIGNED32</strong>; lpfn: <strong>HookProc</strong>; hMod: <strong>Kernel32.HINSTANCE</strong>; dwThreadId: <strong>SIGNED32</strong>): <strong>HHook</strong><tr><td></td><td><a href="#User32.SetWindowLong">SetWindowLong</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nIndex, dwNewLong: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.SetWindowLongPtr">SetWindowLongPtr</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nIndex: <strong>SIGNED32</strong>; dwNewLong: <strong>ADDRESS</strong>): <strong>ADDRESS</strong><tr><td></td><td><a href="#User32.SetWindowPos">SetWindowPos</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd, hWndInsertAfter: <strong>HWND</strong>; X, Y, cx, cy: <strong>SIGNED32</strong>; uFlags: <strong>DWORD</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.SetWindowRgn">SetWindowRgn</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; hRgn: <strong>HRgn</strong>; bRedraw: <strong>Kernel32.BOOL</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.SetWindowText">SetWindowText</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.ShowCursor">ShowCursor</a>: <strong>PROCEDURE</strong>{WINAPI} (bShow: <strong>Kernel32.BOOL</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.ShowWindow">ShowWindow</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nCmdShow: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.ShowWindowAsync">ShowWindowAsync</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nCmdShow: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.TrackPopupMenu">TrackPopupMenu</a>: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uFlags: <strong>DWORD</strong>; x, y, nReserved: <strong>SIGNED32</strong>; hWnd: <strong>HWND</strong>; <strong>VAR</strong> prcRect: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.TranslateAccelerator">TranslateAccelerator</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; hAccTable: <strong>HAccel</strong>; <strong>VAR</strong> lpMsg: <strong>Msg</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#User32.TranslateMessage">TranslateMessage</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpMsg: <strong>Msg</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.UnhookWindowsHookEx">UnhookWindowsHookEx</a>: <strong>PROCEDURE</strong>{WINAPI} (hhk: <strong>HHook</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.UnregisterClass">UnregisterClass</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpClassName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hInstance: <strong>Kernel32.HINSTANCE</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.UpdateWindow">UpdateWindow</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td><a href="#User32.ValidateRect">ValidateRect</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpRect: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong><tr><td></td><td>GetConsoleWindow: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#User32.EqualSize">EqualSize</a> (<strong>VAR</strong> a, b: <strong>Size</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_F16D0FC0">
+</h1><hr><h2 id="#_F16D1780"><a name="User32.WMCreate"></a><a href="#User32">User32</a>.<a href="#User32.WMCreate">WMCreate</a>
+</h2>
+<p> window messages</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> WMCreate*= 1</pre>
+<hr><h2 id="#_F16D4980"><a name="User32.CSVRedraw"></a><a href="#User32">User32</a>.<a href="#User32.CSVRedraw">CSVRedraw</a>
+</h2>
+<p> WndClass style values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CSVRedraw*= 0</pre>
+<hr><h2 id="#_F16D8080"><a name="User32.WSMaximizeBox"></a><a href="#User32">User32</a>.<a href="#User32.WSMaximizeBox">WSMaximizeBox</a>
+</h2>
+<p> CreateWindow dwStyle values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> WSMaximizeBox*= 16</pre>
+<hr><h2 id="#_F16DB6C0"><a name="User32.CWUseDefault"></a><a href="#User32">User32</a>.<a href="#User32.CWUseDefault">CWUseDefault</a>
+</h2>
+<p> CreateWindow default value for x, y, nWidth, nHeight</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CWUseDefault*= SIGNED32(2147483648)</pre>
+<hr><h2 id="#_F16E0940"><a name="User32.SizeRestored"></a><a href="#User32">User32</a>.<a href="#User32.SizeRestored">SizeRestored</a>
+</h2>
+<p> WMSize wParam values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SizeRestored*= 0</pre>
+<hr><h2 id="#_F16E3F80"><a name="User32.WAInactive"></a><a href="#User32">User32</a>.<a href="#User32.WAInactive">WAInactive</a>
+</h2>
+<p> WMActivate LoWord(wParam) values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> WAInactive*= 0</pre>
+<hr><h2 id="#_F16E75C0"><a name="User32.MAActivate"></a><a href="#User32">User32</a>.<a href="#User32.MAActivate">MAActivate</a>
+</h2>
+<p> WMmouseActivate return codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MAActivate*= 1</pre>
+<hr><h2 id="#_F16EAD00"><a name="User32.SMCXScreen"></a><a href="#User32">User32</a>.<a href="#User32.SMCXScreen">SMCXScreen</a>
+</h2>
+<p> GetSystemMetrics nIndex values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SMCXScreen*= 0</pre>
+<hr><h2 id="#_F16EE340"><a name="User32.HWNDDesktop"></a><a href="#User32">User32</a>.<a href="#User32.HWNDDesktop">HWNDDesktop</a>
+</h2>
+<p> Predefined HWND values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HWNDDesktop*= 0</pre>
+<hr><h2 id="#_F16F1980"><a name="User32.VKCancel"></a><a href="#User32">User32</a>.<a href="#User32.VKCancel">VKCancel</a>
+</h2>
+<p> virtual key codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> VKCancel*= 3</pre>
+<hr><h2 id="#_F16F4FC0"><a name="User32.MKLButton"></a><a href="#User32">User32</a>.<a href="#User32.MKLButton">MKLButton</a>
+</h2>
+<p> WMMouse... wParam values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MKLButton*= 0</pre>
+<hr><h2 id="#_F16F8600"><a name="User32.IDCArrow"></a><a href="#User32">User32</a>.<a href="#User32.IDCArrow">IDCArrow</a>
+</h2>
+<p> predefined cursors/icons fo LoadCursor/LoadIcon</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> IDCArrow*= 32512</pre>
+<hr><h2 id="#_F16FC200"><a name="User32.HTClient"></a><a href="#User32">User32</a>.<a href="#User32.HTClient">HTClient</a>
+</h2>
+<p> WMNCHitTest return values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HTClient*= 1</pre>
+<hr><h2 id="#_F16FF840"><a name="User32.SWHide"></a><a href="#User32">User32</a>.<a href="#User32.SWHide">SWHide</a>
+</h2>
+<p> ShowWindow nCmdShow values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SWHide*= 0</pre>
+<hr><h2 id="#_F1702E80"><a name="User32.SWPNoSize"></a><a href="#User32">User32</a>.<a href="#User32.SWPNoSize">SWPNoSize</a>
+</h2>
+<p> SetWindowPos uFlags values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SWPNoSize*= 0</pre>
+<hr><h2 id="#_F17064C0"><a name="User32.CFText"></a><a href="#User32">User32</a>.<a href="#User32.CFText">CFText</a>
+</h2>
+<p> clipboard formats</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CFText*= 1</pre>
+<hr><h2 id="#_F17096C0"><a name="User32.MFByCommand"></a><a href="#User32">User32</a>.<a href="#User32.MFByCommand">MFByCommand</a>
+</h2>
+<p> InsertMenu uFlags values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MFByCommand*= {}</pre>
+<hr><h2 id="#_F170CFC0"><a name="User32.MIIMID"></a><a href="#User32">User32</a>.<a href="#User32.MIIMID">MIIMID</a>
+</h2>
+<p> MenuItemInfo fMask values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MIIMID*= 1</pre>
+<hr><h2 id="#_F1710600"><a name="User32.IconSmall"></a><a href="#User32">User32</a>.<a href="#User32.IconSmall">IconSmall</a>
+</h2>
+<p> WMSetIcon wPaam values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> IconSmall*= 0</pre>
+<hr><h2 id="#_F1713DC0"><a name="User32.GWLWndProc"></a><a href="#User32">User32</a>.<a href="#User32.GWLWndProc">GWLWndProc</a>
+</h2>
+<p> GetWindowLong/SetWindowLong nIndex values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> GWLWndProc*= -4</pre>
+<hr><h2 id="#_F1717740"><a name="User32.MBOk"></a><a href="#User32">User32</a>.<a href="#User32.MBOk">MBOk</a>
+</h2>
+<p> MessageBox uType values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MBOk*= {}</pre>
+<hr><h2 id="#_F171B040"><a name="User32.TPMLeftButton"></a><a href="#User32">User32</a>.<a href="#User32.TPMLeftButton">TPMLeftButton</a>
+</h2>
+<p> TrackPopupMenu uFlags values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TPMLeftButton*= {}</pre>
+<hr><h2 id="#_F171E940"><a name="User32.WHKeyboard"></a><a href="#User32">User32</a>.<a href="#User32.WHKeyboard">WHKeyboard</a>
+</h2>
+<p> SetWindowsHookEx idHook values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> WHKeyboard*= 2</pre>
+<hr><h2 id="#_F1721F80"><a name="User32.ColorWindow"></a><a href="#User32">User32</a>.<a href="#User32.ColorWindow">ColorWindow</a>
+</h2>
+<p> GetSysColor</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ColorWindow*= 5</pre>
+<hr><h2 id="#_F1724E00"><a name="User32.HWND"></a><a href="#User32">User32</a>.<a href="#User32.HWND">HWND</a>
+</h2>
+<p> handle types for different win and gdi objects</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HWND* =<strong>Kernel32.HANDLE</strong></pre>
+<hr><h2 id="#_F1729900"><a name="User32.ColorRef"></a><a href="#User32">User32</a>.<a href="#User32.ColorRef">ColorRef</a>
+</h2>
+<p> The COLORREF value is used to specify an RGB color.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ColorRef* =<strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F172EB00"><a name="User32.Point"></a><a href="#User32">User32</a>.<a href="#User32.Point">Point</a>
+</h2>
+<p> The POINT structure defines the x- and y- coordinates of a point.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Point* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>x: <strong>SIGNED32</strong><tr><td></td><td>y: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1736E40"><a name="User32.PointL"></a><a href="#User32">User32</a>.<a href="#User32.PointL">PointL</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PointL* =<strong>Point</strong></pre>
+<hr><h2 id="#_F1739180"><a name="User32.PointF"></a><a href="#User32">User32</a>.<a href="#User32.PointF">PointF</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PointF* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>x: <strong>FLOAT32</strong><tr><td></td><td>y: <strong>FLOAT32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F173DCC0"><a name="User32.Rect"></a><a href="#User32">User32</a>.<a href="#User32.Rect">Rect</a>
+</h2>
+<p> The RECT structure defines the coordinates of the upper-left and lower-right corners of a rectangle.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Rect* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>left: <strong>SIGNED32</strong><tr><td></td><td>top: <strong>SIGNED32</strong><tr><td></td><td>right: <strong>SIGNED32</strong><tr><td></td><td>bottom: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1748A80"><a name="User32.RectL"></a><a href="#User32">User32</a>.<a href="#User32.RectL">RectL</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RectL* =<strong>Rect</strong></pre>
+<hr><h2 id="#_F174ADC0"><a name="User32.Size"></a><a href="#User32">User32</a>.<a href="#User32.Size">Size</a>
+</h2>
+<p> The SIZE structure specifies the width and height of a rectangle.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Size* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>cx: <strong>SIGNED32</strong><tr><td></td><td>cy: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1752D80"><a name="User32.SizeL"></a><a href="#User32">User32</a>.<a href="#User32.SizeL">SizeL</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SizeL* =<strong>Size</strong></pre>
+<hr><h2 id="#_F17550C0"><a name="User32.MinMaxInfo"></a><a href="#User32">User32</a>.<a href="#User32.MinMaxInfo">MinMaxInfo</a>
+</h2>
+<p> The MINMAXINFO structure contains information about a window's maximized size and position and its minimum and maximum tracking size.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MinMaxInfo* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ptReserved: <strong>Point</strong><tr><td></td><td>ptMaxSize: <strong>Point</strong><tr><td></td><td>ptMaxPosition: <strong>Point</strong><tr><td></td><td>ptMinTrackSize: <strong>Point</strong><tr><td></td><td>ptMaxTrackSize: <strong>Point</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1761B40"><a name="User32.Msg"></a><a href="#User32">User32</a>.<a href="#User32.Msg">Msg</a>
+</h2>
+<p> The MSG structure contains message information from a thread's message queue.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Msg* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>hwnd: <strong>HWND</strong><tr><td></td><td>message: <strong>SIGNED32</strong><tr><td></td><td>wParam: <strong>WParam</strong><tr><td></td><td>lParam: <strong>LParam</strong><tr><td></td><td>time: <strong>SIGNED32</strong><tr><td></td><td>point: <strong>Point</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F176D600"><a name="User32.WParam"></a><a href="#User32">User32</a>.<a href="#User32.WParam">WParam</a>
+</h2>
+<p> A 32-bit value passed as a parameter to a window procedure or callback function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WParam* =<strong>SIZE</strong></pre>
+<hr><h2 id="#_F1773780"><a name="User32.LResult"></a><a href="#User32">User32</a>.<a href="#User32.LResult">LResult</a>
+</h2>
+<p> A 32-bit value returned from a window procedure or callback function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LResult* =<strong>ADDRESS</strong></pre>
+<hr><h2 id="#_F1778E80"><a name="User32.WndProc"></a><a href="#User32">User32</a>.<a href="#User32.WndProc">WndProc</a>
+</h2>
+<p> A 32-bit pointer to a window procedure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WndProc* =<strong>PROCEDURE</strong>{WINAPI} (hwnd: <strong>HWND</strong>; uMsg: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>LResult</strong></pre>
+<hr><h2 id="#_F1781CC0"><a name="User32.WndClassEx"></a><a href="#User32">User32</a>.<a href="#User32.WndClassEx">WndClassEx</a>
+</h2>
+<p> The WNDCLASSEX structure contains window class information. It is used with the RegisterClassEx and GetClassInfoEx functions.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WndClassEx* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>cbSize: <strong>SIGNED32</strong><tr><td></td><td>style: <strong>INTEGERSET</strong><tr><td></td><td>lpfnWndProc: <strong>WndProc</strong><tr><td></td><td>cbClsExtra: <strong>SIGNED32</strong><tr><td></td><td>cbWndExtra: <strong>SIGNED32</strong><tr><td></td><td>hInstance: <strong>Kernel32.HINSTANCE</strong><tr><td></td><td>hIcon: <strong>HIcon</strong><tr><td></td><td>hCursor: <strong>HCursor</strong><tr><td></td><td>hbrBackground: <strong>HBrush</strong><tr><td></td><td>lpszMenuName: <strong>Kernel32.LPSTR</strong><tr><td></td><td>lpszClassName: <strong>Kernel32.LPSTR</strong><tr><td></td><td>hIconSm: <strong>HIcon</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F1794200"><a name="User32.WndEnumProc"></a><a href="#User32">User32</a>.<a href="#User32.WndEnumProc">WndEnumProc</a>
+</h2>
+<p> Application-defined callback function used with the EnumWindows.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WndEnumProc* =<strong>PROCEDURE</strong>{WINAPI} (hwnd: <strong>HWND</strong>; lParam: <strong>LParam</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F179B440"><a name="User32.WindowPos"></a><a href="#User32">User32</a>.<a href="#User32.WindowPos">WindowPos</a>
+</h2>
+<p> The WINDOWPOS structure contains information about the size and position of a window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WindowPos* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>hwnd: <strong>HWND</strong><tr><td></td><td>hwndInsertAfter: <strong>HWND</strong><tr><td></td><td>x: <strong>SIGNED32</strong><tr><td></td><td>y: <strong>SIGNED32</strong><tr><td></td><td>cx: <strong>SIGNED32</strong><tr><td></td><td>cy: <strong>SIGNED32</strong><tr><td></td><td>flags: <strong>INTEGERSET</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F17A84C0"><a name="User32.WindowPlacement"></a><a href="#User32">User32</a>.<a href="#User32.WindowPlacement">WindowPlacement</a>
+</h2>
+<p> The WINDOWPLACEMENT structure contains information about the placement of a window on the screen.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WindowPlacement* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>length: <strong>SIGNED32</strong><tr><td></td><td>flags: <strong>DWORD</strong><tr><td></td><td>showCmd: <strong>SIGNED32</strong><tr><td></td><td>ptMinPosition: <strong>Point</strong><tr><td></td><td>ptMaxPosition: <strong>Point</strong><tr><td></td><td>rcNormalPosition: <strong>Rect</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F17B4A00"><a name="User32.MenuItemInfo"></a><a href="#User32">User32</a>.<a href="#User32.MenuItemInfo">MenuItemInfo</a>
+</h2>
+<p> The MENUITEMINFO structure contains information about a menu item.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MenuItemInfo* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>cbSize: <strong>SIGNED32</strong><tr><td></td><td>fMask: <strong>DWORD</strong><tr><td></td><td>fType: <strong>DWORD</strong><tr><td></td><td>fState: <strong>DWORD</strong><tr><td></td><td>wID: <strong>SIGNED32</strong><tr><td></td><td>hSubMenu: <strong>HMenu</strong><tr><td></td><td>hbmpChecked: <strong>HBitmap</strong><tr><td></td><td>hbmpUnchecked: <strong>HBitmap</strong><tr><td></td><td>dwItemData: <strong>SIGNED32</strong><tr><td></td><td>dwTypeData: <strong>Kernel32.LPSTR</strong><tr><td></td><td>cch: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F17C4600"><a name="User32.Accel"></a><a href="#User32">User32</a>.<a href="#User32.Accel">Accel</a>
+</h2>
+<p> The ACCEL structure defines an accelerator key used in an accelerator table.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Accel* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fVirt: <strong>CHAR</strong><tr><td></td><td>key: <strong>SIGNED16</strong><tr><td></td><td>cmd: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F17CD800"><a name="User32.HookProc"></a><a href="#User32">User32</a>.<a href="#User32.HookProc">HookProc</a>
+</h2>
+<p> Proctype for SetWindowsHook(Ex)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HookProc* =<strong>PROCEDURE</strong>{WINAPI} (code: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>LResult</strong></pre>
+<hr><h2 id="#_F17D4700"><a name="User32.PaintStruct"></a><a href="#User32">User32</a>.<a href="#User32.PaintStruct">PaintStruct</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PaintStruct* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>hdc: <strong>HDC</strong><tr><td></td><td>fErase: <strong>Kernel32.BOOL</strong><tr><td></td><td>rcPaint: <strong>Rect</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_F17DA3C0"><a name="User32.BeginPaint"></a><a href="#User32">User32</a>.<a href="#User32.BeginPaint">BeginPaint</a>
+</h2>
+<p> The BeginPaint function prepares the specified window for painting and fills a PAINTSTRUCT structure with information about the painting.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> BeginPaint-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpPaint: <strong>PaintStruct</strong>): <strong>HDC</strong></pre>
+<hr><h2 id="#_F17E4880"><a name="User32.BringWindowToTop"></a><a href="#User32">User32</a>.<a href="#User32.BringWindowToTop">BringWindowToTop</a>
+</h2>
+<p> The BringWindowToTop function brings the specified window to the top of the Z order.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> BringWindowToTop-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F17EC740"><a name="User32.CallNextHookEx"></a><a href="#User32">User32</a>.<a href="#User32.CallNextHookEx">CallNextHookEx</a>
+</h2>
+<p> The CallNextHookEx function passes the hook information to the next hook procedure in the current hook chain.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CallNextHookEx-: <strong>PROCEDURE</strong>{WINAPI} (hhk: <strong>HHook</strong>; nCode: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>LResult</strong></pre>
+<hr><h2 id="#_F17F7D80"><a name="User32.CloseClipboard"></a><a href="#User32">User32</a>.<a href="#User32.CloseClipboard">CloseClipboard</a>
+</h2>
+<p> The CloseClipboard function closes the clipboard.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CloseClipboard-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F17FD440"><a name="User32.CountClipboardFormats"></a><a href="#User32">User32</a>.<a href="#User32.CountClipboardFormats">CountClipboardFormats</a>
+</h2>
+<p> Retrieves the number of different data formats currently on the clipboard</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CountClipboardFormats-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1803F00"><a name="User32.CreateAcceleratorTable"></a><a href="#User32">User32</a>.<a href="#User32.CreateAcceleratorTable">CreateAcceleratorTable</a>
+</h2>
+<p> The CreateAcceleratorTable function creates an accelerator table.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CreateAcceleratorTable-: <strong>PROCEDURE</strong>{WINAPI} (lpaccl: <strong>ADDRESS</strong>; cEntries: <strong>SIGNED32</strong>): <strong>HAccel</strong></pre>
+<hr><h2 id="#_F180B140"><a name="User32.CreateMenu"></a><a href="#User32">User32</a>.<a href="#User32.CreateMenu">CreateMenu</a>
+</h2>
+<p> The CreateMenu function creates a menu.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CreateMenu-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HMenu</strong></pre>
+<hr><h2 id="#_F1810800"><a name="User32.CreateWindowEx"></a><a href="#User32">User32</a>.<a href="#User32.CreateWindowEx">CreateWindowEx</a>
+</h2>
+<p> The CreateWindow function creates an overlapped, pop-up, or child window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CreateWindowEx-: <strong>PROCEDURE</strong>{WINAPI} (dwExStyle: <strong>SIGNED32</strong>; <strong>VAR</strong> lpClassName, lpWindowName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dwStyle: <strong>INTEGERSET</strong>; x, y, nWidth, nHeight: <strong>SIGNED32</strong>; hWndParent: <strong>HWND</strong>; hMenu: <strong>HMenu</strong>; hInstance: <strong>Kernel32.HINSTANCE</strong>; lpParam: <strong>LParam</strong>): <strong>HWND</strong></pre>
+<hr><h2 id="#_F18204C0"><a name="User32.DefWindowProc"></a><a href="#User32">User32</a>.<a href="#User32.DefWindowProc">DefWindowProc</a>
+</h2>
+<p> The DefWindowProc function calls the default window procedure to provide default processing for any window messages that an application does not process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DefWindowProc-: <strong>WndProc</strong></pre>
+<hr><h2 id="#_F18284C0"><a name="User32.DestroyAcceleratorTable"></a><a href="#User32">User32</a>.<a href="#User32.DestroyAcceleratorTable">DestroyAcceleratorTable</a>
+</h2>
+<p> The DestroyAcceleratorTable function destroys an accelerator table.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DestroyAcceleratorTable-: <strong>PROCEDURE</strong>{WINAPI} (hAccel: <strong>HAccel</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F182E880"><a name="User32.DestroyCursor"></a><a href="#User32">User32</a>.<a href="#User32.DestroyCursor">DestroyCursor</a>
+</h2>
+<p> The DestroyCursor function destroys a cursor and frees any memory the cursor occupied.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DestroyCursor-: <strong>PROCEDURE</strong>{WINAPI} (hCursor: <strong>HCursor</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F18363C0"><a name="User32.DestroyIcon"></a><a href="#User32">User32</a>.<a href="#User32.DestroyIcon">DestroyIcon</a>
+</h2>
+<p> The DestroyIcon function destroys an icon and frees any memory the icon occupied.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DestroyIcon-: <strong>PROCEDURE</strong>{WINAPI} (hIcon: <strong>HIcon</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F183DF00"><a name="User32.DestroyMenu"></a><a href="#User32">User32</a>.<a href="#User32.DestroyMenu">DestroyMenu</a>
+</h2>
+<p> The DestroyMenu function destroys the specified menu and frees any memory that the menu occupies.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DestroyMenu-: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1846140"><a name="User32.DestroyWindow"></a><a href="#User32">User32</a>.<a href="#User32.DestroyWindow">DestroyWindow</a>
+</h2>
+<p> The DestroyWindow function destroys the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DestroyWindow-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F184C500"><a name="User32.DispatchMessage"></a><a href="#User32">User32</a>.<a href="#User32.DispatchMessage">DispatchMessage</a>
+</h2>
+<p> The DispatchMessage function dispatches a message to a window procedure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DispatchMessage-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpMsg: <strong>Msg</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F18537C0"><a name="User32.DrawMenuBar"></a><a href="#User32">User32</a>.<a href="#User32.DrawMenuBar">DrawMenuBar</a>
+</h2>
+<p> The DrawMenuBar function redraws the menu bar of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DrawMenuBar-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F185AC00"><a name="User32.EmptyClipboard"></a><a href="#User32">User32</a>.<a href="#User32.EmptyClipboard">EmptyClipboard</a>
+</h2>
+<p> The EmptyClipboard function empties the clipboard and frees handles to data in the clipboard.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> EmptyClipboard-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1862140"><a name="User32.EnableWindow"></a><a href="#User32">User32</a>.<a href="#User32.EnableWindow">EnableWindow</a>
+</h2>
+<p> The EnableWindow function enables or disables mouse and keyboard input to the specified window or control.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> EnableWindow-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; bEnable: <strong>Kernel32.BOOL</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F186B600"><a name="User32.EndPaint"></a><a href="#User32">User32</a>.<a href="#User32.EndPaint">EndPaint</a>
+</h2>
+<p> The EndPaint function marks the end of painting in the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> EndPaint-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpPaint: <strong>PaintStruct</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1873FC0"><a name="User32.EnumWindows"></a><a href="#User32">User32</a>.<a href="#User32.EnumWindows">EnumWindows</a>
+</h2>
+<p> The EnumWindows function enumerates all top-level windows on the screen by passing the handle to each window, in turn, to an application-defined callback function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> EnumWindows-: <strong>PROCEDURE</strong>{WINAPI} (lpEnumProc: <strong>WndEnumProc</strong>; lParam: <strong>LParam</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F187F300"><a name="User32.EqualRect"></a><a href="#User32">User32</a>.<a href="#User32.EqualRect">EqualRect</a>
+</h2>
+<p> The EqualRect function determines whether the two specified rectangles are equal by comparing the coordinates of their upper-left and lower-right corners.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> EqualRect-: <strong>PROCEDURE</strong>{WINAPI} (lprc1, lprc2: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F18895C0"><a name="User32.GetAsyncKeyState"></a><a href="#User32">User32</a>.<a href="#User32.GetAsyncKeyState">GetAsyncKeyState</a>
+</h2>
+<p> The GetAsyncKeyState function determines whether a key is up or down at the time the function is called, and whether the key was pressed after a previous call to GetAsyncKeyState.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetAsyncKeyState-: <strong>PROCEDURE</strong>{WINAPI} (vKey: <strong>SIGNED32</strong>): <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_F1895240"><a name="User32.GetClientRect"></a><a href="#User32">User32</a>.<a href="#User32.GetClientRect">GetClientRect</a>
+</h2>
+<p> The GetClientRect function retrieves the coordinates of a window's client area.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetClientRect-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpRect: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F189D880"><a name="User32.GetClipboardData"></a><a href="#User32">User32</a>.<a href="#User32.GetClipboardData">GetClipboardData</a>
+</h2>
+<p> The GetClipboardData function retrieves data from the clipboard in a specified format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetClipboardData-: <strong>PROCEDURE</strong>{WINAPI} (uFormat: <strong>UNSIGNED32</strong>): <strong>Kernel32.HANDLE</strong></pre>
+<hr><h2 id="#_F18A5400"><a name="User32.GetClipboardFormatName"></a><a href="#User32">User32</a>.<a href="#User32.GetClipboardFormatName">GetClipboardFormatName</a>
+</h2>
+<p> The GetClipboardFormatName function retrieves from the clipboard the name of the specified registered format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetClipboardFormatName-: <strong>PROCEDURE</strong>{WINAPI} (format: <strong>UNSIGNED32</strong>; <strong>VAR</strong> lpszFormatName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; cchMaxCount: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F18AFB40"><a name="User32.GetCursorPos"></a><a href="#User32">User32</a>.<a href="#User32.GetCursorPos">GetCursorPos</a>
+</h2>
+<p> The GetCursorPos function retrieves the cursor's position, in screen coordinates.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCursorPos-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPoint: <strong>Point</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F18B6E00"><a name="User32.GetDC"></a><a href="#User32">User32</a>.<a href="#User32.GetDC">GetDC</a>
+</h2>
+<p> The GetDC function retrieves a handle to a display device context (DC) for the client area of a specified window or for the entire screen.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetDC-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HDC</strong></pre>
+<hr><h2 id="#_F18C1880"><a name="User32.GetFocus"></a><a href="#User32">User32</a>.<a href="#User32.GetFocus">GetFocus</a>
+</h2>
+<p> The GetFocus function retrieves the handle to the window that has the keyboard focus, if the window is attached to the calling thread's message queue.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetFocus-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HWND</strong></pre>
+<hr><h2 id="#_F18CB980"><a name="User32.GetForegroundWindow"></a><a href="#User32">User32</a>.<a href="#User32.GetForegroundWindow">GetForegroundWindow</a>
+</h2>
+<p> Retrieves a handle to the foreground window (the window with which the user is currently working). The system assigns a slightly higher priority to the thread that creates the foreground window than it does to other threads.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetForegroundWindow-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HWND</strong></pre>
+<hr><h2 id="#_F18D88C0"><a name="User32.GetKeyState"></a><a href="#User32">User32</a>.<a href="#User32.GetKeyState">GetKeyState</a>
+</h2>
+<p> The GetKeyState function retrieves the status of the specified virtual key.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetKeyState-: <strong>PROCEDURE</strong>{WINAPI} (vKey: <strong>SIGNED32</strong>): <strong>SIGNED16</strong></pre>
+<hr><h2 id="#_F18DFD00"><a name="User32.GetMenu"></a><a href="#User32">User32</a>.<a href="#User32.GetMenu">GetMenu</a>
+</h2>
+<p> The GetMenu function retrieves a handle to the menu assigned to the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetMenu-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HMenu</strong></pre>
+<hr><h2 id="#_F18E7BC0"><a name="User32.GetMenuItemInfo"></a><a href="#User32">User32</a>.<a href="#User32.GetMenuItemInfo">GetMenuItemInfo</a>
+</h2>
+<p> The GetMenuItemInfo function retrieves information about a menu item.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetMenuItemInfo-: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uItem: <strong>SIGNED32</strong>; fyByPosition: <strong>Kernel32.BOOL</strong>; <strong>VAR</strong> lpmii: <strong>MenuItemInfo</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F18F1580"><a name="User32.GetMenuString"></a><a href="#User32">User32</a>.<a href="#User32.GetMenuString">GetMenuString</a>
+</h2>
+<p> The GetMenuString function copies the text string of the specified menu item into the specified buffer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetMenuString-: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uIDItem: <strong>SIGNED32</strong>; <strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nMaxCount: <strong>SIGNED32</strong>; uFlag: <strong>DWORD</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F18FE080"><a name="User32.GetMessage"></a><a href="#User32">User32</a>.<a href="#User32.GetMessage">GetMessage</a>
+</h2>
+<p> The GetMessage function retrieves a message from the calling thread's message queue and places it in the specified structure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetMessage-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpMsg: <strong>Msg</strong>; hWnd: <strong>HWND</strong>; wMsgFilterMin, wMsgFilterMax: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1909BC0"><a name="User32.GetParent"></a><a href="#User32">User32</a>.<a href="#User32.GetParent">GetParent</a>
+</h2>
+<p> The GetParent function retrieves a handle to the specified child window's parent window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetParent-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HWND</strong></pre>
+<hr><h2 id="#_F1911700"><a name="User32.GetProp"></a><a href="#User32">User32</a>.<a href="#User32.GetProp">GetProp</a>
+</h2>
+<p> The GetProp function retrieves a data handle from the property list of the given window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetProp-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; lpString: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F191A7C0"><a name="User32.GetSysColor"></a><a href="#User32">User32</a>.<a href="#User32.GetSysColor">GetSysColor</a>
+</h2>
+<p> The GetSystemMetrics function retrieves various system metrics (widths and heights of display elements) and system configuration settings.</p>
+
+<p> The GetSysColor function retrieves the current color of the specified display element.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetSysColor-: <strong>PROCEDURE</strong>{WINAPI} (nIndex: <strong>SIGNED32</strong>): <strong>ColorRef</strong></pre>
+<hr><h2 id="#_F1926600"><a name="User32.GetSystemMetrics"></a><a href="#User32">User32</a>.<a href="#User32.GetSystemMetrics">GetSystemMetrics</a>
+</h2>
+<p> The GetSystemMetrics function retrieves various system metrics (widths and heights of display elements) and system configuration settings.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetSystemMetrics-: <strong>PROCEDURE</strong>{WINAPI} (nIndex: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F192F1C0"><a name="User32.GetWindowLong"></a><a href="#User32">User32</a>.<a href="#User32.GetWindowLong">GetWindowLong</a>
+</h2>
+<p> The GetWindowLong function retrieves information about the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetWindowLong-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nIndex: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1936C00"><a name="User32.GetWindowLongPtr"></a><a href="#User32">User32</a>.<a href="#User32.GetWindowLongPtr">GetWindowLongPtr</a>
+</h2>
+<p> The GetWindowPlacement function retrieves the show state and the restored, minimized, and maximized positions of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetWindowLongPtr-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nIndex: <strong>SIGNED32</strong>): <strong>ADDRESS</strong></pre>
+<hr><h2 id="#_F19409C0"><a name="User32.GetWindowPlacement"></a><a href="#User32">User32</a>.<a href="#User32.GetWindowPlacement">GetWindowPlacement</a>
+</h2>
+<p> The GetWindowPlacement function retrieves the show state and the restored, minimized, and maximized positions of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetWindowPlacement-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpwndpl: <strong>WindowPlacement</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F194AB00"><a name="User32.GetWindowRect"></a><a href="#User32">User32</a>.<a href="#User32.GetWindowRect">GetWindowRect</a>
+</h2>
+<p> The GetWindowRect function retrieves the dimensions of the bounding rectangle of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetWindowRect-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpRect: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1953C40"><a name="User32.GetWindowRgn"></a><a href="#User32">User32</a>.<a href="#User32.GetWindowRgn">GetWindowRgn</a>
+</h2>
+<p> The GetWindowRgn function obtains a copy of the window region of a window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetWindowRgn-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> hRgn: <strong>HRgn</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F195C980"><a name="User32.GetWindowText"></a><a href="#User32">User32</a>.<a href="#User32.GetWindowText">GetWindowText</a>
+</h2>
+<p> The GetWindowText function copies the text of the specified window's title bar (if it has one) into a buffer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetWindowText-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nMaxCount: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1968440"><a name="User32.GetUpdateRect"></a><a href="#User32">User32</a>.<a href="#User32.GetUpdateRect">GetUpdateRect</a>
+</h2>
+<p> The GetUpdateRect function retrieves the coordinates of the smallest rectangle that completely encloses the update region of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetUpdateRect-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpRect: <strong>Rect</strong>; bErase: <strong>Kernel32.BOOL</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1973B80"><a name="User32.GetUpdateRgn"></a><a href="#User32">User32</a>.<a href="#User32.GetUpdateRgn">GetUpdateRgn</a>
+</h2>
+<p> The GetUpdateRgn function retrieves the update region of a window by copying it into the specified region.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetUpdateRgn-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> hRgn: <strong>HRgn</strong>; bErase: <strong>Kernel32.BOOL</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F197E840"><a name="User32.InsertMenu"></a><a href="#User32">User32</a>.<a href="#User32.InsertMenu">InsertMenu</a>
+</h2>
+<p> The InsertMenu function inserts a new menu item into a menu, moving other items down the menu.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> InsertMenu-: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uPosition: <strong>SIGNED32</strong>; uFlags: <strong>DWORD</strong>; uIDNewItem: <strong>SIGNED32</strong>; <strong>VAR</strong> lpNewItem: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F198B840"><a name="User32.IntersectRect"></a><a href="#User32">User32</a>.<a href="#User32.IntersectRect">IntersectRect</a>
+</h2>
+<p> The IntersectRect function calculates the intersection of two source rectangles and places the coordinates of the intersection rectangle into the destination rectangle.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> IntersectRect-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lprcDst: <strong>Rect</strong>; lprcSrc1, lprcSrc2: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1996F80"><a name="User32.InvalidateRect"></a><a href="#User32">User32</a>.<a href="#User32.InvalidateRect">InvalidateRect</a>
+</h2>
+<p> The InvalidateRect function adds a rectangle to the specified window's update region.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> InvalidateRect-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; lpRect: <strong>Rect</strong>; bErase: <strong>Kernel32.BOOL</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F19A02C0"><a name="User32.IsChild"></a><a href="#User32">User32</a>.<a href="#User32.IsChild">IsChild</a>
+</h2>
+<p> The IsChild function tests whether a window is a child window or descendant window of a specified parent window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> IsChild-: <strong>PROCEDURE</strong>{WINAPI} (hWndParent, hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F19A9E80"><a name="User32.IsClipboardFormatAvailable"></a><a href="#User32">User32</a>.<a href="#User32.IsClipboardFormatAvailable">IsClipboardFormatAvailable</a>
+</h2>
+<p> Determines whether the clipboard contains data in the specified format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> IsClipboardFormatAvailable-: <strong>PROCEDURE</strong>{WINAPI} (format: <strong>UNSIGNED32</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F19B0DC0"><a name="User32.LoadCursor"></a><a href="#User32">User32</a>.<a href="#User32.LoadCursor">LoadCursor</a>
+</h2>
+<p> The LoadCursor function loads the specified cursor resource from the executable (.EXE) file associated with an application instance.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> LoadCursor-: <strong>PROCEDURE</strong>{WINAPI} (hInstance: <strong>Kernel32.HINSTANCE</strong>; <strong>VAR</strong> lpCursorName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HCursor</strong></pre>
+<hr><h2 id="#_F19BB600"><a name="User32.LoadCursorFromFile"></a><a href="#User32">User32</a>.<a href="#User32.LoadCursorFromFile">LoadCursorFromFile</a>
+</h2>
+<p> The LoadCursorFromFile function creates a cursor based on data contained in a file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> LoadCursorFromFile-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HCursor</strong></pre>
+<hr><h2 id="#_F19C3D40"><a name="User32.LoadIcon"></a><a href="#User32">User32</a>.<a href="#User32.LoadIcon">LoadIcon</a>
+</h2>
+<p> The LoadIcon function loads the specified icon resource from the executable (.exe) file associated with an application instance.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> LoadIcon-: <strong>PROCEDURE</strong>{WINAPI} (hInstance: <strong>Kernel32.HINSTANCE</strong>; <strong>VAR</strong> lpIconName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HIcon</strong></pre>
+<hr><h2 id="#_F19CE580"><a name="User32.MessageBeep"></a><a href="#User32">User32</a>.<a href="#User32.MessageBeep">MessageBeep</a>
+</h2>
+<p> The MessageBeep function plays a waveform sound.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> MessageBeep-: <strong>PROCEDURE</strong>{WINAPI} (uType: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F19D4940"><a name="User32.MessageBox"></a><a href="#User32">User32</a>.<a href="#User32.MessageBox">MessageBox</a>
+</h2>
+<p> The MessageBox function creates, displays, and operates a message box.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> MessageBox-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpText, lpCaption: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; uType: <strong>DWORD</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F19DE800"><a name="User32.MoveWindow"></a><a href="#User32">User32</a>.<a href="#User32.MoveWindow">MoveWindow</a>
+</h2>
+<p> The MoveWindow function changes the position and dimensions of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> MoveWindow-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; X, Y, nWidth, nHeight: <strong>SIGNED32</strong>; bRepaint: <strong>Kernel32.BOOL</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F19E93C0"><a name="User32.OffsetRect"></a><a href="#User32">User32</a>.<a href="#User32.OffsetRect">OffsetRect</a>
+</h2>
+<p> The OffsetRect function moves the specified rectangle by the specified offsets.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> OffsetRect-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lprc: <strong>Rect</strong>; dx, dy: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F19F2180"><a name="User32.OpenClipboard"></a><a href="#User32">User32</a>.<a href="#User32.OpenClipboard">OpenClipboard</a>
+</h2>
+<p> The OpenClipboard function opens the clipboard for examination and prevents other applications from modifying the clipboard content.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> OpenClipboard-: <strong>PROCEDURE</strong>{WINAPI} (hWndNewOwner: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F19FAD40"><a name="User32.PtInRect"></a><a href="#User32">User32</a>.<a href="#User32.PtInRect">PtInRect</a>
+</h2>
+<p> The PtInRect function determines whether the specified point lies within the specified rectangle.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> PtInRect-: <strong>PROCEDURE</strong>{WINAPI} (lprc: <strong>Rect</strong>; ptx, pty: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1A04400"><a name="User32.PostMessage"></a><a href="#User32">User32</a>.<a href="#User32.PostMessage">PostMessage</a>
+</h2>
+<p> The PostMessage function places (posts) a message in the message queue associated with the thread that created the specified window and then returns without waiting for the thread to process the message.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> PostMessage-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; Msg: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1A13200"><a name="User32.PostQuitMessage"></a><a href="#User32">User32</a>.<a href="#User32.PostQuitMessage">PostQuitMessage</a>
+</h2>
+<p> The PostQuitMessage function indicates to the system that a thread has made a request to terminate (quit).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> PostQuitMessage-: <strong>PROCEDURE</strong>{WINAPI} (nExitCode: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_F1A1B840"><a name="User32.RegisterClassEx"></a><a href="#User32">User32</a>.<a href="#User32.RegisterClassEx">RegisterClassEx</a>
+</h2>
+<p> The RegisterClassEx function registers a window class for subsequent use in calls to the CreateWindow or CreateWindowEx function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> RegisterClassEx-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpwcx: <strong>WndClassEx</strong>): <strong>Kernel32.ATOM</strong></pre>
+<hr><h2 id="#_F1A24B00"><a name="User32.RegisterHotKey"></a><a href="#User32">User32</a>.<a href="#User32.RegisterHotKey">RegisterHotKey</a>
+</h2>
+<p>The RegisterHotKey function defines a system-wide hot key</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> RegisterHotKey-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; id: <strong>SIGNED32</strong>; fsmodifiers, vk: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1A2D6C0"><a name="User32.RegisterClipboardFormat"></a><a href="#User32">User32</a>.<a href="#User32.RegisterClipboardFormat">RegisterClipboardFormat</a>
+</h2>
+<p> The RegisterClipboardFormat function registers a new clipboard format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> RegisterClipboardFormat-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpszFormat: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>UNSIGNED32</strong></pre>
+<hr><h2 id="#_F1A34B00"><a name="User32.RegisterWindowMessage"></a><a href="#User32">User32</a>.<a href="#User32.RegisterWindowMessage">RegisterWindowMessage</a>
+</h2>
+<p> The RegisterWindowMessage function defines a new window message that is guaranteed to be unique throughout the system.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> RegisterWindowMessage-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1A3E2C0"><a name="User32.ReleaseCapture"></a><a href="#User32">User32</a>.<a href="#User32.ReleaseCapture">ReleaseCapture</a>
+</h2>
+<p> The ReleaseCapture function releases the mouse capture from a window in the current thread and restores normal mouse input processing.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ReleaseCapture-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1A46F80"><a name="User32.ReleaseDC"></a><a href="#User32">User32</a>.<a href="#User32.ReleaseDC">ReleaseDC</a>
+</h2>
+<p> The ReleaseDC function releases a device context (DC), freeing it for use by other applications.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ReleaseDC-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; hDC: <strong>HDC</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1A50040"><a name="User32.RemoveProp"></a><a href="#User32">User32</a>.<a href="#User32.RemoveProp">RemoveProp</a>
+</h2>
+<p> The RemoveProp function removes an entry from the property list of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> RemoveProp-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; lpString: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1A58D80"><a name="User32.ScreenToClient"></a><a href="#User32">User32</a>.<a href="#User32.ScreenToClient">ScreenToClient</a>
+</h2>
+<p> The ScreenToClient function converts the screen coordinates of a specified point on the screen to client coordinates.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ScreenToClient-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpPoint: <strong>Point</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1A62B40"><a name="User32.SendMessage"></a><a href="#User32">User32</a>.<a href="#User32.SendMessage">SendMessage</a>
+</h2>
+<p> The SendMessage function sends the specified message to a window or windows.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SendMessage-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; Msg: <strong>SIGNED32</strong>; wParam: <strong>WParam</strong>; lParam: <strong>LParam</strong>): <strong>LResult</strong></pre>
+<hr><h2 id="#_F1A6CD80"><a name="User32.SetCapture"></a><a href="#User32">User32</a>.<a href="#User32.SetCapture">SetCapture</a>
+</h2>
+<p> The SetCapture function sets the mouse capture to the specified window belonging to the current thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetCapture-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HWND</strong></pre>
+<hr><h2 id="#_F1A753C0"><a name="User32.SetClipboardData"></a><a href="#User32">User32</a>.<a href="#User32.SetClipboardData">SetClipboardData</a>
+</h2>
+<p> The SetClipboardData function places data on the clipboard in a specified clipboard format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetClipboardData-: <strong>PROCEDURE</strong>{WINAPI} (uFormat: <strong>UNSIGNED32</strong>; hMem: <strong>Kernel32.HANDLE</strong>): <strong>Kernel32.HANDLE</strong></pre>
+<hr><h2 id="#_F1A7DD80"><a name="User32.SetCursor"></a><a href="#User32">User32</a>.<a href="#User32.SetCursor">SetCursor</a>
+</h2>
+<p> The SetCursor function establishes the cursor shape.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetCursor-: <strong>PROCEDURE</strong>{WINAPI} (hCursor: <strong>HCursor</strong>): <strong>HCursor</strong></pre>
+<hr><h2 id="#_F1A84140"><a name="User32.SetCursorPos"></a><a href="#User32">User32</a>.<a href="#User32.SetCursorPos">SetCursorPos</a>
+</h2>
+<p> The SetCursorPos function moves the cursor to the specified screen coordinates.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetCursorPos-: <strong>PROCEDURE</strong>{WINAPI} (X, Y: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1A8BE80"><a name="User32.SetFocus"></a><a href="#User32">User32</a>.<a href="#User32.SetFocus">SetFocus</a>
+</h2>
+<p> The SetFocus function sets the keyboard focus to the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetFocus-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>HWND</strong></pre>
+<hr><h2 id="#_F1A932C0"><a name="User32.SetForegroundWindow"></a><a href="#User32">User32</a>.<a href="#User32.SetForegroundWindow">SetForegroundWindow</a>
+</h2>
+<p> The SetForegroundWindow function puts the thread that created the specified window into the foreground and activates the window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetForegroundWindow-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1A9C200"><a name="User32.SetMenu"></a><a href="#User32">User32</a>.<a href="#User32.SetMenu">SetMenu</a>
+</h2>
+<p> The SetMenu function assigns a new menu to the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetMenu-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; hMenu: <strong>HMenu</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1AA44C0"><a name="User32.SetMenuItemInfo"></a><a href="#User32">User32</a>.<a href="#User32.SetMenuItemInfo">SetMenuItemInfo</a>
+</h2>
+<p> The SetMenuItemInfo function changes information about a menu item.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetMenuItemInfo-: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uItem: <strong>SIGNED32</strong>; fyByPosition: <strong>Kernel32.BOOL</strong>; <strong>VAR</strong> lpmii: <strong>MenuItemInfo</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1AADE80"><a name="User32.SetProcessDPIAware"></a><a href="#User32">User32</a>.<a href="#User32.SetProcessDPIAware">SetProcessDPIAware</a>
+</h2>
+<p> The SetProcessDPIAware function sets the process-default DPI awareness to system-DPI awareness.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetProcessDPIAware-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1AB4940"><a name="User32.SetProp"></a><a href="#User32">User32</a>.<a href="#User32.SetProp">SetProp</a>
+</h2>
+<p> The SetProp function adds a new entry or changes an existing entry in the property list of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetProp-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; lpString, hData: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1ABF580"><a name="User32.SetWindowsHookEx"></a><a href="#User32">User32</a>.<a href="#User32.SetWindowsHookEx">SetWindowsHookEx</a>
+</h2>
+<p> The SetWindowsHookEx function installs an application-defined hook procedure into a hook chain.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetWindowsHookEx-: <strong>PROCEDURE</strong>{WINAPI} (idHook: <strong>SIGNED32</strong>; lpfn: <strong>HookProc</strong>; hMod: <strong>Kernel32.HINSTANCE</strong>; dwThreadId: <strong>SIGNED32</strong>): <strong>HHook</strong></pre>
+<hr><h2 id="#_F1AC97C0"><a name="User32.SetWindowLong"></a><a href="#User32">User32</a>.<a href="#User32.SetWindowLong">SetWindowLong</a>
+</h2>
+<p> The SetWindowLong function changes an attribute of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetWindowLong-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nIndex, dwNewLong: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1AD1D00"><a name="User32.SetWindowLongPtr"></a><a href="#User32">User32</a>.<a href="#User32.SetWindowLongPtr">SetWindowLongPtr</a>
+</h2>
+<p> The SetWindowPos function changes the size, position, and Z order of a child, pop-up, or top-level window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetWindowLongPtr-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nIndex: <strong>SIGNED32</strong>; dwNewLong: <strong>ADDRESS</strong>): <strong>ADDRESS</strong></pre>
+<hr><h2 id="#_F1ADC440"><a name="User32.SetWindowPos"></a><a href="#User32">User32</a>.<a href="#User32.SetWindowPos">SetWindowPos</a>
+</h2>
+<p> The SetWindowPos function changes the size, position, and Z order of a child, pop-up, or top-level window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetWindowPos-: <strong>PROCEDURE</strong>{WINAPI} (hWnd, hWndInsertAfter: <strong>HWND</strong>; X, Y, cx, cy: <strong>SIGNED32</strong>; uFlags: <strong>DWORD</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1AE8B80"><a name="User32.SetWindowRgn"></a><a href="#User32">User32</a>.<a href="#User32.SetWindowRgn">SetWindowRgn</a>
+</h2>
+<p> The SetWindowRgn function sets the window region of a window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetWindowRgn-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; hRgn: <strong>HRgn</strong>; bRedraw: <strong>Kernel32.BOOL</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1AF1640"><a name="User32.SetWindowText"></a><a href="#User32">User32</a>.<a href="#User32.SetWindowText">SetWindowText</a>
+</h2>
+<p> The SetWindowText function changes the text of the specified window's title bar (if it has one).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetWindowText-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1AFB500"><a name="User32.ShowCursor"></a><a href="#User32">User32</a>.<a href="#User32.ShowCursor">ShowCursor</a>
+</h2>
+<p> The ShowCursor function displays or hides the cursor.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ShowCursor-: <strong>PROCEDURE</strong>{WINAPI} (bShow: <strong>Kernel32.BOOL</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1B01D40"><a name="User32.ShowWindow"></a><a href="#User32">User32</a>.<a href="#User32.ShowWindow">ShowWindow</a>
+</h2>
+<p> The ShowWindow function sets the specified window's show state.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ShowWindow-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nCmdShow: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1B09780"><a name="User32.ShowWindowAsync"></a><a href="#User32">User32</a>.<a href="#User32.ShowWindowAsync">ShowWindowAsync</a>
+</h2>
+<p> The ShowWindowAsync function sets the show state of a window created by a different thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ShowWindowAsync-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; nCmdShow: <strong>SIGNED32</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1B12840"><a name="User32.TrackPopupMenu"></a><a href="#User32">User32</a>.<a href="#User32.TrackPopupMenu">TrackPopupMenu</a>
+</h2>
+<p> The TrackPopupMenu function displays a shortcut menu at the specified location and tracks the selection of items on the menu.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> TrackPopupMenu-: <strong>PROCEDURE</strong>{WINAPI} (hMenu: <strong>HMenu</strong>; uFlags: <strong>DWORD</strong>; x, y, nReserved: <strong>SIGNED32</strong>; hWnd: <strong>HWND</strong>; <strong>VAR</strong> prcRect: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1B20B40"><a name="User32.TranslateAccelerator"></a><a href="#User32">User32</a>.<a href="#User32.TranslateAccelerator">TranslateAccelerator</a>
+</h2>
+<p> The TranslateAccelerator function processes accelerator keys for menu commands.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> TranslateAccelerator-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; hAccTable: <strong>HAccel</strong>; <strong>VAR</strong> lpMsg: <strong>Msg</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_F1B29800"><a name="User32.TranslateMessage"></a><a href="#User32">User32</a>.<a href="#User32.TranslateMessage">TranslateMessage</a>
+</h2>
+<p> The TranslateMessage function translates virtual-key messages into character messages.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> TranslateMessage-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpMsg: <strong>Msg</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1B30740"><a name="User32.UnhookWindowsHookEx"></a><a href="#User32">User32</a>.<a href="#User32.UnhookWindowsHookEx">UnhookWindowsHookEx</a>
+</h2>
+<p> The UnhookWindowsHookEx function removes a hook procedure installed in a hook chain by the SetWindowsHookEx function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> UnhookWindowsHookEx-: <strong>PROCEDURE</strong>{WINAPI} (hhk: <strong>HHook</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1B38D80"><a name="User32.UnregisterClass"></a><a href="#User32">User32</a>.<a href="#User32.UnregisterClass">UnregisterClass</a>
+</h2>
+<p> The UnregisterClass function removes a window class, freeing the memory required for the class.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> UnregisterClass-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpClassName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hInstance: <strong>Kernel32.HINSTANCE</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1B42540"><a name="User32.UpdateWindow"></a><a href="#User32">User32</a>.<a href="#User32.UpdateWindow">UpdateWindow</a>
+</h2>
+<p> The UpdateWindow function updates the client area of the specified window by sending a WM_PAINT message to the window if the window's update region is not empty.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> UpdateWindow-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1B4D740"><a name="User32.ValidateRect"></a><a href="#User32">User32</a>.<a href="#User32.ValidateRect">ValidateRect</a>
+</h2>
+<p> The ValidateRect function validates the client area within a rectangle by removing the rectangle from the update region of the specified window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ValidateRect-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>HWND</strong>; <strong>VAR</strong> lpRect: <strong>Rect</strong>): <strong>Kernel32.BOOL</strong></pre>
+<hr><h2 id="#_F1B58680"><a name="User32.EqualSize"></a><a href="#User32">User32</a>.<a href="#User32.EqualSize">EqualSize</a>
+</h2>
+<p> The EqualSize function determines whether the two specified sizes are equal.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EqualSize* (<strong>VAR</strong> a, b: <strong>Size</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

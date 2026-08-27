@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Info">Info</a></p>
+<hr><h1 id="#_26A8E2C0"><a name="Info"></a><a href="#ModuleList">Module</a> Info
+</h1>
+<p> AUTHOR "pjm/staubesv"; PURPOSE "System information";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>recentAllocators: <strong>ARRAY</strong> AllocatorHistorySize <strong>OF</strong> <strong>RECORD</strong> <tr><td></td><td>numRecentAllocators: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#Info.ModuleDetails">ModuleDetails</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#Info.ModulePC">ModulePC</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> AllObjects (context: <strong>Commands.Context</strong>)<tr><td></td><td> ShowRecentAllocators (out: <strong>Streams.Writer</strong>; scale: <strong>SIGNED64</strong>)<tr><td></td><td> ClearRecentAllocators<tr><td></td><td> AddAllocatorLogger<tr><td></td><td> RecentAllocators (context: <strong>Commands.Context</strong>)<tr><td></td><td> TraceModule (context: <strong>Commands.Context</strong>)<tr><td></td><td> TraceReference (context: <strong>Commands.Context</strong>)<tr><td></td><td> TraceProcessID (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_26AA4040"><a name="Info.ModuleDetails"></a><a href="#Info">Info</a>.<a href="#Info.ModuleDetails">ModuleDetails</a>
+</h2>
+<p> Show the details of the specified module.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ModuleDetails* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="#_26AA9200"><a name="Info.ModulePC"></a><a href="#Info">Info</a>.<a href="#Info.ModulePC">ModulePC</a>
+</h2>
+<p> Find a procedure, given the absolute PC address.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ModulePC* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

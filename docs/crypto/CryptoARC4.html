@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#CryptoARC4">CryptoARC4</a></p>
-<hr><h1 id="#_0EC529C0"><a name="CryptoARC4"></a><a href="#ModuleList">Module</a> CryptoARC4
+<hr><h1 id="#_E89C03C0"><a name="CryptoARC4"></a><a href="#ModuleList">Module</a> CryptoARC4
 </h1>
 <p> AUTHOR "F.N."; PURPOSE "ALLEGED RC4 - stream cipher - keylength: from 1 to 256 bytes";</p>
 
@@ -41,7 +41,7 @@
 <table><tr><th align='left'>type declarations</th><td><a href="#CryptoARC4.Cipher">Cipher</a> =<strong>OBJECT</strong> (<strong>Ciphers.Cipher</strong>)<tr><th align='left'>procedures</th><td> <a href="#CryptoARC4.NewCipher">NewCipher</a> (): <strong>Ciphers.Cipher</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_0EC5B000"><a name="CryptoARC4.Cipher"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.Cipher">Cipher</a>
+<hr><h2 id="#_E89C8A00"><a name="CryptoARC4.Cipher"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.Cipher">Cipher</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -54,28 +54,28 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_0EC6A100"><a name="CryptoARC4.Cipher.InitKey"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.Cipher">Cipher</a>.<a href="#CryptoARC4.Cipher.InitKey">InitKey</a>
+<hr><h3 id="#_E89D7B00"><a name="CryptoARC4.Cipher.InitKey"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.Cipher">Cipher</a>.<a href="#CryptoARC4.Cipher.InitKey">InitKey</a>
 </h3>
 <p> initialize arc4 key. keybits = <a href="#8..2048],">8..2048],</a> MUST be multiple of 8.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> InitKey* (<strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; keybits: <strong>SIZE</strong>)</pre>
-<hr><h3 id="#_0EC72400"><a name="CryptoARC4.Cipher.Encrypt"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.Cipher">Cipher</a>.<a href="#CryptoARC4.Cipher.Encrypt">Encrypt</a>
+<hr><h3 id="#_E89DFE00"><a name="CryptoARC4.Cipher.Encrypt"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.Cipher">Cipher</a>.<a href="#CryptoARC4.Cipher.Encrypt">Encrypt</a>
 </h3>
 <p> encrypt len bytes starting at position ofs.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Encrypt* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
-<hr><h3 id="#_0EC79EC0"><a name="CryptoARC4.Cipher.Decrypt"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.Cipher">Cipher</a>.<a href="#CryptoARC4.Cipher.Decrypt">Decrypt</a>
+<hr><h3 id="#_E89E78C0"><a name="CryptoARC4.Cipher.Decrypt"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.Cipher">Cipher</a>.<a href="#CryptoARC4.Cipher.Decrypt">Decrypt</a>
 </h3>
 <p> decrypt len bytes starting at position ofs.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Decrypt* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_0EC818C0"><a name="CryptoARC4.NewCipher"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.NewCipher">NewCipher</a>
+<hr><h2 id="#_E89EF2C0"><a name="CryptoARC4.NewCipher"></a><a href="#CryptoARC4">CryptoARC4</a>.<a href="#CryptoARC4.NewCipher">NewCipher</a>
 </h2>
 <p> create a new ARC4 cipher object</p>
 

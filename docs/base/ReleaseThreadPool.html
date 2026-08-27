@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#ReleaseThreadPool">ReleaseThreadPool</a></p>
+<hr><h1 id="#_DAB19D80"><a name="ReleaseThreadPool"></a><a href="#ModuleList">Module</a> ReleaseThreadPool
+</h1>
+<p> AUTHOR "staubesv"; PURPOSE "Threadpool width job dependencies/preferences support";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>NoMoreDependencies= -1<tr><th align='left'>type declarations</th><td>Dependencies =<strong>ARRAY</strong> (MaxNofDependencies+1) <strong>OF</strong> <strong>SIZE</strong><tr><td></td><td>JobProcedure =<strong>PROCEDURE</strong>{DELEGATE} (parameters: @Any0; <strong>VAR</strong> error: <strong>BOOLEAN</strong>)<tr><td></td><td><a href="#ReleaseThreadPool.ThreadPool">ThreadPool</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>NjobsCreated: <strong>SIZE</strong><tr><td></td><td>NjobsDone: <strong>SIZE</strong><tr><td></td><td>NjobErrors: <strong>SIZE</strong><tr><td></td><td>NjobHandoverSucceeded: <strong>SIZE</strong><tr><td></td><td>NjobHandoverFailed: <strong>SIZE</strong><tr><td></td><td>NjobPoolCreated: <strong>SIZE</strong><tr><td></td><td>NjobPoolRecycled: <strong>SIZE</strong><tr><td></td><td>NjobPoolReused: <strong>SIZE</strong><tr><td></td><td>NdependencyChecks: <strong>SIZE</strong><tr><td></td><td>NdependenciesResolved: <strong>SIZE</strong><tr><td></td><td>NdependenciesPersist: <strong>SIZE</strong><tr><td></td><td>Nscheduling: <strong>SIZE</strong><tr><td></td><td>NjobsScheduled: <strong>SIZE</strong><tr><td></td><td>Nlookups: <strong>SIZE</strong><tr><td></td><td>NlookupCollisions: <strong>SIZE</strong><tr><td></td><td>NlookupNotFound: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> ClearStats</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_DAB355C0">
+</h1>
+<ul>
+<li> STATUS: EXPERIMENTAL (don't use for production code) <strong></strong></li>
+
+<li> Notes:</li>
+
+<li> - This is an experimental thread pool that is optimized for Release.Mod.</li>
+
+<li> - If you just need a thread pool (no dependencies, no priorities), don't use this one. A simple threadpool can be implemented much simpler and efficiently</li>
+</ul>
+<hr><h2 id="#_DAB42040"><a name="ReleaseThreadPool.ThreadPool"></a><a href="#ReleaseThreadPool">ReleaseThreadPool</a>.<a href="#ReleaseThreadPool.ThreadPool">ThreadPool</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ThreadPool* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>& Init (nofWorkers: <strong>SIZE</strong>)<tr><td></td><td> CreateJob (proc: <strong>JobProcedure</strong>; parameters: @Any0; priority: <strong>SIZE</strong>; <strong>CONST</strong> dependencies: <strong>Dependencies</strong>): <strong>SIZE</strong><tr><td></td><td> AwaitAllDone<tr><td></td><td> Close<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

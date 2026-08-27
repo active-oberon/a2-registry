@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PCO">PCO</a></p>
+<hr><h1 id="#_97746200"><a name="PCO"></a><a href="#ModuleList">Module</a> PCO
+</h1>
+<p> AUTHOR "prk / be"; PURPOSE "Parallel Compiler: Intel 386 code patterns";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#PCO.noScale">noScale</a>= 0<tr><td></td><td>Scale1= 0<tr><td></td><td>Scale2= 1<tr><td></td><td>Scale4= 2<tr><td></td><td><a href="#PCO.Scale8">Scale8</a>= 3<tr><td></td><td><a href="#PCO.RegReg">RegReg</a>= 0<tr><td></td><td><a href="#PCO.RegMem">RegMem</a>= 1<tr><td></td><td><a href="#PCO.MemReg">MemReg</a>= 2<tr><td></td><td><a href="#PCO.ImmReg">ImmReg</a>= 3<tr><td></td><td><a href="#PCO.ImmMem">ImmMem</a>= 4<tr><td></td><td><a href="#PCO.RegSt">RegSt</a>= 5<tr><td></td><td><a href="#PCO.StReg">StReg</a>= 6<tr><td></td><td><a href="#PCO.StRegP">StRegP</a>= 7<tr><td></td><td><a href="#PCO.MemSt">MemSt</a>= 8<tr><td></td><td><a href="#PCO.ForceDisp32">ForceDisp32</a>= 20<tr><td></td><td><a href="#PCO.RegMemA">RegMemA</a>= (RegMem+ForceDisp32)<tr><td></td><td><a href="#PCO.MemAReg">MemAReg</a>= (MemReg+ForceDisp32)<tr><td></td><td><a href="#PCO.ImmAReg">ImmAReg</a>= (ImmReg+ForceDisp32)<tr><td></td><td><a href="#PCO.ImmMemA">ImmMemA</a>= (ImmMem+ForceDisp32)<tr><td></td><td><a href="#PCO.MemASt">MemASt</a>= (MemSt+ForceDisp32)<tr><td></td><td><a href="#PCO.Reg">Reg</a>= 15<tr><td></td><td>Abs= 16<tr><td></td><td>RegRel= 17<tr><td></td><td>Coc= 18<tr><td></td><td><a href="#PCO.Regs">Regs</a>= RegReg<tr><td></td><td>Mem= MemReg<tr><td></td><td>Imme= ImmReg<tr><td></td><td>MemA= MemAReg<tr><td></td><td>ImmeA= ImmAReg<tr><td></td><td><a href="#PCO.sReal">sReal</a>= 0<tr><td></td><td><a href="#PCO.lReal">lReal</a>= 2<tr><td></td><td><a href="#PCO.eReal">eReal</a>= 4<tr><td></td><td>dInt= 1<tr><td></td><td><a href="#PCO.wInt">wInt</a>= 3<tr><td></td><td><a href="#PCO.qInt">qInt</a>= 5<tr><td></td><td>MaxCodeLength= 2147483647<tr><td></td><td><a href="#PCO.EAX">EAX</a>= 0<tr><td></td><td>ECX= 1<tr><td></td><td>EDX= 2<tr><td></td><td>EBX= 3<tr><td></td><td>ESP= 4<tr><td></td><td>EBP= 5<tr><td></td><td>ESI= 6<tr><td></td><td><a href="#PCO.EDI">EDI</a>= 7<tr><td></td><td>AX= 8<tr><td></td><td>CX= 9<tr><td></td><td>DX= 10<tr><td></td><td>BX= 11<tr><td></td><td>SP= 12<tr><td></td><td>BP= 13<tr><td></td><td>SI= 14<tr><td></td><td><a href="#PCO.DI">DI</a>= 15<tr><td></td><td>AL= 16<tr><td></td><td>CL= 17<tr><td></td><td>DL= 18<tr><td></td><td>BL= 19<tr><td></td><td>AH= 20<tr><td></td><td>CH= 21<tr><td></td><td>DH= 22<tr><td></td><td><a href="#PCO.BH">BH</a>= 23<tr><td></td><td><a href="#PCO.Bit8">Bit8</a>= AL<tr><td></td><td>Bit16= AX<tr><td></td><td>Bit32= EAX<tr><td></td><td>Bit64= (Bit32+8)<tr><td></td><td>noDisp= 0<tr><td></td><td>Disp8= 1<tr><td></td><td>Disp32= 2<tr><td></td><td>noBase= none<tr><td></td><td>noInx= none<tr><td></td><td>noImm= 0<tr><td></td><td><a href="#PCO.opROL">opROL</a>= 0<tr><td></td><td>Ror= 1<tr><td></td><td>RCL= 2<tr><td></td><td>RCR= 3<tr><td></td><td>opSHL= 4<tr><td></td><td>SAL= 4<tr><td></td><td>opSHR= 5<tr><td></td><td>SAR= 7<tr><td></td><td><a href="#PCO.Left">Left</a>= 0<tr><td></td><td>Right= 1<tr><td></td><td><a href="#PCO.CMPS">CMPS</a>= 83<tr><td></td><td>INS= 54<tr><td></td><td>LODS= 86<tr><td></td><td>MOVS= 82<tr><td></td><td>OUTS= 55<tr><td></td><td>SCAS= 87<tr><td></td><td>STOS= 85<tr><td></td><td><a href="#PCO.JO">JO</a>= 0<tr><td></td><td>JNO= 1<tr><td></td><td>JB= 2<tr><td></td><td>JC= 2<tr><td></td><td>JNAE= 2<tr><td></td><td>JNB= 3<tr><td></td><td>JNC= 3<tr><td></td><td>JAE= 3<tr><td></td><td>JE= 4<tr><td></td><td>JZ= 4<tr><td></td><td>JNE= 5<tr><td></td><td>JNZ= 5<tr><td></td><td>JBE= 6<tr><td></td><td>JNA= 6<tr><td></td><td>JNBE= 7<tr><td></td><td>JA= 7<tr><td></td><td>JS= 8<tr><td></td><td>JNS= 9<tr><td></td><td>JP= 10<tr><td></td><td>JPE= 10<tr><td></td><td>JNP= 11<tr><td></td><td>JPO= 11<tr><td></td><td>JL= 12<tr><td></td><td>JNGE= 12<tr><td></td><td>JNL= 13<tr><td></td><td>JGE= 13<tr><td></td><td>JLE= 14<tr><td></td><td>JNG= 14<tr><td></td><td>JNLE= 15<tr><td></td><td>JG= 15<tr><td></td><td><a href="#PCO.NOT">NOT</a>= 2<tr><td></td><td>NEG= 3<tr><td></td><td><a href="#PCO.ADD">ADD</a>= 0<tr><td></td><td>ADC= 16<tr><td></td><td>SUB= 40<tr><td></td><td>SBB= 24<tr><td></td><td>CMP= 56<tr><td></td><td>AND= 32<tr><td></td><td>Or= 8<tr><td></td><td>XOR= 48<tr><td></td><td><a href="#PCO.wWAIT">wWAIT</a>= 155<tr><td></td><td><a href="#PCO.FCOMPP">FCOMPP</a>= 0<tr><td></td><td>FTST= 1<tr><td></td><td>FLDZ= 2<tr><td></td><td>FLD1= 3<tr><td></td><td>FABS= 4<tr><td></td><td>FCHS= 5<tr><td></td><td>FSTSW= 6<tr><td></td><td>FINCSTP= 7<tr><td></td><td>FDECSTP= 8<tr><td></td><td><a href="#PCO.BT">BT</a>= 4<tr><td></td><td>BTR= 6<tr><td></td><td>BTS= 5<tr><td></td><td><a href="#PCO.SAHF">SAHF</a>= 158<tr><td></td><td>CLD= 252<tr><td></td><td>STD= 253<tr><td></td><td>CBW= 152<tr><td></td><td>CWD= 153<tr><td></td><td>CLI= 250<tr><td></td><td>STI= 251<tr><th align='left'>variables</th><td>pc: <strong>SIGNED32</strong><tr><td></td><td>dsize: <strong>SIGNED32</strong><tr><td></td><td>lastImmSize: <strong>SIGNED8</strong><tr><td></td><td>code: <strong>PCLIR.CodeArray</strong><tr><td></td><td>errpos: <strong>SIGNED32</strong><tr><td></td><td>CodeErr: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> PutByteAt (pos: <strong>SIGNED32</strong>; b: <strong>SIGNED16</strong>)<tr><td></td><td> PutByte (b: <strong>SIGNED16</strong>)<tr><td></td><td> PutDWordAt (pos, dw: <strong>SIGNED32</strong>)<tr><td></td><td> PutDWord (dw: <strong>SIGNED32</strong>)<tr><td></td><td> GetDWord (pos: <strong>SIGNED32</strong>; <strong>VAR</strong> dw: <strong>SIGNED32</strong>)<tr><td></td><td> Prefix (reg: <strong>SIGNED16</strong>; <strong>VAR</strong> w: <strong>SIGNED8</strong>)<tr><td></td><td> GenMOV (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp, imm: <strong>SIGNED32</strong>)<tr><td></td><td> GenMOVSX (mode, s: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenMOVZX (mode, s: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenIN (size: <strong>SIGNED16</strong>)<tr><td></td><td> GenOUT (size: <strong>SIGNED16</strong>)<tr><td></td><td> GenPUSH (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp, imm: <strong>SIGNED32</strong>)<tr><td></td><td> GenPOP (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenXCHG (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenLEA (disp32: <strong>BOOLEAN</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenTyp1 (op, mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp, imm: <strong>SIGNED32</strong>)<tr><td></td><td> GenGroup3 (op, mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenINC (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenDEC (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenMUL (disp32: <strong>BOOLEAN</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenIMUL (mode: <strong>SIGNED8</strong>; shortform: <strong>BOOLEAN</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp, imm: <strong>SIGNED32</strong>)<tr><td></td><td> GenIDIV (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenShiftRot (op, mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp, imm: <strong>SIGNED32</strong>)<tr><td></td><td> GenSHDouble (op, mode: <strong>SIGNED8</strong>; shortform: <strong>BOOLEAN</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp, imm: <strong>SIGNED32</strong>)<tr><td></td><td> GenString (op, size: <strong>SIGNED16</strong>)<tr><td></td><td> GenRepString (op, size: <strong>SIGNED16</strong>)<tr><td></td><td> GenRepCmpsScas (op, size: <strong>SIGNED16</strong>)<tr><td></td><td> GenTEST (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp, imm: <strong>SIGNED32</strong>)<tr><td></td><td> GenB (op: <strong>SIGNED8</strong>; mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp, imm: <strong>SIGNED32</strong>)<tr><td></td><td> GenCALL (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenJMP (mode: <strong>SIGNED8</strong>; reg, base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenRET (size: <strong>SIGNED32</strong>)<tr><td></td><td> GenJcc (op: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenSetcc (op, mode: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenINT (intNumber: <strong>SIGNED16</strong>)<tr><td></td><td> InlineCode (<strong>VAR</strong> code: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; parSize: <strong>SIGNED16</strong>)<tr><td></td><td> GenFLD (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFST (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFSTP (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFCOM (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFCOMP (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFtyp1 (op, mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFADD (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFSUB (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFSUBR (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFMUL (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFDIV (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFDIVR (mode, size: <strong>SIGNED8</strong>; base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFFREE (freg: <strong>SIGNED16</strong>)<tr><td></td><td> GenFop1 (op: <strong>SIGNED16</strong>)<tr><td></td><td> GenFSTCW (base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)<tr><td></td><td> GenFLDCW (base, inx: <strong>SIGNED16</strong>; scale: <strong>SIGNED8</strong>; disp: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_978C2B00">
+</h1><hr><h2 id="#_978C32C0"><a name="PCO.noScale"></a><a href="#PCO">PCO</a>.<a href="#PCO.noScale">noScale</a>
+</h2>
+<p> mode and scale factors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> noScale*= 0</pre>
+<hr><h2 id="#_978C6D40"><a name="PCO.Scale8"></a><a href="#PCO">PCO</a>.<a href="#PCO.Scale8">Scale8</a>
+</h2>
+<p> scale factors</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Scale8*= 3</pre>
+<hr><h2 id="#_978CA000"><a name="PCO.RegReg"></a><a href="#PCO">PCO</a>.<a href="#PCO.RegReg">RegReg</a>
+</h2>
+<p> register to register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> RegReg*= 0</pre>
+<hr><h2 id="#_978CD640"><a name="PCO.RegMem"></a><a href="#PCO">PCO</a>.<a href="#PCO.RegMem">RegMem</a>
+</h2>
+<p> register to memory</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> RegMem*= 1</pre>
+<hr><h2 id="#_978D0D40"><a name="PCO.MemReg"></a><a href="#PCO">PCO</a>.<a href="#PCO.MemReg">MemReg</a>
+</h2>
+<p> memory to register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MemReg*= 2</pre>
+<hr><h2 id="#_978D4380"><a name="PCO.ImmReg"></a><a href="#PCO">PCO</a>.<a href="#PCO.ImmReg">ImmReg</a>
+</h2>
+<p> immediate to register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ImmReg*= 3</pre>
+<hr><h2 id="#_978D79C0"><a name="PCO.ImmMem"></a><a href="#PCO">PCO</a>.<a href="#PCO.ImmMem">ImmMem</a>
+</h2>
+<p> immediate to memory</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ImmMem*= 4</pre>
+<hr><h2 id="#_978DB100"><a name="PCO.RegSt"></a><a href="#PCO">PCO</a>.<a href="#PCO.RegSt">RegSt</a>
+</h2>
+<p> floating point st, reg</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> RegSt*= 5</pre>
+<hr><h2 id="#_978DEB80"><a name="PCO.StReg"></a><a href="#PCO">PCO</a>.<a href="#PCO.StReg">StReg</a>
+</h2>
+<p> floating point reg, st</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> StReg*= 6</pre>
+<hr><h2 id="#_978E2600"><a name="PCO.StRegP"></a><a href="#PCO">PCO</a>.<a href="#PCO.StRegP">StRegP</a>
+</h2>
+<p> floating point ...p reg, st (with pop</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> StRegP*= 7</pre>
+<hr><h2 id="#_978E6C80"><a name="PCO.MemSt"></a><a href="#PCO">PCO</a>.<a href="#PCO.MemSt">MemSt</a>
+</h2>
+<p> floating point st, mem</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MemSt*= 8</pre>
+<hr><h2 id="#_978EA700"><a name="PCO.ForceDisp32"></a><a href="#PCO">PCO</a>.<a href="#PCO.ForceDisp32">ForceDisp32</a>
+</h2>
+<p> modes = Disp32 have always a disp of 32-bits, don't overlap with Reg, Abs, RegRel, Coc</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ForceDisp32*= 20</pre>
+<hr><h2 id="#_978F1400"><a name="PCO.RegMemA"></a><a href="#PCO">PCO</a>.<a href="#PCO.RegMemA">RegMemA</a>
+</h2>
+<p> register to memory, disp is 32-bit</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> RegMemA*= (RegMem+ForceDisp32)</pre>
+<hr><h2 id="#_978F6040"><a name="PCO.MemAReg"></a><a href="#PCO">PCO</a>.<a href="#PCO.MemAReg">MemAReg</a>
+</h2>
+<p> memory to register, disp is 32-bit</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MemAReg*= (MemReg+ForceDisp32)</pre>
+<hr><h2 id="#_978FAC80"><a name="PCO.ImmAReg"></a><a href="#PCO">PCO</a>.<a href="#PCO.ImmAReg">ImmAReg</a>
+</h2>
+<p> immediate to memory, disp is 32-bit</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ImmAReg*= (ImmReg+ForceDisp32)</pre>
+<hr><h2 id="#_978FF8C0"><a name="PCO.ImmMemA"></a><a href="#PCO">PCO</a>.<a href="#PCO.ImmMemA">ImmMemA</a>
+</h2>
+<p> immediate to memory, disp is 32-bit</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ImmMemA*= (ImmMem+ForceDisp32)</pre>
+<hr><h2 id="#_97904500"><a name="PCO.MemASt"></a><a href="#PCO">PCO</a>.<a href="#PCO.MemASt">MemASt</a>
+</h2>
+<p> floating point st, mem</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MemASt*= (MemSt+ForceDisp32)</pre>
+<hr><h2 id="#_97908940"><a name="PCO.Reg"></a><a href="#PCO">PCO</a>.<a href="#PCO.Reg">Reg</a>
+</h2>
+<p> item modes for Intel i386 (must not overlap item basemodes,  13</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Reg*= 15</pre>
+<hr><h2 id="#_9790E340"><a name="PCO.Regs"></a><a href="#PCO">PCO</a>.<a href="#PCO.Regs">Regs</a>
+</h2>
+<p> aliases used for instructions with one register like not, neg etc.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Regs*= RegReg</pre>
+<hr><h2 id="#_97913BC0"><a name="PCO.sReal"></a><a href="#PCO">PCO</a>.<a href="#PCO.sReal">sReal</a>
+</h2>
+<p> i387</p>
+
+<p> short real 32 bit = Bit32</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> sReal*= 0</pre>
+<hr><h2 id="#_97918440"><a name="PCO.lReal"></a><a href="#PCO">PCO</a>.<a href="#PCO.lReal">lReal</a>
+</h2>
+<p> long real 64 bit</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> lReal*= 2</pre>
+<hr><h2 id="#_9791BEC0"><a name="PCO.eReal"></a><a href="#PCO">PCO</a>.<a href="#PCO.eReal">eReal</a>
+</h2>
+<p> extended real 80 bit, only valid in GenFLD, GenFSTP</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> eReal*= 4</pre>
+<hr><h2 id="#_97920D40"><a name="PCO.wInt"></a><a href="#PCO">PCO</a>.<a href="#PCO.wInt">wInt</a>
+</h2>
+<p> word integer 16 bit</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> wInt*= 3</pre>
+<hr><h2 id="#_979247C0"><a name="PCO.qInt"></a><a href="#PCO">PCO</a>.<a href="#PCO.qInt">qInt</a>
+</h2>
+<p> quad integer 64 bit</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> qInt*= 5</pre>
+<hr><h2 id="#_97928240"><a name="PCO.EAX"></a><a href="#PCO">PCO</a>.<a href="#PCO.EAX">EAX</a>
+</h2>
+<p> i386 Register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EAX*= 0</pre>
+<hr><h2 id="#_9792B440"><a name="PCO.EDI"></a><a href="#PCO">PCO</a>.<a href="#PCO.EDI">EDI</a>
+</h2>
+<p> 32 bit register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EDI*= 7</pre>
+<hr><h2 id="#_9792EA80"><a name="PCO.DI"></a><a href="#PCO">PCO</a>.<a href="#PCO.DI">DI</a>
+</h2>
+<p> 16 bit register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DI*= 15</pre>
+<hr><h2 id="#_979320C0"><a name="PCO.BH"></a><a href="#PCO">PCO</a>.<a href="#PCO.BH">BH</a>
+</h2>
+<p> 8 bit register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> BH*= 23</pre>
+<hr><h2 id="#_97935700"><a name="PCO.Bit8"></a><a href="#PCO">PCO</a>.<a href="#PCO.Bit8">Bit8</a>
+</h2>
+<p> register/memory size (8,16, 32 or 64 bit)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Bit8*= AL</pre>
+<hr><h2 id="#_97939D80"><a name="PCO.opROL"></a><a href="#PCO">PCO</a>.<a href="#PCO.opROL">opROL</a>
+</h2>
+<p> opcodes used for generating i386 code</p>
+
+<p> GenShiftRot</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> opROL*= 0</pre>
+<hr><h2 id="#_9793E880"><a name="PCO.Left"></a><a href="#PCO">PCO</a>.<a href="#PCO.Left">Left</a>
+</h2>
+<p> GenSHDouble</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Left*= 0</pre>
+<hr><h2 id="#_97941700"><a name="PCO.CMPS"></a><a href="#PCO">PCO</a>.<a href="#PCO.CMPS">CMPS</a>
+</h2>
+<p> GenString, GenRepString, GenRepCmpsScas</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CMPS*= 83</pre>
+<hr><h2 id="#_97944DC0"><a name="PCO.JO"></a><a href="#PCO">PCO</a>.<a href="#PCO.JO">JO</a>
+</h2>
+<p> GenJcc</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> JO*= 0</pre>
+<hr><h2 id="#_97947C40"><a name="PCO.NOT"></a><a href="#PCO">PCO</a>.<a href="#PCO.NOT">NOT</a>
+</h2>
+<p> GenGroup3</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NOT*= 2</pre>
+<hr><h2 id="#_9794AAC0"><a name="PCO.ADD"></a><a href="#PCO">PCO</a>.<a href="#PCO.ADD">ADD</a>
+</h2>
+<p> GenTyp1</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ADD*= 0</pre>
+<hr><h2 id="#_9794D940"><a name="PCO.wWAIT"></a><a href="#PCO">PCO</a>.<a href="#PCO.wWAIT">wWAIT</a>
+</h2>
+<p> Wait</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> wWAIT*= 155</pre>
+<hr><h2 id="#_979507C0"><a name="PCO.FCOMPP"></a><a href="#PCO">PCO</a>.<a href="#PCO.FCOMPP">FCOMPP</a>
+</h2>
+<p> GenFop1</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FCOMPP*= 0</pre>
+<hr><h2 id="#_97953640"><a name="PCO.BT"></a><a href="#PCO">PCO</a>.<a href="#PCO.BT">BT</a>
+</h2>
+<p> GenB</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> BT*= 4</pre>
+<hr><h2 id="#_979564C0"><a name="PCO.SAHF"></a><a href="#PCO">PCO</a>.<a href="#PCO.SAHF">SAHF</a>
+</h2>
+<p> general</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SAHF*= 158</pre>
+</body></html>

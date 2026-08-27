@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#WSock32">WSock32</a></p>
+<hr><h1 id="#_A04E2C00"><a name="WSock32"></a><a href="#ModuleList">Module</a> WSock32
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>MAXGETHOSTSTRUCT= 1024<tr><td></td><td>AFINet= 2<tr><td></td><td>PFINet= AFINet<tr><td></td><td>IPProtoIP= 0<tr><td></td><td>IPProtoICMP= 1<tr><td></td><td>IPProtoIGMP= 2<tr><td></td><td>IPProtoTCP= 6<tr><td></td><td>IPProtoUDP= 17<tr><td></td><td>IPProtoRAW= 255<tr><td></td><td>InvalidSocket= -1<tr><td></td><td>SocketError= -1<tr><td></td><td>SockUndefined= 0<tr><td></td><td>SockStream= 1<tr><td></td><td>SockDGram= 2<tr><td></td><td>SockRaw= 3<tr><td></td><td>SockRDM= 4<tr><td></td><td>SockSeqPacket= 5<tr><td></td><td>FDRead= 1<tr><td></td><td>FDWrite= 2<tr><td></td><td>FDAccept= 8<tr><td></td><td>FDConnect= 16<tr><td></td><td>FDClose= 32<tr><td></td><td>WSADescriptionLen= 256<tr><td></td><td>WSASysStatusLen= 128<tr><td></td><td>WSAEInProgress= (WSABaseErr+36)<tr><td></td><td>WSAEConnAborted= (WSABaseErr+53)<tr><td></td><td>WSAEConnReset= (WSABaseErr+54)<tr><td></td><td>WSAEShutdown= (WSABaseErr+58)<tr><td></td><td>WSAEInval= (WSABaseErr+22)<tr><td></td><td>WSAEWouldBlock= (WSABaseErr+35)<tr><td></td><td>WSAENoBufs= (WSABaseErr+55)<tr><td></td><td>WSAEConnRefused= (WSABaseErr+61)<tr><td></td><td>FIONRead= 1074030207<tr><td></td><td>SOLSocket= 65535<tr><td></td><td>SOMaxConn= 2147483647<tr><td></td><td><a href="#WSock32.SOSndBuf">SOSndBuf</a>= 4097<tr><td></td><td><a href="#WSock32.SORcvBuf">SORcvBuf</a>= 4098<tr><td></td><td>SOSndTimeo= 4101<tr><td></td><td>SORcvTimeo= 4102<tr><td></td><td>SIORcvAll= SIGNED32(2550136833)<tr><td></td><td>SDReceive= 0<tr><td></td><td>SDSend= 1<tr><td></td><td>SDboth= 2<tr><td></td><td>MsgPeek= 2<tr><th align='left'>type declarations</th><td><a href="#WSock32.TimeVal">TimeVal</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>TimeValDesc</strong><tr><td></td><td><a href="#WSock32.TimeValDesc">TimeValDesc</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#WSock32.WSAData">WSAData</a> =<strong>RECORD</strong> <tr><td></td><td>inAddr =<strong>UNSIGNED32</strong><tr><td></td><td>Port =<strong>UNSIGNED16</strong><tr><td></td><td><a href="#WSock32.PsockaddrIn">PsockaddrIn</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>sockaddrIn</strong><tr><td></td><td><a href="#WSock32.sockaddrIn">sockaddrIn</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#WSock32.Paddrinfo">Paddrinfo</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>addrinfo</strong><tr><td></td><td><a href="#WSock32.addrinfo">addrinfo</a> =<strong>RECORD</strong> <tr><td></td><td>Socket =<strong>Kernel32.HANDLE</strong><tr><td></td><td>Group =<strong>SIGNED32</strong><tr><td></td><td><a href="#WSock32.FDSet">FDSet</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#WSock32.WSAProtocolInfo">WSAProtocolInfo</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#WSock32.LPHostent">LPHostent</a> =<strong>ADDRESS</strong><tr><td></td><td><a href="#WSock32.PHostent">PHostent</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>Hostent</strong><tr><td></td><td><a href="#WSock32.Hostent">Hostent</a> =<strong>RECORD</strong> <tr><th align='left'>variables</th><td><a href="#WSock32.WSACleanup">WSACleanup</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.WSAAsyncGetHostByAddr">WSAAsyncGetHostByAddr</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>User32.HWND</strong>; wMsg: <strong>UNSIGNED32</strong>; <strong>VAR</strong> addr: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; type: <strong>INTEGER</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; buflen: <strong>INTEGER</strong>): <strong>Kernel32.HANDLE</strong><tr><td></td><td><a href="#WSock32.WSAAsyncGetHostByName">WSAAsyncGetHostByName</a>: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>User32.HWND</strong>; wMsg: <strong>UNSIGNED32</strong>; name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; buflen: <strong>INTEGER</strong>): <strong>Kernel32.HANDLE</strong><tr><td></td><td><a href="#WSock32.WSAAsyncSelect">WSAAsyncSelect</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; hWnd: <strong>User32.HWND</strong>; wMsg: <strong>UNSIGNED32</strong>; lEvent: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.WSAGetLastError">WSAGetLastError</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.WSASocket">WSASocket</a>: <strong>PROCEDURE</strong>{WINAPI} (af, type, protocol: <strong>INTEGER</strong>; <strong>VAR</strong> lpProtocolInfo: <strong>WSAProtocolInfo</strong>; g: <strong>Group</strong>; dwFlags: <strong>DWORD</strong>): <strong>Socket</strong><tr><td></td><td><a href="#WSock32.WSAStartup">WSAStartup</a>: <strong>PROCEDURE</strong>{WINAPI} (wVersionRequested: <strong>UNSIGNED16</strong>; <strong>VAR</strong> lpWSAData: <strong>WSAData</strong>): <strong>INTEGER</strong><tr><td></td><td>WSAIoctl: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; ioControlCode: <strong>DWORD</strong>; <strong>VAR</strong> in: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; inSize: <strong>DWORD</strong>; <strong>VAR</strong> outBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; outBufLen: <strong>DWORD</strong>; <strong>VAR</strong> lenReturned: <strong>DWORD</strong>; Overlapped: <strong>ADDRESS</strong>; completionRoutine: <strong>ADDRESS</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.accept">accept</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> addr: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; <strong>VAR</strong> addrlen: <strong>INTEGER</strong>): <strong>Socket</strong><tr><td></td><td><a href="#WSock32.bind">bind</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; namelen: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.closesocket">closesocket</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.connect">connect</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; namelen: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td>freeaddrinfo: <strong>PROCEDURE</strong>{WINAPI} (ai: <strong>Paddrinfo</strong>)<tr><td></td><td>getaddrinfo: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> nodename, servname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> hints: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; <strong>VAR</strong> res: <strong>Paddrinfo</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.gethostbyname">gethostbyname</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>PHostent</strong><tr><td></td><td><a href="#WSock32.gethostname">gethostname</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; namelen: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.getpeername">getpeername</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; <strong>VAR</strong> namelen: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td>getsockname: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; <strong>VAR</strong> namelen: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.htonl">htonl</a>: <strong>PROCEDURE</strong>{WINAPI} (x: <strong>UNSIGNED32</strong>): <strong>UNSIGNED32</strong><tr><td></td><td><a href="#WSock32.htons">htons</a>: <strong>PROCEDURE</strong>{WINAPI} (x: <strong>UNSIGNED16</strong>): <strong>UNSIGNED16</strong><tr><td></td><td><a href="#WSock32.ioctlsocket">ioctlsocket</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; cmd: <strong>SIGNED32</strong>; <strong>VAR</strong> argp: <strong>UNSIGNED32</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.listen">listen</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; backlog: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.ntohl">ntohl</a>: <strong>PROCEDURE</strong>{WINAPI} (x: <strong>UNSIGNED32</strong>): <strong>UNSIGNED32</strong><tr><td></td><td><a href="#WSock32.ntohs">ntohs</a>: <strong>PROCEDURE</strong>{WINAPI} (x: <strong>UNSIGNED16</strong>): <strong>UNSIGNED16</strong><tr><td></td><td><a href="#WSock32.recv">recv</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; flags: <strong>INTEGERSET</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.recvfrom">recvfrom</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; flags: <strong>INTEGERSET</strong>; <strong>VAR</strong> from: <strong>sockaddrIn</strong>; <strong>VAR</strong> fromlen: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.select">select</a>: <strong>PROCEDURE</strong>{WINAPI} (nfds: <strong>INTEGER</strong>; <strong>VAR</strong> readfds, writefds, exceptfds: <strong>FDSet</strong>; timeout: <strong>TimeVal</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.send">send</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; flags: <strong>INTEGERSET</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.sendto">sendto</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; flags: <strong>INTEGERSET</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; tolen: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.setsockopt">setsockopt</a>: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; level, optname: <strong>INTEGER</strong>; <strong>VAR</strong> optval: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; optlen: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td>getsockopt: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; level, optname: <strong>INTEGER</strong>; <strong>VAR</strong> optval: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; <strong>VAR</strong> optlen: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><td></td><td><a href="#WSock32.socket">socket</a>: <strong>PROCEDURE</strong>{WINAPI} (af, type, protocol: <strong>INTEGER</strong>): <strong>Socket</strong><tr><td></td><td>shutdown: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; how: <strong>INTEGER</strong>): <strong>INTEGER</strong><tr><th align='left'>procedures</th><td> Startup<tr><td></td><td> CleanUp<tr><td></td><td> <a href="#WSock32.DispError">DispError</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A05CF100"><a name="WSock32.SOSndBuf"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.SOSndBuf">SOSndBuf</a>
+</h2>
+<p> send buffer size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SOSndBuf*= 4097</pre>
+<hr><h2 id="#_A05D2740"><a name="WSock32.SORcvBuf"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.SORcvBuf">SORcvBuf</a>
+</h2>
+<p> receive buffer size</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SORcvBuf*= 4098</pre>
+<hr><h2 id="#_A05D5D80"><a name="WSock32.TimeVal"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.TimeVal">TimeVal</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TimeVal* =<strong>POINTER</strong> <strong>TO</strong> <strong>TimeValDesc</strong></pre>
+<hr><h2 id="#_A05D8A40"><a name="WSock32.TimeValDesc"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.TimeValDesc">TimeValDesc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TimeValDesc* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sec: <strong>SIGNED32</strong><tr><td></td><td>musec: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A05DD580"><a name="WSock32.WSAData"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.WSAData">WSAData</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WSAData* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>wVersion: <strong>UNSIGNED16</strong><tr><td></td><td>wHighVersion: <strong>UNSIGNED16</strong><tr><td></td><td>iMaxSockets: <strong>UNSIGNED16</strong><tr><td></td><td>iMaxUdpDg: <strong>UNSIGNED16</strong><tr><td></td><td>lpVendorInfo: <strong>ADDRESS</strong><tr><td></td><td>szDescription: <strong>ARRAY</strong> (WSADescriptionLen+1) <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>szSystemStatus: <strong>ARRAY</strong> (WSASysStatusLen+1) <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A05E9A80"><a name="WSock32.PsockaddrIn"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.PsockaddrIn">PsockaddrIn</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PsockaddrIn* =<strong>POINTER</strong> <strong>TO</strong> <strong>sockaddrIn</strong></pre>
+<hr><h2 id="#_A05EC680"><a name="WSock32.sockaddrIn"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.sockaddrIn">sockaddrIn</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> sockaddrIn* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sinFamily: <strong>SIGNED16</strong><tr><td></td><td>sinPort: <strong>Port</strong><tr><td></td><td>sinAddr: <strong>inAddr</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A05F2080"><a name="WSock32.Paddrinfo"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.Paddrinfo">Paddrinfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Paddrinfo* =<strong>POINTER</strong> <strong>TO</strong> <strong>addrinfo</strong></pre>
+<hr><h2 id="#_A05F4D80"><a name="WSock32.addrinfo"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.addrinfo">addrinfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> addrinfo* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>aiFlags: <strong>SET</strong><tr><td></td><td>aiFamily: <strong>SIGNED32</strong><tr><td></td><td>aiSocktype: <strong>SIGNED32</strong><tr><td></td><td>aiProtocol: <strong>SIGNED32</strong><tr><td></td><td>aiAddrlen: <strong>SIGNED32</strong><tr><td></td><td>aiCanonname: <strong>ADDRESS</strong><tr><td></td><td>aiAddr: <strong>PsockaddrIn</strong><tr><td></td><td>aiNext: <strong>Paddrinfo</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A05FF140"><a name="WSock32.FDSet"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.FDSet">FDSet</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FDSet* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fdcount: <strong>UNSIGNED32</strong><tr><td></td><td>socket: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>Socket</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A0604B80"><a name="WSock32.WSAProtocolInfo"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.WSAProtocolInfo">WSAProtocolInfo</a>
+</h2>
+<p> The Windows Sockets WSAPROTOCOL_INFO structure is used to store or retrieve complete information for a given protocol.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WSAProtocolInfo* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_A060C400"><a name="WSock32.LPHostent"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.LPHostent">LPHostent</a>
+</h2>
+<p> The Windows Sockets hostent structure is used by functions to store information about a given host, such as host name, IP address, and so forth.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LPHostent* =<strong>ADDRESS</strong></pre>
+<hr><h2 id="#_A0615140"><a name="WSock32.PHostent"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.PHostent">PHostent</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PHostent* =<strong>POINTER</strong> <strong>TO</strong> <strong>Hostent</strong></pre>
+<hr><h2 id="#_A0617E40"><a name="WSock32.Hostent"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.Hostent">Hostent</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Hostent* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>hName: <strong>ADDRESS</strong><tr><td></td><td>hAliases: <strong>ADDRESS</strong><tr><td></td><td>hAddrtype: <strong>SIGNED16</strong><tr><td></td><td>hLength: <strong>SIGNED16</strong><tr><td></td><td>hAddrList: <strong>ADDRESS</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_A061F5C0"><a name="WSock32.WSACleanup"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.WSACleanup">WSACleanup</a>
+</h2>
+<p> The Windows Sockets WSACleanup function terminates use of the Ws2_32.dll.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> WSACleanup-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A0625B80"><a name="WSock32.WSAAsyncGetHostByAddr"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.WSAAsyncGetHostByAddr">WSAAsyncGetHostByAddr</a>
+</h2>
+<p> The Windows Sockets WSAAsyncGetHostByAddr function asynchronously retrieves host information that corresponds to an address.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> WSAAsyncGetHostByAddr-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>User32.HWND</strong>; wMsg: <strong>UNSIGNED32</strong>; <strong>VAR</strong> addr: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; type: <strong>INTEGER</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; buflen: <strong>INTEGER</strong>): <strong>Kernel32.HANDLE</strong></pre>
+<hr><h2 id="#_A0634400"><a name="WSock32.WSAAsyncGetHostByName"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.WSAAsyncGetHostByName">WSAAsyncGetHostByName</a>
+</h2>
+<p> The Windows Sockets WSAAsyncGetHostByName function asynchronously retrieves host information corresponding to a host name.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> WSAAsyncGetHostByName-: <strong>PROCEDURE</strong>{WINAPI} (hWnd: <strong>User32.HWND</strong>; wMsg: <strong>UNSIGNED32</strong>; name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; buflen: <strong>INTEGER</strong>): <strong>Kernel32.HANDLE</strong></pre>
+<hr><h2 id="#_A0640F00"><a name="WSock32.WSAAsyncSelect"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.WSAAsyncSelect">WSAAsyncSelect</a>
+</h2>
+<p> The Windows Sockets WSAAsyncSelect function requests Windows message-based notification of network events for a socket.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> WSAAsyncSelect-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; hWnd: <strong>User32.HWND</strong>; wMsg: <strong>UNSIGNED32</strong>; lEvent: <strong>INTEGER</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A064BC40"><a name="WSock32.WSAGetLastError"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.WSAGetLastError">WSAGetLastError</a>
+</h2>
+<p> The Windows Sockets WSAGetLastError function gets the error status for the last operation that failed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> WSAGetLastError-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A0653580"><a name="WSock32.WSASocket"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.WSASocket">WSASocket</a>
+</h2>
+<p> The Windows Sockets WSASocket function creates a socket that is bound to a specific transport-service provider.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> WSASocket-: <strong>PROCEDURE</strong>{WINAPI} (af, type, protocol: <strong>INTEGER</strong>; <strong>VAR</strong> lpProtocolInfo: <strong>WSAProtocolInfo</strong>; g: <strong>Group</strong>; dwFlags: <strong>DWORD</strong>): <strong>Socket</strong></pre>
+<hr><h2 id="#_A065FA40"><a name="WSock32.WSAStartup"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.WSAStartup">WSAStartup</a>
+</h2>
+<p> The Windows Sockets WSAStartup function initiates use of Ws2_32.dll by a process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> WSAStartup-: <strong>PROCEDURE</strong>{WINAPI} (wVersionRequested: <strong>UNSIGNED16</strong>; <strong>VAR</strong> lpWSAData: <strong>WSAData</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A0668400"><a name="WSock32.accept"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.accept">accept</a>
+</h2>
+<p> The Windows Sockets accept function permits an incoming connection attempt on a socket.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> accept-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> addr: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; <strong>VAR</strong> addrlen: <strong>INTEGER</strong>): <strong>Socket</strong></pre>
+<hr><h2 id="#_A0672AC0"><a name="WSock32.bind"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.bind">bind</a>
+</h2>
+<p> The Windows Sockets bind function associates a local address with a socket.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> bind-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; namelen: <strong>INTEGER</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A067CA80"><a name="WSock32.closesocket"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.closesocket">closesocket</a>
+</h2>
+<p> The Windows Sockets closesocket function closes an existing socket.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> closesocket-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A0683640"><a name="WSock32.connect"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.connect">connect</a>
+</h2>
+<p> The Windows Sockets connect function establishes a connection to a specified socket.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> connect-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; namelen: <strong>INTEGER</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A068D600"><a name="WSock32.gethostbyname"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.gethostbyname">gethostbyname</a>
+</h2>
+<p> The Windows Sockets gethostbyname function retrieves host information corresponding to a host name from a host database.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> gethostbyname-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>PHostent</strong></pre>
+<hr><h2 id="#_A0696DC0"><a name="WSock32.gethostname"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.gethostname">gethostname</a>
+</h2>
+<p> The Windows Sockets gethostname function returns the standard host name for the local machine.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> gethostname-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; namelen: <strong>INTEGER</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A06A0580"><a name="WSock32.getpeername"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.getpeername">getpeername</a>
+</h2>
+<p> The Windows Sockets getpeername function retrieves the name of the peer to which a socket is connected.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> getpeername-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; <strong>VAR</strong> namelen: <strong>INTEGER</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A06ABCC0"><a name="WSock32.htonl"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.htonl">htonl</a>
+</h2>
+<p> The Windows Sockets htonl function converts a u_long from host to TCP/IP network byte order (which is big-endian).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> htonl-: <strong>PROCEDURE</strong>{WINAPI} (x: <strong>UNSIGNED32</strong>): <strong>UNSIGNED32</strong></pre>
+<hr><h2 id="#_A06B4C00"><a name="WSock32.htons"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.htons">htons</a>
+</h2>
+<p> The Windows Sockets htons function converts a u_short from host to TCP/IP network byte order (which is big-endian).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> htons-: <strong>PROCEDURE</strong>{WINAPI} (x: <strong>UNSIGNED16</strong>): <strong>UNSIGNED16</strong></pre>
+<hr><h2 id="#_A06BDB40"><a name="WSock32.ioctlsocket"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.ioctlsocket">ioctlsocket</a>
+</h2>
+<p> The Windows Sockets ioctlsocket function controls the I/O mode of a socket.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ioctlsocket-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; cmd: <strong>SIGNED32</strong>; <strong>VAR</strong> argp: <strong>UNSIGNED32</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A06C7600"><a name="WSock32.listen"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.listen">listen</a>
+</h2>
+<p> The Windows Sockets listen function places a socket a state where it is listening for an incoming connection.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> listen-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; backlog: <strong>INTEGER</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A06D13C0"><a name="WSock32.ntohl"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.ntohl">ntohl</a>
+</h2>
+<p> The Windows Sockets ntohl function converts a u_long from TCP/IP network order to host byte order (which is little-endian on Intel processors).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ntohl-: <strong>PROCEDURE</strong>{WINAPI} (x: <strong>UNSIGNED32</strong>): <strong>UNSIGNED32</strong></pre>
+<hr><h2 id="#_A06DB100"><a name="WSock32.ntohs"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.ntohs">ntohs</a>
+</h2>
+<p> The Windows Sockets ntohs function converts a u_short from TCP/IP network byte order to host byte order (which is little-endian on Intel processors).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ntohs-: <strong>PROCEDURE</strong>{WINAPI} (x: <strong>UNSIGNED16</strong>): <strong>UNSIGNED16</strong></pre>
+<hr><h2 id="#_A06E51C0"><a name="WSock32.recv"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.recv">recv</a>
+</h2>
+<p> The Windows Sockets recv function receives data from a connected socket.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> recv-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; flags: <strong>INTEGERSET</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A06EFB00"><a name="WSock32.recvfrom"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.recvfrom">recvfrom</a>
+</h2>
+<p> The Windows Sockets recvfrom function receives a datagram and stores the source address.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> recvfrom-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; flags: <strong>INTEGERSET</strong>; <strong>VAR</strong> from: <strong>sockaddrIn</strong>; <strong>VAR</strong> fromlen: <strong>INTEGER</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A06FCF00"><a name="WSock32.select"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.select">select</a>
+</h2>
+<p> The select function determines the status of one or more sockets, waiting if necessary, to perform synchronous I/O</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> select-: <strong>PROCEDURE</strong>{WINAPI} (nfds: <strong>INTEGER</strong>; <strong>VAR</strong> readfds, writefds, exceptfds: <strong>FDSet</strong>; timeout: <strong>TimeVal</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A0708E40"><a name="WSock32.send"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.send">send</a>
+</h2>
+<p> The Windows Sockets send function sends data on a connected socket.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> send-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; flags: <strong>INTEGERSET</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A0713780"><a name="WSock32.sendto"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.sendto">sendto</a>
+</h2>
+<p> The Windows Sockets sendto function sends data to a specific destination.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> sendto-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; <strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>INTEGER</strong>; flags: <strong>INTEGERSET</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; tolen: <strong>INTEGER</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A0720800"><a name="WSock32.setsockopt"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.setsockopt">setsockopt</a>
+</h2>
+<p> The Windows Sockets setsockopt function sets a socket option.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> setsockopt-: <strong>PROCEDURE</strong>{WINAPI} (s: <strong>Socket</strong>; level, optname: <strong>INTEGER</strong>; <strong>VAR</strong> optval: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; optlen: <strong>INTEGER</strong>): <strong>INTEGER</strong></pre>
+<hr><h2 id="#_A072B040"><a name="WSock32.socket"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.socket">socket</a>
+</h2>
+<p> The Windows Sockets socket function creates a socket that is bound to a specific service provider.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> socket-: <strong>PROCEDURE</strong>{WINAPI} (af, type, protocol: <strong>INTEGER</strong>): <strong>Socket</strong></pre>
+<hr><h2 id="#_A0734680"><a name="WSock32.DispError"></a><a href="#WSock32">WSock32</a>.<a href="#WSock32.DispError">DispError</a>
+</h2>
+<p> debugging</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DispError*</pre>
+</body></html>

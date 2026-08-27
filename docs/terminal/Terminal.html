@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Terminal">Terminal</a></p>
+<hr><h1 id="#_9624CFC0"><a name="Terminal"></a><a href="#ModuleList">Module</a> Terminal
+</h1>
+<p> AUTHOR "Andrii Puhachenko"; PURPOSE "The terminal as a device: raw mode, size, keys and drawing"</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Terminal.None">None</a>= TerminalCodes.None<tr><td></td><td>Character= TerminalCodes.Character<tr><td></td><td>Key= TerminalCodes.Key<tr><td></td><td>Mouse= TerminalCodes.Mouse<tr><td></td><td>Unknown= TerminalCodes.Unknown<tr><td></td><td>Escape= TerminalCodes.Escape<tr><td></td><td>Enter= TerminalCodes.Enter<tr><td></td><td>Tab= TerminalCodes.Tab<tr><td></td><td>Backspace= TerminalCodes.Backspace<tr><td></td><td>Insert= TerminalCodes.Insert<tr><td></td><td>Delete= TerminalCodes.Delete<tr><td></td><td>Home= TerminalCodes.Home<tr><td></td><td>End= TerminalCodes.End<tr><td></td><td>PageUp= TerminalCodes.PageUp<tr><td></td><td>PageDown= TerminalCodes.PageDown<tr><td></td><td>Up= TerminalCodes.Up<tr><td></td><td>Down= TerminalCodes.Down<tr><td></td><td>Right= TerminalCodes.Right<tr><td></td><td>Left= TerminalCodes.Left<tr><td></td><td>F1= TerminalCodes.F1<tr><td></td><td>F2= TerminalCodes.F2<tr><td></td><td>F3= TerminalCodes.F3<tr><td></td><td>F4= TerminalCodes.F4<tr><td></td><td>F5= TerminalCodes.F5<tr><td></td><td>F6= TerminalCodes.F6<tr><td></td><td>F7= TerminalCodes.F7<tr><td></td><td>F8= TerminalCodes.F8<tr><td></td><td>F9= TerminalCodes.F9<tr><td></td><td>F10= TerminalCodes.F10<tr><td></td><td>F11= TerminalCodes.F11<tr><td></td><td>F12= TerminalCodes.F12<tr><td></td><td>Shift= TerminalCodes.Shift<tr><td></td><td>Alt= TerminalCodes.Alt<tr><td></td><td>Ctrl= TerminalCodes.Ctrl<tr><td></td><td>LeftButton= TerminalCodes.LeftButton<tr><td></td><td>MiddleButton= TerminalCodes.MiddleButton<tr><td></td><td>RightButton= TerminalCodes.RightButton<tr><td></td><td>Released= TerminalCodes.Released<tr><td></td><td>Moved= TerminalCodes.Moved<tr><td></td><td>WheelUp= TerminalCodes.WheelUp<tr><td></td><td>WheelDown= TerminalCodes.WheelDown<tr><th align='left'>type declarations</th><td><a href="#Terminal.Event">Event</a> =<strong>TerminalCodes.Event</strong><tr><td></td><td>Char32 =<strong>TerminalCodes.Char32</strong><tr><th align='left'>variables</th><td><a href="#Terminal.out">out</a>: <strong>Streams.Writer</strong><tr><th align='left'>procedures</th><td> <a href="#Terminal.IsTerminal">IsTerminal</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Terminal.Open">Open</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Terminal.Close">Close</a><tr><td></td><td> <a href="#Terminal.Size">Size</a> (<strong>VAR</strong> height, width: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Terminal.Resized">Resized</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Terminal.Read">Read</a> (<strong>VAR</strong> e: <strong>Event</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Terminal.Pending">Pending</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Terminal.Flush">Flush</a><tr><td></td><td> MoveTo (row, column: <strong>SIGNED32</strong>)<tr><td></td><td> Clear<tr><td></td><td> ClearLine<tr><td></td><td> Foreground (red, green, blue: <strong>SIGNED32</strong>)<tr><td></td><td> Background (red, green, blue: <strong>SIGNED32</strong>)<tr><td></td><td> Bold (on: <strong>BOOLEAN</strong>)<tr><td></td><td> Inverse (on: <strong>BOOLEAN</strong>)<tr><td></td><td> Plain<tr><td></td><td> AltScreen (on: <strong>BOOLEAN</strong>)<tr><td></td><td> ShowCursor (on: <strong>BOOLEAN</strong>)<tr><td></td><td> TrackMouse (on: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Terminal.WriteChar">WriteChar</a> (c: <strong>Char32</strong>)<tr><td></td><td> <a href="#Terminal.CharTo">CharTo</a> (c: <strong>Char32</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Terminal.Write">Write</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_962AD240">
+</h1><hr><h2 id="#_962ADA00"><a name="Terminal.None"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.None">None</a>
+</h2>
+<p> the same events, keys and modifiers TerminalCodes defines, so one import is enough</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> None*= TerminalCodes.None</pre>
+<hr><h2 id="#_962B3CC0"><a name="Terminal.Event"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Event">Event</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Event* =<strong>TerminalCodes.Event</strong></pre>
+<hr><h2 id="#_962B60C0"><a name="Terminal.out"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.out">out</a>
+</h2>
+<p> Where a program draws. Nothing appears until Flush.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> out-: <strong>Streams.Writer</strong></pre>
+<hr><h2 id="#_962BABC0"><a name="Terminal.IsTerminal"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.IsTerminal">IsTerminal</a>
+</h2>
+<p> Is standard input a terminal at all? A program piped into a file is not, and cannot draw.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsTerminal* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_962C2440"><a name="Terminal.Open"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Open">Open</a>
+</h2>
+<p> Hand over every key as it is pressed, and stop echoing. FALSE if standard input is not a terminal, which is the honest answer for a program with its input redirected.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_962CCD40"><a name="Terminal.Close"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Close">Close</a>
+</h2>
+<p> Give the terminal back the way it was found.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close*</pre>
+<hr><h2 id="#_962D1580"><a name="Terminal.Size"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Size">Size</a>
+</h2>
+<p> How large the window is now, in rows and columns.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Size* (<strong>VAR</strong> height, width: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_962D8540"><a name="Terminal.Resized"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Resized">Resized</a>
+</h2>
+<p> Has the window changed size since this was last asked? A program asks once around its event loop and redraws when the answer is yes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Resized* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_962E18C0"><a name="Terminal.Read"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Read">Read</a>
+</h2>
+<p> The next thing that happened at the terminal, waiting for it. FALSE when standard input has ended, which is how a program is told to stop.</p>
+
+<p> An escape sequence arrives in one burst but is several bytes, and the escape key is one byte that looks like the start of one. So after an escape this waits a moment for the rest to turn up, and calls it the escape key only when nothing does.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Read* (<strong>VAR</strong> e: <strong>Event</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_962F7C40"><a name="Terminal.Pending"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Pending">Pending</a>
+</h2>
+<p> Has something been typed? A program with more than the keyboard to watch -- a child's output, a socket -- asks this instead of reading, and gets on with the rest when the answer is no.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pending* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_963036C0"><a name="Terminal.Flush"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Flush">Flush</a>
+</h2>
+<p> Everything drawn so far, sent to the terminal.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Flush*</pre>
+<hr><h2 id="#_96307B80"><a name="Terminal.WriteChar"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.WriteChar">WriteChar</a>
+</h2>
+<p> One character, in UTF-8: box drawing and braille are what a terminal draws pictures with.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteChar* (c: <strong>Char32</strong>)</pre>
+<hr><h2 id="#_9630ECC0"><a name="Terminal.CharTo"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.CharTo">CharTo</a>
+</h2>
+<p> One character as the UTF-8 string it is, for putting it inside a line of text.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CharTo* (c: <strong>Char32</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_96317A80"><a name="Terminal.Write"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Write">Write</a>
+</h2>
+<p> A string, as it stands.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>

@@ -1,0 +1,1387 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PCT">PCT</a></p>
+<hr><h1 id="#_87D3A5C0"><a name="PCT"></a><a href="#ModuleList">Module</a> PCT
+</h1>
+<p> AUTHOR "prk"; PURPOSE "Parallel Compiler: symbol table";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#PCT.Ok">Ok</a>= 0<tr><td></td><td>DuplicateSymbol= 1<tr><td></td><td>NotAType= 53<tr><td></td><td>IllegalPointerBase= 57<tr><td></td><td>RecursiveType= 58<tr><td></td><td>IllegalValue= 63<tr><td></td><td><a href="#PCT.IllegalType">IllegalType</a>= 88<tr><td></td><td>IllegalArrayBase= 89<tr><td></td><td>IllegalMixture= 91<tr><td></td><td>ParameterMismatch= 115<tr><td></td><td>ReturnMismatch= 117<tr><td></td><td>DuplicateOperator= 139<tr><td></td><td>ImportCycle= 154<tr><td></td><td>MultipleInitializers= 144<tr><td></td><td>NotImplemented= 200<tr><td></td><td>ObjectOnly= 249<tr><td></td><td>InitializerOutsideObject= 253<tr><td></td><td>IndexerNotVirtual= 991<tr><td></td><td><a href="#PCT.BodyNameStr">BodyNameStr</a>= "@Body"<tr><td></td><td>SelfNameStr= "@Self"<tr><td></td><td>AnonymousStr= "@NoName"<tr><td></td><td>PtrReturnTypeStr= "@PtrReturnType"<tr><td></td><td>AssignIndexer= "@AssignIndexer"<tr><td></td><td>ReadIndexer= "@ReadIndexer"<tr><td></td><td><a href="#PCT.local">local</a>= 0<tr><td></td><td><a href="#PCT.structdeclared">structdeclared</a>= 1<tr><td></td><td>structshallowallocated= 2<tr><td></td><td><a href="#PCT.structallocated">structallocated</a>= 3<tr><td></td><td><a href="#PCT.procdeclared">procdeclared</a>= 4<tr><td></td><td><a href="#PCT.hiddenvarsdeclared">hiddenvarsdeclared</a>= 5<tr><td></td><td><a href="#PCT.modeavailable">modeavailable</a>= 6<tr><td></td><td><a href="#PCT.complete">complete</a>= 7<tr><td></td><td><a href="#PCT.HiddenRW">HiddenRW</a>= 0<tr><td></td><td><a href="#PCT.InternalR">InternalR</a>= 1<tr><td></td><td><a href="#PCT.InternalW">InternalW</a>= 2<tr><td></td><td><a href="#PCT.ProtectedR">ProtectedR</a>= 3<tr><td></td><td><a href="#PCT.ProtectedW">ProtectedW</a>= 4<tr><td></td><td><a href="#PCT.PublicR">PublicR</a>= 5<tr><td></td><td><a href="#PCT.PublicW">PublicW</a>= 6<tr><td></td><td>Hidden= {HiddenRW}<tr><td></td><td>Internal= {InternalR,InternalW}<tr><td></td><td>Protected= {ProtectedR,ProtectedW}<tr><td></td><td>Public= {PublicR,PublicW}<tr><td></td><td><a href="#PCT.static">static</a>= 1<tr><td></td><td>open= 2<tr><td></td><td><a href="#PCT.exclusive">exclusive</a>= 0<tr><td></td><td>active= 1<tr><td></td><td>safe= 2<tr><td></td><td>class= 16<tr><td></td><td>interface= 17<tr><td></td><td><a href="#PCT.used">used</a>= 16<tr><td></td><td>written= 17<tr><td></td><td><a href="#PCT.Constructor">Constructor</a>= 1<tr><td></td><td><a href="#PCT.Inline">Inline</a>= 2<tr><td></td><td><a href="#PCT.copy">copy</a>= 3<tr><td></td><td><a href="#PCT.NonVirtual">NonVirtual</a>= 7<tr><td></td><td>Operator= 10<tr><td></td><td>Indexer= 11<tr><td></td><td>RealtimeProc= PCM.RealtimeProc<tr><td></td><td><a href="#PCT.WinAPIParam">WinAPIParam</a>= PCM.WinAPIParam<tr><td></td><td>CParam= PCM.CParam<tr><td></td><td><a href="#PCT.OberonCC">OberonCC</a>= 1<tr><td></td><td>OberonPassivateCC= 2<tr><td></td><td>WinAPICC= 3<tr><td></td><td>CLangCC= 4<tr><td></td><td><a href="#PCT.StaticMethodsOnly">StaticMethodsOnly</a>= 5<tr><td></td><td><a href="#PCT.SystemType">SystemType</a>= 6<tr><td></td><td>RealtimeProcType= PCM.RealtimeProcType<tr><td></td><td><a href="#PCT.Overloading">Overloading</a>= 31<tr><td></td><td><a href="#PCT.AutodeclareSelf">AutodeclareSelf</a>= 30<tr><td></td><td><a href="#PCT.SuperclassAvailable">SuperclassAvailable</a>= 29<tr><td></td><td><a href="#PCT.CanSkipAllocation">CanSkipAllocation</a>= 28<tr><td></td><td><a href="#PCT.RealtimeScope">RealtimeScope</a>= 27<tr><th align='left'>type declarations</th><td>StringIndex =<strong>StringPool.Index</strong><tr><td></td><td><a href="#PCT.Struct">Struct</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#PCT.Symbol">Symbol</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#PCT.Node">Node</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#PCT.Scope">Scope</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#PCT.WithScope">WithScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#PCT.ProcScope">ProcScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#PCT.RecScope">RecScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#PCT.CustomArrayScope">CustomArrayScope</a> =<strong>OBJECT</strong> (<strong>RecScope</strong>)<tr><td></td><td><a href="#PCT.ModScope">ModScope</a> =<strong>OBJECT</strong> (<strong>Scope</strong>)<tr><td></td><td><a href="#PCT.Basic">Basic</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)<tr><td></td><td><a href="#PCT.Array">Array</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)<tr><td></td><td><a href="#PCT.EnhArray">EnhArray</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)<tr><td></td><td><a href="#PCT.Tensor">Tensor</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)<tr><td></td><td><a href="#PCT.Record">Record</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)<tr><td></td><td><a href="#PCT.CustomArray">CustomArray</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Record</strong>)<tr><td></td><td><a href="#PCT.Pointer">Pointer</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)<tr><td></td><td><a href="#PCT.Interface">Interface</a> =<strong>Pointer</strong><tr><td></td><td>Interfaces =<strong>ARRAY</strong> <strong>OF</strong> <strong>Interface</strong><tr><td></td><td><a href="#PCT.Delegate">Delegate</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)<tr><td></td><td><a href="#PCT.Const">Const</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#PCT.ConstArray">ConstArray</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Const</strong>)<tr><td></td><td><a href="#PCT.Value">Value</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#PCT.Variable">Variable</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#PCT.GlobalVar">GlobalVar</a> =<strong>OBJECT</strong> (<strong>Variable</strong>)<tr><td></td><td><a href="#PCT.LocalVar">LocalVar</a> =<strong>OBJECT</strong> (<strong>Variable</strong>)<tr><td></td><td><a href="#PCT.ReturnParameter">ReturnParameter</a> =<strong>OBJECT</strong> (<strong>Variable</strong>)<tr><td></td><td><a href="#PCT.Parameter">Parameter</a> =<strong>OBJECT</strong> (<strong>Variable</strong>)<tr><td></td><td><a href="#PCT.Field">Field</a> =<strong>OBJECT</strong> (<strong>Variable</strong>)<tr><td></td><td><a href="#PCT.Alias">Alias</a> =<strong>OBJECT</strong> (<strong>Variable</strong>)<tr><td></td><td><a href="#PCT.Proc">Proc</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#PCT.Method">Method</a> =<strong>OBJECT</strong> (<strong>Proc</strong>)<tr><td></td><td><a href="#PCT.Type">Type</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td><a href="#PCT.Module">Module</a> =<strong>OBJECT</strong> (<strong>Symbol</strong>)<tr><td></td><td>ModuleArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Module</strong><tr><td></td><td><a href="#PCT.ModuleDB">ModuleDB</a> =<strong>Module</strong><tr><td></td><td><a href="#PCT.ImporterPlugin">ImporterPlugin</a> =<strong>PROCEDURE</strong> (self: <strong>Module</strong>; <strong>VAR</strong> new: <strong>Module</strong>; name: <strong>StringIndex</strong>)<tr><th align='left'>variables</th><td>BodyName: <strong>StringIndex</strong><tr><td></td><td>SelfName: <strong>StringIndex</strong><tr><td></td><td>Anonymous: <strong>StringIndex</strong><tr><td></td><td>PtrReturnType: <strong>StringIndex</strong><tr><td></td><td>Byte: <strong>Struct</strong><tr><td></td><td>Bool: <strong>Struct</strong><tr><td></td><td>Char8: <strong>Struct</strong><tr><td></td><td>Char16: <strong>Struct</strong><tr><td></td><td>Char32: <strong>Struct</strong><tr><td></td><td>Int8: <strong>Struct</strong><tr><td></td><td>Int16: <strong>Struct</strong><tr><td></td><td>Int32: <strong>Struct</strong><tr><td></td><td>Int64: <strong>Struct</strong><tr><td></td><td>Float32: <strong>Struct</strong><tr><td></td><td>Float64: <strong>Struct</strong><tr><td></td><td>Set: <strong>Struct</strong><tr><td></td><td>Ptr: <strong>Struct</strong><tr><td></td><td>String: <strong>Struct</strong><tr><td></td><td>NilType: <strong>Struct</strong><tr><td></td><td>NoType: <strong>Struct</strong><tr><td></td><td>UndefType: <strong>Struct</strong><tr><td></td><td>Address: <strong>Struct</strong><tr><td></td><td>SetType: <strong>Struct</strong><tr><td></td><td>Size: <strong>Struct</strong><tr><td></td><td><a href="#PCT.NumericType">NumericType</a>: <strong>ARRAY</strong> 6 <strong>OF</strong> <strong>Basic</strong><tr><td></td><td><a href="#PCT.CharType">CharType</a>: <strong>ARRAY</strong> 3 <strong>OF</strong> <strong>Basic</strong><tr><td></td><td>Allocate: <strong>PROCEDURE</strong> (context, scope: <strong>Scope</strong>; hiddenVarsOnly: <strong>BOOLEAN</strong>)<tr><td></td><td>PreAllocate: <strong>PROCEDURE</strong> (context, scope: <strong>Scope</strong>)<tr><td></td><td>PostAllocate: <strong>PROCEDURE</strong> (context, scope: <strong>Scope</strong>)<tr><td></td><td>Universe: <strong>Module</strong><tr><td></td><td>System: <strong>Module</strong><tr><td></td><td>True: <strong>Const</strong><tr><td></td><td>False: <strong>Const</strong><tr><td></td><td>SystemAddress: <strong>Type</strong><tr><td></td><td>SystemSize: <strong>Type</strong><tr><td></td><td>AddressSize: <strong>SIGNED32</strong><tr><td></td><td>SetSize: <strong>SIGNED32</strong><tr><td></td><td><a href="#PCT.database">database</a>: <strong>ModuleDB</strong><tr><th align='left'>procedures</th><td> <a href="#PCT.ExtendModArray">ExtendModArray</a> (<strong>VAR</strong> a: <strong>ModuleArray</strong>)<tr><td></td><td> <a href="#PCT.IsCardinalType">IsCardinalType</a> (t: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsFloatType (t: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsCharType (t: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsPointer (t: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ContainsPointer (t: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsStaticDelegate (t: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsDynamicDelegate (t: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsRecord (t: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsBasic (t: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> BasicTypeDistance (from, to: <strong>Basic</strong>): <strong>SIGNED32</strong><tr><td></td><td> RecordTypeDistance (from, to: <strong>Record</strong>): <strong>SIGNED32</strong><tr><td></td><td> PointerTypeDistance (from, to: <strong>Pointer</strong>): <strong>SIGNED32</strong><tr><td></td><td> ArrayTypeDistance (from, to: <strong>Array</strong>): <strong>SIGNED32</strong><tr><td></td><td> TypeDistance (from, to: <strong>Struct</strong>): <strong>SIGNED32</strong><tr><td></td><td> SignatureDistance (from, to: <strong>Parameter</strong>): <strong>SIGNED32</strong><tr><td></td><td> SignatureDistance0 (parCount: <strong>SIGNED32</strong>; <strong>CONST</strong> pars: <strong>ARRAY</strong> <strong>OF</strong> <strong>Struct</strong>; to: <strong>Parameter</strong>): <strong>SIGNED32</strong><tr><td></td><td> ParameterMatch (Pa, Pb: <strong>Parameter</strong>; <strong>VAR</strong> faulty: <strong>Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> EqualTypes (Ta, Tb: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetProcedureAllowed (scope: <strong>ProcScope</strong>; returnType: <strong>Struct</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#PCT.SetOwner">SetOwner</a> (scope: <strong>Scope</strong>)<tr><td></td><td> InitScope (scope, parent: <strong>Scope</strong>; flags: <strong>SET</strong>; imported: <strong>BOOLEAN</strong>)<tr><td></td><td> HiddenVarExists (scope: <strong>Scope</strong>; info: @Any0): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#PCT.Find">Find</a> (current, search: <strong>Scope</strong>; name: <strong>StringIndex</strong>; mode: <strong>SIGNED8</strong>; mark: <strong>BOOLEAN</strong>): <strong>Symbol</strong><tr><td></td><td> FindIndexer (scope: <strong>RecScope</strong>; name: <strong>StringIndex</strong>): <strong>Method</strong><tr><td></td><td> FindOperator (current, search: <strong>Scope</strong>; parents: <strong>BOOLEAN</strong>; name: <strong>StringIndex</strong>; <strong>CONST</strong> pars: <strong>ARRAY</strong> <strong>OF</strong> <strong>Struct</strong>; parCount: <strong>SIZE</strong>; pos: <strong>SIGNED32</strong>): <strong>Proc</strong><tr><td></td><td> PrintString (s: <strong>StringIndex</strong>)<tr><td></td><td> FindProcedure (current, search: <strong>Scope</strong>; name: <strong>StringIndex</strong>; parCount: <strong>SIGNED32</strong>; <strong>CONST</strong> pars: <strong>ARRAY</strong> <strong>OF</strong> <strong>Struct</strong>; identicSignature, mark: <strong>BOOLEAN</strong>): <strong>Proc</strong><tr><td></td><td> FindSameSignature (search: <strong>Scope</strong>; name: <strong>StringIndex</strong>; par: <strong>Parameter</strong>; identic: <strong>BOOLEAN</strong>): <strong>Proc</strong><tr><td></td><td> StateStructShallowAllocated (scope: <strong>Scope</strong>)<tr><td></td><td> ChangeState (scope: <strong>Scope</strong>; state: <strong>SIGNED8</strong>; pos: <strong>SIGNED32</strong>)<tr><td></td><td> Import (self: <strong>Module</strong>; <strong>VAR</strong> new: <strong>Module</strong>; name: <strong>StringIndex</strong>)<tr><td></td><td> TraverseScopes (top: <strong>Scope</strong>; proc: <strong>PROCEDURE</strong> (s: <strong>Scope</strong>))<tr><td></td><td> AddRecord (scope: <strong>Scope</strong>; rec: <strong>Record</strong>)<tr><td></td><td> <a href="#PCT.GetIntType">GetIntType</a> (i: <strong>SIGNED32</strong>): <strong>Struct</strong><tr><td></td><td> GetCharType (i: <strong>SIGNED32</strong>): <strong>Struct</strong><tr><td></td><td> NewIntConst (i: <strong>SIGNED32</strong>; type: <strong>Struct</strong>): <strong>Const</strong><tr><td></td><td> NewInt64Const (i: <strong>SIGNED64</strong>): <strong>Const</strong><tr><td></td><td> NewSetConst (s: <strong>SET</strong>): <strong>Const</strong><tr><td></td><td> NewFloatConst (r: <strong>FLOAT64</strong>; type: <strong>Struct</strong>): <strong>Const</strong><tr><td></td><td> NewStringConst (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Const</strong><tr><td></td><td> NewPtrConst (p: @Any0; type: <strong>Struct</strong>): <strong>Const</strong><tr><td></td><td> <a href="#PCT.MakeArrayType">MakeArrayType</a> (len: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong>; dim: <strong>SIGNED32</strong>; base: <strong>Struct</strong>; basesize: <strong>SIGNED32</strong>): <strong>Struct</strong><tr><td></td><td> NewArrayConst (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong>; dim: <strong>SIGNED32</strong>; base: <strong>Struct</strong>; basesize: <strong>SIGNED32</strong>): <strong>Const</strong><tr><td></td><td> ElementType (a: <strong>Struct</strong>): <strong>Struct</strong><tr><td></td><td> <a href="#PCT.InitOpenArray">InitOpenArray</a> (a: <strong>Array</strong>; base: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> InitStaticArray (a: <strong>Array</strong>; len: <strong>SIGNED32</strong>; base: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#PCT.InitTensor">InitTensor</a> (a: <strong>Tensor</strong>; base: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> InitOpenEnhArray (a: <strong>EnhArray</strong>; base: <strong>Struct</strong>; allow: <strong>SET</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> InitStaticEnhArray (a: <strong>EnhArray</strong>; len: <strong>SIGNED32</strong>; base: <strong>Struct</strong>; allow: <strong>SET</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> SetEnhArrayLen (a: <strong>EnhArray</strong>; len: <strong>SIGNED32</strong>)<tr><td></td><td> SetEnhArrayInc (a: <strong>EnhArray</strong>; inc: <strong>SIGNED32</strong>)<tr><td></td><td> BuildOpenArray (base: <strong>Struct</strong>; dim: <strong>SIGNED32</strong>): <strong>Struct</strong><tr><td></td><td> BuildTensor (base: <strong>Struct</strong>): <strong>Tensor</strong><tr><td></td><td> InitRecord (r: <strong>Record</strong>; base: <strong>Struct</strong>; <strong>CONST</strong> intf: <strong>Interfaces</strong>; scope: <strong>RecScope</strong>; isInterface, isImported, isDynamic: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> NewRecord (base: <strong>Struct</strong>; scope: <strong>RecScope</strong>; flags: <strong>SET</strong>; imported: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Record</strong><tr><td></td><td> <a href="#PCT.InitCustomArray">InitCustomArray</a> (r: <strong>CustomArray</strong>; base: <strong>Struct</strong>; dim: <strong>SIGNED32</strong>; scope: <strong>CustomArrayScope</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> NewCustomArray (base: <strong>Struct</strong>; dim: <strong>SIGNED32</strong>; scope: <strong>CustomArrayScope</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Pointer</strong><tr><td></td><td> <a href="#PCT.NewClass">NewClass</a> (base: <strong>Struct</strong>; <strong>CONST</strong> implements: <strong>Interfaces</strong>; scope: <strong>RecScope</strong>; imported: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Pointer</strong><tr><td></td><td> NewInterface (<strong>CONST</strong> implements: <strong>Interfaces</strong>; scope: <strong>RecScope</strong>; imported: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Pointer</strong><tr><td></td><td> InitPointer (ptr: <strong>Pointer</strong>; base: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> InitDelegate (p: <strong>Delegate</strong>; return: <strong>Struct</strong>; scope: <strong>ProcScope</strong>; flags: <strong>SET</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#PCT.InitSymbol">InitSymbol</a> (o: <strong>Symbol</strong>; name: <strong>StringIndex</strong>; vis: <strong>SET</strong>; type: <strong>Struct</strong>)<tr><td></td><td> InitType (t: <strong>Type</strong>; name: <strong>StringIndex</strong>; vis: <strong>SET</strong>; type: <strong>Struct</strong>)<tr><td></td><td> NewValue (name: <strong>StringIndex</strong>; vis: <strong>SET</strong>; c: <strong>Const</strong>): <strong>Value</strong><tr><td></td><td> NewGlobalVar (vis: <strong>SET</strong>; name: <strong>StringIndex</strong>; flags: <strong>SET</strong>; type: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>GlobalVar</strong><tr><td></td><td> NewProc (vis: <strong>SET</strong>; name: <strong>StringIndex</strong>; flags: <strong>SET</strong>; scope: <strong>ProcScope</strong>; return: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Proc</strong><tr><td></td><td> NewModule (name: <strong>StringIndex</strong>; imported: <strong>BOOLEAN</strong>; flags: <strong>SET</strong>; scope: <strong>ModScope</strong>): <strong>Module</strong><tr><td></td><td> <a href="#PCT.SetMode">SetMode</a> (scope: <strong>Scope</strong>; mode: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> SetProcFlag (scope: <strong>Scope</strong>; flag: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> IsRealtimeScope (scope: <strong>Scope</strong>): <strong>BOOLEAN</strong><tr><td></td><td> RecordSizeUsed (rec: <strong>Record</strong>)<tr><td></td><td> <a href="#PCT.Written">Written</a> (s: <strong>Symbol</strong>)<tr><td></td><td> RemoveWarning (s: <strong>Symbol</strong>)<tr><td></td><td> <a href="#PCT.GetTypeName">GetTypeName</a> (type: <strong>Struct</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#PCT.GetScopeName">GetScopeName</a> (scope: <strong>Scope</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#PCT.Register">Register</a> (root: <strong>ModuleDB</strong>; m: <strong>Module</strong>)<tr><td></td><td> Unregister (root: <strong>ModuleDB</strong>; name: <strong>StringIndex</strong>)<tr><td></td><td> Retrieve (root: <strong>ModuleDB</strong>; name: <strong>StringIndex</strong>): <strong>Module</strong><tr><td></td><td> Enumerate (root: <strong>ModuleDB</strong>; EnumProc: <strong>PROCEDURE</strong>{DELEGATE} (m: <strong>Module</strong>))<tr><td></td><td> InitDB (<strong>VAR</strong> root: <strong>ModuleDB</strong>)<tr><td></td><td> <a href="#PCT.AddImporter">AddImporter</a> (p: <strong>ImporterPlugin</strong>)<tr><td></td><td> RemoveImporter (p: <strong>ImporterPlugin</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_87F02FC0"><a name="PCT.Ok"></a><a href="#PCT">PCT</a>.<a href="#PCT.Ok">Ok</a>
+</h2>
+<p> Error Codes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ok*= 0</pre>
+<hr><h2 id="#_87F061C0"><a name="PCT.IllegalType"></a><a href="#PCT">PCT</a>.<a href="#PCT.IllegalType">IllegalType</a>
+</h2>
+<p> open array not allowed here</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> IllegalType*= 88</pre>
+<hr><h2 id="#_87F0A0C0"><a name="PCT.BodyNameStr"></a><a href="#PCT">PCT</a>.<a href="#PCT.BodyNameStr">BodyNameStr</a>
+</h2>
+<p> Reserved Names</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> BodyNameStr*= "@Body"</pre>
+<hr><h2 id="#_87F0D380"><a name="PCT.local"></a><a href="#PCT">PCT</a>.<a href="#PCT.local">local</a>
+</h2>
+<p>Search.mode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> local*= 0</pre>
+<hr><h2 id="#_87F10080"><a name="PCT.structdeclared"></a><a href="#PCT">PCT</a>.<a href="#PCT.structdeclared">structdeclared</a>
+</h2>
+<p>Scope.state</p>
+
+<p> all structures declared</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> structdeclared*= 1</pre>
+<hr><h2 id="#_87F13C80"><a name="PCT.structallocated"></a><a href="#PCT">PCT</a>.<a href="#PCT.structallocated">structallocated</a>
+</h2>
+<p> all structures allocated (size set)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> structallocated*= 3</pre>
+<hr><h2 id="#_87F17B80"><a name="PCT.procdeclared"></a><a href="#PCT">PCT</a>.<a href="#PCT.procdeclared">procdeclared</a>
+</h2>
+<p> all procedures declared</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> procdeclared*= 4</pre>
+<hr><h2 id="#_87F1B1C0"><a name="PCT.hiddenvarsdeclared"></a><a href="#PCT">PCT</a>.<a href="#PCT.hiddenvarsdeclared">hiddenvarsdeclared</a>
+</h2>
+<p> all proc. calls returning pointers or delegates as hidden variables declared</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> hiddenvarsdeclared*= 5</pre>
+<hr><h2 id="#_87F209C0"><a name="PCT.modeavailable"></a><a href="#PCT">PCT</a>.<a href="#PCT.modeavailable">modeavailable</a>
+</h2>
+<p> body mode available (ACTIVE, EXCLUSIVE)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> modeavailable*= 6</pre>
+<hr><h2 id="#_87F24940"><a name="PCT.complete"></a><a href="#PCT">PCT</a>.<a href="#PCT.complete">complete</a>
+</h2>
+<p> code available</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> complete*= 7</pre>
+<hr><h2 id="#_87F27B40"><a name="PCT.HiddenRW"></a><a href="#PCT">PCT</a>.<a href="#PCT.HiddenRW">HiddenRW</a>
+</h2>
+<p> Access Flags</p>
+
+<p> can neither read nor write symbol in same module</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HiddenRW*= 0</pre>
+<hr><h2 id="#_87F2D340"><a name="PCT.InternalR"></a><a href="#PCT">PCT</a>.<a href="#PCT.InternalR">InternalR</a>
+</h2>
+<p> can read symbol in same module</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> InternalR*= 1</pre>
+<hr><h2 id="#_87F315C0"><a name="PCT.InternalW"></a><a href="#PCT">PCT</a>.<a href="#PCT.InternalW">InternalW</a>
+</h2>
+<p> can write symbol in same module</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> InternalW*= 2</pre>
+<hr><h2 id="#_87F35940"><a name="PCT.ProtectedR"></a><a href="#PCT">PCT</a>.<a href="#PCT.ProtectedR">ProtectedR</a>
+</h2>
+<p> can read symbol in type extentions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ProtectedR*= 3</pre>
+<hr><h2 id="#_87F39BC0"><a name="PCT.ProtectedW"></a><a href="#PCT">PCT</a>.<a href="#PCT.ProtectedW">ProtectedW</a>
+</h2>
+<p> can write symbol in type extentions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ProtectedW*= 4</pre>
+<hr><h2 id="#_87F3DE40"><a name="PCT.PublicR"></a><a href="#PCT">PCT</a>.<a href="#PCT.PublicR">PublicR</a>
+</h2>
+<p> can read everywhere</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PublicR*= 5</pre>
+<hr><h2 id="#_87F41480"><a name="PCT.PublicW"></a><a href="#PCT">PCT</a>.<a href="#PCT.PublicW">PublicW</a>
+</h2>
+<p> can write everywhere</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PublicW*= 6</pre>
+<hr><h2 id="#_87F44AC0"><a name="PCT.static"></a><a href="#PCT">PCT</a>.<a href="#PCT.static">static</a>
+</h2>
+<p>Array.mode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> static*= 1</pre>
+<hr><h2 id="#_87F477C0"><a name="PCT.exclusive"></a><a href="#PCT">PCT</a>.<a href="#PCT.exclusive">exclusive</a>
+</h2>
+<p> Record.mode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> exclusive*= 0</pre>
+<hr><h2 id="#_87F4A640"><a name="PCT.used"></a><a href="#PCT">PCT</a>.<a href="#PCT.used">used</a>
+</h2>
+<p> Symbol .flags / all</p>
+
+<p>object is accessed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> used*= 16</pre>
+<hr><h2 id="#_87F4EF00"><a name="PCT.Constructor"></a><a href="#PCT">PCT</a>.<a href="#PCT.Constructor">Constructor</a>
+</h2>
+<p> fof 070731</p>
+
+<p> Symbol .flags / Proc only</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Constructor*= 1</pre>
+<hr><h2 id="#_87F53800"><a name="PCT.Inline"></a><a href="#PCT">PCT</a>.<a href="#PCT.Inline">Inline</a>
+</h2>
+<p> inline proc</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Inline*= 2</pre>
+<hr><h2 id="#_87F56A00"><a name="PCT.copy"></a><a href="#PCT">PCT</a>.<a href="#PCT.copy">copy</a>
+</h2>
+<p> copy of a method defined in a superinterface</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> copy*= 3</pre>
+<hr><h2 id="#_87F5B500"><a name="PCT.NonVirtual"></a><a href="#PCT">PCT</a>.<a href="#PCT.NonVirtual">NonVirtual</a>
+</h2>
+<p> Non-virtual method, cannot be overridden</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NonVirtual*= 7</pre>
+<hr><h2 id="#_87F5F480"><a name="PCT.WinAPIParam"></a><a href="#PCT">PCT</a>.<a href="#PCT.WinAPIParam">WinAPIParam</a>
+</h2>
+<p> Symbol .flags / Variable only</p>
+
+<p>PCM.Untraced = 4 -&gt PCT.Variable only</p>
+
+<p> Parameter .flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> WinAPIParam*= PCM.WinAPIParam</pre>
+<hr><h2 id="#_87F65B80"><a name="PCT.OberonCC"></a><a href="#PCT">PCT</a>.<a href="#PCT.OberonCC">OberonCC</a>
+</h2>
+<p> Calling Conventions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> OberonCC*= 1</pre>
+<hr><h2 id="#_87F68D80"><a name="PCT.StaticMethodsOnly"></a><a href="#PCT">PCT</a>.<a href="#PCT.StaticMethodsOnly">StaticMethodsOnly</a>
+</h2>
+<p> Struct flags</p>
+
+<p> Delegate / restriction, static methods only</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> StaticMethodsOnly*= 5</pre>
+<hr><h2 id="#_87F6DA00"><a name="PCT.SystemType"></a><a href="#PCT">PCT</a>.<a href="#PCT.SystemType">SystemType</a>
+</h2>
+<p> Record / hidden system type descs (pointer to array of pointers/descriptors), allocated by need</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SystemType*= 6</pre>
+<hr><h2 id="#_87F73B80"><a name="PCT.Overloading"></a><a href="#PCT">PCT</a>.<a href="#PCT.Overloading">Overloading</a>
+</h2>
+<p> realtime property of delegates and static procedure types</p>
+
+<p> Scope.flags</p>
+
+<p>Modules only: duplicate entries allowed (applies to all scopes in the module)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Overloading*= 31</pre>
+<hr><h2 id="#_87F7BDC0"><a name="PCT.AutodeclareSelf"></a><a href="#PCT">PCT</a>.<a href="#PCT.AutodeclareSelf">AutodeclareSelf</a>
+</h2>
+<p>Methods only: self is automatically allocated when the method is created</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> AutodeclareSelf*= 30</pre>
+<hr><h2 id="#_87F811C0"><a name="PCT.SuperclassAvailable"></a><a href="#PCT">PCT</a>.<a href="#PCT.SuperclassAvailable">SuperclassAvailable</a>
+</h2>
+<p>Records only: Superclass available before (or by a different thread) the actual one is entered</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SuperclassAvailable*= 29</pre>
+<hr><h2 id="#_87F87740"><a name="PCT.CanSkipAllocation"></a><a href="#PCT">PCT</a>.<a href="#PCT.CanSkipAllocation">CanSkipAllocation</a>
+</h2>
+<p> Records only: the pointer only is used, record allocation can be skipped (no need to wait for StructComplete</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CanSkipAllocation*= 28</pre>
+<hr><h2 id="#_87F8E940"><a name="PCT.RealtimeScope"></a><a href="#PCT">PCT</a>.<a href="#PCT.RealtimeScope">RealtimeScope</a>
+</h2>
+<p> direct or indirect owner of scope is a realtime procedure, i.e. within scope no memory allocation, no locking and no await are allowed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> RealtimeScope*= 27</pre>
+<hr><h2 id="#_87F96CC0"><a name="PCT.Struct"></a><a href="#PCT">PCT</a>.<a href="#PCT.Struct">Struct</a>
+</h2>
+<p> Symbol Table Structures</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Struct* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>owner: <strong>Type</strong><tr><td></td><td>size: <strong>PCM.Attribute</strong><tr><td></td><td>sym: <strong>PCM.Attribute</strong><tr><td></td><td>flags: <strong>SET</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_87F9F140"><a name="PCT.Symbol"></a><a href="#PCT">PCT</a>.<a href="#PCT.Symbol">Symbol</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Symbol* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#PCT.Symbol.name">name</a>: <strong>StringIndex</strong><tr><td></td><td>vis: <strong>SET</strong><tr><td></td><td>type: <strong>Struct</strong><tr><td></td><td>adr: <strong>PCM.Attribute</strong><tr><td></td><td><a href="#PCT.Symbol.sym">sym</a>: <strong>PCM.Attribute</strong><tr><td></td><td>flags: <strong>SET</strong><tr><td></td><td>sorted: <strong>Symbol</strong><tr><td></td><td>inScope: <strong>Scope</strong><tr><td></td><td>dlink: <strong>Symbol</strong><tr><td></td><td><a href="#PCT.Symbol.info">info</a>: @Any0<tr><td></td><td>pos: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_87FAC140"><a name="PCT.Symbol.name"></a><a href="#PCT">PCT</a>.<a href="#PCT.Symbol">Symbol</a>.<a href="#PCT.Symbol.name">name</a>
+</h3>
+<p>string-pool index</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> name-: <strong>StringIndex</strong></pre>
+<hr><h3 id="#_87FAF880"><a name="PCT.Symbol.sym"></a><a href="#PCT">PCT</a>.<a href="#PCT.Symbol">Symbol</a>.<a href="#PCT.Symbol.sym">sym</a>
+</h3>
+<p>allocation and fingerprinting information</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> sym*: <strong>PCM.Attribute</strong></pre>
+<hr><h3 id="#_87FB38C0"><a name="PCT.Symbol.info"></a><a href="#PCT">PCT</a>.<a href="#PCT.Symbol">Symbol</a>.<a href="#PCT.Symbol.info">info</a>
+</h3>
+<p> user defined data</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> info*: @Any0</pre>
+<hr><h2 id="#_87FB75C0"><a name="PCT.Node"></a><a href="#PCT">PCT</a>.<a href="#PCT.Node">Node</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Node* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>pos: <strong>SIGNED32</strong></td></tr>
+</table>
+<hr><h2 id="#_87FBC1C0"><a name="PCT.Scope"></a><a href="#PCT">PCT</a>.<a href="#PCT.Scope">Scope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scope* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>state: <strong>SIGNED8</strong><tr><td></td><td>flags: <strong>SET</strong><tr><td></td><td><a href="#PCT.Scope.ownerID">ownerID</a>: <strong>ADDRESS</strong><tr><td></td><td><a href="#PCT.Scope.module">module</a>: <strong>Module</strong><tr><td></td><td>sorted: <strong>Symbol</strong><tr><td></td><td><a href="#PCT.Scope.last">last</a>: <strong>Symbol</strong><tr><td></td><td>firstValue: <strong>Value</strong><tr><td></td><td>lastValue: <strong>Value</strong><tr><td></td><td>firstVar: <strong>Variable</strong><tr><td></td><td>lastVar: <strong>Variable</strong><tr><td></td><td>firstHiddenVar: <strong>Variable</strong><tr><td></td><td>lastHiddenVar: <strong>Variable</strong><tr><td></td><td><a href="#PCT.Scope.firstProc">firstProc</a>: <strong>Proc</strong><tr><td></td><td>lastProc: <strong>Proc</strong><tr><td></td><td>firstType: <strong>Type</strong><tr><td></td><td>lastType: <strong>Type</strong><tr><td></td><td>parent: <strong>Scope</strong><tr><td></td><td>code: <strong>PCM.Attribute</strong><tr><td></td><td>imported: <strong>BOOLEAN</strong><tr><td></td><td>valueCount: <strong>SIGNED32</strong><tr><td></td><td>varCount: <strong>SIGNED32</strong><tr><td></td><td>procCount: <strong>SIGNED32</strong><tr><td></td><td><a href="#PCT.Scope.typeCount">typeCount</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> Await (state: <strong>SIGNED8</strong>)<tr><td></td><td> CreateSymbol (name: <strong>StringIndex</strong>; vis: <strong>SET</strong>; type: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateValue (name: <strong>StringIndex</strong>; vis: <strong>SET</strong>; c: <strong>Const</strong>; pos: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateType (name: <strong>StringIndex</strong>; vis: <strong>SET</strong>; type: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateAlias (ov: <strong>Variable</strong>; type: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateVar (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; type: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; info: @Any0; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateProc (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; scope: <strong>Scope</strong>; return: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateHiddenVarName (<strong>VAR</strong> name: <strong>StringIndex</strong>)<tr><td></td><td> CreateAwaitProcName (<strong>VAR</strong> name: <strong>StringIndex</strong>; count: <strong>SIGNED32</strong>)<tr><td></td><td> FindHiddenVar (pos: <strong>SIGNED32</strong>; info: @Any0): <strong>Variable</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_880D6C40"><a name="PCT.Scope.ownerID"></a><a href="#PCT">PCT</a>.<a href="#PCT.Scope">Scope</a>.<a href="#PCT.Scope.ownerID">ownerID</a>
+</h3>
+<p> process owning this scope</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ownerID-: <strong>ADDRESS</strong></pre>
+<hr><h3 id="#_880DAD80"><a name="PCT.Scope.module"></a><a href="#PCT">PCT</a>.<a href="#PCT.Scope">Scope</a>.<a href="#PCT.Scope.module">module</a>
+</h3>
+<p> module owning this scope</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> module-: <strong>Module</strong></pre>
+<hr><h3 id="#_880DEEC0"><a name="PCT.Scope.last"></a><a href="#PCT">PCT</a>.<a href="#PCT.Scope">Scope</a>.<a href="#PCT.Scope.last">last</a>
+</h3>
+<p> objects in the scope; last is the last object inserted</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> last-: <strong>Symbol</strong></pre>
+<hr><h3 id="#_880E4780"><a name="PCT.Scope.firstProc"></a><a href="#PCT">PCT</a>.<a href="#PCT.Scope">Scope</a>.<a href="#PCT.Scope.firstProc">firstProc</a>
+</h3>
+<p> variables denoting proc. calls that return pointers, not inserted in sorted list of all symbols</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> firstProc-: <strong>Proc</strong></pre>
+<hr><h3 id="#_880EB340"><a name="PCT.Scope.typeCount"></a><a href="#PCT">PCT</a>.<a href="#PCT.Scope">Scope</a>.<a href="#PCT.Scope.typeCount">typeCount</a>
+</h3>
+<p> variables/procedures in this scope.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> typeCount-: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_880EF480"><a name="PCT.WithScope"></a><a href="#PCT">PCT</a>.<a href="#PCT.WithScope">WithScope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WithScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>withGuard: <strong>Symbol</strong><tr><td></td><td>withSym: <strong>Symbol</strong><tr><th align='left'>procedures</th><td> CreateVar (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; type: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; info: @Any0; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_880FB580"><a name="PCT.ProcScope"></a><a href="#PCT">PCT</a>.<a href="#PCT.ProcScope">ProcScope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ownerS: <strong>Delegate</strong><tr><td></td><td>ownerO: <strong>Proc</strong><tr><td></td><td>firstPar: <strong>Parameter</strong><tr><td></td><td>lastPar: <strong>Parameter</strong><tr><td></td><td>formalParCount: <strong>SIGNED32</strong><tr><td></td><td>parCount: <strong>SIGNED32</strong><tr><td></td><td>cc: <strong>SIGNED32</strong><tr><td></td><td>returnParameter: <strong>ReturnParameter</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> SetCC (cc: <strong>SIGNED32</strong>)<tr><td></td><td> CreateVar (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; type: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; info: @Any0; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> ReversePars<tr><td></td><td> CreatePar (vis: <strong>SET</strong>; ref: <strong>BOOLEAN</strong>; name: <strong>StringIndex</strong>; flags: <strong>SET</strong>; type: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#PCT.ProcScope.CreateReturnPar">CreateReturnPar</a> (type: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#PCT.ProcScope.CreateProc">CreateProc</a> (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; scope: <strong>Scope</strong>; return: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_88170840"><a name="PCT.ProcScope.CreateReturnPar"></a><a href="#PCT">PCT</a>.<a href="#PCT.ProcScope">ProcScope</a>.<a href="#PCT.ProcScope.CreateReturnPar">CreateReturnPar</a>
+</h3>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CreateReturnPar* (type: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="#_88176E80"><a name="PCT.ProcScope.CreateProc"></a><a href="#PCT">PCT</a>.<a href="#PCT.ProcScope">ProcScope</a>.<a href="#PCT.ProcScope.CreateProc">CreateProc</a>
+</h3>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CreateProc* (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; scope: <strong>Scope</strong>; return: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_88180300"><a name="PCT.RecScope"></a><a href="#PCT">PCT</a>.<a href="#PCT.RecScope">RecScope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RecScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>owner: <strong>Record</strong><tr><td></td><td>body: <strong>Method</strong><tr><td></td><td>initproc: <strong>Method</strong><tr><td></td><td>firstMeth: <strong>Method</strong><tr><td></td><td>lastMeth: <strong>Method</strong><tr><td></td><td>totalVarCount: <strong>SIGNED32</strong><tr><td></td><td><a href="#PCT.RecScope.totalProcCount">totalProcCount</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> CreateVar (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; type: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; info: @Any0; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateProc (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; scope: <strong>Scope</strong>; return: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> IsProtected (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_8819B140"><a name="PCT.RecScope.totalProcCount"></a><a href="#PCT">PCT</a>.<a href="#PCT.RecScope">RecScope</a>.<a href="#PCT.RecScope.totalProcCount">totalProcCount</a>
+</h3>
+<p>var/proc count including base type (overwritten method are counted only once)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> totalProcCount-: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_881A0C00"><a name="PCT.CustomArrayScope"></a><a href="#PCT">PCT</a>.<a href="#PCT.CustomArrayScope">CustomArrayScope</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CustomArrayScope* =<strong>OBJECT</strong> (<strong>RecScope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_881A4F00"><a name="PCT.ModScope"></a><a href="#PCT">PCT</a>.<a href="#PCT.ModScope">ModScope</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ModScope* =<strong>OBJECT</strong> (<strong>Scope</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>owner: <strong>Module</strong><tr><td></td><td>records: <strong>Record</strong><tr><td></td><td>nofRecs: <strong>SIGNED16</strong><tr><th align='left'>procedures</th><td> CreateVar (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; type: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; info: @Any0; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateProc (name: <strong>StringIndex</strong>; vis, flags: <strong>SET</strong>; scope: <strong>Scope</strong>; return: <strong>Struct</strong>; pos: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> AddModule (alias: <strong>StringIndex</strong>; m: <strong>Module</strong>; pos: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_881BE2C0"><a name="PCT.Basic"></a><a href="#PCT">PCT</a>.<a href="#PCT.Basic">Basic</a>
+</h2>
+<p> ------------ Structures -----------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Basic* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_881C3180"><a name="PCT.Array"></a><a href="#PCT">PCT</a>.<a href="#PCT.Array">Array</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Array* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#PCT.Array.mode">mode</a>: <strong>SIGNED8</strong><tr><td></td><td><a href="#PCT.Array.base">base</a>: <strong>Struct</strong><tr><td></td><td><a href="#PCT.Array.len">len</a>: <strong>SIGNED32</strong><tr><td></td><td>opendim: <strong>SIGNED32</strong><tr><td></td><td>isDynSized: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_881CB700"><a name="PCT.Array.mode"></a><a href="#PCT">PCT</a>.<a href="#PCT.Array">Array</a>.<a href="#PCT.Array.mode">mode</a>
+</h3>
+<p> array size: static, open</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> mode-: <strong>SIGNED8</strong></pre>
+<hr><h3 id="#_881CF840"><a name="PCT.Array.base"></a><a href="#PCT">PCT</a>.<a href="#PCT.Array">Array</a>.<a href="#PCT.Array.base">base</a>
+</h3>
+<p> element type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> base-: <strong>Struct</strong></pre>
+<hr><h3 id="#_881D3100"><a name="PCT.Array.len"></a><a href="#PCT">PCT</a>.<a href="#PCT.Array">Array</a>.<a href="#PCT.Array.len">len</a>
+</h3>
+<p> array size (iff mode=static)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> len-: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_88216600"><a name="PCT.EnhArray"></a><a href="#PCT">PCT</a>.<a href="#PCT.EnhArray">EnhArray</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EnhArray* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#PCT.EnhArray.mode">mode</a>: <strong>SIGNED8</strong><tr><td></td><td><a href="#PCT.EnhArray.base">base</a>: <strong>Struct</strong><tr><td></td><td><a href="#PCT.EnhArray.len">len</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#PCT.EnhArray.inc">inc</a>: <strong>SIGNED32</strong><tr><td></td><td>dim: <strong>SIGNED32</strong><tr><td></td><td><a href="#PCT.EnhArray.opendim">opendim</a>: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_882209C0"><a name="PCT.EnhArray.mode"></a><a href="#PCT">PCT</a>.<a href="#PCT.EnhArray">EnhArray</a>.<a href="#PCT.EnhArray.mode">mode</a>
+</h3>
+<p> array size: static, open</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> mode-: <strong>SIGNED8</strong></pre>
+<hr><h3 id="#_88224B00"><a name="PCT.EnhArray.base"></a><a href="#PCT">PCT</a>.<a href="#PCT.EnhArray">EnhArray</a>.<a href="#PCT.EnhArray.base">base</a>
+</h3>
+<p> element type, if more dimensional array then of type EnhArray</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> base-: <strong>Struct</strong></pre>
+<hr><h3 id="#_8822A3C0"><a name="PCT.EnhArray.len"></a><a href="#PCT">PCT</a>.<a href="#PCT.EnhArray">EnhArray</a>.<a href="#PCT.EnhArray.len">len</a>
+</h3>
+<p> array size (iff mode=static)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> len-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_8822E500"><a name="PCT.EnhArray.inc"></a><a href="#PCT">PCT</a>.<a href="#PCT.EnhArray">EnhArray</a>.<a href="#PCT.EnhArray.inc">inc</a>
+</h3>
+<p> increment of this dimension (iff mode = static)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> inc-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_882336C0"><a name="PCT.EnhArray.opendim"></a><a href="#PCT">PCT</a>.<a href="#PCT.EnhArray">EnhArray</a>.<a href="#PCT.EnhArray.opendim">opendim</a>
+</h3>
+<p> number of open dimensions</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> opendim-: <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_88237800"><a name="PCT.Tensor"></a><a href="#PCT">PCT</a>.<a href="#PCT.Tensor">Tensor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tensor* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#PCT.Tensor.base">base</a>: <strong>Struct</strong></td></tr>
+</table>
+<hr><h3 id="#_8823C280"><a name="PCT.Tensor.base"></a><a href="#PCT">PCT</a>.<a href="#PCT.Tensor">Tensor</a>.<a href="#PCT.Tensor.base">base</a>
+</h3>
+<p> type is always open</p>
+
+<p> no size or geometry information available at compile time</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> base-: <strong>Struct</strong></pre>
+<hr><h2 id="#_88243A40"><a name="PCT.Record"></a><a href="#PCT">PCT</a>.<a href="#PCT.Record">Record</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Record* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#PCT.Record.scope">scope</a>: <strong>RecScope</strong><tr><td></td><td><a href="#PCT.Record.brec">brec</a>: <strong>Record</strong><tr><td></td><td><a href="#PCT.Record.btyp">btyp</a>: <strong>Struct</strong><tr><td></td><td><a href="#PCT.Record.ptr">ptr</a>: <strong>Pointer</strong><tr><td></td><td>intf: <strong>POINTER</strong> <strong>TO</strong> <strong>Interfaces</strong><tr><td></td><td>mode: <strong>SET</strong><tr><td></td><td><a href="#PCT.Record.prio">prio</a>: <strong>SIGNED32</strong><tr><td></td><td>imported: <strong>BOOLEAN</strong><tr><td></td><td><a href="#PCT.Record.link">link</a>: <strong>Record</strong><tr><td></td><td>pvused: <strong>BOOLEAN</strong><tr><td></td><td>pbused: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_88255080"><a name="PCT.Record.scope"></a><a href="#PCT">PCT</a>.<a href="#PCT.Record">Record</a>.<a href="#PCT.Record.scope">scope</a>
+</h3>
+<p> record contents</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> scope-: <strong>RecScope</strong></pre>
+<hr><h3 id="#_88258940"><a name="PCT.Record.brec"></a><a href="#PCT">PCT</a>.<a href="#PCT.Record">Record</a>.<a href="#PCT.Record.brec">brec</a>
+</h3>
+<p>base record</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> brec-: <strong>Record</strong></pre>
+<hr><h3 id="#_8825C080"><a name="PCT.Record.btyp"></a><a href="#PCT">PCT</a>.<a href="#PCT.Record">Record</a>.<a href="#PCT.Record.btyp">btyp</a>
+</h3>
+<p> base type, for dynamic records = Pointer to brec</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> btyp-: <strong>Struct</strong></pre>
+<hr><h3 id="#_882615C0"><a name="PCT.Record.ptr"></a><a href="#PCT">PCT</a>.<a href="#PCT.Record">Record</a>.<a href="#PCT.Record.ptr">ptr</a>
+</h3>
+<p> dynamic type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ptr-: <strong>Pointer</strong></pre>
+<hr><h3 id="#_88265240"><a name="PCT.Record.prio"></a><a href="#PCT">PCT</a>.<a href="#PCT.Record">Record</a>.<a href="#PCT.Record.prio">prio</a>
+</h3>
+<p>body priority (mode = active)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> prio*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="#_88269580"><a name="PCT.Record.link"></a><a href="#PCT">PCT</a>.<a href="#PCT.Record">Record</a>.<a href="#PCT.Record.link">link</a>
+</h3>
+<p> Module.records, embedded list</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> link-: <strong>Record</strong></pre>
+<hr><h2 id="#_8826D280"><a name="PCT.CustomArray"></a><a href="#PCT">PCT</a>.<a href="#PCT.CustomArray">CustomArray</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CustomArray* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Record</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>dim: <strong>SIGNED32</strong></td></tr>
+</table>
+<hr><h2 id="#_88272C80"><a name="PCT.Pointer"></a><a href="#PCT">PCT</a>.<a href="#PCT.Pointer">Pointer</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Pointer* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>base: <strong>Struct</strong><tr><td></td><td>baseA: <strong>Array</strong><tr><td></td><td>baseR: <strong>Record</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_8827A400"><a name="PCT.Interface"></a><a href="#PCT">PCT</a>.<a href="#PCT.Interface">Interface</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Interface* =<strong>Pointer</strong></pre>
+<hr><h2 id="#_8827CC80"><a name="PCT.Delegate"></a><a href="#PCT">PCT</a>.<a href="#PCT.Delegate">Delegate</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Delegate* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Struct</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#PCT.Delegate.return">return</a>: <strong>Struct</strong><tr><td></td><td><a href="#PCT.Delegate.scope">scope</a>: <strong>ProcScope</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_882825C0"><a name="PCT.Delegate.return"></a><a href="#PCT">PCT</a>.<a href="#PCT.Delegate">Delegate</a>.<a href="#PCT.Delegate.return">return</a>
+</h3>
+<p> return type, or NoType</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> return-: <strong>Struct</strong></pre>
+<hr><h3 id="#_88286700"><a name="PCT.Delegate.scope"></a><a href="#PCT">PCT</a>.<a href="#PCT.Delegate">Delegate</a>.<a href="#PCT.Delegate.scope">scope</a>
+</h3>
+<p> parameter list</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> scope-: <strong>ProcScope</strong></pre>
+<hr><h2 id="#_88289FC0"><a name="PCT.Const"></a><a href="#PCT">PCT</a>.<a href="#PCT.Const">Const</a>
+</h2>
+<p> ------------ Symbols ------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Const* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>Struct</strong><tr><td></td><td>int: <strong>SIGNED32</strong><tr><td></td><td>real: <strong>FLOAT64</strong><tr><td></td><td>long: <strong>SIGNED64</strong><tr><td></td><td>set: <strong>SET</strong><tr><td></td><td>bool: <strong>BOOLEAN</strong><tr><td></td><td>ptr: @Any0<tr><td></td><td><a href="#PCT.Const.str">str</a>: <strong>POINTER</strong> <strong>TO</strong> <strong>PCS.String</strong><tr><td></td><td>owner: <strong>Value</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_88298C40"><a name="PCT.Const.str"></a><a href="#PCT">PCT</a>.<a href="#PCT.Const">Const</a>.<a href="#PCT.Const.str">str</a>
+</h3>
+<p> int = strlen</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> str-: <strong>POINTER</strong> <strong>TO</strong> <strong>PCS.String</strong></pre>
+<hr><h2 id="#_8829D200"><a name="PCT.ConstArray"></a><a href="#PCT">PCT</a>.<a href="#PCT.ConstArray">ConstArray</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ConstArray* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Const</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>data: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>len: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_882A7C40"><a name="PCT.Value"></a><a href="#PCT">PCT</a>.<a href="#PCT.Value">Value</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Value* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>const: <strong>Const</strong><tr><td></td><td><a href="#PCT.Value.nextVal">nextVal</a>: <strong>Value</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_882ADE00"><a name="PCT.Value.nextVal"></a><a href="#PCT">PCT</a>.<a href="#PCT.Value">Value</a>.<a href="#PCT.Value.nextVal">nextVal</a>
+</h3>
+<p> next value in scope (by insertion order)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> nextVal-: <strong>Value</strong></pre>
+<hr><h2 id="#_882B3BC0"><a name="PCT.Variable"></a><a href="#PCT">PCT</a>.<a href="#PCT.Variable">Variable</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Variable* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#PCT.Variable.level">level</a>: <strong>SIGNED8</strong><tr><td></td><td><a href="#PCT.Variable.nextVar">nextVar</a>: <strong>Variable</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_882B8E00"><a name="PCT.Variable.level"></a><a href="#PCT">PCT</a>.<a href="#PCT.Variable">Variable</a>.<a href="#PCT.Variable.level">level</a>
+</h3>
+<p>LocalVar and Parameter only</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> level-: <strong>SIGNED8</strong></pre>
+<hr><h3 id="#_882BCDC0"><a name="PCT.Variable.nextVar"></a><a href="#PCT">PCT</a>.<a href="#PCT.Variable">Variable</a>.<a href="#PCT.Variable.nextVar">nextVar</a>
+</h3>
+<p> next variable in scope (by insertion order)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> nextVar-: <strong>Variable</strong></pre>
+<hr><h2 id="#_882C1B00"><a name="PCT.GlobalVar"></a><a href="#PCT">PCT</a>.<a href="#PCT.GlobalVar">GlobalVar</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GlobalVar* =<strong>OBJECT</strong> (<strong>Variable</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_882C4E80"><a name="PCT.LocalVar"></a><a href="#PCT">PCT</a>.<a href="#PCT.LocalVar">LocalVar</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LocalVar* =<strong>OBJECT</strong> (<strong>Variable</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_882C8200"><a name="PCT.ReturnParameter"></a><a href="#PCT">PCT</a>.<a href="#PCT.ReturnParameter">ReturnParameter</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ReturnParameter* =<strong>OBJECT</strong> (<strong>Variable</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ref: <strong>BOOLEAN</strong></td></tr>
+</table>
+<hr><h2 id="#_882CD500"><a name="PCT.Parameter"></a><a href="#PCT">PCT</a>.<a href="#PCT.Parameter">Parameter</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parameter* =<strong>OBJECT</strong> (<strong>Variable</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ref: <strong>BOOLEAN</strong><tr><td></td><td><a href="#PCT.Parameter.nextPar">nextPar</a>: <strong>Parameter</strong></td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_882D36C0"><a name="PCT.Parameter.nextPar"></a><a href="#PCT">PCT</a>.<a href="#PCT.Parameter">Parameter</a>.<a href="#PCT.Parameter.nextPar">nextPar</a>
+</h3>
+<p> next parameter in scope (by insertion order)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> nextPar-: <strong>Parameter</strong></pre>
+<hr><h2 id="#_882D8400"><a name="PCT.Field"></a><a href="#PCT">PCT</a>.<a href="#PCT.Field">Field</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Field* =<strong>OBJECT</strong> (<strong>Variable</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_882DB780"><a name="PCT.Alias"></a><a href="#PCT">PCT</a>.<a href="#PCT.Alias">Alias</a>
+</h2>
+<p>type-casted variable</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Alias* =<strong>OBJECT</strong> (<strong>Variable</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>obj: <strong>Variable</strong></td></tr>
+</table>
+<hr><h2 id="#_882E0900"><a name="PCT.Proc"></a><a href="#PCT">PCT</a>.<a href="#PCT.Proc">Proc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Proc* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>scope: <strong>ProcScope</strong><tr><td></td><td>nextProc: <strong>Proc</strong><tr><td></td><td>level: <strong>SIGNED8</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_882E6A00"><a name="PCT.Method"></a><a href="#PCT">PCT</a>.<a href="#PCT.Method">Method</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Method* =<strong>OBJECT</strong> (<strong>Proc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>super: <strong>Method</strong><tr><td></td><td>boundTo: <strong>Record</strong><tr><td></td><td>self: <strong>Parameter</strong><tr><td></td><td>nextMeth: <strong>Method</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_882ED9C0"><a name="PCT.Type"></a><a href="#PCT">PCT</a>.<a href="#PCT.Type">Type</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Type* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>nextType: <strong>Type</strong></td></tr>
+</table>
+<hr><h2 id="#_882F1D40"><a name="PCT.Module"></a><a href="#PCT">PCT</a>.<a href="#PCT.Module">Module</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Module* =<strong>OBJECT</strong> (<strong>Symbol</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>context: <strong>StringIndex</strong><tr><td></td><td>label: <strong>StringIndex</strong><tr><td></td><td>scope: <strong>ModScope</strong><tr><td></td><td>imported: <strong>BOOLEAN</strong><tr><td></td><td>sysImported: <strong>BOOLEAN</strong><tr><td></td><td><a href="#PCT.Module.imports">imports</a>: <strong>ModuleArray</strong><tr><td></td><td><a href="#PCT.Module.directImps">directImps</a>: <strong>ModuleArray</strong><tr><th align='left'>procedures</th><td> AddImport (m: <strong>Module</strong>)<tr><td></td><td> AddDirectImp (m: <strong>Module</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_882FF200"><a name="PCT.Module.imports"></a><a href="#PCT">PCT</a>.<a href="#PCT.Module">Module</a>.<a href="#PCT.Module.imports">imports</a>
+</h3>
+<p> directly and indirectly imported modules, no duplicates allowed, no aliases</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> imports*: <strong>ModuleArray</strong></pre>
+<hr><h3 id="#_88304AC0"><a name="PCT.Module.directImps"></a><a href="#PCT">PCT</a>.<a href="#PCT.Module">Module</a>.<a href="#PCT.Module.directImps">directImps</a>
+</h3>
+<p> only directly imported modules</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> directImps*: <strong>ModuleArray</strong></pre>
+<hr><h2 id="#_88308C00"><a name="PCT.ModuleDB"></a><a href="#PCT">PCT</a>.<a href="#PCT.ModuleDB">ModuleDB</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ModuleDB* =<strong>Module</strong></pre>
+<hr><h2 id="#_8830AF40"><a name="PCT.ImporterPlugin"></a><a href="#PCT">PCT</a>.<a href="#PCT.ImporterPlugin">ImporterPlugin</a>
+</h2>
+<p> ImportPlugin: import new module. If self # NIL, do self.AddImport(new) (must be done there to break recursive imports)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ImporterPlugin* =<strong>PROCEDURE</strong> (self: <strong>Module</strong>; <strong>VAR</strong> new: <strong>Module</strong>; name: <strong>StringIndex</strong>)</pre>
+<hr><h2 id="#_88315200"><a name="PCT.NumericType"></a><a href="#PCT">PCT</a>.<a href="#PCT.NumericType">NumericType</a>
+</h2>
+<p>Int8 .. Float64</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> NumericType-: <strong>ARRAY</strong> 6 <strong>OF</strong> <strong>Basic</strong></pre>
+<hr><h2 id="#_88319500"><a name="PCT.CharType"></a><a href="#PCT">PCT</a>.<a href="#PCT.CharType">CharType</a>
+</h2>
+<p> Char8 .. Char32</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CharType-: <strong>ARRAY</strong> 3 <strong>OF</strong> <strong>Basic</strong></pre>
+<hr><h2 id="#_8831D980"><a name="PCT.database"></a><a href="#PCT">PCT</a>.<a href="#PCT.database">database</a>
+</h2>
+<p>collection of modules, first is sentinel</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> database*: <strong>ModuleDB</strong></pre>
+<hr><h2 id="#_88321B00"><a name="PCT.ExtendModArray"></a><a href="#PCT">PCT</a>.<a href="#PCT.ExtendModArray">ExtendModArray</a>
+</h2>
+<p> ---------------- Helper Functions ---------------------</p>
+
+<p> ExtendModArray - Double structure size, copy elements into new structure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ExtendModArray* (<strong>VAR</strong> a: <strong>ModuleArray</strong>)</pre>
+<hr><h2 id="#_88328E40"><a name="PCT.IsCardinalType"></a><a href="#PCT">PCT</a>.<a href="#PCT.IsCardinalType">IsCardinalType</a>
+</h2>
+<p> ---------------- Type Compatibility Functions --------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsCardinalType* (t: <strong>Struct</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_8832E400"><a name="PCT.SetOwner"></a><a href="#PCT">PCT</a>.<a href="#PCT.SetOwner">SetOwner</a>
+</h2>
+<hr/>
+
+<p> Scope Related Functions ------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetOwner* (scope: <strong>Scope</strong>)</pre>
+<hr><h2 id="#_88332CC0"><a name="PCT.Find"></a><a href="#PCT">PCT</a>.<a href="#PCT.Find">Find</a>
+</h2>
+<p> Find - findAny -&gt if FALSE and duplicatesAllowed, find the first non-procedure mark -&gt mark the object as used</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Find* (current, search: <strong>Scope</strong>; name: <strong>StringIndex</strong>; mode: <strong>SIGNED8</strong>; mark: <strong>BOOLEAN</strong>): <strong>Symbol</strong></pre>
+<hr><h2 id="#_8833E600"><a name="PCT.GetIntType"></a><a href="#PCT">PCT</a>.<a href="#PCT.GetIntType">GetIntType</a>
+</h2>
+<p> ------------ Const Creation -------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetIntType* (i: <strong>SIGNED32</strong>): <strong>Struct</strong></pre>
+<hr><h2 id="#_883431C0"><a name="PCT.MakeArrayType"></a><a href="#PCT">PCT</a>.<a href="#PCT.MakeArrayType">MakeArrayType</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MakeArrayType* (len: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong>; dim: <strong>SIGNED32</strong>; base: <strong>Struct</strong>; basesize: <strong>SIGNED32</strong>): <strong>Struct</strong></pre>
+<hr><h2 id="#_8834A700"><a name="PCT.InitOpenArray"></a><a href="#PCT">PCT</a>.<a href="#PCT.InitOpenArray">InitOpenArray</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitOpenArray* (a: <strong>Array</strong>; base: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_88350440"><a name="PCT.InitTensor"></a><a href="#PCT">PCT</a>.<a href="#PCT.InitTensor">InitTensor</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitTensor* (a: <strong>Tensor</strong>; base: <strong>Struct</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_88356180"><a name="PCT.InitCustomArray"></a><a href="#PCT">PCT</a>.<a href="#PCT.InitCustomArray">InitCustomArray</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitCustomArray* (r: <strong>CustomArray</strong>; base: <strong>Struct</strong>; dim: <strong>SIGNED32</strong>; scope: <strong>CustomArrayScope</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_8835DAC0"><a name="PCT.NewClass"></a><a href="#PCT">PCT</a>.<a href="#PCT.NewClass">NewClass</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewClass* (base: <strong>Struct</strong>; <strong>CONST</strong> implements: <strong>Interfaces</strong>; scope: <strong>RecScope</strong>; imported: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>Pointer</strong></pre>
+<hr><h2 id="#_88365D00"><a name="PCT.InitSymbol"></a><a href="#PCT">PCT</a>.<a href="#PCT.InitSymbol">InitSymbol</a>
+</h2>
+<p> ------------ Symbol Creation -------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitSymbol* (o: <strong>Symbol</strong>; name: <strong>StringIndex</strong>; vis: <strong>SET</strong>; type: <strong>Struct</strong>)</pre>
+<hr><h2 id="#_8836CCC0"><a name="PCT.SetMode"></a><a href="#PCT">PCT</a>.<a href="#PCT.SetMode">SetMode</a>
+</h2>
+<p> ---------------- Special Functions ---------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetMode* (scope: <strong>Scope</strong>; mode: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="#_88373300"><a name="PCT.Written"></a><a href="#PCT">PCT</a>.<a href="#PCT.Written">Written</a>
+</h2>
+<p> fof 070731 &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Written* (s: <strong>Symbol</strong>)</pre>
+<hr><h2 id="#_88377480"><a name="PCT.GetTypeName"></a><a href="#PCT">PCT</a>.<a href="#PCT.GetTypeName">GetTypeName</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetTypeName* (type: <strong>Struct</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_8837CBC0"><a name="PCT.GetScopeName"></a><a href="#PCT">PCT</a>.<a href="#PCT.GetScopeName">GetScopeName</a>
+</h2>
+<p> GetScopeName - return the name of the scope owner</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetScopeName* (scope: <strong>Scope</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_88383F80"><a name="PCT.Register"></a><a href="#PCT">PCT</a>.<a href="#PCT.Register">Register</a>
+</h2>
+<p> ---------------- Module Database -------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Register* (root: <strong>ModuleDB</strong>; m: <strong>Module</strong>)</pre>
+<hr><h2 id="#_883893C0"><a name="PCT.AddImporter"></a><a href="#PCT">PCT</a>.<a href="#PCT.AddImporter">AddImporter</a>
+</h2>
+<p> ---------------- Plug-in Management -------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddImporter* (p: <strong>ImporterPlugin</strong>)</pre>
+</body></html>

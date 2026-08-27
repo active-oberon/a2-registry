@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#X509">X509</a></p>
-<hr><h1 id="#_F43B8000"><a name="X509"></a><a href="#ModuleList">Module</a> X509
+<hr><h1 id="#_21F72A00"><a name="X509"></a><a href="#ModuleList">Module</a> X509
 </h1>
 <h3>Summary</h3>
 
@@ -48,10 +48,10 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_F43CDA00">
+<hr><h1 id="#_21F88400">
 </h1>
 <p> X.509 Certificates and certificate management. See RFC5280 standard. Written by Timothée Martiel, 2014, with some fragments by P. Hunziker.</p>
-<hr><h2 id="#_F43D2EC0"><a name="X509.AllowNotTrusted"></a><a href="#X509">X509</a>.<a href="#X509.AllowNotTrusted">AllowNotTrusted</a>
+<hr><h2 id="#_21F8D8C0"><a name="X509.AllowNotTrusted"></a><a href="#X509">X509</a>.<a href="#X509.AllowNotTrusted">AllowNotTrusted</a>
 </h2>
 <p> Verification flags</p>
 
@@ -60,21 +60,21 @@
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> AllowNotTrusted*= 0</pre>
-<hr><h2 id="#_F43D92C0"><a name="X509.AllowOutdated"></a><a href="#X509">X509</a>.<a href="#X509.AllowOutdated">AllowOutdated</a>
+<hr><h2 id="#_21F93CC0"><a name="X509.AllowOutdated"></a><a href="#X509">X509</a>.<a href="#X509.AllowOutdated">AllowOutdated</a>
 </h2>
 <p> Allow certificates that are not valid anymore</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> AllowOutdated*= 1</pre>
-<hr><h2 id="#_F43DDA00"><a name="X509.Bypass"></a><a href="#X509">X509</a>.<a href="#X509.Bypass">Bypass</a>
+<hr><h2 id="#_21F98400"><a name="X509.Bypass"></a><a href="#X509">X509</a>.<a href="#X509.Bypass">Bypass</a>
 </h2>
 <p> Bypass all checks</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Bypass*= 31</pre>
-<hr><h2 id="#_F43E1040"><a name="X509.Entity"></a><a href="#X509">X509</a>.<a href="#X509.Entity">Entity</a>
+<hr><h2 id="#_21F9BA40"><a name="X509.Entity"></a><a href="#X509">X509</a>.<a href="#X509.Entity">Entity</a>
 </h2>
 <p> Represent an issuer or a subject. Only mandatory fields are kept. Fields are NIL if not present.</p>
 
@@ -92,7 +92,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F43F5000"><a name="X509.Certificate"></a><a href="#X509">X509</a>.<a href="#X509.Certificate">Certificate</a>
+<hr><h2 id="#_21FAFA00"><a name="X509.Certificate"></a><a href="#X509">X509</a>.<a href="#X509.Certificate">Certificate</a>
 </h2>
 <p> Base certificate type. Certificates are specialized according to the encryption algorithm they provide.</p>
 
@@ -112,42 +112,42 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F4406780"><a name="X509.Verify"></a><a href="#X509">X509</a>.<a href="#X509.Verify">Verify</a>
+<hr><h2 id="#_21FC1180"><a name="X509.Verify"></a><a href="#X509">X509</a>.<a href="#X509.Verify">Verify</a>
 </h2>
 <p> Verifies validity of certificate in the given mode.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Verify* (chain: <strong>Certificate</strong>; flags: <strong>SET</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_F440D140"><a name="X509.Read"></a><a href="#X509">X509</a>.<a href="#X509.Read">Read</a>
+<hr><h2 id="#_21FC7B40"><a name="X509.Read"></a><a href="#X509">X509</a>.<a href="#X509.Read">Read</a>
 </h2>
 <p> Reads a certificate from a stream</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Read* (reader: <strong>Streams.Reader</strong>): <strong>Certificate</strong></pre>
-<hr><h2 id="#_F4412580"><a name="X509.Write"></a><a href="#X509">X509</a>.<a href="#X509.Write">Write</a>
+<hr><h2 id="#_21FCCF80"><a name="X509.Write"></a><a href="#X509">X509</a>.<a href="#X509.Write">Write</a>
 </h2>
 <p> Writes a certificate to a stream</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Write* (writer: <strong>Streams.Writer</strong>; cert: <strong>Certificate</strong>)</pre>
-<hr><h2 id="#_F4418140"><a name="X509.AddToTrusted"></a><a href="#X509">X509</a>.<a href="#X509.AddToTrusted">AddToTrusted</a>
+<hr><h2 id="#_21FD2B40"><a name="X509.AddToTrusted"></a><a href="#X509">X509</a>.<a href="#X509.AddToTrusted">AddToTrusted</a>
 </h2>
 <p> Add certificate to trusted roots</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> AddToTrusted* (certificate: <strong>Certificate</strong>)</pre>
-<hr><h2 id="#_F441CB80"><a name="X509.FormatRsaPublicKey"></a><a href="#X509">X509</a>.<a href="#X509.FormatRsaPublicKey">FormatRsaPublicKey</a>
+<hr><h2 id="#_21FD7580"><a name="X509.FormatRsaPublicKey"></a><a href="#X509">X509</a>.<a href="#X509.FormatRsaPublicKey">FormatRsaPublicKey</a>
 </h2>
 <p> Formats a RSA public key from a ASN1 triplet.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> FormatRsaPublicKey* (publicKey: <strong>ASN1.Triplet</strong>; <strong>VAR</strong> key: <strong>CryptoRSA.Key</strong>)</pre>
-<hr><h2 id="#_F44236C0"><a name="X509.PrintCertificate"></a><a href="#X509">X509</a>.<a href="#X509.PrintCertificate">PrintCertificate</a>
+<hr><h2 id="#_21FDE0C0"><a name="X509.PrintCertificate"></a><a href="#X509">X509</a>.<a href="#X509.PrintCertificate">PrintCertificate</a>
 </h2>
 <p> Prints a certificate in human readable form</p>
 

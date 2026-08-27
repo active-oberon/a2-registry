@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#JSON">JSON</a></p>
+<hr><h1 id="#_C4278900"><a name="JSON"></a><a href="#ModuleList">Module</a> JSON
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#JSON.Value">Value</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#JSON.Null">Null</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#JSON.Bool">Bool</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#JSON.Number">Number</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#JSON.String">String</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#JSON.Item">Item</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#JSON.Array">Array</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#JSON.Member">Member</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#JSON.Object">Object</a> =<strong>OBJECT</strong> (<strong>Value</strong>)<tr><td></td><td><a href="#JSON.Parser">Parser</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#JSON.Write">Write</a> (w: <strong>Streams.Writer</strong>; v: <strong>Value</strong>)<tr><td></td><td> <a href="#JSON.ToString">ToString</a> (v: <strong>Value</strong>): <strong>Strings.String</strong><tr><td></td><td> <a href="#JSON.ParseStream">ParseStream</a> (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> v: <strong>Value</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#JSON.Parse">Parse</a> (<strong>CONST</strong> text: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> v: <strong>Value</strong>): <strong>BOOLEAN</strong><tr><td></td><td> NewNull (): <strong>Null</strong><tr><td></td><td> NewBool (b: <strong>BOOLEAN</strong>): <strong>Bool</strong><tr><td></td><td> NewNumber (n: <strong>FLOAT64</strong>): <strong>Number</strong><tr><td></td><td> NewString (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>String</strong><tr><td></td><td> NewArray (): <strong>Array</strong><tr><td></td><td> NewObject (): <strong>Object</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_C429D880">
+</h1>
+<p> AUTHOR "minia2 SDK"; PURPOSE "RFC 8259 JSON parser and serializer for Active Oberon"; LIMITATIONS "-<br>uXXXX escapes are decoded to UTF-8 for the Basic Multilingual Plane only (surrogate pairs are not combined);  numbers are represented as FLOAT64;  duplicate object keys: the last one wins."</p>
+<hr><h2 id="#_C42A92C0"><a name="JSON.Value"></a><a href="#JSON">JSON</a>.<a href="#JSON.Value">Value</a>
+</h2>
+<p> Abstract JSON value. Concrete kinds are the extensions below; dispatch on them with a type guard (WITH v: Object DO ...).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Value* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_C42B1940"><a name="JSON.Null"></a><a href="#JSON">JSON</a>.<a href="#JSON.Null">Null</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Null* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_C42B4D80"><a name="JSON.Bool"></a><a href="#JSON">JSON</a>.<a href="#JSON.Bool">Bool</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Bool* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>BOOLEAN</strong></td></tr>
+</table>
+<hr><h2 id="#_C42B9100"><a name="JSON.Number"></a><a href="#JSON">JSON</a>.<a href="#JSON.Number">Number</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Number* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>FLOAT64</strong></td></tr>
+</table>
+<hr><h2 id="#_C42BD540"><a name="JSON.String"></a><a href="#JSON">JSON</a>.<a href="#JSON.String">String</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> String* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>value: <strong>Strings.String</strong></td></tr>
+</table>
+<hr><h2 id="#_C42C18C0"><a name="JSON.Item"></a><a href="#JSON">JSON</a>.<a href="#JSON.Item">Item</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Item* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>Item</strong><tr><td></td><td>value: <strong>Value</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C42C6400"><a name="JSON.Array"></a><a href="#JSON">JSON</a>.<a href="#JSON.Array">Array</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Array* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>items: <strong>Item</strong><tr><td></td><td>length: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Add (v: <strong>Value</strong>)<tr><td></td><td> <a href="#JSON.Array.At">At</a> (i: <strong>SIZE</strong>): <strong>Value</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_C42CF680"><a name="JSON.Array.At"></a><a href="#JSON">JSON</a>.<a href="#JSON.Array">Array</a>.<a href="#JSON.Array.At">At</a>
+</h3>
+<p> 0-based index; NIL if out of range.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> At* (i: <strong>SIZE</strong>): <strong>Value</strong></pre>
+<hr><h2 id="#_C42D5400"><a name="JSON.Member"></a><a href="#JSON">JSON</a>.<a href="#JSON.Member">Member</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Member* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>Member</strong><tr><td></td><td>key: <strong>Strings.String</strong><tr><td></td><td>value: <strong>Value</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_C42DAE00"><a name="JSON.Object"></a><a href="#JSON">JSON</a>.<a href="#JSON.Object">Object</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Object* =<strong>OBJECT</strong> (<strong>Value</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>members: <strong>Member</strong><tr><td></td><td>size: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Set (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; v: <strong>Value</strong>)<tr><td></td><td> <a href="#JSON.Object.Get">Get</a> (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Value</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_C42E6500"><a name="JSON.Object.Get"></a><a href="#JSON">JSON</a>.<a href="#JSON.Object">Object</a>.<a href="#JSON.Object.Get">Get</a>
+</h3>
+<p> Value for key, or NIL if absent.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Value</strong></pre>
+<hr><h2 id="#_C42ECE00"><a name="JSON.Parser"></a><a href="#JSON">JSON</a>.<a href="#JSON.Parser">Parser</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parser* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>error: <strong>BOOLEAN</strong><tr><td></td><td>errorMsg: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td>& Init (reader: <strong>Streams.Reader</strong>)<tr><td></td><td> <a href="#JSON.Parser.ParseValue">ParseValue</a> (): <strong>Value</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="#_C42F5F40"><a name="JSON.Parser.ParseValue"></a><a href="#JSON">JSON</a>.<a href="#JSON.Parser">Parser</a>.<a href="#JSON.Parser.ParseValue">ParseValue</a>
+</h3>
+<p> Parse a single JSON value at the current position.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ParseValue* (): <strong>Value</strong></pre>
+<hr><h2 id="#_C42FBAC0"><a name="JSON.Write"></a><a href="#JSON">JSON</a>.<a href="#JSON.Write">Write</a>
+</h2>
+<p> Serialize a value to a writer (compact, no whitespace).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Write* (w: <strong>Streams.Writer</strong>; v: <strong>Value</strong>)</pre>
+<hr><h2 id="#_C4302280"><a name="JSON.ToString"></a><a href="#JSON">JSON</a>.<a href="#JSON.ToString">ToString</a>
+</h2>
+<p> Serialize a value to a fresh string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToString* (v: <strong>Value</strong>): <strong>Strings.String</strong></pre>
+<hr><h2 id="#_C43079C0"><a name="JSON.ParseStream"></a><a href="#JSON">JSON</a>.<a href="#JSON.ParseStream">ParseStream</a>
+</h2>
+<p> Parse from a reader. Returns TRUE on success; on failure `v` may be partial.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ParseStream* (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> v: <strong>Value</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_C430FD80"><a name="JSON.Parse"></a><a href="#JSON">JSON</a>.<a href="#JSON.Parse">Parse</a>
+</h2>
+<p> Parse from an in-memory string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Parse* (<strong>CONST</strong> text: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> v: <strong>Value</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

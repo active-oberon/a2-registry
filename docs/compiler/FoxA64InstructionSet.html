@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#FoxA64InstructionSet">FoxA64InstructionSet</a></p>
+<hr><h1 id="#_640B33C0"><a name="FoxA64InstructionSet"></a><a href="#ModuleList">Module</a> FoxA64InstructionSet
+</h1>
+<p> AUTHOR "Andrii Puhachenko; co-author Claude (Opus 5)"; PURPOSE "the A64 instruction set: how an instruction is written, and how it is encoded";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>None= -1<tr><td></td><td>MaxOperands= 5<tr><td></td><td>X0= 0<tr><td></td><td>LR= 30<tr><td></td><td>SP= 31<tr><td></td><td>ZR= 31<tr><td></td><td>V0= 32<tr><td></td><td>modeNone= 0<tr><td></td><td>modeRegister= 1<tr><td></td><td>modeImmediate= 2<tr><td></td><td>modeMemory= 3<tr><td></td><td>modeCondition= 4<tr><td></td><td>shiftLSL= 0<tr><td></td><td>shiftLSR= 1<tr><td></td><td>shiftASR= 2<tr><td></td><td>shiftROR= 3<tr><td></td><td>extendUXTB= 0<tr><td></td><td>extendUXTH= 1<tr><td></td><td>extendUXTW= 2<tr><td></td><td>extendUXTX= 3<tr><td></td><td>extendSXTB= 4<tr><td></td><td>extendSXTH= 5<tr><td></td><td>extendSXTW= 6<tr><td></td><td>extendSXTX= 7<tr><td></td><td>indexOffset= 0<tr><td></td><td>indexPre= 1<tr><td></td><td>indexPost= 2<tr><td></td><td>conditionEQ= 0<tr><td></td><td>conditionNE= 1<tr><td></td><td>conditionCS= 2<tr><td></td><td>conditionCC= 3<tr><td></td><td>conditionMI= 4<tr><td></td><td>conditionPL= 5<tr><td></td><td>conditionVS= 6<tr><td></td><td>conditionVC= 7<tr><td></td><td>conditionHI= 8<tr><td></td><td>conditionLS= 9<tr><td></td><td>conditionGE= 10<tr><td></td><td>conditionLT= 11<tr><td></td><td>conditionGT= 12<tr><td></td><td>conditionLE= 13<tr><td></td><td>conditionAL= 14<tr><td></td><td>conditionNV= 15<tr><td></td><td>opADD= 0<tr><td></td><td>opADDS= 1<tr><td></td><td>opSUB= 2<tr><td></td><td>opSUBS= 3<tr><td></td><td>opCMP= 4<tr><td></td><td>opCMN= 5<tr><td></td><td>opNEG= 6<tr><td></td><td>opNEGS= 7<tr><td></td><td>opAND= 8<tr><td></td><td>opANDS= 9<tr><td></td><td>opORR= 10<tr><td></td><td>opORN= 11<tr><td></td><td>opEOR= 12<tr><td></td><td>opEON= 13<tr><td></td><td>opBIC= 14<tr><td></td><td>opBICS= 15<tr><td></td><td>opTST= 16<tr><td></td><td>opMVN= 17<tr><td></td><td>opMOV= 18<tr><td></td><td>opMOVZ= 19<tr><td></td><td>opMOVN= 20<tr><td></td><td>opMOVK= 21<tr><td></td><td>opADR= 22<tr><td></td><td>opADRP= 23<tr><td></td><td>opSBFM= 24<tr><td></td><td>opBFM= 25<tr><td></td><td>opUBFM= 26<tr><td></td><td>opSBFIZ= 27<tr><td></td><td>opSBFX= 28<tr><td></td><td>opUBFIZ= 29<tr><td></td><td>opUBFX= 30<tr><td></td><td>opBFI= 31<tr><td></td><td>opBFXIL= 32<tr><td></td><td>opSXTB= 33<tr><td></td><td>opSXTH= 34<tr><td></td><td>opSXTW= 35<tr><td></td><td>opUXTB= 36<tr><td></td><td>opUXTH= 37<tr><td></td><td>opLSL= 38<tr><td></td><td>opLSR= 39<tr><td></td><td>opASR= 40<tr><td></td><td>opROR= 41<tr><td></td><td>opEXTR= 42<tr><td></td><td>opMUL= 43<tr><td></td><td>opMNEG= 44<tr><td></td><td>opMADD= 45<tr><td></td><td>opMSUB= 46<tr><td></td><td>opSMULL= 47<tr><td></td><td>opSMNEGL= 48<tr><td></td><td>opSMADDL= 49<tr><td></td><td>opSMSUBL= 50<tr><td></td><td>opUMULL= 51<tr><td></td><td>opUMNEGL= 52<tr><td></td><td>opUMADDL= 53<tr><td></td><td>opUMSUBL= 54<tr><td></td><td>opSMULH= 55<tr><td></td><td>opUMULH= 56<tr><td></td><td>opSDIV= 57<tr><td></td><td>opUDIV= 58<tr><td></td><td>opCLZ= 59<tr><td></td><td>opCLS= 60<tr><td></td><td>opRBIT= 61<tr><td></td><td>opREV= 62<tr><td></td><td>opREV16= 63<tr><td></td><td>opREV32= 64<tr><td></td><td>opCSEL= 65<tr><td></td><td>opCSINC= 66<tr><td></td><td>opCSINV= 67<tr><td></td><td>opCSNEG= 68<tr><td></td><td>opCSET= 69<tr><td></td><td>opCSETM= 70<tr><td></td><td>opCINC= 71<tr><td></td><td>opCINV= 72<tr><td></td><td>opCNEG= 73<tr><td></td><td>opB= 74<tr><td></td><td>opBL= 75<tr><td></td><td>opBCOND= 76<tr><td></td><td>opBR= 77<tr><td></td><td>opBLR= 78<tr><td></td><td>opRET= 79<tr><td></td><td>opCBZ= 80<tr><td></td><td>opCBNZ= 81<tr><td></td><td>opTBZ= 82<tr><td></td><td>opTBNZ= 83<tr><td></td><td>opNOP= 84<tr><td></td><td>opBRK= 85<tr><td></td><td>opSVC= 86<tr><td></td><td>opHLT= 87<tr><td></td><td>opDMB= 88<tr><td></td><td>opDSB= 89<tr><td></td><td>opISB= 90<tr><td></td><td>opLDR= 91<tr><td></td><td>opLDRB= 92<tr><td></td><td>opLDRH= 93<tr><td></td><td>opLDRSB= 94<tr><td></td><td>opLDRSH= 95<tr><td></td><td>opLDRSW= 96<tr><td></td><td>opSTR= 97<tr><td></td><td>opSTRB= 98<tr><td></td><td>opSTRH= 99<tr><td></td><td>opLDUR= 100<tr><td></td><td>opLDURB= 101<tr><td></td><td>opLDURH= 102<tr><td></td><td>opLDURSB= 103<tr><td></td><td>opLDURSH= 104<tr><td></td><td>opLDURSW= 105<tr><td></td><td>opSTUR= 106<tr><td></td><td>opSTURB= 107<tr><td></td><td>opSTURH= 108<tr><td></td><td>opLDP= 109<tr><td></td><td>opSTP= 110<tr><td></td><td>opLDXR= 111<tr><td></td><td>opSTXR= 112<tr><td></td><td>opLDAXR= 113<tr><td></td><td>opSTLXR= 114<tr><td></td><td>opLDAR= 115<tr><td></td><td>opSTLR= 116<tr><td></td><td>opFMOV= 117<tr><td></td><td>opFADD= 118<tr><td></td><td>opFSUB= 119<tr><td></td><td>opFMUL= 120<tr><td></td><td>opFDIV= 121<tr><td></td><td>opFNMUL= 122<tr><td></td><td>opFNEG= 123<tr><td></td><td>opFABS= 124<tr><td></td><td>opFSQRT= 125<tr><td></td><td>opFMAX= 126<tr><td></td><td>opFMIN= 127<tr><td></td><td>opFCMP= 128<tr><td></td><td>opFCMPE= 129<tr><td></td><td>opFCVT= 130<tr><td></td><td>opSCVTF= 131<tr><td></td><td>opUCVTF= 132<tr><td></td><td>opFCVTZS= 133<tr><td></td><td>opFCVTZU= 134<tr><td></td><td>opFCVTMS= 135<tr><td></td><td>opFCVTMU= 136<tr><td></td><td>opFCSEL= 137<tr><td></td><td>opLDXRB= 138<tr><td></td><td>opSTXRB= 139<tr><td></td><td>opLDAXRB= 140<tr><td></td><td>opSTLXRB= 141<tr><td></td><td>opLDARB= 142<tr><td></td><td>opSTLRB= 143<tr><td></td><td>opFCVTNS= 144<tr><td></td><td>opFCVTNU= 145<tr><td></td><td>opMRS= 146<tr><td></td><td>opMSR= 147<tr><td></td><td>sysFPCR= 55840<tr><td></td><td>sysFPSR= 55841<tr><td></td><td>sysNZCV= 55824<tr><td></td><td>sysTPIDREL0= 56962<tr><td></td><td>sysCNTVCTEL0= 57090<tr><td></td><td>sysCNTFRQEL0= 57088<tr><td></td><td>sysDCCVAU= 23513<tr><td></td><td>sysICIVAU= 23465<tr><td></td><td>sysCTREL0= 55297<tr><th align='left'>type declarations</th><td><a href="#FoxA64InstructionSet.Operand">Operand</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#FoxA64InstructionSet.Instruction">Instruction</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#FoxA64InstructionSet.EncodeLogicalImmediate">EncodeLogicalImmediate</a> (value: <strong>SIGNED64</strong>; width: <strong>SIGNED32</strong>; <strong>VAR</strong> n, immr, imms: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxA64InstructionSet.InvertCondition">InvertCondition</a> (condition: <strong>SIGNED8</strong>): <strong>SIGNED8</strong><tr><td></td><td> InitOperand (<strong>VAR</strong> operand: <strong>Operand</strong>)<tr><td></td><td> InitRegister (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>SIGNED32</strong>; size: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#FoxA64InstructionSet.InitStackPointer">InitStackPointer</a> (<strong>VAR</strong> operand: <strong>Operand</strong>; size: <strong>SIGNED16</strong>)<tr><td></td><td> <a href="#FoxA64InstructionSet.InitShiftedRegister">InitShiftedRegister</a> (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>SIGNED32</strong>; size: <strong>SIGNED16</strong>; shiftMode: <strong>SIGNED8</strong>; amount: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#FoxA64InstructionSet.InitExtendedRegister">InitExtendedRegister</a> (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>SIGNED32</strong>; size: <strong>SIGNED16</strong>; extend: <strong>SIGNED8</strong>; amount: <strong>SIGNED32</strong>)<tr><td></td><td> InitImmediate (<strong>VAR</strong> operand: <strong>Operand</strong>; immediate: <strong>Basic.Integer</strong>)<tr><td></td><td> <a href="#FoxA64InstructionSet.InitShiftedImmediate">InitShiftedImmediate</a> (<strong>VAR</strong> operand: <strong>Operand</strong>; immediate: <strong>Basic.Integer</strong>; amount: <strong>SIGNED32</strong>)<tr><td></td><td> InitCondition (<strong>VAR</strong> operand: <strong>Operand</strong>; condition: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#FoxA64InstructionSet.InitImmediateOffsetMemory">InitImmediateOffsetMemory</a> (<strong>VAR</strong> operand: <strong>Operand</strong>; base: <strong>SIGNED32</strong>; offset: <strong>Basic.Integer</strong>; indexing: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#FoxA64InstructionSet.InitRegisterOffsetMemory">InitRegisterOffsetMemory</a> (<strong>VAR</strong> operand: <strong>Operand</strong>; base, index: <strong>SIGNED32</strong>; indexSize: <strong>SIGNED16</strong>; extend: <strong>SIGNED8</strong>; amount: <strong>SIGNED32</strong>)<tr><td></td><td> AddFixup (<strong>VAR</strong> operand: <strong>Operand</strong>; fixup: <strong>BinaryCode.Fixup</strong>)<tr><td></td><td> InitInstruction (<strong>VAR</strong> instruction: <strong>Instruction</strong>; mnemonic: <strong>SIGNED32</strong>)<tr><td></td><td> MakeInstruction (<strong>VAR</strong> instruction: <strong>Instruction</strong>; mnemonic: <strong>SIGNED32</strong>; <strong>CONST</strong> operands: <strong>ARRAY</strong> <strong>OF</strong> <strong>Operand</strong>)<tr><td></td><td> <a href="#FoxA64InstructionSet.Encode">Encode</a> (<strong>CONST</strong> instruction: <strong>Instruction</strong>; <strong>VAR</strong> code: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> WriteRegister (w: <strong>Streams.Writer</strong>; register: <strong>SIGNED32</strong>; size: <strong>SIGNED16</strong>; isStackPointer: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#FoxA64InstructionSet.WriteSystemRegister">WriteSystemRegister</a> (w: <strong>Streams.Writer</strong>; value: <strong>Basic.Integer</strong>)<tr><td></td><td> WriteOperand (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> operand: <strong>Operand</strong>)<tr><td></td><td> DumpInstruction (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> instruction: <strong>Instruction</strong>)<tr><td></td><td> EmitInstruction (<strong>CONST</strong> instruction: <strong>Instruction</strong>; code: <strong>BinaryCode.Section</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Emit (mnemonic: <strong>SIGNED32</strong>; <strong>CONST</strong> operands: <strong>ARRAY</strong> <strong>OF</strong> <strong>Operand</strong>; code: <strong>BinaryCode.Section</strong>)<tr><td></td><td> <a href="#FoxA64InstructionSet.RegisterFromName">RegisterFromName</a> (<strong>CONST</strong> registerName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> register: <strong>SIGNED32</strong>; <strong>VAR</strong> size: <strong>SIGNED16</strong>; <strong>VAR</strong> isStackPointer: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ConditionFromName (<strong>CONST</strong> conditionName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxA64InstructionSet.SystemRegisterFromName">SystemRegisterFromName</a> (<strong>CONST</strong> registerName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> ShiftFromName (<strong>CONST</strong> shiftName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> ExtendFromName (<strong>CONST</strong> extendName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxA64InstructionSet.FindMnemonic">FindMnemonic</a> (<strong>CONST</strong> mnemonicName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> mnemonic, condition: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> MnemonicName (mnemonic: <strong>SIGNED32</strong>): <strong>Name</strong><tr><td></td><td> Test (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_641DE480">
+</h1><hr><h2 id="#_641DEC40"><a name="FoxA64InstructionSet.Operand"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.Operand">Operand</a>
+</h2>
+<p> one operand of an A64 instruction</p>
+
+<p> The record covers every operand shape the instruction set has, and each encoder reads only the fields its form uses. A memory operand is the one that uses most of them: `register` is the base, `index` the offset register when there is one, `shiftMode`/`extend`/`shiftAmount` the way that offset register is widened and scaled, and `immediate` the offset when there is not.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Operand* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>mode: <strong>SIGNED8</strong><tr><td></td><td>register: <strong>SIGNED32</strong><tr><td></td><td>size: <strong>SIGNED16</strong><tr><td></td><td>isStackPointer: <strong>BOOLEAN</strong><tr><td></td><td>immediate: <strong>Basic.Integer</strong><tr><td></td><td>shiftMode: <strong>SIGNED8</strong><tr><td></td><td>extend: <strong>SIGNED8</strong><tr><td></td><td>shiftAmount: <strong>SIGNED32</strong><tr><td></td><td>index: <strong>SIGNED32</strong><tr><td></td><td>indexSize: <strong>SIGNED16</strong><tr><td></td><td>indexing: <strong>SIGNED8</strong><tr><td></td><td>condition: <strong>SIGNED8</strong><tr><td></td><td>fixup: <strong>BinaryCode.Fixup</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_641FE900"><a name="FoxA64InstructionSet.Instruction"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.Instruction">Instruction</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Instruction* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>mnemonic: <strong>SIGNED32</strong><tr><td></td><td>operands: <strong>ARRAY</strong> MaxOperands <strong>OF</strong> <strong>Operand</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_64204480"><a name="FoxA64InstructionSet.EncodeLogicalImmediate"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.EncodeLogicalImmediate">EncodeLogicalImmediate</a>
+</h2>
+<p> find N, immr and imms such that the pattern they describe is `value` in a register of `width` bits; FALSE when no such pattern exists, which includes 0 and all ones</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EncodeLogicalImmediate* (value: <strong>SIGNED64</strong>; width: <strong>SIGNED32</strong>; <strong>VAR</strong> n, immr, imms: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_64212980"><a name="FoxA64InstructionSet.InvertCondition"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InvertCondition">InvertCondition</a>
+</h2>
+<p> the condition that holds exactly when this one does not; AL and NV are each other's inverse in the encoding, which is why the aliases below never take them</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InvertCondition* (condition: <strong>SIGNED8</strong>): <strong>SIGNED8</strong></pre>
+<hr><h2 id="#_6421D640"><a name="FoxA64InstructionSet.InitStackPointer"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitStackPointer">InitStackPointer</a>
+</h2>
+<p> a general purpose register named SP or WSP rather than ZR</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitStackPointer* (<strong>VAR</strong> operand: <strong>Operand</strong>; size: <strong>SIGNED16</strong>)</pre>
+<hr><h2 id="#_64224A00"><a name="FoxA64InstructionSet.InitShiftedRegister"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitShiftedRegister">InitShiftedRegister</a>
+</h2>
+<p> a register operand carrying a shift, as the second source of a data processing instruction</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitShiftedRegister* (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>SIGNED32</strong>; size: <strong>SIGNED16</strong>; shiftMode: <strong>SIGNED8</strong>; amount: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_6422F6C0"><a name="FoxA64InstructionSet.InitExtendedRegister"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitExtendedRegister">InitExtendedRegister</a>
+</h2>
+<p> a register operand carrying an extension, as the second source of an address computation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitExtendedRegister* (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>SIGNED32</strong>; size: <strong>SIGNED16</strong>; extend: <strong>SIGNED8</strong>; amount: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_6423A100"><a name="FoxA64InstructionSet.InitShiftedImmediate"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitShiftedImmediate">InitShiftedImmediate</a>
+</h2>
+<p> an immediate that is shifted left before it is used, as in MOVZ Xd,</p>
+
+<dl>
+<dt><strong>imm, LSL</strong></dt>
+<dd></dd>
+
+
+<dl>
+<dt><strong>16</strong></dt>
+<dd></dd>
+
+
+</dl>
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitShiftedImmediate* (<strong>VAR</strong> operand: <strong>Operand</strong>; immediate: <strong>Basic.Integer</strong>; amount: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_64243B80"><a name="FoxA64InstructionSet.InitImmediateOffsetMemory"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitImmediateOffsetMemory">InitImmediateOffsetMemory</a>
+</h2>
+<p> <a href="#base,">base,</a></p>
+
+<dl>
+<dt><strong>offset], or <a href="#base,">base,</a></strong></dt>
+<dd></dd>
+
+
+<dl>
+<dt><strong>offset]! and <a href="#base],">base],</a></strong></dt>
+<dd></dd>
+
+
+<dl>
+<dt><strong>offset when indexing says so</strong></dt>
+<dd></dd>
+
+
+</dl>
+</dl>
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitImmediateOffsetMemory* (<strong>VAR</strong> operand: <strong>Operand</strong>; base: <strong>SIGNED32</strong>; offset: <strong>Basic.Integer</strong>; indexing: <strong>SIGNED8</strong>)</pre>
+<hr><h2 id="#_6424D080"><a name="FoxA64InstructionSet.InitRegisterOffsetMemory"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitRegisterOffsetMemory">InitRegisterOffsetMemory</a>
+</h2>
+<p> <a href="#base,">base,</a> index, extend</p>
+
+<dl>
+<dt><strong>amount] -- extend may be None, which means LSL</strong></dt>
+<dd></dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> InitRegisterOffsetMemory* (<strong>VAR</strong> operand: <strong>Operand</strong>; base, index: <strong>SIGNED32</strong>; indexSize: <strong>SIGNED16</strong>; extend: <strong>SIGNED8</strong>; amount: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_64257A80"><a name="FoxA64InstructionSet.Encode"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.Encode">Encode</a>
+</h2>
+<p> encode one instruction into the 32 bit word the processor reads</p>
+
+<p> FALSE means the mnemonic and the operands do not name an instruction that exists -- an immediate out of range, a register of the wrong width, an addressing mode the form does not have. It is never a silent approximation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Encode* (<strong>CONST</strong> instruction: <strong>Instruction</strong>; <strong>VAR</strong> code: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_642696C0"><a name="FoxA64InstructionSet.WriteSystemRegister"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.WriteSystemRegister">WriteSystemRegister</a>
+</h2>
+<p> the name of a system register, or the number itself when it has none</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> WriteSystemRegister* (w: <strong>Streams.Writer</strong>; value: <strong>Basic.Integer</strong>)</pre>
+<hr><h2 id="#_64271300"><a name="FoxA64InstructionSet.RegisterFromName"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.RegisterFromName">RegisterFromName</a>
+</h2>
+<p> the register a name denotes, along with the width the name implies</p>
+
+<p> Returns None when the name is not a register. LR and FP are accepted as the names of X30 and X29 because they are what the calling convention calls them.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RegisterFromName* (<strong>CONST</strong> registerName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> register: <strong>SIGNED32</strong>; <strong>VAR</strong> size: <strong>SIGNED16</strong>; <strong>VAR</strong> isStackPointer: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_64283580"><a name="FoxA64InstructionSet.SystemRegisterFromName"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.SystemRegisterFromName">SystemRegisterFromName</a>
+</h2>
+<p> the sixteen bits that name a system register, or None when the identifier names none</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SystemRegisterFromName* (<strong>CONST</strong> registerName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_6428B740"><a name="FoxA64InstructionSet.FindMnemonic"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.FindMnemonic">FindMnemonic</a>
+</h2>
+<p> the mnemonic a name denotes; a conditional branch carries its condition in the name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindMnemonic* (<strong>CONST</strong> mnemonicName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> mnemonic, condition: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#HostLibs">HostLibs</a></p>
+<hr><h1 id="#_2E68F780"><a name="HostLibs"></a><a href="#ModuleList">Module</a> HostLibs
+</h1>
+<dl>
+<dt><strong>AUTHOR</strong></dt>
+<dd> Alexey Morozov</dd>
+
+
+<dl>
+<dt><strong>PURPOSE</strong></dt>
+<dd> Dynamic library tools for Unix platforms</dd>
+
+
+</dl>
+</dl>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#HostLibs.NilLibHandle">NilLibHandle</a>= NIL<tr><th align='left'>type declarations</th><td><a href="#HostLibs.LibHandle">LibHandle</a> =<strong>ADDRESS</strong><tr><th align='left'>procedures</th><td> <a href="#HostLibs.LoadLibrary">LoadLibrary</a> (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#HostLibs.FreeLibrary">FreeLibrary</a> (<strong>CONST</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#HostLibs.GetProcedure">GetProcedure</a> (<strong>CONST</strong> lib: <strong>LibHandle</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> procAddr: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_2E6A1140"><a name="HostLibs.NilLibHandle"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.NilLibHandle">NilLibHandle</a>
+</h2>
+<p> invalid library handle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NilLibHandle*= NIL</pre>
+<hr><h2 id="#_2E6A4780"><a name="HostLibs.LibHandle"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.LibHandle">LibHandle</a>
+</h2>
+<p> dynamic library handle type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LibHandle* =<strong>ADDRESS</strong></pre>
+<hr><h2 id="#_2E6A8200"><a name="HostLibs.LoadLibrary"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.LoadLibrary">LoadLibrary</a>
+</h2>
+<p> Load a dynamic library</p>
+
+<dl>
+<dt><strong>Return</strong></dt>
+<dd> TRUE in case of success</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadLibrary* (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong></pre>
+
+<h3>Parameters</h3>
+
+<dl>
+<dt><strong>fileName</strong></dt>
+<dd> library file name</dd>
+
+
+<dl>
+<dt><strong>lib</strong></dt>
+<dd> returned loaded library handle; NilLibHandle in case of an error</dd>
+
+</dl>
+</dl>
+<hr><h2 id="#_2E6B4A40"><a name="HostLibs.FreeLibrary"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.FreeLibrary">FreeLibrary</a>
+</h2>
+<p> Free a previously loaded dynamic library</p>
+
+<dl>
+<dt><strong>Return</strong></dt>
+<dd> TRUE in case of success</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FreeLibrary* (<strong>CONST</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong></pre>
+
+<h3>Parameters</h3>
+
+<dl>
+<dt><strong>lib</strong></dt>
+<dd> library handle</dd>
+
+</dl>
+<hr><h2 id="#_2E6BCFC0"><a name="HostLibs.GetProcedure"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.GetProcedure">GetProcedure</a>
+</h2>
+<p> Get a procedure from a loaded dynamic library</p>
+
+<dl>
+<dt><strong>Return</strong></dt>
+<dd> TRUE in case of success</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetProcedure* (<strong>CONST</strong> lib: <strong>LibHandle</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> procAddr: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong></pre>
+
+<h3>Parameters</h3>
+
+<dl>
+<dt><strong>lib</strong></dt>
+<dd> library handle</dd>
+
+
+<dl>
+<dt><strong>name</strong></dt>
+<dd> name of the procedure</dd>
+
+
+<dl>
+<dt><strong>procAddr</strong></dt>
+<dd> address of the destination procedure pointer (e.g. ADDRESSOF(procedureVariable))</dd>
+
+</dl>
+</dl>
+</dl>
+</body></html>

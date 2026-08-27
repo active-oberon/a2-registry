@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#Zlib">Zlib</a></p>
-<hr><h1 id="#_403BF100"><a name="Zlib"></a><a href="#ModuleList">Module</a> Zlib
+<hr><h1 id="#_1E0F2B00"><a name="Zlib"></a><a href="#ModuleList">Module</a> Zlib
 </h1>
 <p> Stefan Walthert</p>
 
@@ -65,10 +65,10 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_403E2100">
+<hr><h1 id="#_1E115B00">
 </h1>
 <p> AUTHOR "swalthert"; PURPOSE "Zlib compression library base";</p>
-<hr><h2 id="#_403E46C0"><a name="Zlib.Ok"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.Ok">Ok</a>
+<hr><h2 id="#_1E1180C0"><a name="Zlib.Ok"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.Ok">Ok</a>
 </h2>
 <p> Result codes for compression/decompression functions</p>
 
@@ -79,14 +79,14 @@
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Ok*= 0</pre>
-<hr><h2 id="#_403EC280"><a name="Zlib.StreamEnd"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.StreamEnd">StreamEnd</a>
+<hr><h2 id="#_1E11FC80"><a name="Zlib.StreamEnd"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.StreamEnd">StreamEnd</a>
 </h2>
 <p> all input has been consumed and all output has been produced (only when flush is set to Finish)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> StreamEnd*= 1</pre>
-<hr><h2 id="#_403F34C0"><a name="Zlib.StreamError"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.StreamError">StreamError</a>
+<hr><h2 id="#_1E126EC0"><a name="Zlib.StreamError"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.StreamError">StreamError</a>
 </h2>
 <p> errors</p>
 
@@ -95,56 +95,56 @@
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> StreamError*= -2</pre>
-<hr><h2 id="#_403F9480"><a name="Zlib.BufError"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.BufError">BufError</a>
+<hr><h2 id="#_1E12CE80"><a name="Zlib.BufError"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.BufError">BufError</a>
 </h2>
 <p> no progress is possible (for example stream.in.avail or stream.out.avail was zero)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> BufError*= -5</pre>
-<hr><h2 id="#_403FEF00"><a name="Zlib.NoFlush"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.NoFlush">NoFlush</a>
+<hr><h2 id="#_1E132900"><a name="Zlib.NoFlush"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.NoFlush">NoFlush</a>
 </h2>
 <p> Flush values (Flushing may degrade compression for some compression algorithms and so it should be used only when necessary)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> NoFlush*= 0</pre>
-<hr><h2 id="#_40406480"><a name="Zlib.PartialFlush"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.PartialFlush">PartialFlush</a>
+<hr><h2 id="#_1E139E80"><a name="Zlib.PartialFlush"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.PartialFlush">PartialFlush</a>
 </h2>
 <p> will be removed, use SyncFlush instead</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> PartialFlush*= 1</pre>
-<hr><h2 id="#_4040A780"><a name="Zlib.SyncFlush"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.SyncFlush">SyncFlush</a>
+<hr><h2 id="#_1E13E180"><a name="Zlib.SyncFlush"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.SyncFlush">SyncFlush</a>
 </h2>
 <p> pending output is flushed to the output buffer and the output is aligned on a byte boundary, so that the compressor/decompressor can get all input data available so far. (In particular stream.in.avail is zero after the call if enough output space has been provided before the call.)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> SyncFlush*= 2</pre>
-<hr><h2 id="#_40418780"><a name="Zlib.FullFlush"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.FullFlush">FullFlush</a>
+<hr><h2 id="#_1E14C180"><a name="Zlib.FullFlush"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.FullFlush">FullFlush</a>
 </h2>
 <p> all output is flushed as with SyncFlush, and the compression state is reset so that decompression can restart from this point if previous compressed data has been damaged of if random access is desired. Using FullFlush too often can seriously degrade the compression.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> FullFlush*= 3</pre>
-<hr><h2 id="#_40425880"><a name="Zlib.Finish"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.Finish">Finish</a>
+<hr><h2 id="#_1E159280"><a name="Zlib.Finish"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.Finish">Finish</a>
 </h2>
 <p> pending input is processed, pending output is flushed. If Deflate/Inflate returns with StreamEnd, there was enough space. If Deflate/Inflate returns with Ok, this function must be called again with Finish and more output space (updated stream.out.avail) but no more input data, until it returns with StreamEnd or an error. After Deflate has returned StreamEnd, the only possible operations on the stream are Reset or Close Finish can be used immediately after Open if all the compression/decompression is to be done in a single step. In case of compression, the out-Buffer (respectively stream.out.avail) must be at least 0.1% larger than the in-Buffer (respectively stream.in.avail) plus 12 bytes.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Finish*= 4</pre>
-<hr><h2 id="#_40441700"><a name="Zlib.DefaultCompression"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.DefaultCompression">DefaultCompression</a>
+<hr><h2 id="#_1E175100"><a name="Zlib.DefaultCompression"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.DefaultCompression">DefaultCompression</a>
 </h2>
 <p> compression levels</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> DefaultCompression*= -1</pre>
-<hr><h2 id="#_40444BC0"><a name="Zlib.DefaultStrategy"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.DefaultStrategy">DefaultStrategy</a>
+<hr><h2 id="#_1E1785C0"><a name="Zlib.DefaultStrategy"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.DefaultStrategy">DefaultStrategy</a>
 </h2>
 <p> compression strategies; the strategy only affects the compression ratio but not the correctness of the compressed output even if it is not set appropriately</p>
 
@@ -153,28 +153,28 @@
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> DefaultStrategy*= 0</pre>
-<hr><h2 id="#_4044E100"><a name="Zlib.Filtered"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.Filtered">Filtered</a>
+<hr><h2 id="#_1E181B00"><a name="Zlib.Filtered"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.Filtered">Filtered</a>
 </h2>
 <p> for data produced by a filter (or predictor); filtered data consists mostly of small values with a somewhat random distribution. In this case, the compression algorithm is tuned to compress them better. The effect of Filtered is to force more Huffman coding and less string matching; it is somewhat intermediate between DefaultStrategy and HuffmanOnly.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Filtered*= 1</pre>
-<hr><h2 id="#_4045DA80"><a name="Zlib.HuffmanOnly"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.HuffmanOnly">HuffmanOnly</a>
+<hr><h2 id="#_1E191480"><a name="Zlib.HuffmanOnly"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.HuffmanOnly">HuffmanOnly</a>
 </h2>
 <p> to force Huffman encoding only (no string match)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> HuffmanOnly*= 2</pre>
-<hr><h2 id="#_40462580"><a name="Zlib.Binary"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.Binary">Binary</a>
+<hr><h2 id="#_1E195F80"><a name="Zlib.Binary"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.Binary">Binary</a>
 </h2>
 <p> data type</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Binary*= 0</pre>
-<hr><h2 id="#_40465780"><a name="Zlib.InitCRCTable"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.InitCRCTable">InitCRCTable</a>
+<hr><h2 id="#_1E199180"><a name="Zlib.InitCRCTable"></a><a href="#Zlib">Zlib</a>.<a href="#Zlib.InitCRCTable">InitCRCTable</a>
 </h2>
 <p> Generate a table for a byte-wise 32-bit CRC calculation on the polynomial: x^32+x^26+x^23+x^22+x^16+x^12+x^11+x^10+x^8+x^7+x^5+x^4+x^2+x+1.</p>
 

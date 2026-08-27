@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PCOARM">PCOARM</a></p>
+<hr><h1 id="#_15631340"><a name="PCOARM"></a><a href="#ModuleList">Module</a> PCOARM
+</h1>
+<p> be</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>INTERNALERROR= 100<tr><td></td><td>UNIMPLEMENTED= 101<tr><td></td><td>NONORTHOGONALITYEXCEPTION= 102<tr><td></td><td>ErrBranchOffsetTooBig= 110<tr><td></td><td>ErrImmediateTooSmall= 111<tr><td></td><td>ErrImmediateTooBig= 112<tr><td></td><td>ErrRotateImmTooBig= 113<tr><td></td><td>ErrRotateImmOdd= 114<tr><td></td><td>ErrInvalidRegister= 115<tr><td></td><td>ErrInvalidRegisterSet= 116<tr><td></td><td>ErrInvalidMode= 117<tr><td></td><td>ErrCaseOffsetTooBig= 118<tr><td></td><td>MaxCodeLength= (256*1024)<tr><td></td><td>InstructionSize= 4<tr><td></td><td><a href="#PCOARM.EQ">EQ</a>= {}<tr><td></td><td><a href="#PCOARM.NE">NE</a>= {28}<tr><td></td><td><a href="#PCOARM.CS">CS</a>= {29}<tr><td></td><td><a href="#PCOARM.HS">HS</a>= CS<tr><td></td><td><a href="#PCOARM.CC">CC</a>= {29,28}<tr><td></td><td><a href="#PCOARM.LO">LO</a>= CC<tr><td></td><td><a href="#PCOARM.MI">MI</a>= {30}<tr><td></td><td><a href="#PCOARM.PL">PL</a>= {30,28}<tr><td></td><td><a href="#PCOARM.VS">VS</a>= {30,29}<tr><td></td><td><a href="#PCOARM.VC">VC</a>= {30,29,28}<tr><td></td><td><a href="#PCOARM.HI">HI</a>= {31}<tr><td></td><td><a href="#PCOARM.LS">LS</a>= {31,28}<tr><td></td><td><a href="#PCOARM.GE">GE</a>= {31,29}<tr><td></td><td><a href="#PCOARM.LT">LT</a>= {31,29,28}<tr><td></td><td><a href="#PCOARM.GT">GT</a>= {31,30}<tr><td></td><td><a href="#PCOARM.LE">LE</a>= {31,30,28}<tr><td></td><td><a href="#PCOARM.AL">AL</a>= {31,30,29}<tr><td></td><td>CondMask= {31,30,29,28}<tr><td></td><td><a href="#PCOARM.R0">R0</a>= 0<tr><td></td><td>R1= 1<tr><td></td><td>R2= 2<tr><td></td><td>R3= 3<tr><td></td><td>R4= 4<tr><td></td><td>R5= 5<tr><td></td><td>R6= 6<tr><td></td><td>R7= 7<tr><td></td><td>R8= 8<tr><td></td><td>R9= 9<tr><td></td><td>R10= 10<tr><td></td><td>R11= 11<tr><td></td><td><a href="#PCOARM.FP">FP</a>= 12<tr><td></td><td><a href="#PCOARM.SP">SP</a>= 13<tr><td></td><td><a href="#PCOARM.LR">LR</a>= 14<tr><td></td><td><a href="#PCOARM.PC">PC</a>= 15<tr><td></td><td><a href="#PCOARM.Registers">Registers</a>= {15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0}<tr><td></td><td><a href="#PCOARM.CPSR">CPSR</a>= {}<tr><td></td><td><a href="#PCOARM.SPSR">SPSR</a>= {22}<tr><td></td><td>CR0= 0<tr><td></td><td>CR1= 1<tr><td></td><td>CR2= 2<tr><td></td><td>CR3= 3<tr><td></td><td>CR4= 4<tr><td></td><td>CR5= 5<tr><td></td><td>CR6= 6<tr><td></td><td>CR7= 7<tr><td></td><td>CR8= 8<tr><td></td><td>CR9= 9<tr><td></td><td>CR10= 10<tr><td></td><td>CR11= 11<tr><td></td><td>CR12= 12<tr><td></td><td>CR13= 13<tr><td></td><td>CR14= 14<tr><td></td><td><a href="#PCOARM.CR15">CR15</a>= 15<tr><td></td><td><a href="#PCOARM.PSRc">PSRc</a>= {16}<tr><td></td><td><a href="#PCOARM.PSRx">PSRx</a>= {17}<tr><td></td><td><a href="#PCOARM.PSRs">PSRs</a>= {18}<tr><td></td><td><a href="#PCOARM.PSRf">PSRf</a>= {19}<tr><td></td><td><a href="#PCOARM.Mask24">Mask24</a>= {0..23}<tr><td></td><td>MaskRd= {15,14,13,12}<tr><td></td><td><a href="#PCOARM.Sflag">Sflag</a>= {20}<tr><td></td><td><a href="#PCOARM.Bflag">Bflag</a>= {22}<tr><td></td><td><a href="#PCOARM.Lflag">Lflag</a>= {22}<tr><td></td><td><a href="#PCOARM.Lsl">Lsl</a>= {}<tr><td></td><td><a href="#PCOARM.LSR">LSR</a>= {5}<tr><td></td><td><a href="#PCOARM.Asr">Asr</a>= {6}<tr><td></td><td><a href="#PCOARM.Ror">Ror</a>= {6,5}<tr><td></td><td><a href="#PCOARM.RRX">RRX</a>= Ror<tr><td></td><td><a href="#PCOARM.Load">Load</a>= {20}<tr><td></td><td><a href="#PCOARM.Store">Store</a>= {}<tr><td></td><td><a href="#PCOARM.IdxAdd">IdxAdd</a>= {23}<tr><td></td><td><a href="#PCOARM.IdxSub">IdxSub</a>= {}<tr><td></td><td><a href="#PCOARM.Offset">Offset</a>= {24}<tr><td></td><td><a href="#PCOARM.PreIdxd">PreIdxd</a>= {24,21}<tr><td></td><td><a href="#PCOARM.PostIdxd">PostIdxd</a>= {}<tr><td></td><td><a href="#PCOARM.A1Imm">A1Imm</a>= {25}<tr><td></td><td><a href="#PCOARM.A1Reg">A1Reg</a>= {}<tr><td></td><td><a href="#PCOARM.A1ShiftImm">A1ShiftImm</a>= {}<tr><td></td><td><a href="#PCOARM.A1ShiftReg">A1ShiftReg</a>= {4}<tr><td></td><td><a href="#PCOARM.A1Immediate0">A1Immediate0</a>= {}<tr><td></td><td>A1Immediate1= {0}<tr><td></td><td>A1Immediate2= {1}<tr><td></td><td>A1Immediate4= {2}<tr><td></td><td>A1Immediate8= {3}<tr><td></td><td>A1Immediate31= {4,3,2,1,0}<tr><td></td><td><a href="#PCOARM.A2Mode">A2Mode</a>= {26}<tr><td></td><td><a href="#PCOARM.A2Word">A2Word</a>= {}<tr><td></td><td><a href="#PCOARM.A2Byte">A2Byte</a>= {22}<tr><td></td><td><a href="#PCOARM.A2Imm">A2Imm</a>= {}<tr><td></td><td><a href="#PCOARM.A2Reg">A2Reg</a>= {25}<tr><td></td><td>A2WImmOffset= ((A2Word+A2Imm)+Offset)<tr><td></td><td>A2WRegOffset= ((A2Word+A2Reg)+Offset)<tr><td></td><td>A2BImmOffset= ((A2Byte+A2Imm)+Offset)<tr><td></td><td>A2BRegOffset= ((A2Byte+A2Reg)+Offset)<tr><td></td><td>A2WImmPreIdxd= ((A2Word+A2Imm)+PreIdxd)<tr><td></td><td>A2WRegPreIdxd= ((A2Word+A2Reg)+PreIdxd)<tr><td></td><td>A2WImmPostIdxd= ((A2Word+A2Imm)+PostIdxd)<tr><td></td><td>A2WRegPostIdxd= ((A2Word+A2Reg)+PostIdxd)<tr><td></td><td>A2BImmPostIdxd= ((A2Byte+A2Imm)+PostIdxd)<tr><td></td><td>A2BRegPostIdxd= ((A2Byte+A2Reg)+PostIdxd)<tr><td></td><td><a href="#PCOARM.A3Mode">A3Mode</a>= {7,4}<tr><td></td><td><a href="#PCOARM.A3Halfword">A3Halfword</a>= {5}<tr><td></td><td><a href="#PCOARM.A3Byte">A3Byte</a>= {}<tr><td></td><td><a href="#PCOARM.A3Imm">A3Imm</a>= {22}<tr><td></td><td><a href="#PCOARM.A3Reg">A3Reg</a>= {}<tr><td></td><td><a href="#PCOARM.A3Signed">A3Signed</a>= {6}<tr><td></td><td><a href="#PCOARM.A3Unsigned">A3Unsigned</a>= {}<tr><td></td><td>A3SHImmOffset= (((A3Halfword+A3Imm)+A3Signed)+Offset)<tr><td></td><td>A3UHImmOffset= (((A3Halfword+A3Imm)+A3Unsigned)+Offset)<tr><td></td><td>A3SHRegOffset= (((A3Halfword+A3Reg)+A3Signed)+Offset)<tr><td></td><td>A3UHRegOffset= (((A3Halfword+A3Reg)+A3Unsigned)+Offset)<tr><td></td><td>A3SBImmOffset= (((A3Byte+A3Imm)+A3Signed)+Offset)<tr><td></td><td>A3UBImmOffset= (((A3Byte+A3Imm)+A3Unsigned)+Offset)<tr><td></td><td>A3SBRegOffset= (((A3Byte+A3Reg)+A3Signed)+Offset)<tr><td></td><td>A3UBRegOffset= (((A3Byte+A3Reg)+A3Unsigned)+Offset)<tr><td></td><td><a href="#PCOARM.A4IA">A4IA</a>= {23}<tr><td></td><td><a href="#PCOARM.A4IB">A4IB</a>= {24,23}<tr><td></td><td><a href="#PCOARM.A4DA">A4DA</a>= {}<tr><td></td><td><a href="#PCOARM.A4DB">A4DB</a>= {24}<tr><td></td><td><a href="#PCOARM.A4W">A4W</a>= {21}<tr><td></td><td><a href="#PCOARM.A4User">A4User</a>= {22}<tr><td></td><td><a href="#PCOARM.A4LDMMask">A4LDMMask</a>= {20}<tr><td></td><td><a href="#PCOARM.A5W">A5W</a>= {21}<tr><td></td><td><a href="#PCOARM.A5Offset">A5Offset</a>= {}<tr><td></td><td><a href="#PCOARM.A5PreIdxd">A5PreIdxd</a>= {21}<tr><td></td><td><a href="#PCOARM.A5PostIdxd">A5PostIdxd</a>= {24,21}<tr><td></td><td><a href="#PCOARM.A5UnIdxd">A5UnIdxd</a>= {24}<tr><td></td><td><a href="#PCOARM.MSRImmediate">MSRImmediate</a>= {25}<tr><td></td><td><a href="#PCOARM.MSRRegister">MSRRegister</a>= {}<tr><td></td><td><a href="#PCOARM.opADC">opADC</a>= {23,21}<tr><td></td><td>opADD= {23}<tr><td></td><td>opAND= {}<tr><td></td><td>opBIC= {24,23,22}<tr><td></td><td>opCMN= {24,22,21,20}<tr><td></td><td>opCMP= {24,22,20}<tr><td></td><td>opEOR= {21}<tr><td></td><td>opMOV= {24,23,21}<tr><td></td><td>opMVN= {24,23,22,21}<tr><td></td><td>opORR= {24,23}<tr><td></td><td>opRSB= {22,21}<tr><td></td><td>opRSC= {23,22,21}<tr><td></td><td>opSBC= {23,22}<tr><td></td><td>opSUB= {22}<tr><td></td><td>opTEQ= {24,21,20}<tr><td></td><td>opTST= {24,20}<tr><td></td><td>opMRS= {24,19,18,17,16}<tr><td></td><td>opMSR= {24,21,15,14,13,12}<tr><td></td><td>opMLA= {21,7,4}<tr><td></td><td>opMUL= {7,4}<tr><td></td><td>opSMLAL= {23,22,21,7,4}<tr><td></td><td>opSMULL= {23,22,7,4}<tr><td></td><td>opUMLAL= {23,21,7,4}<tr><td></td><td>opUMULL= {23,7,4}<tr><td></td><td>opB= {27,25}<tr><td></td><td>LinkBit= {24}<tr><td></td><td>opBL= (opB+LinkBit)<tr><td></td><td>BMask= {27,25,24}<tr><td></td><td>opLDM= {27,20}<tr><td></td><td>opLDR= {26,20}<tr><td></td><td>opLDRH= {20,7,4}<tr><td></td><td>opSTM= {27}<tr><td></td><td>opSTR= {26}<tr><td></td><td>opSTRH= {7,5,4}<tr><td></td><td>opSWP= {24,7,4}<tr><td></td><td>opSWI= {27,26,25,24}<tr><td></td><td>opBKPT= {31,30,29,24,21,6,5,4}<tr><td></td><td>opCDP= {27,26,25}<tr><td></td><td>opLDC= {27,26,20}<tr><td></td><td>opMCR= {27,26,25,4}<tr><td></td><td>opMRC= {27,26,25,20,4}<tr><td></td><td>opSTC= {27,26}<tr><th align='left'>type declarations</th><td>Callback =<strong>PROCEDURE</strong>{DELEGATE} (pc: <strong>SIGNED32</strong>)<tr><th align='left'>variables</th><td>sourcepos: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> GetCodePos (): <strong>SIGNED32</strong><tr><td></td><td> GetInstruction (pos: <strong>SIGNED32</strong>): <strong>SET</strong><tr><td></td><td> GetCode (<strong>VAR</strong> codeArr: <strong>PCLIR.CodeArray</strong>; <strong>VAR</strong> length, hdrLength, addressFactor: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCOARM.MakeA3Immediate">MakeA3Immediate</a> (<strong>VAR</strong> addrMode: <strong>SET</strong>; offset: <strong>SIGNED32</strong>): <strong>SET</strong><tr><td></td><td> MakeA3Register (register: <strong>SIGNED32</strong>): <strong>SET</strong><tr><td></td><td> <a href="#PCOARM.MakeA1Immediate">MakeA1Immediate</a> (immediate: <strong>SIGNED32</strong>; <strong>VAR</strong> imm: <strong>SET</strong>): <strong>BOOLEAN</strong><tr><td></td><td> MakeA1Register (reg: <strong>SIGNED32</strong>): <strong>SET</strong><tr><td></td><td> MakeA1RegSHIFTReg (reg, shiftreg: <strong>SIGNED32</strong>; mode: <strong>SET</strong>): <strong>SET</strong><tr><td></td><td> MakeA1RegSHIFTImm (reg, imm: <strong>SIGNED32</strong>; mode: <strong>SET</strong>): <strong>SET</strong><tr><td></td><td> <a href="#PCOARM.ADC">ADC</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.ADD">ADD</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.AND">AND</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.BIC">BIC</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.CMN">CMN</a> (cond, addrMode: <strong>SET</strong>; rN: <strong>SIGNED32</strong>; shifterOperand: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.CMP">CMP</a> (cond, addrMode: <strong>SET</strong>; rN: <strong>SIGNED32</strong>; shifterOperand: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.EOR">EOR</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.MOV">MOV</a> (cond, addrMode: <strong>SET</strong>; rD: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.MVN">MVN</a> (cond, addrMode: <strong>SET</strong>; rD: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.ORR">ORR</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.RSB">RSB</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.RSC">RSC</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.SBC">SBC</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.SUB">SUB</a> (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.TEQ">TEQ</a> (cond, addrMode: <strong>SET</strong>; rN: <strong>SIGNED32</strong>; shifterOperand: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.TST">TST</a> (cond, addrMode: <strong>SET</strong>; rN: <strong>SIGNED32</strong>; shifterOperand: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.MLA">MLA</a> (cond: <strong>SET</strong>; rD, rM, rS, rN: <strong>SIGNED32</strong>; S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.MUL">MUL</a> (cond: <strong>SET</strong>; rD, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.SMLAL">SMLAL</a> (cond: <strong>SET</strong>; rDHi, rDLo, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.SMULL">SMULL</a> (cond: <strong>SET</strong>; rDHi, rDLo, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.UMLAL">UMLAL</a> (cond: <strong>SET</strong>; rDLo, rDHi, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.UMULL">UMULL</a> (cond: <strong>SET</strong>; rDLo, rDHi, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.B">B</a> (cond: <strong>SET</strong>; address: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCOARM.BL">BL</a> (cond: <strong>SET</strong>; address: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCOARM.MakeA2Immediate">MakeA2Immediate</a> (<strong>VAR</strong> addrMode: <strong>SET</strong>; offset: <strong>SIGNED32</strong>): <strong>SET</strong><tr><td></td><td> MakeA2Register (register: <strong>SIGNED32</strong>): <strong>SET</strong><tr><td></td><td> MakeA2ScaledRegister (reg: <strong>SIGNED32</strong>; mode: <strong>SET</strong>; shift: <strong>SIGNED32</strong>): <strong>SET</strong><tr><td></td><td> <a href="#PCOARM.LDM">LDM</a> (cond, addrMode: <strong>SET</strong>; rD: <strong>SIGNED32</strong>; registers, W: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.LDR">LDR</a> (cond, addrMode: <strong>SET</strong>; rD, rAdr: <strong>SIGNED32</strong>; address: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.LDRH">LDRH</a> (cond, addrMode: <strong>SET</strong>; rD, rAdr: <strong>SIGNED32</strong>; address: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.STM">STM</a> (cond, addrMode: <strong>SET</strong>; rD: <strong>SIGNED32</strong>; registers, W: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.STR">STR</a> (cond, addrMode: <strong>SET</strong>; rAdr, rS: <strong>SIGNED32</strong>; address: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.STRH">STRH</a> (cond, addrMode: <strong>SET</strong>; rAdr, rS: <strong>SIGNED32</strong>; address: <strong>SET</strong>)<tr><td></td><td> <a href="#PCOARM.SWI">SWI</a> (cond: <strong>SET</strong>; code: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCOARM.DCD">DCD</a> (value: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCOARM.Lock">Lock</a><tr><td></td><td> Unlock<tr><td></td><td> SetConstantPoolBarrier (pc: <strong>SIGNED32</strong>)<tr><td></td><td> SetConstantPoolBarrierCallback (callback: <strong>Callback</strong>)<tr><td></td><td> FixLoad (pc: <strong>SIGNED32</strong>; address: <strong>SIGNED32</strong>)<tr><td></td><td> FixJump (pc: <strong>SIGNED32</strong>; address: <strong>SIGNED32</strong>)<tr><td></td><td> FixCall (pc: <strong>SIGNED32</strong>; address: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> FixCaseTable (pc: <strong>SIGNED32</strong>; address: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCOARM.Init">Init</a> (codeFN: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PutChar (c: <strong>CHAR</strong>)<tr><td></td><td> Close<tr><td></td><td> BoP (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> EoP<tr><td></td><td> Dump</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="#_157FF1C0">
+</h1>
+<p> Code Generator for ARM. Not concurrent !</p>
+<hr><h2 id="#_15801780"><a name="PCOARM.EQ"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.EQ">EQ</a>
+</h2>
+<p> Conditions - instruction is executed if CPSR satisfies the condition</p>
+
+<p> equal</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EQ*= {}</pre>
+<hr><h2 id="#_15807240"><a name="PCOARM.NE"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.NE">NE</a>
+</h2>
+<p> not equal</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NE*= {28}</pre>
+<hr><h2 id="#_1580A9C0"><a name="PCOARM.CS"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.CS">CS</a>
+</h2>
+<p> carry set</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CS*= {29}</pre>
+<hr><h2 id="#_1580E080"><a name="PCOARM.HS"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.HS">HS</a>
+</h2>
+<p> unsigned higher or same</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HS*= CS</pre>
+<hr><h2 id="#_15811BC0"><a name="PCOARM.CC"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.CC">CC</a>
+</h2>
+<p> carry clear</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CC*= {29,28}</pre>
+<hr><h2 id="#_15815780"><a name="PCOARM.LO"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.LO">LO</a>
+</h2>
+<p> unsigned lower</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LO*= CC</pre>
+<hr><h2 id="#_15818980"><a name="PCOARM.MI"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MI">MI</a>
+</h2>
+<p> minus/negative</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MI*= {30}</pre>
+<hr><h2 id="#_1581BDC0"><a name="PCOARM.PL"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.PL">PL</a>
+</h2>
+<p> plus/positive or zero</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PL*= {30,28}</pre>
+<hr><h2 id="#_1581FDC0"><a name="PCOARM.VS"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.VS">VS</a>
+</h2>
+<p> overflow</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> VS*= {30,29}</pre>
+<hr><h2 id="#_15823600"><a name="PCOARM.VC"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.VC">VC</a>
+</h2>
+<p> no overflow</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> VC*= {30,29,28}</pre>
+<hr><h2 id="#_158275C0"><a name="PCOARM.HI"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.HI">HI</a>
+</h2>
+<p> unsigned higher</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HI*= {31}</pre>
+<hr><h2 id="#_1582AC80"><a name="PCOARM.LS"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.LS">LS</a>
+</h2>
+<p> unsigned lower or same</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LS*= {31,28}</pre>
+<hr><h2 id="#_1582F1C0"><a name="PCOARM.GE"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.GE">GE</a>
+</h2>
+<p> signed greater or equal</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> GE*= {31,29}</pre>
+<hr><h2 id="#_15833600"><a name="PCOARM.LT"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.LT">LT</a>
+</h2>
+<p> signed less than</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LT*= {31,29,28}</pre>
+<hr><h2 id="#_15837A00"><a name="PCOARM.GT"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.GT">GT</a>
+</h2>
+<p> signed greater than</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> GT*= {31,30}</pre>
+<hr><h2 id="#_1583BA00"><a name="PCOARM.LE"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.LE">LE</a>
+</h2>
+<p> signed less than or equal</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LE*= {31,30,28}</pre>
+<hr><h2 id="#_158406C0"><a name="PCOARM.AL"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.AL">AL</a>
+</h2>
+<p> always</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> AL*= {31,30,29}</pre>
+<hr><h2 id="#_15844300"><a name="PCOARM.R0"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.R0">R0</a>
+</h2>
+<p> Registers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> R0*= 0</pre>
+<hr><h2 id="#_15847180"><a name="PCOARM.FP"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.FP">FP</a>
+</h2>
+<p> frame pointer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FP*= 12</pre>
+<hr><h2 id="#_1584A500"><a name="PCOARM.SP"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.SP">SP</a>
+</h2>
+<p> stack pointer</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SP*= 13</pre>
+<hr><h2 id="#_1584D700"><a name="PCOARM.LR"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.LR">LR</a>
+</h2>
+<p> return address</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LR*= 14</pre>
+<hr><h2 id="#_15850900"><a name="PCOARM.PC"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.PC">PC</a>
+</h2>
+<p> program counter</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PC*= 15</pre>
+<hr><h2 id="#_15853B00"><a name="PCOARM.Registers"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Registers">Registers</a>
+</h2>
+<p> valid registers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Registers*= {15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0}</pre>
+<hr><h2 id="#_1585B340"><a name="PCOARM.CPSR"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.CPSR">CPSR</a>
+</h2>
+<p> current program status register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CPSR*= {}</pre>
+<hr><h2 id="#_1585F080"><a name="PCOARM.SPSR"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.SPSR">SPSR</a>
+</h2>
+<p> saved program status register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SPSR*= {22}</pre>
+<hr><h2 id="#_15862FC0"><a name="PCOARM.CR15"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.CR15">CR15</a>
+</h2>
+<p> coprocessor registers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CR15*= 15</pre>
+<hr><h2 id="#_158661C0"><a name="PCOARM.PSRc"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.PSRc">PSRc</a>
+</h2>
+<p> PSR flags</p>
+
+<p> control fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PSRc*= {16}</pre>
+<hr><h2 id="#_1586A200"><a name="PCOARM.PSRx"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.PSRx">PSRx</a>
+</h2>
+<p> extension fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PSRx*= {17}</pre>
+<hr><h2 id="#_1586D8C0"><a name="PCOARM.PSRs"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.PSRs">PSRs</a>
+</h2>
+<p> status fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PSRs*= {18}</pre>
+<hr><h2 id="#_15870F80"><a name="PCOARM.PSRf"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.PSRf">PSRf</a>
+</h2>
+<p> flags fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PSRf*= {19}</pre>
+<hr><h2 id="#_15874840"><a name="PCOARM.Mask24"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Mask24">Mask24</a>
+</h2>
+<p> useful Bit-Masks</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Mask24*= {0..23}</pre>
+<hr><h2 id="#_15878400"><a name="PCOARM.Sflag"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Sflag">Sflag</a>
+</h2>
+<p> Common modifiers</p>
+
+<p> if set, the condition codes are updated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Sflag*= {20}</pre>
+<hr><h2 id="#_1587D8C0"><a name="PCOARM.Bflag"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Bflag">Bflag</a>
+</h2>
+<p> distinguishes between a SWP and a SWPB instruction</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Bflag*= {22}</pre>
+<hr><h2 id="#_15882880"><a name="PCOARM.Lflag"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Lflag">Lflag</a>
+</h2>
+<p> LDC/STC: specifies long load/store</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Lflag*= {22}</pre>
+<hr><h2 id="#_158867C0"><a name="PCOARM.Lsl"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Lsl">Lsl</a>
+</h2>
+<p> logical shift left</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Lsl*= {}</pre>
+<hr><h2 id="#_1588A0C0"><a name="PCOARM.LSR"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.LSR">LSR</a>
+</h2>
+<p> logical shift right</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> LSR*= {5}</pre>
+<hr><h2 id="#_1588DBC0"><a name="PCOARM.Asr"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Asr">Asr</a>
+</h2>
+<p> arithmetic shift right</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Asr*= {6}</pre>
+<hr><h2 id="#_158916C0"><a name="PCOARM.Ror"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Ror">Ror</a>
+</h2>
+<p> rotate right</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Ror*= {6,5}</pre>
+<hr><h2 id="#_15895280"><a name="PCOARM.RRX"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.RRX">RRX</a>
+</h2>
+<p> rotate right with extend</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> RRX*= Ror</pre>
+<hr><h2 id="#_15898D00"><a name="PCOARM.Load"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Load">Load</a>
+</h2>
+<p> load</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Load*= {20}</pre>
+<hr><h2 id="#_1589C040"><a name="PCOARM.Store"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Store">Store</a>
+</h2>
+<p> store</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Store*= {}</pre>
+<hr><h2 id="#_1589F180"><a name="PCOARM.IdxAdd"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.IdxAdd">IdxAdd</a>
+</h2>
+<p> load/store: the index is added to the base register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> IdxAdd*= {23}</pre>
+<hr><h2 id="#_158A44C0"><a name="PCOARM.IdxSub"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.IdxSub">IdxSub</a>
+</h2>
+<p> load/store: the index is subtracted from the base register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> IdxSub*= {}</pre>
+<hr><h2 id="#_158A9600"><a name="PCOARM.Offset"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Offset">Offset</a>
+</h2>
+<p> load/store: offset addressing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Offset*= {24}</pre>
+<hr><h2 id="#_158AD100"><a name="PCOARM.PreIdxd"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.PreIdxd">PreIdxd</a>
+</h2>
+<p> load/store: pre-indexed addressing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PreIdxd*= {24,21}</pre>
+<hr><h2 id="#_158B1100"><a name="PCOARM.PostIdxd"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.PostIdxd">PostIdxd</a>
+</h2>
+<p> laod/store: post-indexed addressing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PostIdxd*= {}</pre>
+<hr><h2 id="#_158B4CC0"><a name="PCOARM.A1Imm"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A1Imm">A1Imm</a>
+</h2>
+<p> Addressing Mode 1 - Data-processing operands</p>
+
+<p> shifterOperand contains an 8-bit immediate value plus a 4-bit rotate immediate value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A1Imm*= {25}</pre>
+<hr><h2 id="#_158BC680"><a name="PCOARM.A1Reg"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A1Reg">A1Reg</a>
+</h2>
+<p> shifterOperand contains a register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A1Reg*= {}</pre>
+<hr><h2 id="#_158C03C0"><a name="PCOARM.A1ShiftImm"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A1ShiftImm">A1ShiftImm</a>
+</h2>
+<p> shifterOperand contains a register and is shifted by an immeditae</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A1ShiftImm*= {}</pre>
+<hr><h2 id="#_158C5880"><a name="PCOARM.A1ShiftReg"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A1ShiftReg">A1ShiftReg</a>
+</h2>
+<p> shifterOperand contains a register and is shifted by a register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A1ShiftReg*= {4}</pre>
+<hr><h2 id="#_158CAF40"><a name="PCOARM.A1Immediate0"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A1Immediate0">A1Immediate0</a>
+</h2>
+<p> prepared immediate values: 0, 1, 2, 4 and 8</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A1Immediate0*= {}</pre>
+<hr><h2 id="#_158D0080"><a name="PCOARM.A2Mode"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A2Mode">A2Mode</a>
+</h2>
+<p> Addressing Mode 2 - Load and Store Words or Unsigned Byte</p>
+
+<p> load/store word/unsigned byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A2Mode*= {26}</pre>
+<hr><h2 id="#_158D6A00"><a name="PCOARM.A2Word"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A2Word">A2Word</a>
+</h2>
+<p> load/store word</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A2Word*= {}</pre>
+<hr><h2 id="#_158D9EC0"><a name="PCOARM.A2Byte"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A2Byte">A2Byte</a>
+</h2>
+<p> load/store byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A2Byte*= {22}</pre>
+<hr><h2 id="#_158DD580"><a name="PCOARM.A2Imm"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A2Imm">A2Imm</a>
+</h2>
+<p> address contains an immediate value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A2Imm*= {}</pre>
+<hr><h2 id="#_158E1740"><a name="PCOARM.A2Reg"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A2Reg">A2Reg</a>
+</h2>
+<p> address contains a register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A2Reg*= {25}</pre>
+<hr><h2 id="#_158E5680"><a name="PCOARM.A3Mode"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A3Mode">A3Mode</a>
+</h2>
+<p> Addressing Mode 3 - Miscellaneous Loads and Stores</p>
+
+<p> micellaneous load/store</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A3Mode*= {7,4}</pre>
+<hr><h2 id="#_158EB4C0"><a name="PCOARM.A3Halfword"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A3Halfword">A3Halfword</a>
+</h2>
+<p> load/store halfword</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A3Halfword*= {5}</pre>
+<hr><h2 id="#_158EEB80"><a name="PCOARM.A3Byte"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A3Byte">A3Byte</a>
+</h2>
+<p> load/store byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A3Byte*= {}</pre>
+<hr><h2 id="#_158F2040"><a name="PCOARM.A3Imm"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A3Imm">A3Imm</a>
+</h2>
+<p> address contains an immediate value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A3Imm*= {22}</pre>
+<hr><h2 id="#_158F6400"><a name="PCOARM.A3Reg"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A3Reg">A3Reg</a>
+</h2>
+<p> address contains a register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A3Reg*= {}</pre>
+<hr><h2 id="#_158FA140"><a name="PCOARM.A3Signed"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A3Signed">A3Signed</a>
+</h2>
+<p> signed halfword/byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A3Signed*= {6}</pre>
+<hr><h2 id="#_158FD800"><a name="PCOARM.A3Unsigned"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A3Unsigned">A3Unsigned</a>
+</h2>
+<p> unsigned halfword/byte</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A3Unsigned*= {}</pre>
+<hr><h2 id="#_15900CC0"><a name="PCOARM.A4IA"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A4IA">A4IA</a>
+</h2>
+<p> Addressing Mode 4 - Load and Store Multiple</p>
+
+<p> increment after</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A4IA*= {23}</pre>
+<hr><h2 id="#_15906600"><a name="PCOARM.A4IB"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A4IB">A4IB</a>
+</h2>
+<p> increment before</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A4IB*= {24,23}</pre>
+<hr><h2 id="#_1590A1C0"><a name="PCOARM.A4DA"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A4DA">A4DA</a>
+</h2>
+<p> decrement after</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A4DA*= {}</pre>
+<hr><h2 id="#_1590D680"><a name="PCOARM.A4DB"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A4DB">A4DB</a>
+</h2>
+<p> decrement before</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A4DB*= {24}</pre>
+<hr><h2 id="#_15910D40"><a name="PCOARM.A4W"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A4W">A4W</a>
+</h2>
+<p> update address register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A4W*= {21}</pre>
+<hr><h2 id="#_15914840"><a name="PCOARM.A4User"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A4User">A4User</a>
+</h2>
+<p> load/store user mode registers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A4User*= {22}</pre>
+<hr><h2 id="#_15918780"><a name="PCOARM.A4LDMMask"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A4LDMMask">A4LDMMask</a>
+</h2>
+<p> if this bit is set, it's a LDM (ifffff it's a addressing mode 4 instruction, Hobbes, idiot)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A4LDMMask*= {20}</pre>
+<hr><h2 id="#_1591FE00"><a name="PCOARM.A5W"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A5W">A5W</a>
+</h2>
+<p> Addressing Mode 5 - Load and Store Coprocessor</p>
+
+<p> update base register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A5W*= {21}</pre>
+<hr><h2 id="#_15925B80"><a name="PCOARM.A5Offset"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A5Offset">A5Offset</a>
+</h2>
+<p> offset addressing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A5Offset*= {}</pre>
+<hr><h2 id="#_15929040"><a name="PCOARM.A5PreIdxd"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A5PreIdxd">A5PreIdxd</a>
+</h2>
+<p> pre-indexed addressing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A5PreIdxd*= {21}</pre>
+<hr><h2 id="#_1592C700"><a name="PCOARM.A5PostIdxd"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A5PostIdxd">A5PostIdxd</a>
+</h2>
+<p> post-indexed addressing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A5PostIdxd*= {24,21}</pre>
+<hr><h2 id="#_159302C0"><a name="PCOARM.A5UnIdxd"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.A5UnIdxd">A5UnIdxd</a>
+</h2>
+<p> unindexed addressing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> A5UnIdxd*= {24}</pre>
+<hr><h2 id="#_15933980"><a name="PCOARM.MSRImmediate"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MSRImmediate">MSRImmediate</a>
+</h2>
+<p> Miscellaneous</p>
+
+<p> the operand is a 8bit immediate</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MSRImmediate*= {25}</pre>
+<hr><h2 id="#_15938740"><a name="PCOARM.MSRRegister"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MSRRegister">MSRRegister</a>
+</h2>
+<p> the operand is a register</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MSRRegister*= {}</pre>
+<hr><h2 id="#_1593C900"><a name="PCOARM.opADC"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.opADC">opADC</a>
+</h2>
+<p> Instruction Opcodes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> opADC*= {23,21}</pre>
+<hr><h2 id="#_159404C0"><a name="PCOARM.MakeA3Immediate"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MakeA3Immediate">MakeA3Immediate</a>
+</h2>
+<p> Addressing Mode 3 Helpers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MakeA3Immediate* (<strong>VAR</strong> addrMode: <strong>SET</strong>; offset: <strong>SIGNED32</strong>): <strong>SET</strong></pre>
+<hr><h2 id="#_15946180"><a name="PCOARM.MakeA1Immediate"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MakeA1Immediate">MakeA1Immediate</a>
+</h2>
+<p>----- Data Processing Instructions (Addressing Mode 1) -------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MakeA1Immediate* (immediate: <strong>SIGNED32</strong>; <strong>VAR</strong> imm: <strong>SET</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="#_1594CD40"><a name="PCOARM.ADC"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.ADC">ADC</a>
+</h2>
+<p> ADC - add with carry (rD <a name="-"></a> rN + shifterOperand + carry)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ADC* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15956600"><a name="PCOARM.ADD"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.ADD">ADD</a>
+</h2>
+<p> ADD - add (rD <a name="-"></a> rN + shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ADD* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_1595EF40"><a name="PCOARM.AND"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.AND">AND</a>
+</h2>
+<p> AND - bitwise and (rD <a name="-"></a> rN AND shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AND* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15967C00"><a name="PCOARM.BIC"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.BIC">BIC</a>
+</h2>
+<p> BIC - clears bits (rD <a name="-"></a> rN AND NOT shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> BIC* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15970C40"><a name="PCOARM.CMN"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.CMN">CMN</a>
+</h2>
+<p> CMN - compare negative (CC updated based on rN + shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CMN* (cond, addrMode: <strong>SET</strong>; rN: <strong>SIGNED32</strong>; shifterOperand: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15979280"><a name="PCOARM.CMP"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.CMP">CMP</a>
+</h2>
+<p> CMP - compare (CC updateed based on rN - shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CMP* (cond, addrMode: <strong>SET</strong>; rN: <strong>SIGNED32</strong>; shifterOperand: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159813C0"><a name="PCOARM.EOR"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.EOR">EOR</a>
+</h2>
+<p> EOR - XOr (rD <a name="-"></a> rN XOR shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EOR* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15989D00"><a name="PCOARM.MOV"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MOV">MOV</a>
+</h2>
+<p> MOV - move (rD <a name="-"></a> shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MOV* (cond, addrMode: <strong>SET</strong>; rD: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15991640"><a name="PCOARM.MVN"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MVN">MVN</a>
+</h2>
+<p> MVN - move negative (rD <a name="-"></a> NOT shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MVN* (cond, addrMode: <strong>SET</strong>; rD: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15999800"><a name="PCOARM.ORR"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.ORR">ORR</a>
+</h2>
+<p> ORR - bitwise OR (rD <a name="-"></a> rN OR shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ORR* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159A24C0"><a name="PCOARM.RSB"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.RSB">RSB</a>
+</h2>
+<p> RSB - reverse subtract (rD <a name="-"></a> shifterOperand - rN)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RSB* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159AB180"><a name="PCOARM.RSC"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.RSC">RSC</a>
+</h2>
+<p> RSC - reverse subtract with carry (rD <a name="-"></a> shifterOperand - rN - NOT(carry))</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RSC* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159B4DC0"><a name="PCOARM.SBC"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.SBC">SBC</a>
+</h2>
+<p> SBC - subtract with carry (rD <a name="-"></a> rN - shifterOperand - NOT(carry))</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SBC* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159BE680"><a name="PCOARM.SUB"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.SUB">SUB</a>
+</h2>
+<p> SUB - subtract (rD <a name="-"></a> rN - shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SUB* (cond, addrMode: <strong>SET</strong>; rD, rN: <strong>SIGNED32</strong>; shifterOperand, S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159C6FC0"><a name="PCOARM.TEQ"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.TEQ">TEQ</a>
+</h2>
+<p> TEQ - test equivalence (CC updated based on rN XOR shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TEQ* (cond, addrMode: <strong>SET</strong>; rN: <strong>SIGNED32</strong>; shifterOperand: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159CF600"><a name="PCOARM.TST"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.TST">TST</a>
+</h2>
+<p> TST - test (CC updated based on rN AND shifterOperand)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TST* (cond, addrMode: <strong>SET</strong>; rN: <strong>SIGNED32</strong>; shifterOperand: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159D7740"><a name="PCOARM.MLA"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MLA">MLA</a>
+</h2>
+<p>----------------------- Multiply Instructions -----------------------</p>
+
+<p> MLA - multiply accumulate (rD <a name="-"></a> (rM * rS) + rN)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MLA* (cond: <strong>SET</strong>; rD, rM, rS, rN: <strong>SIGNED32</strong>; S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159E1D80"><a name="PCOARM.MUL"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MUL">MUL</a>
+</h2>
+<p> MUL - multiply (rD <a name="-"></a> rM * rS)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MUL* (cond: <strong>SET</strong>; rD, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159E9EC0"><a name="PCOARM.SMLAL"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.SMLAL">SMLAL</a>
+</h2>
+<p> SMLAL - signed multiply accumulate long (rDLo <a name="-"></a> (rA * rB)[31:0] + rDLo, rDHi <a name="-"></a> (rA * rB)[63:32] + rDHi + carry)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SMLAL* (cond: <strong>SET</strong>; rDHi, rDLo, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_159F5D00"><a name="PCOARM.SMULL"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.SMULL">SMULL</a>
+</h2>
+<p> SMULL - signed multiply long (rDLo <a name="-"></a> (rM * rS)[31:0], rDHi <a name="-"></a> (rM * rS)[63:32])</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SMULL* (cond: <strong>SET</strong>; rDHi, rDLo, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15A00040"><a name="PCOARM.UMLAL"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.UMLAL">UMLAL</a>
+</h2>
+<p> UMLAL - unsigned multiply accumulate long (rDLo <a name="-"></a> (rM*rS)[31:0] + rDLo, rDHi <a name="-"></a> (rM*rS)[63:32] + rDHi + carry)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UMLAL* (cond: <strong>SET</strong>; rDLo, rDHi, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15A0B080"><a name="PCOARM.UMULL"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.UMULL">UMULL</a>
+</h2>
+<p> UMULL - unsigned multply long (rDLo <a name="-"></a> (rM*rS)[31:0], rDHi <a name="-"></a> (rM*rS)[63:32])</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UMULL* (cond: <strong>SET</strong>; rDLo, rDHi, rM, rS: <strong>SIGNED32</strong>; S: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15A145C0"><a name="PCOARM.B"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.B">B</a>
+</h2>
+<p>------------------------- Branch Instructions -------------------------</p>
+
+<p> B - branch to address. (PC <a name="-"></a> PC + extS(address &lt&lt 2)). Hint: PC is 2 instructions ahead</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> B* (cond: <strong>SET</strong>; address: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_15A1E180"><a name="PCOARM.BL"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.BL">BL</a>
+</h2>
+<p> BL - branch to address. (LR <a name="-"></a> address of instr. after branch instruction, PC <a name="-"></a> PC + extS(address &lt&lt 2)) Hint - PC is 2 instructions ahead</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> BL* (cond: <strong>SET</strong>; address: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_15A28F00"><a name="PCOARM.MakeA2Immediate"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.MakeA2Immediate">MakeA2Immediate</a>
+</h2>
+<p>------------ Load/Store Instructions (Addressing Modes 2, 3 & 4) --------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MakeA2Immediate* (<strong>VAR</strong> addrMode: <strong>SET</strong>; offset: <strong>SIGNED32</strong>): <strong>SET</strong></pre>
+<hr><h2 id="#_15A301C0"><a name="PCOARM.LDM"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.LDM">LDM</a>
+</h2>
+<p> LDM - uses Addressing Mode 4</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LDM* (cond, addrMode: <strong>SET</strong>; rD: <strong>SIGNED32</strong>; registers, W: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15A38080"><a name="PCOARM.LDR"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.LDR">LDR</a>
+</h2>
+<p> LDR - uses Addressing Mode 2</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LDR* (cond, addrMode: <strong>SET</strong>; rD, rAdr: <strong>SIGNED32</strong>; address: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15A3F9C0"><a name="PCOARM.LDRH"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.LDRH">LDRH</a>
+</h2>
+<p> LDRH - uses Addressing Mode 3</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LDRH* (cond, addrMode: <strong>SET</strong>; rD, rAdr: <strong>SIGNED32</strong>; address: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15A47300"><a name="PCOARM.STM"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.STM">STM</a>
+</h2>
+<p> STM - uses Addressing Mode 4</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> STM* (cond, addrMode: <strong>SET</strong>; rD: <strong>SIGNED32</strong>; registers, W: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15A4EC40"><a name="PCOARM.STR"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.STR">STR</a>
+</h2>
+<p> STR - uses Addressing Mode 2</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> STR* (cond, addrMode: <strong>SET</strong>; rAdr, rS: <strong>SIGNED32</strong>; address: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15A56580"><a name="PCOARM.STRH"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.STRH">STRH</a>
+</h2>
+<p> STRH - uses Addressing Mode 3</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> STRH* (cond, addrMode: <strong>SET</strong>; rAdr, rS: <strong>SIGNED32</strong>; address: <strong>SET</strong>)</pre>
+<hr><h2 id="#_15A5DEC0"><a name="PCOARM.SWI"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.SWI">SWI</a>
+</h2>
+<p>--------------------------- Miscellaneous -----------------------------</p>
+
+<p> SWI - software interrupt</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SWI* (cond: <strong>SET</strong>; code: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_15A63F40"><a name="PCOARM.DCD"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.DCD">DCD</a>
+</h2>
+<p> DCD - puts a 32bit value into the code</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DCD* (value: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_15A69900"><a name="PCOARM.Lock"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Lock">Lock</a>
+</h2>
+<p>--------------------------- Fixup Handling -------------------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Lock*</pre>
+<hr><h2 id="#_15A6CC40"><a name="PCOARM.Init"></a><a href="#PCOARM">PCOARM</a>.<a href="#PCOARM.Init">Init</a>
+</h2>
+<p>--------------------------- Miscellaneous -------------------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Init* (codeFN: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>

@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#FoxScanner">FoxScanner</a></p>
-<hr><h1 id="#_72B91980"><a name="FoxScanner"></a><a href="#ModuleList">Module</a> FoxScanner
+<hr><h1 id="#_899D3340"><a name="FoxScanner"></a><a href="#ModuleList">Module</a> FoxScanner
 </h1>
 <p> AUTHOR "fof & fn"; PURPOSE "Oberon Compiler: Scanner";</p>
 
@@ -193,15 +193,15 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_72C3AD80">
-</h1><hr><h2 id="#_72C3B540"><a name="FoxScanner.None"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.None">None</a>
+<hr><h1 id="#_89A7C740">
+</h1><hr><h2 id="#_89A7CF00"><a name="FoxScanner.None"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.None">None</a>
 </h2>
 <p> symbols</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> None*= 0</pre>
-<hr><h2 id="#_72C3E3C0"><a name="FoxScanner.KeywordTable"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.KeywordTable">KeywordTable</a>
+<hr><h2 id="#_89A7FD80"><a name="FoxScanner.KeywordTable"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.KeywordTable">KeywordTable</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -216,12 +216,12 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_72C52140"><a name="FoxScanner.Position"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Position">Position</a>
+<hr><h2 id="#_89A93B00"><a name="FoxScanner.Position"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Position">Position</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> Position* =<strong>Basic.Position</strong></pre>
-<hr><h2 id="#_72C54480"><a name="FoxScanner.Token"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Token">Token</a>
+<hr><h2 id="#_89A95E40"><a name="FoxScanner.Token"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Token">Token</a>
 </h2>
 <dl>
 <dt><strong>token</strong></dt>
@@ -246,7 +246,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_72C65500"><a name="FoxScanner.StringMaker"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.StringMaker">StringMaker</a>
+<hr><h2 id="#_89AA6EC0"><a name="FoxScanner.StringMaker"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.StringMaker">StringMaker</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -264,7 +264,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_72C7B000"><a name="FoxScanner.Scanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>
+<hr><h2 id="#_89ABC9C0"><a name="FoxScanner.Scanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>
 </h2>
 <p> scanner reflects the following EBNF Token = String</p>
 
@@ -300,28 +300,28 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_72CAAAC0"><a name="FoxScanner.Scanner.GetNextCharacter"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.GetNextCharacter">GetNextCharacter</a>
+<hr><h3 id="#_89AEC480"><a name="FoxScanner.Scanner.GetNextCharacter"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.GetNextCharacter">GetNextCharacter</a>
 </h3>
 <p> get next character, end of text results in ch = EOT</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetNextCharacter*</pre>
-<hr><h3 id="#_72CB0340"><a name="FoxScanner.Scanner.GetNextToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.GetNextToken">GetNextToken</a>
+<hr><h3 id="#_89AF1D00"><a name="FoxScanner.Scanner.GetNextToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.GetNextToken">GetNextToken</a>
 </h3>
 <p> get next token</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetNextToken* (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_72CB5580"><a name="FoxScanner.Scanner.ResetErrorDiagnostics"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a>
+<hr><h3 id="#_89AF6F40"><a name="FoxScanner.Scanner.ResetErrorDiagnostics"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a>
 </h3>
 <p> set the diagnostics mode of the scanner (diagnostics = NIL ==&gt no report) and reset the error state intended for silent token peeeking after the end of a module</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ResetErrorDiagnostics* (<strong>VAR</strong> diagnostics: <strong>Diagnostics.Diagnostics</strong>)</pre>
-<hr><h2 id="#_72CC06C0"><a name="FoxScanner.Context"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Context">Context</a>
+<hr><h2 id="#_89B02080"><a name="FoxScanner.Context"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Context">Context</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -330,7 +330,7 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_72CC3340"><a name="FoxScanner.AssemblerScanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.AssemblerScanner">AssemblerScanner</a>
+<hr><h2 id="#_89B04D00"><a name="FoxScanner.AssemblerScanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.AssemblerScanner">AssemblerScanner</a>
 </h2>
 <p> assembler scanner reflects the following EBNF Token = String</p>
 
@@ -357,28 +357,28 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_72CE3200"><a name="FoxScanner.AssemblerScanner.GetNextToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.AssemblerScanner">AssemblerScanner</a>.<a href="#FoxScanner.AssemblerScanner.GetNextToken">GetNextToken</a>
+<hr><h3 id="#_89B24BC0"><a name="FoxScanner.AssemblerScanner.GetNextToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.AssemblerScanner">AssemblerScanner</a>.<a href="#FoxScanner.AssemblerScanner.GetNextToken">GetNextToken</a>
 </h3>
 <p> get next token</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetNextToken* (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_72CE85C0"><a name="FoxScanner.NewScanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.NewScanner">NewScanner</a>
+<hr><h2 id="#_89B29F80"><a name="FoxScanner.NewScanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.NewScanner">NewScanner</a>
 </h2>
 <p> return a new scanner on a stream, error output via diagnostics</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewScanner* (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>Streams.Position</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>Scanner</strong></pre>
-<hr><h2 id="#_72CF2380"><a name="FoxScanner.PrintToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.PrintToken">PrintToken</a>
+<hr><h2 id="#_89B33D40"><a name="FoxScanner.PrintToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.PrintToken">PrintToken</a>
 </h2>
 <p> debugging output</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> PrintToken* (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> token: <strong>Token</strong>)</pre>
-<hr><h2 id="#_72CF7240"><a name="FoxScanner.ReportKeywords"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.ReportKeywords">ReportKeywords</a>
+<hr><h2 id="#_89B38C00"><a name="FoxScanner.ReportKeywords"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.ReportKeywords">ReportKeywords</a>
 </h2>
 <p> debugging / reporting</p>
 

@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#PCC">PCC</a></p>
+<hr><h1 id="#_B80EA840"><a name="PCC"></a><a href="#ModuleList">Module</a> PCC
+</h1>
+<p> AUTHOR "prk / be"; PURPOSE "Parallel Compiler: intermediate code generation";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#PCC.setfn">setfn</a>= 200<tr><td></td><td><a href="#PCC.absfn">absfn</a>= 201<tr><td></td><td><a href="#PCC.capfn">capfn</a>= 202<tr><td></td><td><a href="#PCC.oddfn">oddfn</a>= 203<tr><td></td><td><a href="#PCC.ashfn">ashfn</a>= 204<tr><td></td><td><a href="#PCC.lshfn">lshfn</a>= 205<tr><td></td><td><a href="#PCC.rotfn">rotfn</a>= 206<tr><td></td><td><a href="#PCC.bitfn">bitfn</a>= 207<tr><td></td><td>none= PCLIR.none<tr><td></td><td><a href="#PCC.TensorFlag">TensorFlag</a>= 0<tr><td></td><td>RangeFlag= 1<tr><td></td><td>StackFlag= 2<tr><td></td><td>Descr_PtrOffs= 0<tr><td></td><td>Descr_AdrOffs= 1<tr><td></td><td>Descr_FlagsOffs= 2<tr><td></td><td>Descr_DimOffs= 3<tr><td></td><td>Descr_SizeOffs= 4<tr><td></td><td>Descr_LenOffs= 5<tr><td></td><td>Descr_IncOffs= 6<tr><td></td><td>SysDataArrayOffset= 8<tr><td></td><td>ArrDataArrayOffset= 16<tr><td></td><td><a href="#PCC.SmallMatrixFlag">SmallMatrixFlag</a>= 3<tr><td></td><td>SmallVectorFlag= 3<tr><th align='left'>type declarations</th><td><a href="#PCC.Item">Item</a> =<strong>RECORD</strong> <tr><td></td><td>Label =<strong>SIGNED32</strong><tr><td></td><td><a href="#PCC.Code">Code</a> =<strong>PCLIR.Code</strong><tr><th align='left'>variables</th><td><a href="#PCC.delegate">delegate</a>: <strong>PCT.Record</strong><tr><td></td><td>hdptr: <strong>PCT.Record</strong><tr><td></td><td>anyarr: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>PCT.Record</strong><tr><td></td><td>range: <strong>PCT.Record</strong><tr><td></td><td>topscope: <strong>PCT.ModScope</strong><tr><th align='left'>procedures</th><td> Load (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.LoadArrayAdr">LoadArrayAdr</a> (code: <strong>Code</strong>; <strong>VAR</strong> descr, array: <strong>Item</strong>)<tr><td></td><td> DerefTensor (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.MakeItem">MakeItem</a> (<strong>VAR</strong> x: <strong>Item</strong>; o: <strong>PCT.Symbol</strong>; deltaLevel: <strong>SIGNED8</strong>)<tr><td></td><td> MakeStackItem (<strong>VAR</strong> x: <strong>Item</strong>; type: <strong>PCT.Struct</strong>)<tr><td></td><td> MakeConst (<strong>VAR</strong> x: <strong>Item</strong>; o: <strong>PCT.Const</strong>; type: <strong>PCT.Struct</strong>)<tr><td></td><td> MakeIntConst (<strong>VAR</strong> x: <strong>Item</strong>; val: <strong>SIGNED32</strong>; type: <strong>PCT.Struct</strong>)<tr><td></td><td> <a href="#PCC.MakeSizeConst">MakeSizeConst</a> (<strong>VAR</strong> x: <strong>Item</strong>; val: <strong>SIGNED32</strong>)<tr><td></td><td> SetType (<strong>VAR</strong> x: <strong>Item</strong>; type: <strong>PCT.Struct</strong>)<tr><td></td><td> <a href="#PCC.MakeTD">MakeTD</a> (<strong>VAR</strong> x: <strong>Item</strong>; type: <strong>PCT.Record</strong>)<tr><td></td><td> <a href="#PCC.GetStaticSize">GetStaticSize</a> (t: <strong>PCT.Struct</strong>): <strong>SIGNED32</strong><tr><td></td><td> TypeCheck (code: <strong>Code</strong>; <strong>VAR</strong> r: <strong>Item</strong>; str: <strong>PCT.Struct</strong>; trap, equal: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#PCC.Incr">Incr</a> (code: <strong>Code</strong>; <strong>VAR</strong> arr, dim: <strong>Item</strong>)<tr><td></td><td> Dim (code: <strong>Code</strong>; <strong>VAR</strong> arr: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.Len">Len</a> (code: <strong>Code</strong>; <strong>VAR</strong> arr, dim: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.Enter">Enter</a> (code: <strong>Code</strong>; callconv: <strong>SIGNED32</strong>; adr: <strong>PCM.Attribute</strong>)<tr><td></td><td> <a href="#PCC.Leave">Leave</a> (code: <strong>Code</strong>; callconv: <strong>SIGNED32</strong>; proc: <strong>PCT.Proc</strong>; adr: <strong>PCM.Attribute</strong>)<tr><td></td><td> FreeStack (code: <strong>Code</strong>; type: <strong>PCT.Struct</strong>)<tr><td></td><td> RemoveArys (code: <strong>Code</strong>; aryNbr: <strong>SIGNED32</strong>)<tr><td></td><td> MakeReturnItem (code: <strong>Code</strong>; <strong>VAR</strong> dst: <strong>Item</strong>; proc: <strong>PCT.Proc</strong>)<tr><td></td><td> <a href="#PCC.GetDims">GetDims</a> (t: <strong>PCT.Struct</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#PCC.LocalArray">LocalArray</a> (code: <strong>Code</strong>; par: <strong>PCT.Parameter</strong>)<tr><td></td><td> <a href="#PCC.LocalEnhArray">LocalEnhArray</a> (code: <strong>Code</strong>; par: <strong>PCT.Parameter</strong>; copy: <strong>PCT.Proc</strong>)<tr><td></td><td> PushStaticArray (code: <strong>Code</strong>; t: <strong>PCT.EnhArray</strong>)<tr><td></td><td> <a href="#PCC.AllocateLocalArray">AllocateLocalArray</a> (code: <strong>Code</strong>; p: <strong>PCT.LocalVar</strong>; size: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.PushRetDesc">PushRetDesc</a> (code: <strong>Code</strong>; i: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.PushRetDesc1">PushRetDesc1</a> (code: <strong>Code</strong>; fp: <strong>PCT.Symbol</strong>)<tr><td></td><td> <a href="#PCC.PushRetDesc2">PushRetDesc2</a> (code: <strong>Code</strong>; proc: <strong>PCT.Proc</strong>)<tr><td></td><td> PushOpenAryRetDesc (code: <strong>Code</strong>; t: <strong>PCT.Struct</strong>)<tr><td></td><td> PushStatAryRetDesc (code: <strong>Code</strong>; ary: <strong>PCT.Struct</strong>)<tr><td></td><td> PushOpenAryParams (code: <strong>Code</strong>; formal, actual: <strong>PCT.Struct</strong>; <strong>VAR</strong> ofs: <strong>SIGNED32</strong>; parNbr: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCC.PushResultTensor">PushResultTensor</a> (code: <strong>Code</strong>; proc: <strong>PCT.Proc</strong>)<tr><td></td><td> WriteBackResultTensor (code: <strong>Code</strong>; proc: <strong>PCT.Proc</strong>)<tr><td></td><td> WriteBackResult (code: <strong>Code</strong>; proc: <strong>PCT.Proc</strong>; <strong>VAR</strong> spoffset: <strong>SIGNED32</strong>)<tr><td></td><td> PrepStackTensor (code: <strong>Code</strong>)<tr><td></td><td> PrepStackEnhArray (code: <strong>Code</strong>; formal, actual: <strong>PCT.Struct</strong>)<tr><td></td><td> <a href="#PCC.PrepStack">PrepStack</a> (code: <strong>Code</strong>; formal, actual: <strong>PCT.Struct</strong>)<tr><td></td><td> FixRetDesc (code: <strong>Code</strong>; type: <strong>PCT.Struct</strong>; openAryParams: <strong>SIGNED32</strong>; <strong>VAR</strong> ofs: <strong>SIGNED32</strong>)<tr><td></td><td> MoveBlock (code: <strong>Code</strong>; <strong>VAR</strong> dstAdr, srcAdr, size: <strong>Item</strong>)<tr><td></td><td> MoveString (code: <strong>Code</strong>; <strong>VAR</strong> src, dst: <strong>Item</strong>)<tr><td></td><td> GetHWReg (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; reg: <strong>SIGNED8</strong>)<tr><td></td><td> SetHWReg (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; reg: <strong>SIGNED8</strong>)<tr><td></td><td> GetMemory (code: <strong>Code</strong>; <strong>VAR</strong> adr: <strong>Item</strong>; type: <strong>PCT.Struct</strong>)<tr><td></td><td> WriteHWPort (code: <strong>Code</strong>; <strong>VAR</strong> x, y: <strong>Item</strong>)<tr><td></td><td> ReadHWPort (code: <strong>Code</strong>; <strong>VAR</strong> x, y: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.CondOr">CondOr</a> (code: <strong>Code</strong>; <strong>VAR</strong> a: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.Or">Or</a> (code: <strong>Code</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.CondAnd">CondAnd</a> (code: <strong>Code</strong>; <strong>VAR</strong> a: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.And">And</a> (code: <strong>Code</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.MOp">MOp</a> (code: <strong>Code</strong>; f: <strong>SIGNED32</strong>; <strong>VAR</strong> a: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.MinMax">MinMax</a> (code: <strong>Code</strong>; fcc: <strong>SIGNED32</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)<tr><td></td><td> Swap (code: <strong>Code</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.DOp">DOp</a> (code: <strong>Code</strong>; f: <strong>SIGNED32</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)<tr><td></td><td> RelOp (code: <strong>Code</strong>; operand: <strong>SIGNED32</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.Convert">Convert</a> (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; type: <strong>PCT.Struct</strong>; typeOnly: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#PCC.Deref">Deref</a> (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.Range">Range</a> (code: <strong>Code</strong>; rangeover: <strong>PCT.EnhArray</strong>; <strong>VAR</strong> descr, x, from, to, by: <strong>Item</strong>; dim: <strong>SIGNED32</strong>)<tr><td></td><td> EIndex (code: <strong>Code</strong>; <strong>VAR</strong> descr, x, index: <strong>Item</strong>; dim: <strong>SIGNED32</strong>)<tr><td></td><td> TensorIndex (code: <strong>Code</strong>; <strong>VAR</strong> descr, x, index: <strong>Item</strong>; d: <strong>SIGNED32</strong>)<tr><td></td><td> TensorFiller (code: <strong>Code</strong>; <strong>VAR</strong> descr, x: <strong>Item</strong>; before, after: <strong>SIGNED32</strong>)<tr><td></td><td> TensorRange (code: <strong>Code</strong>; <strong>VAR</strong> descr, x, from, to, by: <strong>Item</strong>; d: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCC.Index">Index</a> (code: <strong>Code</strong>; <strong>VAR</strong> x, index: <strong>Item</strong>)<tr><td></td><td> Field (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; fld: <strong>PCT.Field</strong>)<tr><td></td><td> Method (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; self: <strong>Item</strong>; mth: <strong>PCT.Method</strong>; supercall: <strong>BOOLEAN</strong>)<tr><td></td><td> SysNewRec (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>)<tr><td></td><td> SysNewBlock (code: <strong>Code</strong>; x, size: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.SysNewEnhArray">SysNewEnhArray</a> (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; btyp: <strong>PCT.Struct</strong>; nofElem: <strong>Item</strong>)<tr><td></td><td> SysNewDescriptor (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; dim: <strong>SIGNED32</strong>)<tr><td></td><td> TensorSysNew (code: <strong>Code</strong>; <strong>VAR</strong> descr: <strong>Item</strong>; btyp: <strong>PCT.Struct</strong>; nofElem: <strong>Item</strong>; nofDims: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCC.SysNewArray">SysNewArray</a> (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; btyp: <strong>PCT.Struct</strong>; nofElem: <strong>Item</strong>; nofDims: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCC.SetEnhArrayLen">SetEnhArrayLen</a> (code: <strong>Code</strong>; <strong>VAR</strong> ptr, inc: <strong>Item</strong>; nofDims, dim: <strong>SIGNED32</strong>)<tr><td></td><td> SetEnhArrayDim (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; dim: <strong>SIGNED32</strong>)<tr><td></td><td> SetEnhArrayFlags (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; flags: <strong>SET</strong>)<tr><td></td><td> SetSmallMatrixFlags (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>)<tr><td></td><td> SetSmallVectorFlags (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>)<tr><td></td><td> SetEnhArraySize (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; elementsize: <strong>SIGNED32</strong>)<tr><td></td><td> TensorSetAdr (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; hasPointers: <strong>BOOLEAN</strong>)<tr><td></td><td> TensorSetDim (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; nofDims: <strong>SIGNED32</strong>)<tr><td></td><td> TensorSetSize (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; elementsize: <strong>SIGNED32</strong>)<tr><td></td><td> TensorSetFlags (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; flags: <strong>SET</strong>)<tr><td></td><td> PopLen (code: <strong>Code</strong>; <strong>VAR</strong> len: <strong>Item</strong>)<tr><td></td><td> DescriptorSetLen (code: <strong>Code</strong>; <strong>VAR</strong> ptr, len: <strong>Item</strong>; dim: <strong>SIGNED32</strong>)<tr><td></td><td> DescriptorSetInc (code: <strong>Code</strong>; <strong>VAR</strong> ptr, inc: <strong>Item</strong>; dim: <strong>SIGNED32</strong>)<tr><td></td><td> TensorGetDim (code: <strong>Code</strong>; <strong>VAR</strong> res, arr: <strong>Item</strong>)<tr><td></td><td> TensorGetSize (code: <strong>Code</strong>; <strong>VAR</strong> res, arr: <strong>Item</strong>)<tr><td></td><td> TensorGetFlags (code: <strong>Code</strong>; <strong>VAR</strong> res, arr: <strong>Item</strong>)<tr><td></td><td> TensorCheckDims (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; dims: <strong>SIGNED32</strong>)<tr><td></td><td> StaticPrepStack (code: <strong>Code</strong>; a: <strong>Item</strong>; tensor: <strong>BOOLEAN</strong>)<tr><td></td><td> TensorPrepStack (code: <strong>Code</strong>; a: <strong>Item</strong>; ref: <strong>BOOLEAN</strong>)<tr><td></td><td> EnhArrayPointerToStack (code: <strong>Code</strong>; a: <strong>Item</strong>)<tr><td></td><td> TensorUseStack (code: <strong>Code</strong>; ofs: <strong>SIGNED32</strong>; parNbr: <strong>SIGNED32</strong>)<tr><td></td><td> TensorUseStackItem (code: <strong>Code</strong>; ofs: <strong>SIGNED32</strong>; parNbr: <strong>SIGNED32</strong>; <strong>VAR</strong> i: <strong>Item</strong>; type: <strong>PCT.Struct</strong>)<tr><td></td><td> TensorDescriptorToStack (code: <strong>Code</strong>; <strong>VAR</strong> arr: <strong>Item</strong>; dim: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCC.SetArrayDim">SetArrayDim</a> (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; nofDims, dim: <strong>SIGNED32</strong>)<tr><td></td><td> SysLock (code: <strong>Code</strong>; self: <strong>Item</strong>; lock: <strong>BOOLEAN</strong>)<tr><td></td><td> SysStart (code: <strong>Code</strong>; body: <strong>PCT.Method</strong>; self: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.SysGetProcedure">SysGetProcedure</a> (code: <strong>Code</strong>; moduleName, procedureName, entryAdr: <strong>Item</strong>; procScope: <strong>PCT.ProcScope</strong>; returnType: <strong>PCT.Struct</strong>)<tr><td></td><td> <a href="#PCC.NewInstr">NewInstr</a> (code: <strong>Code</strong>; pos: <strong>SIGNED32</strong>)<tr><td></td><td> Assign (code: <strong>Code</strong>; <strong>VAR</strong> dest, source: <strong>Item</strong>)<tr><td></td><td> GenTrap (code: <strong>Code</strong>; nr: <strong>SIGNED32</strong>)<tr><td></td><td> Return (code: <strong>Code</strong>; x: <strong>Item</strong>; proc: <strong>PCT.Proc</strong>; rtypeAddr: <strong>SIGNED32</strong>)<tr><td></td><td> SYScopy (code: <strong>Code</strong>; x, y: <strong>Item</strong>; get: <strong>BOOLEAN</strong>)<tr><td></td><td> SYSaddress (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>)<tr><td></td><td> Inc (code: <strong>Code</strong>; <strong>VAR</strong> x, y: <strong>Item</strong>; dec: <strong>BOOLEAN</strong>)<tr><td></td><td> Inline (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>PCM.Attribute</strong>)<tr><td></td><td> <a href="#PCC.AwaitEnter">AwaitEnter</a> (code: <strong>Code</strong>; <strong>VAR</strong> adr: <strong>PCM.Attribute</strong>)<tr><td></td><td> AwaitExit (code: <strong>Code</strong>; cond: <strong>Item</strong>)<tr><td></td><td> Await (code: <strong>Code</strong>; self: <strong>Item</strong>; adr: <strong>PCM.Attribute</strong>)<tr><td></td><td> <a href="#PCC.PushSL">PushSL</a> (code: <strong>Code</strong>; deltaLevel: <strong>SIGNED8</strong>)<tr><td></td><td> <a href="#PCC.SaveRegisters">SaveRegisters</a> (code: <strong>Code</strong>)<tr><td></td><td> <a href="#PCC.RestoreRegisters">RestoreRegisters</a> (code: <strong>Code</strong>)<tr><td></td><td> <a href="#PCC.AdrToStack">AdrToStack</a> (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>)<tr><td></td><td> PushStaticEnhArray (code: <strong>Code</strong>; <strong>VAR</strong> ap: <strong>Item</strong>; formaltype: <strong>PCT.Struct</strong>; reference: <strong>BOOLEAN</strong>)<tr><td></td><td> RangeDescriptorHead (code: <strong>Code</strong>; <strong>VAR</strong> ap, dim, descr: <strong>Item</strong>)<tr><td></td><td> ArrayDescriptorToStack (code: <strong>Code</strong>; <strong>VAR</strong> arr: <strong>Item</strong>)<tr><td></td><td> ParamEnhArray (code: <strong>Code</strong>; <strong>VAR</strong> ap: <strong>Item</strong>; formaltype: <strong>PCT.Struct</strong>; reference: <strong>BOOLEAN</strong>; <strong>VAR</strong> spoffset: <strong>SIGNED32</strong>)<tr><td></td><td> PushStackRelAddress (code: <strong>Code</strong>; offset: <strong>SIGNED32</strong>)<tr><td></td><td> MakeStackEnhArrayItem (code: <strong>Code</strong>; <strong>VAR</strong> i: <strong>Item</strong>; type: <strong>PCT.Struct</strong>)<tr><td></td><td> <a href="#PCC.RevertStack">RevertStack</a> (code: <strong>Code</strong>; offset: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCC.Param">Param</a> (code: <strong>Code</strong>; <strong>VAR</strong> ap: <strong>Item</strong>; formaltype: <strong>PCT.Struct</strong>; reference, notag: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#PCC.Call">Call</a> (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.Result">Result</a> (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; type: <strong>PCT.Struct</strong>)<tr><td></td><td> DefFinallyLabel (code: <strong>Code</strong>; obj: <strong>PCT.Symbol</strong>)<tr><td></td><td> <a href="#PCC.DefLabel">DefLabel</a> (code: <strong>Code</strong>; <strong>VAR</strong> pc: <strong>Label</strong>)<tr><td></td><td> <a href="#PCC.Jmp">Jmp</a> (code: <strong>Code</strong>; <strong>VAR</strong> pc: <strong>Label</strong>)<tr><td></td><td> <a href="#PCC.Jcc">Jcc</a> (code: <strong>Code</strong>; <strong>VAR</strong> pc: <strong>Label</strong>; <strong>VAR</strong> cond: <strong>Item</strong>)<tr><td></td><td> <a href="#PCC.FixJmp">FixJmp</a> (code: <strong>Code</strong>; <strong>VAR</strong> pc: <strong>Label</strong>)<tr><td></td><td> <a href="#PCC.CaseStat">CaseStat</a> (code: <strong>Code</strong>; <strong>VAR</strong> case: <strong>Item</strong>; x: <strong>Item</strong>)<tr><td></td><td> CaseLine (code: <strong>Code</strong>; case: <strong>Item</strong>; low, high: <strong>SIGNED32</strong>)<tr><td></td><td> CaseElse (code: <strong>Code</strong>; case: <strong>Item</strong>)<tr><td></td><td> InitInterface (code: <strong>Code</strong>; rec, intf: <strong>PCT.Record</strong>)<tr><td></td><td> <a href="#PCC.Cleanup">Cleanup</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_B82D57C0"><a name="PCC.setfn"></a><a href="#PCC">PCC</a>.<a href="#PCC.setfn">setfn</a>
+</h2>
+<p> operators</p>
+
+<p> MOp / DOp: convert to set</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> setfn*= 200</pre>
+<hr><h2 id="#_B82DA0C0"><a name="PCC.absfn"></a><a href="#PCC">PCC</a>.<a href="#PCC.absfn">absfn</a>
+</h2>
+<p> MOp: absolute value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> absfn*= 201</pre>
+<hr><h2 id="#_B82DD700"><a name="PCC.capfn"></a><a href="#PCC">PCC</a>.<a href="#PCC.capfn">capfn</a>
+</h2>
+<p> MOp: CAP(x)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> capfn*= 202</pre>
+<hr><h2 id="#_B82E09C0"><a name="PCC.oddfn"></a><a href="#PCC">PCC</a>.<a href="#PCC.oddfn">oddfn</a>
+</h2>
+<p> MOp: ODD(x)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> oddfn*= 203</pre>
+<hr><h2 id="#_B82E3BC0"><a name="PCC.ashfn"></a><a href="#PCC">PCC</a>.<a href="#PCC.ashfn">ashfn</a>
+</h2>
+<p> DOp: ASH</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ashfn*= 204</pre>
+<hr><h2 id="#_B82E6E80"><a name="PCC.lshfn"></a><a href="#PCC">PCC</a>.<a href="#PCC.lshfn">lshfn</a>
+</h2>
+<p> DOp: LSH</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> lshfn*= 205</pre>
+<hr><h2 id="#_B82EA080"><a name="PCC.rotfn"></a><a href="#PCC">PCC</a>.<a href="#PCC.rotfn">rotfn</a>
+</h2>
+<p> DOp: ROT</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> rotfn*= 206</pre>
+<hr><h2 id="#_B82ED280"><a name="PCC.bitfn"></a><a href="#PCC">PCC</a>.<a href="#PCC.bitfn">bitfn</a>
+</h2>
+<p> RelOp: BIT</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> bitfn*= 207</pre>
+<hr><h2 id="#_B82F0580"><a name="PCC.TensorFlag"></a><a href="#PCC">PCC</a>.<a href="#PCC.TensorFlag">TensorFlag</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> TensorFlag*= 0</pre>
+<hr><h2 id="#_B82F3780"><a name="PCC.SmallMatrixFlag"></a><a href="#PCC">PCC</a>.<a href="#PCC.SmallMatrixFlag">SmallMatrixFlag</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SmallMatrixFlag*= 3</pre>
+<hr><h2 id="#_B82F6980"><a name="PCC.Item"></a><a href="#PCC">PCC</a>.<a href="#PCC.Item">Item</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Item* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#PCC.Item.type">type</a>: <strong>PCT.Struct</strong></td></tr>
+</table>
+<hr><h3 id="#_B82FAB40"><a name="PCC.Item.type"></a><a href="#PCC">PCC</a>.<a href="#PCC.Item">Item</a>.<a href="#PCC.Item.type">type</a>
+</h3>
+<p> for testing only!</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> type-: <strong>PCT.Struct</strong></pre>
+<hr><h2 id="#_B82FE840"><a name="PCC.Code"></a><a href="#PCC">PCC</a>.<a href="#PCC.Code">Code</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Code* =<strong>PCLIR.Code</strong></pre>
+<hr><h2 id="#_B8300C80"><a name="PCC.delegate"></a><a href="#PCC">PCC</a>.<a href="#PCC.delegate">delegate</a>
+</h2>
+<p> system types, allocated only when used, set by PCP</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> delegate*: <strong>PCT.Record</strong></pre>
+<hr><h2 id="#_B8305B00"><a name="PCC.LoadArrayAdr"></a><a href="#PCC">PCC</a>.<a href="#PCC.LoadArrayAdr">LoadArrayAdr</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadArrayAdr* (code: <strong>Code</strong>; <strong>VAR</strong> descr, array: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B830B140"><a name="PCC.MakeItem"></a><a href="#PCC">PCC</a>.<a href="#PCC.MakeItem">MakeItem</a>
+</h2>
+<p>-----------Item Creation----------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MakeItem* (<strong>VAR</strong> x: <strong>Item</strong>; o: <strong>PCT.Symbol</strong>; deltaLevel: <strong>SIGNED8</strong>)</pre>
+<hr><h2 id="#_B8310D80"><a name="PCC.MakeSizeConst"></a><a href="#PCC">PCC</a>.<a href="#PCC.MakeSizeConst">MakeSizeConst</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MakeSizeConst* (<strong>VAR</strong> x: <strong>Item</strong>; val: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_B8315C40"><a name="PCC.MakeTD"></a><a href="#PCC">PCC</a>.<a href="#PCC.MakeTD">MakeTD</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MakeTD* (<strong>VAR</strong> x: <strong>Item</strong>; type: <strong>PCT.Record</strong>)</pre>
+<hr><h2 id="#_B831AB00"><a name="PCC.GetStaticSize"></a><a href="#PCC">PCC</a>.<a href="#PCC.GetStaticSize">GetStaticSize</a>
+</h2>
+<p> -----------Type Handling----------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetStaticSize* (t: <strong>PCT.Struct</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_B831EE40"><a name="PCC.Incr"></a><a href="#PCC">PCC</a>.<a href="#PCC.Incr">Incr</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Incr* (code: <strong>Code</strong>; <strong>VAR</strong> arr, dim: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B8324600"><a name="PCC.Len"></a><a href="#PCC">PCC</a>.<a href="#PCC.Len">Len</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Len* (code: <strong>Code</strong>; <strong>VAR</strong> arr, dim: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B8329C40"><a name="PCC.Enter"></a><a href="#PCC">PCC</a>.<a href="#PCC.Enter">Enter</a>
+</h2>
+<p>-----------Stack Handling --------------------</p>
+
+<p> Enter - create a procedure activation frame, allocate size bytes local variables</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Enter* (code: <strong>Code</strong>; callconv: <strong>SIGNED32</strong>; adr: <strong>PCM.Attribute</strong>)</pre>
+<hr><h2 id="#_B8332B40"><a name="PCC.Leave"></a><a href="#PCC">PCC</a>.<a href="#PCC.Leave">Leave</a>
+</h2>
+<p> Leave - remove a procedure activation frame, remove size bytes of parameters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Leave* (code: <strong>Code</strong>; callconv: <strong>SIGNED32</strong>; proc: <strong>PCT.Proc</strong>; adr: <strong>PCM.Attribute</strong>)</pre>
+<hr><h2 id="#_B833BA80"><a name="PCC.GetDims"></a><a href="#PCC">PCC</a>.<a href="#PCC.GetDims">GetDims</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetDims* (t: <strong>PCT.Struct</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_B833FD40"><a name="PCC.LocalArray"></a><a href="#PCC">PCC</a>.<a href="#PCC.LocalArray">LocalArray</a>
+</h2>
+<p> LocalArray - create a local copy of an array passed as a reference</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LocalArray* (code: <strong>Code</strong>; par: <strong>PCT.Parameter</strong>)</pre>
+<hr><h2 id="#_B8347480"><a name="PCC.LocalEnhArray"></a><a href="#PCC">PCC</a>.<a href="#PCC.LocalEnhArray">LocalEnhArray</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LocalEnhArray* (code: <strong>Code</strong>; par: <strong>PCT.Parameter</strong>; copy: <strong>PCT.Proc</strong>)</pre>
+<hr><h2 id="#_B834CE40"><a name="PCC.AllocateLocalArray"></a><a href="#PCC">PCC</a>.<a href="#PCC.AllocateLocalArray">AllocateLocalArray</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<p> AllocateLocalArray - create a local dynamic array</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AllocateLocalArray* (code: <strong>Code</strong>; p: <strong>PCT.LocalVar</strong>; size: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B8354600"><a name="PCC.PushRetDesc"></a><a href="#PCC">PCC</a>.<a href="#PCC.PushRetDesc">PushRetDesc</a>
+</h2>
+<p> PushRetDesc - Push the return descriptor for items with non-primive types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PushRetDesc* (code: <strong>Code</strong>; i: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B835B640"><a name="PCC.PushRetDesc1"></a><a href="#PCC">PCC</a>.<a href="#PCC.PushRetDesc1">PushRetDesc1</a>
+</h2>
+<p> PushRetDesc1 - Allocate temporary and push the return descriptor for items with non-primitive types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PushRetDesc1* (code: <strong>Code</strong>; fp: <strong>PCT.Symbol</strong>)</pre>
+<hr><h2 id="#_B8363100"><a name="PCC.PushRetDesc2"></a><a href="#PCC">PCC</a>.<a href="#PCC.PushRetDesc2">PushRetDesc2</a>
+</h2>
+<p> PushRetDesc2 - Push the current procedure's return descriptor</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PushRetDesc2* (code: <strong>Code</strong>; proc: <strong>PCT.Proc</strong>)</pre>
+<hr><h2 id="#_B8369540"><a name="PCC.PushResultTensor"></a><a href="#PCC">PCC</a>.<a href="#PCC.PushResultTensor">PushResultTensor</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PushResultTensor* (code: <strong>Code</strong>; proc: <strong>PCT.Proc</strong>)</pre>
+<hr><h2 id="#_B836E280"><a name="PCC.PrepStack"></a><a href="#PCC">PCC</a>.<a href="#PCC.PrepStack">PrepStack</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PrepStack* (code: <strong>Code</strong>; formal, actual: <strong>PCT.Struct</strong>)</pre>
+<hr><h2 id="#_B8373540"><a name="PCC.CondOr"></a><a href="#PCC">PCC</a>.<a href="#PCC.CondOr">CondOr</a>
+</h2>
+<p> CondOr - Prepare conditional OR</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CondOr* (code: <strong>Code</strong>; <strong>VAR</strong> a: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B8379100"><a name="PCC.Or"></a><a href="#PCC">PCC</a>.<a href="#PCC.Or">Or</a>
+</h2>
+<p> CondOr - Conditional OR</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Or* (code: <strong>Code</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B837EFC0"><a name="PCC.CondAnd"></a><a href="#PCC">PCC</a>.<a href="#PCC.CondAnd">CondAnd</a>
+</h2>
+<p> CondAnd - Prepare Conditional AND</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CondAnd* (code: <strong>Code</strong>; <strong>VAR</strong> a: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B8384B80"><a name="PCC.And"></a><a href="#PCC">PCC</a>.<a href="#PCC.And">And</a>
+</h2>
+<p> And - Conditional AND</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> And* (code: <strong>Code</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B838AA40"><a name="PCC.MOp"></a><a href="#PCC">PCC</a>.<a href="#PCC.MOp">MOp</a>
+</h2>
+<p>-----------Numeric Expressions----------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MOp* (code: <strong>Code</strong>; f: <strong>SIGNED32</strong>; <strong>VAR</strong> a: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B8390680"><a name="PCC.MinMax"></a><a href="#PCC">PCC</a>.<a href="#PCC.MinMax">MinMax</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MinMax* (code: <strong>Code</strong>; fcc: <strong>SIGNED32</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B8396B40"><a name="PCC.DOp"></a><a href="#PCC">PCC</a>.<a href="#PCC.DOp">DOp</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DOp* (code: <strong>Code</strong>; f: <strong>SIGNED32</strong>; <strong>VAR</strong> a, b: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B839D000"><a name="PCC.Convert"></a><a href="#PCC">PCC</a>.<a href="#PCC.Convert">Convert</a>
+</h2>
+<p> Convert x to type. typeOnly: change type but not value (SYSTEM.VAL)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Convert* (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; type: <strong>PCT.Struct</strong>; typeOnly: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_B83A5F40"><a name="PCC.Deref"></a><a href="#PCC">PCC</a>.<a href="#PCC.Deref">Deref</a>
+</h2>
+<p>-----------Designators----------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Deref* (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B83AAA40"><a name="PCC.Range"></a><a href="#PCC">PCC</a>.<a href="#PCC.Range">Range</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Range* (code: <strong>Code</strong>; rangeover: <strong>PCT.EnhArray</strong>; <strong>VAR</strong> descr, x, from, to, by: <strong>Item</strong>; dim: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_B83B3480"><a name="PCC.Index"></a><a href="#PCC">PCC</a>.<a href="#PCC.Index">Index</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Index* (code: <strong>Code</strong>; <strong>VAR</strong> x, index: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B83B8AC0"><a name="PCC.SysNewEnhArray"></a><a href="#PCC">PCC</a>.<a href="#PCC.SysNewEnhArray">SysNewEnhArray</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SysNewEnhArray* (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; btyp: <strong>PCT.Struct</strong>; nofElem: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B83BF500"><a name="PCC.SysNewArray"></a><a href="#PCC">PCC</a>.<a href="#PCC.SysNewArray">SysNewArray</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SysNewArray* (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; btyp: <strong>PCT.Struct</strong>; nofElem: <strong>Item</strong>; nofDims: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_B83C6E40"><a name="PCC.SetEnhArrayLen"></a><a href="#PCC">PCC</a>.<a href="#PCC.SetEnhArrayLen">SetEnhArrayLen</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetEnhArrayLen* (code: <strong>Code</strong>; <strong>VAR</strong> ptr, inc: <strong>Item</strong>; nofDims, dim: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_B83CDA80"><a name="PCC.SetArrayDim"></a><a href="#PCC">PCC</a>.<a href="#PCC.SetArrayDim">SetArrayDim</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetArrayDim* (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>; nofDims, dim: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_B83D4200"><a name="PCC.SysGetProcedure"></a><a href="#PCC">PCC</a>.<a href="#PCC.SysGetProcedure">SysGetProcedure</a>
+</h2>
+<ul>
+<li> GetProcedure runtime system call <strong></strong></li>
+
+<li> The built-in function GETPROCEDURE(modulename, procedureName : ARRAY OF CHAR; VAR proc : ProcedureVariable) uses this runtime system</li>
+
+<li> call to be able to retrieve some special procedures by its name and assign them to the VAR parameter proc in a type-safe manner..</li>
+
+<li> These special procedures must be exported from and defined in the module scope and have to following properties:</li>
+
+<li> - at most one formal parameter</li>
+
+<li> - at most one return value</li>
+
+<li> - if present, the type of the formal parameter and/or return value must be either (POINTER TO) RECORD or OBJECT <strong></strong></li>
+
+<li> The system calls target is the kernel procedure</li>
+
+<li> GetProcedure*(moduleName, procedureName : ARRAY OF CHAR;</li>
+
+<li> argTdAdr, retTdAdr : ADDRESS; VAR entryAdr : ADDRESS);</li>
+
+<li> where as</li>
+
+<li> argTdAdr, retTdAdr : Adresses of the type descriptors of the actual parameter and return type (if present)</li>
+
+<li> entryAdr : Entry address of the procedure <a name="proc&gt"></a> specified in GETPROCEDURE(...)</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SysGetProcedure* (code: <strong>Code</strong>; moduleName, procedureName, entryAdr: <strong>Item</strong>; procScope: <strong>PCT.ProcScope</strong>; returnType: <strong>PCT.Struct</strong>)</pre>
+<hr><h2 id="#_B8401FC0"><a name="PCC.NewInstr"></a><a href="#PCC">PCC</a>.<a href="#PCC.NewInstr">NewInstr</a>
+</h2>
+<p>-----------Statements----------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewInstr* (code: <strong>Code</strong>; pos: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_B84066C0"><a name="PCC.AwaitEnter"></a><a href="#PCC">PCC</a>.<a href="#PCC.AwaitEnter">AwaitEnter</a>
+</h2>
+<hr/>
+
+<p>Passivate----------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AwaitEnter* (code: <strong>Code</strong>; <strong>VAR</strong> adr: <strong>PCM.Attribute</strong>)</pre>
+<hr><h2 id="#_B840B380"><a name="PCC.PushSL"></a><a href="#PCC">PCC</a>.<a href="#PCC.PushSL">PushSL</a>
+</h2>
+<p>-----------Control Flow----------------</p>
+
+<p> PushSL - push the static link (SL), for local procedures only</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PushSL* (code: <strong>Code</strong>; deltaLevel: <strong>SIGNED8</strong>)</pre>
+<hr><h2 id="#_B8412C40"><a name="PCC.SaveRegisters"></a><a href="#PCC">PCC</a>.<a href="#PCC.SaveRegisters">SaveRegisters</a>
+</h2>
+<p> SaveRegisters - save registers before a procedure call</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SaveRegisters* (code: <strong>Code</strong>)</pre>
+<hr><h2 id="#_B8418280"><a name="PCC.RestoreRegisters"></a><a href="#PCC">PCC</a>.<a href="#PCC.RestoreRegisters">RestoreRegisters</a>
+</h2>
+<p> RestoreRegisters - restore registers after a procedure call</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RestoreRegisters* (code: <strong>Code</strong>)</pre>
+<hr><h2 id="#_B841D8C0"><a name="PCC.AdrToStack"></a><a href="#PCC">PCC</a>.<a href="#PCC.AdrToStack">AdrToStack</a>
+</h2>
+<p> fof &gt&gt </p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AdrToStack* (code: <strong>Code</strong>; <strong>VAR</strong> ptr: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B8422780"><a name="PCC.RevertStack"></a><a href="#PCC">PCC</a>.<a href="#PCC.RevertStack">RevertStack</a>
+</h2>
+<p> &lt&lt fof</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RevertStack* (code: <strong>Code</strong>; offset: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_B84272C0"><a name="PCC.Param"></a><a href="#PCC">PCC</a>.<a href="#PCC.Param">Param</a>
+</h2>
+<p> Param - Push actual parameter on the stack</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Param* (code: <strong>Code</strong>; <strong>VAR</strong> ap: <strong>Item</strong>; formaltype: <strong>PCT.Struct</strong>; reference, notag: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="#_B842FF80"><a name="PCC.Call"></a><a href="#PCC">PCC</a>.<a href="#PCC.Call">Call</a>
+</h2>
+<p> Call - Call procedure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Call* (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B84356C0"><a name="PCC.Result"></a><a href="#PCC">PCC</a>.<a href="#PCC.Result">Result</a>
+</h2>
+<p> Result - Retrieve a result after a Call</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Result* (code: <strong>Code</strong>; <strong>VAR</strong> x: <strong>Item</strong>; type: <strong>PCT.Struct</strong>)</pre>
+<hr><h2 id="#_B843CD00"><a name="PCC.DefLabel"></a><a href="#PCC">PCC</a>.<a href="#PCC.DefLabel">DefLabel</a>
+</h2>
+<p> Define a label</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DefLabel* (code: <strong>Code</strong>; <strong>VAR</strong> pc: <strong>Label</strong>)</pre>
+<hr><h2 id="#_B8442000"><a name="PCC.Jmp"></a><a href="#PCC">PCC</a>.<a href="#PCC.Jmp">Jmp</a>
+</h2>
+<p> Jump to label. If label is none, then autodefine</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Jmp* (code: <strong>Code</strong>; <strong>VAR</strong> pc: <strong>Label</strong>)</pre>
+<hr><h2 id="#_B8448B40"><a name="PCC.Jcc"></a><a href="#PCC">PCC</a>.<a href="#PCC.Jcc">Jcc</a>
+</h2>
+<p> Conditional Jump to label</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Jcc* (code: <strong>Code</strong>; <strong>VAR</strong> pc: <strong>Label</strong>; <strong>VAR</strong> cond: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B844F480"><a name="PCC.FixJmp"></a><a href="#PCC">PCC</a>.<a href="#PCC.FixJmp">FixJmp</a>
+</h2>
+<p> Fixup Forward jumps to label</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FixJmp* (code: <strong>Code</strong>; <strong>VAR</strong> pc: <strong>Label</strong>)</pre>
+<hr><h2 id="#_B8455040"><a name="PCC.CaseStat"></a><a href="#PCC">PCC</a>.<a href="#PCC.CaseStat">CaseStat</a>
+</h2>
+<p> Case Instruction - jump on x</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CaseStat* (code: <strong>Code</strong>; <strong>VAR</strong> case: <strong>Item</strong>; x: <strong>Item</strong>)</pre>
+<hr><h2 id="#_B845BE00"><a name="PCC.Cleanup"></a><a href="#PCC">PCC</a>.<a href="#PCC.Cleanup">Cleanup</a>
+</h2>
+<p> Cleanup - call after each compilation to unlink global structures for garbage collection</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Cleanup*</pre>
+</body></html>

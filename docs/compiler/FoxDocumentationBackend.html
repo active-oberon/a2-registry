@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#FoxDocumentationBackend">FoxDocumentationBackend</a></p>
-<hr><h1 id="#_114AD5C0"><a name="FoxDocumentationBackend"></a><a href="#ModuleList">Module</a> FoxDocumentationBackend
+<hr><h1 id="#_110ECB40"><a name="FoxDocumentationBackend"></a><a href="#ModuleList">Module</a> FoxDocumentationBackend
 </h1>
 <p> The special backend in the Fox compiler suite serves as a documentation generator to produce documents from Oberon source files.</p>
 
@@ -57,7 +57,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_114BF380">
+<hr><h1 id="#_110FE900">
 </h1><a name="concept"></a><hr><h1 id="#concept">
 </h1>
 <h2> Documentation Backend</h2>
@@ -222,21 +222,21 @@
 <tr><td> data 1</td><td> data 2</td><td> data 3</td></tr>
 <tr><td> data 4</td><td> data 5</td><td> data 6 </td></tr>
 </table>
-<hr><h2 id="#_11619640"><a name="FoxDocumentationBackend.VisibleConstant"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.VisibleConstant">VisibleConstant</a>
+<hr><h2 id="#_111A0C40"><a name="FoxDocumentationBackend.VisibleConstant"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.VisibleConstant">VisibleConstant</a>
 </h2>
 <p> visible constant comment</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> VisibleConstant*= 3</pre>
-<hr><h2 id="#_1161CD40"><a name="FoxDocumentationBackend.SecondVisibleConstant"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.SecondVisibleConstant">SecondVisibleConstant</a>
+<hr><h2 id="#_111A4340"><a name="FoxDocumentationBackend.SecondVisibleConstant"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.SecondVisibleConstant">SecondVisibleConstant</a>
 </h2>
 <p> second visible constant</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> SecondVisibleConstant*= 4</pre>
-<hr><h2 id="#_116214C0"><a name="FoxDocumentationBackend.Generator"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>
+<hr><h2 id="#_111A7A00"><a name="FoxDocumentationBackend.Generator"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>
 </h2>
 <p> Printer object to write the documentation to a stream. Implemented as visitor on the Syntax Tree.</p>
 
@@ -311,28 +311,28 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_116A3600"><a name="FoxDocumentationBackend.Generator.QualifiedIdentifier"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.QualifiedIdentifier">QualifiedIdentifier</a>
+<hr><h3 id="#_1121FB00"><a name="FoxDocumentationBackend.Generator.QualifiedIdentifier"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.QualifiedIdentifier">QualifiedIdentifier</a>
 </h3>
 <p> Procedure used to traverse qualified identifiers</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> QualifiedIdentifier* (x: <strong>SyntaxTree.QualifiedIdentifier</strong>)</pre>
-<hr><h3 id="#_116A8B80"><a name="FoxDocumentationBackend.Generator.VisitParameter"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.VisitParameter">VisitParameter</a>
+<hr><h3 id="#_11225080"><a name="FoxDocumentationBackend.Generator.VisitParameter"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.VisitParameter">VisitParameter</a>
 </h3>
 <p>* symbols <strong></strong></p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> VisitParameter* (x: <strong>SyntaxTree.Parameter</strong>)</pre>
-<hr><h3 id="#_116CA400"><a name="FoxDocumentationBackend.Generator.VisitProcedure"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.VisitProcedure">VisitProcedure</a>
+<hr><h3 id="#_11229B00"><a name="FoxDocumentationBackend.Generator.VisitProcedure"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.VisitProcedure">VisitProcedure</a>
 </h3>
 <p> process procedure including comments describing the procedure</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> VisitProcedure* (x: <strong>SyntaxTree.Procedure</strong>)</pre>
-<hr><h3 id="#_116CFE00"><a name="FoxDocumentationBackend.Generator.Scope"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.Scope">Scope</a>
+<hr><h3 id="#_1122F500"><a name="FoxDocumentationBackend.Generator.Scope"></a><a href="#FoxDocumentationBackend">FoxDocumentationBackend</a>.<a href="#FoxDocumentationBackend.Generator">Generator</a>.<a href="#FoxDocumentationBackend.Generator.Scope">Scope</a>
 </h3>
 <p> scopes <strong></strong></p>
 

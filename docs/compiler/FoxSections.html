@@ -32,7 +32,7 @@
 			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
 </h1>
 <p>Module <a href="#FoxSections">FoxSections</a></p>
-<hr><h1 id="#_2713D140"><a name="FoxSections"></a><a href="#ModuleList">Module</a> FoxSections
+<hr><h1 id="#_07951300"><a name="FoxSections"></a><a href="#ModuleList">Module</a> FoxSections
 </h1>
 <p> AUTHOR "fof"; PURPOSE "support for code sections and references";</p>
 
@@ -62,12 +62,12 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_271607C0"><a name="FoxSections.Identifier"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Identifier">Identifier</a>
+<hr><h2 id="#_07974980"><a name="FoxSections.Identifier"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Identifier">Identifier</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> Identifier* =<strong>ObjectFile.Identifier</strong></pre>
-<hr><h2 id="#_27162B00"><a name="FoxSections.Section"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Section">Section</a>
+<hr><h2 id="#_07976CC0"><a name="FoxSections.Section"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Section">Section</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -98,14 +98,14 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_27186600"><a name="FoxSections.Section.SetType"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Section">Section</a>.<a href="#FoxSections.Section.SetType">SetType</a>
+<hr><h3 id="#_0799A7C0"><a name="FoxSections.Section.SetType"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Section">Section</a>.<a href="#FoxSections.Section.SetType">SetType</a>
 </h3>
 <p> change the type of a section</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SetType* (type: <strong>SIGNED8</strong>)</pre>
-<hr><h2 id="#_2718BB40"><a name="FoxSections.Comment"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Comment">Comment</a>
+<hr><h2 id="#_0799FD00"><a name="FoxSections.Comment"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Comment">Comment</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -119,7 +119,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_27195000"><a name="FoxSections.CommentWriter"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.CommentWriter">CommentWriter</a>
+<hr><h2 id="#_079A91C0"><a name="FoxSections.CommentWriter"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.CommentWriter">CommentWriter</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -135,7 +135,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_271A42C0"><a name="FoxSections.SectionList"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.SectionList">SectionList</a>
+<hr><h2 id="#_079B8480"><a name="FoxSections.SectionList"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.SectionList">SectionList</a>
 </h2>
 <p> a list of sections note a section may be part of multiple lists in this implementation</p>
 
@@ -154,21 +154,21 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_271BB180"><a name="FoxSections.SectionList.FindBySymbol"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.SectionList">SectionList</a>.<a href="#FoxSections.SectionList.FindBySymbol">FindBySymbol</a>
+<hr><h3 id="#_079CF340"><a name="FoxSections.SectionList.FindBySymbol"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.SectionList">SectionList</a>.<a href="#FoxSections.SectionList.FindBySymbol">FindBySymbol</a>
 </h3>
 <p> finds a section with a certain AST symbol</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> FindBySymbol* (<strong>CONST</strong> symbol: <strong>SyntaxTree.Symbol</strong>): <strong>Section</strong></pre>
-<hr><h3 id="#_271C1880"><a name="FoxSections.SectionList.FindByName"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.SectionList">SectionList</a>.<a href="#FoxSections.SectionList.FindByName">FindByName</a>
+<hr><h3 id="#_079D5A40"><a name="FoxSections.SectionList.FindByName"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.SectionList">SectionList</a>.<a href="#FoxSections.SectionList.FindByName">FindByName</a>
 </h3>
 <p> finds a section with a certain name</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> FindByName* (<strong>CONST</strong> name: <strong>Basic.SegmentedName</strong>): <strong>Section</strong></pre>
-<hr><h2 id="#_271C7C00"><a name="FoxSections.NameList"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.NameList">NameList</a>
+<hr><h2 id="#_079DBDC0"><a name="FoxSections.NameList"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.NameList">NameList</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -180,7 +180,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_271D1FC0"><a name="FoxSections.Module"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Module">Module</a>
+<hr><h2 id="#_079E6180"><a name="FoxSections.Module"></a><a href="#FoxSections">FoxSections</a>.<a href="#FoxSections.Module">Module</a>
 </h2>
 <p> output of (intermediate) code generation</p>
 

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#libv4l2">libv4l2</a></p>
+<hr><h1 id="#_71749BC0"><a name="libv4l2"></a><a href="#ModuleList">Module</a> libv4l2
+</h1>
+<p> AUTHOR "fnecati"; PURPOSE "interface library to linux libv4l2 and libv4lconvert";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>nonblock= SET32({11})<tr><td></td><td>DISABLE_CONVERSION= 1<tr><td></td><td>ENABLE_ENUM_FMT_EMULATION= 2<tr><th align='left'>type declarations</th><td>int64_t =<strong>SIGNED64</strong><tr><td></td><td>ssize_t =<strong>SIZE</strong><tr><th align='left'>variables</th><td>open: <strong>PROCEDURE</strong>{C} (<strong>CONST</strong> file: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; oflag: <strong>SET32</strong>; mode: <strong>Unix.mode_t</strong>): <strong>SIGNED32</strong><tr><td></td><td>close: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>dup: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>ioctl: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; request: <strong>SIGNED32</strong>; adr: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>read: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; buffer: <strong>ADDRESS</strong>; n: <strong>SIZE</strong>): <strong>ssize_t</strong><tr><td></td><td>write: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; buffer: <strong>ADDRESS</strong>; n: <strong>SIZE</strong>): <strong>ssize_t</strong><tr><td></td><td>mmap: <strong>PROCEDURE</strong>{C} (start: <strong>ADDRESS</strong>; length: <strong>SIZE</strong>; prot: <strong>SIGNED32</strong>; flags: <strong>SIGNED32</strong>; fd: <strong>SIGNED32</strong>; offset: <strong>int64_t</strong>): <strong>ADDRESS</strong><tr><td></td><td>munmap: <strong>PROCEDURE</strong>{C} (start: <strong>ADDRESS</strong>; length: <strong>SIZE</strong>): <strong>SIGNED32</strong><tr><td></td><td>set_control: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; cid: <strong>SIGNED32</strong>; value: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>get_control: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; cid: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>fd_open: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>; v4l2_flags: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_create: <strong>PROCEDURE</strong>{C} (fd: <strong>SIGNED32</strong>): <strong>convert_data</strong><tr><td></td><td>convert_destroy: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> data: <strong>convert_data</strong>)<tr><td></td><td>convert_supported_dst_fmt_only: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> data: <strong>convert_data</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_try_format: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> data: <strong>convert_data</strong>; <strong>VAR</strong> dest_fmt: <strong>V.v4l2_format</strong>; <strong>VAR</strong> src_fmt: <strong>V.v4l2_format</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_enum_fmt: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> data: <strong>convert_data</strong>; <strong>VAR</strong> fmt: <strong>V.v4l2_fmtdesc</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_needs_conversion: <strong>PROCEDURE</strong>{C} (<strong>VAR</strong> data: <strong>convert_data</strong>; <strong>CONST</strong> src_fmt: <strong>V.v4l2_format</strong>; <strong>CONST</strong> dest_fmt: <strong>V.v4l2_format</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_convert: <strong>PROCEDURE</strong>{C} (data: <strong>convert_data</strong>; <strong>CONST</strong> src_fmt: <strong>V.v4l2_format</strong>; <strong>CONST</strong> dest_fmt: <strong>V.v4l2_format</strong>; src: <strong>ADDRESS</strong>; src_size: <strong>SIGNED32</strong>; dest: <strong>ADDRESS</strong>; dest_size: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_get_error_message: <strong>PROCEDURE</strong>{C} (data: <strong>convert_data</strong>): <strong>ADDRESS</strong><tr><td></td><td>convert_enum_framesizes: <strong>PROCEDURE</strong>{C} (data: <strong>convert_data</strong>; <strong>VAR</strong> frmsize: <strong>V.v4l2_frmsizeenum</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_enum_frameintervals: <strong>PROCEDURE</strong>{C} (data: <strong>convert_data</strong>; frmival: <strong>V.v4l2_frmivalenum</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_vidioc_queryctrl: <strong>PROCEDURE</strong>{C} (data: <strong>convert_data</strong>; arg: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_vidioc_g_ctrl: <strong>PROCEDURE</strong>{C} (data: <strong>convert_data</strong>; arg: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_vidioc_s_ctrl: <strong>PROCEDURE</strong>{C} (data: <strong>convert_data</strong>; arg: <strong>ADDRESS</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_supported_dst_format: <strong>PROCEDURE</strong>{C} (pixelformat: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_get_fps: <strong>PROCEDURE</strong>{C} (data: <strong>convert_data</strong>): <strong>SIGNED32</strong><tr><td></td><td>convert_set_fps: <strong>PROCEDURE</strong>{C} (data: <strong>convert_data</strong>; fps: <strong>SIGNED32</strong>)<tr><th align='left'>procedures</th><td> GetStringFromAddr (adr: <strong>ADDRESS</strong>): <strong>Strings.String</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

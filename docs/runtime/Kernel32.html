@@ -1,0 +1,2007 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+</h1>
+<p>Module <a href="#Kernel32">Kernel32</a></p>
+<hr><h1 id="#_533AA700"><a name="Kernel32"></a><a href="#ModuleList">Module</a> Kernel32
+</h1>
+<p> AUTHOR "ejz,fof"; PURPOSE "Definition of the Win64 Kernel32 API used by (Win)Aos";</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Generic= TRUE<tr><td></td><td><a href="#Kernel32.NULL">NULL</a>= 0<tr><td></td><td><a href="#Kernel32.False">False</a>= NULL<tr><td></td><td>True= 1<tr><td></td><td><a href="#Kernel32.InvalidHandleValue">InvalidHandleValue</a>= -1<tr><td></td><td>STDInput= -10<tr><td></td><td>STDOutput= -11<tr><td></td><td>STDError= -12<tr><td></td><td><a href="#Kernel32.GenericWrite">GenericWrite</a>= 30<tr><td></td><td>GenericRead= 31<tr><td></td><td><a href="#Kernel32.FileShareRead">FileShareRead</a>= 0<tr><td></td><td>FileShareWrite= 1<tr><td></td><td>FileShareDelete= 2<tr><td></td><td><a href="#Kernel32.CreateAlways">CreateAlways</a>= 2<tr><td></td><td>OpenExisting= 3<tr><td></td><td><a href="#Kernel32.FileAttributeReadonly">FileAttributeReadonly</a>= 0<tr><td></td><td>FileAttributeHidden= 1<tr><td></td><td>FileAttributeSystem= 2<tr><td></td><td>FileAttributeDirectory= 4<tr><td></td><td>FileAttributeArchive= 5<tr><td></td><td>FileAttributeEncrypted= 6<tr><td></td><td>FileAttributeNormal= 7<tr><td></td><td>FileAttributeTemporary= 8<tr><td></td><td>FileAttributeSparseFILE= 9<tr><td></td><td>FileAttributeReparsePoint= 10<tr><td></td><td>FileAttributeCompressed= 11<tr><td></td><td>FileAttributeOffline= 12<tr><td></td><td>FileAttributeNotContentIndexed= 13<tr><td></td><td><a href="#Kernel32.FileFlagDeleteOnClose">FileFlagDeleteOnClose</a>= 26<tr><td></td><td>FileFlagRandomAccess= 28<tr><td></td><td><a href="#Kernel32.FileFlagOverlapped">FileFlagOverlapped</a>= 30<tr><td></td><td>FileFlagWriteThrough= 31<tr><td></td><td><a href="#Kernel32.FileBegin">FileBegin</a>= 0<tr><td></td><td><a href="#Kernel32.MoveFileReplaceExisting">MoveFileReplaceExisting</a>= 0<tr><td></td><td>MoveFileCopyAllowed= 1<tr><td></td><td>MoveFileWriteThrough= 3<tr><td></td><td><a href="#Kernel32.MEMCommit">MEMCommit</a>= 12<tr><td></td><td>MEMReserve= 13<tr><td></td><td>MEMDecommit= 14<tr><td></td><td>MEMRelease= 15<tr><td></td><td>CreateSuspended= 2<tr><td></td><td>TLSOutOfIndexes= -1<tr><td></td><td><a href="#Kernel32.HeapNoSerialize">HeapNoSerialize</a>= 2<tr><td></td><td>HeapGenerateExceptions= 4<tr><td></td><td>HeapZeroMemory= 8<tr><td></td><td><a href="#Kernel32.PageReadWrite">PageReadWrite</a>= 2<tr><td></td><td>PageExecuteReadWrite= 6<tr><td></td><td><a href="#Kernel32.GMemMoveable">GMemMoveable</a>= 1<tr><td></td><td>GMemShare= 13<tr><td></td><td>GMemDDEShare= GMemShare<tr><td></td><td><a href="#Kernel32.MaxPath">MaxPath</a>= 260<tr><td></td><td><a href="#Kernel32.DriveUnknown">DriveUnknown</a>= 0<tr><td></td><td>DriveNoRootDir= 1<tr><td></td><td>DriveRemovable= 2<tr><td></td><td>DriveFixed= 3<tr><td></td><td>DriveRemote= 4<tr><td></td><td>DriveCDRom= 5<tr><td></td><td>DriveRamDisk= 6<tr><td></td><td>Infinite= -1<tr><td></td><td>WaitObject0= 0<tr><td></td><td><a href="#Kernel32.SizeOf80387Registers">SizeOf80387Registers</a>= 80<tr><td></td><td>ExceptionMaximumParameters= 15<tr><td></td><td>ExceptionGuardPage= SIGNED32(2147483649)<tr><td></td><td>ExceptionBreakPoint= SIGNED32(2147483651)<tr><td></td><td>ExceptionSingleStep= SIGNED32(2147483652)<tr><td></td><td>ExceptionAccessViolation= SIGNED32(3221225477)<tr><td></td><td>ExceptionIllegalInstruction= SIGNED32(3221225501)<tr><td></td><td>ExceptionArrayBoundsExceeded= SIGNED32(3221225612)<tr><td></td><td>ExceptionFltDenormalOperand= SIGNED32(3221225613)<tr><td></td><td>ExceptionFltDivideByZero= SIGNED32(3221225614)<tr><td></td><td>ExceptionFltInexactResult= SIGNED32(3221225615)<tr><td></td><td>ExceptionFltInvalidOperation= SIGNED32(3221225616)<tr><td></td><td>ExceptionFltOverflow= SIGNED32(3221225617)<tr><td></td><td>ExceptionFltStackCheck= SIGNED32(3221225618)<tr><td></td><td>ExceptionFltUndeflow= SIGNED32(3221225619)<tr><td></td><td>ExceptionIntDivideByZero= SIGNED32(3221225620)<tr><td></td><td>ExceptionIntOverflow= SIGNED32(3221225621)<tr><td></td><td>ExceptionPrivInstruction= SIGNED32(3221225622)<tr><td></td><td>ExceptionStackOverflow= SIGNED32(3221225725)<tr><td></td><td>ContextControl= {0,ContextIntel}<tr><td></td><td>ContextInteger= {1,ContextIntel}<tr><td></td><td>ContextSegments= {2,ContextIntel}<tr><td></td><td>ContextFloatingPoint= {3,ContextIntel}<tr><td></td><td>ContextDebugRegisters= {4,ContextIntel}<tr><td></td><td>ContextFull= ((ContextControl+ContextInteger)+ContextSegments)<tr><td></td><td><a href="#Kernel32.ExceptionContinueExecution">ExceptionContinueExecution</a>= -1<tr><td></td><td>ExceptionContinueSearch= 0<tr><td></td><td>ExceptionExecuteHandler= 1<tr><td></td><td><a href="#Kernel32.ThreadPriorityIdle">ThreadPriorityIdle</a>= -15<tr><td></td><td>ThreadPriorityBelowNormal= -1<tr><td></td><td>ThreadPriorityNormal= 0<tr><td></td><td>ThreadPriorityAboveNormal= 1<tr><td></td><td>ThreadPriorityHighest= 2<tr><td></td><td>ThreadPriorityTimeCritical= 15<tr><td></td><td>ThreadPriorityErrorReturn= MAX(SIGNED32)<tr><td></td><td><a href="#Kernel32.WaitFailed">WaitFailed</a>= -1<tr><td></td><td>WaitTimeout= 258<tr><td></td><td><a href="#Kernel32.SEMFailCriticalErrors">SEMFailCriticalErrors</a>= 0<tr><td></td><td><a href="#Kernel32.DuplicateCloseSource">DuplicateCloseSource</a>= 0<tr><td></td><td>DuplicateSameAccess= 1<tr><td></td><td><a href="#Kernel32.StartFUseShowWindow">StartFUseShowWindow</a>= 0<tr><td></td><td>StartFUseSize= 1<tr><td></td><td>StartFUsePosition= 2<tr><td></td><td><a href="#Kernel32.VerPlatformWin32s">VerPlatformWin32s</a>= 0<tr><td></td><td>VerPlatformWin32Windows= 1<tr><td></td><td>VerPlatformWin32NT= 2<tr><td></td><td><a href="#Kernel32.SETXOFF">SETXOFF</a>= 1<tr><td></td><td>SETXON= 2<tr><td></td><td>SETRTS= 3<tr><td></td><td>CLRRTS= 4<tr><td></td><td>SETDTR= 5<tr><td></td><td>CLRDTR= 6<tr><td></td><td>RESETDEV= 7<tr><td></td><td>SETBREAK= 8<tr><td></td><td>CLRBREAK= 9<tr><td></td><td><a href="#Kernel32.PurgeTXAbort">PurgeTXAbort</a>= 0<tr><td></td><td>PurgeRXAbort= 1<tr><td></td><td>PurgeTXClear= 2<tr><td></td><td>PurgeRXClear= 3<tr><td></td><td><a href="#Kernel32.EVRXChar">EVRXChar</a>= 0<tr><td></td><td>EVRXFlag= 1<tr><td></td><td>EVTXEmpty= 2<tr><td></td><td>EVCTS= 3<tr><td></td><td>EVDSR= 4<tr><td></td><td>EVRLSD= 5<tr><td></td><td>EVBreak= 6<tr><td></td><td>EVErr= 7<tr><td></td><td>EVRing= 8<tr><td></td><td>EVPErr= 9<tr><td></td><td>EVRX80Full= 10<tr><td></td><td>EVEvent1= 11<tr><td></td><td>EVEvent2= 12<tr><td></td><td><a href="#Kernel32.MSCTSOn">MSCTSOn</a>= 4<tr><td></td><td>MSDSROn= 5<tr><td></td><td>MSRingOn= 6<tr><td></td><td>MSRLSDOn= 7<tr><td></td><td><a href="#Kernel32.NoParity">NoParity</a>= 0X<tr><td></td><td>OddParity= 1X<tr><td></td><td>EvenParity= 2X<tr><td></td><td>MarkParity= 3X<tr><td></td><td>SpaceParity= 4X<tr><td></td><td>OneStopBit= 0X<tr><td></td><td>One5StopBits= 1X<tr><td></td><td>TwoStopBits= 2X<tr><td></td><td><a href="#Kernel32.ErrorSuccess">ErrorSuccess</a>= 0<tr><td></td><td>ErrorFileNotFound= 2<tr><td></td><td>ErrorAccessDenied= 5<tr><td></td><td>ErrorInvalidParameter= 87<tr><td></td><td><a href="#Kernel32.ErrorIoPending">ErrorIoPending</a>= 997<tr><th align='left'>type declarations</th><td>BOOL =<strong>INTEGER</strong><tr><td></td><td>HANDLE =<strong>ADDRESS</strong><tr><td></td><td>HMODULE =<strong>ADDRESS</strong><tr><td></td><td>HINSTANCE =<strong>ADDRESS</strong><tr><td></td><td>ATOM =<strong>SIGNED16</strong><tr><td></td><td>HGLOBAL =<strong>HANDLE</strong><tr><td></td><td>LPSTR =<strong>ADDRESS</strong><tr><td></td><td>DWORD =<strong>SIGNED32</strong><tr><td></td><td>ULONG =<strong>UNSIGNED32</strong><tr><td></td><td><a href="#Kernel32.FileTime">FileTime</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.FindData">FindData</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.SystemTime">SystemTime</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.SmallRect">SmallRect</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.CriticalSection">CriticalSection</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.FloatingSaveArea">FloatingSaveArea</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.ContextPtr">ContextPtr</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>Context</strong><tr><td></td><td><a href="#Kernel32.Context">Context</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.ExceptionRecordPtr">ExceptionRecordPtr</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ExceptionRecord</strong><tr><td></td><td><a href="#Kernel32.ExceptionRecord">ExceptionRecord</a> =<strong>RECORD</strong> <tr><td></td><td>ExcpFrmPtr =<strong>ADDRESS</strong><tr><td></td><td>ExcpFrmHandler =<strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> excpRec: <strong>ExceptionRecord</strong>; excpFrame: <strong>ExcpFrmPtr</strong>; <strong>VAR</strong> context: <strong>Context</strong>; dispatch: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.ExceptionPointers">ExceptionPointers</a> =<strong>RECORD</strong> <tr><td></td><td>VectoredExceptionHandler =<strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> e: <strong>ExceptionPointers</strong>): <strong>DWORD</strong><tr><td></td><td><a href="#Kernel32.ExcpFrm">ExcpFrm</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.Object">Object</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.LargeInteger">LargeInteger</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.ULargeInteger">ULargeInteger</a> =<strong>LargeInteger</strong><tr><td></td><td><a href="#Kernel32.MemoryStatusEx">MemoryStatusEx</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.ThreadProc">ThreadProc</a> =<strong>PROCEDURE</strong>{WINAPI} (lpParameter: @Any0): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.ProcessInformation">ProcessInformation</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.StartupInfo">StartupInfo</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.OSVersionInfo">OSVersionInfo</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.Exception">Exception</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.CommTimeouts">CommTimeouts</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.DCB">DCB</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.ComStat">ComStat</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.SystemInfo">SystemInfo</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.TimeZoneInformation">TimeZoneInformation</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Kernel32.Overlapped">Overlapped</a> =<strong>RECORD</strong> <tr><th align='left'>variables</th><td>hInstance: <strong>HINSTANCE</strong><tr><td></td><td>isEXE: <strong>BOOLEAN</strong><tr><td></td><td><a href="#Kernel32.getProcAddress">getProcAddress</a>: <strong>PROCEDURE</strong>{WINAPI} (hModule: <strong>HMODULE</strong>; <strong>CONST</strong> lpProcName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ADDRESS</strong><tr><td></td><td><a href="#Kernel32.LoadLibrary">LoadLibrary</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpLibFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HINSTANCE</strong><tr><td></td><td>LoadLibraryEx: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpLibFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; hFile: <strong>HANDLE</strong>; dwFlags: <strong>INTEGERSET</strong>): <strong>HINSTANCE</strong><tr><td></td><td><a href="#Kernel32.AddVectoredContinueHandler">AddVectoredContinueHandler</a>: <strong>PROCEDURE</strong>{WINAPI} (firstHandler: <strong>ULONG</strong>; vectoredHandler: <strong>VectoredExceptionHandler</strong>)<tr><td></td><td><a href="#Kernel32.AddVectoredExceptionHandler">AddVectoredExceptionHandler</a>: <strong>PROCEDURE</strong>{WINAPI} (firstHandler: <strong>ULONG</strong>; vectoredHandler: <strong>VectoredExceptionHandler</strong>)<tr><td></td><td><a href="#Kernel32.AllocConsole">AllocConsole</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.AttachConsole">AttachConsole</a>: <strong>PROCEDURE</strong>{WINAPI} (in: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.Beep">Beep</a>: <strong>PROCEDURE</strong>{WINAPI} (dwFreq, dwDuration: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.CancelIoEx">CancelIoEx</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpOverlapped: <strong>Overlapped</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.ClearCommBreak">ClearCommBreak</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.ClearCommError">ClearCommError</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpErrors: <strong>DWORD</strong>; <strong>VAR</strong> lpStat: <strong>ComStat</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.CloseHandle">CloseHandle</a>: <strong>PROCEDURE</strong>{WINAPI} (hObject: <strong>HANDLE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.CopyFile">CopyFile</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpExistingFileName, lpNewFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bFailIfExists: <strong>BOOL</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.CreateDirectory">CreateDirectory</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; lpSecurityAttributes: @Any0): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.CreateEvent">CreateEvent</a>: <strong>PROCEDURE</strong>{WINAPI} (lpEventAttributes: @Any0; bManualReset, bInitialState: <strong>BOOL</strong>; <strong>CONST</strong> lpName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HANDLE</strong><tr><td></td><td><a href="#Kernel32.CreateFile">CreateFile</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dwDesiredAccess, dwShareMode: <strong>INTEGERSET</strong>; lpSecurityAttributes: @Any0; dwCreationDistribution: <strong>SIGNED32</strong>; dwFlagsAndAttributes: <strong>INTEGERSET</strong>; hTemplateFile: <strong>HANDLE</strong>): <strong>HANDLE</strong><tr><td></td><td><a href="#Kernel32.CreateProcess">CreateProcess</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpApplicationName, lpCommandLine: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; lpProcessAttributes, lpThreadAttributes: @Any0; bInheritHandles: <strong>BOOL</strong>; dwCreationFlags: <strong>SIGNED32</strong>; lpEnvironment: @Any0; <strong>VAR</strong> lpCurrentDirectory: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpStartupInfo: <strong>StartupInfo</strong>; <strong>VAR</strong> lpProcessInformation: <strong>ProcessInformation</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.CreateSemaphore">CreateSemaphore</a>: <strong>PROCEDURE</strong>{WINAPI} (lpThreadAttributes: <strong>ADDRESS</strong>; lInitialCount: <strong>SIGNED32</strong>; lMaximumCount: <strong>SIGNED32</strong>; lpName: <strong>LPSTR</strong>): <strong>HANDLE</strong><tr><td></td><td><a href="#Kernel32.CreateThread">CreateThread</a>: <strong>PROCEDURE</strong>{WINAPI} (lpThreadAttributes: <strong>ADDRESS</strong>; dwStackSize: <strong>SIGNED32</strong>; lpStartAddress: <strong>ThreadProc</strong>; lpParameter: @Any0; dwCreationFlags: <strong>INTEGERSET</strong>; <strong>VAR</strong> lpThreadId: <strong>SIGNED32</strong>): <strong>HANDLE</strong><tr><td></td><td><a href="#Kernel32.DeleteCriticalSection">DeleteCriticalSection</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>)<tr><td></td><td><a href="#Kernel32.DeleteFile">DeleteFile</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.DisableThreadLibraryCalls">DisableThreadLibraryCalls</a>: <strong>PROCEDURE</strong>{WINAPI} (hLibModule: <strong>HMODULE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.DuplicateHandle">DuplicateHandle</a>: <strong>PROCEDURE</strong>{WINAPI} (hSourceProcessHandle, hSourceHandle, hTargetProcessHandle: <strong>HANDLE</strong>; <strong>VAR</strong> lpTargetHandle: <strong>HANDLE</strong>; dwDesiredAccess: <strong>INTEGERSET</strong>; bInheritHandle: <strong>BOOL</strong>; dwOptions: <strong>INTEGERSET</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.EnterCriticalSection">EnterCriticalSection</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>)<tr><td></td><td><a href="#Kernel32.EscapeCommFunction">EscapeCommFunction</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; dwFunc: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.ExitProcess">ExitProcess</a>: <strong>PROCEDURE</strong>{WINAPI} (uExitCode: <strong>SIGNED32</strong>)<tr><td></td><td><a href="#Kernel32.ExitThread">ExitThread</a>: <strong>PROCEDURE</strong>{WINAPI} (dwExitCode: <strong>SIGNED32</strong>)<tr><td></td><td><a href="#Kernel32.FileTimeToLocalFileTime">FileTimeToLocalFileTime</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileTime: <strong>FileTime</strong>; <strong>VAR</strong> lpLocalFileTime: <strong>FileTime</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.FileTimeToSystemTime">FileTimeToSystemTime</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileTime: <strong>FileTime</strong>; <strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.FindClose">FindClose</a>: <strong>PROCEDURE</strong>{WINAPI} (hFindFile: <strong>HANDLE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.FindFirstFile">FindFirstFile</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpFindFileDate: <strong>FindData</strong>): <strong>HANDLE</strong><tr><td></td><td><a href="#Kernel32.FindNextFile">FindNextFile</a>: <strong>PROCEDURE</strong>{WINAPI} (hFindFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpFindFileDate: <strong>FindData</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.FlushFileBuffers">FlushFileBuffers</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.FreeConsole">FreeConsole</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.FreeLibrary">FreeLibrary</a>: <strong>PROCEDURE</strong>{WINAPI} (hLibModule: <strong>HMODULE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetCommandLine">GetCommandLine</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>LPSTR</strong><tr><td></td><td><a href="#Kernel32.GetCommModemStatus">GetCommModemStatus</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpModemStat: <strong>INTEGERSET</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetCommState">GetCommState</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpDCB: <strong>DCB</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetComputerName">GetComputerName</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpnSize: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetCurrentDirectory">GetCurrentDirectory</a>: <strong>PROCEDURE</strong>{WINAPI} (nBufferLength: <strong>SIGNED32</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetCurrentProcess">GetCurrentProcess</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HANDLE</strong><tr><td></td><td><a href="#Kernel32.GetCurrentProcessId">GetCurrentProcessId</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetCurrentThread">GetCurrentThread</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HANDLE</strong><tr><td></td><td><a href="#Kernel32.GetCurrentThreadId">GetCurrentThreadId</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetCurrentThreadStackLimits">GetCurrentThreadStackLimits</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lowLimit, highLimit: <strong>SIZE</strong>)<tr><td></td><td><a href="#Kernel32.GetDiskFreeSpace">GetDiskFreeSpace</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpRootPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetDriveType">GetDriveType</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpRootPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetExitCodeProcess">GetExitCodeProcess</a>: <strong>PROCEDURE</strong>{WINAPI} (hProcess: <strong>HANDLE</strong>; <strong>VAR</strong> lpExitCode: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetFileAttributes">GetFileAttributes</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>INTEGERSET</strong><tr><td></td><td><a href="#Kernel32.GetFileSize">GetFileSize</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpFileSizeHigh: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>GetFileSizeEx: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpFileSize: <strong>SIGNED64</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetFileTime">GetFileTime</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpCreationTime, lpLastAccessTime, lpLastWriteTime: <strong>FileTime</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetFullPathName">GetFullPathName</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nBufferLength: <strong>SIGNED32</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; lpFilePart: <strong>LPSTR</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetEnvironmentVariable">GetEnvironmentVariable</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nSize: <strong>DWORD</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetLastError">GetLastError</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetLocalTime">GetLocalTime</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>)<tr><td></td><td><a href="#Kernel32.GetLogicalDriveStrings">GetLogicalDriveStrings</a>: <strong>PROCEDURE</strong>{WINAPI} (nBufferLength: <strong>SIGNED32</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetLogicalDrives">GetLogicalDrives</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>INTEGERSET</strong><tr><td></td><td>GetModuleFileName: <strong>PROCEDURE</strong>{WINAPI} (hModule: <strong>HMODULE</strong>; <strong>VAR</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nSize: <strong>DWORD</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetModuleHandle">GetModuleHandle</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpModuleName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HMODULE</strong><tr><td></td><td><a href="#Kernel32.GetOverlappedResult">GetOverlappedResult</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpOverlapped: <strong>Overlapped</strong>; <strong>VAR</strong> lpNumberOfBytesTransferred: <strong>SIGNED32</strong>; bWait: <strong>BOOL</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetPrivateProfileString">GetPrivateProfileString</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpAppName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> lpKeyName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> lpDefault: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpReturnedString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nSize: <strong>DWORD</strong>; <strong>CONST</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetProcessAffinityMask">GetProcessAffinityMask</a>: <strong>PROCEDURE</strong>{WINAPI} (hProcess: <strong>HANDLE</strong>; lpProcessAffinityMask: <strong>ADDRESS</strong>; lpSystemAffinityMask: <strong>ADDRESS</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetProcessHeap">GetProcessHeap</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HANDLE</strong><tr><td></td><td><a href="#Kernel32.GetProcessTimes">GetProcessTimes</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> hProcess: <strong>HANDLE</strong>; <strong>VAR</strong> lpCreationTime, lpExitTime, lpKernelTime, lpUserTime: <strong>FileTime</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetStartupInfo">GetStartupInfo</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpStartupInfo: <strong>StartupInfo</strong>)<tr><td></td><td><a href="#Kernel32.GetSystemInfo">GetSystemInfo</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemInfo: <strong>SystemInfo</strong>)<tr><td></td><td><a href="#Kernel32.GetStdHandle">GetStdHandle</a>: <strong>PROCEDURE</strong>{WINAPI} (nStdHandle: <strong>SIGNED32</strong>): <strong>HANDLE</strong><tr><td></td><td><a href="#Kernel32.GetSystemTime">GetSystemTime</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>)<tr><td></td><td><a href="#Kernel32.GetTempFileName">GetTempFileName</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPathName, lpPrefixName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; uUnique: <strong>SIGNED32</strong>; <strong>VAR</strong> lpTempFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetTempPath">GetTempPath</a>: <strong>PROCEDURE</strong>{WINAPI} (nBufferLength: <strong>SIGNED32</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetThreadContext">GetThreadContext</a>: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; <strong>VAR</strong> lpContext: <strong>Context</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GetThreadPriority">GetThreadPriority</a>: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetThreadTimes">GetThreadTimes</a>: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; <strong>VAR</strong> lpCreationTime, lpExitTime, lpKernelTime, lpUserTime: <strong>FileTime</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetTickCount">GetTickCount</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetTimeZoneInformation">GetTimeZoneInformation</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpTimeZoneInformation: <strong>TimeZoneInformation</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetWindowsDirectory">GetWindowsDirectory</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nBufferLength: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetVersion">GetVersion</a>: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GetVersionEx">GetVersionEx</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpVersionInfo: <strong>OSVersionInfo</strong>): <strong>BOOL</strong><tr><td></td><td>GetVolumeInformation: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpRootPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpVolumeNameBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nVolumeNameSize: <strong>SIGNED32</strong>; <strong>VAR</strong> lpVolumeSerialNumber: <strong>SIGNED32</strong>; <strong>VAR</strong> lpMaximumComponentLength: <strong>SIGNED32</strong>; <strong>VAR</strong> lpFileSystemFlags: <strong>SIGNED32</strong>; <strong>VAR</strong> lpFileSystemNameBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nFileSystemNameSize: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.GlobalAddAtom">GlobalAddAtom</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ATOM</strong><tr><td></td><td><a href="#Kernel32.GlobalAlloc">GlobalAlloc</a>: <strong>PROCEDURE</strong>{WINAPI} (uFlags: <strong>INTEGERSET</strong>; dwBytes: <strong>SIZE</strong>): <strong>HGLOBAL</strong><tr><td></td><td><a href="#Kernel32.GlobalDeleteAtom">GlobalDeleteAtom</a>: <strong>PROCEDURE</strong>{WINAPI} (nAtom: <strong>ATOM</strong>): <strong>ATOM</strong><tr><td></td><td><a href="#Kernel32.GlobalLock">GlobalLock</a>: <strong>PROCEDURE</strong>{WINAPI} (hMem: <strong>HGLOBAL</strong>): <strong>ADDRESS</strong><tr><td></td><td>GlobalMemoryStatusEx: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpBuffer: <strong>MemoryStatusEx</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.GlobalReAlloc">GlobalReAlloc</a>: <strong>PROCEDURE</strong>{WINAPI} (hMem: <strong>HGLOBAL</strong>; dwBytes: <strong>SIGNED32</strong>; uFlags: <strong>DWORD</strong>): <strong>HGLOBAL</strong><tr><td></td><td><a href="#Kernel32.GlobalSize">GlobalSize</a>: <strong>PROCEDURE</strong>{WINAPI} (hMem: <strong>HGLOBAL</strong>): <strong>SIZE</strong><tr><td></td><td><a href="#Kernel32.GlobalUnlock">GlobalUnlock</a>: <strong>PROCEDURE</strong>{WINAPI} (hMem: <strong>HGLOBAL</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.HeapAlloc">HeapAlloc</a>: <strong>PROCEDURE</strong>{WINAPI} (hHeap: <strong>HANDLE</strong>; dwFlags: <strong>SIGNED32</strong>; size: <strong>SIZE</strong>): <strong>ADDRESS</strong><tr><td></td><td><a href="#Kernel32.HeapFree">HeapFree</a>: <strong>PROCEDURE</strong>{WINAPI} (hHeap: <strong>HANDLE</strong>; dwFlags: <strong>SIGNED32</strong>; lpMem: <strong>ADDRESS</strong>): <strong>ADDRESS</strong><tr><td></td><td><a href="#Kernel32.InitializeCriticalSection">InitializeCriticalSection</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>)<tr><td></td><td><a href="#Kernel32.InterlockedDecrement">InterlockedDecrement</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpAddend: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.InterlockedIncrement">InterlockedIncrement</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpAddend: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.LeaveCriticalSection">LeaveCriticalSection</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>)<tr><td></td><td><a href="#Kernel32.LocalFileTimeToFileTime">LocalFileTimeToFileTime</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpLocalFileTime: <strong>FileTime</strong>; <strong>VAR</strong> lpFileTime: <strong>FileTime</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.MoveFileEx">MoveFileEx</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpExistingFileName, lpNewFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dwFlags: <strong>INTEGERSET</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.outputDebugString">outputDebugString</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpOutputString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td>IsDebuggerPresent: <strong>PROCEDURE</strong>{WINAPI} (): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.PurgeComm">PurgeComm</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; dwFlags: <strong>INTEGERSET</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.QueryDosDevice">QueryDosDevice</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpDeviceName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpTargetPath: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ucchMax: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.QueryPerformanceCounter">QueryPerformanceCounter</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPerformaceCount: <strong>LargeInteger</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.QueryPerformanceFrequency">QueryPerformanceFrequency</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFrequency: <strong>LargeInteger</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.QueryThreadCycleTime">QueryThreadCycleTime</a>: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; <strong>VAR</strong> cycleTime: <strong>SIGNED64</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.ReadFile">ReadFile</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; nNumberOfBytesToRead: <strong>SIGNED32</strong>; <strong>VAR</strong> lpNumberOfBytesRead: <strong>SIGNED32</strong>; <strong>VAR</strong> lpOverlapped: <strong>Overlapped</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.ReadProcessMemory">ReadProcessMemory</a>: <strong>PROCEDURE</strong>{WINAPI} (hProcess: <strong>HANDLE</strong>; lpBaseAddress: <strong>ADDRESS</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; nSize: <strong>SIGNED32</strong>; <strong>VAR</strong> lpNumberOfBytesRead: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.ReleaseSemaphore">ReleaseSemaphore</a>: <strong>PROCEDURE</strong>{WINAPI} (hSemaphore: <strong>HANDLE</strong>; lReleaseCount: <strong>SIGNED32</strong>; lpPreviousCount: <strong>ADDRESS</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.RemoveDirectory">RemoveDirectory</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.RemoveVectoredContinueHandler">RemoveVectoredContinueHandler</a>: <strong>PROCEDURE</strong>{WINAPI} (vectoredHandler: <strong>VectoredExceptionHandler</strong>): <strong>ULONG</strong><tr><td></td><td><a href="#Kernel32.RemoveVectoredExceptionHandler">RemoveVectoredExceptionHandler</a>: <strong>PROCEDURE</strong>{WINAPI} (vectoredHandler: <strong>VectoredExceptionHandler</strong>): <strong>ULONG</strong><tr><td></td><td><a href="#Kernel32.ResetEvent">ResetEvent</a>: <strong>PROCEDURE</strong>{WINAPI} (hEvent: <strong>HANDLE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.ResumeThread">ResumeThread</a>: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.SearchPath">SearchPath</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpPath, lpFileName, lpExtension: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nBufferLength: <strong>DWORD</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpFilePart: <strong>LPSTR</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.SetCommBreak">SetCommBreak</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetCommMask">SetCommMask</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; dwEvtMask: <strong>DWORD</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetCommState">SetCommState</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpDCB: <strong>DCB</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetCommTimeouts">SetCommTimeouts</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpCommTimeouts: <strong>CommTimeouts</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetConsoleCursorPosition">SetConsoleCursorPosition</a>: <strong>PROCEDURE</strong>{WINAPI} (hConsoleOutput: <strong>HANDLE</strong>; dwCursorPosition: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetConsoleScreenBufferSize">SetConsoleScreenBufferSize</a>: <strong>PROCEDURE</strong>{WINAPI} (hConsoleOuput: <strong>HANDLE</strong>; dwSize: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetConsoleTextAttribute">SetConsoleTextAttribute</a>: <strong>PROCEDURE</strong>{WINAPI} (hConsoleOutput: <strong>HANDLE</strong>; wAttributes: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetConsoleTitle">SetConsoleTitle</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpConsoleTitle: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetConsoleWindowInfo">SetConsoleWindowInfo</a>: <strong>PROCEDURE</strong>{WINAPI} (hConsoleOuput: <strong>HANDLE</strong>; bAbsolute: <strong>BOOL</strong>; <strong>VAR</strong> lpConsoleWindow: <strong>SmallRect</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetCurrentDirectory">SetCurrentDirectory</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetErrorMode">SetErrorMode</a>: <strong>PROCEDURE</strong>{WINAPI} (uMode: <strong>DWORD</strong>): <strong>DWORD</strong><tr><td></td><td><a href="#Kernel32.SetEndOfFile">SetEndOfFile</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetEvent">SetEvent</a>: <strong>PROCEDURE</strong>{WINAPI} (hEvent: <strong>HANDLE</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetFileAttributes">SetFileAttributes</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dwFileAttributes: <strong>INTEGERSET</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetFilePointer">SetFilePointer</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; lDistanceToMove: <strong>SIGNED32</strong>; <strong>VAR</strong> lpDistanceToMoveHigh: <strong>SIGNED32</strong>; dwMoveMethod: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td>SetFilePointerEx: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; lDistanceToMove: <strong>SIGNED64</strong>; <strong>VAR</strong> lpNewFilePointer: <strong>SIGNED64</strong>; dwMoveMethod: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetFileTime">SetFileTime</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpCreationTime, lpLastAccessTime, lpLastWriteTime: <strong>FileTime</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetLocalTime">SetLocalTime</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetThreadAffinityMask">SetThreadAffinityMask</a>: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; dwThreadAffinityMask: <strong>DWORD</strong>): <strong>DWORD</strong><tr><td></td><td><a href="#Kernel32.SetThreadContext">SetThreadContext</a>: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; <strong>VAR</strong> lpContext: <strong>Context</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetThreadPriority">SetThreadPriority</a>: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; nPriority: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.SetupComm">SetupComm</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; dwInQueue, dwOutQueue: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.Sleep">Sleep</a>: <strong>PROCEDURE</strong>{WINAPI} (dwMilliseconds: <strong>SIGNED32</strong>)<tr><td></td><td><a href="#Kernel32.TerminateProcess">TerminateProcess</a>: <strong>PROCEDURE</strong>{WINAPI} (hProcess: <strong>HANDLE</strong>; uExitCode: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td>SuspendThread: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.SystemTimeToFileTime">SystemTimeToFileTime</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>; <strong>VAR</strong> lpFileTime: <strong>FileTime</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.TerminateThread">TerminateThread</a>: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; dwExitCode: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td>TlsAlloc: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong><tr><td></td><td>TlsFree: <strong>PROCEDURE</strong>{WINAPI} (dwTlsIndex: <strong>SIGNED32</strong>): <strong>BOOL</strong><tr><td></td><td>TlsGetValue: <strong>PROCEDURE</strong>{WINAPI} (dwTlsIndex: <strong>SIGNED32</strong>): <strong>ADDRESS</strong><tr><td></td><td>TlsSetValue: <strong>PROCEDURE</strong>{WINAPI} (dwTlsIndex: <strong>SIGNED32</strong>; lpTlsValue: <strong>ADDRESS</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.TryEnterCriticalSection">TryEnterCriticalSection</a>: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.VirtualAlloc">VirtualAlloc</a>: <strong>PROCEDURE</strong>{WINAPI} (lpAddress: <strong>ADDRESS</strong>; dwSize: <strong>SIZE</strong>; flAllocationType, flProtect: <strong>INTEGERSET</strong>): <strong>ADDRESS</strong><tr><td></td><td><a href="#Kernel32.VirtualFree">VirtualFree</a>: <strong>PROCEDURE</strong>{WINAPI} (lpAddress: <strong>ADDRESS</strong>; dwSize: <strong>SIZE</strong>; dwFreeType: <strong>INTEGERSET</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.WaitForSingleObject">WaitForSingleObject</a>: <strong>PROCEDURE</strong>{WINAPI} (hHandle: <strong>HANDLE</strong>; dwMilliseconds: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td><a href="#Kernel32.WriteFile">WriteFile</a>: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>CONST</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; nNumberOfBytesToWrite: <strong>DWORD</strong>; <strong>VAR</strong> lpNumberOfBytesWritten: <strong>DWORD</strong>; <strong>VAR</strong> lpOverlapped: <strong>Overlapped</strong>): <strong>BOOL</strong><tr><td></td><td><a href="#Kernel32.OutputString">OutputString</a>: <strong>PROCEDURE</strong> (<strong>CONST</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td>Shutdown: <strong>PROCEDURE</strong> (code: <strong>SIGNED32</strong>)<tr><th align='left'>procedures</th><td> <a href="#Kernel32.GetProcAddress">GetProcAddress</a> (hModule: <strong>HMODULE</strong>; <strong>CONST</strong> procName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> adr: <strong>ADDRESS</strong>)<tr><td></td><td> <a href="#Kernel32.CopyString">CopyString</a> (lpString: <strong>LPSTR</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> OutputDebugString (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SendToDebugger (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; x: <strong>ADDRESS</strong>)<tr><td></td><td> Init<tr><td></td><td> {OFFSET(4198400)}EntryPoint</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_536D0AC0"><a name="Kernel32.NULL"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.NULL">NULL</a>
+</h2>
+<p> NIL pointer/address value</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NULL*= 0</pre>
+<hr><h2 id="#_536D4100"><a name="Kernel32.False"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.False">False</a>
+</h2>
+<p> BOOL values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> False*= NULL</pre>
+<hr><h2 id="#_536D7300"><a name="Kernel32.InvalidHandleValue"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.InvalidHandleValue">InvalidHandleValue</a>
+</h2>
+<p> standard handles</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> InvalidHandleValue*= -1</pre>
+<hr><h2 id="#_536DA880"><a name="Kernel32.GenericWrite"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GenericWrite">GenericWrite</a>
+</h2>
+<p> generic access rights</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> GenericWrite*= 30</pre>
+<hr><h2 id="#_536DDEC0"><a name="Kernel32.FileShareRead"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FileShareRead">FileShareRead</a>
+</h2>
+<p> file sharing</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FileShareRead*= 0</pre>
+<hr><h2 id="#_536E1180"><a name="Kernel32.CreateAlways"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CreateAlways">CreateAlways</a>
+</h2>
+<p> file creation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> CreateAlways*= 2</pre>
+<hr><h2 id="#_536E4380"><a name="Kernel32.FileAttributeReadonly"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FileAttributeReadonly">FileAttributeReadonly</a>
+</h2>
+<p> file attributes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FileAttributeReadonly*= 0</pre>
+<hr><h2 id="#_536E7580"><a name="Kernel32.FileFlagDeleteOnClose"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FileFlagDeleteOnClose">FileFlagDeleteOnClose</a>
+</h2>
+<p> file creation flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FileFlagDeleteOnClose*= 26</pre>
+<hr><h2 id="#_536EACC0"><a name="Kernel32.FileFlagOverlapped"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FileFlagOverlapped">FileFlagOverlapped</a>
+</h2>
+<p> The file or device is being opened or created for asynchronous I/O</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FileFlagOverlapped*= 30</pre>
+<hr><h2 id="#_536F0740"><a name="Kernel32.FileBegin"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FileBegin">FileBegin</a>
+</h2>
+<p> move method</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> FileBegin*= 0</pre>
+<hr><h2 id="#_536F3940"><a name="Kernel32.MoveFileReplaceExisting"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.MoveFileReplaceExisting">MoveFileReplaceExisting</a>
+</h2>
+<p> move file flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MoveFileReplaceExisting*= 0</pre>
+<hr><h2 id="#_536F6F80"><a name="Kernel32.MEMCommit"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.MEMCommit">MEMCommit</a>
+</h2>
+<p> allocation/free type</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MEMCommit*= 12</pre>
+<hr><h2 id="#_536FA180"><a name="Kernel32.HeapNoSerialize"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.HeapNoSerialize">HeapNoSerialize</a>
+</h2>
+<p> heap allocation options</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> HeapNoSerialize*= 2</pre>
+<hr><h2 id="#_536FD8C0"><a name="Kernel32.PageReadWrite"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.PageReadWrite">PageReadWrite</a>
+</h2>
+<p> protect (VirtualAlloc) flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PageReadWrite*= 2</pre>
+<hr><h2 id="#_53700F00"><a name="Kernel32.GMemMoveable"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GMemMoveable">GMemMoveable</a>
+</h2>
+<p> global memory flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> GMemMoveable*= 1</pre>
+<hr><h2 id="#_53704540"><a name="Kernel32.MaxPath"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.MaxPath">MaxPath</a>
+</h2>
+<p> maximum length of full path</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MaxPath*= 260</pre>
+<hr><h2 id="#_53708440"><a name="Kernel32.DriveUnknown"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.DriveUnknown">DriveUnknown</a>
+</h2>
+<p> specifies the type of a drive</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DriveUnknown*= 0</pre>
+<hr><h2 id="#_5370C6C0"><a name="Kernel32.SizeOf80387Registers"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SizeOf80387Registers">SizeOf80387Registers</a>
+</h2>
+<p> thread context and exception information</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SizeOf80387Registers*= 80</pre>
+<hr><h2 id="#_53710640"><a name="Kernel32.ExceptionContinueExecution"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ExceptionContinueExecution">ExceptionContinueExecution</a>
+</h2>
+<p> exception frame handler return values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ExceptionContinueExecution*= -1</pre>
+<hr><h2 id="#_53714880"><a name="Kernel32.ThreadPriorityIdle"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ThreadPriorityIdle">ThreadPriorityIdle</a>
+</h2>
+<p> thread priorities</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ThreadPriorityIdle*= -15</pre>
+<hr><h2 id="#_53717EC0"><a name="Kernel32.WaitFailed"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.WaitFailed">WaitFailed</a>
+</h2>
+<p> WaitForSingleObject return values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> WaitFailed*= -1</pre>
+<hr><h2 id="#_5371B7C0"><a name="Kernel32.SEMFailCriticalErrors"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SEMFailCriticalErrors">SEMFailCriticalErrors</a>
+</h2>
+<p> SetErrorMode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SEMFailCriticalErrors*= 0</pre>
+<hr><h2 id="#_5371E640"><a name="Kernel32.DuplicateCloseSource"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.DuplicateCloseSource">DuplicateCloseSource</a>
+</h2>
+<p> DuplicateHandle</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> DuplicateCloseSource*= 0</pre>
+<hr><h2 id="#_537214C0"><a name="Kernel32.StartFUseShowWindow"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.StartFUseShowWindow">StartFUseShowWindow</a>
+</h2>
+<p> StartupInfo flags</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> StartFUseShowWindow*= 0</pre>
+<hr><h2 id="#_537246C0"><a name="Kernel32.VerPlatformWin32s"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.VerPlatformWin32s">VerPlatformWin32s</a>
+</h2>
+<p> OSVersionInfo dwPlatformId values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> VerPlatformWin32s*= 0</pre>
+<hr><h2 id="#_53727D00"><a name="Kernel32.SETXOFF"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SETXOFF">SETXOFF</a>
+</h2>
+<p> EscapeCommFunction</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> SETXOFF*= 1</pre>
+<hr><h2 id="#_5372AB80"><a name="Kernel32.PurgeTXAbort"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.PurgeTXAbort">PurgeTXAbort</a>
+</h2>
+<p> PurgeComm</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> PurgeTXAbort*= 0</pre>
+<hr><h2 id="#_5372DA00"><a name="Kernel32.EVRXChar"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.EVRXChar">EVRXChar</a>
+</h2>
+<p> SetCommMask</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EVRXChar*= 0</pre>
+<hr><h2 id="#_53730880"><a name="Kernel32.MSCTSOn"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.MSCTSOn">MSCTSOn</a>
+</h2>
+<p> GetCommModemStatus</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MSCTSOn*= 4</pre>
+<hr><h2 id="#_53733700"><a name="Kernel32.NoParity"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.NoParity">NoParity</a>
+</h2>
+<p> DCB</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NoParity*= 0X</pre>
+<hr><h2 id="#_53736580"><a name="Kernel32.ErrorSuccess"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ErrorSuccess">ErrorSuccess</a>
+</h2>
+<p> GetLastError</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ErrorSuccess*= 0</pre>
+<hr><h2 id="#_53739600"><a name="Kernel32.ErrorIoPending"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ErrorIoPending">ErrorIoPending</a>
+</h2>
+<p> Overlapped I/O operation is in progress</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ErrorIoPending*= 997</pre>
+<hr><h2 id="#_5373D900"><a name="Kernel32.FileTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FileTime">FileTime</a>
+</h2>
+<p> The FILETIME structure is a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FileTime* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>dwLowDateTime: <strong>SIGNED32</strong><tr><td></td><td>dwHighDateTime: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53747040"><a name="Kernel32.FindData"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FindData">FindData</a>
+</h2>
+<p> The FindData structure describes a file found by the FindFirstFile or FindNextFile function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FindData* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>dwFileAttributes: <strong>INTEGERSET</strong><tr><td></td><td>ftCreationTime: <strong>FileTime</strong><tr><td></td><td>ftLastAccessTime: <strong>FileTime</strong><tr><td></td><td>ftLastWriteTime: <strong>FileTime</strong><tr><td></td><td>nFileSizeHigh: <strong>SIGNED32</strong><tr><td></td><td>nFileSizeLow: <strong>SIGNED32</strong><tr><td></td><td>dwReserved0: <strong>SIGNED32</strong><tr><td></td><td>dwReserved1: <strong>SIGNED32</strong><tr><td></td><td>cFileName: <strong>ARRAY</strong> MaxPath <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>cAlternateFileName: <strong>ARRAY</strong> 14 <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53758A40"><a name="Kernel32.SystemTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SystemTime">SystemTime</a>
+</h2>
+<p> The SYSTEMTIME structure represents a date and time using individual members for the month, day, year, weekday, hour, minute, second, and millisecond.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SystemTime* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>wYear: <strong>SIGNED16</strong><tr><td></td><td>wMonth: <strong>SIGNED16</strong><tr><td></td><td>wDayOfWeek: <strong>SIGNED16</strong><tr><td></td><td>wDay: <strong>SIGNED16</strong><tr><td></td><td>wHour: <strong>SIGNED16</strong><tr><td></td><td>wMinute: <strong>SIGNED16</strong><tr><td></td><td>wSecond: <strong>SIGNED16</strong><tr><td></td><td>wMilliseconds: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53768B80"><a name="Kernel32.SmallRect"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SmallRect">SmallRect</a>
+</h2>
+<p> The SMALL_RECT structure defines the coordinates of the upper left and lower right corners of a rectangle.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SmallRect* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>left: <strong>SIGNED16</strong><tr><td></td><td>top: <strong>SIGNED16</strong><tr><td></td><td>right: <strong>SIGNED16</strong><tr><td></td><td>bottom: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53774040"><a name="Kernel32.CriticalSection"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CriticalSection">CriticalSection</a>
+</h2>
+<p> Critical-section object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CriticalSection* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="#_53777C40"><a name="Kernel32.FloatingSaveArea"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FloatingSaveArea">FloatingSaveArea</a>
+</h2>
+<p> thread context and exception information</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FloatingSaveArea* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ControlWord: <strong>SIGNED32</strong><tr><td></td><td>StatusWord: <strong>SIGNED32</strong><tr><td></td><td>TagWord: <strong>SIGNED32</strong><tr><td></td><td>ErrorOffset: <strong>SIGNED32</strong><tr><td></td><td>ErrorSelector: <strong>SIGNED32</strong><tr><td></td><td>DataOffset: <strong>SIGNED32</strong><tr><td></td><td>DataSelector: <strong>SIGNED32</strong><tr><td></td><td>RegisterArea: <strong>ARRAY</strong> SizeOf80387Registers <strong>OF</strong> <strong>SYSTEM.BYTE</strong><tr><td></td><td>Cr0NpxState: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53785A00"><a name="Kernel32.ContextPtr"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ContextPtr">ContextPtr</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ContextPtr* =<strong>POINTER</strong> <strong>TO</strong> <strong>Context</strong></pre>
+<hr><h2 id="#_53788600"><a name="Kernel32.Context"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.Context">Context</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Context* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ContextFlags: <strong>INTEGERSET</strong><tr><td></td><td>MxCsr: <strong>DWORD</strong><tr><td></td><td>CS: <strong>SIGNED16</strong><tr><td></td><td>DS: <strong>SIGNED16</strong><tr><td></td><td>ES: <strong>SIGNED16</strong><tr><td></td><td>FS: <strong>SIGNED16</strong><tr><td></td><td>GS: <strong>SIGNED16</strong><tr><td></td><td>SS: <strong>SIGNED16</strong><tr><td></td><td>FLAGS: <strong>DWORD</strong><tr><td></td><td>Dr0: <strong>SIZE</strong><tr><td></td><td>Dr1: <strong>SIZE</strong><tr><td></td><td>Dr2: <strong>SIZE</strong><tr><td></td><td>Dr3: <strong>SIZE</strong><tr><td></td><td>Dr6: <strong>SIZE</strong><tr><td></td><td>Dr7: <strong>SIZE</strong><tr><td></td><td>RA: <strong>ADDRESS</strong><tr><td></td><td>RC: <strong>ADDRESS</strong><tr><td></td><td>RD: <strong>ADDRESS</strong><tr><td></td><td>RB: <strong>ADDRESS</strong><tr><td></td><td>SP: <strong>ADDRESS</strong><tr><td></td><td>BP: <strong>ADDRESS</strong><tr><td></td><td>RSI: <strong>ADDRESS</strong><tr><td></td><td>RDI: <strong>ADDRESS</strong><tr><td></td><td>R8: <strong>ADDRESS</strong><tr><td></td><td>R9: <strong>ADDRESS</strong><tr><td></td><td>R10: <strong>ADDRESS</strong><tr><td></td><td>R11: <strong>ADDRESS</strong><tr><td></td><td>R12: <strong>ADDRESS</strong><tr><td></td><td>R13: <strong>ADDRESS</strong><tr><td></td><td>R14: <strong>ADDRESS</strong><tr><td></td><td>R15: <strong>ADDRESS</strong><tr><td></td><td>PC: <strong>ADDRESS</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_537A8BC0"><a name="Kernel32.ExceptionRecordPtr"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ExceptionRecordPtr">ExceptionRecordPtr</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExceptionRecordPtr* =<strong>POINTER</strong> <strong>TO</strong> <strong>ExceptionRecord</strong></pre>
+<hr><h2 id="#_537ABD00"><a name="Kernel32.ExceptionRecord"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ExceptionRecord">ExceptionRecord</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExceptionRecord* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ExceptionCode: <strong>SIGNED32</strong><tr><td></td><td>ExceptionFlags: <strong>SIGNED32</strong><tr><td></td><td>nextExceptionRecord: <strong>ExceptionRecordPtr</strong><tr><td></td><td>ExceptionAddress: <strong>ADDRESS</strong><tr><td></td><td>NumberParameters: <strong>SIGNED32</strong><tr><td></td><td>ExceptionInformation: <strong>ARRAY</strong> ExceptionMaximumParameters <strong>OF</strong> <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_537B5340"><a name="Kernel32.ExceptionPointers"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ExceptionPointers">ExceptionPointers</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExceptionPointers* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>exception: <strong>ExceptionRecordPtr</strong><tr><td></td><td>context: <strong>ContextPtr</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_537B9E80"><a name="Kernel32.ExcpFrm"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ExcpFrm">ExcpFrm</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExcpFrm* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>link: <strong>ExcpFrmPtr</strong><tr><td></td><td>handler: <strong>ExcpFrmHandler</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_537BE9C0"><a name="Kernel32.Object"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.Object">Object</a>
+</h2>
+<p> Synchronization Objects</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Object* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>handle: <strong>HANDLE</strong></td></tr>
+</table>
+<hr><h2 id="#_537C3DC0"><a name="Kernel32.LargeInteger"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.LargeInteger">LargeInteger</a>
+</h2>
+<p> A 64-bit signed integer value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LargeInteger* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>LowPart: <strong>SIGNED32</strong><tr><td></td><td>HighPart: <strong>SIGNED32</strong><tr><td></td><td>QuadPart: <strong>SIGNED64</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_537CB440"><a name="Kernel32.ULargeInteger"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ULargeInteger">ULargeInteger</a>
+</h2>
+<p> A 64-bit unsigned integer value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ULargeInteger* =<strong>LargeInteger</strong></pre>
+<hr><h2 id="#_537CF600"><a name="Kernel32.MemoryStatusEx"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.MemoryStatusEx">MemoryStatusEx</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MemoryStatusEx* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>dwLength: <strong>SIGNED32</strong><tr><td></td><td>dwMemoryLoad: <strong>SIGNED32</strong><tr><td></td><td>ullTotalPhys: <strong>SIGNED64</strong><tr><td></td><td>ullAvailPhys: <strong>SIGNED64</strong><tr><td></td><td>ullTotalPageFile: <strong>SIGNED64</strong><tr><td></td><td>ullAvailPageFile: <strong>SIGNED64</strong><tr><td></td><td>ullTotalVirtual: <strong>SIGNED64</strong><tr><td></td><td>ullAvailVirtual: <strong>SIGNED64</strong><tr><td></td><td>ullAvailExtendedVirtual: <strong>SIGNED64</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_537DAE80"><a name="Kernel32.ThreadProc"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ThreadProc">ThreadProc</a>
+</h2>
+<p> CreateThread</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ThreadProc* =<strong>PROCEDURE</strong>{WINAPI} (lpParameter: @Any0): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_537DFA40"><a name="Kernel32.ProcessInformation"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ProcessInformation">ProcessInformation</a>
+</h2>
+<p> CreateProcess</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcessInformation* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>hProcess: <strong>HANDLE</strong><tr><td></td><td>hThread: <strong>HANDLE</strong><tr><td></td><td>dwProcessId: <strong>SIGNED32</strong><tr><td></td><td>dwThreadId: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_537E6F00"><a name="Kernel32.StartupInfo"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.StartupInfo">StartupInfo</a>
+</h2>
+<p> CreateProcess, GetStartupInfo</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StartupInfo* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>cb: <strong>SIGNED32</strong><tr><td></td><td>lpReserved: <strong>LPSTR</strong><tr><td></td><td>lpDesktop: <strong>LPSTR</strong><tr><td></td><td>lpTitle: <strong>LPSTR</strong><tr><td></td><td>dwX: <strong>SIGNED32</strong><tr><td></td><td>dwY: <strong>SIGNED32</strong><tr><td></td><td>dwXSize: <strong>SIGNED32</strong><tr><td></td><td>dwYSize: <strong>SIGNED32</strong><tr><td></td><td>dwXCountChars: <strong>SIGNED32</strong><tr><td></td><td>dwYCountChars: <strong>SIGNED32</strong><tr><td></td><td>dwFillAttribute: <strong>SIGNED32</strong><tr><td></td><td>dwFlags: <strong>INTEGERSET</strong><tr><td></td><td>wShowWindow: <strong>SIGNED16</strong><tr><td></td><td>cbReserved2: <strong>SIGNED16</strong><tr><td></td><td>lpReserved2: <strong>ADDRESS</strong><tr><td></td><td>hStdInput: <strong>HANDLE</strong><tr><td></td><td>hStdOutput: <strong>HANDLE</strong><tr><td></td><td>hStdError: <strong>HANDLE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_537FB5C0"><a name="Kernel32.OSVersionInfo"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.OSVersionInfo">OSVersionInfo</a>
+</h2>
+<p> The OSVersionInfo data structure contains operating system version information.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OSVersionInfo* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>dwOSVersionInfoSize: <strong>SIGNED32</strong><tr><td></td><td>dwMajorVersion: <strong>SIGNED32</strong><tr><td></td><td>dwMinorVersion: <strong>SIGNED32</strong><tr><td></td><td>dwBuildNumber: <strong>SIGNED32</strong><tr><td></td><td>dwPlatformId: <strong>SIGNED32</strong><tr><td></td><td>szCSDVersion: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53807740"><a name="Kernel32.Exception"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.Exception">Exception</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Exception* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>exc: <strong>ExceptionRecord</strong><tr><td></td><td>cont: <strong>Context</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5380C280"><a name="Kernel32.CommTimeouts"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CommTimeouts">CommTimeouts</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CommTimeouts* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ReadIntervalTimeout: <strong>SIGNED32</strong><tr><td></td><td>ReadTotalTimeoutMultiplier: <strong>SIGNED32</strong><tr><td></td><td>ReadTotalTimeoutConstant: <strong>SIGNED32</strong><tr><td></td><td>WriteTotalTimeoutMultiplier: <strong>SIGNED32</strong><tr><td></td><td>WriteTotalTimeoutConstant: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53813B40"><a name="Kernel32.DCB"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.DCB">DCB</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DCB* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>DCBlength: <strong>SIGNED32</strong><tr><td></td><td>BaudRate: <strong>SIGNED32</strong><tr><td></td><td>flags: <strong>DWORD</strong><tr><td></td><td>wReserved: <strong>SIGNED16</strong><tr><td></td><td>XonLim: <strong>SIGNED16</strong><tr><td></td><td>XoffLim: <strong>SIGNED16</strong><tr><td></td><td>ByteSize: <strong>CHAR</strong><tr><td></td><td>Parity: <strong>CHAR</strong><tr><td></td><td>StopBits: <strong>CHAR</strong><tr><td></td><td>XonChar: <strong>CHAR</strong><tr><td></td><td>XoffChar: <strong>CHAR</strong><tr><td></td><td>ErrorChar: <strong>CHAR</strong><tr><td></td><td>EofChar: <strong>CHAR</strong><tr><td></td><td>EvtChar: <strong>CHAR</strong><tr><td></td><td>wReserved1: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53824640"><a name="Kernel32.ComStat"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ComStat">ComStat</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ComStat* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>status: <strong>DWORD</strong><tr><td></td><td>cbInQue: <strong>SIGNED32</strong><tr><td></td><td>cbOutQue: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5382A040"><a name="Kernel32.SystemInfo"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SystemInfo">SystemInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SystemInfo* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>wProcessorArchitecture: <strong>SIGNED16</strong><tr><td></td><td>dwPageSize: <strong>SIGNED32</strong><tr><td></td><td>lpMinimumApplicationAddress: <strong>ADDRESS</strong><tr><td></td><td>lpMaximumApplicationAddress: <strong>ADDRESS</strong><tr><td></td><td>dwActiveProcessorMask: <strong>ADDRESS</strong><tr><td></td><td>dwNumberOfProcessors: <strong>SIGNED32</strong><tr><td></td><td>dwProcessorType: <strong>SIGNED32</strong><tr><td></td><td>dwAllocationGranularity: <strong>SIGNED32</strong><tr><td></td><td>wProcessorLevel: <strong>SIGNED16</strong><tr><td></td><td>wProcessorRevision: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53836300"><a name="Kernel32.TimeZoneInformation"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.TimeZoneInformation">TimeZoneInformation</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TimeZoneInformation* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Bias: <strong>SIGNED32</strong><tr><td></td><td>StandardName: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td>StandardDate: <strong>SystemTime</strong><tr><td></td><td>StandardBias: <strong>SIGNED32</strong><tr><td></td><td>DaylightName: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>SIGNED16</strong><tr><td></td><td>DaylightDate: <strong>SystemTime</strong><tr><td></td><td>DaylightBias: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_53841B40"><a name="Kernel32.Overlapped"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.Overlapped">Overlapped</a>
+</h2>
+<p> Contains information used in asynchronous (or overlapped) input and output (I/O).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Overlapped* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Internal: <strong>SIGNED32</strong><tr><td></td><td>InternalHigh: <strong>SIGNED32</strong><tr><td></td><td>Offset: <strong>SIGNED32</strong><tr><td></td><td>OffsetHigh: <strong>SIGNED32</strong><tr><td></td><td>hEvent: <strong>HANDLE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="#_5384C740"><a name="Kernel32.getProcAddress"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.getProcAddress">getProcAddress</a>
+</h2>
+<p> The GetProcAddress function returns the address of the specified exported dynamic-link library (DLL) function. Use the GetProcAddress Oberon wrapper.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> getProcAddress-: <strong>PROCEDURE</strong>{WINAPI} (hModule: <strong>HMODULE</strong>; <strong>CONST</strong> lpProcName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ADDRESS</strong></pre>
+<hr><h2 id="#_53857300"><a name="Kernel32.LoadLibrary"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.LoadLibrary">LoadLibrary</a>
+</h2>
+<p> The LoadLibrary function maps the specified executable module into the address space of the calling process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> LoadLibrary-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpLibFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HINSTANCE</strong></pre>
+<hr><h2 id="#_53860540"><a name="Kernel32.AddVectoredContinueHandler"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.AddVectoredContinueHandler">AddVectoredContinueHandler</a>
+</h2>
+<p> registers a vectored continue handler.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> AddVectoredContinueHandler-: <strong>PROCEDURE</strong>{WINAPI} (firstHandler: <strong>ULONG</strong>; vectoredHandler: <strong>VectoredExceptionHandler</strong>)</pre>
+<hr><h2 id="#_53866B00"><a name="Kernel32.AddVectoredExceptionHandler"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.AddVectoredExceptionHandler">AddVectoredExceptionHandler</a>
+</h2>
+<p> registers a vectored exception handler.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> AddVectoredExceptionHandler-: <strong>PROCEDURE</strong>{WINAPI} (firstHandler: <strong>ULONG</strong>; vectoredHandler: <strong>VectoredExceptionHandler</strong>)</pre>
+<hr><h2 id="#_5386D0C0"><a name="Kernel32.AllocConsole"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.AllocConsole">AllocConsole</a>
+</h2>
+<p> The AllocConsole function allocates a new console for the calling process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> AllocConsole-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53873B80"><a name="Kernel32.AttachConsole"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.AttachConsole">AttachConsole</a>
+</h2>
+<p> The AttachConsole function attaches the calling process to the console of the specified process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> AttachConsole-: <strong>PROCEDURE</strong>{WINAPI} (in: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_5387BA40"><a name="Kernel32.Beep"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.Beep">Beep</a>
+</h2>
+<p> The Beep function generates simple tones on the speaker. The function is synchronous; it does not return control to its caller until the sound finishes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Beep-: <strong>PROCEDURE</strong>{WINAPI} (dwFreq, dwDuration: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53886DC0"><a name="Kernel32.CancelIoEx"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CancelIoEx">CancelIoEx</a>
+</h2>
+<p> Marks any outstanding I/O operations for the specified file handle. The function only cancels I/O operations in the current process, regardless of which thread created the I/O operation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CancelIoEx-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpOverlapped: <strong>Overlapped</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53893540"><a name="Kernel32.ClearCommBreak"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ClearCommBreak">ClearCommBreak</a>
+</h2>
+<p> The ClearCommBreak function restores character transmission for a specified communications device and places the transmission line in a nonbreak state.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ClearCommBreak-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_5389CB80"><a name="Kernel32.ClearCommError"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ClearCommError">ClearCommError</a>
+</h2>
+<p> The ClearCommError function retrieves information about a communications error and reports the current status of a communications device.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ClearCommError-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpErrors: <strong>DWORD</strong>; <strong>VAR</strong> lpStat: <strong>ComStat</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_538A7F40"><a name="Kernel32.CloseHandle"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CloseHandle">CloseHandle</a>
+</h2>
+<p> The CloseHandle function closes an open object handle.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CloseHandle-: <strong>PROCEDURE</strong>{WINAPI} (hObject: <strong>HANDLE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_538AE780"><a name="Kernel32.CopyFile"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CopyFile">CopyFile</a>
+</h2>
+<p> The CopyFile function copies an existing file to a new file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CopyFile-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpExistingFileName, lpNewFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bFailIfExists: <strong>BOOL</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_538B8200"><a name="Kernel32.CreateDirectory"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CreateDirectory">CreateDirectory</a>
+</h2>
+<p> The CreateDirectory function creates a new directory.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CreateDirectory-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; lpSecurityAttributes: @Any0): <strong>BOOL</strong></pre>
+<hr><h2 id="#_538BFEC0"><a name="Kernel32.CreateEvent"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CreateEvent">CreateEvent</a>
+</h2>
+<p> The CreateEvent function creates a named or unnamed event object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CreateEvent-: <strong>PROCEDURE</strong>{WINAPI} (lpEventAttributes: @Any0; bManualReset, bInitialState: <strong>BOOL</strong>; <strong>CONST</strong> lpName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HANDLE</strong></pre>
+<hr><h2 id="#_538C9D80"><a name="Kernel32.CreateFile"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CreateFile">CreateFile</a>
+</h2>
+<p> The CreateFile function creates or opens the following objects and returns a handle that can be used to access the object: files, pipes, mailslots, communications resources, disk devices (Windows NT only), consoles, directories (open only)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CreateFile-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dwDesiredAccess, dwShareMode: <strong>INTEGERSET</strong>; lpSecurityAttributes: @Any0; dwCreationDistribution: <strong>SIGNED32</strong>; dwFlagsAndAttributes: <strong>INTEGERSET</strong>; hTemplateFile: <strong>HANDLE</strong>): <strong>HANDLE</strong></pre>
+<hr><h2 id="#_538DC540"><a name="Kernel32.CreateProcess"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CreateProcess">CreateProcess</a>
+</h2>
+<p> The CreateProcess function creates a new process and its primary thread. The new process executes the specified executable file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CreateProcess-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpApplicationName, lpCommandLine: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; lpProcessAttributes, lpThreadAttributes: @Any0; bInheritHandles: <strong>BOOL</strong>; dwCreationFlags: <strong>SIGNED32</strong>; lpEnvironment: @Any0; <strong>VAR</strong> lpCurrentDirectory: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpStartupInfo: <strong>StartupInfo</strong>; <strong>VAR</strong> lpProcessInformation: <strong>ProcessInformation</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_538EE800"><a name="Kernel32.CreateSemaphore"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CreateSemaphore">CreateSemaphore</a>
+</h2>
+<p> The CreateSemaphore function creates or opens a named or unnamed semaphore object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CreateSemaphore-: <strong>PROCEDURE</strong>{WINAPI} (lpThreadAttributes: <strong>ADDRESS</strong>; lInitialCount: <strong>SIGNED32</strong>; lMaximumCount: <strong>SIGNED32</strong>; lpName: <strong>LPSTR</strong>): <strong>HANDLE</strong></pre>
+<hr><h2 id="#_538F8A40"><a name="Kernel32.CreateThread"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CreateThread">CreateThread</a>
+</h2>
+<p> The CreateThread function creates a thread to execute within the address space of the calling process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> CreateThread-: <strong>PROCEDURE</strong>{WINAPI} (lpThreadAttributes: <strong>ADDRESS</strong>; dwStackSize: <strong>SIGNED32</strong>; lpStartAddress: <strong>ThreadProc</strong>; lpParameter: @Any0; dwCreationFlags: <strong>INTEGERSET</strong>; <strong>VAR</strong> lpThreadId: <strong>SIGNED32</strong>): <strong>HANDLE</strong></pre>
+<hr><h2 id="#_53905B40"><a name="Kernel32.DeleteCriticalSection"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.DeleteCriticalSection">DeleteCriticalSection</a>
+</h2>
+<p> The DeleteCriticalSection function releases all resources used by an unowned critical section object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DeleteCriticalSection-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>)</pre>
+<hr><h2 id="#_5390D500"><a name="Kernel32.DeleteFile"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.DeleteFile">DeleteFile</a>
+</h2>
+<p> The DeleteFile function deletes an existing file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DeleteFile-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_539144C0"><a name="Kernel32.DisableThreadLibraryCalls"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.DisableThreadLibraryCalls">DisableThreadLibraryCalls</a>
+</h2>
+<p> The DisableThreadLibraryCalls function disables the DLL_THREAD_ATTACH and DLL_THREAD_DETACH notifications for the dynamic-link library (DLL) specified by hLibModule.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DisableThreadLibraryCalls-: <strong>PROCEDURE</strong>{WINAPI} (hLibModule: <strong>HMODULE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_5391D100"><a name="Kernel32.DuplicateHandle"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.DuplicateHandle">DuplicateHandle</a>
+</h2>
+<p> The DuplicateHandle function duplicates an object handle.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> DuplicateHandle-: <strong>PROCEDURE</strong>{WINAPI} (hSourceProcessHandle, hSourceHandle, hTargetProcessHandle: <strong>HANDLE</strong>; <strong>VAR</strong> lpTargetHandle: <strong>HANDLE</strong>; dwDesiredAccess: <strong>INTEGERSET</strong>; bInheritHandle: <strong>BOOL</strong>; dwOptions: <strong>INTEGERSET</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53928180"><a name="Kernel32.EnterCriticalSection"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.EnterCriticalSection">EnterCriticalSection</a>
+</h2>
+<p> The EnterCriticalSection function waits for ownership of the specified critical section object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> EnterCriticalSection-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>)</pre>
+<hr><h2 id="#_5392F740"><a name="Kernel32.EscapeCommFunction"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.EscapeCommFunction">EscapeCommFunction</a>
+</h2>
+<p> The EscapeCommFunction function directs a specified communications device to perform an extended function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> EscapeCommFunction-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; dwFunc: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53938180"><a name="Kernel32.ExitProcess"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ExitProcess">ExitProcess</a>
+</h2>
+<p> The ExitProcess function ends a process and all its threads.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ExitProcess-: <strong>PROCEDURE</strong>{WINAPI} (uExitCode: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_5393EB40"><a name="Kernel32.ExitThread"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ExitThread">ExitThread</a>
+</h2>
+<p> The ExitThread function ends a thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ExitThread-: <strong>PROCEDURE</strong>{WINAPI} (dwExitCode: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_53944600"><a name="Kernel32.FileTimeToLocalFileTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FileTimeToLocalFileTime">FileTimeToLocalFileTime</a>
+</h2>
+<p> The FileTimeToLocalFileTime function converts a file time based on the Coordinated Universal Time (UTC) to a local file time.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> FileTimeToLocalFileTime-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileTime: <strong>FileTime</strong>; <strong>VAR</strong> lpLocalFileTime: <strong>FileTime</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_5394EE40"><a name="Kernel32.FileTimeToSystemTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FileTimeToSystemTime">FileTimeToSystemTime</a>
+</h2>
+<p> The FileTimeToSystemTime function converts a 64-bit file time to system time format.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> FileTimeToSystemTime-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileTime: <strong>FileTime</strong>; <strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53957B80"><a name="Kernel32.FindClose"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FindClose">FindClose</a>
+</h2>
+<p> The FindClose function closes the specified search handle.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> FindClose-: <strong>PROCEDURE</strong>{WINAPI} (hFindFile: <strong>HANDLE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_5395E3C0"><a name="Kernel32.FindFirstFile"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FindFirstFile">FindFirstFile</a>
+</h2>
+<p> The FindFirstFile function searches a directory for a file whose name matches the specified filename.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> FindFirstFile-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpFindFileDate: <strong>FindData</strong>): <strong>HANDLE</strong></pre>
+<hr><h2 id="#_53968500"><a name="Kernel32.FindNextFile"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FindNextFile">FindNextFile</a>
+</h2>
+<p> The FindNextFile function continues a file search from a previous call to the FindFirstFile function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> FindNextFile-: <strong>PROCEDURE</strong>{WINAPI} (hFindFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpFindFileDate: <strong>FindData</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_539719C0"><a name="Kernel32.FlushFileBuffers"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FlushFileBuffers">FlushFileBuffers</a>
+</h2>
+<p> The FlushFileBuffers function clears the buffers for the specified file and causes all buffered data to be written to the file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> FlushFileBuffers-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_5397B380"><a name="Kernel32.FreeConsole"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FreeConsole">FreeConsole</a>
+</h2>
+<p> The FreeConsole function detaches the calling process from its console</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> FreeConsole-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53981940"><a name="Kernel32.FreeLibrary"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.FreeLibrary">FreeLibrary</a>
+</h2>
+<p> The FreeLibrary function decrements the reference count of the loaded dynamic-link library (DLL) module. When the reference count reaches zero, the module is unmapped from the address space of the calling process and the handle is no longer valid.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> FreeLibrary-: <strong>PROCEDURE</strong>{WINAPI} (hLibModule: <strong>HMODULE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_5398F980"><a name="Kernel32.GetCommandLine"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetCommandLine">GetCommandLine</a>
+</h2>
+<p> The GetCommandLine function returns a pointer to the command-line string for the current process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCommandLine-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>LPSTR</strong></pre>
+<hr><h2 id="#_53996EC0"><a name="Kernel32.GetCommModemStatus"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetCommModemStatus">GetCommModemStatus</a>
+</h2>
+<p> The GetCommModemStatus function retrieves modem control-register values.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCommModemStatus-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpModemStat: <strong>INTEGERSET</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_5399E480"><a name="Kernel32.GetCommState"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetCommState">GetCommState</a>
+</h2>
+<p> The GetCommState function retrieves the current control settings for a specified communications device.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCommState-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpDCB: <strong>DCB</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_539A7240"><a name="Kernel32.GetComputerName"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetComputerName">GetComputerName</a>
+</h2>
+<p> The GetComputerName function retrieves the NetBIOS name of the local computer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetComputerName-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpnSize: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_539B0500"><a name="Kernel32.GetCurrentDirectory"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetCurrentDirectory">GetCurrentDirectory</a>
+</h2>
+<p> The GetCurrentDirectory function retrieves the current directory for the current process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCurrentDirectory-: <strong>PROCEDURE</strong>{WINAPI} (nBufferLength: <strong>SIGNED32</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_539B9240"><a name="Kernel32.GetCurrentProcess"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetCurrentProcess">GetCurrentProcess</a>
+</h2>
+<p> The GetConsoleWindow function retrieves the window handle used by the console associated with the calling process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCurrentProcess-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HANDLE</strong></pre>
+<hr><h2 id="#_539C0F00"><a name="Kernel32.GetCurrentProcessId"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetCurrentProcessId">GetCurrentProcessId</a>
+</h2>
+<p> The GetCurrentProcessId function returns the process identifier of the calling process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCurrentProcessId-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_539C79C0"><a name="Kernel32.GetCurrentThread"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetCurrentThread">GetCurrentThread</a>
+</h2>
+<p> The GetCurrentThread function returns a pseudohandle for the current thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCurrentThread-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HANDLE</strong></pre>
+<hr><h2 id="#_539CDF80"><a name="Kernel32.GetCurrentThreadId"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetCurrentThreadId">GetCurrentThreadId</a>
+</h2>
+<p> The GetCurrentThreadId function returns the thread identifier of the calling thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCurrentThreadId-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_539D4A40"><a name="Kernel32.GetCurrentThreadStackLimits"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetCurrentThreadStackLimits">GetCurrentThreadStackLimits</a>
+</h2>
+<p> Retrieves the boundaries of the stack that was allocated by the system for the current thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetCurrentThreadStackLimits-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lowLimit, highLimit: <strong>SIZE</strong>)</pre>
+<hr><h2 id="#_539DD580"><a name="Kernel32.GetDiskFreeSpace"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetDiskFreeSpace">GetDiskFreeSpace</a>
+</h2>
+<p> The GetDiskFreeSpace function retrieves information about the specified disk, including the amount of free space on the disk.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetDiskFreeSpace-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpRootPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_539E99C0"><a name="Kernel32.GetDriveType"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetDriveType">GetDriveType</a>
+</h2>
+<p> The GetDriveType function determines whether a disk drive is a removable, fixed, CD-ROM, RAM disk, or network drive.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetDriveType-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpRootPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_539F3500"><a name="Kernel32.GetExitCodeProcess"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetExitCodeProcess">GetExitCodeProcess</a>
+</h2>
+<p> The GetExitCodeProcess function retrieves the termination status of the specified process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetExitCodeProcess-: <strong>PROCEDURE</strong>{WINAPI} (hProcess: <strong>HANDLE</strong>; <strong>VAR</strong> lpExitCode: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_539FBB40"><a name="Kernel32.GetFileAttributes"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetFileAttributes">GetFileAttributes</a>
+</h2>
+<p> The GetFileAttributes function returns attributes for a specified file or directory.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetFileAttributes-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>INTEGERSET</strong></pre>
+<hr><h2 id="#_53A04100"><a name="Kernel32.GetFileSize"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetFileSize">GetFileSize</a>
+</h2>
+<p> The GetFileSize function retrieves the size, in bytes, of the specified file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetFileSize-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpFileSizeHigh: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53A0CAC0"><a name="Kernel32.GetFileTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetFileTime">GetFileTime</a>
+</h2>
+<p> The GetFileTime function retrieves the date and time that a file was created, last accessed, and last modified.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetFileTime-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpCreationTime, lpLastAccessTime, lpLastWriteTime: <strong>FileTime</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53A17D00"><a name="Kernel32.GetFullPathName"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetFullPathName">GetFullPathName</a>
+</h2>
+<p> The GetFullPathName function retrieves the full path and filename of a specified file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetFullPathName-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nBufferLength: <strong>SIGNED32</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; lpFilePart: <strong>LPSTR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53A23A80"><a name="Kernel32.GetEnvironmentVariable"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetEnvironmentVariable">GetEnvironmentVariable</a>
+</h2>
+<p> The GetEnvironmentVariable function retrieves the value of a variable from the calling process's environment; 0 means it is not set.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetEnvironmentVariable-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nSize: <strong>DWORD</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53A30340"><a name="Kernel32.GetLastError"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetLastError">GetLastError</a>
+</h2>
+<p> The GetLastError function returns the calling thread's last-error code value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetLastError-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53A36900"><a name="Kernel32.GetLocalTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetLocalTime">GetLocalTime</a>
+</h2>
+<p> The GetLocalTime function retrieves the current local date and time.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetLocalTime-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>)</pre>
+<hr><h2 id="#_53A3D640"><a name="Kernel32.GetLogicalDriveStrings"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetLogicalDriveStrings">GetLogicalDriveStrings</a>
+</h2>
+<p> The GetLogicalDriveStrings function retrieves a string containing the drive letters.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetLogicalDriveStrings-: <strong>PROCEDURE</strong>{WINAPI} (nBufferLength: <strong>SIGNED32</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53A45E80"><a name="Kernel32.GetLogicalDrives"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetLogicalDrives">GetLogicalDrives</a>
+</h2>
+<p> The GetModuleFileName function retrieves the full path and filename for the executable file containing the specified module.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetLogicalDrives-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>INTEGERSET</strong></pre>
+<hr><h2 id="#_53A4E0C0"><a name="Kernel32.GetModuleHandle"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetModuleHandle">GetModuleHandle</a>
+</h2>
+<p> The GetModuleHandle function returns a module handle for the specified module if the file has been mapped into the address space of the calling process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetModuleHandle-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpModuleName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>HMODULE</strong></pre>
+<hr><h2 id="#_53A59740"><a name="Kernel32.GetOverlappedResult"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetOverlappedResult">GetOverlappedResult</a>
+</h2>
+<p> Retrieves the results of an overlapped operation on the specified file, named pipe, or communications device. To specify a timeout interval or wait on an alertable thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetOverlappedResult-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpOverlapped: <strong>Overlapped</strong>; <strong>VAR</strong> lpNumberOfBytesTransferred: <strong>SIGNED32</strong>; bWait: <strong>BOOL</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53A67AC0"><a name="Kernel32.GetPrivateProfileString"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetPrivateProfileString">GetPrivateProfileString</a>
+</h2>
+<p> The GetPrivateProfileString function retrieves a string from the specified section in an initialization file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetPrivateProfileString-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpAppName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> lpKeyName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> lpDefault: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpReturnedString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nSize: <strong>DWORD</strong>; <strong>CONST</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53A77980"><a name="Kernel32.GetProcessAffinityMask"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetProcessAffinityMask">GetProcessAffinityMask</a>
+</h2>
+<p> The GetProcessAffinityMask function retrieves the process affinity mask for the specified process and the system affinity mask for the system.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetProcessAffinityMask-: <strong>PROCEDURE</strong>{WINAPI} (hProcess: <strong>HANDLE</strong>; lpProcessAffinityMask: <strong>ADDRESS</strong>; lpSystemAffinityMask: <strong>ADDRESS</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53A82B40"><a name="Kernel32.GetProcessHeap"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetProcessHeap">GetProcessHeap</a>
+</h2>
+<p> The GetProcessHeap function retrieves a handle to the default heap of the calling process. This handle can then be used in subsequent calls to the heap functions.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetProcessHeap-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>HANDLE</strong></pre>
+<hr><h2 id="#_53A8D340"><a name="Kernel32.GetProcessTimes"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetProcessTimes">GetProcessTimes</a>
+</h2>
+<p> The GetProcessTimes function returns the times spent in kernel mode, user mode ... for the specified process</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetProcessTimes-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> hProcess: <strong>HANDLE</strong>; <strong>VAR</strong> lpCreationTime, lpExitTime, lpKernelTime, lpUserTime: <strong>FileTime</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53A98D00"><a name="Kernel32.GetStartupInfo"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetStartupInfo">GetStartupInfo</a>
+</h2>
+<p> The GetStartupInfo function retrieves the contents of the StartupInfo structure that was specified when the calling process was created.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetStartupInfo-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpStartupInfo: <strong>StartupInfo</strong>)</pre>
+<hr><h2 id="#_53AA1DC0"><a name="Kernel32.GetSystemInfo"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetSystemInfo">GetSystemInfo</a>
+</h2>
+<p> Retrieves information about the current system.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetSystemInfo-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemInfo: <strong>SystemInfo</strong>)</pre>
+<hr><h2 id="#_53AA7C00"><a name="Kernel32.GetStdHandle"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetStdHandle">GetStdHandle</a>
+</h2>
+<p> The GetStdHandle function returns a handle for the standard input, standard output, or standard error device.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetStdHandle-: <strong>PROCEDURE</strong>{WINAPI} (nStdHandle: <strong>SIGNED32</strong>): <strong>HANDLE</strong></pre>
+<hr><h2 id="#_53AB0240"><a name="Kernel32.GetSystemTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetSystemTime">GetSystemTime</a>
+</h2>
+<p> The GetSystemTime function retrieves the current system date and time. The system time is expressed in Coordinated Universal Time (UTC).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetSystemTime-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>)</pre>
+<hr><h2 id="#_53AB9680"><a name="Kernel32.GetTempFileName"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetTempFileName">GetTempFileName</a>
+</h2>
+<p> The GetTempFileName function creates a name for a temporary file. The filename is the concatenation of specified path and prefix strings, a hexadecimal string formed from a specified integer, and the .TMP extension.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetTempFileName-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPathName, lpPrefixName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; uUnique: <strong>SIGNED32</strong>; <strong>VAR</strong> lpTempFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53AC9780"><a name="Kernel32.GetTempPath"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetTempPath">GetTempPath</a>
+</h2>
+<p> The GetTempPath function retrieves the path of the directory designated for temporary files.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetTempPath-: <strong>PROCEDURE</strong>{WINAPI} (nBufferLength: <strong>SIGNED32</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53AD2BC0"><a name="Kernel32.GetThreadContext"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetThreadContext">GetThreadContext</a>
+</h2>
+<p> The GetThreadContext function retrieves the context of the specified thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetThreadContext-: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; <strong>VAR</strong> lpContext: <strong>Context</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53ADAD00"><a name="Kernel32.GetThreadPriority"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetThreadPriority">GetThreadPriority</a>
+</h2>
+<p> The GetThreadPriority function returns the priority value for the specified thread. This value, together with the priority class of the thread's process, determines the thread's base-priority level.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetThreadPriority-: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53AE5F00"><a name="Kernel32.GetThreadTimes"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetThreadTimes">GetThreadTimes</a>
+</h2>
+<p> The GetThreadTimes function returns the times spent in kernel mode, user mode ... specified thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetThreadTimes-: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; <strong>VAR</strong> lpCreationTime, lpExitTime, lpKernelTime, lpUserTime: <strong>FileTime</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53AF0C40"><a name="Kernel32.GetTickCount"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetTickCount">GetTickCount</a>
+</h2>
+<p> The GetTickCount function retrieves the number of milliseconds that have elapsed since the system was started.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetTickCount-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53AF8900"><a name="Kernel32.GetTimeZoneInformation"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetTimeZoneInformation">GetTimeZoneInformation</a>
+</h2>
+<p> The GetTimeZoneInformation function retrieves information about timezone setup.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetTimeZoneInformation-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpTimeZoneInformation: <strong>TimeZoneInformation</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53AFF4C0"><a name="Kernel32.GetWindowsDirectory"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetWindowsDirectory">GetWindowsDirectory</a>
+</h2>
+<p> The GetWindowsDir function retrieves the path of the Windows directory.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetWindowsDirectory-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nBufferLength: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53B07D00"><a name="Kernel32.GetVersion"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetVersion">GetVersion</a>
+</h2>
+<p> The GetVersion function returns the current version number of the operating system.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetVersion-: <strong>PROCEDURE</strong>{WINAPI} (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53B0EB40"><a name="Kernel32.GetVersionEx"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetVersionEx">GetVersionEx</a>
+</h2>
+<p> The GetVersionEx function obtains extended information about the version of the operating system that is currently running.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GetVersionEx-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpVersionInfo: <strong>OSVersionInfo</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53B17A80"><a name="Kernel32.GlobalAddAtom"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GlobalAddAtom">GlobalAddAtom</a>
+</h2>
+<p> The GlobalAddAtom function adds a character string to the global atom table and returns a unique value (an atom) identifying the string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GlobalAddAtom-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ATOM</strong></pre>
+<hr><h2 id="#_53B223C0"><a name="Kernel32.GlobalAlloc"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GlobalAlloc">GlobalAlloc</a>
+</h2>
+<p> The GlobalAlloc function allocates the specified number of bytes from the heap.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GlobalAlloc-: <strong>PROCEDURE</strong>{WINAPI} (uFlags: <strong>INTEGERSET</strong>; dwBytes: <strong>SIZE</strong>): <strong>HGLOBAL</strong></pre>
+<hr><h2 id="#_53B2AA00"><a name="Kernel32.GlobalDeleteAtom"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GlobalDeleteAtom">GlobalDeleteAtom</a>
+</h2>
+<p> The GlobalDeleteAtom function decrements the reference count of a global string atom.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GlobalDeleteAtom-: <strong>PROCEDURE</strong>{WINAPI} (nAtom: <strong>ATOM</strong>): <strong>ATOM</strong></pre>
+<hr><h2 id="#_53B321C0"><a name="Kernel32.GlobalLock"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GlobalLock">GlobalLock</a>
+</h2>
+<p> The GlobalLock function locks a global memory object and returns a pointer to the first byte of the object's memory block.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GlobalLock-: <strong>PROCEDURE</strong>{WINAPI} (hMem: <strong>HGLOBAL</strong>): <strong>ADDRESS</strong></pre>
+<hr><h2 id="#_53B3BB80"><a name="Kernel32.GlobalReAlloc"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GlobalReAlloc">GlobalReAlloc</a>
+</h2>
+<p> The GlobalReAlloc function changes the size or attributes of a specified global memory object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GlobalReAlloc-: <strong>PROCEDURE</strong>{WINAPI} (hMem: <strong>HGLOBAL</strong>; dwBytes: <strong>SIGNED32</strong>; uFlags: <strong>DWORD</strong>): <strong>HGLOBAL</strong></pre>
+<hr><h2 id="#_53B455C0"><a name="Kernel32.GlobalSize"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GlobalSize">GlobalSize</a>
+</h2>
+<p> The GlobalSize function retrieves the current size, in bytes, of the specified global memory object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GlobalSize-: <strong>PROCEDURE</strong>{WINAPI} (hMem: <strong>HGLOBAL</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="#_53B4D880"><a name="Kernel32.GlobalUnlock"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GlobalUnlock">GlobalUnlock</a>
+</h2>
+<p> The GlobalUnlock function decrements the lock count associated with a memory object that was allocated with the GMEM_MOVEABLE flag.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> GlobalUnlock-: <strong>PROCEDURE</strong>{WINAPI} (hMem: <strong>HGLOBAL</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53B56B40"><a name="Kernel32.HeapAlloc"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.HeapAlloc">HeapAlloc</a>
+</h2>
+<p> The HeapAlloc function allocates a block of memory from a heap. The allocated memory is not movable.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> HeapAlloc-: <strong>PROCEDURE</strong>{WINAPI} (hHeap: <strong>HANDLE</strong>; dwFlags: <strong>SIGNED32</strong>; size: <strong>SIZE</strong>): <strong>ADDRESS</strong></pre>
+<hr><h2 id="#_53B61280"><a name="Kernel32.HeapFree"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.HeapFree">HeapFree</a>
+</h2>
+<p> The HeapFree function frees a memory block allocated from a heap by the HeapAlloc or HeapReAlloc function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> HeapFree-: <strong>PROCEDURE</strong>{WINAPI} (hHeap: <strong>HANDLE</strong>; dwFlags: <strong>SIGNED32</strong>; lpMem: <strong>ADDRESS</strong>): <strong>ADDRESS</strong></pre>
+<hr><h2 id="#_53B6B9C0"><a name="Kernel32.InitializeCriticalSection"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.InitializeCriticalSection">InitializeCriticalSection</a>
+</h2>
+<p> The InitializeCriticalSection function initializes a critical section object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> InitializeCriticalSection-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>)</pre>
+<hr><h2 id="#_53B72000"><a name="Kernel32.InterlockedDecrement"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.InterlockedDecrement">InterlockedDecrement</a>
+</h2>
+<p> The InterlockedDecrement function both decrements (decreases by one) the value of the specified 32-bit variable and checks the resulting value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> InterlockedDecrement-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpAddend: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53B7B9C0"><a name="Kernel32.InterlockedIncrement"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.InterlockedIncrement">InterlockedIncrement</a>
+</h2>
+<p> The InterlockedIncrement function both increments (increases by one) the value of the specified 32-bit variable and checks the resulting value.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> InterlockedIncrement-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpAddend: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53B85380"><a name="Kernel32.LeaveCriticalSection"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.LeaveCriticalSection">LeaveCriticalSection</a>
+</h2>
+<p> The LeaveCriticalSection function releases ownership of the specified critical section object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> LeaveCriticalSection-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>)</pre>
+<hr><h2 id="#_53B8C5C0"><a name="Kernel32.LocalFileTimeToFileTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.LocalFileTimeToFileTime">LocalFileTimeToFileTime</a>
+</h2>
+<p> The LocalFileTimeToFileTime function converts a local file time to a file time based on the Coordinated Universal Time (UTC).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> LocalFileTimeToFileTime-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpLocalFileTime: <strong>FileTime</strong>; <strong>VAR</strong> lpFileTime: <strong>FileTime</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53B96E00"><a name="Kernel32.MoveFileEx"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.MoveFileEx">MoveFileEx</a>
+</h2>
+<p> The MoveFileEx function renames an existing file or directory.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> MoveFileEx-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpExistingFileName, lpNewFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dwFlags: <strong>INTEGERSET</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53B9FC40"><a name="Kernel32.outputDebugString"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.outputDebugString">outputDebugString</a>
+</h2>
+<p> The OutputDebugString function sends a string to the debugger for the current application.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> outputDebugString-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpOutputString: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_53BA7E00"><a name="Kernel32.PurgeComm"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.PurgeComm">PurgeComm</a>
+</h2>
+<p> The PurgeComm function discards all characters from the output or input buffer of a specified communications resource.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> PurgeComm-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; dwFlags: <strong>INTEGERSET</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53BB1840"><a name="Kernel32.QueryDosDevice"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.QueryDosDevice">QueryDosDevice</a>
+</h2>
+<p> The QueryDosDevice function retrieves information about MS-DOS device names.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> QueryDosDevice-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpDeviceName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpTargetPath: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ucchMax: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53BBB680"><a name="Kernel32.QueryPerformanceCounter"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.QueryPerformanceCounter">QueryPerformanceCounter</a>
+</h2>
+<p> The QueryPerformanceCounter function retrieves the current value of the high-resolution performance counter, if one exists.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> QueryPerformanceCounter-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPerformaceCount: <strong>LargeInteger</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53BC3CC0"><a name="Kernel32.QueryPerformanceFrequency"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.QueryPerformanceFrequency">QueryPerformanceFrequency</a>
+</h2>
+<p> The QueryPerformanceFrequency function retrieves the frequency of the high-resolution performance counter, if one exists.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> QueryPerformanceFrequency-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFrequency: <strong>LargeInteger</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53BCBF80"><a name="Kernel32.QueryThreadCycleTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.QueryThreadCycleTime">QueryThreadCycleTime</a>
+</h2>
+<p> Retrieves the cycle time for the specified thread (both user and kernel mode, Windows Vista and newer)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> QueryThreadCycleTime-: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; <strong>VAR</strong> cycleTime: <strong>SIGNED64</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53BD5D40"><a name="Kernel32.ReadFile"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ReadFile">ReadFile</a>
+</h2>
+<p> The ReadFile function reads data from a file, starting at the position indicated by the file pointer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ReadFile-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; nNumberOfBytesToRead: <strong>SIGNED32</strong>; <strong>VAR</strong> lpNumberOfBytesRead: <strong>SIGNED32</strong>; <strong>VAR</strong> lpOverlapped: <strong>Overlapped</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53BE34C0"><a name="Kernel32.ReadProcessMemory"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ReadProcessMemory">ReadProcessMemory</a>
+</h2>
+<p> The ReadProcessMemory function reads data from an area of memory in a specified process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ReadProcessMemory-: <strong>PROCEDURE</strong>{WINAPI} (hProcess: <strong>HANDLE</strong>; lpBaseAddress: <strong>ADDRESS</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; nSize: <strong>SIGNED32</strong>; <strong>VAR</strong> lpNumberOfBytesRead: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53BEFBC0"><a name="Kernel32.ReleaseSemaphore"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ReleaseSemaphore">ReleaseSemaphore</a>
+</h2>
+<p> The ReleaseSemaphore function increases the count of the specified semaphore object by a specified amount.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ReleaseSemaphore-: <strong>PROCEDURE</strong>{WINAPI} (hSemaphore: <strong>HANDLE</strong>; lReleaseCount: <strong>SIGNED32</strong>; lpPreviousCount: <strong>ADDRESS</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53BF9A00"><a name="Kernel32.RemoveDirectory"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.RemoveDirectory">RemoveDirectory</a>
+</h2>
+<p> The RemoveDirectory function deletes an existing empty directory.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> RemoveDirectory-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C00E40"><a name="Kernel32.RemoveVectoredContinueHandler"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.RemoveVectoredContinueHandler">RemoveVectoredContinueHandler</a>
+</h2>
+<p> unregisters a vectored continue handler.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> RemoveVectoredContinueHandler-: <strong>PROCEDURE</strong>{WINAPI} (vectoredHandler: <strong>VectoredExceptionHandler</strong>): <strong>ULONG</strong></pre>
+<hr><h2 id="#_53C07300"><a name="Kernel32.RemoveVectoredExceptionHandler"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.RemoveVectoredExceptionHandler">RemoveVectoredExceptionHandler</a>
+</h2>
+<p> unregisters a vectored exception handler.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> RemoveVectoredExceptionHandler-: <strong>PROCEDURE</strong>{WINAPI} (vectoredHandler: <strong>VectoredExceptionHandler</strong>): <strong>ULONG</strong></pre>
+<hr><h2 id="#_53C0CFC0"><a name="Kernel32.ResetEvent"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ResetEvent">ResetEvent</a>
+</h2>
+<p> The ResetEvent function sets the state of the specified event object to nonsignaled.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ResetEvent-: <strong>PROCEDURE</strong>{WINAPI} (hEvent: <strong>HANDLE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C14B00"><a name="Kernel32.ResumeThread"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.ResumeThread">ResumeThread</a>
+</h2>
+<p> The ResumeThread function decrements a thread's suspend count.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ResumeThread-: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53C1B340"><a name="Kernel32.SearchPath"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SearchPath">SearchPath</a>
+</h2>
+<p> The SearchPath function searches for the specified file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SearchPath-: <strong>PROCEDURE</strong>{WINAPI} (<strong>CONST</strong> lpPath, lpFileName, lpExtension: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; nBufferLength: <strong>DWORD</strong>; <strong>VAR</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lpFilePart: <strong>LPSTR</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53C27040"><a name="Kernel32.SetCommBreak"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetCommBreak">SetCommBreak</a>
+</h2>
+<p> The SetCommBreak function suspends character transmission for a specified communications device and places the transmission line in a break state until the ClearCommBreak function is called.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetCommBreak-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C31EC0"><a name="Kernel32.SetCommMask"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetCommMask">SetCommMask</a>
+</h2>
+<p> The SetCommMask function specifies a set of events to be monitored for a communications device.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetCommMask-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; dwEvtMask: <strong>DWORD</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C3AF80"><a name="Kernel32.SetCommState"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetCommState">SetCommState</a>
+</h2>
+<p> The SetCommState function configures a communications device according to the specifications in a device-control block (a DCB structure)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetCommState-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpDCB: <strong>DCB</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C450C0"><a name="Kernel32.SetCommTimeouts"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetCommTimeouts">SetCommTimeouts</a>
+</h2>
+<p> The SetCommTimeouts function sets the time-out parameters for all read and write operations on a specified communications device.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetCommTimeouts-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpCommTimeouts: <strong>CommTimeouts</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C4F200"><a name="Kernel32.SetConsoleCursorPosition"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetConsoleCursorPosition">SetConsoleCursorPosition</a>
+</h2>
+<p> the SetConsoleCursorPosition sets the cursor position in the specified console screen buffer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetConsoleCursorPosition-: <strong>PROCEDURE</strong>{WINAPI} (hConsoleOutput: <strong>HANDLE</strong>; dwCursorPosition: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C57840"><a name="Kernel32.SetConsoleScreenBufferSize"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetConsoleScreenBufferSize">SetConsoleScreenBufferSize</a>
+</h2>
+<p> The SetConsoleScreenBufferSize function changes the size of the specified console screen buffer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetConsoleScreenBufferSize-: <strong>PROCEDURE</strong>{WINAPI} (hConsoleOuput: <strong>HANDLE</strong>; dwSize: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C5FE80"><a name="Kernel32.SetConsoleTextAttribute"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetConsoleTextAttribute">SetConsoleTextAttribute</a>
+</h2>
+<p> The SetConsoleTextAttribute function sets the attributes of characters written to the console screen buffer by the WriteFile or WriteConsole function, or echoed by the ReadFile or ReadConsole function.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetConsoleTextAttribute-: <strong>PROCEDURE</strong>{WINAPI} (hConsoleOutput: <strong>HANDLE</strong>; wAttributes: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C6C280"><a name="Kernel32.SetConsoleTitle"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetConsoleTitle">SetConsoleTitle</a>
+</h2>
+<p> The SetConsoleTitle function sets the title bar string for the current console window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetConsoleTitle-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpConsoleTitle: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C749C0"><a name="Kernel32.SetConsoleWindowInfo"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetConsoleWindowInfo">SetConsoleWindowInfo</a>
+</h2>
+<p> The SetConsoleWindowInfo function sets the current size and position of a console screen buffer's window.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetConsoleWindowInfo-: <strong>PROCEDURE</strong>{WINAPI} (hConsoleOuput: <strong>HANDLE</strong>; bAbsolute: <strong>BOOL</strong>; <strong>VAR</strong> lpConsoleWindow: <strong>SmallRect</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C7ED80"><a name="Kernel32.SetCurrentDirectory"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetCurrentDirectory">SetCurrentDirectory</a>
+</h2>
+<p> The SetCurrentDirectory function changes the current directory for the current process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetCurrentDirectory-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpPathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C86DC0"><a name="Kernel32.SetErrorMode"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetErrorMode">SetErrorMode</a>
+</h2>
+<p> The SetErrorMode function controls whether the system will handle the specified types of serious errors, or whether the process will handle them.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetErrorMode-: <strong>PROCEDURE</strong>{WINAPI} (uMode: <strong>DWORD</strong>): <strong>DWORD</strong></pre>
+<hr><h2 id="#_53C90B00"><a name="Kernel32.SetEndOfFile"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetEndOfFile">SetEndOfFile</a>
+</h2>
+<p> The SetEndOfFile function moves the end-of-file (EOF) position for the specified file to the current position of the file pointer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetEndOfFile-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53C9A140"><a name="Kernel32.SetEvent"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetEvent">SetEvent</a>
+</h2>
+<p> The SetEvent function sets the state of the specified event object to signaled.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetEvent-: <strong>PROCEDURE</strong>{WINAPI} (hEvent: <strong>HANDLE</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53CA1C80"><a name="Kernel32.SetFileAttributes"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetFileAttributes">SetFileAttributes</a>
+</h2>
+<p> The SetFileAttributes function sets a file's attributes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetFileAttributes-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; dwFileAttributes: <strong>INTEGERSET</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53CA9940"><a name="Kernel32.SetFilePointer"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetFilePointer">SetFilePointer</a>
+</h2>
+<p> The SetFilePointer function moves the file pointer of an open file.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetFilePointer-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; lDistanceToMove: <strong>SIGNED32</strong>; <strong>VAR</strong> lpDistanceToMoveHigh: <strong>SIGNED32</strong>; dwMoveMethod: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53CB3B80"><a name="Kernel32.SetFileTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetFileTime">SetFileTime</a>
+</h2>
+<p> The SetFileTime function sets the date and time that a file was created, last accessed, or last modified.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetFileTime-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>VAR</strong> lpCreationTime, lpLastAccessTime, lpLastWriteTime: <strong>FileTime</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53CBEDC0"><a name="Kernel32.SetLocalTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetLocalTime">SetLocalTime</a>
+</h2>
+<p> The SetLocalTime function sets the current local time and date.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetLocalTime-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53CC6080"><a name="Kernel32.SetThreadAffinityMask"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetThreadAffinityMask">SetThreadAffinityMask</a>
+</h2>
+<p> The SetThreadAffinityMask function sets a processor affinity mask for the specified thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetThreadAffinityMask-: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; dwThreadAffinityMask: <strong>DWORD</strong>): <strong>DWORD</strong></pre>
+<hr><h2 id="#_53CCE6C0"><a name="Kernel32.SetThreadContext"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetThreadContext">SetThreadContext</a>
+</h2>
+<p> The SetThreadContext function sets the context in the specified thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetThreadContext-: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; <strong>VAR</strong> lpContext: <strong>Context</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53CD6800"><a name="Kernel32.SetThreadPriority"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetThreadPriority">SetThreadPriority</a>
+</h2>
+<p> The SetThreadPriority function sets the priority value for the specified thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetThreadPriority-: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; nPriority: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53CDEAC0"><a name="Kernel32.SetupComm"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SetupComm">SetupComm</a>
+</h2>
+<p> The SetupComm function initializes the communications parameters for a specified communications device.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SetupComm-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; dwInQueue, dwOutQueue: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53CE7900"><a name="Kernel32.Sleep"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.Sleep">Sleep</a>
+</h2>
+<p> The Sleep function suspends the execution of the current thread for a specified interval.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> Sleep-: <strong>PROCEDURE</strong>{WINAPI} (dwMilliseconds: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="#_53CEF240"><a name="Kernel32.TerminateProcess"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.TerminateProcess">TerminateProcess</a>
+</h2>
+<p> The SuspendThread function suspends the specified thread.</p>
+
+<p> The TerminateProcess function ends a process and all of its threads.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> TerminateProcess-: <strong>PROCEDURE</strong>{WINAPI} (hProcess: <strong>HANDLE</strong>; uExitCode: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53CF9300"><a name="Kernel32.SystemTimeToFileTime"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.SystemTimeToFileTime">SystemTimeToFileTime</a>
+</h2>
+<p> The SystemTimeToFileTime function converts a system time to a file time.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> SystemTimeToFileTime-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpSystemTime: <strong>SystemTime</strong>; <strong>VAR</strong> lpFileTime: <strong>FileTime</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53D01CC0"><a name="Kernel32.TerminateThread"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.TerminateThread">TerminateThread</a>
+</h2>
+<p> The TerminateThread function terminates a thread.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> TerminateThread-: <strong>PROCEDURE</strong>{WINAPI} (hThread: <strong>HANDLE</strong>; dwExitCode: <strong>SIGNED32</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53D08B80"><a name="Kernel32.TryEnterCriticalSection"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.TryEnterCriticalSection">TryEnterCriticalSection</a>
+</h2>
+<p> The TryEnterCriticalSection function attempts to enter a critical section without blocking.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> TryEnterCriticalSection-: <strong>PROCEDURE</strong>{WINAPI} (<strong>VAR</strong> lpCriticalSection: <strong>CriticalSection</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53D10340"><a name="Kernel32.VirtualAlloc"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.VirtualAlloc">VirtualAlloc</a>
+</h2>
+<p> The VirtualAlloc function reserves or commits a region of pages in the virtual address space of the calling process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> VirtualAlloc-: <strong>PROCEDURE</strong>{WINAPI} (lpAddress: <strong>ADDRESS</strong>; dwSize: <strong>SIZE</strong>; flAllocationType, flProtect: <strong>INTEGERSET</strong>): <strong>ADDRESS</strong></pre>
+<hr><h2 id="#_53D1BB00"><a name="Kernel32.VirtualFree"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.VirtualFree">VirtualFree</a>
+</h2>
+<p> The VirtualFree function releases or decommits (or both) a region of pages within the virtual address space of the calling process.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> VirtualFree-: <strong>PROCEDURE</strong>{WINAPI} (lpAddress: <strong>ADDRESS</strong>; dwSize: <strong>SIZE</strong>; dwFreeType: <strong>INTEGERSET</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53D27040"><a name="Kernel32.WaitForSingleObject"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.WaitForSingleObject">WaitForSingleObject</a>
+</h2>
+<p> The WaitForSingleObject function returns when one of the following occurs: The specified object is in the signaled state. The time-out interval elapses.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> WaitForSingleObject-: <strong>PROCEDURE</strong>{WINAPI} (hHandle: <strong>HANDLE</strong>; dwMilliseconds: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="#_53D31C00"><a name="Kernel32.WriteFile"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.WriteFile">WriteFile</a>
+</h2>
+<p> The WriteFile function writes data to a file and is designed for both synchronous and asynchronous operation.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> WriteFile-: <strong>PROCEDURE</strong>{WINAPI} (hFile: <strong>HANDLE</strong>; <strong>CONST</strong> lpBuffer: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; nNumberOfBytesToWrite: <strong>DWORD</strong>; <strong>VAR</strong> lpNumberOfBytesWritten: <strong>DWORD</strong>; <strong>VAR</strong> lpOverlapped: <strong>Overlapped</strong>): <strong>BOOL</strong></pre>
+<hr><h2 id="#_53D3F380"><a name="Kernel32.OutputString"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.OutputString">OutputString</a>
+</h2>
+<p> Thread abort notifier, parameter is the threads id. Note this should only be used in modules which can't use the exception handling mechanism provided by module Exceptions.</p>
+
+<p> Method used to write text to the Console.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> OutputString*: <strong>PROCEDURE</strong> (<strong>CONST</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="#_53D4C680"><a name="Kernel32.GetProcAddress"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.GetProcAddress">GetProcAddress</a>
+</h2>
+<p> Wrapper for getProcAddress.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetProcAddress* (hModule: <strong>HMODULE</strong>; <strong>CONST</strong> procName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> adr: <strong>ADDRESS</strong>)</pre>
+<hr><h2 id="#_53D53280"><a name="Kernel32.CopyString"></a><a href="#Kernel32">Kernel32</a>.<a href="#Kernel32.CopyString">CopyString</a>
+</h2>
+<p> Copy a zero-terminated string from address lpString.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CopyString* (lpString: <strong>LPSTR</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>
