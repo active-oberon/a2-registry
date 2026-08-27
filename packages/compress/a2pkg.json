@@ -1,0 +1,33 @@
+{
+  "name": "community/compress",
+  "version": "0.0.0",
+  "tier": 4,
+  "context": "A2",
+  "description": "DEFLATE and what is built on it: the zlib codec with its buffers and stream readers/writers, raw inflate, gzip, and the move-to-front and OZip3 experiments beside them.",
+  "provides": [
+    "GZip",
+    "Inflate",
+    "MoveToFront",
+    "OZip3",
+    "Zlib",
+    "ZlibBuffers",
+    "ZlibDeflate",
+    "ZlibInflate",
+    "ZlibReaders",
+    "ZlibWriters"
+  ],
+  "requires": {
+    "std/base": "*",
+    "std/runtime": "*",
+    "std/system": "*",
+    "std/text": "*"
+  },
+  "residual": [
+    "Vendored from minia2 source/ on 2026-08-27, when std stopped carrying it (docs/STDLIB.md there). The sources also stay in minia2 source/: dropping them would break the full A2 build and widen the diff against vanilla ETH, so this is a second copy on purpose and `upstream` names the first one.",
+    "This is what ZIP and PNG stand on, so it comes out of std before lib/archive and lib/gui can follow."
+  ],
+  "upstream": "minia2:source",
+  "excludes": {
+    "BWHCompressor": "imports NextPrime, which is in lib/numbers and not published yet; a Burrows-Wheeler/Huffman experiment with no user in the tree"
+  }
+}

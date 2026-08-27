@@ -20,6 +20,7 @@ import json, glob, os, re, sys
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TREE = os.environ.get("A2OBERON", os.path.join(os.path.dirname(HERE), "a2oberon"))
+MINIA2 = os.environ.get("MINIA2", os.path.join(os.path.dirname(HERE), "minia2"))
 
 def module(path):
     """The module a file declares -- read from the file, the way ob reads it (sdk/Ob.Mod
@@ -52,6 +53,22 @@ for manifest in sorted(glob.glob(os.path.join(HERE, "packages", "*", "a2pkg.json
     upstream = pkg.get("upstream")
     if not upstream:
         skipped.append(f"{name} (no upstream)"); continue
+    if upstream.startswith("minia2:"):
+        # A package vendored out of minia2 source/ keeps a second copy of files that must stay
+        # in the tree (dropping them breaks the full A2 build). There is no directory to account
+        # for -- source/ is the whole library -- so what can rot here is the copy drifting from
+        # the original. Compare them byte for byte instead.
+        d = os.path.join(MINIA2, upstream.split(":", 1)[1])
+        if not os.path.isdir(d):
+            skipped.append(f"{name} (no {upstream} under {MINIA2})"); continue
+        for m in pkg.get("provides", []):
+            there, here_ = os.path.join(d, m + ".Mod"), os.path.join(here, m + ".Mod")
+            if not os.path.exists(there):
+                problems.append(f"{name}: {m} is not in {upstream} any more")
+            elif open(there, "rb").read() != open(here_, "rb").read():
+                problems.append(f"{name}: {m} has drifted from {upstream}")
+        checked += 1
+        continue
     d = os.path.join(TREE, upstream)
     if not os.path.isdir(d):
         skipped.append(f"{name} (no {upstream} under {TREE})"); continue
