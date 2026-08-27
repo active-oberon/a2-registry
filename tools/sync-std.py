@@ -31,7 +31,12 @@ os.path.isdir(src) or die(f"no tree at {TREE} (set MINIA2)")
 
 # What travels: every manifest of minia2's, under the same relative path. Community packages here
 # have no counterpart there and are left exactly as they are.
-manifests = sorted(glob.glob(os.path.join(src, "*", "*", "a2pkg.json")))
+# std/, attic/ and apps/ travel; lib/ does not. A lib/* package is library that is not standard,
+# and its sources are still in minia2 source/ -- it becomes community/<name> here only when they
+# move, and then it is a package of this repository, not a copy of that one.
+CARRIED = ("std", "attic", "apps")
+manifests = sorted(m for c in CARRIED
+                   for m in glob.glob(os.path.join(src, c, "*", "a2pkg.json")))
 manifests or die(f"no manifests under {src}")
 
 changes, index_entries = [], {}
@@ -67,8 +72,9 @@ for m in manifests:
 idx_path = os.path.join(HERE, "index.json")
 idx = json.load(open(idx_path, encoding="utf-8"))
 pkgs = idx["packages"]
-ours = {k for k in pkgs if k.startswith(("std/", "attic/"))}
-new = {k: v for k, v in pkgs.items() if not k.startswith(("std/", "attic/"))}
+carried = tuple(c + "/" for c in CARRIED)
+ours = {k for k in pkgs if k.startswith(carried)}
+new = {k: v for k, v in pkgs.items() if not k.startswith(carried)}
 for name, entry in index_entries.items():
     old = pkgs.get(name, {})
     for keep in ("doc_pages",):          # written by the documentation step, not by us

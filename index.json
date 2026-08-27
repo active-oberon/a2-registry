@@ -11,8 +11,8 @@
       "install": "in the tree, not in the SDK payload",
       "summary": "The desktop's own programs and tools: viewers and players, the editors and converters, the inspectors and monitors, the installers, and what draws the desktop itself.",
       "requires": [
+        "lib/gui",
         "std/base",
-        "std/gui",
         "std/net",
         "std/runtime",
         "std/system"
@@ -26,9 +26,23 @@
       "install": "in the tree, not in the SDK payload",
       "summary": "The performance monitor: the application, its tabs and components, the alert machinery, and a plugin per thing worth watching -- CPU, memory, heap, disks, network, processes, messages, module variables, the servers.",
       "requires": [
+        "lib/gui",
         "std/base",
-        "std/gui",
         "std/net",
+        "std/runtime",
+        "std/system"
+      ]
+    },
+    "apps/system-tools": {
+      "status": "in-tree",
+      "modules": 3,
+      "path": "packages/apps/system-tools",
+      "tier": 9,
+      "install": "in the tree, not in the SDK payload",
+      "summary": "Commands for looking after the machine: the file tools, the file-handler registry, and the localization commands.",
+      "requires": [
+        "lib/web",
+        "std/base",
         "std/runtime",
         "std/system"
       ]
@@ -112,9 +126,9 @@
       "install": "in the tree, not in the SDK payload",
       "summary": "The Oberon-2 compiler of the old system, and the Minos object format and linker beside it.",
       "requires": [
+        "lib/gui",
         "std/base",
         "std/compiler",
-        "std/gui",
         "std/runtime",
         "std/system",
         "std/text"
@@ -128,8 +142,8 @@
       "install": "in the tree, not in the SDK payload",
       "summary": "The sr voxel and ray engine: volume textures, ray casting, the voxel spaces and the demos over them.",
       "requires": [
+        "lib/gui",
         "std/base",
-        "std/gui",
         "std/runtime",
         "std/system"
       ]
@@ -142,11 +156,11 @@
       "install": "in the tree, not in the SDK payload",
       "summary": "A Subversion client over WebDAV/DeltaV: the HTTP authentication, the XML of the DeltaV methods, the working-copy bookkeeping and the command line above them.",
       "requires": [
+        "lib/web",
         "std/base",
         "std/net",
         "std/runtime",
-        "std/system",
-        "std/web"
+        "std/system"
       ]
     },
     "attic/tf-tools": {
@@ -157,7 +171,7 @@
       "install": "in the tree, not in the SDK payload",
       "summary": "Thomas Frey's own semantic tooling for Active Oberon: a type system and scope tools independent of the Fox front end, and the checker over them.",
       "requires": [
-        "std/archive",
+        "lib/archive",
         "std/base",
         "std/runtime",
         "std/system"
@@ -186,6 +200,31 @@
         "std/system"
       ],
       "summary": "Unix ar archives (the container inside a .deb): read and write."
+    },
+    "community/compress": {
+      "status": "pending-manifest",
+      "modules": 10,
+      "path": "packages/compress",
+      "requires": [
+        "std/base",
+        "std/runtime",
+        "std/system",
+        "std/text"
+      ],
+      "summary": "zlib/DEFLATE, gzip, raw inflate, and the small experimental codecs beside them."
+    },
+    "community/crypto": {
+      "status": "pending-manifest",
+      "modules": 32,
+      "path": "packages/crypto",
+      "requires": [
+        "std/base",
+        "std/runtime",
+        "std/system",
+        "std/text",
+        "std/time"
+      ],
+      "summary": "Ciphers, hashes, HMAC, big numbers, RSA/DSA/DH, Fortuna, ASN.1 and X.509 (the A2 crypto tree)."
     },
     "community/fftw": {
       "status": "validated",
@@ -279,47 +318,17 @@
       "modules": 44,
       "summary": "Grab-bag of experiments and tools. Remeasured 2026-08-24: 6 of 81 compile against the payload -- BASS and BassSound (FFI to the native BASS audio library, a second road to sound beside std/sound), Containers, PascalPreprocessor, ReflectionTools and its test. The rest needs the window system or names that no longer exist. Triage before packaging still stands, but those six are a package's worth."
     },
-    "std/archive": {
-      "status": "bundled",
-      "modules": 6,
-      "path": "packages/std/archive",
-      "tier": 5,
-      "install": "bundled with the SDK",
-      "summary": "ZIP container formats: archive reader/writer, zip-backed file system, zip CLI tool, standalone unzip.",
-      "requires": [
-        "std/base",
-        "std/compress",
-        "std/runtime",
-        "std/system",
-        "std/web"
-      ],
-      "doc_pages": 5
-    },
     "std/base": {
       "status": "bundled",
-      "modules": 26,
+      "modules": 13,
       "path": "packages/std/base",
       "tier": 1,
       "install": "bundled with the SDK",
-      "summary": "The library that needs no host: strings and their pool, streams and number conversion, dates, bit sets, options, locks, pipes, the plugin registry, and the small collections.",
+      "summary": "The library that needs no host: streams and number conversion, bit sets and bit streams, events and channels, locks and pipes, the plugin registry.",
       "requires": [
         "std/runtime"
       ],
       "doc_pages": 6
-    },
-    "std/calc": {
-      "status": "bundled",
-      "modules": 10,
-      "path": "packages/std/calc",
-      "tier": 9,
-      "install": "bundled with the SDK",
-      "summary": "Numerical calculus: Gauss/Grünwald/Diethelm quadrature and differentiation kernels over std/math + std/numerics.",
-      "requires": [
-        "std/data",
-        "std/math",
-        "std/numerics"
-      ],
-      "doc_pages": 9
     },
     "std/compiler": {
       "status": "bundled",
@@ -329,121 +338,42 @@
       "install": "bundled with the SDK",
       "summary": "The Active Oberon compiler: the Oberon front end, the semantic checker and syntax tree, the intermediate code and its textual form, the AMD64 and AArch64 back ends and assemblers, the linker, the disassembler, the documentation back end, and the language server.",
       "requires": [
+        "lib/gui",
+        "lib/web",
         "std/base",
-        "std/gui",
         "std/runtime",
         "std/system",
-        "std/text",
-        "std/web"
+        "std/text"
       ],
       "doc_pages": 61
     },
-    "std/compress": {
-      "status": "bundled",
-      "modules": 11,
-      "path": "packages/std/compress",
-      "tier": 4,
-      "install": "bundled with the SDK",
-      "summary": "DEFLATE/zlib primitives (inflate + deflate, buffers, stream readers/writers) and gzip. Container formats (ZIP) live in std/archive.",
-      "requires": [
-        "std/base",
-        "std/math",
-        "std/system"
-      ]
-    },
-    "std/crypto": {
-      "status": "bundled",
-      "modules": 32,
-      "path": "packages/std/crypto",
-      "tier": 4,
-      "install": "bundled with the SDK",
-      "summary": "Ciphers (AES/DES/Blowfish/CAST/IDEA/Twofish/ARC4), hashes (MD5/SHA1/SHA256/SHA3/Keccak), public-key (RSA/DSA/DH), big numbers, CSPRNG (Fortuna), ASN.1 / X.509.",
-      "requires": [
-        "std/base",
-        "std/math",
-        "std/runtime",
-        "std/system"
-      ]
-    },
     "std/data": {
       "status": "bundled",
-      "modules": 16,
+      "modules": 2,
       "path": "packages/std/data",
       "tier": 8,
       "install": "bundled with the SDK",
       "summary": "Data structures and persistence: generic collections/sort, lists/queues/stacks/trees, the Models/Repositories/Types object framework, CSV, persistent objects, versioning.",
       "requires": [
+        "lib/numerics",
+        "lib/web",
         "std/base",
         "std/compiler",
         "std/math",
-        "std/numerics",
         "std/runtime",
-        "std/system",
-        "std/web"
+        "std/system"
       ],
       "doc_pages": 12
     },
-    "std/disk": {
+    "std/encoding": {
       "status": "bundled",
-      "modules": 28,
-      "path": "packages/std/disk",
+      "modules": 4,
+      "path": "packages/std/encoding",
       "tier": 3,
       "install": "bundled with the SDK",
-      "summary": "Block devices and the file systems on them: the disk and volume abstractions and their cache, FAT, ISO 9660, the old Oberon file system, partitions, a RAM volume, and file systems reached over a network.",
+      "summary": "Turning values into bytes and back: JSON, CSV, Base64, CRC.",
       "requires": [
         "std/base",
-        "std/net",
-        "std/runtime",
-        "std/system"
-      ]
-    },
-    "std/drivers": {
-      "status": "bundled",
-      "modules": 19,
-      "path": "packages/std/drivers",
-      "tier": 5,
-      "install": "bundled with the SDK",
-      "summary": "Low-level device drivers: display registry, serial ports (V24), keyboard/mouse, PC speaker, clipboard.",
-      "requires": [
-        "std/base",
-        "std/math",
-        "std/runtime",
-        "std/system",
-        "std/text"
-      ],
-      "doc_pages": 7
-    },
-    "std/gui": {
-      "status": "in-tree",
-      "modules": 112,
-      "path": "packages/std/gui",
-      "tier": 6,
-      "install": "in the tree, not in the SDK payload",
-      "summary": "The A2 graphics + window-manager framework as one irreducible unit: Raster/Gfx rendering, image codecs (PNG/JPEG/SVG/BMP), OpenType fonts, and the WM* component/desktop toolkit. Merged because graphics and the window manager are mutually dependent (see cycle note).",
-      "requires": [
-        "std/archive",
-        "std/base",
-        "std/compress",
-        "std/drivers",
-        "std/math",
-        "std/media",
-        "std/runtime",
-        "std/system",
-        "std/text",
-        "std/web"
-      ],
-      "doc_pages": 13
-    },
-    "std/ime": {
-      "status": "in-tree",
-      "modules": 16,
-      "path": "packages/std/ime",
-      "tier": 6,
-      "install": "in the tree, not in the SDK payload",
-      "summary": "Typing the world's scripts: the input-method framework and its methods -- Arabic, Armenian, Ethiopic, Hebrew, Pinyin, Russian, Ukrainian and a Unicode fallback -- with the language switcher, the Unicode character databases behind them and the Unihan parser.",
-      "requires": [
-        "std/base",
-        "std/gui",
         "std/runtime",
         "std/system",
         "std/text"
@@ -451,7 +381,7 @@
     },
     "std/math": {
       "status": "bundled",
-      "modules": 22,
+      "modules": 9,
       "path": "packages/std/math",
       "tier": 3,
       "install": "bundled with the SDK",
@@ -462,55 +392,24 @@
         "std/system"
       ]
     },
-    "std/media": {
-      "status": "in-tree",
-      "modules": 14,
-      "path": "packages/std/media",
-      "tier": 6,
-      "install": "in the tree, not in the SDK payload",
-      "summary": "Audio/video/image codecs: MP3, DivX/MPEG video (+ IDCT, tables), WAV, GIF, AVI container, a codec registry and sound-device abstraction.",
-      "requires": [
-        "std/base",
-        "std/gui",
-        "std/math",
-        "std/runtime",
-        "std/sound",
-        "std/system",
-        "std/web"
-      ],
-      "doc_pages": 4
-    },
     "std/net": {
       "status": "bundled",
-      "modules": 51,
+      "modules": 6,
       "path": "packages/std/net",
       "tier": 7,
       "install": "bundled with the SDK",
       "summary": "Networking: TCP/UDP/IP/DNS/sockets, TLS, an HTTP client/server stack, and protocol clients (FTP, SMTP, POP3, SSH, TFTP, LPR, XModem).",
       "requires": [
+        "lib/crypto",
+        "lib/gui",
+        "lib/web",
         "std/base",
-        "std/crypto",
-        "std/gui",
         "std/math",
         "std/runtime",
         "std/system",
-        "std/text",
-        "std/web"
+        "std/text"
       ],
       "doc_pages": 30
-    },
-    "std/numerics": {
-      "status": "bundled",
-      "modules": 10,
-      "path": "packages/std/numerics",
-      "tier": 4,
-      "install": "bundled with the SDK",
-      "summary": "Advanced / special functions over the std/math number types: cube root, error/gamma functions, real & complex series, rational/real/integer numeric routines.",
-      "requires": [
-        "std/math",
-        "std/runtime",
-        "std/system"
-      ]
     },
     "std/process": {
       "status": "bundled",
@@ -532,24 +431,9 @@
       "install": "bundled with the SDK",
       "summary": "The closed kernel: what the compiler emits calls into without the programmer naming it, and what must exist before any module can load. Allocation and the collector, module loading and type descriptors, activities and AWAIT, the platform binding, the clock."
     },
-    "std/sound": {
-      "status": "bundled",
-      "modules": 5,
-      "path": "packages/std/sound",
-      "tier": 4,
-      "install": "bundled with the SDK",
-      "summary": "Sound out of this machine: the device abstraction, the cross-platform OpenAL driver behind it, and the Ogg/Vorbis decoder and stream player that reach a speaker without touching the codec registry.",
-      "requires": [
-        "std/base",
-        "std/math",
-        "std/net",
-        "std/runtime",
-        "std/system"
-      ]
-    },
     "std/system": {
       "status": "bundled",
-      "modules": 51,
+      "modules": 25,
       "path": "packages/std/system",
       "tier": 2,
       "install": "bundled with the SDK",
@@ -574,32 +458,29 @@
     },
     "std/text": {
       "status": "bundled",
-      "modules": 1,
+      "modules": 5,
       "path": "packages/std/text",
-      "tier": 4,
+      "tier": 1,
       "install": "bundled with the SDK",
-      "summary": "Rich text model and Unicode text utilities: the Texts piece-list model, TextUtilities (load/store/convert), UTF-8 helpers.",
+      "summary": "Text: the string family and its pool, UTF-8, and number conversion into and out of strings.",
       "requires": [
         "std/base",
-        "std/runtime",
-        "std/system",
-        "std/web"
+        "std/runtime"
       ],
       "doc_pages": 1
     },
-    "std/web": {
+    "std/time": {
       "status": "bundled",
-      "modules": 21,
-      "path": "packages/std/web",
+      "modules": 5,
+      "path": "packages/std/time",
       "tier": 3,
       "install": "bundled with the SDK",
-      "summary": "XML stack (parser/scanner/DOM objects) and the Configuration settings module built on it.",
+      "summary": "Time: the calendar and its formatting, the high-resolution counter, the stopwatch, and timers.",
       "requires": [
-        "std/base",
         "std/runtime",
-        "std/system"
-      ],
-      "doc_pages": 5
+        "std/system",
+        "std/text"
+      ]
     }
   },
   "notes": {
