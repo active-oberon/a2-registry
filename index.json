@@ -332,7 +332,7 @@
     },
     "std/compiler": {
       "status": "bundled",
-      "modules": 56,
+      "modules": 58,
       "path": "packages/std/compiler",
       "tier": 7,
       "install": "bundled with the SDK",
