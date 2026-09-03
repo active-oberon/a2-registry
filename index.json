@@ -349,7 +349,7 @@
     },
     "std/data": {
       "status": "bundled",
-      "modules": 2,
+      "modules": 4,
       "path": "packages/std/data",
       "tier": 8,
       "install": "bundled with the SDK",
@@ -458,7 +458,7 @@
     },
     "std/text": {
       "status": "bundled",
-      "modules": 7,
+      "modules": 8,
       "path": "packages/std/text",
       "tier": 1,
       "install": "bundled with the SDK",
@@ -471,7 +471,7 @@
     },
     "std/time": {
       "status": "bundled",
-      "modules": 5,
+      "modules": 6,
       "path": "packages/std/time",
       "tier": 3,
       "install": "bundled with the SDK",
