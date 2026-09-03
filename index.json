@@ -458,7 +458,7 @@
     },
     "std/text": {
       "status": "bundled",
-      "modules": 6,
+      "modules": 7,
       "path": "packages/std/text",
       "tier": 1,
       "install": "bundled with the SDK",
