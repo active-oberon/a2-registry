@@ -458,11 +458,11 @@
     },
     "std/text": {
       "status": "bundled",
-      "modules": 5,
+      "modules": 6,
       "path": "packages/std/text",
       "tier": 1,
       "install": "bundled with the SDK",
-      "summary": "Text: the string family and its pool, UTF-8, and number conversion into and out of strings.",
+      "summary": "Text: the string family and its pool, UTF-8, regular expressions, and number conversion into and out of strings.",
       "requires": [
         "std/base",
         "std/runtime"
