@@ -9,7 +9,6 @@
     "Checksum",
     "CryptoAES",
     "CryptoARC4",
-    "CryptoBase64",
     "CryptoBigNumbers",
     "CryptoBlowfish",
     "CryptoCAST",
@@ -40,6 +39,7 @@
   ],
   "requires": {
     "std/base": "*",
+    "std/encoding": "*",
     "std/runtime": "*",
     "std/system": "*",
     "std/text": "*",
@@ -48,7 +48,7 @@
   "residual": [
     "Vendored from minia2 source/ on 2026-08-27, when std stopped carrying it: the standard library holds what packages talk to each other through, and crypto is a leaf ob get can deliver (docs/STDLIB.md there). The sources also stay in minia2 source/, because dropping them would break the full A2 build and widen the diff against vanilla ETH -- so this is a second copy on purpose, and `upstream` names where the first one is.",
     "Not modernised, only moved. There is no Ed25519, no X25519, no ChaCha20-Poly1305, no HKDF here, and ARC4, Blowfish, CAST, IDEA, DES and DES3 are kept for compatibility rather than recommended. DES and CryptoDES are two implementations of the same cipher; nothing here imports DES, only VNC does.",
-    "CryptoBase64 duplicates Base64, which stayed in std/encoding. Nothing in the tree imports either."
+    "The two Base64s were collapsed in minia2 on 2026-09-03 and CryptoBase64 left this package with them: the 27.08 note that nothing imported either was wrong -- CryptoRSA and CryptoDSA both did, under the alias Base64. They now import the Base64 of std/encoding, which is that same implementation under its own name."
   ],
   "upstream": "minia2:source",
   "excludes": {}
