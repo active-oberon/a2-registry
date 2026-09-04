@@ -55,11 +55,11 @@ for m in manifests:
     # whether it travels in the SDK. `graphical` and `cycle` are the manifest's business, not the
     # catalogue's -- a reader who wants them opens the package.
     entry = {
-        "status": "bundled" if d.get("headless") else "in-tree",
+        "status": "bundled" if d.get("shipped") else "in-tree",
         "modules": len(d.get("provides", [])),
         "path": "packages/" + os.path.dirname(rel),
         "tier": d.get("tier"),
-        "install": "bundled with the SDK" if d.get("headless")
+        "install": "bundled with the SDK" if d.get("shipped")
                    else "in the tree, not in the SDK payload",
         "summary": d.get("description", ""),
     }
