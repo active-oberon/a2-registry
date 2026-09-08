@@ -332,7 +332,7 @@
     },
     "std/compiler": {
       "status": "bundled",
-      "modules": 58,
+      "modules": 59,
       "path": "packages/std/compiler",
       "tier": 7,
       "install": "bundled with the SDK",
@@ -341,9 +341,12 @@
         "lib/gui",
         "lib/web",
         "std/base",
+        "std/encoding",
+        "std/process",
         "std/runtime",
         "std/system",
-        "std/text"
+        "std/text",
+        "std/time"
       ],
       "doc_pages": 61
     },
