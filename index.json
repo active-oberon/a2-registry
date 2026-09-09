@@ -5,7 +5,7 @@
   "packages": {
     "apps/desktop": {
       "status": "in-tree",
-      "modules": 109,
+      "modules": 108,
       "path": "packages/apps/desktop",
       "tier": 9,
       "install": "in the tree, not in the SDK payload",
