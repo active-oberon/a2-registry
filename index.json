@@ -77,11 +77,11 @@
     },
     "attic/arm32": {
       "status": "in-tree",
-      "modules": 4,
+      "modules": 1,
       "path": "packages/attic/arm32",
       "tier": 8,
       "install": "in the tree, not in the SDK payload",
-      "summary": "The 32-bit ARM back end, assembler and disassembler.",
+      "summary": "The 32-bit ARM disassembler.",
       "requires": [
         "std/base",
         "std/compiler",
@@ -332,11 +332,11 @@
     },
     "std/compiler": {
       "status": "bundled",
-      "modules": 59,
+      "modules": 62,
       "path": "packages/std/compiler",
       "tier": 7,
       "install": "bundled with the SDK",
-      "summary": "The Active Oberon compiler: the Oberon front end, the semantic checker and syntax tree, the intermediate code and its textual form, the AMD64 and AArch64 back ends and assemblers, the linker, the disassembler, the documentation back end, and the language server.",
+      "summary": "The Active Oberon compiler: the Oberon front end, the semantic checker and syntax tree, the intermediate code and its textual form, the AMD64, AArch64 and 32-bit ARM back ends and assemblers, the linker, the disassembler, the documentation back end, and the language server.",
       "requires": [
         "lib/gui",
         "lib/web",
@@ -428,7 +428,7 @@
     },
     "std/runtime": {
       "status": "bundled",
-      "modules": 15,
+      "modules": 16,
       "path": "packages/std/runtime",
       "tier": 0,
       "install": "bundled with the SDK",
