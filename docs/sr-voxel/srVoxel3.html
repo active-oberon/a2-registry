@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#srVoxel3">srVoxel3</a></p>
+<hr><h1 id="_C158D9C0"><a name="srVoxel3"></a><a href="#ModuleList">Module</a> srVoxel3
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#srVoxel3.Serp">Serp</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel3.Tower">Tower</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel3.BraidBloc">BraidBloc</a> =<strong>OBJECT</strong> (<strong>SerpBloc</strong>)<tr><td></td><td><a href="#srVoxel3.TowerBloc">TowerBloc</a> =<strong>OBJECT</strong> (<strong>SerpBloc</strong>)<tr><td></td><td><a href="#srVoxel3.SlantBloc">SlantBloc</a> =<strong>OBJECT</strong> (<strong>SerpBloc</strong>)<tr><td></td><td><a href="#srVoxel3.VegeBloc">VegeBloc</a> =<strong>OBJECT</strong> (<strong>SerpBloc</strong>)<tr><td></td><td><a href="#srVoxel3.Tree3">Tree3</a> =<strong>OBJECT</strong> (<strong>Bloc3</strong>)<tr><td></td><td><a href="#srVoxel3.Tree5">Tree5</a> =<strong>OBJECT</strong> (<strong>Bloc5</strong>)<tr><th align='left'>procedures</th><td> STOPGO</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_C159B2C0"><a name="srVoxel3.Serp"></a><a href="#srVoxel3">srVoxel3</a>.<a href="#srVoxel3.Serp">Serp</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Serp* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init (kore, mid: <strong>Voxel</strong>)<tr><td></td><td> probe (x, y, z: <strong>SREAL</strong>): <strong>Voxel</strong><tr><td></td><td> probeShade (<strong>VAR</strong> ray: <strong>Ray</strong>; <strong>VAR</strong> dx, dy, dz: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)<tr><td></td><td> tick</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_C15AA840"><a name="srVoxel3.Tower"></a><a href="#srVoxel3">srVoxel3</a>.<a href="#srVoxel3.Tower">Tower</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tower* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init (a, b, c: <strong>Voxel</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)<tr><td></td><td> tick</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_C15B3980"><a name="srVoxel3.BraidBloc"></a><a href="#srVoxel3">srVoxel3</a>.<a href="#srVoxel3.BraidBloc">BraidBloc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BraidBloc* =<strong>OBJECT</strong> (<strong>SerpBloc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init (kore, mid: <strong>Voxel</strong>)</td></tr>
+</table>
+<hr><h2 id="_C15B9A00"><a name="srVoxel3.TowerBloc"></a><a href="#srVoxel3">srVoxel3</a>.<a href="#srVoxel3.TowerBloc">TowerBloc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TowerBloc* =<strong>OBJECT</strong> (<strong>SerpBloc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init (a, b: <strong>Voxel</strong>)</td></tr>
+</table>
+<hr><h2 id="_C15BF480"><a name="srVoxel3.SlantBloc"></a><a href="#srVoxel3">srVoxel3</a>.<a href="#srVoxel3.SlantBloc">SlantBloc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SlantBloc* =<strong>OBJECT</strong> (<strong>SerpBloc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init (a, b: <strong>Voxel</strong>)</td></tr>
+</table>
+<hr><h2 id="_C15C4FC0"><a name="srVoxel3.VegeBloc"></a><a href="#srVoxel3">srVoxel3</a>.<a href="#srVoxel3.VegeBloc">VegeBloc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> VegeBloc* =<strong>OBJECT</strong> (<strong>SerpBloc</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init (kore, mid: <strong>Voxel</strong>)</td></tr>
+</table>
+<hr><h2 id="_C15CAA40"><a name="srVoxel3.Tree3"></a><a href="#srVoxel3">srVoxel3</a>.<a href="#srVoxel3.Tree3">Tree3</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tree3* =<strong>OBJECT</strong> (<strong>Bloc3</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init (t, l, g: <strong>Voxel</strong>)<tr><td></td><td> Fill (v: <strong>Voxel</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_C15D2D00"><a name="srVoxel3.Tree5"></a><a href="#srVoxel3">srVoxel3</a>.<a href="#srVoxel3.Tree5">Tree5</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tree5* =<strong>OBJECT</strong> (<strong>Bloc5</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; new (t, l, g: <strong>Voxel</strong>)<tr><td></td><td> Fill (v: <strong>Voxel</strong>)</td></tr>
+</td></tr>
+</table>
+</body></html>

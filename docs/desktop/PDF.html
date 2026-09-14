@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#PDF">PDF</a></p>
+<hr><h1 id="_29B32780"><a name="PDF"></a><a href="#ModuleList">Module</a> PDF
+</h1>
+<p> AUTHOR &quot;TF&quot;; PURPOSE &quot;PDF Data-Structures&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>PageA0= 1<tr><td></td><td>PageA1= 2<tr><td></td><td>PageA2= 3<tr><td></td><td>PageA3= 4<tr><td></td><td>PageA4= 5<tr><td></td><td>PageA5= 6<tr><td></td><td>PageA6= 7<tr><td></td><td>PageA7= 8<tr><td></td><td>Unitmm= 1<tr><td></td><td>Unitmm10= 2<tr><td></td><td>Unitmm100= 3<tr><th align='left'>type declarations</th><td><a href="#PDF.PDFCanvas">PDFCanvas</a> =<strong>OBJECT</strong> (<strong>WMGraphics.Canvas</strong>)<tr><td></td><td><a href="#PDF.PDFCreator">PDFCreator</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_29B42440"><a name="PDF.PDFCanvas"></a><a href="#PDF">PDF</a>.<a href="#PDF.PDFCanvas">PDFCanvas</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PDFCanvas* =<strong>OBJECT</strong> (<strong>WMGraphics.Canvas</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init (pc: <strong>PDFCreator</strong>; pageFormat: <strong>SIGNED32</strong>; landscape: <strong>BOOLEAN</strong>; unit: <strong>SIGNED32</strong>)<tr><td></td><td> SetColor (col: <strong>WMGraphics.Color</strong>)<tr><td></td><td> Fill (r: <strong>WMRectangles.Rectangle</strong>; col: <strong>WMGraphics.Color</strong>; mode: <strong>SIGNED32</strong>)<tr><td></td><td> PDFSetFont (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; size: <strong>SIGNED32</strong>; style: <strong>SET</strong>)<tr><td></td><td> DrawString (x, y: <strong>SIZE</strong>; <strong>CONST</strong> text: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> DrawStringMultiLine (x, y, width, height: <strong>SIGNED32</strong>; resizeHeight: <strong>BOOLEAN</strong>; <strong>CONST</strong> stext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> actualHeight: <strong>SIZE</strong>)<tr><td></td><td> DrawStringSingleLine (x, y, width, align: <strong>SIGNED32</strong>; stext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PDFSetLineWidth (width: <strong>FLOAT32</strong>)<tr><td></td><td> PDFSetLineJoin (param: <strong>SIGNED16</strong>)<tr><td></td><td> PolyLine (<strong>CONST</strong> points: <strong>ARRAY</strong> <strong>OF</strong> <strong>WMGraphics.Point2d</strong>; nofPoints: <strong>SIZE</strong>; closed: <strong>BOOLEAN</strong>; color: <strong>WMGraphics.Color</strong>; mode: <strong>INTEGER</strong>)<tr><td></td><td> FillPoly (<strong>CONST</strong> points: <strong>ARRAY</strong> <strong>OF</strong> <strong>WMGraphics.Point2d</strong>; nofPoints: <strong>SIGNED32</strong>; color: <strong>WMGraphics.Color</strong>; mode: <strong>SIGNED32</strong>)<tr><td></td><td> Line (x0, y0, x1, y1: <strong>SIZE</strong>; color: <strong>WMGraphics.Color</strong>; mode: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_29B75F00"><a name="PDF.PDFCreator"></a><a href="#PDF">PDF</a>.<a href="#PDF.PDFCreator">PDFCreator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PDFCreator* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> NewPage (pageFormat: <strong>SIGNED32</strong>; landscape: <strong>BOOLEAN</strong>; unit: <strong>SIGNED32</strong>): <strong>PDFCanvas</strong><tr><td></td><td> Write (w: <strong>Streams.Writer</strong>)<tr><td></td><td> Store (filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

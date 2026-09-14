@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#OdUtil">OdUtil</a></p>
+<hr><h1 id="_BF12C3C0"><a name="OdUtil"></a><a href="#ModuleList">Module</a> OdUtil
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>ModeWriter= 1<tr><td></td><td>ModeFile= 2<tr><td></td><td>CollCh= &quot;/&quot;<tr><td></td><td>LineLen= 128<tr><th align='left'>type declarations</th><td><a href="#OdUtil.Log">Log</a> =<strong>OBJECT</strong> (<strong>TFLog.Log</strong>)<tr><td></td><td><a href="#OdUtil.Link">Link</a> =<strong>OBJECT</strong> <tr><td></td><td>Line =<strong>ARRAY</strong> LineLen <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#OdUtil.Lines">Lines</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#OdUtil.Dict">Dict</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>MsgLog: <strong>Log</strong><tr><th align='left'>procedures</th><td> <a href="#OdUtil.padColl">padColl</a> (<strong>VAR</strong> conf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> unpadColl (<strong>VAR</strong> conf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Dev0 (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> I (i: <strong>SIGNED32</strong>): <strong>Array8</strong><tr><td></td><td> B (b: <strong>BOOLEAN</strong>): <strong>Array8</strong><tr><td></td><td> Msg1 (<strong>CONST</strong> s1: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Msg2 (<strong>CONST</strong> s1, s2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Msg3 (<strong>CONST</strong> s1, s2, s3: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Msg4 (<strong>CONST</strong> s1, s2, s3, s4: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Msg5 (<strong>CONST</strong> s1, s2, s3, s4, s5: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Msg6 (<strong>CONST</strong> s1, s2, s3, s4, s5, s6: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_BF15DA40">
+</h1><hr><h2 id="_BF15E200"><a name="OdUtil.Log"></a><a href="#OdUtil">OdUtil</a>.<a href="#OdUtil.Log">Log</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Log* =<strong>OBJECT</strong> (<strong>TFLog.Log</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init (logName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetLogFile (fn: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetLogWriter (w: <strong>Streams.Writer</strong>)<tr><td></td><td> SetLogToOut (enabled: <strong>BOOLEAN</strong>)<tr><td></td><td> Ln<tr><td></td><td> Enter<tr><td></td><td> Exit<tr><td></td><td> Char (x: <strong>CHAR</strong>)<tr><td></td><td> InternalString (<strong>VAR</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> String (x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Hex (x, w: <strong>SIGNED32</strong>)<tr><td></td><td> Int (x: <strong>SIGNED64</strong>; w: <strong>SIGNED32</strong>)<tr><td></td><td> TimeStamp<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BF177A00"><a name="OdUtil.Link"></a><a href="#OdUtil">OdUtil</a>.<a href="#OdUtil.Link">Link</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Link* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>Link</strong><tr><th align='left'>procedures</th><td>&amp; link<tr><td></td><td> add (new: <strong>Link</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BF17E5C0"><a name="OdUtil.Lines"></a><a href="#OdUtil">OdUtil</a>.<a href="#OdUtil.Lines">Lines</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Lines* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>line: <strong>Line</strong><tr><td></td><td>next: <strong>Lines</strong><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> <a href="#OdUtil.Lines.add">add</a> (<strong>CONST</strong> line: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#OdUtil.Lines.in">in</a> (target: <strong>Lines</strong>): <strong>Lines</strong><tr><td></td><td> <a href="#OdUtil.Lines.notIn">notIn</a> (target: <strong>Lines</strong>): <strong>Lines</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_BF18AE00"><a name="OdUtil.Lines.add"></a><a href="#OdUtil">OdUtil</a>.<a href="#OdUtil.Lines">Lines</a>.<a href="#OdUtil.Lines.add">add</a>
+</h3>
+<p> Append a new line at the end.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> add* (<strong>CONST</strong> line: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="_BF191240"><a name="OdUtil.Lines.in"></a><a href="#OdUtil">OdUtil</a>.<a href="#OdUtil.Lines">Lines</a>.<a href="#OdUtil.Lines.in">in</a>
+</h3>
+<p> Find lines which also are in SELF.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> in* (target: <strong>Lines</strong>): <strong>Lines</strong></pre>
+<hr><h3 id="_BF196FC0"><a name="OdUtil.Lines.notIn"></a><a href="#OdUtil">OdUtil</a>.<a href="#OdUtil.Lines">Lines</a>.<a href="#OdUtil.Lines.notIn">notIn</a>
+</h3>
+<p> Find lines which aren&apos;t in SELF.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> notIn* (target: <strong>Lines</strong>): <strong>Lines</strong></pre>
+<hr><h2 id="_BF19C9C0"><a name="OdUtil.Dict"></a><a href="#OdUtil">OdUtil</a>.<a href="#OdUtil.Dict">Dict</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Dict* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>key: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>value: @Any0<tr><td></td><td>next: <strong>Dict</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> has (fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> get (fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: @Any0): <strong>BOOLEAN</strong><tr><td></td><td> set (fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: @Any0)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BF1AD640"><a name="OdUtil.padColl"></a><a href="#OdUtil">OdUtil</a>.<a href="#OdUtil.padColl">padColl</a>
+</h2>
+<li> Procedures <strong>********************</strong></li>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> padColl* (<strong>VAR</strong> conf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+</body></html>

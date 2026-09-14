@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#CryptoRSA">CryptoRSA</a></p>
-<hr><h1 id="#_450CEE40"><a name="CryptoRSA"></a><a href="#ModuleList">Module</a> CryptoRSA
+<hr><h1 id="_6FC16B40"><a name="CryptoRSA"></a><a href="#ModuleList">Module</a> CryptoRSA
 </h1>
-<p> AUTHOR "G.F."; PURPOSE "RSA";</p>
+<p> AUTHOR &quot;G.F.&quot;; PURPOSE &quot;RSA&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -48,8 +48,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_450EAE00">
-</h1><hr><h2 id="#_450EB5C0"><a name="CryptoRSA.Certificate"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Certificate">Certificate</a>
+<hr><h1 id="_6FC32B00">
+</h1><hr><h2 id="_6FC332C0"><a name="CryptoRSA.Certificate"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Certificate">Certificate</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -61,21 +61,21 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_450F1E00"><a name="CryptoRSA.Certificate.authority"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Certificate">Certificate</a>.<a href="#CryptoRSA.Certificate.authority">authority</a>
+<hr><h3 id="_6FC39B00"><a name="CryptoRSA.Certificate.authority"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Certificate">Certificate</a>.<a href="#CryptoRSA.Certificate.authority">authority</a>
 </h3>
 <p> Certifying authority.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> authority*: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></pre>
-<hr><h3 id="#_450F65C0"><a name="CryptoRSA.Certificate.signature"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Certificate">Certificate</a>.<a href="#CryptoRSA.Certificate.signature">signature</a>
+<hr><h3 id="_6FC3E2C0"><a name="CryptoRSA.Certificate.signature"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Certificate">Certificate</a>.<a href="#CryptoRSA.Certificate.signature">signature</a>
 </h3>
 <p> Signature of key.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> signature*: <strong>Number</strong></pre>
-<hr><h2 id="#_450FA2C0"><a name="CryptoRSA.Key"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Key">Key</a>
+<hr><h2 id="_6FC41FC0"><a name="CryptoRSA.Key"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Key">Key</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -97,28 +97,28 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_45112C00"><a name="CryptoRSA.Key.name"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Key">Key</a>.<a href="#CryptoRSA.Key.name">name</a>
+<hr><h3 id="_6FC5A900"><a name="CryptoRSA.Key.name"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Key">Key</a>.<a href="#CryptoRSA.Key.name">name</a>
 </h3>
 <p> Owner of this key.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> name-: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></pre>
-<hr><h3 id="#_45117B80"><a name="CryptoRSA.Key.private"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Key">Key</a>.<a href="#CryptoRSA.Key.private">private</a>
+<hr><h3 id="_6FC5F880"><a name="CryptoRSA.Key.private"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.Key">Key</a>.<a href="#CryptoRSA.Key.private">private</a>
 </h3>
 <p> Is this a private key? then the exponent is encrypted</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> private-: <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_4511D440"><a name="CryptoRSA.MakeKeys"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.MakeKeys">MakeKeys</a>
+<hr><h2 id="_6FC65140"><a name="CryptoRSA.MakeKeys"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.MakeKeys">MakeKeys</a>
 </h2>
-<p> Generate public and private keys out of the large primes p and q, using the specified public exponent e. The private key's exponent will be enrypted with IDEA and key passwd</p>
+<p> Generate public and private keys out of the large primes p and q, using the specified public exponent e. The private key&apos;s exponent will be enrypted with IDEA and key passwd</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> MakeKeys* (p, q, e: <strong>Number</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> pub, priv: <strong>Key</strong>)</pre>
-<hr><h2 id="#_4512C640"><a name="CryptoRSA.PubKey"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.PubKey">PubKey</a>
+<hr><h2 id="_6FC74340"><a name="CryptoRSA.PubKey"></a><a href="#CryptoRSA">CryptoRSA</a>.<a href="#CryptoRSA.PubKey">PubKey</a>
 </h2>
 <p> returns a new public key with exponent e and modulus m</p>
 

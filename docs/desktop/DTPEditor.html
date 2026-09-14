@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#DTPEditor">DTPEditor</a></p>
+<hr><h1 id="_4C6AB5C0"><a name="DTPEditor"></a><a href="#ModuleList">Module</a> DTPEditor
+</h1>
+<p> AUTHOR &quot;PL&quot;; PURPOSE &quot;Simple DTP Editor&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#DTPEditor.Window">Window</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><td></td><td><a href="#DTPEditor.NewDialog">NewDialog</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><td></td><td><a href="#DTPEditor.PleaseWaitWindow">PleaseWaitWindow</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><td></td><td><a href="#DTPEditor.PluginRegistry">PluginRegistry</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>plugRegistry: <strong>PluginRegistry</strong><tr><th align='left'>procedures</th><td> OpenNew<tr><td></td><td> OpenEmptyA4portrait<tr><td></td><td> OpenEmptyA4landscape<tr><td></td><td> OpenEmptyA5portrait<tr><td></td><td> OpenEmptyA5landscape<tr><td></td><td> OpenEmpty (context: <strong>Commands.Context</strong>)<tr><td></td><td> Open (context: <strong>Commands.Context</strong>)<tr><td></td><td> Restore (context: <strong>WMRestorable.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_4C6BD600"><a name="DTPEditor.Window"></a><a href="#DTPEditor">DTPEditor</a>.<a href="#DTPEditor.Window">Window</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Window* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>vScrollbar: <strong>WMStandardComponents.Scrollbar</strong><tr><td></td><td>hScrollbar: <strong>WMStandardComponents.Scrollbar</strong><tr><td></td><td>drawPanel: <strong>DTPView.DrawPanel</strong><tr><td></td><td>fullScreen: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>&amp; New (c: <strong>WMRestorable.Context</strong>)<tr><td></td><td> CheckScrollbars<tr><td></td><td> SetActive<tr><td></td><td> CreateContent (): <strong>DTPData.ContentObject</strong><tr><td></td><td> FullScreenHandler (sender, data: @Any0)<tr><td></td><td> EscFullScreen<tr><td></td><td> TextPropUpdateHandler<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_4C6CD180"><a name="DTPEditor.NewDialog"></a><a href="#DTPEditor">DTPEditor</a>.<a href="#DTPEditor.NewDialog">NewDialog</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NewDialog* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; New (caller: <strong>Window</strong>)<tr><td></td><td> Show</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_4C6D2E80"><a name="DTPEditor.PleaseWaitWindow"></a><a href="#DTPEditor">DTPEditor</a>.<a href="#DTPEditor.PleaseWaitWindow">PleaseWaitWindow</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PleaseWaitWindow* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>button: <strong>WMStandardComponents.Button</strong><tr><th align='left'>procedures</th><td>&amp; New<tr><td></td><td> Show<tr><td></td><td> Hide<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_4C6D9F80"><a name="DTPEditor.PluginRegistry"></a><a href="#DTPEditor">DTPEditor</a>.<a href="#DTPEditor.PluginRegistry">PluginRegistry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PluginRegistry* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> RegisterPlugin (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; generator: <strong>DTPData.ContentFactory</strong>)<tr><td></td><td> RegisterPluginByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> generatorName: <strong>Modules.Name</strong>)<tr><td></td><td> UnregisterPlugin (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> InstantiatePlugin (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>DTPData.ContentObject</strong><tr><td></td><td> GetNumberOfPlugins (): <strong>SIGNED32</strong><tr><td></td><td> GetPluginList (): <strong>PluginList</strong><tr><td></td><td> GetPlugins (): <strong>XMLObjects.Enumerator</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

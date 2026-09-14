@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMPerfMonPluginNetwork">WMPerfMonPluginNetwork</a></p>
+<hr><h1 id="_FAC5B300"><a name="WMPerfMonPluginNetwork"></a><a href="#ModuleList">Module</a> WMPerfMonPluginNetwork
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Performance Monitor network performance plugin&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WMPerfMonPluginNetwork.NetParameter">NetParameter</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>WMPerfMonPlugins.Parameter</strong>)<tr><td></td><td><a href="#WMPerfMonPluginNetwork.NetworkSpeed">NetworkSpeed</a> =<strong>OBJECT</strong> (<strong>WMPerfMonPlugins.Plugin</strong>)<tr><th align='left'>procedures</th><td> Install</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_FAC631C0"><a name="WMPerfMonPluginNetwork.NetParameter"></a><a href="#WMPerfMonPluginNetwork">WMPerfMonPluginNetwork</a>.<a href="#WMPerfMonPluginNetwork.NetParameter">NetParameter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NetParameter* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>WMPerfMonPlugins.Parameter</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>device: <strong>Network.LinkDevice</strong></td></tr>
+</table>
+<hr><h2 id="_FAC67C80"><a name="WMPerfMonPluginNetwork.NetworkSpeed"></a><a href="#WMPerfMonPluginNetwork">WMPerfMonPluginNetwork</a>.<a href="#WMPerfMonPluginNetwork.NetworkSpeed">NetworkSpeed</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NetworkSpeed* =<strong>OBJECT</strong> (<strong>WMPerfMonPlugins.Plugin</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Init (p: <strong>WMPerfMonPlugins.Parameter</strong>)<tr><td></td><td> UpdateDataset</td></tr>
+</td></tr>
+</table>
+</body></html>

@@ -29,20 +29,20 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#CryptoSHA3">CryptoSHA3</a></p>
-<hr><h1 id="#_71198100"><a name="CryptoSHA3"></a><a href="#ModuleList">Module</a> CryptoSHA3
+<hr><h1 id="_22940680"><a name="CryptoSHA3"></a><a href="#ModuleList">Module</a> CryptoSHA3
 </h1>
-<p> AUTHOR "GF"; PURPOSE "SHA-3";</p>
+<p> AUTHOR &quot;GF&quot;; PURPOSE &quot;SHA-3&quot;;</p>
 
 <h3>Summary</h3>
 
 <table><tr><th align='left'>type declarations</th><td><a href="#CryptoSHA3.Hash">Hash</a> =<strong>OBJECT</strong> (<strong>Hashes.Hash</strong>)<tr><th align='left'>procedures</th><td> <a href="#CryptoSHA3.NewHash">NewHash</a> (): <strong>Hashes.Hash</strong></td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_7119DCC0">
-</h1><hr><h2 id="#_7119E480"><a name="CryptoSHA3.Hash"></a><a href="#CryptoSHA3">CryptoSHA3</a>.<a href="#CryptoSHA3.Hash">Hash</a>
+<hr><h1 id="_22946240">
+</h1><hr><h2 id="_22946A00"><a name="CryptoSHA3.Hash"></a><a href="#CryptoSHA3">CryptoSHA3</a>.<a href="#CryptoSHA3.Hash">Hash</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -50,27 +50,33 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Initialize<tr><td></td><td> SetNameAndSize (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bytesize: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#CryptoSHA3.Hash.Update">Update</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoSHA3.Hash.GetHash">GetHash</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Initialize<tr><td></td><td> SetNameAndSize (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; bytesize: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#CryptoSHA3.Hash.Update">Update</a> (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#CryptoSHA3.Hash.GetHash">GetHash</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_711AD680"><a name="CryptoSHA3.Hash.Update"></a><a href="#CryptoSHA3">CryptoSHA3</a>.<a href="#CryptoSHA3.Hash">Hash</a>.<a href="#CryptoSHA3.Hash.Update">Update</a>
+<hr><h3 id="_22955C00"><a name="CryptoSHA3.Hash.Update"></a><a href="#CryptoSHA3">CryptoSHA3</a>.<a href="#CryptoSHA3.Hash">Hash</a>.<a href="#CryptoSHA3.Hash.Update">Update</a>
 </h3>
-<p> data: value to be hashed</p>
-
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Update* (<strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, len: <strong>SIZE</strong>)</pre>
-<hr><h3 id="#_711B49C0"><a name="CryptoSHA3.Hash.GetHash"></a><a href="#CryptoSHA3">CryptoSHA3</a>.<a href="#CryptoSHA3.Hash">Hash</a>.<a href="#CryptoSHA3.Hash.GetHash">GetHash</a>
+
+<h3>Parameters</h3>
+
+<dl>
+<dt><strong>data</strong></dt>
+<dd> value to be hashed</dd>
+
+</dl>
+<hr><h3 id="_2295D440"><a name="CryptoSHA3.Hash.GetHash"></a><a href="#CryptoSHA3">CryptoSHA3</a>.<a href="#CryptoSHA3.Hash">Hash</a>.<a href="#CryptoSHA3.Hash.GetHash">GetHash</a>
 </h3>
 <p> get the hashvalue of length SELF.size</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetHash* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_711BB8C0"><a name="CryptoSHA3.NewHash"></a><a href="#CryptoSHA3">CryptoSHA3</a>.<a href="#CryptoSHA3.NewHash">NewHash</a>
+<hr><h2 id="_22964340"><a name="CryptoSHA3.NewHash"></a><a href="#CryptoSHA3">CryptoSHA3</a>.<a href="#CryptoSHA3.NewHash">NewHash</a>
 </h2>
 <p> get an instance of SHA-3</p>
 

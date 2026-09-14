@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#TerminalCodes">TerminalCodes</a></p>
-<hr><h1 id="#_EF8FFEC0"><a name="TerminalCodes"></a><a href="#ModuleList">Module</a> TerminalCodes
+<hr><h1 id="_2DD52680"><a name="TerminalCodes"></a><a href="#ModuleList">Module</a> TerminalCodes
 </h1>
-<p> AUTHOR "Andrii Puhachenko"; PURPOSE "What a terminal sends and understands: keys in, escape sequences out"</p>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;What a terminal sends and understands: keys in, escape sequences out&quot;</p>
 
 <h3>Summary</h3>
 
@@ -97,8 +97,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_EF953D00">
-</h1><hr><h2 id="#_EF9544C0"><a name="TerminalCodes.None"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.None">None</a>
+<hr><h1 id="_2DDA64C0">
+</h1><hr><h2 id="_2DDA6C80"><a name="TerminalCodes.None"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.None">None</a>
 </h2>
 <p> what an event is</p>
 
@@ -107,56 +107,56 @@
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> None*= 0</pre>
-<hr><h2 id="#_EF958D80"><a name="TerminalCodes.Character"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Character">Character</a>
+<hr><h2 id="_2DDAB540"><a name="TerminalCodes.Character"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Character">Character</a>
 </h2>
 <p> a character was typed: `char`</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Character*= 1</pre>
-<hr><h2 id="#_EF95CD40"><a name="TerminalCodes.Key"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Key">Key</a>
+<hr><h2 id="_2DDAF500"><a name="TerminalCodes.Key"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Key">Key</a>
 </h2>
 <p> a key with no character of its own: `key`</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Key*= 2</pre>
-<hr><h2 id="#_EF961BC0"><a name="TerminalCodes.Mouse"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Mouse">Mouse</a>
+<hr><h2 id="_2DDB4380"><a name="TerminalCodes.Mouse"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Mouse">Mouse</a>
 </h2>
 <p> the pointer did something: `button`, `x`, `y`</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Mouse*= 3</pre>
-<hr><h2 id="#_EF966300"><a name="TerminalCodes.Unknown"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Unknown">Unknown</a>
+<hr><h2 id="_2DDB8AC0"><a name="TerminalCodes.Unknown"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Unknown">Unknown</a>
 </h2>
 <p> a sequence this module does not name; a program may ignore it</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Unknown*= 4</pre>
-<hr><h2 id="#_EF96BD80"><a name="TerminalCodes.Escape"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Escape">Escape</a>
+<hr><h2 id="_2DDBE540"><a name="TerminalCodes.Escape"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Escape">Escape</a>
 </h2>
 <p> keys, for events of kind Key</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Escape*= 1</pre>
-<hr><h2 id="#_EF970000"><a name="TerminalCodes.Shift"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Shift">Shift</a>
+<hr><h2 id="_2DDC27C0"><a name="TerminalCodes.Shift"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Shift">Shift</a>
 </h2>
 <p> modifiers, as reported for keys and for the mouse</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Shift*= 0</pre>
-<hr><h2 id="#_EF974F80"><a name="TerminalCodes.LeftButton"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.LeftButton">LeftButton</a>
+<hr><h2 id="_2DDC7740"><a name="TerminalCodes.LeftButton"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.LeftButton">LeftButton</a>
 </h2>
 <p> what the mouse did, in `button`</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> LeftButton*= 0</pre>
-<hr><h2 id="#_EF979200"><a name="TerminalCodes.Event"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Event">Event</a>
+<hr><h2 id="_2DDCB9C0"><a name="TerminalCodes.Event"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Event">Event</a>
 </h2>
 <p> One thing that happened at the terminal. `kind` says which of the other fields mean anything Character uses `char`, Key uses `key`, Mouse uses `button` and `x`, `y` -- which count from one, as the terminal reports them. `modifiers` holds Shift, Alt and Ctrl.</p>
 
@@ -174,7 +174,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_EF98D900"><a name="TerminalCodes.Read"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Read">Read</a>
+<hr><h2 id="_2DDE00C0"><a name="TerminalCodes.Read"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Read">Read</a>
 </h2>
 <p> The next event, read from whatever the terminal (or a test) is sending. FALSE when there is nothing more to read.</p>
 
@@ -183,91 +183,91 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Read* (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> e: <strong>Event</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_EF9A61C0"><a name="TerminalCodes.MoveTo"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.MoveTo">MoveTo</a>
+<hr><h2 id="_2DDF8980"><a name="TerminalCodes.MoveTo"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.MoveTo">MoveTo</a>
 </h2>
 <p> Put the cursor there. Rows and columns count from one, as the terminal counts them.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> MoveTo* (w: <strong>Streams.Writer</strong>; row, column: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_EF9AE780"><a name="TerminalCodes.Clear"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Clear">Clear</a>
+<hr><h2 id="_2DE00F40"><a name="TerminalCodes.Clear"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Clear">Clear</a>
 </h2>
 <p> Erase the whole screen.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Clear* (w: <strong>Streams.Writer</strong>)</pre>
-<hr><h2 id="#_EF9B2E40"><a name="TerminalCodes.ClearLine"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.ClearLine">ClearLine</a>
+<hr><h2 id="_2DE05600"><a name="TerminalCodes.ClearLine"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.ClearLine">ClearLine</a>
 </h2>
 <p> Erase from the cursor to the end of its line.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ClearLine* (w: <strong>Streams.Writer</strong>)</pre>
-<hr><h2 id="#_EF9B8B80"><a name="TerminalCodes.Foreground"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Foreground">Foreground</a>
+<hr><h2 id="_2DE0B340"><a name="TerminalCodes.Foreground"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Foreground">Foreground</a>
 </h2>
 <p> Colour the characters that follow, as red, green and blue from 0 to 255.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Foreground* (w: <strong>Streams.Writer</strong>; red, green, blue: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_EF9C16C0"><a name="TerminalCodes.Background"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Background">Background</a>
+<hr><h2 id="_2DE13E80"><a name="TerminalCodes.Background"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Background">Background</a>
 </h2>
 <p> Colour the ground behind them.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Background* (w: <strong>Streams.Writer</strong>; red, green, blue: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_EF9C7F80"><a name="TerminalCodes.Bold"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Bold">Bold</a>
+<hr><h2 id="_2DE1A740"><a name="TerminalCodes.Bold"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Bold">Bold</a>
 </h2>
 <p> Bold, and off again.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Bold* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
-<hr><h2 id="#_EF9CD340"><a name="TerminalCodes.Inverse"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Inverse">Inverse</a>
+<hr><h2 id="_2DE1FB00"><a name="TerminalCodes.Inverse"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Inverse">Inverse</a>
 </h2>
 <p> Swap the two colours, and back.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Inverse* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
-<hr><h2 id="#_EF9D2F00"><a name="TerminalCodes.Plain"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Plain">Plain</a>
+<hr><h2 id="_2DE256C0"><a name="TerminalCodes.Plain"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.Plain">Plain</a>
 </h2>
 <p> Plain characters again: no colour, no attribute.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Plain* (w: <strong>Streams.Writer</strong>)</pre>
-<hr><h2 id="#_EF9D80C0"><a name="TerminalCodes.AltScreen"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.AltScreen">AltScreen</a>
+<hr><h2 id="_2DE2A880"><a name="TerminalCodes.AltScreen"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.AltScreen">AltScreen</a>
 </h2>
 <p> Draw on a screen of its own, and give the one underneath back when done. A program that does this leaves the terminal looking as it did before it started.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> AltScreen* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
-<hr><h2 id="#_EF9E3A40"><a name="TerminalCodes.ShowCursor"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.ShowCursor">ShowCursor</a>
+<hr><h2 id="_2DE36200"><a name="TerminalCodes.ShowCursor"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.ShowCursor">ShowCursor</a>
 </h2>
 <p> Show the cursor, or hide it while drawing.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ShowCursor* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
-<hr><h2 id="#_EF9E9E80"><a name="TerminalCodes.TrackMouse"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.TrackMouse">TrackMouse</a>
+<hr><h2 id="_2DE3C640"><a name="TerminalCodes.TrackMouse"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.TrackMouse">TrackMouse</a>
 </h2>
 <p> Ask for the mouse: presses, releases, motion while pressed, and the wheel, reported the way SGR 1006 reports them -- which is the only way that works past column 223.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> TrackMouse* (w: <strong>Streams.Writer</strong>; on: <strong>BOOLEAN</strong>)</pre>
-<hr><h2 id="#_EF9F5700"><a name="TerminalCodes.CharTo"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.CharTo">CharTo</a>
+<hr><h2 id="_2DE47EC0"><a name="TerminalCodes.CharTo"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.CharTo">CharTo</a>
 </h2>
 <p> One character as the string of UTF-8 bytes it is, for putting it inside a line of text.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> CharTo* (c: <strong>Char32</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_EF9FEDC0"><a name="TerminalCodes.WriteChar"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.WriteChar">WriteChar</a>
+<hr><h2 id="_2DE51580"><a name="TerminalCodes.WriteChar"></a><a href="#TerminalCodes">TerminalCodes</a>.<a href="#TerminalCodes.WriteChar">WriteChar</a>
 </h2>
 <p> One character, in UTF-8, which is what a terminal expects and what box drawing needs.</p>
 

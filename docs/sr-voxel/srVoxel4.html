@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#srVoxel4">srVoxel4</a></p>
+<hr><h1 id="_DC9D6580"><a name="srVoxel4"></a><a href="#ModuleList">Module</a> srVoxel4
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#srVoxel4.FuzzVox">FuzzVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel4.LifeVox">LifeVox</a> =<strong>OBJECT</strong> (<strong>srVoxel2.Bloc10</strong>)<tr><td></td><td><a href="#srVoxel4.Sphere">Sphere</a> =<strong>OBJECT</strong> (<strong>srBase.Voxel</strong>)<tr><td></td><td><a href="#srVoxel4.Stripey">Stripey</a> =<strong>OBJECT</strong> (<strong>srBase.Voxel</strong>)<tr><td></td><td><a href="#srVoxel4.Ellipsoid">Ellipsoid</a> =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)<tr><td></td><td><a href="#srVoxel4.Hyperboloid">Hyperboloid</a> =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)<tr><td></td><td><a href="#srVoxel4.SphereInVox">SphereInVox</a> =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)<tr><td></td><td><a href="#srVoxel4.MirrorSphereInVox">MirrorSphereInVox</a> =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)<tr><td></td><td><a href="#srVoxel4.CylInVox">CylInVox</a> =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)<tr><td></td><td><a href="#srVoxel4.ArVox">ArVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel4.checkboard">checkboard</a> =<strong>OBJECT</strong> (<strong>srVoxel2.Bloc10</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DC9E7780"><a name="srVoxel4.FuzzVox"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.FuzzVox">FuzzVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FuzzVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> setFuzz (f: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DC9EF380"><a name="srVoxel4.LifeVox"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.LifeVox">LifeVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LifeVox* =<strong>OBJECT</strong> (<strong>srVoxel2.Bloc10</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init</td></tr>
+</table>
+<hr><h2 id="_DC9F3500"><a name="srVoxel4.Sphere"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.Sphere">Sphere</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Sphere* =<strong>OBJECT</strong> (<strong>srBase.Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> resize (s: <strong>SREAL</strong>)<tr><td></td><td> size (s: <strong>SREAL</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DC9FA140"><a name="srVoxel4.Stripey"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.Stripey">Stripey</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Stripey* =<strong>OBJECT</strong> (<strong>srBase.Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_DC9FF5C0"><a name="srVoxel4.Ellipsoid"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.Ellipsoid">Ellipsoid</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Ellipsoid* =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>D: <strong>SREAL</strong><tr><th align='left'>procedures</th><td>&amp; init (v, u: <strong>Voxel</strong>)<tr><td></td><td> size (x: <strong>SREAL</strong>)<tr><td></td><td> tick<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DCA0A640"><a name="srVoxel4.Hyperboloid"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.Hyperboloid">Hyperboloid</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Hyperboloid* =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>D: <strong>SREAL</strong><tr><th align='left'>procedures</th><td>&amp; init (v: <strong>Voxel</strong>)<tr><td></td><td> set (v: <strong>Voxel</strong>)<tr><td></td><td> size (x: <strong>SREAL</strong>)<tr><td></td><td> tick<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DCA16A00"><a name="srVoxel4.SphereInVox"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.SphereInVox">SphereInVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SphereInVox* =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>D2: <strong>SREAL</strong><tr><th align='left'>procedures</th><td>&amp; init (v: <strong>Voxel</strong>)<tr><td></td><td> set (v: <strong>Voxel</strong>)<tr><td></td><td> set2 (v: <strong>Voxel</strong>)<tr><td></td><td> setSize (x: <strong>SREAL</strong>)<tr><td></td><td> tick<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DCA24940"><a name="srVoxel4.MirrorSphereInVox"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.MirrorSphereInVox">MirrorSphereInVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MirrorSphereInVox* =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>D2: <strong>SREAL</strong><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)<tr><td></td><td> tick</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DCA2C580"><a name="srVoxel4.CylInVox"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.CylInVox">CylInVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CylInVox* =<strong>OBJECT</strong> (<strong>ImpliciVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>D2: <strong>SREAL</strong><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DCA336C0"><a name="srVoxel4.ArVox"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.ArVox">ArVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ArVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> bounds (i, j, k: <strong>SIGNED16</strong>; <strong>VAR</strong> out: <strong>BOOLEAN</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DCA3D4C0"><a name="srVoxel4.checkboard"></a><a href="#srVoxel4">srVoxel4</a>.<a href="#srVoxel4.checkboard">checkboard</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> checkboard* =<strong>OBJECT</strong> (<strong>srVoxel2.Bloc10</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init</td></tr>
+</table>
+</body></html>

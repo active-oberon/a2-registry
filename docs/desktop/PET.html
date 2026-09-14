@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#PET">PET</a></p>
+<hr><h1 id="_EDCEA480"><a name="PET"></a><a href="#ModuleList">Module</a> PET
+</h1>
+<p> AUTHOR &quot;TF, PL&quot;; PURPOSE &quot;Programmer&apos;s Editing Tool&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#PET.Open">Open</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> OpenState (context: <strong>Commands.Context</strong>)<tr><td></td><td> Restore (context: <strong>WMRestorable.Context</strong>)<tr><td></td><td> <a href="#PET.CommentSelection">CommentSelection</a> (text: <strong>Texts.Text</strong>; from, to: <strong>Texts.TextPosition</strong>)<tr><td></td><td> <a href="#PET.UncommentSelection">UncommentSelection</a> (text: <strong>Texts.Text</strong>; from, to: <strong>Texts.TextPosition</strong>)<tr><td></td><td> <a href="#PET.Comment">Comment</a><tr><td></td><td> <a href="#PET.Uncomment">Uncomment</a><tr><td></td><td> GetSyntaxHighlighterName (fullname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_EDCFE1C0">
+</h1>
+<ul>
+<li> Shortcuts: <strong></strong></li>
+
+<li> CTRL-F: Show search panel of current page, set focus to its editor and clear the content of the editor</li>
+
+<li> CTRL-N: If search panel is visible: Find next occurence downwards</li>
+
+<li> elsif error grid is visible: Jump to next error position</li>
+
+<li> CTRL-P: If search panel is visible: Find next occurence upwards</li>
+
+<li> elsif error grid is visible: Jump to previous error position <strong></strong></li>
+
+<li> CTRL-0: Set cursor to position zero</li>
+
+<li> CTRL-9: Move cursor to end of text <strong></strong></li>
+
+<li> CTRL-O: Set focus to filename editor and clear its content</li>
+
+<li> CTRL-S: Store current page <strong></strong></li>
+
+<li> CTRL-I: Toggle interactive Interface Finder <strong></strong></li>
+
+<li> CTRL-M: Toggle visibility of sidepanel <strong></strong></li>
+
+<li> CTRL-H: Compile file opened in current page</li>
+
+<li> CTRL-U: Unload module opened in current page</li>
+
+<li> CTRL-D: Diff current tab to file <strong></strong></li>
+
+<li> CTRL-G: Go to the declaration of the name under the cursor (language server, same process)</li>
+
+<li> CTRL-K: What the name under the cursor is, written to the log <strong></strong></li>
+
+<li> F9: Breakpoint on the cursor&apos;s line, on or off</li>
+
+<li> F8: Step to the next statement</li>
+
+<li> ALT-F9: Run this page&apos;s module under the debugger, or let a stopped program go on</li>
+
+<li> ALT-F3: Let the program go for good, taking the breakpoints out of its code</li>
+
+<li> (these four are what the host WM, data/HotKeys.XML and PET itself leave free) <strong></strong></li>
+
+<li> CTRL-DEL Delete end-of-line whitespace in current page <strong></strong></li>
+
+<li> ALT-INS Uncomment selected code of commented</li>
+
+<li> ALT-DEL Comment selected code <strong></strong></li>
+
+<li> CTRL-PgUp Load PET state from file</li>
+
+<li> CTRL-PgDn Save PET state to file <strong></strong></li>
+
+<li> CTRL-SHIFT-Tab Select previous tab</li>
+
+<li> CTRL-Tab Select next tab <strong></strong></li>
+
+<li> SHIFT-F1..F12 Store current cursor position</li>
+
+<li> CTRL-F1..F12 Recall cursor position <strong></strong></li>
+
+<li> When the filename editor has the keyboard focus: <strong></strong></li>
+
+<li> ESC Reset filename to filename of currently opened tab</li>
+
+<li> ENTER Open file</li>
+
+<li> SHIFT_ENTER Open file in new PET window instance</li>
+</ul>
+<hr><h2 id="_EDD4BCC0"><a name="PET.Open"></a><a href="#PET">PET</a>.<a href="#PET.Open">Open</a>
+</h2>
+<p> Open document</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="_EDD4FA00"><a name="PET.CommentSelection"></a><a href="#PET">PET</a>.<a href="#PET.CommentSelection">CommentSelection</a>
+</h2>
+<p> Comment the currently selected text</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CommentSelection* (text: <strong>Texts.Text</strong>; from, to: <strong>Texts.TextPosition</strong>)</pre>
+<hr><h2 id="_EDD55A80"><a name="PET.UncommentSelection"></a><a href="#PET">PET</a>.<a href="#PET.UncommentSelection">UncommentSelection</a>
+</h2>
+<p> Uncomment the currently selected text if it is commented</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UncommentSelection* (text: <strong>Texts.Text</strong>; from, to: <strong>Texts.TextPosition</strong>)</pre>
+<hr><h2 id="_EDD5C9C0"><a name="PET.Comment"></a><a href="#PET">PET</a>.<a href="#PET.Comment">Comment</a>
+</h2>
+<p> Comment the currently selected text</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Comment*</pre>
+<hr><h2 id="_EDD60340"><a name="PET.Uncomment"></a><a href="#PET">PET</a>.<a href="#PET.Uncomment">Uncomment</a>
+</h2>
+<p> Uncomment the currently selected text if it is commented</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Uncomment*</pre>
+</body></html>

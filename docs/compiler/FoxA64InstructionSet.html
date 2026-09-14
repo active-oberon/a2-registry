@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxA64InstructionSet">FoxA64InstructionSet</a></p>
-<hr><h1 id="#_640B33C0"><a name="FoxA64InstructionSet"></a><a href="#ModuleList">Module</a> FoxA64InstructionSet
+<hr><h1 id="_880B33C0"><a name="FoxA64InstructionSet"></a><a href="#ModuleList">Module</a> FoxA64InstructionSet
 </h1>
-<p> AUTHOR "Andrii Puhachenko; co-author Claude (Opus 5)"; PURPOSE "the A64 instruction set: how an instruction is written, and how it is encoded";</p>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;the A64 instruction set: how an instruction is written, and how it is encoded&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -271,8 +271,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_641DE480">
-</h1><hr><h2 id="#_641DEC40"><a name="FoxA64InstructionSet.Operand"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.Operand">Operand</a>
+<hr><h1 id="_881DD680">
+</h1><hr><h2 id="_881DDE40"><a name="FoxA64InstructionSet.Operand"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.Operand">Operand</a>
 </h2>
 <p> one operand of an A64 instruction</p>
 
@@ -298,7 +298,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_641FE900"><a name="FoxA64InstructionSet.Instruction"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.Instruction">Instruction</a>
+<hr><h2 id="_881FDB00"><a name="FoxA64InstructionSet.Instruction"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.Instruction">Instruction</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -309,42 +309,42 @@
 <table><tr><th align='left'>variables</th><td>mnemonic: <strong>SIGNED32</strong><tr><td></td><td>operands: <strong>ARRAY</strong> MaxOperands <strong>OF</strong> <strong>Operand</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_64204480"><a name="FoxA64InstructionSet.EncodeLogicalImmediate"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.EncodeLogicalImmediate">EncodeLogicalImmediate</a>
+<hr><h2 id="_88203680"><a name="FoxA64InstructionSet.EncodeLogicalImmediate"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.EncodeLogicalImmediate">EncodeLogicalImmediate</a>
 </h2>
 <p> find N, immr and imms such that the pattern they describe is `value` in a register of `width` bits; FALSE when no such pattern exists, which includes 0 and all ones</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> EncodeLogicalImmediate* (value: <strong>SIGNED64</strong>; width: <strong>SIGNED32</strong>; <strong>VAR</strong> n, immr, imms: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_64212980"><a name="FoxA64InstructionSet.InvertCondition"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InvertCondition">InvertCondition</a>
+<hr><h2 id="_88211B80"><a name="FoxA64InstructionSet.InvertCondition"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InvertCondition">InvertCondition</a>
 </h2>
-<p> the condition that holds exactly when this one does not; AL and NV are each other's inverse in the encoding, which is why the aliases below never take them</p>
+<p> the condition that holds exactly when this one does not; AL and NV are each other&apos;s inverse in the encoding, which is why the aliases below never take them</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> InvertCondition* (condition: <strong>SIGNED8</strong>): <strong>SIGNED8</strong></pre>
-<hr><h2 id="#_6421D640"><a name="FoxA64InstructionSet.InitStackPointer"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitStackPointer">InitStackPointer</a>
+<hr><h2 id="_8821C840"><a name="FoxA64InstructionSet.InitStackPointer"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitStackPointer">InitStackPointer</a>
 </h2>
 <p> a general purpose register named SP or WSP rather than ZR</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> InitStackPointer* (<strong>VAR</strong> operand: <strong>Operand</strong>; size: <strong>SIGNED16</strong>)</pre>
-<hr><h2 id="#_64224A00"><a name="FoxA64InstructionSet.InitShiftedRegister"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitShiftedRegister">InitShiftedRegister</a>
+<hr><h2 id="_88223C00"><a name="FoxA64InstructionSet.InitShiftedRegister"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitShiftedRegister">InitShiftedRegister</a>
 </h2>
 <p> a register operand carrying a shift, as the second source of a data processing instruction</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> InitShiftedRegister* (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>SIGNED32</strong>; size: <strong>SIGNED16</strong>; shiftMode: <strong>SIGNED8</strong>; amount: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_6422F6C0"><a name="FoxA64InstructionSet.InitExtendedRegister"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitExtendedRegister">InitExtendedRegister</a>
+<hr><h2 id="_8822E8C0"><a name="FoxA64InstructionSet.InitExtendedRegister"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitExtendedRegister">InitExtendedRegister</a>
 </h2>
 <p> a register operand carrying an extension, as the second source of an address computation</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> InitExtendedRegister* (<strong>VAR</strong> operand: <strong>Operand</strong>; register: <strong>SIGNED32</strong>; size: <strong>SIGNED16</strong>; extend: <strong>SIGNED8</strong>; amount: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_6423A100"><a name="FoxA64InstructionSet.InitShiftedImmediate"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitShiftedImmediate">InitShiftedImmediate</a>
+<hr><h2 id="_88239300"><a name="FoxA64InstructionSet.InitShiftedImmediate"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitShiftedImmediate">InitShiftedImmediate</a>
 </h2>
 <p> an immediate that is shifted left before it is used, as in MOVZ Xd,</p>
 
@@ -363,17 +363,17 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> InitShiftedImmediate* (<strong>VAR</strong> operand: <strong>Operand</strong>; immediate: <strong>Basic.Integer</strong>; amount: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_64243B80"><a name="FoxA64InstructionSet.InitImmediateOffsetMemory"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitImmediateOffsetMemory">InitImmediateOffsetMemory</a>
+<hr><h2 id="_88242D80"><a name="FoxA64InstructionSet.InitImmediateOffsetMemory"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitImmediateOffsetMemory">InitImmediateOffsetMemory</a>
 </h2>
-<p> <a href="#base,">base,</a></p>
+<p> [base,</p>
 
 <dl>
-<dt><strong>offset], or <a href="#base,">base,</a></strong></dt>
+<dt><strong>offset], or [base,</strong></dt>
 <dd></dd>
 
 
 <dl>
-<dt><strong>offset]! and <a href="#base],">base],</a></strong></dt>
+<dt><strong>offset]! and [base],</strong></dt>
 <dd></dd>
 
 
@@ -388,9 +388,9 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> InitImmediateOffsetMemory* (<strong>VAR</strong> operand: <strong>Operand</strong>; base: <strong>SIGNED32</strong>; offset: <strong>Basic.Integer</strong>; indexing: <strong>SIGNED8</strong>)</pre>
-<hr><h2 id="#_6424D080"><a name="FoxA64InstructionSet.InitRegisterOffsetMemory"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitRegisterOffsetMemory">InitRegisterOffsetMemory</a>
+<hr><h2 id="_8824C280"><a name="FoxA64InstructionSet.InitRegisterOffsetMemory"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.InitRegisterOffsetMemory">InitRegisterOffsetMemory</a>
 </h2>
-<p> <a href="#base,">base,</a> index, extend</p>
+<p> [base, index, extend</p>
 
 <dl>
 <dt><strong>amount] -- extend may be None, which means LSL</strong></dt>
@@ -401,7 +401,7 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> InitRegisterOffsetMemory* (<strong>VAR</strong> operand: <strong>Operand</strong>; base, index: <strong>SIGNED32</strong>; indexSize: <strong>SIGNED16</strong>; extend: <strong>SIGNED8</strong>; amount: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_64257A80"><a name="FoxA64InstructionSet.Encode"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.Encode">Encode</a>
+<hr><h2 id="_88256C80"><a name="FoxA64InstructionSet.Encode"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.Encode">Encode</a>
 </h2>
 <p> encode one instruction into the 32 bit word the processor reads</p>
 
@@ -410,14 +410,14 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Encode* (<strong>CONST</strong> instruction: <strong>Instruction</strong>; <strong>VAR</strong> code: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_642696C0"><a name="FoxA64InstructionSet.WriteSystemRegister"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.WriteSystemRegister">WriteSystemRegister</a>
+<hr><h2 id="_882688C0"><a name="FoxA64InstructionSet.WriteSystemRegister"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.WriteSystemRegister">WriteSystemRegister</a>
 </h2>
 <p> the name of a system register, or the number itself when it has none</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> WriteSystemRegister* (w: <strong>Streams.Writer</strong>; value: <strong>Basic.Integer</strong>)</pre>
-<hr><h2 id="#_64271300"><a name="FoxA64InstructionSet.RegisterFromName"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.RegisterFromName">RegisterFromName</a>
+<hr><h2 id="_88270500"><a name="FoxA64InstructionSet.RegisterFromName"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.RegisterFromName">RegisterFromName</a>
 </h2>
 <p> the register a name denotes, along with the width the name implies</p>
 
@@ -426,14 +426,14 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> RegisterFromName* (<strong>CONST</strong> registerName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> register: <strong>SIGNED32</strong>; <strong>VAR</strong> size: <strong>SIGNED16</strong>; <strong>VAR</strong> isStackPointer: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_64283580"><a name="FoxA64InstructionSet.SystemRegisterFromName"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.SystemRegisterFromName">SystemRegisterFromName</a>
+<hr><h2 id="_88282780"><a name="FoxA64InstructionSet.SystemRegisterFromName"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.SystemRegisterFromName">SystemRegisterFromName</a>
 </h2>
 <p> the sixteen bits that name a system register, or None when the identifier names none</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SystemRegisterFromName* (<strong>CONST</strong> registerName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_6428B740"><a name="FoxA64InstructionSet.FindMnemonic"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.FindMnemonic">FindMnemonic</a>
+<hr><h2 id="_8828A940"><a name="FoxA64InstructionSet.FindMnemonic"></a><a href="#FoxA64InstructionSet">FoxA64InstructionSet</a>.<a href="#FoxA64InstructionSet.FindMnemonic">FindMnemonic</a>
 </h2>
 <p> the mnemonic a name denotes; a conditional branch carries its condition in the name</p>
 

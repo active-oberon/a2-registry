@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMV24Component">WMV24Component</a></p>
+<hr><h1 id="_A8842300"><a name="WMV24Component"></a><a href="#ModuleList">Module</a> WMV24Component
+</h1>
+<p> AUTHOR &quot;TF/staubesv&quot;; PURPOSE &quot;Terminal&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WMV24Component.Window">Window</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><th align='left'>procedures</th><td> Restore (context: <strong>WMRestorable.Context</strong>)<tr><td></td><td> Open (context: <strong>Commands.Context</strong>)<tr><td></td><td> NewTerminalComponent (): <strong>XML.Element</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_A884B640">
+</h1>
+<ul>
+<li> History:</li>
+
+<li> 19.01.2006 Adapted to Serials, added clear button, synchronize operations to V24Panel.open (staubesv)</li>
+
+<li> 10.06.2006 Added YSend functionality, use XYModem.Mod instead of XModem.Mod, command button</li>
+
+<li> 14.06.2006 Busy loop removed, made window restorable (staubesv)</li>
+
+<li> 15.06.2006 Support to paste to terminal window from clipboard, cursor always at the end of the text, keyboard focus indication, added scrollbar (staubesv)</li>
+
+<li> 16.06.2006 Added SendCommand functionality (staubesv)</li>
+
+<li> 21.06.2006 Improved error reporting (staubesv)</li>
+
+<li> 22.06.2006 Added LineFeed and UseBackspace options, added status bar (staubesv)</li>
+
+<li> 05.09.2006 Relay all keys to serial port, added copy&amp;paste buttons since shortcuts are relayed to text view anymore,</li>
+
+<li> don&apos;t send command if port is not open, configuration can be specified in Configuration.XML (staubesv)</li>
+
+<li> 25.09.2006 Added XY modem receive &amp; echo capability (staubesv)</li>
+
+<li> 20.02.2007 Better usability for selection, can send multiple files via XY-Modem protocol (staubesv)</li>
+
+<li> 25.06.2007 Open progress windows on current view (staubesv) <strong></strong></li>
+
+<li> TODO: <strong></strong></li>
+
+<li> Sometimes, not all data that is received is displayed until the user sends a character to the device (The data is really receive, w.Char and w.Update</li>
+
+<li> are both called but the content of the writer w are not displayed). FIX!</li>
+</ul>
+<hr><h2 id="_A887B3C0"><a name="WMV24Component.Window"></a><a href="#WMV24Component">WMV24Component</a>.<a href="#WMV24Component.Window">Window</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Window* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; New (c: <strong>WMRestorable.Context</strong>; context: <strong>Commands.Context</strong>)<tr><td></td><td> Close<tr><td></td><td> Handle (<strong>VAR</strong> x: <strong>WMMessages.Message</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

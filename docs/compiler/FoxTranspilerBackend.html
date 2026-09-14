@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxTranspilerBackend">FoxTranspilerBackend</a></p>
-<hr><h1 id="#_0FB2C800"><a name="FoxTranspilerBackend"></a><a href="#ModuleList">Module</a> FoxTranspilerBackend
+<hr><h1 id="_2770A600"><a name="FoxTranspilerBackend"></a><a href="#ModuleList">Module</a> FoxTranspilerBackend
 </h1>
-<p> AUTHOR "negelef"; PURPOSE "Oberon to C transpiler";</p>
+<p> AUTHOR &quot;negelef&quot;; PURPOSE &quot;Oberon to C transpiler&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -42,7 +42,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_0FB346C0"><a name="FoxTranspilerBackend.Transpiler"></a><a href="#FoxTranspilerBackend">FoxTranspilerBackend</a>.<a href="#FoxTranspilerBackend.Transpiler">Transpiler</a>
+<hr><h2 id="_277124C0"><a name="FoxTranspilerBackend.Transpiler"></a><a href="#FoxTranspilerBackend">FoxTranspilerBackend</a>.<a href="#FoxTranspilerBackend.Transpiler">Transpiler</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -50,7 +50,10 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> VisitAssignment (statement: <strong>SyntaxTree.Assignment</strong>)<tr><td></td><td> VisitIfStatement (statement: <strong>SyntaxTree.IfStatement</strong>)<tr><td></td><td> VisitWithStatement (statement: <strong>SyntaxTree.WithStatement</strong>)<tr><td></td><td> VisitWhileStatement (statement: <strong>SyntaxTree.WhileStatement</strong>)<tr><td></td><td> VisitRepeatStatement (statement: <strong>SyntaxTree.RepeatStatement</strong>)<tr><td></td><td> VisitLoopStatement (statement: <strong>SyntaxTree.LoopStatement</strong>)<tr><td></td><td> VisitExitStatement (statement: <strong>SyntaxTree.ExitStatement</strong>)<tr><td></td><td> VisitReturnStatement (statement: <strong>SyntaxTree.ReturnStatement</strong>)<tr><td></td><td> VisitStatementBlock (statement: <strong>SyntaxTree.StatementBlock</strong>)<tr><td></td><td> VisitAwaitStatement (statement: <strong>SyntaxTree.AwaitStatement</strong>)<tr><td></td><td> VisitCaseStatement (statement: <strong>SyntaxTree.CaseStatement</strong>)<tr><td></td><td> VisitForStatement (statement: <strong>SyntaxTree.ForStatement</strong>)<tr><td></td><td> VisitProcedureCallStatement (statement: <strong>SyntaxTree.ProcedureCallStatement</strong>)<tr><td></td><td> VisitSymbolDesignator (expression: <strong>SyntaxTree.SymbolDesignator</strong>)<tr><td></td><td> VisitBuiltinCallDesignator (expression: <strong>SyntaxTree.BuiltinCallDesignator</strong>)<tr><td></td><td> VisitProcedureCallDesignator (expression: <strong>SyntaxTree.ProcedureCallDesignator</strong>)<tr><td></td><td> VisitBooleanValue (expression: <strong>SyntaxTree.BooleanValue</strong>)<tr><td></td><td> VisitIntegerValue (expression: <strong>SyntaxTree.IntegerValue</strong>)<tr><td></td><td> VisitCharacterValue (expression: <strong>SyntaxTree.CharacterValue</strong>)<tr><td></td><td> VisitSetValue (expression: <strong>SyntaxTree.SetValue</strong>)<tr><td></td><td> VisitRealValue (expression: <strong>SyntaxTree.RealValue</strong>)<tr><td></td><td> VisitStringValue (expression: <strong>SyntaxTree.StringValue</strong>)<tr><td></td><td> VisitNilValue (expression: <strong>SyntaxTree.NilValue</strong>)<tr><td></td><td> VisitEnumerationValue (expression: <strong>SyntaxTree.EnumerationValue</strong>)<tr><td></td><td> VisitUnaryExpression (expression: <strong>SyntaxTree.UnaryExpression</strong>)<tr><td></td><td> VisitTypeGuardDesignator (expression: <strong>SyntaxTree.TypeGuardDesignator</strong>)<tr><td></td><td> VisitSupercallDesignator (expression: <strong>SyntaxTree.SupercallDesignator</strong>)<tr><td></td><td> VisitBinaryExpression (expression: <strong>SyntaxTree.BinaryExpression</strong>)<tr><td></td><td> VisitSelfDesignator (expression: <strong>SyntaxTree.SelfDesignator</strong>)<tr><td></td><td> VisitIndexDesignator (expression: <strong>SyntaxTree.IndexDesignator</strong>)<tr><td></td><td> VisitConversion (expression: <strong>SyntaxTree.Conversion</strong>)<tr><td></td><td> VisitDereferenceDesignator (expression: <strong>SyntaxTree.DereferenceDesignator</strong>)<tr><td></td><td> VisitSet (expression: <strong>SyntaxTree.Set</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> VisitAssignment (statement: <strong>SyntaxTree.Assignment</strong>)<tr><td></td><td> VisitDeclarationStatement (statement: <strong>SyntaxTree.DeclarationStatement</strong>)<tr><td></td><td> VisitIfStatement (statement: <strong>SyntaxTree.IfStatement</strong>)<tr><td></td><td> VisitWithStatement (statement: <strong>SyntaxTree.WithStatement</strong>)<tr><td></td><td> VisitWhileStatement (statement: <strong>SyntaxTree.WhileStatement</strong>)<tr><td></td><td> VisitRepeatStatement (statement: <strong>SyntaxTree.RepeatStatement</strong>)<tr><td></td><td> VisitLoopStatement (statement: <strong>SyntaxTree.LoopStatement</strong>)<tr><td></td><td> VisitExitStatement (statement: <strong>SyntaxTree.ExitStatement</strong>)<tr><td></td><td> VisitReturnStatement (statement: <strong>SyntaxTree.ReturnStatement</strong>)<tr><td></td><td> VisitStatementBlock (statement: <strong>SyntaxTree.StatementBlock</strong>)<tr><td></td><td> VisitAwaitStatement (statement: <strong>SyntaxTree.AwaitStatement</strong>)<tr><td></td><td> VisitCaseStatement (statement: <strong>SyntaxTree.CaseStatement</strong>)<tr><td></td><td> VisitForStatement (statement: <strong>SyntaxTree.ForStatement</strong>)<tr><td></td><td> VisitProcedureCallStatement (statement: <strong>SyntaxTree.ProcedureCallStatement</strong>)<tr><td></td><td> VisitSymbolDesignator (expression: <strong>SyntaxTree.SymbolDesignator</strong>)<tr><td></td><td> VisitBuiltinCallDesignator (expression: <strong>SyntaxTree.BuiltinCallDesignator</strong>)<tr><td></td><td> VisitProcedureCallDesignator (expression: <strong>SyntaxTree.ProcedureCallDesignator</strong>)<tr><td></td><td> VisitBooleanValue (expression: <strong>SyntaxTree.BooleanValue</strong>)<tr><td></td><td> VisitIntegerValue (expression: <strong>SyntaxTree.IntegerValue</strong>)<tr><td></td><td> VisitCharacterValue (expression: <strong>SyntaxTree.CharacterValue</strong>)<tr><td></td><td> VisitSetValue (expression: <strong>SyntaxTree.SetValue</strong>)<tr><td></td><td> VisitRealValue (expression: <strong>SyntaxTree.RealValue</strong>)<tr><td></td><td> VisitStringValue (expression: <strong>SyntaxTree.StringValue</strong>)<tr><td></td><td> VisitNilValue (expression: <strong>SyntaxTree.NilValue</strong>)<tr><td></td><td> VisitEnumerationValue (expression: <strong>SyntaxTree.EnumerationValue</strong>)<tr><td></td><td> VisitUnaryExpression (expression: <strong>SyntaxTree.UnaryExpression</strong>)<tr><td></td><td> VisitTypeGuardDesignator (expression: <strong>SyntaxTree.TypeGuardDesignator</strong>)<tr><td></td><td> VisitSupercallDesignator (expression: <strong>SyntaxTree.SupercallDesignator</strong>)<tr><td></td><td> VisitBinaryExpression (expression: <strong>SyntaxTree.BinaryExpression</strong>)<tr><td></td><td> VisitInlineCallDesignator (expression: <strong>SyntaxTree.InlineCallDesignator</strong>)<tr><td></td><td> VisitResultDesignator (expression: <strong>SyntaxTree.ResultDesignator</strong>)<tr><td></td><td> VisitSelfDesignator (expression: <strong>SyntaxTree.SelfDesignator</strong>)<tr><td></td><td> VisitIndexDesignator (expression: <strong>SyntaxTree.IndexDesignator</strong>)<tr><td></td><td> VisitConversion (expression: <strong>SyntaxTree.Conversion</strong>)<tr><td></td><td> VisitDereferenceDesignator (expression: <strong>SyntaxTree.DereferenceDesignator</strong>)<tr><td></td><td> VisitSet (expression: <strong>SyntaxTree.Set</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -84,7 +87,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_0FB70F00"><a name="FoxTranspilerBackend.TranspilerBackend"></a><a href="#FoxTranspilerBackend">FoxTranspilerBackend</a>.<a href="#FoxTranspilerBackend.TranspilerBackend">TranspilerBackend</a>
+<hr><h2 id="_27DDB540"><a name="FoxTranspilerBackend.TranspilerBackend"></a><a href="#FoxTranspilerBackend">FoxTranspilerBackend</a>.<a href="#FoxTranspilerBackend.TranspilerBackend">TranspilerBackend</a>
 </h2>
 <h3>Syntax</h3>
 

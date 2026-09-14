@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#TFPET">TFPET</a></p>
+<hr><h1 id="_24E25C00"><a name="TFPET"></a><a href="#ModuleList">Module</a> TFPET
+</h1>
+<p> AUTHOR &quot;TF, PL&quot;; PURPOSE &quot;Programmer&apos;s Editing Tool&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#TFPET.Open">Open</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> OpenState (context: <strong>Commands.Context</strong>)<tr><td></td><td> Restore (context: <strong>WMRestorable.Context</strong>)<tr><td></td><td> <a href="#TFPET.CommentSelection">CommentSelection</a> (text: <strong>Texts.Text</strong>; from, to: <strong>Texts.TextPosition</strong>)<tr><td></td><td> <a href="#TFPET.UncommentSelection">UncommentSelection</a> (text: <strong>Texts.Text</strong>; from, to: <strong>Texts.TextPosition</strong>)<tr><td></td><td> <a href="#TFPET.Comment">Comment</a><tr><td></td><td> <a href="#TFPET.Uncomment">Uncomment</a><tr><td></td><td> GetSyntaxHighlighterName (fullname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_24E39940">
+</h1>
+<ul>
+<li> Shortcuts: <strong></strong></li>
+
+<li> CTRL-F: Show search panel of current page, set focus to its editor and clear the content of the editor</li>
+
+<li> CTRL-N: If search panel is visible: Find next occurence downwards</li>
+
+<li> elsif error grid is visible: Jump to next error position</li>
+
+<li> CTRL-P: If search panel is visible: Find next occurence upwards</li>
+
+<li> elsif error grid is visible: Jump to previous error position <strong></strong></li>
+
+<li> CTRL-0: Set cursor to position zero</li>
+
+<li> CTRL-9: Move cursor to end of text <strong></strong></li>
+
+<li> CTRL-O: Set focus to filename editor and clear its content</li>
+
+<li> CTRL-S: Store current page <strong></strong></li>
+
+<li> CTRL-I: Toggle interactive Interface Finder <strong></strong></li>
+
+<li> CTRL-M: Toggle visibility of sidepanel <strong></strong></li>
+
+<li> CTRL-H: Compile file opened in current page</li>
+
+<li> CTRL-U: Unload module opened in current page</li>
+
+<li> CTRL-D: Diff current tab to file <strong></strong></li>
+
+<li> CTRL-DEL Delete end-of-line whitespace in current page <strong></strong></li>
+
+<li> ALT-INS Uncomment selected code of commented</li>
+
+<li> ALT-DEL Comment selected code <strong></strong></li>
+
+<li> CTRL-PgUp Load PET state from file</li>
+
+<li> CTRL-PgDn Save PET state to file <strong></strong></li>
+
+<li> CTRL-SHIFT-Tab Select previous tab</li>
+
+<li> CTRL-Tab Select next tab <strong></strong></li>
+
+<li> SHIFT-F1..F12 Store current cursor position</li>
+
+<li> CTRL-F1..F12 Recall cursor position <strong></strong></li>
+
+<li> When the filename editor has the keyboard focus: <strong></strong></li>
+
+<li> ESC Reset filename to filename of currently opened tab</li>
+
+<li> ENTER Open file</li>
+
+<li> SHIFT_ENTER Open file in new PET window instance</li>
+</ul>
+<hr><h2 id="_24E70FC0"><a name="TFPET.Open"></a><a href="#TFPET">TFPET</a>.<a href="#TFPET.Open">Open</a>
+</h2>
+<p> Open document</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="_24E74D00"><a name="TFPET.CommentSelection"></a><a href="#TFPET">TFPET</a>.<a href="#TFPET.CommentSelection">CommentSelection</a>
+</h2>
+<p> Comment the currently selected text</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CommentSelection* (text: <strong>Texts.Text</strong>; from, to: <strong>Texts.TextPosition</strong>)</pre>
+<hr><h2 id="_24E7AD80"><a name="TFPET.UncommentSelection"></a><a href="#TFPET">TFPET</a>.<a href="#TFPET.UncommentSelection">UncommentSelection</a>
+</h2>
+<p> Uncomment the currently selected text if it is commented</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UncommentSelection* (text: <strong>Texts.Text</strong>; from, to: <strong>Texts.TextPosition</strong>)</pre>
+<hr><h2 id="_24E81CC0"><a name="TFPET.Comment"></a><a href="#TFPET">TFPET</a>.<a href="#TFPET.Comment">Comment</a>
+</h2>
+<p> Comment the currently selected text</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Comment*</pre>
+<hr><h2 id="_24E85640"><a name="TFPET.Uncomment"></a><a href="#TFPET">TFPET</a>.<a href="#TFPET.Uncomment">Uncomment</a>
+</h2>
+<p> Uncomment the currently selected text if it is commented</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Uncomment*</pre>
+</body></html>

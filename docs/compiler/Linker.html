@@ -29,14 +29,21 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Linker">Linker</a></p>
-<hr><h1 id="#_316C9640"><a name="Linker"></a><a href="#ModuleList">Module</a> Linker
+<hr><h1 id="_46B9C700"><a name="Linker"></a><a href="#ModuleList">Module</a> Linker
 </h1>
 <h3>Summary</h3>
 
-<table><tr><th align='left'>type declarations</th><td><a href="#Linker.PatchBlock">PatchBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Linker.Arrangement">Arrangement</a> =<strong>OBJECT</strong> (<strong>GenericLinker.Arrangement</strong>)<tr><th align='left'>procedures</th><td> ReadObjectFile (<strong>CONST</strong> moduleName, path, extension: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; linker: <strong>GenericLinker.Linker</strong>; moduleList: <strong>GenericLinker.HashTableSegmentedName</strong>)<tr><td></td><td> WriteOutputFile (arrangement: <strong>Arrangement</strong>; <strong>CONST</strong> fileName: <strong>Files.FileName</strong>; linker: <strong>GenericLinker.Linker</strong>; fileFormat: <strong>FileFormat</strong>)<tr><td></td><td> WriteTRMFile (arrangement: <strong>Arrangement</strong>; writer: <strong>Files.Writer</strong>; bitsPerLine, lines: <strong>SIZE</strong>)<tr><td></td><td> WriteTRMCodeFile (linker: <strong>GenericLinker.Linker</strong>; arrangement: <strong>Arrangement</strong>; writer: <strong>Files.Writer</strong>)<tr><td></td><td> WriteTRMDataFile (linker: <strong>GenericLinker.Linker</strong>; arrangement: <strong>Arrangement</strong>; writer: <strong>Files.Writer</strong>)<tr><td></td><td> Link (context: <strong>Commands.Context</strong>)<tr><td></td><td> ShowDefaults (context: <strong>Commands.Context</strong>)</td></tr>
+<table><tr><th align='left'>constants</th><td>ImageSectionAlignment= 4096<tr><th align='left'>type declarations</th><td><a href="#Linker.PatchBlock">PatchBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Linker.Resources">Resources</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Linker.Arrangement">Arrangement</a> =<strong>OBJECT</strong> (<strong>GenericLinker.Arrangement</strong>)<tr><td></td><td><a href="#Linker.Builder">Builder</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> ReadObjectFile (<strong>CONST</strong> moduleName, path, extension: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; linker: <strong>GenericLinker.Linker</strong>; moduleList: <strong>GenericLinker.HashTableSegmentedName</strong>)<tr><td></td><td> WriteOutputFile (arrangement: <strong>Arrangement</strong>; <strong>CONST</strong> fileName: <strong>Files.FileName</strong>; linker: <strong>GenericLinker.Linker</strong>; fileFormat: <strong>FileFormat</strong>)<tr><td></td><td> WriteTRMFile (arrangement: <strong>Arrangement</strong>; writer: <strong>Files.Writer</strong>; bitsPerLine, lines: <strong>SIZE</strong>)<tr><td></td><td> WriteTRMCodeFile (linker: <strong>GenericLinker.Linker</strong>; arrangement: <strong>Arrangement</strong>; writer: <strong>Files.Writer</strong>)<tr><td></td><td> WriteTRMDataFile (linker: <strong>GenericLinker.Linker</strong>; arrangement: <strong>Arrangement</strong>; writer: <strong>Files.Writer</strong>)<tr><td></td><td> VersionNumbers (<strong>CONST</strong> version: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> high, low: <strong>SIZE</strong>)<tr><td></td><td> WriteVersionBlock (builder: <strong>Builder</strong>; resources: <strong>Resources</strong>; isDLL: <strong>BOOLEAN</strong>)<tr><td></td><td> WriteManifest (builder: <strong>Builder</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; is64: <strong>BOOLEAN</strong>)<tr><td></td><td> BuildResources (resources: <strong>Resources</strong>; address: <strong>SIZE</strong>; isDLL, is64: <strong>BOOLEAN</strong>): <strong>Builder</strong><tr><td></td><td> Link (context: <strong>Commands.Context</strong>)<tr><td></td><td> ShowDefaults (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -46,7 +53,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_316E6400"><a name="Linker.PatchBlock"></a><a href="#Linker">Linker</a>.<a href="#Linker.PatchBlock">PatchBlock</a>
+<hr><h2 id="_46BCC600"><a name="Linker.PatchBlock"></a><a href="#Linker">Linker</a>.<a href="#Linker.PatchBlock">PatchBlock</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -55,7 +62,27 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_316E9880"><a name="Linker.Arrangement"></a><a href="#Linker">Linker</a>.<a href="#Linker.Arrangement">Arrangement</a>
+<hr><h2 id="_46BCFFC0"><a name="Linker.Resources"></a><a href="#Linker">Linker</a>.<a href="#Linker.Resources">Resources</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Resources* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>company: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>product: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>description: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>copyright: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>comments: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>originalName: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>internalName: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>version: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>icon: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>iconLength: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>&amp; InitResources</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_46BE56C0"><a name="Linker.Arrangement"></a><a href="#Linker">Linker</a>.<a href="#Linker.Arrangement">Arrangement</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -63,7 +90,29 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& InitArrangement (displacement: <strong>GenericLinker.Address</strong>)<tr><td></td><td> Allocate (<strong>CONST</strong> section: <strong>ObjectFile.Section</strong>): <strong>GenericLinker.Address</strong><tr><td></td><td> SizeInBits (): <strong>ObjectFile.Bits</strong><tr><td></td><td> Patch (pos, value: <strong>GenericLinker.Address</strong>; offset, bits, unit: <strong>ObjectFile.Bits</strong>)<tr><td></td><td> CheckReloc (target: <strong>GenericLinker.Address</strong>; pattern: <strong>ObjectFile.Pattern</strong>; <strong>CONST</strong> patch: <strong>ObjectFile.Patch</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>dataStart: <strong>ObjectFile.Bits</strong><tr><td></td><td>resources: <strong>Resources</strong><tr><th align='left'>procedures</th><td>&amp; InitArrangement (displacement: <strong>GenericLinker.Address</strong>)<tr><td></td><td> Allocate (<strong>CONST</strong> section: <strong>ObjectFile.Section</strong>): <strong>GenericLinker.Address</strong><tr><td></td><td> SizeInBits (): <strong>ObjectFile.Bits</strong><tr><td></td><td> Patch (pos, value: <strong>GenericLinker.Address</strong>; offset, bits, unit: <strong>ObjectFile.Bits</strong>)<tr><td></td><td> CheckReloc (target: <strong>GenericLinker.Address</strong>; pattern: <strong>ObjectFile.Pattern</strong>; <strong>CONST</strong> patch: <strong>ObjectFile.Patch</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_46BF8300"><a name="Linker.Builder"></a><a href="#Linker">Linker</a>.<a href="#Linker.Builder">Builder</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Builder* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>bytes: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>length: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>&amp; InitBuilder<tr><td></td><td> Byte (value: <strong>SIZE</strong>)<tr><td></td><td> Word (value: <strong>SIZE</strong>)<tr><td></td><td> DWord (value: <strong>SIZE</strong>)<tr><td></td><td> Take (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; from, count: <strong>SIZE</strong>)<tr><td></td><td> Ascii (<strong>CONST</strong> text: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Utf16 (<strong>CONST</strong> text: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Align (to: <strong>SIZE</strong>)<tr><td></td><td> PatchWord (at, value: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>

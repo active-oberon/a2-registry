@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Errors">Errors</a></p>
-<hr><h1 id="#_FC996A80"><a name="Errors"></a><a href="#ModuleList">Module</a> Errors
+<hr><h1 id="_4310D2C0"><a name="Errors"></a><a href="#ModuleList">Module</a> Errors
 </h1>
-<p> AUTHOR "staubesv"; PURPOSE "Error message interface";</p>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Error message interface&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -44,7 +44,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_FC9A3200">
+<hr><h1 id="_43119A40">
 </h1>
 <ul>
 <li> Interface to system-wide unique error codes. Can be used by application to retrieve textual representations</li>
@@ -55,9 +55,9 @@
 
 <li> - only for use withhin applications</li>
 
-<li> - don't move this file to the system package, never use it from within modules in the system package</li>
+<li> - don&apos;t move this file to the system package, never use it from within modules in the system package</li>
 </ul>
-<hr><h2 id="#_FC9AF280"><a name="Errors.ErrorMessage"></a><a href="#Errors">Errors</a>.<a href="#Errors.ErrorMessage">ErrorMessage</a>
+<hr><h2 id="_43125AC0"><a name="Errors.ErrorMessage"></a><a href="#Errors">Errors</a>.<a href="#Errors.ErrorMessage">ErrorMessage</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -68,21 +68,21 @@
 <table><tr><th align='left'>variables</th><td>moduleName: <strong>Modules.Name</strong><tr><td></td><td>text: <strong>Strings.String</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FC9B3DC0"><a name="Errors.GetErrorMessage"></a><a href="#Errors">Errors</a>.<a href="#Errors.GetErrorMessage">GetErrorMessage</a>
+<hr><h2 id="_4312A600"><a name="Errors.GetErrorMessage"></a><a href="#Errors">Errors</a>.<a href="#Errors.GetErrorMessage">GetErrorMessage</a>
 </h2>
 <p> Get error message for the specified error number. If no message can be found, a generic error message is generated</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetErrorMessage* (errorCode: <strong>INTEGER</strong>): <strong>ErrorMessage</strong></pre>
-<hr><h2 id="#_FC9BC840"><a name="Errors.Open"></a><a href="#Errors">Errors</a>.<a href="#Errors.Open">Open</a>
+<hr><h2 id="_43133080"><a name="Errors.Open"></a><a href="#Errors">Errors</a>.<a href="#Errors.Open">Open</a>
 </h2>
 <p> Load and parse a error message file.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Open* (context: <strong>Commands.Context</strong>)</pre>
-<hr><h2 id="#_FC9C1A00"><a name="Errors.Show"></a><a href="#Errors">Errors</a>.<a href="#Errors.Show">Show</a>
+<hr><h2 id="_43138240"><a name="Errors.Show"></a><a href="#Errors">Errors</a>.<a href="#Errors.Show">Show</a>
 </h2>
 <p> Show the error message for the optionally specified error number. If no number is specified, show all loaded error messages. This procedure is primarly for testing purposes.</p>
 

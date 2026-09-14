@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxIntermediateBackend">FoxIntermediateBackend</a></p>
-<hr><h1 id="#_C38251C0"><a name="FoxIntermediateBackend"></a><a href="#ModuleList">Module</a> FoxIntermediateBackend
+<hr><h1 id="_CF84CC00"><a name="FoxIntermediateBackend"></a><a href="#ModuleList">Module</a> FoxIntermediateBackend
 </h1>
-<p> AUTHOR ""; PURPOSE "";</p>
+<p> AUTHOR &quot;&quot;; PURPOSE &quot;&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -98,21 +98,21 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_C387EB40"><a name="FoxIntermediateBackend.WithTrap"></a><a href="#FoxIntermediateBackend">FoxIntermediateBackend</a>.<a href="#FoxIntermediateBackend.WithTrap">WithTrap</a>
+<hr><h2 id="_CF8A6580"><a name="FoxIntermediateBackend.WithTrap"></a><a href="#FoxIntermediateBackend">FoxIntermediateBackend</a>.<a href="#FoxIntermediateBackend.WithTrap">WithTrap</a>
 </h2>
 <p> compiler generated traps</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> WithTrap*= 1</pre>
-<hr><h2 id="#_C3882180"><a name="FoxIntermediateBackend.NumberSystemCalls"></a><a href="#FoxIntermediateBackend">FoxIntermediateBackend</a>.<a href="#FoxIntermediateBackend.NumberSystemCalls">NumberSystemCalls</a>
+<hr><h2 id="_CF8A9BC0"><a name="FoxIntermediateBackend.NumberSystemCalls"></a><a href="#FoxIntermediateBackend">FoxIntermediateBackend</a>.<a href="#FoxIntermediateBackend.NumberSystemCalls">NumberSystemCalls</a>
 </h2>
 <p> system call numbers</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> NumberSystemCalls*= 12</pre>
-<hr><h2 id="#_C3885840"><a name="FoxIntermediateBackend.IntermediateBackend"></a><a href="#FoxIntermediateBackend">FoxIntermediateBackend</a>.<a href="#FoxIntermediateBackend.IntermediateBackend">IntermediateBackend</a>
+<hr><h2 id="_CF8AD280"><a name="FoxIntermediateBackend.IntermediateBackend"></a><a href="#FoxIntermediateBackend">FoxIntermediateBackend</a>.<a href="#FoxIntermediateBackend.IntermediateBackend">IntermediateBackend</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -120,7 +120,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>trace: <strong>BOOLEAN</strong><tr><td></td><td>traceString: <strong>SyntaxTree.IdentifierString</strong><tr><td></td><td>traceModuleName: <strong>SyntaxTree.IdentifierString</strong><tr><td></td><td>profile: <strong>BOOLEAN</strong><tr><td></td><td>simpleMetaData: <strong>BOOLEAN</strong><tr><td></td><td>optimize: <strong>BOOLEAN</strong><tr><td></td><td>cooperative: <strong>BOOLEAN</strong><tr><td></td><td>preregisterStatic: <strong>BOOLEAN</strong><tr><td></td><td>dump: <strong>Basic.Writer</strong><tr><td></td><td>preciseGC: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitIntermediateBackend<tr><td></td><td> GetParameterRegister (callingConvention: <strong>SyntaxTree.CallingConvention</strong>; type: <strong>IntermediateCode.Type</strong>; <strong>VAR</strong> register: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResetParameterRegisters<tr><td></td><td> GenerateIntermediate (x: <strong>SyntaxTree.Module</strong>; supportedInstruction: <strong>SupportedInstructionProcedure</strong>; supportedImmediate: <strong>SupportedImmediateProcedure</strong>): <strong>Sections.Module</strong><tr><td></td><td> SupportedImmediate (<strong>CONST</strong> op: <strong>IntermediateCode.Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ProcessSyntaxTreeModule (syntaxTreeModule: <strong>SyntaxTree.Module</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> ProcessIntermediateCodeModule (intermediateCodeModule: <strong>Formats.GeneratedModule</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> GetDescription (<strong>VAR</strong> instructionSet: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetSimpleMetaData (simpleMetaData: <strong>BOOLEAN</strong>)<tr><td></td><td> DefineOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> GetOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> DefaultSymbolFileFormat (): <strong>Formats.SymbolFileFormat</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>trace: <strong>BOOLEAN</strong><tr><td></td><td>traceString: <strong>SyntaxTree.IdentifierString</strong><tr><td></td><td>traceModuleName: <strong>SyntaxTree.IdentifierString</strong><tr><td></td><td>profile: <strong>BOOLEAN</strong><tr><td></td><td>simpleMetaData: <strong>BOOLEAN</strong><tr><td></td><td>optimize: <strong>BOOLEAN</strong><tr><td></td><td>cooperative: <strong>BOOLEAN</strong><tr><td></td><td>preregisterStatic: <strong>BOOLEAN</strong><tr><td></td><td>dump: <strong>Basic.Writer</strong><tr><td></td><td>preciseGC: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>&amp; InitIntermediateBackend<tr><td></td><td> GetParameterRegister (callingConvention: <strong>SyntaxTree.CallingConvention</strong>; type: <strong>IntermediateCode.Type</strong>; <strong>VAR</strong> register: <strong>INTEGER</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResetParameterRegisters<tr><td></td><td> GenerateIntermediate (x: <strong>SyntaxTree.Module</strong>; supportedInstruction: <strong>SupportedInstructionProcedure</strong>; supportedImmediate: <strong>SupportedImmediateProcedure</strong>): <strong>Sections.Module</strong><tr><td></td><td> SupportedImmediate (<strong>CONST</strong> op: <strong>IntermediateCode.Operand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ProcessSyntaxTreeModule (syntaxTreeModule: <strong>SyntaxTree.Module</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> ProcessIntermediateCodeModule (intermediateCodeModule: <strong>Formats.GeneratedModule</strong>): <strong>Formats.GeneratedModule</strong><tr><td></td><td> GetDescription (<strong>VAR</strong> instructionSet: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetSimpleMetaData (simpleMetaData: <strong>BOOLEAN</strong>)<tr><td></td><td> DefineOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> GetOptions (options: <strong>Options.Options</strong>)<tr><td></td><td> DefaultSymbolFileFormat (): <strong>Formats.SymbolFileFormat</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMClock">WMClock</a></p>
+<hr><h1 id="_C0D6CD00"><a name="WMClock"></a><a href="#ModuleList">Module</a> WMClock
+</h1>
+<p> AUTHOR &quot;TF/staubesv&quot;; PURPOSE &quot;Clock components &amp; clock application&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#WMClock.ViewModeStandard">ViewModeStandard</a>= 0<tr><td></td><td>ViewModeDateTime= 1<tr><td></td><td>ViewModeDayOfWeek= 2<tr><td></td><td>ViewModeAnalog= 3<tr><td></td><td>ViewModeFormatted= 4<tr><th align='left'>type declarations</th><td><a href="#WMClock.Clock">Clock</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><th align='left'>procedures</th><td> Open<tr><td></td><td> Restore (context: <strong>WMRestorable.Context</strong>)<tr><td></td><td> GenClock (): <strong>XML.Element</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_C0D7AA80"><a name="WMClock.ViewModeStandard"></a><a href="#WMClock">WMClock</a>.<a href="#WMClock.ViewModeStandard">ViewModeStandard</a>
+</h2>
+<p> Clock.viewMode property</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> ViewModeStandard*= 0</pre>
+<hr><h2 id="_C0D7DC80"><a name="WMClock.Clock"></a><a href="#WMClock">WMClock</a>.<a href="#WMClock.Clock">Clock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Clock* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>viewMode: <strong>WMProperties.Int32Property</strong><tr><td></td><td>color: <strong>WMProperties.ColorProperty</strong><tr><td></td><td><a href="#WMClock.Clock.imageName">imageName</a>: <strong>WMProperties.StringProperty</strong><tr><td></td><td><a href="#WMClock.Clock.timeOffset">timeOffset</a>: <strong>WMProperties.Int32Property</strong><tr><td></td><td><a href="#WMClock.Clock.secondHandLength">secondHandLength</a>: <strong>WMProperties.Int32Property</strong><tr><td></td><td>minuteHandLength: <strong>WMProperties.Int32Property</strong><tr><td></td><td>hourHandLength: <strong>WMProperties.Int32Property</strong><tr><td></td><td><a href="#WMClock.Clock.secondHandColor">secondHandColor</a>: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>minuteHandColor: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>hourHandColor: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>format: <strong>WMProperties.StringProperty</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> PropertyChanged (sender, property: @Any0)<tr><td></td><td> RecacheProperties<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)<tr><td></td><td> Finalize<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_C0D91EC0"><a name="WMClock.Clock.imageName"></a><a href="#WMClock">WMClock</a>.<a href="#WMClock.Clock">Clock</a>.<a href="#WMClock.Clock.imageName">imageName</a>
+</h3>
+<p> background image filename</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> imageName-: <strong>WMProperties.StringProperty</strong></pre>
+<hr><h3 id="_C0D95C80"><a name="WMClock.Clock.timeOffset"></a><a href="#WMClock">WMClock</a>.<a href="#WMClock.Clock">Clock</a>.<a href="#WMClock.Clock.timeOffset">timeOffset</a>
+</h3>
+<p> time offset in hours</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> timeOffset-: <strong>WMProperties.Int32Property</strong></pre>
+<hr><h3 id="_C0D99DC0"><a name="WMClock.Clock.secondHandLength"></a><a href="#WMClock">WMClock</a>.<a href="#WMClock.Clock">Clock</a>.<a href="#WMClock.Clock.secondHandLength">secondHandLength</a>
+</h3>
+<p> hand lengths in percent of component width/height</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> secondHandLength-: <strong>WMProperties.Int32Property</strong></pre>
+<hr><h3 id="_C0D9EBC0"><a name="WMClock.Clock.secondHandColor"></a><a href="#WMClock">WMClock</a>.<a href="#WMClock.Clock">Clock</a>.<a href="#WMClock.Clock.secondHandColor">secondHandColor</a>
+</h3>
+<p> colors of hands</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> secondHandColor-: <strong>WMProperties.ColorProperty</strong></pre>
+</body></html>

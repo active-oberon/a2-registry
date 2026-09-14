@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#UDP">UDP</a></p>
-<hr><h1 id="#_852F0F00"><a name="UDP"></a><a href="#ModuleList">Module</a> UDP
+<hr><h1 id="_368AA280"><a name="UDP"></a><a href="#ModuleList">Module</a> UDP
 </h1>
-<p> AUTHOR "pjm, mvt, G.F."; PURPOSE "UDP protocol";</p>
+<p> AUTHOR &quot;pjm, mvt, G.F.&quot;; PURPOSE &quot;UDP protocol&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -48,14 +48,14 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_852FCF80"><a name="UDP.Ok"></a><a href="#UDP">UDP</a>.<a href="#UDP.Ok">Ok</a>
+<hr><h2 id="_368B6300"><a name="UDP.Ok"></a><a href="#UDP">UDP</a>.<a href="#UDP.Ok">Ok</a>
 </h2>
 <p> Error codes</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Ok*= 0</pre>
-<hr><h2 id="#_85300180"><a name="UDP.Socket"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>
+<hr><h2 id="_368B9500"><a name="UDP.Socket"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>
 </h2>
 <p> Socket. Stores the state of a UDP communication endpoint.</p>
 
@@ -65,41 +65,41 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& <a href="#UDP.Socket.Open">Open</a> (lport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#UDP.Socket.Send">Send</a> (fip: <strong>IP.Adr</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#UDP.Socket.SendBroadcast">SendBroadcast</a> (int: <strong>IP.Interface</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#UDP.Socket.Receive">Receive</a> (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size: <strong>SIZE</strong>; ms: <strong>SIGNED32</strong>; <strong>VAR</strong> fip: <strong>IP.Adr</strong>; <strong>VAR</strong> fport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#UDP.Socket.Close">Close</a></td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; <a href="#UDP.Socket.Open">Open</a> (lport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#UDP.Socket.Send">Send</a> (fip: <strong>IP.Adr</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#UDP.Socket.SendBroadcast">SendBroadcast</a> (int: <strong>IP.Interface</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)<tr><td></td><td> <a href="#UDP.Socket.Receive">Receive</a> (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size: <strong>SIZE</strong>; ms: <strong>SIGNED32</strong>; <strong>VAR</strong> fip: <strong>IP.Adr</strong>; <strong>VAR</strong> fport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#UDP.Socket.Close">Close</a></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_8531E840"><a name="UDP.Socket.Open"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Open">Open</a>
+<hr><h3 id="_368D7BC0"><a name="UDP.Socket.Open"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Open">Open</a>
 </h3>
 <p> Constructor</p>
 
 <h3>Syntax</h3>
 
-<pre><strong>PROCEDURE</strong>& Open* (lport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
-<hr><h3 id="#_85323D00"><a name="UDP.Socket.Send"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Send">Send</a>
+<pre><strong>PROCEDURE</strong>&amp; Open* (lport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="_368DD080"><a name="UDP.Socket.Send"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Send">Send</a>
 </h3>
-<p> Send a UDP datagram to the foreign address specified by "fip" and "fport". The data is in "data[ofs..ofs+len-1]". In case of concurrent sends the datagrams are serialized.</p>
+<p> Send a UDP datagram to the foreign address specified by &quot;fip&quot; and &quot;fport&quot;. The data is in &quot;data[ofs..ofs+len-1]&quot;. In case of concurrent sends the datagrams are serialized.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Send* (fip: <strong>IP.Adr</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
-<hr><h3 id="#_853331C0"><a name="UDP.Socket.SendBroadcast"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.SendBroadcast">SendBroadcast</a>
+<hr><h3 id="_368EC540"><a name="UDP.Socket.SendBroadcast"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.SendBroadcast">SendBroadcast</a>
 </h3>
-<p> Send a broadcast UDP datagram via interface "int" to port "lport". Normally only used by DHCP. The data is in "data[ofs..ofs+len-1]". In case of concurrent sends the datagrams are serialized.</p>
+<p> Send a broadcast UDP datagram via interface &quot;int&quot; to port &quot;lport&quot;. Normally only used by DHCP. The data is in &quot;data[ofs..ofs+len-1]&quot;. In case of concurrent sends the datagrams are serialized.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SendBroadcast* (int: <strong>IP.Interface</strong>; fport: <strong>UNSIGNED32</strong>; <strong>CONST</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
-<hr><h3 id="#_85342140"><a name="UDP.Socket.Receive"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Receive">Receive</a>
+<hr><h3 id="_368FB4C0"><a name="UDP.Socket.Receive"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Receive">Receive</a>
 </h3>
-<p> Receive a UDP datagram. If none is available, wait up to the specified timeout for one to arrive. "data[ofs..ofs+size-1]" is the data buffer to hold the returned datagram. "ms" is a wait timeout value in milliseconds, 0 means "don't wait", -1 means "infinite wait". On return, "fip" and "fport" hold the foreign address and port. "len" returns the actual datagram size and "data[ofs..ofs+len-1]" returns the data. "res" returns "Timeout" in case of a timeout and "BufferOverflow" if the received datagram was too big.</p>
+<p> Receive a UDP datagram. If none is available, wait up to the specified timeout for one to arrive. &quot;data[ofs..ofs+size-1]&quot; is the data buffer to hold the returned datagram. &quot;ms&quot; is a wait timeout value in milliseconds, 0 means &quot;don&apos;t wait&quot;, -1 means &quot;infinite wait&quot;. On return, &quot;fip&quot; and &quot;fport&quot; hold the foreign address and port. &quot;len&quot; returns the actual datagram size and &quot;data[ofs..ofs+len-1]&quot; returns the data. &quot;res&quot; returns &quot;Timeout&quot; in case of a timeout and &quot;BufferOverflow&quot; if the received datagram was too big.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Receive* (<strong>VAR</strong> data: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, size: <strong>SIZE</strong>; ms: <strong>SIGNED32</strong>; <strong>VAR</strong> fip: <strong>IP.Adr</strong>; <strong>VAR</strong> fport: <strong>UNSIGNED32</strong>; <strong>VAR</strong> len: <strong>SIZE</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
-<hr><h3 id="#_85361580"><a name="UDP.Socket.Close"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Close">Close</a>
+<hr><h3 id="_3691A900"><a name="UDP.Socket.Close"></a><a href="#UDP">UDP</a>.<a href="#UDP.Socket">Socket</a>.<a href="#UDP.Socket.Close">Close</a>
 </h3>
 <p> Close the Socket, freeing its address for re-use.</p>
 

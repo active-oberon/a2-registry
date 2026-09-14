@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMNavigate">WMNavigate</a></p>
+<hr><h1 id="_74DED880"><a name="WMNavigate"></a><a href="#ModuleList">Module</a> WMNavigate
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Windows navigation&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Text= 0<tr><td></td><td>Icons= 1<tr><td></td><td>Left= 0<tr><td></td><td>Top= 1<tr><td></td><td>Right= 2<tr><td></td><td>Bottom= 3<tr><td></td><td>Fixed= 0<tr><td></td><td>Default= 1<tr><td></td><td>ScaleUp= 2<tr><td></td><td>ScaleUpWidthOnly= 3<tr><td></td><td>ScaleUpHeightOnly= 4<tr><td></td><td>Aspect= 5<tr><th align='left'>type declarations</th><td><a href="#WMNavigate.Base">Base</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#WMNavigate.WindowOverview">WindowOverview</a> =<strong>OBJECT</strong> (<strong>Base</strong>)<tr><td></td><td><a href="#WMNavigate.TaskList">TaskList</a> =<strong>OBJECT</strong> (<strong>Base</strong>)<tr><th align='left'>variables</th><td>windowShotScale: <strong>FLOAT32</strong><tr><th align='left'>procedures</th><td> Open (context: <strong>Commands.Context</strong>)<tr><td></td><td> Close (context: <strong>Commands.Context</strong>)<tr><td></td><td> ToggleVisibility (context: <strong>Commands.Context</strong>)<tr><td></td><td> HideNavigation<tr><td></td><td> RestoreNavigation<tr><td></td><td> ToggleNavigation<tr><td></td><td> FocusToNext<tr><td></td><td> FocusToPrevious<tr><td></td><td> HideAll<tr><td></td><td> RestoreAll<tr><td></td><td> ToggleAll<tr><td></td><td> <a href="#WMNavigate.ToggleFullscreen">ToggleFullscreen</a><tr><td></td><td> MoveWindow (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#WMNavigate.CloseWindow">CloseWindow</a><tr><td></td><td> <a href="#WMNavigate.SetViewportRange">SetViewportRange</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> GenTaskList (): <strong>XML.Element</strong><tr><td></td><td> GenOverview (): <strong>XML.Element</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_74E12F00"><a name="WMNavigate.Base"></a><a href="#WMNavigate">WMNavigate</a>.<a href="#WMNavigate.Base">Base</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Base* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>clDefault: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clSelected: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clMouseOver: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clSelectedMouseOver: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clTextDefault: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clTextSelected: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clTextMouseOver: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clTextSelectedMouseOver: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clIndicateHidden: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>borderWidth: <strong>WMProperties.Int32Property</strong><tr><td></td><td>layoutMode: <strong>WMProperties.Int32Property</strong><tr><td></td><td>itemWidth: <strong>WMProperties.Int32Property</strong><tr><td></td><td>itemHeight: <strong>WMProperties.Int32Property</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> PropertyChanged (sender, data: @Any0)<tr><td></td><td> PointerMove (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerLeave<tr><td></td><td> PointerDown (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_74E2E100"><a name="WMNavigate.WindowOverview"></a><a href="#WMNavigate">WMNavigate</a>.<a href="#WMNavigate.WindowOverview">WindowOverview</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WindowOverview* =<strong>OBJECT</strong> (<strong>Base</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> PropertyChanged (sender, data: @Any0)<tr><td></td><td>&amp; Init<tr><td></td><td> Finalize<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_74E359C0"><a name="WMNavigate.TaskList"></a><a href="#WMNavigate">WMNavigate</a>.<a href="#WMNavigate.TaskList">TaskList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TaskList* =<strong>OBJECT</strong> (<strong>Base</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>style: <strong>WMProperties.Int32Property</strong><tr><td></td><td>menuLocation: <strong>WMProperties.Int32Property</strong><tr><td></td><td>showThumbnails: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td>showNames: <strong>WMProperties.BooleanProperty</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> PropertyChanged (sender, data: @Any0)<tr><td></td><td> FocusLost<tr><td></td><td> PointerDown (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerUp (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> Finalize<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_74E47C00"><a name="WMNavigate.ToggleFullscreen"></a><a href="#WMNavigate">WMNavigate</a>.<a href="#WMNavigate.ToggleFullscreen">ToggleFullscreen</a>
+</h2>
+<p> Toggle minimized/fullscreen for the window that currently owns the focus</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToggleFullscreen*</pre>
+<hr><h2 id="_74E4C7C0"><a name="WMNavigate.CloseWindow"></a><a href="#WMNavigate">WMNavigate</a>.<a href="#WMNavigate.CloseWindow">CloseWindow</a>
+</h2>
+<p> Close the window that currently owns the focus</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CloseWindow*</pre>
+<hr><h2 id="_74E50D40"><a name="WMNavigate.SetViewportRange"></a><a href="#WMNavigate">WMNavigate</a>.<a href="#WMNavigate.SetViewportRange">SetViewportRange</a>
+</h2>
+<ul>
+<li> Set the range of the default view port. Can be used for virtual desktops.</li>
+
+<li> Parameters:</li>
+
+<li> x, y : Position of viewport ovservable range (pixel)</li>
+
+<li> w, h : width and height of viewport observable range (pixel, set to display width/height if omitted)</li>
+
+<li> &quot;s&quot; : show transition to new range</li>
+
+<li> &quot;d&quot;: interpret x, y, w and h parameters as multiples of display width/height</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetViewportRange* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

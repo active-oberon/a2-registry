@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxAssembler">FoxAssembler</a></p>
-<hr><h1 id="#_0FC3E700"><a name="FoxAssembler"></a><a href="#ModuleList">Module</a> FoxAssembler
+<hr><h1 id="_D4261500"><a name="FoxAssembler"></a><a href="#ModuleList">Module</a> FoxAssembler
 </h1>
-<p> AUTHOR "fof"; PURPOSE "Oberon Assembler: Generic Part";</p>
+<p> AUTHOR &quot;fof&quot;; PURPOSE &quot;Oberon Assembler: Generic Part&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -56,8 +56,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_0FC571C0">
-</h1><hr><h2 id="#_0FC57980"><a name="FoxAssembler.NamedLabel"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedLabel">NamedLabel</a>
+<hr><h1 id="_D4279FC0">
+</h1><hr><h2 id="_D427A780"><a name="FoxAssembler.NamedLabel"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedLabel">NamedLabel</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -69,7 +69,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_0FC5E200"><a name="FoxAssembler.NamedLabelList"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedLabelList">NamedLabelList</a>
+<hr><h2 id="_D4281000"><a name="FoxAssembler.NamedLabelList"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedLabelList">NamedLabelList</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -82,7 +82,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_0FC678C0"><a name="FoxAssembler.Result"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.Result">Result</a>
+<hr><h2 id="_D428A6C0"><a name="FoxAssembler.Result"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.Result">Result</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -96,7 +96,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_0FC6F040"><a name="FoxAssembler.NamedResult"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedResult">NamedResult</a>
+<hr><h2 id="_D4291E40"><a name="FoxAssembler.NamedResult"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedResult">NamedResult</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -105,7 +105,7 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_0FC72B80"><a name="FoxAssembler.NamedResultList"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedResultList">NamedResultList</a>
+<hr><h2 id="_D4295980"><a name="FoxAssembler.NamedResultList"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.NamedResultList">NamedResultList</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -116,7 +116,7 @@
 <table><tr><th align='left'>procedures</th><td> Add (n: <strong>NamedResult</strong>)<tr><td></td><td> Find (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>NamedResult</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_0FC7A200"><a name="FoxAssembler.Assembler"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.Assembler">Assembler</a>
+<hr><h2 id="_D429D000"><a name="FoxAssembler.Assembler"></a><a href="#FoxAssembler">FoxAssembler</a>.<a href="#FoxAssembler.Assembler">Assembler</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -124,7 +124,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>error: <strong>BOOLEAN</strong><tr><td></td><td>errorPosition: <strong>Position</strong><tr><td></td><td>token: <strong>Scanner.Token</strong><tr><td></td><td>section: <strong>IntermediateCode.Section</strong><tr><td></td><td>code: <strong>BinaryCode.Section</strong><tr><td></td><td>pass: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Error (pos: <strong>SyntaxTree.Position</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ErrorSS (pos: <strong>SyntaxTree.Position</strong>; <strong>CONST</strong> s1, s2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> NextToken<tr><td></td><td> ThisSymbol (x: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetIdentifier (<strong>VAR</strong> pos: <strong>Position</strong>; <strong>VAR</strong> identifier: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ThisIdentifier (<strong>CONST</strong> this: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ExpectIdentifier (<strong>VAR</strong> pos: <strong>Position</strong>; <strong>VAR</strong> identifier: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ExpectSymbol (x: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ExpectConstantInteger (<strong>VAR</strong> x: <strong>Result</strong>; critical: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetNonConstant (pos: <strong>Position</strong>; <strong>CONST</strong> ident: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>Result</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetConstant (pos: <strong>Position</strong>; <strong>CONST</strong> ident: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>Result</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Expression (<strong>VAR</strong> x: <strong>Result</strong>; critical: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Instruction (<strong>CONST</strong> mnemonic: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> InlineAssemble (scanner: <strong>Scanner.AssemblerScanner</strong>; section: <strong>IntermediateCode.Section</strong>; scope: <strong>SyntaxTree.Scope</strong>; module: <strong>Sections.Module</strong>)<tr><td></td><td> Assemble (scanner: <strong>Scanner.AssemblerScanner</strong>)<tr><td></td><td> AllSections<tr><td></td><td> Text (scanner: <strong>Scanner.AssemblerScanner</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>error: <strong>BOOLEAN</strong><tr><td></td><td>errorPosition: <strong>Position</strong><tr><td></td><td>token: <strong>Scanner.Token</strong><tr><td></td><td>section: <strong>IntermediateCode.Section</strong><tr><td></td><td>code: <strong>BinaryCode.Section</strong><tr><td></td><td>pass: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; Init (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Error (pos: <strong>SyntaxTree.Position</strong>; <strong>CONST</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ErrorSS (pos: <strong>SyntaxTree.Position</strong>; <strong>CONST</strong> s1, s2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> NextToken<tr><td></td><td> ThisSymbol (x: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetIdentifier (<strong>VAR</strong> pos: <strong>Position</strong>; <strong>VAR</strong> identifier: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ThisIdentifier (<strong>CONST</strong> this: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ExpectIdentifier (<strong>VAR</strong> pos: <strong>Position</strong>; <strong>VAR</strong> identifier: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ExpectSymbol (x: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ExpectConstantInteger (<strong>VAR</strong> x: <strong>Result</strong>; critical: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetNonConstant (pos: <strong>Position</strong>; <strong>CONST</strong> ident: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>Result</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetConstant (pos: <strong>Position</strong>; <strong>CONST</strong> ident: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> result: <strong>Result</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Expression (<strong>VAR</strong> x: <strong>Result</strong>; critical: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Instruction (<strong>CONST</strong> mnemonic: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> InlineAssemble (scanner: <strong>Scanner.AssemblerScanner</strong>; section: <strong>IntermediateCode.Section</strong>; scope: <strong>SyntaxTree.Scope</strong>; module: <strong>Sections.Module</strong>)<tr><td></td><td> Assemble (scanner: <strong>Scanner.AssemblerScanner</strong>)<tr><td></td><td> AllSections<tr><td></td><td> Text (scanner: <strong>Scanner.AssemblerScanner</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>

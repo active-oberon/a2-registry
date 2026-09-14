@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Decoder">Decoder</a></p>
+<hr><h1 id="_720D6EC0"><a name="Decoder"></a><a href="#ModuleList">Module</a> Decoder
+</h1>
+<p> AUTHOR &quot;rg&quot;; PURPOSE &quot;Decoder for binary executable code&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Decoder.Opcode">Opcode</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Decoder.Decoder">Decoder</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Decoder.FieldInfo">FieldInfo</a> =<strong>OBJECT</strong> (<strong>Info</strong>)<tr><td></td><td><a href="#Decoder.ProcedureInfo">ProcedureInfo</a> =<strong>OBJECT</strong> (<strong>Info</strong>)<tr><td></td><td><a href="#Decoder.TypeInfo">TypeInfo</a> =<strong>OBJECT</strong> (<strong>Info</strong>)<tr><td></td><td><a href="#Decoder.Export">Export</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Decoder.ModuleInfo">ModuleInfo</a> =<strong>OBJECT</strong> (<strong>Info</strong>)<tr><td></td><td>CodeScaleCallback =<strong>PROCEDURE</strong> (<strong>VAR</strong> size: <strong>SIZE</strong>)<tr><td></td><td>Extension =<strong>ARRAY</strong> 10 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> OpenEmpty<tr><td></td><td> Open (context: <strong>Commands.Context</strong>)<tr><td></td><td> OpenProcedure (<strong>CONST</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> OpenPC (<strong>CONST</strong> moduleName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pc: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Decoder.GetDecoder">GetDecoder</a> (<strong>CONST</strong> ext: <strong>Extension</strong>; reader: <strong>Streams.Reader</strong>): <strong>Decoder</strong><tr><td></td><td> RegisterDecoder (<strong>CONST</strong> ext: <strong>Extension</strong>; decFactory: <strong>DecoderFactory</strong>; csclCallback: <strong>CodeScaleCallback</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_7210FB40"><a name="Decoder.Opcode"></a><a href="#Decoder">Decoder</a>.<a href="#Decoder.Opcode">Opcode</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Opcode* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>instr: <strong>SIGNED32</strong><tr><td></td><td>offset: <strong>ADDRESS</strong><tr><td></td><td>code: <strong>Modules.Bytes</strong><tr><td></td><td>length: <strong>SIZE</strong><tr><td></td><td>decoder: <strong>Decoder</strong><tr><td></td><td>next: <strong>Opcode</strong><tr><td></td><td>proc: <strong>ProcedureInfo</strong><tr><th align='left'>procedures</th><td>&amp; New (proc: <strong>ProcedureInfo</strong>; stream: <strong>Streams.Writer</strong>)<tr><td></td><td> PrintOpcodeBytes (w: <strong>Streams.Writer</strong>)<tr><td></td><td> PrintInstruction (w: <strong>Streams.Writer</strong>)<tr><td></td><td> PrintArguments (w: <strong>Streams.Writer</strong>)<tr><td></td><td> PrintVariables (w: <strong>Streams.Writer</strong>)<tr><td></td><td> ToString (): <strong>Strings.String</strong><tr><td></td><td> WriteHex8 (x: <strong>SIGNED32</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> WriteHex16 (x: <strong>SIGNED32</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> WriteHex32 (x: <strong>SIGNED32</strong>; w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_72136940"><a name="Decoder.Decoder"></a><a href="#Decoder">Decoder</a>.<a href="#Decoder.Decoder">Decoder</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Decoder* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>outputStreamWriter: <strong>Streams.Writer</strong><tr><td></td><td>currentProc: <strong>ProcedureInfo</strong><tr><th align='left'>procedures</th><td>&amp; New (reader: <strong>Streams.Reader</strong>)<tr><td></td><td> Bug (op, no: <strong>SIGNED32</strong>)<tr><td></td><td> NewOpcode (): <strong>Opcode</strong><tr><td></td><td> DecodeThis (opcode: <strong>Opcode</strong>)<tr><td></td><td> Decode (proc: <strong>ProcedureInfo</strong>): <strong>Opcode</strong><tr><td></td><td> InsertBytesAtBufferHead (bytes: <strong>Modules.Bytes</strong>)<tr><td></td><td> ReadChar (): <strong>CHAR</strong><tr><td></td><td> ReadInt (): <strong>SIGNED16</strong><tr><td></td><td> ReadLInt (): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_72152100"><a name="Decoder.FieldInfo"></a><a href="#Decoder">Decoder</a>.<a href="#Decoder.FieldInfo">FieldInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FieldInfo* =<strong>OBJECT</strong> (<strong>Info</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> AddMarkerPosition (pos: <strong>Streams.Position</strong>)</td></tr>
+</table>
+<hr><h2 id="_721592C0"><a name="Decoder.ProcedureInfo"></a><a href="#Decoder">Decoder</a>.<a href="#Decoder.ProcedureInfo">ProcedureInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureInfo* =<strong>OBJECT</strong> (<strong>Info</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetFieldAtOffset (offset: <strong>SIGNED32</strong>): <strong>FieldInfo</strong></td></tr>
+</table>
+<hr><h2 id="_7215E940"><a name="Decoder.TypeInfo"></a><a href="#Decoder">Decoder</a>.<a href="#Decoder.TypeInfo">TypeInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TypeInfo* =<strong>OBJECT</strong> (<strong>Info</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_72197580"><a name="Decoder.Export"></a><a href="#Decoder">Decoder</a>.<a href="#Decoder.Export">Export</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Export* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_723B1CC0"><a name="Decoder.ModuleInfo"></a><a href="#Decoder">Decoder</a>.<a href="#Decoder.ModuleInfo">ModuleInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ModuleInfo* =<strong>OBJECT</strong> (<strong>Info</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_72493E80"><a name="Decoder.GetDecoder"></a><a href="#Decoder">Decoder</a>.<a href="#Decoder.GetDecoder">GetDecoder</a>
+</h2>
+<p> Exported so a disassembler can be had without a window. Decoder.Open builds one, and used to be the only way in, which made the disassembler untestable and unusable from a program.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetDecoder* (<strong>CONST</strong> ext: <strong>Extension</strong>; reader: <strong>Streams.Reader</strong>): <strong>Decoder</strong></pre>
+</body></html>

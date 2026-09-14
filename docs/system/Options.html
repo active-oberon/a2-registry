@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Options">Options</a></p>
-<hr><h1 id="#_AE6797C0"><a name="Options"></a><a href="#ModuleList">Module</a> Options
+<hr><h1 id="_24D1FBC0"><a name="Options"></a><a href="#ModuleList">Module</a> Options
 </h1>
-<p> AUTHOR "staubesv"; PURPOSE "Command line options parsing";</p>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Command line options parsing&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -49,15 +49,15 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_AE68E200">
-</h1><hr><h2 id="#_AE68E9C0"><a name="Options.Flag"></a><a href="#Options">Options</a>.<a href="#Options.Flag">Flag</a>
+<hr><h1 id="_24D34600">
+</h1><hr><h2 id="_24D34DC0"><a name="Options.Flag"></a><a href="#Options">Options</a>.<a href="#Options.Flag">Flag</a>
 </h2>
 <p> Option Types</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Flag*= 0</pre>
-<hr><h2 id="#_AE691BC0"><a name="Options.Options"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>
+<hr><h2 id="_24D37FC0"><a name="Options.Options"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -65,7 +65,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> <a href="#Options.Options.Add">Add</a> (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>; type: <strong>SIGNED32</strong>; description= "": <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Options.Options.GetFlag">GetFlag</a> (<strong>CONST</strong> name: <strong>Name</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetFlag (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Options.Options.GetInteger">GetInteger</a> (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> integer: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetInteger64 (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> integer: <strong>SIGNED64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetInteger (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Options.Options.GetString">GetString</a> (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetString (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetReal (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> real: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Options.Options.Clear">Clear</a><tr><td></td><td> <a href="#Options.Options.Reset">Reset</a><tr><td></td><td> <a href="#Options.Options.Parse">Parse</a> (arg: <strong>Streams.Reader</strong>; error: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ParseStaged (arg: <strong>Streams.Reader</strong>; error: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ParseString (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; error: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Options.Options.ShowOptions">ShowOptions</a> (out: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#Options.Options.Show">Show</a> (out: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> <a href="#Options.Options.Add">Add</a> (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>; type: <strong>SIGNED32</strong>; description= &quot;&quot;: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Options.Options.GetFlag">GetFlag</a> (<strong>CONST</strong> name: <strong>Name</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetFlag (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Options.Options.GetInteger">GetInteger</a> (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> integer: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetInteger64 (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> integer: <strong>SIGNED64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetInteger (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Options.Options.GetString">GetString</a> (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SetString (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetReal (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> real: <strong>FLOAT64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Options.Options.Clear">Clear</a><tr><td></td><td> <a href="#Options.Options.Reset">Reset</a><tr><td></td><td> <a href="#Options.Options.Parse">Parse</a> (arg: <strong>Streams.Reader</strong>; error: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ParseStaged (arg: <strong>Streams.Reader</strong>; error: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ParseString (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; error: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Options.Options.ShowOptions">ShowOptions</a> (out: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#Options.Options.Show">Show</a> (out: <strong>Streams.Writer</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -83,70 +83,78 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_AE6C6900"><a name="Options.Options.Add"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Add">Add</a>
+<hr><h3 id="_24D6CD00"><a name="Options.Options.Add"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Add">Add</a>
 </h3>
-<p> Add option declaration.  Duplicate names are not allowed!  Numbers are not allowed as option character or as first character of an option name</p>
+<p> Add option declaration. - Duplicate names are not allowed! - Numbers are not allowed as option character or as first character of an option name</p>
 
 <h3>Syntax</h3>
 
-<pre><strong>PROCEDURE</strong> Add* (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>; type: <strong>SIGNED32</strong>; description= "": <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h3 id="#_AE6D42C0"><a name="Options.Options.GetFlag"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.GetFlag">GetFlag</a>
+<pre><strong>PROCEDURE</strong> Add* (ch: <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>Name</strong>; type: <strong>SIGNED32</strong>; description= &quot;&quot;: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="_24D7A7C0"><a name="Options.Options.GetFlag"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.GetFlag">GetFlag</a>
 </h3>
 <p> Check whether an option of type Flag is set</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetFlag* (<strong>CONST</strong> name: <strong>Name</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_AE6DAE00"><a name="Options.Options.GetInteger"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.GetInteger">GetInteger</a>
+<hr><h3 id="_24D81300"><a name="Options.Options.GetInteger"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.GetInteger">GetInteger</a>
 </h3>
 <p> Check whether an option of type Integer is set and retrieve its value if so</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetInteger* (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> integer: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_AE6E4100"><a name="Options.Options.GetString"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.GetString">GetString</a>
+<hr><h3 id="_24D8A600"><a name="Options.Options.GetString"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.GetString">GetString</a>
 </h3>
 <p> Check whether an option of type String is set and retrieve its value if so</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetString* (<strong>CONST</strong> name: <strong>Name</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_AE6EDB00"><a name="Options.Options.Clear"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Clear">Clear</a>
+<hr><h3 id="_24D94000"><a name="Options.Options.Clear"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Clear">Clear</a>
 </h3>
 <p> Unset all options</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Clear*</pre>
-<hr><h3 id="#_AE6F12C0"><a name="Options.Options.Reset"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Reset">Reset</a>
+<hr><h3 id="_24D977C0"><a name="Options.Options.Reset"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Reset">Reset</a>
 </h3>
 <p> Remove all declared options</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Reset*</pre>
-<hr><h3 id="#_AE6F4DC0"><a name="Options.Options.Parse"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Parse">Parse</a>
+<hr><h3 id="_24D9B2C0"><a name="Options.Options.Parse"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Parse">Parse</a>
 </h3>
 <p> Parse options from the argument stream starting at the current position (skip whitespace). The actual options will be set as side effect when parsing.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Parse* (arg: <strong>Streams.Reader</strong>; error: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_AE6FFA40"><a name="Options.Options.ShowOptions"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.ShowOptions">ShowOptions</a>
+<hr><h3 id="_24DA5F40"><a name="Options.Options.ShowOptions"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.ShowOptions">ShowOptions</a>
 </h3>
-<p> Debug: List all known options and their current values</p>
+<dl>
+<dt><strong>Debug</strong></dt>
+<dd> List all known options and their current values</dd>
 
+
+</dl>
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ShowOptions* (out: <strong>Streams.Writer</strong>)</pre>
-<hr><h3 id="#_AE705AC0"><a name="Options.Options.Show"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Show">Show</a>
+<hr><h3 id="_24DABEC0"><a name="Options.Options.Show"></a><a href="#Options">Options</a>.<a href="#Options.Options">Options</a>.<a href="#Options.Options.Show">Show</a>
 </h3>
-<p> Debug: List all known options and their current values</p>
+<dl>
+<dt><strong>Debug</strong></dt>
+<dd> List all known options and their current values</dd>
 
+
+</dl>
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Show* (out: <strong>Streams.Writer</strong>)</pre>
-<hr><h2 id="#_AE70BB40"><a name="Options.Defaults"></a><a href="#Options">Options</a>.<a href="#Options.Defaults">Defaults</a>
+<hr><h2 id="_24DB1E40"><a name="Options.Defaults"></a><a href="#Options">Options</a>.<a href="#Options.Defaults">Defaults</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -154,13 +162,13 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& InitDefaults<tr><td></td><td> Add (<strong>CONST</strong> name, defaults: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Get (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Reader</strong><tr><td></td><td> Show (out: <strong>Streams.Writer</strong>)<tr><td></td><td> Find (<strong>CONST</strong> option, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; InitDefaults<tr><td></td><td> Add (<strong>CONST</strong> name, defaults: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Get (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Streams.Reader</strong><tr><td></td><td> Show (out: <strong>Streams.Writer</strong>)<tr><td></td><td> Find (<strong>CONST</strong> option, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_AE71B4C0"><a name="Options.Merge"></a><a href="#Options">Options</a>.<a href="#Options.Merge">Merge</a>
+<hr><h2 id="_24DC17C0"><a name="Options.Merge"></a><a href="#Options">Options</a>.<a href="#Options.Merge">Merge</a>
 </h2>
 <p> merge base options into options -- replacing only options that had not been set previously</p>
 

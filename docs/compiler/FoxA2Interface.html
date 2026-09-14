@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#FoxA2Interface">FoxA2Interface</a></p>
+<hr><h1 id="_5C0FD140"><a name="FoxA2Interface"></a><a href="#ModuleList">Module</a> FoxA2Interface
+</h1>
+<p> AUTHOR &quot;&quot;; PURPOSE &quot;&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#FoxA2Interface.Writer">Writer</a> =<strong>OBJECT</strong> (<strong>Basic.Writer</strong>)<tr><td></td><td><a href="#FoxA2Interface.StreamDiagnostics">StreamDiagnostics</a> =<strong>OBJECT</strong> (<strong>Diagnostics.Diagnostics</strong>)<tr><th align='left'>procedures</th><td> Install</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_5C103780"><a name="FoxA2Interface.Writer"></a><a href="#FoxA2Interface">FoxA2Interface</a>.<a href="#FoxA2Interface.Writer">Writer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Writer* =<strong>OBJECT</strong> (<strong>Basic.Writer</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetFontStyle (style: <strong>SET</strong>)<tr><td></td><td> BeginAlert<tr><td></td><td> EndAlert<tr><td></td><td> BeginComment<tr><td></td><td> EndComment<tr><td></td><td> BeginKeyword<tr><td></td><td> EndKeyword<tr><td></td><td> AlertString (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_5C10EB80"><a name="FoxA2Interface.StreamDiagnostics"></a><a href="#FoxA2Interface">FoxA2Interface</a>.<a href="#FoxA2Interface.StreamDiagnostics">StreamDiagnostics</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StreamDiagnostics* =<strong>OBJECT</strong> (<strong>Diagnostics.Diagnostics</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init (w: <strong>Streams.Writer</strong>)<tr><td></td><td> Error (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

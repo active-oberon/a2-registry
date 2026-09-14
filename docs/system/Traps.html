@@ -29,15 +29,33 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Traps">Traps</a></p>
-<hr><h1 id="#_1B435880"><a name="Traps"></a><a href="#ModuleList">Module</a> Traps
+<hr><h1 id="_BA5601C0"><a name="Traps"></a><a href="#ModuleList">Module</a> Traps
 </h1>
-<p> AUTHOR "G.F."; PURPOSE "Exception Trap and symbolic debugging";</p>
+<p> AUTHOR &quot;G.F.&quot;; PURPOSE &quot;Exception Trap and symbolic debugging&quot;;</p>
 
 <h3>Summary</h3>
 
-<table></table>
-<hr><h1 id="#_1B439340">
-</h1></body></html>
+<table><tr><th align='left'>type declarations</th><td><a href="#Traps.Handler">Handler</a> =<strong>PROCEDURE</strong>{DELEGATE} (sig, trapno: <strong>SIGNED32</strong>; pc, bp, sp, stackHigh: <strong>ADDRESS</strong>)<tr><td></td><td><a href="#Traps.Resumer">Resumer</a> =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> pc: <strong>ADDRESS</strong>; bp, sp, stackHigh: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong><tr><th align='left'>variables</th><td>Trapped: <strong>Handler</strong><tr><td></td><td>Breakpoint: <strong>Resumer</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_BA56FF40">
+</h1><hr><h2 id="_BA570700"><a name="Traps.Handler"></a><a href="#Traps">Traps</a>.<a href="#Traps.Handler">Handler</a>
+</h2>
+<p> What a debugger in this process is told when a trap is about to end an activity.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Handler* =<strong>PROCEDURE</strong>{DELEGATE} (sig, trapno: <strong>SIGNED32</strong>; pc, bp, sp, stackHigh: <strong>ADDRESS</strong>)</pre>
+<hr><h2 id="_BA57BB40"><a name="Traps.Resumer"></a><a href="#Traps">Traps</a>.<a href="#Traps.Resumer">Resumer</a>
+</h2>
+<p> What a debugger is asked when a trap could be a breakpoint it planted. TRUE means it was one the activity resumes at `pc`, which the debugger may have moved, and nothing of the trap is printed. FALSE means the trap is the program&apos;s own.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Resumer* =<strong>PROCEDURE</strong>{DELEGATE} (<strong>VAR</strong> pc: <strong>ADDRESS</strong>; bp, sp, stackHigh: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxSemanticChecker">FoxSemanticChecker</a></p>
-<hr><h1 id="#_C1294E40"><a name="FoxSemanticChecker"></a><a href="#ModuleList">Module</a> FoxSemanticChecker
+<hr><h1 id="_152B7800"><a name="FoxSemanticChecker"></a><a href="#ModuleList">Module</a> FoxSemanticChecker
 </h1>
 <h3>Summary</h3>
 
@@ -80,8 +80,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_C1304140">
-</h1><hr><h2 id="#_C1304900"><a name="FoxSemanticChecker.Replacement"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Replacement">Replacement</a>
+<hr><h1 id="_15326B00">
+</h1><hr><h2 id="_153272C0"><a name="FoxSemanticChecker.Replacement"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Replacement">Replacement</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -94,9 +94,9 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_C130BA00"><a name="FoxSemanticChecker.Checker"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>
+<hr><h2 id="_1532E3C0"><a name="FoxSemanticChecker.Checker"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>
 </h2>
-<p> checker object: used to check and resolve a module  resolves types  resolves expressions  resolves designators  resolves declarations  resolves statements  resolves implementations (bodies)</p>
+<p> checker object: used to check and resolve a module - resolves types - resolves expressions - resolves designators - resolves declarations - resolves statements - resolves implementations (bodies)</p>
 
 <h3>Syntax</h3>
 
@@ -104,7 +104,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>error: <strong>BOOLEAN</strong><tr><td></td><td>importCache: <strong>SyntaxTree.ModuleScope</strong><tr><td></td><td>system: <strong>Global.System</strong><tr><td></td><td>symbolFileFormat: <strong>Formats.SymbolFileFormat</strong><tr><td></td><td>backendName: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>currentScope: <strong>SyntaxTree.Scope</strong><tr><td></td><td>replacements: <strong>Replacement</strong><tr><th align='left'>procedures</th><td>& InitChecker (diagnostics: <strong>Diagnostics.Diagnostics</strong>; verboseErrorMessage, cooperative: <strong>BOOLEAN</strong>; system: <strong>Global.System</strong>; symbolFileFormat: <strong>Formats.SymbolFileFormat</strong>; <strong>VAR</strong> importCache: <strong>SyntaxTree.ModuleScope</strong>; <strong>CONST</strong> backend: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SkipImplementation (x: <strong>SyntaxTree.CellType</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResolveType (x: <strong>SyntaxTree.Type</strong>): <strong>SyntaxTree.Type</strong><tr><td></td><td> SetCurrentScope (scope: <strong>SyntaxTree.Scope</strong>)<tr><td></td><td> NewOperatorCall (position: <strong>SyntaxTree.Position</strong>; original: <strong>SyntaxTree.Expression</strong>; op: <strong>SIGNED32</strong>; parameter: <strong>SyntaxTree.ExpressionList</strong>; resultType: <strong>SyntaxTree.Type</strong>): <strong>SyntaxTree.Expression</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.NewBinaryOperatorCall">NewBinaryOperatorCall</a> (position: <strong>Position</strong>; original: <strong>SyntaxTree.Expression</strong>; op: <strong>SIGNED32</strong>; leftExpression, rightExpression: <strong>SyntaxTree.Expression</strong>; resultType: <strong>SyntaxTree.Type</strong>): <strong>SyntaxTree.Expression</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.NewSymbolDesignator">NewSymbolDesignator</a> (position: <strong>Position</strong>; original: <strong>SyntaxTree.Expression</strong>; left: <strong>SyntaxTree.Expression</strong>; symbol: <strong>SyntaxTree.Symbol</strong>): <strong>SyntaxTree.Expression</strong><tr><td></td><td> NewObjectOperatorCall (position: <strong>Position</strong>; left: <strong>SyntaxTree.Expression</strong>; oper: <strong>SIGNED32</strong>; parameters: <strong>SyntaxTree.ExpressionList</strong>; rhs: <strong>SyntaxTree.Expression</strong>): <strong>SyntaxTree.Designator</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.ResolveExpression">ResolveExpression</a> (x: <strong>SyntaxTree.Expression</strong>): <strong>SyntaxTree.Expression</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.ResolveSymbol">ResolveSymbol</a> (x: <strong>SyntaxTree.Symbol</strong>)<tr><td></td><td> AddImport (module: <strong>SyntaxTree.Module</strong>; x: <strong>SyntaxTree.Import</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.ResolveStatement">ResolveStatement</a> (x: <strong>SyntaxTree.Statement</strong>): <strong>SyntaxTree.Statement</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.Module">Module</a> (x: <strong>SyntaxTree.Module</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>error: <strong>BOOLEAN</strong><tr><td></td><td>importCache: <strong>SyntaxTree.ModuleScope</strong><tr><td></td><td>system: <strong>Global.System</strong><tr><td></td><td>symbolFileFormat: <strong>Formats.SymbolFileFormat</strong><tr><td></td><td>backendName: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>currentScope: <strong>SyntaxTree.Scope</strong><tr><td></td><td>replacements: <strong>Replacement</strong><tr><th align='left'>procedures</th><td>&amp; InitChecker (diagnostics: <strong>Diagnostics.Diagnostics</strong>; verboseErrorMessage, cooperative: <strong>BOOLEAN</strong>; system: <strong>Global.System</strong>; symbolFileFormat: <strong>Formats.SymbolFileFormat</strong>; <strong>VAR</strong> importCache: <strong>SyntaxTree.ModuleScope</strong>; <strong>CONST</strong> backend: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SkipImplementation (x: <strong>SyntaxTree.CellType</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResolveType (x: <strong>SyntaxTree.Type</strong>): <strong>SyntaxTree.Type</strong><tr><td></td><td> SetCurrentScope (scope: <strong>SyntaxTree.Scope</strong>)<tr><td></td><td> NewOperatorCall (position: <strong>SyntaxTree.Position</strong>; original: <strong>SyntaxTree.Expression</strong>; op: <strong>SIGNED32</strong>; parameter: <strong>SyntaxTree.ExpressionList</strong>; resultType: <strong>SyntaxTree.Type</strong>): <strong>SyntaxTree.Expression</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.NewBinaryOperatorCall">NewBinaryOperatorCall</a> (position: <strong>Position</strong>; original: <strong>SyntaxTree.Expression</strong>; op: <strong>SIGNED32</strong>; leftExpression, rightExpression: <strong>SyntaxTree.Expression</strong>; resultType: <strong>SyntaxTree.Type</strong>): <strong>SyntaxTree.Expression</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.NewSymbolDesignator">NewSymbolDesignator</a> (position: <strong>Position</strong>; original: <strong>SyntaxTree.Expression</strong>; left: <strong>SyntaxTree.Expression</strong>; symbol: <strong>SyntaxTree.Symbol</strong>): <strong>SyntaxTree.Expression</strong><tr><td></td><td> NewObjectOperatorCall (position: <strong>Position</strong>; left: <strong>SyntaxTree.Expression</strong>; oper: <strong>SIGNED32</strong>; parameters: <strong>SyntaxTree.ExpressionList</strong>; rhs: <strong>SyntaxTree.Expression</strong>): <strong>SyntaxTree.Designator</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.ResolveExpression">ResolveExpression</a> (x: <strong>SyntaxTree.Expression</strong>): <strong>SyntaxTree.Expression</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.ResolveSymbol">ResolveSymbol</a> (x: <strong>SyntaxTree.Symbol</strong>)<tr><td></td><td> AddImport (module: <strong>SyntaxTree.Module</strong>; x: <strong>SyntaxTree.Import</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.ResolveStatement">ResolveStatement</a> (x: <strong>SyntaxTree.Statement</strong>): <strong>SyntaxTree.Statement</strong><tr><td></td><td> <a href="#FoxSemanticChecker.Checker.Module">Module</a> (x: <strong>SyntaxTree.Module</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -125,49 +125,53 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_C134B440"><a name="FoxSemanticChecker.Checker.NewBinaryOperatorCall"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.NewBinaryOperatorCall">NewBinaryOperatorCall</a>
+<hr><h3 id="_1536E100"><a name="FoxSemanticChecker.Checker.NewBinaryOperatorCall"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.NewBinaryOperatorCall">NewBinaryOperatorCall</a>
 </h3>
-<p> return a procedure call designator for the best matching operator procedure of the form "op"(leftExpression,rightExpression) (if any)  handle LEN and DIM operator for array-structured object types  find operator, if found then  if in other module then add import designator  create symbol designator for operator  if error then return invalidExpression, if no operator then return NIL</p>
+<p> return a procedure call designator for the best matching operator procedure of the form &quot;op&quot;(leftExpression,rightExpression) (if any) - handle LEN and DIM operator for array-structured object types - find operator, if found then - if in other module then add import designator - create symbol designator for operator - if error then return invalidExpression, if no operator then return NIL</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewBinaryOperatorCall* (position: <strong>Position</strong>; original: <strong>SyntaxTree.Expression</strong>; op: <strong>SIGNED32</strong>; leftExpression, rightExpression: <strong>SyntaxTree.Expression</strong>; resultType: <strong>SyntaxTree.Type</strong>): <strong>SyntaxTree.Expression</strong></pre>
-<hr><h3 id="#_C1361D80"><a name="FoxSemanticChecker.Checker.NewSymbolDesignator"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.NewSymbolDesignator">NewSymbolDesignator</a>
+<hr><h3 id="_15384CC0"><a name="FoxSemanticChecker.Checker.NewSymbolDesignator"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.NewSymbolDesignator">NewSymbolDesignator</a>
 </h3>
-<p> return symbol designator as an expression  if symbol is a constant then return the constant value expression  else  if no left designator present then do auto-self if in record scope identifier-&gt SELF.identiifer  if symbol is a guarded variable then return a TypeGuardDesignator  else return a symbol designator</p>
+<p> return symbol designator as an expression - if symbol is a constant then return the constant value expression - else - if no left designator present then do auto-self if in record scope identifier-&gt; SELF.identiifer - if symbol is a guarded variable then return a TypeGuardDesignator - else return a symbol designator</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewSymbolDesignator* (position: <strong>Position</strong>; original: <strong>SyntaxTree.Expression</strong>; left: <strong>SyntaxTree.Expression</strong>; symbol: <strong>SyntaxTree.Symbol</strong>): <strong>SyntaxTree.Expression</strong></pre>
-<hr><h3 id="#_C1374E40"><a name="FoxSemanticChecker.Checker.ResolveExpression"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.ResolveExpression">ResolveExpression</a>
+<hr><h3 id="_15398000"><a name="FoxSemanticChecker.Checker.ResolveExpression"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.ResolveExpression">ResolveExpression</a>
 </h3>
-<p> check and return expression  if expression has no type then resolve expression  resulting expression is exchanged via global variable "resolvedExpression" which makes this mechanism thread-unsafe  return result</p>
+<p> check and return expression - if expression has no type then resolve expression - resulting expression is exchanged via global variable &quot;resolvedExpression&quot; which makes this mechanism thread-unsafe - return result</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ResolveExpression* (x: <strong>SyntaxTree.Expression</strong>): <strong>SyntaxTree.Expression</strong></pre>
-<hr><h3 id="#_C1380400"><a name="FoxSemanticChecker.Checker.ResolveSymbol"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.ResolveSymbol">ResolveSymbol</a>
+<hr><h3 id="_153A3740"><a name="FoxSemanticChecker.Checker.ResolveSymbol"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.ResolveSymbol">ResolveSymbol</a>
 </h3>
-<p> symbols <strong></strong></p>
+<ul>
+<li> symbols <strong></strong></li>
 
+</ul>
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ResolveSymbol* (x: <strong>SyntaxTree.Symbol</strong>)</pre>
-<hr><h3 id="#_C1384A40"><a name="FoxSemanticChecker.Checker.ResolveStatement"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.ResolveStatement">ResolveStatement</a>
+<hr><h3 id="_153A7B40"><a name="FoxSemanticChecker.Checker.ResolveStatement"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.ResolveStatement">ResolveStatement</a>
 </h3>
-<p> statements <strong></strong></p>
+<ul>
+<li> statements <strong></strong></li>
 
+</ul>
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ResolveStatement* (x: <strong>SyntaxTree.Statement</strong>): <strong>SyntaxTree.Statement</strong></pre>
-<hr><h3 id="#_C1389700"><a name="FoxSemanticChecker.Checker.Module"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.Module">Module</a>
+<hr><h3 id="_153AC5C0"><a name="FoxSemanticChecker.Checker.Module"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Checker">Checker</a>.<a href="#FoxSemanticChecker.Checker.Module">Module</a>
 </h3>
-<p> check module:  check module declaration  add context, if necessary  remove module from import cache, if necessary  check declarations  resolve all type fixes  check implementation (bodies)</p>
+<p> check module: - check module declaration - add context, if necessary - remove module from import cache, if necessary - check declarations - resolve all type fixes - check implementation (bodies)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Module* (x: <strong>SyntaxTree.Module</strong>)</pre>
-<hr><h2 id="#_C13948C0"><a name="FoxSemanticChecker.Warnings"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Warnings">Warnings</a>
+<hr><h2 id="_153B7A80"><a name="FoxSemanticChecker.Warnings"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.Warnings">Warnings</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -175,24 +179,24 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& InitWarnings (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Module (x: <strong>SyntaxTree.Module</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; InitWarnings (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Module (x: <strong>SyntaxTree.Module</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_C139AF80"><a name="FoxSemanticChecker.RemoveModuleFromCache"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.RemoveModuleFromCache">RemoveModuleFromCache</a>
+<hr><h2 id="_153BE140"><a name="FoxSemanticChecker.RemoveModuleFromCache"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.RemoveModuleFromCache">RemoveModuleFromCache</a>
 </h2>
 <p> check import cache: if module x is in current import cache then remove x and all modules importing x from the cache</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> RemoveModuleFromCache* (importCache: <strong>SyntaxTree.ModuleScope</strong>; x: <strong>SyntaxTree.Module</strong>)</pre>
-<hr><h2 id="#_C13A4940"><a name="FoxSemanticChecker.NewChecker"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.NewChecker">NewChecker</a>
+<hr><h2 id="_153C7B00"><a name="FoxSemanticChecker.NewChecker"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.NewChecker">NewChecker</a>
 </h2>
 <p> generate and return a new checker object, errors are entered into diagnostics</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewChecker* (diagnostics: <strong>Diagnostics.Diagnostics</strong>; verboseErrorMessage, cooperative: <strong>BOOLEAN</strong>; system: <strong>Global.System</strong>; symbolFileFormat: <strong>Formats.SymbolFileFormat</strong>; <strong>VAR</strong> importCache: <strong>SyntaxTree.ModuleScope</strong>; <strong>CONST</strong> backend: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Checker</strong></pre>
-<hr><h2 id="#_C13B1240"><a name="FoxSemanticChecker.IsTensor"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.IsTensor">IsTensor</a>
+<hr><h2 id="_153D4400"><a name="FoxSemanticChecker.IsTensor"></a><a href="#FoxSemanticChecker">FoxSemanticChecker</a>.<a href="#FoxSemanticChecker.IsTensor">IsTensor</a>
 </h2>
 <p> whether a type is a math array of tensor form</p>
 

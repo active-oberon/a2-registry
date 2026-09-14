@@ -29,21 +29,21 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxDisassembler">FoxDisassembler</a></p>
-<hr><h1 id="#_B3014DC0"><a name="FoxDisassembler"></a><a href="#ModuleList">Module</a> FoxDisassembler
+<hr><h1 id="_11482C80"><a name="FoxDisassembler"></a><a href="#ModuleList">Module</a> FoxDisassembler
 </h1>
-<p> AUTHOR ""; PURPOSE "";</p>
+<p> AUTHOR &quot;&quot;; PURPOSE &quot;&quot;;</p>
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>type declarations</th><td>Unit =<strong>ObjectFile.Unit</strong><tr><td></td><td><a href="#FoxDisassembler.Block">Block</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>ObjectFile.Section</strong>)<tr><td></td><td><a href="#FoxDisassembler.Disassembler">Disassembler</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> FindPC (context: <strong>Commands.Context</strong>)</td></tr>
+<table><tr><th align='left'>type declarations</th><td>Unit =<strong>ObjectFile.Unit</strong><tr><td></td><td><a href="#FoxDisassembler.Block">Block</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>ObjectFile.Section</strong>)<tr><td></td><td><a href="#FoxDisassembler.Disassembler">Disassembler</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#FoxDisassembler.FindPC">FindPC</a> (context: <strong>Commands.Context</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_B301D480"><a name="FoxDisassembler.Block"></a><a href="#FoxDisassembler">FoxDisassembler</a>.<a href="#FoxDisassembler.Block">Block</a>
+<hr><h2 id="_1148B340"><a name="FoxDisassembler.Block"></a><a href="#FoxDisassembler">FoxDisassembler</a>.<a href="#FoxDisassembler.Block">Block</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -54,7 +54,7 @@
 <table><tr><th align='left'>variables</th><td>to: <strong>Unit</strong><tr><td></td><td>next: <strong>Block</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_B3022DC0"><a name="FoxDisassembler.Disassembler"></a><a href="#FoxDisassembler">FoxDisassembler</a>.<a href="#FoxDisassembler.Disassembler">Disassembler</a>
+<hr><h2 id="_11490C80"><a name="FoxDisassembler.Disassembler"></a><a href="#FoxDisassembler">FoxDisassembler</a>.<a href="#FoxDisassembler.Disassembler">Disassembler</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -62,7 +62,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>codeDisplacement: <strong>Unit</strong><tr><th align='left'>procedures</th><td>& Init (w: <strong>Streams.Writer</strong>)<tr><td></td><td> GetLogFile (<strong>CONST</strong> binaryFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Files.File</strong><tr><td></td><td> WriteReference (adr: <strong>Unit</strong>; isCode: <strong>BOOLEAN</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> DisassembleInstruction (bitset: <strong>BitSets.BitSet</strong>; <strong>VAR</strong> address: <strong>Unit</strong>; maxInstructionSize: <strong>Unit</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> ParseLogFile (file: <strong>Files.File</strong>): <strong>Block</strong><tr><td></td><td> Disassemble (code, data: <strong>BitSets.BitSet</strong>; codeUnit, dataUnit: <strong>ObjectFile.Bits</strong>; logFile: <strong>Files.File</strong>; address: <strong>ADDRESS</strong>)<tr><td></td><td> SetDisplacements (code, data: <strong>Unit</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>codeDisplacement: <strong>Unit</strong><tr><th align='left'>procedures</th><td>&amp; Init (w: <strong>Streams.Writer</strong>)<tr><td></td><td> GetLogFile (<strong>CONST</strong> binaryFileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Files.File</strong><tr><td></td><td> WriteReference (adr: <strong>Unit</strong>; isCode: <strong>BOOLEAN</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> DisassembleInstruction (bitset: <strong>BitSets.BitSet</strong>; <strong>VAR</strong> address: <strong>Unit</strong>; maxInstructionSize: <strong>Unit</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> ParseLogFile (file: <strong>Files.File</strong>): <strong>Block</strong><tr><td></td><td> Disassemble (code, data: <strong>BitSets.BitSet</strong>; codeUnit, dataUnit: <strong>ObjectFile.Bits</strong>; logFile: <strong>Files.File</strong>; address: <strong>ADDRESS</strong>)<tr><td></td><td> SetDisplacements (code, data: <strong>Unit</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -71,4 +71,15 @@
 </td></tr>
 </td></tr>
 </table>
+<hr><h2 id="_114AB1C0"><a name="FoxDisassembler.FindPC"></a><a href="#FoxDisassembler">FoxDisassembler</a>.<a href="#FoxDisassembler.FindPC">FindPC</a>
+</h2>
+<p> Which code section an address is in, and how far into it -- what turns the number in a trap report into a name and an offset. `FoxDisassembler.FindPC &lt;log&gt; &lt;address&gt;`.</p>
+
+<p> Four things were wrong with twenty lines:</p>
+
+<p> - `found` was assigned only inside the loop and dereferenced whatever happened, so an address below every code section was an access violation. In a command whose whole subject is an address somebody read off a trap report. - the nearest section below the address was found with a strict comparison, so an address exactly at a section&apos;s start belonged to the section before it -- and the first instruction of a procedure is the address one looks up most. - the refusal named the file after the extension had been added to it: a caller who asked about `nosuch.log` was told about `nosuch.log.log`. - a command line it could not read was answered with silence, which reads like an answer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindPC* (context: <strong>Commands.Context</strong>)</pre>
 </body></html>

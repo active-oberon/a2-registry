@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#DebugLog">DebugLog</a></p>
+<hr><h1 id="_BAB282C0"><a name="DebugLog"></a><a href="#ModuleList">Module</a> DebugLog
+</h1>
+<p> AUTHOR &quot;Michael Szediwy&quot;; PURPOSE &quot;Debug Log&quot;; - Shares the interface with KernelLog -</p>
+
+<dl>
+<dt><strong>Todo</strong></dt>
+<dd> - Mulit-Line support via Enter &amp; Exit</dd>
+
+
+</dl>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetDate (new: <strong>BOOLEAN</strong>)<tr><td></td><td> GetDate (): <strong>BOOLEAN</strong><tr><td></td><td> String (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> TwoStrings (<strong>CONST</strong> str1, str2: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Boolean (x: <strong>BOOLEAN</strong>)<tr><td></td><td> TraceDebugBoolean (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; x: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#DebugLog.Memory">Memory</a> (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>)<tr><td></td><td> <a href="#DebugLog.Buffer">Buffer</a> (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#DebugLog.HIntHex">HIntHex</a> (x: <strong>SIGNED64</strong>; w: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#DebugLog.IntSuffix">IntSuffix</a> (x, w: <strong>SIGNED32</strong>; <strong>CONST</strong> suffix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Enter<tr><td></td><td> Exit<tr><td></td><td> GetWriter (): <strong>Streams.Writer</strong><tr><td></td><td> <a href="#DebugLog.Send">Send</a> (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> TraceDebugString (<strong>CONST</strong> name, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Ln<tr><td></td><td> Int (x, w: <strong>SIGNED32</strong>)<tr><td></td><td> TraceDebugInt (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value, w: <strong>SIGNED32</strong>)<tr><td></td><td> Hex (x, w: <strong>SIGNED32</strong>)<tr><td></td><td> TraceDebugHex (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value, w: <strong>SIGNED32</strong>)<tr><td></td><td> Char (c: <strong>CHAR</strong>)<tr><td></td><td> TraceDebugChar (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; c: <strong>CHAR</strong>)<tr><td></td><td> Set (s: <strong>SET</strong>)<tr><td></td><td> TraceDebugSet (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; s: <strong>SET</strong>)<tr><td></td><td> SubscribeProcess (color: <strong>WMGraphics.Color</strong>; date, overwrite: <strong>BOOLEAN</strong>)<tr><td></td><td> Open</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BAB6F500"><a name="DebugLog.Memory"></a><a href="#DebugLog">DebugLog</a>.<a href="#DebugLog.Memory">Memory</a>
+</h2>
+<p> Write a block of memory in hex.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Memory* (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>)</pre>
+<hr><h2 id="_BAB75440"><a name="DebugLog.Buffer"></a><a href="#DebugLog">DebugLog</a>.<a href="#DebugLog.Buffer">Buffer</a>
+</h2>
+<p> Write a buffer in hex.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Buffer* (<strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="_BAB7C000"><a name="DebugLog.HIntHex"></a><a href="#DebugLog">DebugLog</a>.<a href="#DebugLog.HIntHex">HIntHex</a>
+</h2>
+<p> Write &quot;x&quot; as a hexadecimal number. &quot;w&quot; is the field width. Always prints 16 digits.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> HIntHex* (x: <strong>SIGNED64</strong>; w: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="_BAB83F00"><a name="DebugLog.IntSuffix"></a><a href="#DebugLog">DebugLog</a>.<a href="#DebugLog.IntSuffix">IntSuffix</a>
+</h2>
+<p> Write &quot;x&quot; as a decimal number with a power-of-two multiplier (K, M or G), followed by &quot;suffix&quot;. &quot;w&quot; is the field width, excluding &quot;suffix&quot;.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IntSuffix* (x, w: <strong>SIGNED32</strong>; <strong>CONST</strong> suffix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="_BAB8F2C0"><a name="DebugLog.Send"></a><a href="#DebugLog">DebugLog</a>.<a href="#DebugLog.Send">Send</a>
+</h2>
+<p> Send the specified characters to the trace output (cf. Streams.Sender).</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Send* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+</body></html>

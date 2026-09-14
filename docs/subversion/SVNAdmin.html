@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#SVNAdmin">SVNAdmin</a></p>
+<hr><h1 id="_FD18CAC0"><a name="SVNAdmin"></a><a href="#ModuleList">Module</a> SVNAdmin
+</h1>
+<p> AUTHOR &quot;rstoll&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>EntryFileFormat= 8<tr><th align='left'>type declarations</th><td><a href="#SVNAdmin.EntryEntity">EntryEntity</a> =<strong>RECORD</strong> <tr><td></td><td>TraverseHandler =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; fileEntry: <strong>EntryEntity</strong>; data: @Any0): <strong>BOOLEAN</strong><tr><td></td><td><a href="#SVNAdmin.Entry">Entry</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> WriteAddEntry (w: <strong>Files.Writer</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; file: <strong>BOOLEAN</strong>)<tr><td></td><td> Write (w: <strong>Files.Writer</strong>; data: <strong>EntryEntity</strong>)<tr><td></td><td> WriteWCPROPS (<strong>CONST</strong> path, filename, verurl: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> CreateDirectory (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ReadChecksum (<strong>CONST</strong> file: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Strings.String</strong><tr><td></td><td> CheckChecksum (<strong>CONST</strong> file: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Traverse (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; handler: <strong>TraverseHandler</strong>; data: @Any0; verurl: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CopyToBaseFile (<strong>CONST</strong> file: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetFileAttribute (file: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> RemoveFileAttribute (file: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetFileAttribute2 (file: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; f: <strong>Files.File</strong>)<tr><td></td><td> RemoveFileAttribute2 (file: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; f: <strong>Files.File</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_FD1BC840"><a name="SVNAdmin.EntryEntity"></a><a href="#SVNAdmin">SVNAdmin</a>.<a href="#SVNAdmin.EntryEntity">EntryEntity</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EntryEntity* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Format: <strong>SIGNED32</strong><tr><td></td><td>Name: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>NodeKind: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Revision: <strong>SIGNED32</strong><tr><td></td><td>GlobalRemoval: <strong>BOOLEAN</strong><tr><td></td><td>Url: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>UrlConst: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>RepositoryRoot: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Schedule: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>TextLastUpdated: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Checksum: <strong>ARRAY</strong> 33 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>LastChangedDate: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>LastChangedRevision: <strong>SIGNED32</strong><tr><td></td><td>LastChangedAuthor: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Props: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>RepositoryUUID: <strong>ARRAY</strong> 37 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>VersionUrl: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_FD1DAB00"><a name="SVNAdmin.Entry"></a><a href="#SVNAdmin">SVNAdmin</a>.<a href="#SVNAdmin.Entry">Entry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Entry* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init (c: <strong>Commands.Context</strong>)<tr><td></td><td> ReadVersionUrl (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetPath (<strong>CONST</strong> p: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateTempfile<tr><td></td><td> ReadFromTempfile (b: <strong>BOOLEAN</strong>)<tr><td></td><td> GetUrl (<strong>VAR</strong> url: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetRepo (<strong>VAR</strong> repos: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetVersion (): <strong>SIGNED32</strong><tr><td></td><td> IsItemVersioned (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Add (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; addGlobal: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> CreateDummy (<strong>CONST</strong> path, urlRepoDir: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Files.Writer</strong><tr><td></td><td> ReadData (<strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> PrintData<tr><td></td><td> ReadWriteLines (count: <strong>SIGNED32</strong>)<tr><td></td><td> ReadWriteLine (<strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ReadWriteRest<tr><td></td><td> ReadWriteString (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ReadWriteToEOE<tr><td></td><td> IsEOF (): <strong>BOOLEAN</strong><tr><td></td><td> WriteUpdate<tr><td></td><td> ReadWriteEOE</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

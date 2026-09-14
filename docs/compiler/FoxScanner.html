@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxScanner">FoxScanner</a></p>
-<hr><h1 id="#_899D3340"><a name="FoxScanner"></a><a href="#ModuleList">Module</a> FoxScanner
+<hr><h1 id="_29093840"><a name="FoxScanner"></a><a href="#ModuleList">Module</a> FoxScanner
 </h1>
-<p> AUTHOR "fof & fn"; PURPOSE "Oberon Compiler: Scanner";</p>
+<p> AUTHOR &quot;fof &amp; fn&quot;; PURPOSE &quot;Oberon Compiler: Scanner&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -193,15 +193,15 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_89A7C740">
-</h1><hr><h2 id="#_89A7CF00"><a name="FoxScanner.None"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.None">None</a>
+<hr><h1 id="_2913CC40">
+</h1><hr><h2 id="_2913D400"><a name="FoxScanner.None"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.None">None</a>
 </h2>
 <p> symbols</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> None*= 0</pre>
-<hr><h2 id="#_89A7FD80"><a name="FoxScanner.KeywordTable"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.KeywordTable">KeywordTable</a>
+<hr><h2 id="_29140280"><a name="FoxScanner.KeywordTable"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.KeywordTable">KeywordTable</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -209,19 +209,19 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& InitTable (size: <strong>SIZE</strong>)<tr><td></td><td> SymbolByIdentifier (identifier: <strong>IdentifierType</strong>): <strong>Symbol</strong><tr><td></td><td> SymbolByString (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Symbol</strong><tr><td></td><td> IdentifierBySymbol (symbol: <strong>Symbol</strong>; <strong>VAR</strong> identifier: <strong>IdentifierType</strong>)<tr><td></td><td> StringBySymbol (symbol: <strong>Symbol</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PutString (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; symbol: <strong>Symbol</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; InitTable (size: <strong>SIZE</strong>)<tr><td></td><td> SymbolByIdentifier (identifier: <strong>IdentifierType</strong>): <strong>Symbol</strong><tr><td></td><td> SymbolByString (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Symbol</strong><tr><td></td><td> IdentifierBySymbol (symbol: <strong>Symbol</strong>; <strong>VAR</strong> identifier: <strong>IdentifierType</strong>)<tr><td></td><td> StringBySymbol (symbol: <strong>Symbol</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PutString (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; symbol: <strong>Symbol</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_89A93B00"><a name="FoxScanner.Position"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Position">Position</a>
+<hr><h2 id="_29154000"><a name="FoxScanner.Position"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Position">Position</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> Position* =<strong>Basic.Position</strong></pre>
-<hr><h2 id="#_89A95E40"><a name="FoxScanner.Token"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Token">Token</a>
+<hr><h2 id="_29156340"><a name="FoxScanner.Token"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Token">Token</a>
 </h2>
 <dl>
 <dt><strong>token</strong></dt>
@@ -246,7 +246,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_89AA6EC0"><a name="FoxScanner.StringMaker"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.StringMaker">StringMaker</a>
+<hr><h2 id="_291673C0"><a name="FoxScanner.StringMaker"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.StringMaker">StringMaker</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -254,7 +254,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>length: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Add (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Shorten (n: <strong>SIZE</strong>)<tr><td></td><td> Clear<tr><td></td><td> GetWriter (): <strong>Streams.Writer</strong><tr><td></td><td> GetReader (): <strong>Streams.Reader</strong><tr><td></td><td> GetString (<strong>VAR</strong> len: <strong>SIZE</strong>): <strong>StringType</strong><tr><td></td><td> GetStringCopy (<strong>VAR</strong> len: <strong>SIZE</strong>): <strong>StringType</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>length: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>&amp; Init (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Add (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Shorten (n: <strong>SIZE</strong>)<tr><td></td><td> Clear<tr><td></td><td> GetWriter (): <strong>Streams.Writer</strong><tr><td></td><td> GetReader (): <strong>Streams.Reader</strong><tr><td></td><td> GetString (<strong>VAR</strong> len: <strong>SIZE</strong>): <strong>StringType</strong><tr><td></td><td> GetStringCopy (<strong>VAR</strong> len: <strong>SIZE</strong>): <strong>StringType</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -264,7 +264,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_89ABC9C0"><a name="FoxScanner.Scanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>
+<hr><h2 id="_2917CEC0"><a name="FoxScanner.Scanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>
 </h2>
 <p> scanner reflects the following EBNF Token = String</p>
 
@@ -273,9 +273,54 @@
 
 <p> =</p>
 
-<table><tr><td> '#'</td><td> '&'</td><td> '(' <a href="#'*'">'*'</a> any '*' ')']</td><td> ')'</td><td> '*'['*']</td><td> '+'['*']</td><td> ','</td><td> '-'</td><td> '.' <a href="#'.'"> '*'</a></td><td> '/'</td><td> '='</td><td> '#'</td><td> '&gt'['=']</td><td> '&lt' <a href="#'=']">'=']</a></td></tr>
-<tr><td> '/'</td><td> ':' <a href="#'=']"> ';'</a></td><td> '&lt' <a href="#'='"> '&lt' '?']</a></td><td> '='</td><td> '&gt' <a href="#'='"> '&gt' '?'</a></td></tr>
-<tr><td> '['</td><td> ']'</td><td> '^'</td><td> '{'</td><td> '</td><td>'</td><td> '}'</td><td> '~'</td><td> '\'</td><td> '`'</td><td> '?' <a href="#'?']"> '!' '!'] Identifier = Letter <code>Letter | Digit | '_'}.<BR>		Letter					= 'A' | 'B' | .. | 'Z' | 'a' | 'b' | .. | 'z'.<BR>		Digit						= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' .<BR>		BinaryDigit  	= '0' | '1'.<BR>		String					= '"' {Character} '"' | "'" {Character} "'".<BR>		Character			= Digit [HexDigit] 'X'.<BR>		Number				= Integer | Real.<BR>		Integer				= Digit {Digit} | Digit {HexDigit} 'H' | '0x' {HexDigit} | '0b {["'"]BinaryDigit}.<BR>		Real						= Digit {Digit} '.' {Digit} [ScaleFactor].<BR>		ScaleFactor		= ('E' | 'D') ['+' | '-'] digit {digit}.<BR>		HexDigit			= Digit | 'A' | 'B' | 'C' | 'D' | 'E' | 'F'.<BR>	</code></a></td></tr>
+<table><tr><td> &apos;#&apos;</td><td> &apos;&amp;&apos;</td><td> &apos;(&apos; [&apos;*&apos; any &apos;*&apos; &apos;)&apos;]</td><td> &apos;)&apos;</td><td> &apos;*&apos;[&apos;*&apos;]</td><td> &apos;+&apos;[&apos;*&apos;]</td><td> &apos;,&apos;</td><td> &apos;-&apos;</td><td> &apos;.&apos; [ &apos;.&apos;</td><td> &apos;*&apos;</td><td> &apos;/&apos;</td><td> &apos;=&apos;</td><td> &apos;#&apos;</td><td> &apos;&gt;&apos;[&apos;=&apos;]</td><td> &apos;&lt;&apos; [&apos;=&apos;]</td></tr>
+<tr><td> &apos;/&apos;</td><td> &apos;:&apos; [&apos;=&apos;]</td><td> &apos;;&apos;</td><td> &apos;&lt;&apos; [&apos;=&apos;</td><td> &apos;&lt;&apos; [&apos;?&apos;] ]</td><td> &apos;=&apos;</td><td> &apos;&gt;&apos; [ &apos;=&apos;</td><td> &apos;&gt;&apos; [&apos;?&apos;</td></tr>
+<tr><td> &apos;[&apos;</td><td> &apos;]&apos;</td><td> &apos;^&apos;</td><td> &apos;{&apos;</td><td> &apos;</td><td>&apos;</td><td> &apos;}&apos;</td><td> &apos;~&apos;</td><td> &apos;\&apos;</td><td> &apos;`&apos;</td><td> &apos;?&apos; [&apos;?&apos;]</td><td> &apos;!&apos; [&apos;!&apos;]</td></tr>
+</table>
+
+<p> = Letter {Letter</p>
+
+<table><tr><td> Digit</td><td> &apos;_&apos;}.</td></tr>
+</table>
+
+<p> = &apos;A&apos;</p>
+
+<table><tr><td> &apos;B&apos;</td><td> ..</td><td> &apos;Z&apos;</td><td> &apos;a&apos;</td><td> &apos;b&apos;</td><td> ..</td><td> &apos;z&apos;.</td></tr>
+</table>
+
+<p> = &apos;0&apos;</p>
+
+<table><tr><td> &apos;1&apos;</td><td> &apos;2&apos;</td><td> &apos;3&apos;</td><td> &apos;4&apos;</td><td> &apos;5&apos;</td><td> &apos;6&apos;</td><td> &apos;7&apos;</td><td> &apos;8&apos;</td><td> &apos;9&apos; .</td></tr>
+</table>
+
+<p> = &apos;0&apos;</p>
+
+<table><tr><td> &apos;1&apos;.</td></tr>
+</table>
+
+<p> = &apos;&quot;&apos; {Character} &apos;&quot;&apos;</p>
+
+<table><tr><td> &quot;&apos;&quot; {Character} &quot;&apos;&quot;.</td></tr>
+</table>
+
+<p> = Digit [HexDigit] &apos;X&apos;. Number = Integer</p>
+
+<table><tr><td> Real.</td></tr>
+</table>
+
+<p> = Digit {Digit}</p>
+
+<table><tr><td> Digit {HexDigit} &apos;H&apos;</td><td> &apos;0x&apos; {HexDigit}</td><td> &apos;0b {[&quot;&apos;&quot;]BinaryDigit}.</td></tr>
+</table>
+
+<p> = Digit {Digit} &apos;.&apos; {Digit} [ScaleFactor]. ScaleFactor = (&apos;E&apos;</p>
+
+<table><tr><td> &apos;D&apos;) [&apos;+&apos;</td><td> &apos;-&apos;] digit {digit}.</td></tr>
+</table>
+
+<p> = Digit</p>
+
+<table><tr><td> &apos;A&apos;</td><td> &apos;B&apos;</td><td> &apos;C&apos;</td><td> &apos;D&apos;</td><td> &apos;E&apos;</td><td> &apos;F&apos;.</td></tr>
 </table>
 
 <h3>Syntax</h3>
@@ -284,7 +329,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>source: <strong>StringType</strong><tr><td></td><td>reader: <strong>Streams.Reader</strong><tr><td></td><td>ch: <strong>CHAR</strong><tr><td></td><td>position: <strong>Position</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><td></td><td>case: <strong>SIGNED32</strong><tr><td></td><td>useLineNumbers: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitializeScanner (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; pos: <strong>Position</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> ResetCase<tr><td></td><td> SetCase (c: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#FoxScanner.Scanner.GetNextCharacter">GetNextCharacter</a><tr><td></td><td> SkipToEndOfCode (<strong>VAR</strong> startPos, endPos: <strong>Streams.Position</strong>; <strong>VAR</strong> token: <strong>Token</strong>): <strong>Symbol</strong><tr><td></td><td> <a href="#FoxScanner.Scanner.GetNextToken">GetNextToken</a> (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResetError<tr><td></td><td> <a href="#FoxScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a> (<strong>VAR</strong> diagnostics: <strong>Diagnostics.Diagnostics</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>source: <strong>StringType</strong><tr><td></td><td>reader: <strong>Streams.Reader</strong><tr><td></td><td>ch: <strong>CHAR</strong><tr><td></td><td>position: <strong>Position</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><td></td><td>case: <strong>SIGNED32</strong><tr><td></td><td>useLineNumbers: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>&amp; InitializeScanner (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; pos: <strong>Position</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> ResetCase<tr><td></td><td> SetCase (c: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#FoxScanner.Scanner.GetNextCharacter">GetNextCharacter</a><tr><td></td><td> SkipToEndOfCode (<strong>VAR</strong> startPos, endPos: <strong>Streams.Position</strong>; <strong>VAR</strong> token: <strong>Token</strong>): <strong>Symbol</strong><tr><td></td><td> <a href="#FoxScanner.Scanner.GetNextToken">GetNextToken</a> (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResetError<tr><td></td><td> <a href="#FoxScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a> (<strong>VAR</strong> diagnostics: <strong>Diagnostics.Diagnostics</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -300,28 +345,28 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_89AEC480"><a name="FoxScanner.Scanner.GetNextCharacter"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.GetNextCharacter">GetNextCharacter</a>
+<hr><h3 id="_291C5200"><a name="FoxScanner.Scanner.GetNextCharacter"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.GetNextCharacter">GetNextCharacter</a>
 </h3>
 <p> get next character, end of text results in ch = EOT</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetNextCharacter*</pre>
-<hr><h3 id="#_89AF1D00"><a name="FoxScanner.Scanner.GetNextToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.GetNextToken">GetNextToken</a>
+<hr><h3 id="_291CAA80"><a name="FoxScanner.Scanner.GetNextToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.GetNextToken">GetNextToken</a>
 </h3>
 <p> get next token</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetNextToken* (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_89AF6F40"><a name="FoxScanner.Scanner.ResetErrorDiagnostics"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a>
+<hr><h3 id="_291CFCC0"><a name="FoxScanner.Scanner.ResetErrorDiagnostics"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Scanner">Scanner</a>.<a href="#FoxScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a>
 </h3>
-<p> set the diagnostics mode of the scanner (diagnostics = NIL ==&gt no report) and reset the error state intended for silent token peeeking after the end of a module</p>
+<p> set the diagnostics mode of the scanner (diagnostics = NIL ==&gt; no report) and reset the error state intended for silent token peeeking after the end of a module</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ResetErrorDiagnostics* (<strong>VAR</strong> diagnostics: <strong>Diagnostics.Diagnostics</strong>)</pre>
-<hr><h2 id="#_89B02080"><a name="FoxScanner.Context"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Context">Context</a>
+<hr><h2 id="_291DAE00"><a name="FoxScanner.Context"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.Context">Context</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -330,19 +375,62 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_89B04D00"><a name="FoxScanner.AssemblerScanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.AssemblerScanner">AssemblerScanner</a>
+<hr><h2 id="_291DDA80"><a name="FoxScanner.AssemblerScanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.AssemblerScanner">AssemblerScanner</a>
 </h2>
 <p> assembler scanner reflects the following EBNF Token = String</p>
 
 <table><tr><td> Symbol</td><td> Number</td><td> Identifier.</td></tr>
 </table>
 
-<p> = '\'</p>
+<p> = &apos;\&apos;</p>
 
-<table><tr><td> '#'</td><td> '(' <a href="#'*'">'*'</a> any '*' ')']</td><td> ')'</td><td> CR <a href="#LF]"> LF</a></td><td> '*'</td><td> '+'</td><td> ','</td><td> '-'</td><td> '~'</td><td> '.'</td><td> '/'</td><td> '%'</td><td> ':'</td><td> ';'</td><td> '='</td><td> '['</td><td> ']'</td><td> '{'</td><td> '}'</td><td> '!'</td><td> '^'</td><td> '$'['$'].</td></tr>
+<table><tr><td> &apos;#&apos;</td><td> &apos;(&apos; [&apos;*&apos; any &apos;*&apos; &apos;)&apos;]</td><td> &apos;)&apos;</td><td> CR [LF]</td><td> LF</td><td> &apos;*&apos;</td><td> &apos;+&apos;</td><td> &apos;,&apos;</td><td> &apos;-&apos;</td><td> &apos;~&apos;</td><td> &apos;.&apos;</td><td> &apos;/&apos;</td><td> &apos;%&apos;</td><td> &apos;:&apos;</td><td> &apos;;&apos;</td><td> &apos;=&apos;</td><td> &apos;[&apos;</td><td> &apos;]&apos;</td><td> &apos;{&apos;</td><td> &apos;}&apos;</td><td> &apos;!&apos;</td><td> &apos;^&apos;</td><td> &apos;$&apos;[&apos;$&apos;].</td></tr>
 </table>
 
-<p> = '"' <code>Character} '"' | "'" {Character} "'".<BR>		Identifier		= '@' | Letter {'@' | '.' | Letter | Digit | '_'} .<BR>		Letter				= 'A' | 'B' | .. |  'Z' | 'a' | 'b' |  .. | 'z' .<BR>		Digit				= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'.<BR>		BinaryDigit	= '0' | '1' .<BR>		Number			= Integer | Real.<BR>		Character		= Digit [HexDigit] 'X'.<BR>		Integer			=  Digit {Digit} | Digit {HexDigit} 'H' | '0x' {HexDigit} | '0b' {["'"]BinaryDigit}.<BR>		Real					= Digit {Digit} '.' {Digit} [ScaleFactor].<BR>		ScaleFactor	= ('E' | 'D') ['+' | '-'] digit {digit}.<BR>		HexDigit		= Digit | 'A' | 'B' | 'C' | 'D' | 'E' | 'F'.<BR>	</code></p>
+<p> = &apos;&quot;&apos; {Character} &apos;&quot;&apos;</p>
+
+<table><tr><td> &quot;&apos;&quot; {Character} &quot;&apos;&quot;.</td></tr>
+</table>
+
+<p> = &apos;@&apos;</p>
+
+<table><tr><td> Letter {&apos;@&apos;</td><td> &apos;.&apos;</td><td> Letter</td><td> Digit</td><td> &apos;_&apos;} .</td></tr>
+</table>
+
+<p> = &apos;A&apos;</p>
+
+<table><tr><td> &apos;B&apos;</td><td> ..</td><td> &apos;Z&apos;</td><td> &apos;a&apos;</td><td> &apos;b&apos;</td><td> ..</td><td> &apos;z&apos; .</td></tr>
+</table>
+
+<p> = &apos;0&apos;</p>
+
+<table><tr><td> &apos;1&apos;</td><td> &apos;2&apos;</td><td> &apos;3&apos;</td><td> &apos;4&apos;</td><td> &apos;5&apos;</td><td> &apos;6&apos;</td><td> &apos;7&apos;</td><td> &apos;8&apos;</td><td> &apos;9&apos;.</td></tr>
+</table>
+
+<p> = &apos;0&apos;</p>
+
+<table><tr><td> &apos;1&apos; .</td></tr>
+</table>
+
+<p> = Integer</p>
+
+<table><tr><td> Real.</td></tr>
+</table>
+
+<p> = Digit [HexDigit] &apos;X&apos;. Integer = Digit {Digit}</p>
+
+<table><tr><td> Digit {HexDigit} &apos;H&apos;</td><td> &apos;0x&apos; {HexDigit}</td><td> &apos;0b&apos; {[&quot;&apos;&quot;]BinaryDigit}.</td></tr>
+</table>
+
+<p> = Digit {Digit} &apos;.&apos; {Digit} [ScaleFactor]. ScaleFactor = (&apos;E&apos;</p>
+
+<table><tr><td> &apos;D&apos;) [&apos;+&apos;</td><td> &apos;-&apos;] digit {digit}.</td></tr>
+</table>
+
+<p> = Digit</p>
+
+<table><tr><td> &apos;A&apos;</td><td> &apos;B&apos;</td><td> &apos;C&apos;</td><td> &apos;D&apos;</td><td> &apos;E&apos;</td><td> &apos;F&apos;.</td></tr>
+</table>
 
 <h3>Syntax</h3>
 
@@ -350,35 +438,35 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>startContext: <strong>Context</strong><tr><th align='left'>procedures</th><td>& InitAssemblerScanner (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>Position</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> GetContext (<strong>VAR</strong> context: <strong>Context</strong>)<tr><td></td><td> SetContext (<strong>CONST</strong> context: <strong>Context</strong>)<tr><td></td><td> SkipToEndOfLine<tr><td></td><td> <a href="#FoxScanner.AssemblerScanner.GetNextToken">GetNextToken</a> (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>startContext: <strong>Context</strong><tr><th align='left'>procedures</th><td>&amp; InitAssemblerScanner (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>Position</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> GetContext (<strong>VAR</strong> context: <strong>Context</strong>)<tr><td></td><td> SetContext (<strong>CONST</strong> context: <strong>Context</strong>)<tr><td></td><td> SkipToEndOfLine<tr><td></td><td> <a href="#FoxScanner.AssemblerScanner.GetNextToken">GetNextToken</a> (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_89B24BC0"><a name="FoxScanner.AssemblerScanner.GetNextToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.AssemblerScanner">AssemblerScanner</a>.<a href="#FoxScanner.AssemblerScanner.GetNextToken">GetNextToken</a>
+<hr><h3 id="_292168C0"><a name="FoxScanner.AssemblerScanner.GetNextToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.AssemblerScanner">AssemblerScanner</a>.<a href="#FoxScanner.AssemblerScanner.GetNextToken">GetNextToken</a>
 </h3>
 <p> get next token</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetNextToken* (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_89B29F80"><a name="FoxScanner.NewScanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.NewScanner">NewScanner</a>
+<hr><h2 id="_2921BC80"><a name="FoxScanner.NewScanner"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.NewScanner">NewScanner</a>
 </h2>
 <p> return a new scanner on a stream, error output via diagnostics</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewScanner* (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>Streams.Position</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>Scanner</strong></pre>
-<hr><h2 id="#_89B33D40"><a name="FoxScanner.PrintToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.PrintToken">PrintToken</a>
+<hr><h2 id="_29225A40"><a name="FoxScanner.PrintToken"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.PrintToken">PrintToken</a>
 </h2>
 <p> debugging output</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> PrintToken* (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> token: <strong>Token</strong>)</pre>
-<hr><h2 id="#_89B38C00"><a name="FoxScanner.ReportKeywords"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.ReportKeywords">ReportKeywords</a>
+<hr><h2 id="_2922A900"><a name="FoxScanner.ReportKeywords"></a><a href="#FoxScanner">FoxScanner</a>.<a href="#FoxScanner.ReportKeywords">ReportKeywords</a>
 </h2>
 <p> debugging / reporting</p>
 

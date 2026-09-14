@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#VNCServer">VNCServer</a></p>
+<hr><h1 id="_DF9DBD80"><a name="VNCServer"></a><a href="#ModuleList">Module</a> VNCServer
+</h1>
+<p> AUTHOR &quot;TF&quot;; PURPOSE &quot;New VNC Server&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>VNCMouseListener =<strong>PROCEDURE</strong>{DELEGATE} (x, y, dz: <strong>SIGNED32</strong>; keys: <strong>SET</strong>)<tr><td></td><td>VNCKeyboardListener =<strong>PROCEDURE</strong>{DELEGATE} (ucs: <strong>SIGNED32</strong>; flags: <strong>SET</strong>; keysym: <strong>SIGNED32</strong>)<tr><td></td><td>VNCClipboardListener =<strong>PROCEDURE</strong>{DELEGATE} (text: <strong>String</strong>)<tr><td></td><td>VNCNofClientsActiveListener =<strong>PROCEDURE</strong>{DELEGATE} (nofClients: <strong>SIGNED32</strong>)<tr><td></td><td><a href="#VNCServer.VNCInfo">VNCInfo</a> =<strong>OBJECT</strong> <tr><td></td><td>VNCService =<strong>PROCEDURE</strong>{DELEGATE} (vncInfo: <strong>VNCInfo</strong>)<tr><td></td><td><a href="#VNCServer.VNCAgent">VNCAgent</a> =<strong>OBJECT</strong> (<strong>Agent</strong>)<tr><td></td><td><a href="#VNCServer.Server">Server</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>NnofAuthenticate: <strong>SIGNED32</strong><tr><td></td><td>NnofAuthNone: <strong>SIGNED32</strong><tr><td></td><td>NnofAuthVNC: <strong>SIGNED32</strong><tr><td></td><td>NnofAuthOk: <strong>SIGNED32</strong><tr><td></td><td>NnofAuthFailed: <strong>SIGNED32</strong><tr><td></td><td>NnofEnteredServe: <strong>SIGNED32</strong><tr><td></td><td>NnofLeftServer: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> OpenServer (port: <strong>UNSIGNED32</strong>; img: <strong>Raster.Image</strong>; name, password: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ml: <strong>VNCMouseListener</strong>; kl: <strong>VNCKeyboardListener</strong>; cl: <strong>VNCClipboardListener</strong>; ncal: <strong>VNCNofClientsActiveListener</strong>): <strong>Server</strong><tr><td></td><td> OpenService (port: <strong>UNSIGNED32</strong>; init: <strong>VNCService</strong>): <strong>Server</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DFA04240"><a name="VNCServer.VNCInfo"></a><a href="#VNCServer">VNCServer</a>.<a href="#VNCServer.VNCInfo">VNCInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> VNCInfo* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>password: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>img: <strong>Raster.Image</strong><tr><td></td><td>ml: <strong>VNCMouseListener</strong><tr><td></td><td>kl: <strong>VNCKeyboardListener</strong><tr><td></td><td>cutl: <strong>VNCClipboardListener</strong><tr><td></td><td>ncal: <strong>VNCNofClientsActiveListener</strong><tr><td></td><td>width: <strong>SIZE</strong><tr><td></td><td>height: <strong>SIZE</strong><tr><td></td><td><a href="#VNCServer.VNCInfo.connection">connection</a>: <strong>TCP.Connection</strong><tr><td></td><td><a href="#VNCServer.VNCInfo.agent">agent</a>: <strong>VNCAgent</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_DFA12EC0"><a name="VNCServer.VNCInfo.connection"></a><a href="#VNCServer">VNCServer</a>.<a href="#VNCServer.VNCInfo">VNCInfo</a>.<a href="#VNCServer.VNCInfo.connection">connection</a>
+</h3>
+<p> only used in service case</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> connection*: <strong>TCP.Connection</strong></pre>
+<hr><h3 id="_DFA17480"><a name="VNCServer.VNCInfo.agent"></a><a href="#VNCServer">VNCServer</a>.<a href="#VNCServer.VNCInfo">VNCInfo</a>.<a href="#VNCServer.VNCInfo.agent">agent</a>
+</h3>
+<p> not valid in service init</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> agent*: <strong>VNCAgent</strong></pre>
+<hr><h2 id="_DFA1BB00"><a name="VNCServer.VNCAgent"></a><a href="#VNCServer">VNCServer</a>.<a href="#VNCServer.VNCAgent">VNCAgent</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> VNCAgent* =<strong>OBJECT</strong> (<strong>Agent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init (server: <strong>Server</strong>; client: <strong>TCP.Connection</strong>; vncInfo: <strong>VNCInfo</strong>)<tr><td></td><td> AddDirty (r: <strong>Rectangle</strong>)<tr><td></td><td> <a href="#VNCServer.VNCAgent.SendClipboard">SendClipboard</a> (text: <strong>String</strong>)<tr><td></td><td> <a href="#VNCServer.VNCAgent.CopyRect">CopyRect</a> (srcx, srcy: <strong>SIGNED32</strong>; dst: <strong>Rectangle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_DFA2A380"><a name="VNCServer.VNCAgent.SendClipboard"></a><a href="#VNCServer">VNCServer</a>.<a href="#VNCServer.VNCAgent">VNCAgent</a>.<a href="#VNCServer.VNCAgent.SendClipboard">SendClipboard</a>
+</h3>
+<p> send a text as clipboard content to the client</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SendClipboard* (text: <strong>String</strong>)</pre>
+<hr><h3 id="_DFA304C0"><a name="VNCServer.VNCAgent.CopyRect"></a><a href="#VNCServer">VNCServer</a>.<a href="#VNCServer.VNCAgent">VNCAgent</a>.<a href="#VNCServer.VNCAgent.CopyRect">CopyRect</a>
+</h3>
+<p> 5.4.2 CopyRect Returns FALSE, if client does not support CopyRect this does not wait for fbupdatereq, does not flush</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CopyRect* (srcx, srcy: <strong>SIGNED32</strong>; dst: <strong>Rectangle</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_DFA3A8C0"><a name="VNCServer.Server"></a><a href="#VNCServer">VNCServer</a>.<a href="#VNCServer.Server">Server</a>
+</h2>
+<p> Wait for new TCP connections, start a VNC agent as soon as needed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Server* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Open (port: <strong>UNSIGNED32</strong>; vncInfo: <strong>VNCInfo</strong>; init: <strong>VNCService</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> AddDirty (r: <strong>Rectangle</strong>)<tr><td></td><td> SendClipboard (t: <strong>String</strong>)<tr><td></td><td> Close<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

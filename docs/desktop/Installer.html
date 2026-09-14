@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Installer">Installer</a></p>
+<hr><h1 id="_E9B20CC0"><a name="Installer"></a><a href="#ModuleList">Module</a> Installer
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Installer&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Mandatory= 0<tr><td></td><td>OptionalYes= 1<tr><td></td><td>OptionalNo= 2<tr><td></td><td>NotAllowed= 3<tr><td></td><td>NofSteps= 12<tr><td></td><td>Undefined= 0<tr><td></td><td>WriteMBR= 1<tr><td></td><td>CreatePartition= 2<tr><td></td><td>ChangeType= 3<tr><td></td><td>Activate= 4<tr><td></td><td>Format= 5<tr><td></td><td>UpdateBootfile= 6<tr><td></td><td>SetConfig= 7<tr><td></td><td>InstallBootManager= 8<tr><td></td><td>Mount= 9<tr><td></td><td>InstallPackages= 10<tr><td></td><td>Unmount= 11<tr><th align='left'>type declarations</th><td><a href="#Installer.Configuration">Configuration</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Installer.Installer">Installer</a> =<strong>OBJECT</strong> (<strong>PartitionsLib.Operation</strong>)<tr><td></td><td><a href="#Installer.Package">Package</a> =<strong>OBJECT</strong> <tr><td></td><td>PackageArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Package</strong><tr><td></td><td><a href="#Installer.Packages">Packages</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> TestPackages (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#Installer.Install">Install</a> (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_E9B3D480"><a name="Installer.Configuration"></a><a href="#Installer">Installer</a>.<a href="#Installer.Configuration">Configuration</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Configuration* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>mbrFile: <strong>Files.FileName</strong><tr><td></td><td>size: <strong>SIGNED32</strong><tr><td></td><td>bootloader: <strong>Files.FileName</strong><tr><td></td><td>bootfile: <strong>Files.FileName</strong><tr><td></td><td>configTable: <strong>PartitionsLib.ConfigTable</strong><tr><td></td><td>bootManMBR: <strong>Files.FileName</strong><tr><td></td><td>bootManRest: <strong>Files.FileName</strong><tr><td></td><td>mountPrefix: <strong>Files.Prefix</strong><tr><th align='left'>procedures</th><td> SetInstallStep (step: <strong>SIZE</strong>; doStep: <strong>BOOLEAN</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> DoStep (step: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> SpaceAvailable (): <strong>SIGNED32</strong><tr><td></td><td> CheckConfiguration (w: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ToStream (w: <strong>Streams.Writer</strong>)<tr><td></td><td> Clone (): <strong>Configuration</strong><tr><td></td><td> SetPackages (packages: <strong>Packages</strong>)<tr><td></td><td>&amp; Init (disk: <strong>PartitionsLib.Disk</strong>; partition: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_E9B594C0"><a name="Installer.Installer"></a><a href="#Installer">Installer</a>.<a href="#Installer.Installer">Installer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Installer* =<strong>OBJECT</strong> (<strong>PartitionsLib.Operation</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetInstallLog (installLog: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#Installer.Installer.Lock">Lock</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Installer.Installer.Unlock">Unlock</a><tr><td></td><td> SetParameters (config: <strong>Configuration</strong>)<tr><td></td><td> ValidParameters (): <strong>BOOLEAN</strong><tr><td></td><td> DoOperation<tr><td></td><td>&amp; Init (disk: <strong>PartitionsLib.Disk</strong>; partition: <strong>SIGNED32</strong>; out: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_E9B67C40"><a name="Installer.Installer.Lock"></a><a href="#Installer">Installer</a>.<a href="#Installer.Installer">Installer</a>.<a href="#Installer.Installer.Lock">Lock</a>
+</h3>
+<p> Write lock partition before this operation is running</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Lock* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_E9B6D500"><a name="Installer.Installer.Unlock"></a><a href="#Installer">Installer</a>.<a href="#Installer.Installer">Installer</a>.<a href="#Installer.Installer.Unlock">Unlock</a>
+</h3>
+<p> Release write lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Unlock*</pre>
+<hr><h2 id="_E9B70BC0"><a name="Installer.Package"></a><a href="#Installer">Installer</a>.<a href="#Installer.Package">Package</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Package* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>number: <strong>SIGNED32</strong><tr><td></td><td><a href="#Installer.Package.install">install</a>: <strong>BOOLEAN</strong><tr><td></td><td>installType: <strong>SIGNED32</strong><tr><td></td><td>filename: <strong>XML.String</strong><tr><td></td><td>file: <strong>Files.File</strong><tr><td></td><td>name: <strong>XML.String</strong><tr><td></td><td>description: <strong>XML.String</strong><tr><td></td><td>nofEntries: <strong>SIGNED32</strong><tr><td></td><td>size: <strong>SIGNED32</strong><tr><td></td><td>sizeOnDisk: <strong>SIGNED32</strong><tr><td></td><td>user: @Any0<tr><th align='left'>procedures</th><td> <a href="#Installer.Package.SetInstall">SetInstall</a> (install: <strong>BOOLEAN</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td>&amp; Init</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_E9B82640"><a name="Installer.Package.install"></a><a href="#Installer">Installer</a>.<a href="#Installer.Package">Package</a>.<a href="#Installer.Package.install">install</a>
+</h3>
+<p> Shall this package be installed?</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> install-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_E9B86C00"><a name="Installer.Package.SetInstall"></a><a href="#Installer">Installer</a>.<a href="#Installer.Package">Package</a>.<a href="#Installer.Package.SetInstall">SetInstall</a>
+</h3>
+<p> Set his package to be installed or not.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetInstall* (install: <strong>BOOLEAN</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_E9B8E880"><a name="Installer.Packages"></a><a href="#Installer">Installer</a>.<a href="#Installer.Packages">Packages</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Packages* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetPackages (): <strong>PackageArray</strong><tr><td></td><td> GetPackageSizes<tr><td></td><td> GetInstallSize (<strong>VAR</strong> size, sizeOnDisk, nofEntries: <strong>SIGNED32</strong>)<tr><td></td><td> InstallPackages (<strong>CONST</strong> targetPath: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetInstallLog (info: <strong>Streams.Writer</strong>)<tr><td></td><td> OpenPackages (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; error: <strong>Streams.Writer</strong>): <strong>BOOLEAN</strong><tr><td></td><td>&amp; Init</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_E9B9F100"><a name="Installer.Install"></a><a href="#Installer">Installer</a>.<a href="#Installer.Install">Install</a>
+</h2>
+<p> Quick-install the system on specified partition</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Install* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

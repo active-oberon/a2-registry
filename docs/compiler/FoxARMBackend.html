@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxARMBackend">FoxARMBackend</a></p>
-<hr><h1 id="#_45021E40"><a name="FoxARMBackend"></a><a href="#ModuleList">Module</a> FoxARMBackend
+<hr><h1 id="_15051040"><a name="FoxARMBackend"></a><a href="#ModuleList">Module</a> FoxARMBackend
 </h1>
-<p> AUTHOR ""; PURPOSE "backend for ARM (advanced RISC machines)";</p>
+<p> AUTHOR &quot;&quot;; PURPOSE &quot;backend for ARM (advanced RISC machines)&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -43,7 +43,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_4502C180"><a name="FoxARMBackend.PhysicalRegisters"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>
+<hr><h2 id="_1505B380"><a name="FoxARMBackend.PhysicalRegisters"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -61,79 +61,79 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_45041B00"><a name="FoxARMBackend.PhysicalRegisters.NumberRegisters"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.NumberRegisters">NumberRegisters</a>
+<hr><h3 id="_15070D00"><a name="FoxARMBackend.PhysicalRegisters.NumberRegisters"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.NumberRegisters">NumberRegisters</a>
 </h3>
 <p> the number of physical registers</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NumberRegisters* (): <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_45046780"><a name="FoxARMBackend.PhysicalRegisters.Allocate"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Allocate">Allocate</a>
+<hr><h3 id="_15075980"><a name="FoxARMBackend.PhysicalRegisters.Allocate"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Allocate">Allocate</a>
 </h3>
 <p> allocate, i.e., map, a physical register to a ticket</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Allocate* (physicalRegisterNumber: <strong>SIGNED32</strong>; ticket: <strong>Ticket</strong>)</pre>
-<hr><h3 id="#_4504D740"><a name="FoxARMBackend.PhysicalRegisters.SetReserved"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.SetReserved">SetReserved</a>
+<hr><h3 id="_1507C940"><a name="FoxARMBackend.PhysicalRegisters.SetReserved"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.SetReserved">SetReserved</a>
 </h3>
 <p> set whether a certain physical register is reserved or not</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SetReserved* (physicalRegisterNumber: <strong>SIGNED32</strong>; isReserved: <strong>BOOLEAN</strong>)</pre>
-<hr><h3 id="#_450549C0"><a name="FoxARMBackend.PhysicalRegisters.Reserved"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Reserved">Reserved</a>
+<hr><h3 id="_15083BC0"><a name="FoxARMBackend.PhysicalRegisters.Reserved"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Reserved">Reserved</a>
 </h3>
 <p> whether a certain physical register is reserved</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Reserved* (physicalRegisterNumber: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_4505A900"><a name="FoxARMBackend.PhysicalRegisters.Free"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Free">Free</a>
+<hr><h3 id="_15089B00"><a name="FoxARMBackend.PhysicalRegisters.Free"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Free">Free</a>
 </h3>
 <p> free a certain physical register</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Free* (physicalRegisterNumber: <strong>SIGNED32</strong>)</pre>
-<hr><h3 id="#_4505FA00"><a name="FoxARMBackend.PhysicalRegisters.NextFree"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.NextFree">NextFree</a>
+<hr><h3 id="_1508EC00"><a name="FoxARMBackend.PhysicalRegisters.NextFree"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.NextFree">NextFree</a>
 </h3>
-<p> get the number of the next free physical register for a certain data type  if a register hint has been set, it is respected if possible</p>
+<p> get the number of the next free physical register for a certain data type - if a register hint has been set, it is respected if possible</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NextFree* (<strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>): <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_4506AA40"><a name="FoxARMBackend.PhysicalRegisters.AllocationHint"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.AllocationHint">AllocationHint</a>
+<hr><h3 id="_15099CC0"><a name="FoxARMBackend.PhysicalRegisters.AllocationHint"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.AllocationHint">AllocationHint</a>
 </h3>
 <p> give the register allocator a hint on what physical register to use next</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> AllocationHint* (physicalRegisterNumber: <strong>SIGNED32</strong>)</pre>
-<hr><h3 id="#_45071BC0"><a name="FoxARMBackend.PhysicalRegisters.Mapped"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Mapped">Mapped</a>
+<hr><h3 id="_150A0E40"><a name="FoxARMBackend.PhysicalRegisters.Mapped"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Mapped">Mapped</a>
 </h3>
 <p> get the ticket that is currently mapped to a certain physical register</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Mapped* (physicalRegisterNumber: <strong>SIGNED32</strong>): <strong>Ticket</strong></pre>
-<hr><h3 id="#_45078DC0"><a name="FoxARMBackend.PhysicalRegisters.Dump"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Dump">Dump</a>
+<hr><h3 id="_150A8040"><a name="FoxARMBackend.PhysicalRegisters.Dump"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.PhysicalRegisters">PhysicalRegisters</a>.<a href="#FoxARMBackend.PhysicalRegisters.Dump">Dump</a>
 </h3>
 <p> dump the current register mapping to a stream</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Dump* (w: <strong>Streams.Writer</strong>)</pre>
-<hr><h2 id="#_4507EAC0"><a name="FoxARMBackend.Get"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.Get">Get</a>
+<hr><h2 id="_150ADD40"><a name="FoxARMBackend.Get"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.Get">Get</a>
 </h2>
 <p> get an instance of the ARM backend</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Get* (): <strong>Backend.Backend</strong></pre>
-<hr><h2 id="#_45083700"><a name="FoxARMBackend.DBin"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.DBin">DBin</a>
+<hr><h2 id="_150B2980"><a name="FoxARMBackend.DBin"></a><a href="#FoxARMBackend">FoxARMBackend</a>.<a href="#FoxARMBackend.DBin">DBin</a>
 </h2>
-<p> write an integer in binary right-justified in a field of at least ABS(w) characters. If w <a name="0"></a> THEN ABS(w) least significant hex digits of 'value' are written (potentially including leading zeros or ones)</p>
+<p> write an integer in binary right-justified in a field of at least ABS(w) characters. If w &lt; 0 THEN ABS(w) least significant hex digits of &apos;value&apos; are written (potentially including leading zeros or ones)</p>
 
 <h3>Syntax</h3>
 

@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Frames">Frames</a></p>
-<hr><h1 id="#_82088E00"><a name="Frames"></a><a href="#ModuleList">Module</a> Frames
+<hr><h1 id="_E961B480"><a name="Frames"></a><a href="#ModuleList">Module</a> Frames
 </h1>
-<p> AUTHOR "Andrii Puhachenko"; PURPOSE "Oberon's model of a screen, drawn into a terminal"</p>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;Oberon&apos;s model of a screen, drawn into a terminal&quot;</p>
 
 <h3>Summary</h3>
 
@@ -44,15 +44,15 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_82095C40">
-</h1><hr><h2 id="#_82096400"><a name="Frames.MaxFrames"></a><a href="#Frames">Frames</a>.<a href="#Frames.MaxFrames">MaxFrames</a>
+<hr><h1 id="_E96282C0">
+</h1><hr><h2 id="_E9628A80"><a name="Frames.MaxFrames"></a><a href="#Frames">Frames</a>.<a href="#Frames.MaxFrames">MaxFrames</a>
 </h2>
 <p> how many frames one screen holds</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> MaxFrames*= 8</pre>
-<hr><h2 id="#_8209A680"><a name="Frames.Text"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>
+<hr><h2 id="_E962CD00"><a name="Frames.Text"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>
 </h2>
 <p> A text as frames use it: lines, numbered from zero.</p>
 
@@ -62,7 +62,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td><a href="#Frames.Text.count">count</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> <a href="#Frames.Text.Get">Get</a> (i: <strong>SIGNED32</strong>): <strong>Strings.String</strong><tr><td></td><td> Set (i: <strong>SIGNED32</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Frames.Text.Insert">Insert</a> (i: <strong>SIGNED32</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Add (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Delete (i: <strong>SIGNED32</strong>)<tr><td></td><td> Clear<tr><td></td><td> <a href="#Frames.Text.AddText">AddText</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td><a href="#Frames.Text.count">count</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> <a href="#Frames.Text.Get">Get</a> (i: <strong>SIGNED32</strong>): <strong>Strings.String</strong><tr><td></td><td> Set (i: <strong>SIGNED32</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Frames.Text.Insert">Insert</a> (i: <strong>SIGNED32</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Add (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Delete (i: <strong>SIGNED32</strong>)<tr><td></td><td> Clear<tr><td></td><td> <a href="#Frames.Text.AddText">AddText</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -72,35 +72,35 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_820B2180"><a name="Frames.Text.count"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>.<a href="#Frames.Text.count">count</a>
+<hr><h3 id="_E9644800"><a name="Frames.Text.count"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>.<a href="#Frames.Text.count">count</a>
 </h3>
 <p> how many lines it has</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> count-: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_820B6740"><a name="Frames.Text.Get"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>.<a href="#Frames.Text.Get">Get</a>
+<hr><h3 id="_E9648DC0"><a name="Frames.Text.Get"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>.<a href="#Frames.Text.Get">Get</a>
 </h3>
 <p> The text of a line, or NIL when there is no such line.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Get* (i: <strong>SIGNED32</strong>): <strong>Strings.String</strong></pre>
-<hr><h3 id="#_820BDD80"><a name="Frames.Text.Insert"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>.<a href="#Frames.Text.Insert">Insert</a>
+<hr><h3 id="_E9650400"><a name="Frames.Text.Insert"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>.<a href="#Frames.Text.Insert">Insert</a>
 </h3>
 <p> Put a line in at i; i = count appends.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Insert* (i: <strong>SIGNED32</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h3 id="#_820C5B80"><a name="Frames.Text.AddText"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>.<a href="#Frames.Text.AddText">AddText</a>
+<hr><h3 id="_E9658200"><a name="Frames.Text.AddText"></a><a href="#Frames">Frames</a>.<a href="#Frames.Text">Text</a>.<a href="#Frames.Text.AddText">AddText</a>
 </h3>
 <p> Every line of a piece of text at once, split where the newlines are.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> AddText* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_820CDA80"><a name="Frames.Frame"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>
+<hr><h2 id="_E9660100"><a name="Frames.Frame"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>
 </h2>
 <p> A frame: a rectangle of the screen showing a text, with a caret in it. Where it is drawn is set by the screen that holds it; what it shows and where the caret is are its own.</p>
 
@@ -110,7 +110,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>title: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>text: <strong>Text</strong><tr><td></td><td><a href="#Frames.Frame.top">top</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Frame.caret">caret</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Frame.column">column</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Frame.editable">editable</a>: <strong>BOOLEAN</strong><tr><td></td><td>row: <strong>SIGNED32</strong><tr><td></td><td>col: <strong>SIGNED32</strong><tr><td></td><td>height: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Frame.width">width</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& InitFrame (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; t: <strong>Text</strong>)<tr><td></td><td> <a href="#Frames.Frame.Place">Place</a> (atRow, atColumn, rows, columns: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Frames.Frame.Room">Room</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Frames.Frame.Line">Line</a> (): <strong>Strings.String</strong><tr><td></td><td> <a href="#Frames.Frame.ToEnd">ToEnd</a><tr><td></td><td> <a href="#Frames.Frame.Draw">Draw</a> (w: <strong>Streams.Writer</strong>; focused: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Frames.Frame.Handle">Handle</a> (<strong>CONST</strong> e: <strong>TerminalCodes.Event</strong>): <strong>BOOLEAN</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>title: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>text: <strong>Text</strong><tr><td></td><td><a href="#Frames.Frame.top">top</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Frame.caret">caret</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Frame.column">column</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Frame.editable">editable</a>: <strong>BOOLEAN</strong><tr><td></td><td>row: <strong>SIGNED32</strong><tr><td></td><td>col: <strong>SIGNED32</strong><tr><td></td><td>height: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Frame.width">width</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; InitFrame (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; t: <strong>Text</strong>)<tr><td></td><td> <a href="#Frames.Frame.Place">Place</a> (atRow, atColumn, rows, columns: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Frames.Frame.Room">Room</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Frames.Frame.Line">Line</a> (): <strong>Strings.String</strong><tr><td></td><td> <a href="#Frames.Frame.ToEnd">ToEnd</a><tr><td></td><td> <a href="#Frames.Frame.Draw">Draw</a> (w: <strong>Streams.Writer</strong>; focused: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Frames.Frame.Handle">Handle</a> (<strong>CONST</strong> e: <strong>TerminalCodes.Event</strong>): <strong>BOOLEAN</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -128,84 +128,84 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_820F39C0"><a name="Frames.Frame.top"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.top">top</a>
+<hr><h3 id="_E9686040"><a name="Frames.Frame.top"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.top">top</a>
 </h3>
 <p> the first line drawn</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> top*: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_820F7B00"><a name="Frames.Frame.caret"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.caret">caret</a>
+<hr><h3 id="_E968A180"><a name="Frames.Frame.caret"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.caret">caret</a>
 </h3>
 <p> the line the caret is on</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> caret*: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_820FC440"><a name="Frames.Frame.column"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.column">column</a>
+<hr><h3 id="_E968EAC0"><a name="Frames.Frame.column"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.column">column</a>
 </h3>
 <p> and where in it</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> column*: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_82100580"><a name="Frames.Frame.editable"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.editable">editable</a>
+<hr><h3 id="_E9692C00"><a name="Frames.Frame.editable"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.editable">editable</a>
 </h3>
 <p> whether typing changes the text</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> editable*: <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_82104B40"><a name="Frames.Frame.width"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.width">width</a>
+<hr><h3 id="_E96971C0"><a name="Frames.Frame.width"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.width">width</a>
 </h3>
 <p> where the screen last put it</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> width-: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_82109580"><a name="Frames.Frame.Place"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Place">Place</a>
+<hr><h3 id="_E969BC00"><a name="Frames.Frame.Place"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Place">Place</a>
 </h3>
 <p> Where on the screen this frame is, counted from one, border included.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Place* (atRow, atColumn, rows, columns: <strong>SIGNED32</strong>)</pre>
-<hr><h3 id="#_82111980"><a name="Frames.Frame.Room"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Room">Room</a>
+<hr><h3 id="_E96A4000"><a name="Frames.Frame.Room"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Room">Room</a>
 </h3>
 <p> How many lines of text fit inside the border.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Room* (): <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_82117500"><a name="Frames.Frame.Line"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Line">Line</a>
+<hr><h3 id="_E96A9B80"><a name="Frames.Frame.Line"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Line">Line</a>
 </h3>
 <p> The line the caret is on.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Line* (): <strong>Strings.String</strong></pre>
-<hr><h3 id="#_8211C480"><a name="Frames.Frame.ToEnd"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.ToEnd">ToEnd</a>
+<hr><h3 id="_E96AEB00"><a name="Frames.Frame.ToEnd"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.ToEnd">ToEnd</a>
 </h3>
 <p> Show the last line, which is what a log wants after something is added to it.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ToEnd*</pre>
-<hr><h3 id="#_82122D80"><a name="Frames.Frame.Draw"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Draw">Draw</a>
+<hr><h3 id="_E96B5400"><a name="Frames.Frame.Draw"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Draw">Draw</a>
 </h3>
-<p> Draw the border, the title and the lines that fit. The caret is drawn as an inverted character, not as the terminal's own cursor: a screen has one cursor and several frames, and a frame that is not the focused one still has a caret to show.</p>
+<p> Draw the border, the title and the lines that fit. The caret is drawn as an inverted character, not as the terminal&apos;s own cursor: a screen has one cursor and several frames, and a frame that is not the focused one still has a caret to show.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Draw* (w: <strong>Streams.Writer</strong>; focused: <strong>BOOLEAN</strong>)</pre>
-<hr><h3 id="#_82132C80"><a name="Frames.Frame.Handle"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Handle">Handle</a>
+<hr><h3 id="_E96C5300"><a name="Frames.Frame.Handle"></a><a href="#Frames">Frames</a>.<a href="#Frames.Frame">Frame</a>.<a href="#Frames.Frame.Handle">Handle</a>
 </h3>
 <p> What the frame makes of an event. TRUE when it used it, so that a program can give an event to the frame first and keep for itself whatever the frame did not want.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Handle* (<strong>CONST</strong> e: <strong>TerminalCodes.Event</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_8213F5C0"><a name="Frames.Screen"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>
+<hr><h2 id="_E96D1C40"><a name="Frames.Screen"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>
 </h2>
 <p> A screen, as Oberon divides one: vertical tracks side by side, and in each track the frames stacked one above the other. Tiled throughout -- no frame is ever hidden behind another, which is the whole reason the model needs no window manager.</p>
 
@@ -217,7 +217,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>count: <strong>SIGNED32</strong><tr><td></td><td>tracks: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Screen.focus">focus</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& InitScreen<tr><td></td><td> <a href="#Frames.Screen.NewTrack">NewTrack</a> (width: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Frames.Screen.Add">Add</a> (f: <strong>Frame</strong>)<tr><td></td><td> At (i: <strong>SIGNED32</strong>): <strong>Frame</strong><tr><td></td><td> Focused (): <strong>Frame</strong><tr><td></td><td> Focus (i: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Frames.Screen.Layout">Layout</a> (rows, columns: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Frames.Screen.Draw">Draw</a> (w: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#Frames.Screen.Refresh">Refresh</a> (w: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#Frames.Screen.Handle">Handle</a> (<strong>CONST</strong> e: <strong>TerminalCodes.Event</strong>): <strong>BOOLEAN</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>count: <strong>SIGNED32</strong><tr><td></td><td>tracks: <strong>SIGNED32</strong><tr><td></td><td><a href="#Frames.Screen.focus">focus</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; InitScreen<tr><td></td><td> <a href="#Frames.Screen.NewTrack">NewTrack</a> (width: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Frames.Screen.Add">Add</a> (f: <strong>Frame</strong>)<tr><td></td><td> At (i: <strong>SIGNED32</strong>): <strong>Frame</strong><tr><td></td><td> Focused (): <strong>Frame</strong><tr><td></td><td> Focus (i: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Frames.Screen.Layout">Layout</a> (rows, columns: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#Frames.Screen.Draw">Draw</a> (w: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#Frames.Screen.Refresh">Refresh</a> (w: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#Frames.Screen.Handle">Handle</a> (<strong>CONST</strong> e: <strong>TerminalCodes.Event</strong>): <strong>BOOLEAN</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -231,56 +231,56 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_8216D100"><a name="Frames.Screen.focus"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.focus">focus</a>
+<hr><h3 id="_E96FF780"><a name="Frames.Screen.focus"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.focus">focus</a>
 </h3>
 <p> which frame the keys go to</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> focus-: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_82171A40"><a name="Frames.Screen.NewTrack"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.NewTrack">NewTrack</a>
+<hr><h3 id="_E97040C0"><a name="Frames.Screen.NewTrack"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.NewTrack">NewTrack</a>
 </h3>
 <p> Another column, this many shares of the width wide. Frames added next go in it.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewTrack* (width: <strong>SIGNED32</strong>)</pre>
-<hr><h3 id="#_82179140"><a name="Frames.Screen.Add"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Add">Add</a>
+<hr><h3 id="_E970B7C0"><a name="Frames.Screen.Add"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Add">Add</a>
 </h3>
 <p> Add a frame to the track being filled; the first one starts a track of its own.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Add* (f: <strong>Frame</strong>)</pre>
-<hr><h3 id="#_82181140"><a name="Frames.Screen.Layout"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Layout">Layout</a>
+<hr><h3 id="_E97137C0"><a name="Frames.Screen.Layout"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Layout">Layout</a>
 </h3>
 <p> Divide a terminal of that size between the tracks, and each track between its frames. What does not divide evenly goes to the last, which is where a leftover column shows least.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Layout* (rows, columns: <strong>SIGNED32</strong>)</pre>
-<hr><h3 id="#_8218D100"><a name="Frames.Screen.Draw"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Draw">Draw</a>
+<hr><h3 id="_E971F780"><a name="Frames.Screen.Draw"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Draw">Draw</a>
 </h3>
 <p> Draw the frames over what is already there. Nothing is cleared first: every frame paints every cell it owns, borders and blanks included, so clearing would only mean the screen spends a moment empty -- which is what flicker is.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Draw* (w: <strong>Streams.Writer</strong>)</pre>
-<hr><h3 id="#_8219A980"><a name="Frames.Screen.Refresh"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Refresh">Refresh</a>
+<hr><h3 id="_E972D000"><a name="Frames.Screen.Refresh"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Refresh">Refresh</a>
 </h3>
 <p> Clear first, then draw. For after a resize, where the frames no longer cover what the old ones did, and once at the start.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Refresh* (w: <strong>Streams.Writer</strong>)</pre>
-<hr><h3 id="#_821A4280"><a name="Frames.Screen.Handle"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Handle">Handle</a>
+<hr><h3 id="_E9736900"><a name="Frames.Screen.Handle"></a><a href="#Frames">Frames</a>.<a href="#Frames.Screen">Screen</a>.<a href="#Frames.Screen.Handle">Handle</a>
 </h3>
-<p> Tab moves the caret to the next frame and Shift-Tab to the one before; everything else is the focused frame's, and what it does not want comes back to the program.</p>
+<p> Tab moves the caret to the next frame and Shift-Tab to the one before; everything else is the focused frame&apos;s, and what it does not want comes back to the program.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Handle* (<strong>CONST</strong> e: <strong>TerminalCodes.Event</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_821B0140"><a name="Frames.Execute"></a><a href="#Frames">Frames</a>.<a href="#Frames.Execute">Execute</a>
+<hr><h2 id="_E97427C0"><a name="Frames.Execute"></a><a href="#Frames">Frames</a>.<a href="#Frames.Execute">Execute</a>
 </h2>
 <p> Any line is a command: the first word names it, in the form Module.Procedure, and the rest are its arguments. What it writes goes into `into`, line by line, which is how a log in one frame is filled by a command run from another -- and, being a text like any other, is itself a list of lines somebody can run again. FALSE when there is no such command; the reason is appended to `into` either way.</p>
 

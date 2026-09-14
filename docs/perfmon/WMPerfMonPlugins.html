@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMPerfMonPlugins">WMPerfMonPlugins</a></p>
+<hr><h1 id="_DFA5B340"><a name="WMPerfMonPlugins"></a><a href="#ModuleList">Module</a> WMPerfMonPlugins
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Performance Monitor plugin framework&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#WMPerfMonPlugins.EventPluginsChanged">EventPluginsChanged</a>= 0<tr><td></td><td><a href="#WMPerfMonPlugins.EventPerfUpdate">EventPerfUpdate</a>= 1<tr><td></td><td><a href="#WMPerfMonPlugins.EventParametersChanged">EventParametersChanged</a>= 2<tr><td></td><td><a href="#WMPerfMonPlugins.EventSampleLoopDone">EventSampleLoopDone</a>= 3<tr><td></td><td>Hidden= WMDiagramComponents.Hidden<tr><td></td><td>Sum= WMDiagramComponents.Sum<tr><td></td><td>Maximum= WMDiagramComponents.Maximum<tr><td></td><td>Standalone= WMDiagramComponents.Standalone<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Description =<strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>DeviceName =<strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Dataset =<strong>WMDiagramComponents.Dataset</strong><tr><td></td><td>DatasetDescriptor =<strong>WMDiagramComponents.DatasetDescriptor</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter">Parameter</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#WMPerfMonPlugins.Plugin">Plugin</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WMPerfMonPlugins.Helper">Helper</a> =<strong>OBJECT</strong> <tr><td></td><td>PluginArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Plugin</strong><tr><th align='left'>variables</th><td>updater: <strong>Updater</strong><tr><td></td><td>NnofPlugins: <strong>SIZE</strong><tr><td></td><td>NnofValues: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> <a href="#WMPerfMonPlugins.EstimateCpuClockrate">EstimateCpuClockrate</a> (<strong>VAR</strong> clockrate: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WMPerfMonPlugins.CyclesToMs">CyclesToMs</a> (cycles: <strong>SIGNED64</strong>; mhz: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#WMPerfMonPlugins.MsToString">MsToString</a> (ms: <strong>SIGNED32</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetNameDesc (plugin: <strong>Plugins.Plugin</strong>; <strong>VAR</strong> devicename: <strong>DeviceName</strong>)<tr><td></td><td> <a href="#WMPerfMonPlugins.Show">Show</a> (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_DFA844C0">
+</h1>
+<ul>
+<li> The idea behind the Peformance Monitor plugin framework is to facilitate simple performance monitoring / measurement tasks by</li>
+
+<li> providing some commonly used services as:</li>
+
+<li> - Sampling (incl. averaging, simple statistics, configurable sampling intervals and sample buffers)</li>
+
+<li> - Visualization of the sampled values / statistics</li>
+
+<li> - Managing self-describing Performance Monitor plugins and providing access to them <strong></strong></li>
+
+<li> This module provides:</li>
+
+<li> - Plugin interface implemented by actual Performance Monitor plugins</li>
+
+<li> - Helper objects that provide access to sampled value to multiple plugins</li>
+
+<li> - Updater object that performs the actual sampling in a single loop for all active Plugins <strong></strong></li>
+
+<li> Usage: WMPerfMonPlugins.Show ~ displays a list of all registered plugins System.Free WMPerfMonPlugins ~ <strong></strong></li>
+
+<li> Possible improvements:</li>
+
+<li> - Use low-level timer (Machine.GetTimer) everywhere since Objects.ticks is inaccurate/not reliable <strong></strong></li>
+
+<li> History: <strong></strong></li>
+
+<li> 16.02.2006 First Release (staubesv)</li>
+
+<li> 23.06.2006 Adapted to WMDiagramComponents, support for multidimensional data visualization (staubesv)</li>
+
+<li> 19.07.2006 Added EstimateCpuClockrate procedure, load MessagesPlugin per default, plugins can optionally bypass supersampling (staubesv)</li>
+
+<li> 24.07.2006 Added CyclesToMs, MsToString procedures (staubesv)</li>
+
+<li> 28.07.2006 Moved GUI-related code to WMPerfMonComponents (staubesv)</li>
+
+<li> 16.01.2006 Updater.SetIntervals also clears screenTimer to force appliation of new value, no upper bounds for sample interval,</li>
+
+<li> only consider valid samples when averaging (staubesv)</li>
+
+<li> 26.02.2007 Added Updater.RemoveByModuleName, generate colors for datasets with more than 3 datas, configuration in config file (staubesv)</li>
+</ul>
+<hr><h2 id="_DFABBF40"><a name="WMPerfMonPlugins.EventPluginsChanged"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.EventPluginsChanged">EventPluginsChanged</a>
+</h2>
+<p> Plugins have been added, removed, activated or deactivated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EventPluginsChanged*= 0</pre>
+<hr><h2 id="_DFAC0A40"><a name="WMPerfMonPlugins.EventPerfUpdate"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.EventPerfUpdate">EventPerfUpdate</a>
+</h2>
+<p> Updater performance has been updated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EventPerfUpdate*= 1</pre>
+<hr><h2 id="_DFAC4A80"><a name="WMPerfMonPlugins.EventParametersChanged"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.EventParametersChanged">EventParametersChanged</a>
+</h2>
+<p> Sampling parameters have changed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EventParametersChanged*= 2</pre>
+<hr><h2 id="_DFAC8500"><a name="WMPerfMonPlugins.EventSampleLoopDone"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.EventSampleLoopDone">EventSampleLoopDone</a>
+</h2>
+<p> All plugin values have been updated</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> EventSampleLoopDone*= 3</pre>
+<hr><h2 id="_DFACC840"><a name="WMPerfMonPlugins.Parameter"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>
+</h2>
+<p> Plugin parameters.</p>
+
+<p> A parameter object must be passed as argument for the plugin object&apos;s constructor. The fields</p>
+
+<p> may be set later in the Init procedure but shall not be modified after the Init procedure.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parameter* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#WMPerfMonPlugins.Parameter.name">name</a>: <strong>Name</strong><tr><td></td><td>description: <strong>Description</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.devicename">devicename</a>: <strong>DeviceName</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.modulename">modulename</a>: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.datasetDescriptor">datasetDescriptor</a>: <strong>WMDiagramComponents.DatasetDescriptor</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.noSuperSampling">noSuperSampling</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.min">min</a>: <strong>SIGNED32</strong><tr><td></td><td>max: <strong>SIGNED32</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.autoMin">autoMin</a>: <strong>BOOLEAN</strong><tr><td></td><td>autoMax: <strong>BOOLEAN</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.unit">unit</a>: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.perSecond">perSecond</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.scale">scale</a>: <strong>FLOAT32</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.minDigits">minDigits</a>: <strong>SIGNED32</strong><tr><td></td><td>fraction: <strong>SIGNED32</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.statsUnit">statsUnit</a>: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.showPercent">showPercent</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.showSum">showSum</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.hide">hide</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Parameter.helper">helper</a>: <strong>Helper</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_DFAEE380"><a name="WMPerfMonPlugins.Parameter.name"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.name">name</a>
+</h3>
+<p> Name and description of the plugin</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> name*: <strong>Name</strong></pre>
+<hr><h3 id="_DFAF2D40"><a name="WMPerfMonPlugins.Parameter.devicename"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.devicename">devicename</a>
+</h3>
+<p> Name of the monitored device if applicable. Default = &quot;&quot; (not applicable)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> devicename*: <strong>DeviceName</strong></pre>
+<hr><h3 id="_DFAF8F80"><a name="WMPerfMonPlugins.Parameter.modulename"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.modulename">modulename</a>
+</h3>
+<p> Module where counter is implemented</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> modulename*: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="_DFAFE400"><a name="WMPerfMonPlugins.Parameter.datasetDescriptor"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.datasetDescriptor">datasetDescriptor</a>
+</h3>
+<p> Describes names and colors of sampled values</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> datasetDescriptor*: <strong>WMDiagramComponents.DatasetDescriptor</strong></pre>
+<hr><h3 id="_DFB031C0"><a name="WMPerfMonPlugins.Parameter.noSuperSampling"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.noSuperSampling">noSuperSampling</a>
+</h3>
+<p> If TRUE, the plugin will only be sampled when a screen update occurs. If FALSE, the plugin</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> noSuperSampling*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_DFB0A700"><a name="WMPerfMonPlugins.Parameter.min"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.min">min</a>
+</h3>
+<p> Minimum and maximum value the UpdateCounter procedure will return</p>
+
+<dl>
+<dt><strong>Defaults</strong></dt>
+<dd> min = 0; max = 0 (no max)</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> min*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="_DFB12140"><a name="WMPerfMonPlugins.Parameter.autoMin"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.autoMin">autoMin</a>
+</h3>
+<p> Should the diagram panel automatically detect a min/max value?</p>
+
+<dl>
+<dt><strong>Defaults</strong></dt>
+<dd> autoMin = FALSE; autoMax = FALSE</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> autoMin*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_DFB19480"><a name="WMPerfMonPlugins.Parameter.unit"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.unit">unit</a>
+</h3>
+<p> Unit of the counter (&quot;/s&quot; will be appended automatically if the field &apos;perSecond&apos; is TRUE)</p>
+
+<dl>
+<dt><strong>Default</strong></dt>
+<dd> &quot;&quot; (None)</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> unit*: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="_DFB21B00"><a name="WMPerfMonPlugins.Parameter.perSecond"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.perSecond">perSecond</a>
+</h3>
+<p> Shall the counter be interpreted as change per second? Default: FALSE</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> perSecond*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_DFB278C0"><a name="WMPerfMonPlugins.Parameter.scale"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.scale">scale</a>
+</h3>
+<p> Statistic gathering related parameters</p>
+
+<p> The stats value will be computed as UpdateCounter() * scale</p>
+
+<dl>
+<dt><strong>Default</strong></dt>
+<dd> 0.0 (is interpreted as 1.0 -&gt; don&apos;t scale)</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> scale*: <strong>FLOAT32</strong></pre>
+<hr><h3 id="_DFB309C0"><a name="WMPerfMonPlugins.Parameter.minDigits"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.minDigits">minDigits</a>
+</h3>
+<p> Minimum number of digits, number of fraction digits</p>
+
+<dl>
+<dt><strong>Defaults</strong></dt>
+<dd> minDigits = 0; fraction = 0;</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> minDigits*: <strong>SIGNED32</strong></pre>
+<hr><h3 id="_DFB37880"><a name="WMPerfMonPlugins.Parameter.statsUnit"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.statsUnit">statsUnit</a>
+</h3>
+<p> Unit of the statistics values (&quot;/s&quot; will be appended automatically if &apos;perSecond&apos; is TRUE)</p>
+
+<dl>
+<dt><strong>Default</strong></dt>
+<dd> &quot;&quot; (None)</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> statsUnit*: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong></pre>
+<hr><h3 id="_DFB3FB80"><a name="WMPerfMonPlugins.Parameter.showPercent"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.showPercent">showPercent</a>
+</h3>
+<p> If TRUE and &apos;max&apos; # 0, the statistics values will also be shown as percent of &apos;max&apos;</p>
+
+<dl>
+<dt><strong>Default</strong></dt>
+<dd> FALSE</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> showPercent*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_DFB47940"><a name="WMPerfMonPlugins.Parameter.showSum"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.showSum">showSum</a>
+</h3>
+<p> If TRUE and ~perSecond, the sum of all values will be displayed. Default: FALSE</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> showSum*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_DFB4E300"><a name="WMPerfMonPlugins.Parameter.hide"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.hide">hide</a>
+</h3>
+<p> Shall the counter be hidden/excluded from updater.GetPlugins &amp; SelectionWindow?</p>
+
+<dl>
+<dt><strong>Default</strong></dt>
+<dd> FALSE</dd>
+
+
+</dl>
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> hide*: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_DFB54140"><a name="WMPerfMonPlugins.Parameter.helper"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Parameter">Parameter</a>.<a href="#WMPerfMonPlugins.Parameter.helper">helper</a>
+</h3>
+<p> Optional list of helper objects</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> helper*: <strong>Helper</strong></pre>
+<hr><h2 id="_DFB58780"><a name="WMPerfMonPlugins.Plugin"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Plugin">Plugin</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Plugin* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#WMPerfMonPlugins.Plugin.dataset">dataset</a>: <strong>Dataset</strong><tr><td></td><td><a href="#WMPerfMonPlugins.Plugin.p">p</a>: <strong>Parameter</strong><tr><td></td><td>datamodel: <strong>WMDiagramComponents.MultiPointModel</strong><tr><th align='left'>procedures</th><td> <a href="#WMPerfMonPlugins.Plugin.UpdateDataset">UpdateDataset</a><tr><td></td><td> Init (p: <strong>Parameter</strong>)<tr><td></td><td> IncNbrOfClients<tr><td></td><td> DecNbrOfClients<tr><td></td><td> <a href="#WMPerfMonPlugins.Plugin.SetActive">SetActive</a> (active: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#WMPerfMonPlugins.Plugin.IsActive">IsActive</a> (): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WMPerfMonPlugins.Plugin.Reset">Reset</a><tr><td></td><td> SetSampleBufferSize (size: <strong>SIGNED32</strong>)<tr><td></td><td> Finalize<tr><td></td><td>&amp; New (p: <strong>Parameter</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_DFB69D00"><a name="WMPerfMonPlugins.Plugin.dataset"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Plugin">Plugin</a>.<a href="#WMPerfMonPlugins.Plugin.dataset">dataset</a>
+</h3>
+<p> Plugins update this data set in the UpdateDataset procedure</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> dataset-: <strong>Dataset</strong></pre>
+<hr><h3 id="_DFB6F240"><a name="WMPerfMonPlugins.Plugin.p"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Plugin">Plugin</a>.<a href="#WMPerfMonPlugins.Plugin.p">p</a>
+</h3>
+<p> Parameters mustn&apos;t be changed after a plugin instance is created</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> p-: <strong>Parameter</strong></pre>
+<hr><h3 id="_DFB74B00"><a name="WMPerfMonPlugins.Plugin.UpdateDataset"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Plugin">Plugin</a>.<a href="#WMPerfMonPlugins.Plugin.UpdateDataset">UpdateDataset</a>
+</h3>
+<p> Plugin interface to be implemented</p>
+
+<p> Update Plugin.dataset value(s)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UpdateDataset*</pre>
+<hr><h3 id="_DFB798C0"><a name="WMPerfMonPlugins.Plugin.SetActive"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Plugin">Plugin</a>.<a href="#WMPerfMonPlugins.Plugin.SetActive">SetActive</a>
+</h3>
+<p> Active sampling for this plugin</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetActive* (active: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="_DFB7E9C0"><a name="WMPerfMonPlugins.Plugin.IsActive"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Plugin">Plugin</a>.<a href="#WMPerfMonPlugins.Plugin.IsActive">IsActive</a>
+</h3>
+<p> Is sampling activated for this plugin?</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsActive* (): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_DFB839C0"><a name="WMPerfMonPlugins.Plugin.Reset"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Plugin">Plugin</a>.<a href="#WMPerfMonPlugins.Plugin.Reset">Reset</a>
+</h3>
+<p> Reset data model</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Reset*</pre>
+<hr><h2 id="_DFB87080"><a name="WMPerfMonPlugins.Helper"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Helper">Helper</a>
+</h2>
+<ul>
+<li> Plugins may optionally use helper objects. Idea: If the sampling of a value is expensive in terms of</li>
+
+<li> required computational power/memory, and this value is used by multiple plugins, the plugins may share</li>
+
+<li> a single implementation/instance of the updater for this value.</li>
+
+<li> The value will be only sampled once in an entire update loop.</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Helper* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Update</td></tr>
+</table>
+<hr><h2 id="_DFB98DC0"><a name="WMPerfMonPlugins.EstimateCpuClockrate"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.EstimateCpuClockrate">EstimateCpuClockrate</a>
+</h2>
+<p> Estimate the processors clock rate. This is done by measuring the number of clock cycles within a time interval of 1 second. Note While the GC is running, all interrupts are masked. Therefore, also Objects.ticks is not updated which makes the measurement unaccurate.</p>
+
+<h2> clockrate: Estimated clockrate in MHz</h2>
+
+<h2> TRUE, if the estimation can be considered accurate, FALSE otherwise</h2>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> EstimateCpuClockrate* (<strong>VAR</strong> clockrate: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<a name="param"></a><hr><h1 id="param"> clockrate: Estimated clockrate in MHz
+</h1><a name="return:"></a><hr><h1 id="return:"> TRUE, if the estimation can be considered accurate, FALSE otherwise
+</h1><hr><h2 id="_DFBAC340"><a name="WMPerfMonPlugins.CyclesToMs"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.CyclesToMs">CyclesToMs</a>
+</h2>
+<p> Convert number of cycles (high-res timer) to milliseconds</p>
+
+<h2> cycles: Number of cycles</h2>
+
+<h2> mhz: CPU clockrate in MHz</h2>
+
+<h2> Number of milliseconds</h2>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CyclesToMs* (cycles: <strong>SIGNED64</strong>; mhz: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="_DFBB7240"><a name="WMPerfMonPlugins.MsToString"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.MsToString">MsToString</a>
+</h2>
+<p> Convert number of milliseconds into string of the form d:h:m:s if m &gt;= 1 or x.xxxs if m &lt; 1</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> MsToString* (ms: <strong>SIGNED32</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="_DFBC1000"><a name="WMPerfMonPlugins.Show"></a><a href="#WMPerfMonPlugins">WMPerfMonPlugins</a>.<a href="#WMPerfMonPlugins.Show">Show</a>
+</h2>
+<p> Show all currently installed performance counters</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Show* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

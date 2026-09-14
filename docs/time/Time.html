@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Time">Time</a></p>
+<hr><h1 id="_6956BA40"><a name="Time"></a><a href="#ModuleList">Module</a> Time
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Time.Second">Second</a>= 1000000000<tr><td></td><td>Millisecond= 1000000<tr><td></td><td>Microsecond= 1000<tr><th align='left'>type declarations</th><td><a href="#Time.Duration">Duration</a> =<strong>SIGNED64</strong><tr><td></td><td><a href="#Time.Instant">Instant</a> =<strong>SIGNED64</strong><tr><th align='left'>procedures</th><td> <a href="#Time.Monotonic">Monotonic</a> (): <strong>Instant</strong><tr><td></td><td> <a href="#Time.Since">Since</a> (t: <strong>Instant</strong>): <strong>Duration</strong><tr><td></td><td> Milliseconds (d: <strong>Duration</strong>): <strong>SIGNED64</strong><tr><td></td><td> Seconds (d: <strong>Duration</strong>): <strong>FLOAT64</strong><tr><td></td><td> <a href="#Time.Zone">Zone</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Time.ToUnix">ToUnix</a> (dt: <strong>Dates.DateTime</strong>): <strong>SIGNED64</strong><tr><td></td><td> <a href="#Time.FromUnix">FromUnix</a> (t: <strong>SIGNED64</strong>): <strong>Dates.DateTime</strong><tr><td></td><td> <a href="#Time.Unix">Unix</a> (): <strong>SIGNED64</strong><tr><td></td><td> <a href="#Time.UTC">UTC</a> (): <strong>Dates.DateTime</strong><tr><td></td><td> <a href="#Time.ToLocal">ToLocal</a> (dt: <strong>Dates.DateTime</strong>): <strong>Dates.DateTime</strong><tr><td></td><td> FromLocal (dt: <strong>Dates.DateTime</strong>): <strong>Dates.DateTime</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_69585E00">
+</h1>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;Two clocks the library did not have: one that never goes backwards, and one that says UTC&quot;; LIMITATIONS &quot;- no time zone database: Zone reports the offset the host is running in, which is what Clock reads from the system for this instant, and that is all -- naming a zone or asking what a past date&apos;s offset was needs the IANA database and is not here; - leap seconds are POSIX&apos;s, i.e. ignored: a Unix time is 86400 seconds a day.&quot;</p>
+<hr><h2 id="_6959B440"><a name="Time.Second"></a><a href="#Time">Time</a>.<a href="#Time.Second">Second</a>
+</h2>
+<p> nanoseconds, the unit of every duration here</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Second*= 1000000000</pre>
+<hr><h2 id="_6959FAC0"><a name="Time.Duration"></a><a href="#Time">Time</a>.<a href="#Time.Duration">Duration</a>
+</h2>
+<p> nanoseconds</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Duration* =<strong>SIGNED64</strong></pre>
+<hr><h2 id="_695A2A00"><a name="Time.Instant"></a><a href="#Time">Time</a>.<a href="#Time.Instant">Instant</a>
+</h2>
+<p> nanoseconds on the monotonic clock; only differences mean anything</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Instant* =<strong>SIGNED64</strong></pre>
+<hr><h2 id="_695A7880"><a name="Time.Monotonic"></a><a href="#Time">Time</a>.<a href="#Time.Monotonic">Monotonic</a>
+</h2>
+<p> A clock that only goes forward. Its zero is unspecified -- subtract two readings.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Monotonic* (): <strong>Instant</strong></pre>
+<hr><h2 id="_695AE100"><a name="Time.Since"></a><a href="#Time">Time</a>.<a href="#Time.Since">Since</a>
+</h2>
+<p> How long since t, in nanoseconds.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Since* (t: <strong>Instant</strong>): <strong>Duration</strong></pre>
+<hr><h2 id="_695B3440"><a name="Time.Zone"></a><a href="#Time">Time</a>.<a href="#Time.Zone">Zone</a>
+</h2>
+<p> The offset the host is running in, in minutes east of UTC.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Zone* (): <strong>SIGNED32</strong></pre>
+<hr><h2 id="_695B9500"><a name="Time.ToUnix"></a><a href="#Time">Time</a>.<a href="#Time.ToUnix">ToUnix</a>
+</h2>
+<p> Seconds since 1970-01-01 00:00 UTC for a date that is already UTC.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToUnix* (dt: <strong>Dates.DateTime</strong>): <strong>SIGNED64</strong></pre>
+<hr><h2 id="_695C0140"><a name="Time.FromUnix"></a><a href="#Time">Time</a>.<a href="#Time.FromUnix">FromUnix</a>
+</h2>
+<p> The UTC date of a Unix time.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FromUnix* (t: <strong>SIGNED64</strong>): <strong>Dates.DateTime</strong></pre>
+<hr><h2 id="_695C5800"><a name="Time.Unix"></a><a href="#Time">Time</a>.<a href="#Time.Unix">Unix</a>
+</h2>
+<p> Now, as seconds since 1970-01-01 UTC. Dates.Now is the same instant in local time.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Unix* (): <strong>SIGNED64</strong></pre>
+<hr><h2 id="_695CBFC0"><a name="Time.UTC"></a><a href="#Time">Time</a>.<a href="#Time.UTC">UTC</a>
+</h2>
+<p> Now, as a UTC date -- which is Dates.Now() with the host&apos;s offset taken off.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UTC* (): <strong>Dates.DateTime</strong></pre>
+<hr><h2 id="_695D2B00"><a name="Time.ToLocal"></a><a href="#Time">Time</a>.<a href="#Time.ToLocal">ToLocal</a>
+</h2>
+<p> A UTC date in the host&apos;s local time, and back.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToLocal* (dt: <strong>Dates.DateTime</strong>): <strong>Dates.DateTime</strong></pre>
+</body></html>

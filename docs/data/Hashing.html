@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Hashing">Hashing</a></p>
+<hr><h1 id="_31C6F240"><a name="Hashing"></a><a href="#ModuleList">Module</a> Hashing
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#Hashing.String">String</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#Hashing.Bytes">Bytes</a> (<strong>CONST</strong> b: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> Int (x: <strong>SIGNED64</strong>): <strong>SIZE</strong><tr><td></td><td> <a href="#Hashing.StringPtr">StringPtr</a> (s: <strong>Strings.String</strong>): <strong>SIZE</strong><tr><td></td><td> StringPtrEqual (a, b: <strong>Strings.String</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IntEqual (a, b: <strong>SIGNED64</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_31C803C0">
+</h1>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;Hash and equality for the key types a Map is usually keyed by&quot;; LIMITATIONS &quot;- not a cryptographic hash and not resistant to a chosen-key attack: this is a good spread and nothing more. A map fed keys from a hostile network wants a keyed hash; - strings hash by bytes, so two spellings of the same text in different normal forms are different keys; - the constants are FNV-1a&apos;s but the basis is not, so these numbers are this library&apos;s and not comparable with another implementation&apos;s.&quot;</p>
+<hr><h2 id="_31C96C00"><a name="Hashing.String"></a><a href="#Hashing">Hashing</a>.<a href="#Hashing.String">String</a>
+</h2>
+<p> The bytes of a 0X-terminated string.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> String* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="_31C9CB40"><a name="Hashing.Bytes"></a><a href="#Hashing">Hashing</a>.<a href="#Hashing.Bytes">Bytes</a>
+</h2>
+<p> The same over len bytes, terminator or not.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Bytes* (<strong>CONST</strong> b: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>): <strong>SIZE</strong></pre>
+<hr><h2 id="_31CA41C0"><a name="Hashing.StringPtr"></a><a href="#Hashing">Hashing</a>.<a href="#Hashing.StringPtr">StringPtr</a>
+</h2>
+<p> The pair for Strings.String keys, which is what a map of names is keyed by.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StringPtr* (s: <strong>Strings.String</strong>): <strong>SIZE</strong></pre>
+</body></html>

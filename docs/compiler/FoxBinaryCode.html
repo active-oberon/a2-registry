@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxBinaryCode">FoxBinaryCode</a></p>
-<hr><h1 id="#_D0301CC0"><a name="FoxBinaryCode"></a><a href="#ModuleList">Module</a> FoxBinaryCode
+<hr><h1 id="_6D634A00"><a name="FoxBinaryCode"></a><a href="#ModuleList">Module</a> FoxBinaryCode
 </h1>
-<p> AUTHOR ""; PURPOSE "";</p>
+<p> AUTHOR &quot;&quot;; PURPOSE &quot;&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -57,12 +57,12 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_D0327080"><a name="FoxBinaryCode.Code"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.Code">Code</a>
+<hr><h2 id="_6D659DC0"><a name="FoxBinaryCode.Code"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.Code">Code</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> Code* =<strong>BitSets.BitSet</strong></pre>
-<hr><h2 id="#_D03293C0"><a name="FoxBinaryCode.Alias"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.Alias">Alias</a>
+<hr><h2 id="_6D65C100"><a name="FoxBinaryCode.Alias"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.Alias">Alias</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -70,13 +70,13 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>nextAlias: <strong>Alias</strong><tr><td></td><td>identifier: <strong>ObjectFile.Identifier</strong><tr><td></td><td>offset: <strong>Unit</strong><tr><th align='left'>procedures</th><td>& InitAlias (identifier: <strong>ObjectFile.Identifier</strong>; offset: <strong>Unit</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>nextAlias: <strong>Alias</strong><tr><td></td><td>identifier: <strong>ObjectFile.Identifier</strong><tr><td></td><td>offset: <strong>Unit</strong><tr><th align='left'>procedures</th><td>&amp; InitAlias (identifier: <strong>ObjectFile.Identifier</strong>; offset: <strong>Unit</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_D0333680"><a name="FoxBinaryCode.AliasList"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.AliasList">AliasList</a>
+<hr><h2 id="_6D6663C0"><a name="FoxBinaryCode.AliasList"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.AliasList">AliasList</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -84,14 +84,14 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>firstAlias: <strong>Alias</strong><tr><td></td><td>lastAlias: <strong>Alias</strong><tr><td></td><td>aliases: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& InitAliasList<tr><td></td><td> AddAlias (alias: <strong>Alias</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>firstAlias: <strong>Alias</strong><tr><td></td><td>lastAlias: <strong>Alias</strong><tr><td></td><td>aliases: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>&amp; InitAliasList<tr><td></td><td> AddAlias (alias: <strong>Alias</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_D033D600"><a name="FoxBinaryCode.Fixup"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.Fixup">Fixup</a>
+<hr><h2 id="_6D670340"><a name="FoxBinaryCode.Fixup"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.Fixup">Fixup</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -99,7 +99,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>nextFixup: <strong>Fixup</strong><tr><td></td><td>mode: <strong>INTEGER</strong><tr><td></td><td>displacement: <strong>Unit</strong><tr><td></td><td>scale: <strong>ObjectFile.Bits</strong><tr><td></td><td>patterns: <strong>SIZE</strong><tr><td></td><td>pattern: <strong>FixupPatterns</strong><tr><td></td><td>offset: <strong>Unit</strong><tr><td></td><td>symbol: <strong>ObjectFile.Identifier</strong><tr><td></td><td>symbolOffset: <strong>SIZE</strong><tr><td></td><td>resolved: <strong>Sections.Section</strong><tr><th align='left'>procedures</th><td>& InitFixup (mode: <strong>INTEGER</strong>; fixupOffset: <strong>Unit</strong>; symbol: <strong>ObjectFile.Identifier</strong>; symbolOffset: <strong>SIZE</strong>; displacement: <strong>Unit</strong>; scale: <strong>Bits</strong>; fixupPattern: <strong>ObjectFile.FixupPatterns</strong>)<tr><td></td><td> SetFixupOffset (offset: <strong>Unit</strong>)<tr><td></td><td> SetSymbol (symbol: <strong>Sections.SectionName</strong>; fp: <strong>ObjectFile.Fingerprint</strong>; symbolOffset: <strong>SIZE</strong>; displacement: <strong>Unit</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>nextFixup: <strong>Fixup</strong><tr><td></td><td>mode: <strong>INTEGER</strong><tr><td></td><td>displacement: <strong>Unit</strong><tr><td></td><td>scale: <strong>ObjectFile.Bits</strong><tr><td></td><td>patterns: <strong>SIZE</strong><tr><td></td><td>pattern: <strong>FixupPatterns</strong><tr><td></td><td>offset: <strong>Unit</strong><tr><td></td><td>symbol: <strong>ObjectFile.Identifier</strong><tr><td></td><td>symbolOffset: <strong>SIZE</strong><tr><td></td><td>resolved: <strong>Sections.Section</strong><tr><th align='left'>procedures</th><td>&amp; InitFixup (mode: <strong>INTEGER</strong>; fixupOffset: <strong>Unit</strong>; symbol: <strong>ObjectFile.Identifier</strong>; symbolOffset: <strong>SIZE</strong>; displacement: <strong>Unit</strong>; scale: <strong>Bits</strong>; fixupPattern: <strong>ObjectFile.FixupPatterns</strong>)<tr><td></td><td> SetFixupOffset (offset: <strong>Unit</strong>)<tr><td></td><td> SetSymbol (symbol: <strong>Sections.SectionName</strong>; fp: <strong>ObjectFile.Fingerprint</strong>; symbolOffset: <strong>SIZE</strong>; displacement: <strong>Unit</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -114,7 +114,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_D0358500"><a name="FoxBinaryCode.FixupList"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.FixupList">FixupList</a>
+<hr><h2 id="_6D68B240"><a name="FoxBinaryCode.FixupList"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.FixupList">FixupList</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -122,14 +122,14 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>firstFixup: <strong>Fixup</strong><tr><td></td><td>lastFixup: <strong>Fixup</strong><tr><td></td><td>fixups: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& InitFixupList<tr><td></td><td> AddFixup (fixup: <strong>Fixup</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>firstFixup: <strong>Fixup</strong><tr><td></td><td>lastFixup: <strong>Fixup</strong><tr><td></td><td>fixups: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>&amp; InitFixupList<tr><td></td><td> AddFixup (fixup: <strong>Fixup</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_D0362480"><a name="FoxBinaryCode.LabelList"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.LabelList">LabelList</a>
+<hr><h2 id="_6D6951C0"><a name="FoxBinaryCode.LabelList"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.LabelList">LabelList</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -141,7 +141,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_D0368680"><a name="FoxBinaryCode.Section"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.Section">Section</a>
+<hr><h2 id="_6D69B3C0"><a name="FoxBinaryCode.Section"></a><a href="#FoxBinaryCode">FoxBinaryCode</a>.<a href="#FoxBinaryCode.Section">Section</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -149,7 +149,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>os: <strong>ObjectFile.Section</strong><tr><td></td><td>labels: <strong>LabelList</strong><tr><td></td><td>fixupList: <strong>FixupList</strong><tr><td></td><td>aliasList: <strong>AliasList</strong><tr><td></td><td>finally: <strong>Unit</strong><tr><td></td><td>comments: <strong>Sections.CommentWriter</strong><tr><td></td><td>bigEndian: <strong>BOOLEAN</strong><tr><td></td><td>pc: <strong>Unit</strong><tr><th align='left'>procedures</th><td>& InitBinarySection (type: <strong>INTEGER</strong>; unit: <strong>Bits</strong>; <strong>CONST</strong> name: <strong>Basic.SegmentedName</strong>; dump: <strong>BOOLEAN</strong>; bigEndian: <strong>BOOLEAN</strong>)<tr><td></td><td> Reset<tr><td></td><td> AddLabel (position: <strong>Basic.Position</strong>)<tr><td></td><td> SetPC (pc: <strong>Unit</strong>)<tr><td></td><td> Align (alignment: <strong>Unit</strong>)<tr><td></td><td> SetFinally (atPC: <strong>Unit</strong>)<tr><td></td><td> SetAlignment (fixed: <strong>BOOLEAN</strong>; alignat: <strong>Unit</strong>)<tr><td></td><td> CopyBits (src: <strong>BitSets.BitSet</strong>; srcPos, len: <strong>Bits</strong>)<tr><td></td><td> PutBits (d: <strong>SIGNED64</strong>; size: <strong>Bits</strong>)<tr><td></td><td> PutBitsAt (at: <strong>Unit</strong>; d: <strong>SIGNED64</strong>; size: <strong>Bits</strong>)<tr><td></td><td> PutByte (b: <strong>INTEGER</strong>)<tr><td></td><td> PutWord (w: <strong>INTEGER</strong>)<tr><td></td><td> PutDWord (d: <strong>INTEGER</strong>)<tr><td></td><td> PutQWord (q: <strong>SIGNED64</strong>)<tr><td></td><td> PutReal (f: <strong>FLOAT32</strong>)<tr><td></td><td> PutLongreal (f: <strong>FLOAT64</strong>)<tr><td></td><td> PutByteAt (at: <strong>Unit</strong>; d: <strong>INTEGER</strong>)<tr><td></td><td> PutWordAt (at: <strong>Unit</strong>; d: <strong>INTEGER</strong>)<tr><td></td><td> PutDWordAt (at: <strong>Unit</strong>; d: <strong>INTEGER</strong>)<tr><td></td><td> PutQWordAt (at: <strong>Unit</strong>; d: <strong>SIGNED64</strong>)<tr><td></td><td> PutBytes (data: <strong>SIGNED64</strong>; bytes: <strong>INTEGER</strong>)<tr><td></td><td> GetByte (pc: <strong>Unit</strong>): <strong>CHAR</strong><tr><td></td><td> GetWord (pc: <strong>Unit</strong>): <strong>INTEGER</strong><tr><td></td><td> GetDWord (pc: <strong>Unit</strong>): <strong>INTEGER</strong><tr><td></td><td> GetQWord (pc: <strong>Unit</strong>): <strong>SIGNED64</strong><tr><td></td><td> GetReal (pc: <strong>Unit</strong>): <strong>FLOAT32</strong><tr><td></td><td> GetLongreal (pc: <strong>Unit</strong>): <strong>FLOAT64</strong><tr><td></td><td> GetBits (pc: <strong>Unit</strong>; size: <strong>Bits</strong>): <strong>INTEGER</strong><tr><td></td><td> ApplyFixup (fixup: <strong>Fixup</strong>): <strong>BOOLEAN</strong><tr><td></td><td> DumpCode (w: <strong>Streams.Writer</strong>; from, to: <strong>Unit</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>os: <strong>ObjectFile.Section</strong><tr><td></td><td>labels: <strong>LabelList</strong><tr><td></td><td>fixupList: <strong>FixupList</strong><tr><td></td><td>aliasList: <strong>AliasList</strong><tr><td></td><td>finally: <strong>Unit</strong><tr><td></td><td>comments: <strong>Sections.CommentWriter</strong><tr><td></td><td>bigEndian: <strong>BOOLEAN</strong><tr><td></td><td>pc: <strong>Unit</strong><tr><th align='left'>procedures</th><td>&amp; InitBinarySection (type: <strong>INTEGER</strong>; unit: <strong>Bits</strong>; <strong>CONST</strong> name: <strong>Basic.SegmentedName</strong>; dump: <strong>BOOLEAN</strong>; bigEndian: <strong>BOOLEAN</strong>)<tr><td></td><td> Reset<tr><td></td><td> AddLabel (position: <strong>Basic.Position</strong>)<tr><td></td><td> SetPC (pc: <strong>Unit</strong>)<tr><td></td><td> Align (alignment: <strong>Unit</strong>)<tr><td></td><td> SetFinally (atPC: <strong>Unit</strong>)<tr><td></td><td> SetAlignment (fixed: <strong>BOOLEAN</strong>; alignat: <strong>Unit</strong>)<tr><td></td><td> CopyBits (src: <strong>BitSets.BitSet</strong>; srcPos, len: <strong>Bits</strong>)<tr><td></td><td> PutBits (d: <strong>SIGNED64</strong>; size: <strong>Bits</strong>)<tr><td></td><td> PutBitsAt (at: <strong>Unit</strong>; d: <strong>SIGNED64</strong>; size: <strong>Bits</strong>)<tr><td></td><td> PutByte (b: <strong>INTEGER</strong>)<tr><td></td><td> PutWord (w: <strong>INTEGER</strong>)<tr><td></td><td> PutDWord (d: <strong>INTEGER</strong>)<tr><td></td><td> PutQWord (q: <strong>SIGNED64</strong>)<tr><td></td><td> PutReal (f: <strong>FLOAT32</strong>)<tr><td></td><td> PutLongreal (f: <strong>FLOAT64</strong>)<tr><td></td><td> PutByteAt (at: <strong>Unit</strong>; d: <strong>INTEGER</strong>)<tr><td></td><td> PutWordAt (at: <strong>Unit</strong>; d: <strong>INTEGER</strong>)<tr><td></td><td> PutDWordAt (at: <strong>Unit</strong>; d: <strong>INTEGER</strong>)<tr><td></td><td> PutQWordAt (at: <strong>Unit</strong>; d: <strong>SIGNED64</strong>)<tr><td></td><td> PutBytes (data: <strong>SIGNED64</strong>; bytes: <strong>INTEGER</strong>)<tr><td></td><td> GetByte (pc: <strong>Unit</strong>): <strong>CHAR</strong><tr><td></td><td> GetWord (pc: <strong>Unit</strong>): <strong>INTEGER</strong><tr><td></td><td> GetDWord (pc: <strong>Unit</strong>): <strong>INTEGER</strong><tr><td></td><td> GetQWord (pc: <strong>Unit</strong>): <strong>SIGNED64</strong><tr><td></td><td> GetReal (pc: <strong>Unit</strong>): <strong>FLOAT32</strong><tr><td></td><td> GetLongreal (pc: <strong>Unit</strong>): <strong>FLOAT64</strong><tr><td></td><td> GetBits (pc: <strong>Unit</strong>; size: <strong>Bits</strong>): <strong>INTEGER</strong><tr><td></td><td> ApplyFixup (fixup: <strong>Fixup</strong>): <strong>BOOLEAN</strong><tr><td></td><td> DumpCode (w: <strong>Streams.Writer</strong>; from, to: <strong>Unit</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>

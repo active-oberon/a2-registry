@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Terminal">Terminal</a></p>
-<hr><h1 id="#_9624CFC0"><a name="Terminal"></a><a href="#ModuleList">Module</a> Terminal
+<hr><h1 id="_6CB76B40"><a name="Terminal"></a><a href="#ModuleList">Module</a> Terminal
 </h1>
-<p> AUTHOR "Andrii Puhachenko"; PURPOSE "The terminal as a device: raw mode, size, keys and drawing"</p>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;The terminal as a device: raw mode, size, keys and drawing&quot;</p>
 
 <h3>Summary</h3>
 
@@ -105,62 +105,62 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_962AD240">
-</h1><hr><h2 id="#_962ADA00"><a name="Terminal.None"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.None">None</a>
+<hr><h1 id="_6CBD6DC0">
+</h1><hr><h2 id="_6CBD7580"><a name="Terminal.None"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.None">None</a>
 </h2>
 <p> the same events, keys and modifiers TerminalCodes defines, so one import is enough</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> None*= TerminalCodes.None</pre>
-<hr><h2 id="#_962B3CC0"><a name="Terminal.Event"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Event">Event</a>
+<hr><h2 id="_6CBDD840"><a name="Terminal.Event"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Event">Event</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> Event* =<strong>TerminalCodes.Event</strong></pre>
-<hr><h2 id="#_962B60C0"><a name="Terminal.out"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.out">out</a>
+<hr><h2 id="_6CBDFC40"><a name="Terminal.out"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.out">out</a>
 </h2>
 <p> Where a program draws. Nothing appears until Flush.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> out-: <strong>Streams.Writer</strong></pre>
-<hr><h2 id="#_962BABC0"><a name="Terminal.IsTerminal"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.IsTerminal">IsTerminal</a>
+<hr><h2 id="_6CBE4740"><a name="Terminal.IsTerminal"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.IsTerminal">IsTerminal</a>
 </h2>
 <p> Is standard input a terminal at all? A program piped into a file is not, and cannot draw.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> IsTerminal* (): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_962C2440"><a name="Terminal.Open"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Open">Open</a>
+<hr><h2 id="_6CBEBFC0"><a name="Terminal.Open"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Open">Open</a>
 </h2>
 <p> Hand over every key as it is pressed, and stop echoing. FALSE if standard input is not a terminal, which is the honest answer for a program with its input redirected.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Open* (): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_962CCD40"><a name="Terminal.Close"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Close">Close</a>
+<hr><h2 id="_6CBF68C0"><a name="Terminal.Close"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Close">Close</a>
 </h2>
 <p> Give the terminal back the way it was found.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Close*</pre>
-<hr><h2 id="#_962D1580"><a name="Terminal.Size"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Size">Size</a>
+<hr><h2 id="_6CBFB100"><a name="Terminal.Size"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Size">Size</a>
 </h2>
 <p> How large the window is now, in rows and columns.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Size* (<strong>VAR</strong> height, width: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_962D8540"><a name="Terminal.Resized"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Resized">Resized</a>
+<hr><h2 id="_6CC020C0"><a name="Terminal.Resized"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Resized">Resized</a>
 </h2>
 <p> Has the window changed size since this was last asked? A program asks once around its event loop and redraws when the answer is yes.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Resized* (): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_962E18C0"><a name="Terminal.Read"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Read">Read</a>
+<hr><h2 id="_6CC0B440"><a name="Terminal.Read"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Read">Read</a>
 </h2>
 <p> The next thing that happened at the terminal, waiting for it. FALSE when standard input has ended, which is how a program is told to stop.</p>
 
@@ -169,35 +169,35 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Read* (<strong>VAR</strong> e: <strong>Event</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_962F7C40"><a name="Terminal.Pending"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Pending">Pending</a>
+<hr><h2 id="_6CC217C0"><a name="Terminal.Pending"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Pending">Pending</a>
 </h2>
-<p> Has something been typed? A program with more than the keyboard to watch -- a child's output, a socket -- asks this instead of reading, and gets on with the rest when the answer is no.</p>
+<p> Has something been typed? A program with more than the keyboard to watch -- a child&apos;s output, a socket -- asks this instead of reading, and gets on with the rest when the answer is no.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Pending* (): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_963036C0"><a name="Terminal.Flush"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Flush">Flush</a>
+<hr><h2 id="_6CC2D240"><a name="Terminal.Flush"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Flush">Flush</a>
 </h2>
 <p> Everything drawn so far, sent to the terminal.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Flush*</pre>
-<hr><h2 id="#_96307B80"><a name="Terminal.WriteChar"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.WriteChar">WriteChar</a>
+<hr><h2 id="_6CC31700"><a name="Terminal.WriteChar"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.WriteChar">WriteChar</a>
 </h2>
 <p> One character, in UTF-8: box drawing and braille are what a terminal draws pictures with.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> WriteChar* (c: <strong>Char32</strong>)</pre>
-<hr><h2 id="#_9630ECC0"><a name="Terminal.CharTo"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.CharTo">CharTo</a>
+<hr><h2 id="_6CC38840"><a name="Terminal.CharTo"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.CharTo">CharTo</a>
 </h2>
 <p> One character as the UTF-8 string it is, for putting it inside a line of text.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> CharTo* (c: <strong>Char32</strong>; <strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_96317A80"><a name="Terminal.Write"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Write">Write</a>
+<hr><h2 id="_6CC41600"><a name="Terminal.Write"></a><a href="#Terminal">Terminal</a>.<a href="#Terminal.Write">Write</a>
 </h2>
 <p> A string, as it stands.</p>
 

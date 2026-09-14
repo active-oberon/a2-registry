@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMPerfMonAlerts">WMPerfMonAlerts</a></p>
+<hr><h1 id="_4CC43940"><a name="WMPerfMonAlerts"></a><a href="#ModuleList">Module</a> WMPerfMonAlerts
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Performance Monitor Alert plugin&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Ok= 0<tr><td></td><td>Error= 1<tr><td></td><td><a href="#WMPerfMonAlerts.Sticky">Sticky</a>= 0<tr><td></td><td>SingleShot= 1<tr><td></td><td>MultiShot= 2<tr><td></td><td><a href="#WMPerfMonAlerts.Invalid">Invalid</a>= -1<tr><td></td><td>Undefined= 0<tr><td></td><td>Greater= 1<tr><td></td><td>GreaterOrEqual= 2<tr><td></td><td>Equals= 3<tr><td></td><td>NotEquals= 4<tr><td></td><td>Less= 5<tr><td></td><td>LessOrEqual= 6<tr><td></td><td>OutOfInterval= 7<tr><td></td><td>InInterval= 8<tr><td></td><td>FirstValueChangedBy= 9<tr><td></td><td>LastValueChangedBy= 10<tr><td></td><td><a href="#WMPerfMonAlerts.Off">Off</a>= 0<tr><td></td><td><a href="#WMPerfMonAlerts.On">On</a>= 1<tr><td></td><td><a href="#WMPerfMonAlerts.Triggered">Triggered</a>= 2<tr><td></td><td><a href="#WMPerfMonAlerts.Reset">Reset</a>= 3<tr><th align='left'>type declarations</th><td><a href="#WMPerfMonAlerts.AlertInfo">AlertInfo</a> =<strong>RECORD</strong> <tr><td></td><td>Alerts =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>AlertInfo</strong><tr><td></td><td><a href="#WMPerfMonAlerts.Status">Status</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> Add (<strong>CONST</strong> fullname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; type, trigger: <strong>SIGNED32</strong>; value1, value2: <strong>FLOAT64</strong>; onAlert, onLeave: <strong>XML.String</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> AddByString (<strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> AddByCommand (context: <strong>Commands.Context</strong>)<tr><td></td><td> RemoveAlerts (<strong>CONST</strong> fullname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> RemoveAlertByID (id: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> SetStateByID (id, state: <strong>SIGNED32</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> GetStateString (state: <strong>SIGNED32</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetTypeString (type: <strong>SIGNED32</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetFullTriggerString (ai: <strong>AlertInfo</strong>; <strong>VAR</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ParseAlert (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> alert: <strong>AlertInfo</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; res: <strong>INTEGER</strong>)<tr><td></td><td> GetStatus (): <strong>Status</strong><tr><td></td><td> GetAlerts (): <strong>Alerts</strong><tr><td></td><td> LoadRules (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; append: <strong>BOOLEAN</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> StoreRules (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Load (context: <strong>Commands.Context</strong>)<tr><td></td><td> Store (context: <strong>Commands.Context</strong>)<tr><td></td><td> Show (context: <strong>Commands.Context</strong>)<tr><td></td><td> EnableAlerts<tr><td></td><td> DisableAlerts<tr><td></td><td> Enable (context: <strong>Commands.Context</strong>)<tr><td></td><td> Disable (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_4CC9FB00">
+</h1>
+<ul>
+<li> History: <strong></strong></li>
+
+<li> 15.05.2007 Bugfix: Return NIL if document could not be loaded/parsed in procedure LoadXmlDocument (staubesv)</li>
+
+<li> 06.08.2007 Added FirstValueChangedBy and LastValueChangedBy triggers (staubesv)</li>
+</ul>
+<hr><h2 id="_4CCA6340"><a name="WMPerfMonAlerts.Sticky"></a><a href="#WMPerfMonAlerts">WMPerfMonAlerts</a>.<a href="#WMPerfMonAlerts.Sticky">Sticky</a>
+</h2>
+<p> Types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Sticky*= 0</pre>
+<hr><h2 id="_4CCA91C0"><a name="WMPerfMonAlerts.Invalid"></a><a href="#WMPerfMonAlerts">WMPerfMonAlerts</a>.<a href="#WMPerfMonAlerts.Invalid">Invalid</a>
+</h2>
+<p> Triggers</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Invalid*= -1</pre>
+<hr><h2 id="_4CCAC3C0"><a name="WMPerfMonAlerts.Off"></a><a href="#WMPerfMonAlerts">WMPerfMonAlerts</a>.<a href="#WMPerfMonAlerts.Off">Off</a>
+</h2>
+<p> Alert is ignored/not detected</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Off*= 0</pre>
+<hr><h2 id="_4CCAFE40"><a name="WMPerfMonAlerts.On"></a><a href="#WMPerfMonAlerts">WMPerfMonAlerts</a>.<a href="#WMPerfMonAlerts.On">On</a>
+</h2>
+<p> Alert is on</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> On*= 1</pre>
+<hr><h2 id="_4CCB3540"><a name="WMPerfMonAlerts.Triggered"></a><a href="#WMPerfMonAlerts">WMPerfMonAlerts</a>.<a href="#WMPerfMonAlerts.Triggered">Triggered</a>
+</h2>
+<p> Alert has been triggered</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Triggered*= 2</pre>
+<hr><h2 id="_4CCB6FC0"><a name="WMPerfMonAlerts.Reset"></a><a href="#WMPerfMonAlerts">WMPerfMonAlerts</a>.<a href="#WMPerfMonAlerts.Reset">Reset</a>
+</h2>
+<p> Reset alert stats. Set alert state to AlertOn</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Reset*= 3</pre>
+<hr><h2 id="_4CCBBAC0"><a name="WMPerfMonAlerts.AlertInfo"></a><a href="#WMPerfMonAlerts">WMPerfMonAlerts</a>.<a href="#WMPerfMonAlerts.AlertInfo">AlertInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AlertInfo* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>id: <strong>SIGNED32</strong><tr><td></td><td>fullname: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>type: <strong>SIGNED32</strong><tr><td></td><td>state: <strong>SIGNED32</strong><tr><td></td><td>trigger: <strong>SIGNED32</strong><tr><td></td><td>value1: <strong>FLOAT64</strong><tr><td></td><td>value2: <strong>FLOAT64</strong><tr><td></td><td>violation: <strong>FLOAT64</strong><tr><td></td><td>nbrOfViolations: <strong>SIGNED32</strong><tr><td></td><td>onAlertCommand: <strong>XML.String</strong><tr><td></td><td>onLeaveAlertCommand: <strong>XML.String</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_4CCC9AC0"><a name="WMPerfMonAlerts.Status"></a><a href="#WMPerfMonAlerts">WMPerfMonAlerts</a>.<a href="#WMPerfMonAlerts.Status">Status</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Status* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>enabled: <strong>BOOLEAN</strong><tr><td></td><td>filename: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>nbrOfRules: <strong>SIGNED32</strong><tr><td></td><td>nbrOfAlerts: <strong>SIGNED32</strong><tr><td></td><td><a href="#WMPerfMonAlerts.Status.stamp">stamp</a>: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_4CCD2080"><a name="WMPerfMonAlerts.Status.stamp"></a><a href="#WMPerfMonAlerts">WMPerfMonAlerts</a>.<a href="#WMPerfMonAlerts.Status">Status</a>.<a href="#WMPerfMonAlerts.Status.stamp">stamp</a>
+</h3>
+<p> incremented each time a alert rule is added or removed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> stamp-: <strong>SIGNED32</strong></pre>
+</body></html>

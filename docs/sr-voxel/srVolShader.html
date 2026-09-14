@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#srVolShader">srVolShader</a></p>
+<hr><h1 id="_C4BBBF00"><a name="srVolShader"></a><a href="#ModuleList">Module</a> srVolShader
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#srVolShader.Shader">Shader</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#srVolShader.checkerboard3d">checkerboard3d</a> =<strong>OBJECT</strong> (<strong>Shader</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_C4BBFB40"><a name="srVolShader.Shader"></a><a href="#srVolShader">srVolShader</a>.<a href="#srVolShader.Shader">Shader</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Shader* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> x, y, z, r, g, b, a: <strong>SREAL</strong>)</td></tr>
+</table>
+<hr><h2 id="_C4BC7840"><a name="srVolShader.checkerboard3d"></a><a href="#srVolShader">srVolShader</a>.<a href="#srVolShader.checkerboard3d">checkerboard3d</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> checkerboard3d* =<strong>OBJECT</strong> (<strong>Shader</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>isquish: <strong>SIGNED16</strong><tr><td></td><td>jsquish: <strong>SIGNED16</strong><tr><td></td><td>ksquish: <strong>SIGNED16</strong><tr><th align='left'>procedures</th><td> squish (i, j, k: <strong>SIGNED16</strong>)<tr><td></td><td> set (b, w: <strong>Color</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> x, y, z, r, g, b, a: <strong>SREAL</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

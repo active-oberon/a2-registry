@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#HostLibs">HostLibs</a></p>
-<hr><h1 id="#_2E68F780"><a name="HostLibs"></a><a href="#ModuleList">Module</a> HostLibs
+<hr><h1 id="_99935B40"><a name="HostLibs"></a><a href="#ModuleList">Module</a> HostLibs
 </h1>
 <dl>
 <dt><strong>AUTHOR</strong></dt>
@@ -48,27 +48,29 @@
 </dl>
 <h3>Summary</h3>
 
-<table><tr><th align='left'>constants</th><td><a href="#HostLibs.NilLibHandle">NilLibHandle</a>= NIL<tr><th align='left'>type declarations</th><td><a href="#HostLibs.LibHandle">LibHandle</a> =<strong>ADDRESS</strong><tr><th align='left'>procedures</th><td> <a href="#HostLibs.LoadLibrary">LoadLibrary</a> (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#HostLibs.FreeLibrary">FreeLibrary</a> (<strong>CONST</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#HostLibs.GetProcedure">GetProcedure</a> (<strong>CONST</strong> lib: <strong>LibHandle</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> procAddr: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong></td></tr>
+<table><tr><th align='left'>constants</th><td><a href="#HostLibs.NilLibHandle">NilLibHandle</a>= NIL<tr><th align='left'>type declarations</th><td><a href="#HostLibs.LibHandle">LibHandle</a> =<strong>ADDRESS</strong><tr><th align='left'>procedures</th><td> <a href="#HostLibs.LoadLibrary">LoadLibrary</a> (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#HostLibs.LoadLibraryOptional">LoadLibraryOptional</a> (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#HostLibs.FreeLibrary">FreeLibrary</a> (<strong>CONST</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#HostLibs.GetProcedure">GetProcedure</a> (<strong>CONST</strong> lib: <strong>LibHandle</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> procAddr: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#HostLibs.GetProcedureOptional">GetProcedureOptional</a> (<strong>CONST</strong> lib: <strong>LibHandle</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> procAddr: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_2E6A1140"><a name="HostLibs.NilLibHandle"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.NilLibHandle">NilLibHandle</a>
+<hr><h2 id="_99950480"><a name="HostLibs.NilLibHandle"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.NilLibHandle">NilLibHandle</a>
 </h2>
 <p> invalid library handle</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> NilLibHandle*= NIL</pre>
-<hr><h2 id="#_2E6A4780"><a name="HostLibs.LibHandle"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.LibHandle">LibHandle</a>
+<hr><h2 id="_99953AC0"><a name="HostLibs.LibHandle"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.LibHandle">LibHandle</a>
 </h2>
 <p> dynamic library handle type</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> LibHandle* =<strong>ADDRESS</strong></pre>
-<hr><h2 id="#_2E6A8200"><a name="HostLibs.LoadLibrary"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.LoadLibrary">LoadLibrary</a>
+<hr><h2 id="_99957540"><a name="HostLibs.LoadLibrary"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.LoadLibrary">LoadLibrary</a>
 </h2>
 <p> Load a dynamic library</p>
 
@@ -95,7 +97,14 @@
 
 </dl>
 </dl>
-<hr><h2 id="#_2E6B4A40"><a name="HostLibs.FreeLibrary"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.FreeLibrary">FreeLibrary</a>
+<hr><h2 id="_99963D80"><a name="HostLibs.LoadLibraryOptional"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.LoadLibraryOptional">LoadLibraryOptional</a>
+</h2>
+<p> Load a dynamic library that need not be there. Unlike LoadLibrary this says nothing when it is missing -- for a caller working through a list of names the platform might use.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadLibraryOptional* (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> lib: <strong>LibHandle</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_99971200"><a name="HostLibs.FreeLibrary"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.FreeLibrary">FreeLibrary</a>
 </h2>
 <p> Free a previously loaded dynamic library</p>
 
@@ -116,7 +125,7 @@
 <dd> library handle</dd>
 
 </dl>
-<hr><h2 id="#_2E6BCFC0"><a name="HostLibs.GetProcedure"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.GetProcedure">GetProcedure</a>
+<hr><h2 id="_99979840"><a name="HostLibs.GetProcedure"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.GetProcedure">GetProcedure</a>
 </h2>
 <p> Get a procedure from a loaded dynamic library</p>
 
@@ -149,4 +158,11 @@
 </dl>
 </dl>
 </dl>
+<hr><h2 id="_99988CC0"><a name="HostLibs.GetProcedureOptional"></a><a href="#HostLibs">HostLibs</a>.<a href="#HostLibs.GetProcedureOptional">GetProcedureOptional</a>
+</h2>
+<p> Get a procedure that need not be there. Unlike GetProcedure this says nothing when the name is missing: a library built without a feature does not export its entry points, and that is a fact about the build and not a fault. A binding to a whole header meets several of them.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetProcedureOptional* (<strong>CONST</strong> lib: <strong>LibHandle</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> procAddr: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong></pre>
 </body></html>

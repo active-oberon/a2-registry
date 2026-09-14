@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#MatrixTransforms">MatrixTransforms</a></p>
-<hr><h1 id="#_29CD5040"><a name="MatrixTransforms"></a><a href="#ModuleList">Module</a> MatrixTransforms
+<hr><h1 id="_EC1B7D00"><a name="MatrixTransforms"></a><a href="#ModuleList">Module</a> MatrixTransforms
 </h1>
-<p> AUTHOR "Patrick Hunziker"; PURPOSE "MatrixTransformations and decompositions";</p>
+<p> AUTHOR &quot;Patrick Hunziker&quot;; PURPOSE &quot;MatrixTransformations and decompositions&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -51,8 +51,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_29CF1040">
-</h1><hr><h2 id="#_29CF1800"><a name="MatrixTransforms.SymmetricPart"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.SymmetricPart">SymmetricPart</a>
+<hr><h1 id="_EC1D3D00">
+</h1><hr><h2 id="_EC1D44C0"><a name="MatrixTransforms.SymmetricPart"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.SymmetricPart">SymmetricPart</a>
 </h2>
 <p> The Symmetric Matrix Decomposition: A = S1 + S2</p>
 
@@ -61,50 +61,50 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SymmetricPart* (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>Matrix</strong></pre>
-<hr><h2 id="#_29CF9240"><a name="MatrixTransforms.SkewPart"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.SkewPart">SkewPart</a>
+<hr><h2 id="_EC1DBF00"><a name="MatrixTransforms.SkewPart"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.SkewPart">SkewPart</a>
 </h2>
 <p> S2 = (A - AT)/2</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SkewPart* (<strong>CONST</strong> A: <strong>Matrix</strong>): <strong>Matrix</strong></pre>
-<hr><h2 id="#_29CFE740"><a name="MatrixTransforms.Gauss"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.Gauss">Gauss</a>
+<hr><h2 id="_EC1E1400"><a name="MatrixTransforms.Gauss"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.Gauss">Gauss</a>
 </h2>
 <p> Gaussian elimination algorithm with row pivoting; expects square matrix, transforms it into upper triangular matrix</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Gauss* (<strong>VAR</strong> A: <strong>Matrix</strong>)</pre>
-<hr><h2 id="#_29D05B80"><a name="MatrixTransforms.GramSchmidt"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.GramSchmidt">GramSchmidt</a>
+<hr><h2 id="_EC1E8840"><a name="MatrixTransforms.GramSchmidt"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.GramSchmidt">GramSchmidt</a>
 </h2>
 <p> stabilized Gram-Schmidt process yielding orthogonal (column) vectors from a set of linearly independent vectors.Gram-Schmidt is less stable then Householder, but yields orthogonalized rows early on (after n iteration for vector n). Cost is 2*k*n*n FLOPS.Householder is more stable but yields results only at the end</p>
 
-<p> n <a name="0"></a> implies 'all'</p>
+<p> n &lt; 0 implies &apos;all&apos;</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GramSchmidt* (<strong>VAR</strong> A: <strong>Matrix</strong>; n: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_29D16780"><a name="MatrixTransforms.Householder"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.Householder">Householder</a>
+<hr><h2 id="_EC1F98C0"><a name="MatrixTransforms.Householder"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.Householder">Householder</a>
 </h2>
-<p>The Householder transformation in 3-dimensional space is the reflection of a vector in a plane.In general Euclidean space it is a linear transformation that describes a reflection in a hyperplane (containing the origin).The Householder transformation is usable for QR decomposition; only the upper diagonal R is returned; Q can be retrieved from the procedure below if ever needed.For solving rectangular systems, Householder QR is considerably more stable than LU, but only a little more expensive. it is used for the Matlab<br> operator</p>
+<p>The Householder transformation in 3-dimensional space is the reflection of a vector in a plane.In general Euclidean space it is a linear transformation that describes a reflection in a hyperplane (containing the origin).The Householder transformation is usable for QR decomposition; only the upper diagonal R is returned; Q can be retrieved from the procedure below if ever needed.For solving rectangular systems, Householder QR is considerably more stable than LU, but only a little more expensive. it is used for the Matlab \ operator</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Householder* (<strong>VAR</strong> A: <strong>Matrix</strong>)</pre>
-<hr><h2 id="#_29D2E540"><a name="MatrixTransforms.GivensMatrix"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.GivensMatrix">GivensMatrix</a>
+<hr><h2 id="_EC211880"><a name="MatrixTransforms.GivensMatrix"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.GivensMatrix">GivensMatrix</a>
 </h2>
-<p> Givens rotation G*A with the Givens matrix G=[[c,s],[-s,c on the matrix A introduces a zero and modifies only two rows of the matrix.The Givens rotation is <a href="#c,s],[-s,c">c,s],[-s,c</a>*[[a],[b=[[r],[0 ; here the constraints 'numerical stability' and r&gt=0 are used; see http://en.wikipedia.org/wiki/Givens_rotationA full Givens Rotation Matrix with rotation theta, where c=cos(theta) and s=sin(theta), looks like<a href="#1">1</a> 0 0 0 0]<a href="#0">0</a> c s 0 0]<a href="#0">0</a> -s c 0 0]<a href="#0">0</a> 0 0 1 0]<a href="#0">0</a> 0 0 0 1]</p>
+<p> Givens rotation G*A with the Givens matrix G=[[c,s],[-s,c on the matrix A introduces a zero and modifies only two rows of the matrix.The Givens rotation is <a href="#c,s],[-s,c">c,s],[-s,c</a>*[[a],[b=[[r],[0 ; here the constraints &apos;numerical stability&apos; and r&gt;=0 are used; see http://en.wikipedia.org/wiki/Givens_rotationA full Givens Rotation Matrix with rotation theta, where c=cos(theta) and s=sin(theta), looks like[1 0 0 0 0][0 c s 0 0][0 -s c 0 0][0 0 0 1 0][0 0 0 0 1]</p>
 
 <dl>
 <dt><strong>parameters</strong></dt>
-<dd> 'ab' contains the 2 entries: A[row-1..row,col] of the target matrix; the givens rotation will set these elements to <a href="#r,0]">r,0]</a></dd>
+<dd> &apos;ab&apos; contains the 2 entries: A[row-1..row,col] of the target matrix; the givens rotation will set these elements to [r,0]</dd>
 
 
 </dl>
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GivensMatrix* (<strong>CONST</strong> ab: <strong>Vector</strong>; <strong>VAR</strong> G: <strong>Matrix</strong>)</pre>
-<hr><h2 id="#_29D4A9C0"><a name="MatrixTransforms.GivensRotation"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.GivensRotation">GivensRotation</a>
+<hr><h2 id="_EC22DD00"><a name="MatrixTransforms.GivensRotation"></a><a href="#MatrixTransforms">MatrixTransforms</a>.<a href="#MatrixTransforms.GivensRotation">GivensRotation</a>
 </h2>
 <p> applies Givens Rotation GA to set element i,j of Matrix A to zero</p>
 

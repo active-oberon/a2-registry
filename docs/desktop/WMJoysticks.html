@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMJoysticks">WMJoysticks</a></p>
+<hr><h1 id="_A0CCBF80"><a name="WMJoysticks"></a><a href="#ModuleList">Module</a> WMJoysticks
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Joystick control application&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WMJoysticks.AxisComponent">AxisComponent</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><th align='left'>variables</th><td><a href="#WMJoysticks.PrototypeAcMin">PrototypeAcMin</a>: <strong>WMProperties.Int32Property</strong><tr><td></td><td>PrototypeAcMax: <strong>WMProperties.Int32Property</strong><tr><td></td><td>PrototypeAcCenter: <strong>WMProperties.Int32Property</strong><tr><td></td><td>PrototypeAcCur: <strong>WMProperties.Int32Property</strong><tr><td></td><td>PrototypeAcColor: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>PrototypeAcBorderColor: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>PrototypeAcShowValues: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td>PrototypeAcVertical: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td>PrototypeAcTextColor: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>PrototypeAcName: <strong>WMProperties.StringProperty</strong><tr><td></td><td>PrototypeAcShowName: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td>PrototypeAcShowDeadzone: <strong>WMProperties.BooleanProperty</strong><tr><th align='left'>procedures</th><td> GenAxisViewer (): <strong>XML.Element</strong><tr><td></td><td> Open (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_A0CDF140">
+</h1>
+<ul>
+<li> Usage: <strong></strong></li>
+
+<li> WMJoysticks.Open [joystickname] ~ opens a viewer for the specified joystick</li>
+
+<li> System.Free WMJoysticks ~ unloads this module <strong></strong></li>
+
+<li> History: <strong></strong></li>
+
+<li> 28.11.2006 First release (staubesv)</li>
+</ul>
+<hr><h2 id="_A0CE6600"><a name="WMJoysticks.AxisComponent"></a><a href="#WMJoysticks">WMJoysticks</a>.<a href="#WMJoysticks.AxisComponent">AxisComponent</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AxisComponent* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>min: <strong>WMProperties.Int32Property</strong><tr><td></td><td>max: <strong>WMProperties.Int32Property</strong><tr><td></td><td>center: <strong>WMProperties.Int32Property</strong><tr><td></td><td>cur: <strong>WMProperties.Int32Property</strong><tr><td></td><td>showValues: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td>name: <strong>WMProperties.StringProperty</strong><tr><td></td><td>showName: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td>color: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>borderColor: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>textColor: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>vertical: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td>showDeadzone: <strong>WMProperties.BooleanProperty</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> PropertyChanged (sender, property: @Any0)<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A0CF9880"><a name="WMJoysticks.PrototypeAcMin"></a><a href="#WMJoysticks">WMJoysticks</a>.<a href="#WMJoysticks.PrototypeAcMin">PrototypeAcMin</a>
+</h2>
+<p> ProgressBar property prototypes</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> PrototypeAcMin*: <strong>WMProperties.Int32Property</strong></pre>
+</body></html>

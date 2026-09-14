@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#PCB">PCB</a></p>
-<hr><h1 id="#_BE053700"><a name="PCB"></a><a href="#ModuleList">Module</a> PCB
+<hr><h1 id="_86097500"><a name="PCB"></a><a href="#ModuleList">Module</a> PCB
 </h1>
-<p> AUTHOR "prk"; PURPOSE "Parallel Compiler: semantic checker";</p>
+<p> AUTHOR &quot;prk&quot;; PURPOSE &quot;Parallel Compiler: semantic checker&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -197,23 +197,25 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE190C40"><a name="PCB.stifn"></a><a href="#PCB">PCB</a>.<a href="#PCB.stifn">stifn</a>
+<hr><h2 id="_861D4A40"><a name="PCB.stifn"></a><a href="#PCB">PCB</a>.<a href="#PCB.stifn">stifn</a>
 </h2>
 <p> Built-In Procedures IDs</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> stifn*= 128</pre>
-<hr><h2 id="#_BE194280"><a name="PCB.incrfn"></a><a href="#PCB">PCB</a>.<a href="#PCB.incrfn">incrfn</a>
+<hr><h2 id="_861D8080"><a name="PCB.incrfn"></a><a href="#PCB">PCB</a>.<a href="#PCB.incrfn">incrfn</a>
 </h2>
-<p> fof &gt&gt </p>
+<p> fof &gt;&gt; </p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> incrfn*= 176</pre>
-<hr><h2 id="#_BE197480"><a name="PCB.Expression"></a><a href="#PCB">PCB</a>.<a href="#PCB.Expression">Expression</a>
+<hr><h2 id="_861DB280"><a name="PCB.Expression"></a><a href="#PCB">PCB</a>.<a href="#PCB.Expression">Expression</a>
 </h2>
-<p> ---------- Expressions --------------</p>
+<hr/>
+
+<p> Expressions --------------</p>
 
 <h3>Syntax</h3>
 
@@ -221,19 +223,19 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>type: <strong>PCT.Struct</strong><tr><td></td><td>link: <strong>Expression</strong><tr><th align='left'>procedures</th><td> <a href="#PCB.Expression.Emit">Emit</a> (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& Init (pos: <strong>SIGNED32</strong>; type: <strong>PCT.Struct</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>type: <strong>PCT.Struct</strong><tr><td></td><td>link: <strong>Expression</strong><tr><th align='left'>procedures</th><td> <a href="#PCB.Expression.Emit">Emit</a> (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; Init (pos: <strong>SIGNED32</strong>; type: <strong>PCT.Struct</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_BE1A3700"><a name="PCB.Expression.Emit"></a><a href="#PCB">PCB</a>.<a href="#PCB.Expression">Expression</a>.<a href="#PCB.Expression.Emit">Emit</a>
+<hr><h3 id="_861E7340"><a name="PCB.Expression.Emit"></a><a href="#PCB">PCB</a>.<a href="#PCB.Expression">Expression</a>.<a href="#PCB.Expression.Emit">Emit</a>
 </h3>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Emit* (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)</pre>
-<hr><h2 id="#_BE1A8C80"><a name="PCB.Const"></a><a href="#PCB">PCB</a>.<a href="#PCB.Const">Const</a>
+<hr><h2 id="_861EC8C0"><a name="PCB.Const"></a><a href="#PCB">PCB</a>.<a href="#PCB.Const">Const</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -241,11 +243,11 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>con: <strong>PCT.Const</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitC (pos: <strong>SIGNED32</strong>; con: <strong>PCT.Const</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>con: <strong>PCT.Const</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitC (pos: <strong>SIGNED32</strong>; con: <strong>PCT.Const</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE1B2C00"><a name="PCB.ArrayQ"></a><a href="#PCB">PCB</a>.<a href="#PCB.ArrayQ">ArrayQ</a>
+<hr><h2 id="_861F6840"><a name="PCB.ArrayQ"></a><a href="#PCB">PCB</a>.<a href="#PCB.ArrayQ">ArrayQ</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -257,7 +259,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE1B8E00"><a name="PCB.ArrayExpression"></a><a href="#PCB">PCB</a>.<a href="#PCB.ArrayExpression">ArrayExpression</a>
+<hr><h2 id="_861FCA40"><a name="PCB.ArrayExpression"></a><a href="#PCB">PCB</a>.<a href="#PCB.ArrayExpression">ArrayExpression</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -265,7 +267,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>array: <strong>ArrayQ</strong><tr><td></td><td>d: <strong>Designator</strong><tr><td></td><td>length: <strong>SIGNED32</strong><tr><td></td><td>dim: <strong>SIGNED32</strong><tr><td></td><td>isConst: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> l: <strong>PCC.Item</strong>)<tr><td></td><td>& InitArrayExpression<tr><td></td><td> SetType (t: <strong>PCT.Struct</strong>)<tr><td></td><td> SetArray (array: <strong>ArrayQ</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>array: <strong>ArrayQ</strong><tr><td></td><td>d: <strong>Designator</strong><tr><td></td><td>length: <strong>SIGNED32</strong><tr><td></td><td>dim: <strong>SIGNED32</strong><tr><td></td><td>isConst: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> l: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitArrayExpression<tr><td></td><td> SetType (t: <strong>PCT.Struct</strong>)<tr><td></td><td> SetArray (array: <strong>ArrayQ</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -275,7 +277,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE1C7E40"><a name="PCB.DOp"></a><a href="#PCB">PCB</a>.<a href="#PCB.DOp">DOp</a>
+<hr><h2 id="_8620BA80"><a name="PCB.DOp"></a><a href="#PCB">PCB</a>.<a href="#PCB.DOp">DOp</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -283,10 +285,10 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> l: <strong>PCC.Item</strong>)<tr><td></td><td>& InitD (pos: <strong>SIGNED32</strong>; op: <strong>Operator</strong>; restype: <strong>PCT.Struct</strong>; lopd, ropd: <strong>Expression</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> l: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitD (pos: <strong>SIGNED32</strong>; op: <strong>Operator</strong>; restype: <strong>PCT.Struct</strong>; lopd, ropd: <strong>Expression</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE1D3040"><a name="PCB.MOp"></a><a href="#PCB">PCB</a>.<a href="#PCB.MOp">MOp</a>
+<hr><h2 id="_86216C80"><a name="PCB.MOp"></a><a href="#PCB">PCB</a>.<a href="#PCB.MOp">MOp</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -294,10 +296,10 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitM (pos: <strong>SIGNED32</strong>; op: <strong>Operator</strong>; restype: <strong>PCT.Struct</strong>; opd: <strong>Expression</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitM (pos: <strong>SIGNED32</strong>; op: <strong>Operator</strong>; restype: <strong>PCT.Struct</strong>; opd: <strong>Expression</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE1DD9C0"><a name="PCB.Conversion"></a><a href="#PCB">PCB</a>.<a href="#PCB.Conversion">Conversion</a>
+<hr><h2 id="_86221600"><a name="PCB.Conversion"></a><a href="#PCB">PCB</a>.<a href="#PCB.Conversion">Conversion</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -305,12 +307,12 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitC (pos: <strong>SIGNED32</strong>; exp: <strong>Expression</strong>; type: <strong>PCT.Struct</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitC (pos: <strong>SIGNED32</strong>; exp: <strong>Expression</strong>; type: <strong>PCT.Struct</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE1E7640"><a name="PCB.Projection"></a><a href="#PCB">PCB</a>.<a href="#PCB.Projection">Projection</a>
+<hr><h2 id="_8622B280"><a name="PCB.Projection"></a><a href="#PCB">PCB</a>.<a href="#PCB.Projection">Projection</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
@@ -318,12 +320,12 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitP (pos: <strong>SIGNED32</strong>; exp: <strong>Expression</strong>; type: <strong>PCT.Struct</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitP (pos: <strong>SIGNED32</strong>; exp: <strong>Expression</strong>; type: <strong>PCT.Struct</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE1F2240"><a name="PCB.ExprList"></a><a href="#PCB">PCB</a>.<a href="#PCB.ExprList">ExprList</a>
+<hr><h2 id="_86235E80"><a name="PCB.ExprList"></a><a href="#PCB">PCB</a>.<a href="#PCB.ExprList">ExprList</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
@@ -331,7 +333,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>first: <strong>Expression</strong><tr><td></td><td>params: <strong>PCT.Parameter</strong><tr><td></td><td>retDescSize: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> ClearStack (code: <strong>PCC.Code</strong>)<tr><td></td><td> <a href="#PCB.ExprList.DoOpenAryParams">DoOpenAryParams</a> (code: <strong>PCC.Code</strong>)<tr><td></td><td> Emit (code: <strong>PCC.Code</strong>)<tr><td></td><td> Append (stat: <strong>Expression</strong>)<tr><td></td><td>& InitEL (pos: <strong>SIGNED32</strong>; rType: <strong>PCT.Struct</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>first: <strong>Expression</strong><tr><td></td><td>params: <strong>PCT.Parameter</strong><tr><td></td><td>retDescSize: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> ClearStack (code: <strong>PCC.Code</strong>)<tr><td></td><td> <a href="#PCB.ExprList.DoOpenAryParams">DoOpenAryParams</a> (code: <strong>PCC.Code</strong>)<tr><td></td><td> Emit (code: <strong>PCC.Code</strong>)<tr><td></td><td> Append (stat: <strong>Expression</strong>)<tr><td></td><td>&amp; InitEL (pos: <strong>SIGNED32</strong>; rType: <strong>PCT.Struct</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -340,14 +342,14 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_BE202F00"><a name="PCB.ExprList.DoOpenAryParams"></a><a href="#PCB">PCB</a>.<a href="#PCB.ExprList">ExprList</a>.<a href="#PCB.ExprList.DoOpenAryParams">DoOpenAryParams</a>
+<hr><h3 id="_86246B40"><a name="PCB.ExprList.DoOpenAryParams"></a><a href="#PCB">PCB</a>.<a href="#PCB.ExprList">ExprList</a>.<a href="#PCB.ExprList.DoOpenAryParams">DoOpenAryParams</a>
 </h3>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> DoOpenAryParams* (code: <strong>PCC.Code</strong>)</pre>
-<hr><h2 id="#_BE207400"><a name="PCB.BuiltInEl"></a><a href="#PCB">PCB</a>.<a href="#PCB.BuiltInEl">BuiltInEl</a>
+<hr><h2 id="_8624B040"><a name="PCB.BuiltInEl"></a><a href="#PCB">PCB</a>.<a href="#PCB.BuiltInEl">BuiltInEl</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -355,18 +357,18 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> <a href="#PCB.BuiltInEl.Append">Append</a> (stat: <strong>Expression</strong>)<tr><td></td><td> NothingLeft (): <strong>BOOLEAN</strong><tr><td></td><td>& Init (pos: <strong>SIGNED32</strong>; rType: <strong>PCT.Struct</strong>; fnr: <strong>SIGNED32</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> <a href="#PCB.BuiltInEl.Append">Append</a> (stat: <strong>Expression</strong>)<tr><td></td><td> NothingLeft (): <strong>BOOLEAN</strong><tr><td></td><td>&amp; Init (pos: <strong>SIGNED32</strong>; rType: <strong>PCT.Struct</strong>; fnr: <strong>SIGNED32</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_BE211AC0"><a name="PCB.BuiltInEl.Append"></a><a href="#PCB">PCB</a>.<a href="#PCB.BuiltInEl">BuiltInEl</a>.<a href="#PCB.BuiltInEl.Append">Append</a>
+<hr><h3 id="_86255700"><a name="PCB.BuiltInEl.Append"></a><a href="#PCB">PCB</a>.<a href="#PCB.BuiltInEl">BuiltInEl</a>.<a href="#PCB.BuiltInEl.Append">Append</a>
 </h3>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Append* (stat: <strong>Expression</strong>)</pre>
-<hr><h2 id="#_BE215EC0"><a name="PCB.FunCall"></a><a href="#PCB">PCB</a>.<a href="#PCB.FunCall">FunCall</a>
+<hr><h2 id="_86259B00"><a name="PCB.FunCall"></a><a href="#PCB">PCB</a>.<a href="#PCB.FunCall">FunCall</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -374,14 +376,16 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>proc: <strong>Designator</strong><tr><td></td><td>params: <strong>ExprList</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitF (pos: <strong>SIGNED32</strong>; proc: <strong>Designator</strong>; params: <strong>ExprList</strong>; curLevel: <strong>SIGNED8</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>proc: <strong>Designator</strong><tr><td></td><td>params: <strong>ExprList</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitF (pos: <strong>SIGNED32</strong>; proc: <strong>Designator</strong>; params: <strong>ExprList</strong>; curLevel: <strong>SIGNED8</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE2227C0"><a name="PCB.Designator"></a><a href="#PCB">PCB</a>.<a href="#PCB.Designator">Designator</a>
+<hr><h2 id="_86266400"><a name="PCB.Designator"></a><a href="#PCB">PCB</a>.<a href="#PCB.Designator">Designator</a>
 </h2>
-<p> ---------- Designators --------------</p>
+<hr/>
+
+<p> Designators --------------</p>
 
 <h3>Syntax</h3>
 
@@ -393,9 +397,9 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE22C5C0"><a name="PCB.Wrapper"></a><a href="#PCB">PCB</a>.<a href="#PCB.Wrapper">Wrapper</a>
+<hr><h2 id="_86270040"><a name="PCB.Wrapper"></a><a href="#PCB">PCB</a>.<a href="#PCB.Wrapper">Wrapper</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <p> Wrapper - contains a reference to an existing designator. Handy to avoid copies</p>
 
@@ -405,14 +409,14 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitW (d: <strong>Designator</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitW (d: <strong>Designator</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE238AC0"><a name="PCB.ConstDesignator"></a><a href="#PCB">PCB</a>.<a href="#PCB.ConstDesignator">ConstDesignator</a>
+<hr><h2 id="_8627C540"><a name="PCB.ConstDesignator"></a><a href="#PCB">PCB</a>.<a href="#PCB.ConstDesignator">ConstDesignator</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
-<p> fof &gt&gt </p>
+<p> fof &gt;&gt; </p>
 
 <h3>Syntax</h3>
 
@@ -420,12 +424,12 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitC (pos: <strong>SIGNED32</strong>; const: <strong>PCT.Const</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitC (pos: <strong>SIGNED32</strong>; const: <strong>PCT.Const</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE2431C0"><a name="PCB.SProc"></a><a href="#PCB">PCB</a>.<a href="#PCB.SProc">SProc</a>
+<hr><h2 id="_86286C40"><a name="PCB.SProc"></a><a href="#PCB">PCB</a>.<a href="#PCB.SProc">SProc</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
@@ -433,11 +437,11 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>nr: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> IsCallable (): <strong>BOOLEAN</strong><tr><td></td><td>& SInit (pos, nr: <strong>SIGNED32</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>nr: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> IsCallable (): <strong>BOOLEAN</strong><tr><td></td><td>&amp; SInit (pos, nr: <strong>SIGNED32</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE24C480"><a name="PCB.Var"></a><a href="#PCB">PCB</a>.<a href="#PCB.Var">Var</a>
+<hr><h2 id="_8628FF00"><a name="PCB.Var"></a><a href="#PCB">PCB</a>.<a href="#PCB.Var">Var</a>
 </h2>
 <p>basic designators</p>
 
@@ -447,18 +451,18 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>obj: <strong>PCT.Variable</strong><tr><th align='left'>procedures</th><td> <a href="#PCB.Var.Emit">Emit</a> (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitD (pos: <strong>SIGNED32</strong>; obj: <strong>PCT.Variable</strong>; curLevel: <strong>SIGNED8</strong>; readonly: <strong>BOOLEAN</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>obj: <strong>PCT.Variable</strong><tr><th align='left'>procedures</th><td> <a href="#PCB.Var.Emit">Emit</a> (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitD (pos: <strong>SIGNED32</strong>; obj: <strong>PCT.Variable</strong>; curLevel: <strong>SIGNED8</strong>; readonly: <strong>BOOLEAN</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_BE258CC0"><a name="PCB.Var.Emit"></a><a href="#PCB">PCB</a>.<a href="#PCB.Var">Var</a>.<a href="#PCB.Var.Emit">Emit</a>
+<hr><h3 id="_8629C740"><a name="PCB.Var.Emit"></a><a href="#PCB">PCB</a>.<a href="#PCB.Var">Var</a>.<a href="#PCB.Var.Emit">Emit</a>
 </h3>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Emit* (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)</pre>
-<hr><h2 id="#_BE25E240"><a name="PCB.AnyProc"></a><a href="#PCB">PCB</a>.<a href="#PCB.AnyProc">AnyProc</a>
+<hr><h2 id="_862A1CC0"><a name="PCB.AnyProc"></a><a href="#PCB">PCB</a>.<a href="#PCB.AnyProc">AnyProc</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -466,11 +470,11 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td> IsCallable (): <strong>BOOLEAN</strong><tr><td></td><td>& InitP (pos: <strong>SIGNED32</strong>; scope: <strong>PCT.Scope</strong>; o: <strong>PCT.Symbol</strong>; self: <strong>Designator</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td> IsCallable (): <strong>BOOLEAN</strong><tr><td></td><td>&amp; InitP (pos: <strong>SIGNED32</strong>; scope: <strong>PCT.Scope</strong>; o: <strong>PCT.Symbol</strong>; self: <strong>Designator</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE26A240"><a name="PCB.Type"></a><a href="#PCB">PCB</a>.<a href="#PCB.Type">Type</a>
+<hr><h2 id="_862ADCC0"><a name="PCB.Type"></a><a href="#PCB">PCB</a>.<a href="#PCB.Type">Type</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -478,12 +482,14 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitD (pos: <strong>SIGNED32</strong>; obj: <strong>PCT.Type</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitD (pos: <strong>SIGNED32</strong>; obj: <strong>PCT.Type</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE273040"><a name="PCB.Deref"></a><a href="#PCB">PCB</a>.<a href="#PCB.Deref">Deref</a>
+<hr><h2 id="_862B6AC0"><a name="PCB.Deref"></a><a href="#PCB">PCB</a>.<a href="#PCB.Deref">Deref</a>
 </h2>
-<p> ---------- Composed Designators --------------</p>
+<hr/>
+
+<p> Composed Designators --------------</p>
 
 <h3>Syntax</h3>
 
@@ -491,13 +497,13 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>ptr: <strong>Designator</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitD (pos: <strong>SIGNED32</strong>; ptr: <strong>Designator</strong>; type: <strong>PCT.Struct</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>ptr: <strong>Designator</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitD (pos: <strong>SIGNED32</strong>; ptr: <strong>Designator</strong>; type: <strong>PCT.Struct</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE27F600"><a name="PCB.Field"></a><a href="#PCB">PCB</a>.<a href="#PCB.Field">Field</a>
+<hr><h2 id="_862C2EC0"><a name="PCB.Field"></a><a href="#PCB">PCB</a>.<a href="#PCB.Field">Field</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
@@ -505,14 +511,14 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>rec: <strong>Designator</strong><tr><td></td><td>field: <strong>PCT.Field</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitF (pos: <strong>SIGNED32</strong>; rec: <strong>Designator</strong>; field: <strong>PCT.Field</strong>; readonly: <strong>BOOLEAN</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>rec: <strong>Designator</strong><tr><td></td><td>field: <strong>PCT.Field</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitF (pos: <strong>SIGNED32</strong>; rec: <strong>Designator</strong>; field: <strong>PCT.Field</strong>; readonly: <strong>BOOLEAN</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE28CE80"><a name="PCB.Index"></a><a href="#PCB">PCB</a>.<a href="#PCB.Index">Index</a>
+<hr><h2 id="_862D0740"><a name="PCB.Index"></a><a href="#PCB">PCB</a>.<a href="#PCB.Index">Index</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
@@ -520,15 +526,15 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>array: <strong>Designator</strong><tr><td></td><td>index: <strong>Expression</strong><tr><td></td><td>check: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> a: <strong>PCC.Item</strong>)<tr><td></td><td>& InitI (pos: <strong>SIGNED32</strong>; array: <strong>Designator</strong>; index: <strong>Expression</strong>; check: <strong>BOOLEAN</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>array: <strong>Designator</strong><tr><td></td><td>index: <strong>Expression</strong><tr><td></td><td>check: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> a: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitI (pos: <strong>SIGNED32</strong>; array: <strong>Designator</strong>; index: <strong>Expression</strong>; check: <strong>BOOLEAN</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE29B5C0"><a name="PCB.Guard"></a><a href="#PCB">PCB</a>.<a href="#PCB.Guard">Guard</a>
+<hr><h2 id="_862DEE80"><a name="PCB.Guard"></a><a href="#PCB">PCB</a>.<a href="#PCB.Guard">Guard</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
@@ -536,10 +542,10 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitG (pos: <strong>SIGNED32</strong>; des: <strong>Designator</strong>; type: <strong>PCT.Struct</strong>; equal: <strong>BOOLEAN</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitG (pos: <strong>SIGNED32</strong>; des: <strong>Designator</strong>; type: <strong>PCT.Struct</strong>; equal: <strong>BOOLEAN</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE2A6EC0"><a name="PCB.EnhIndex"></a><a href="#PCB">PCB</a>.<a href="#PCB.EnhIndex">EnhIndex</a>
+<hr><h2 id="_862EA780"><a name="PCB.EnhIndex"></a><a href="#PCB">PCB</a>.<a href="#PCB.EnhIndex">EnhIndex</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -547,7 +553,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>isRange: <strong>BOOLEAN</strong><tr><td></td><td>last: <strong>Entry</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> a: <strong>PCC.Item</strong>)<tr><td></td><td> AppendIndex (pos: <strong>SIGNED32</strong>; index: <strong>Expression</strong>)<tr><td></td><td> AppendRange (pos: <strong>SIGNED32</strong>; from, to, by: <strong>Expression</strong>)<tr><td></td><td> Finish<tr><td></td><td>& InitI (pos: <strong>SIGNED32</strong>; array: <strong>Designator</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>isRange: <strong>BOOLEAN</strong><tr><td></td><td>last: <strong>Entry</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> a: <strong>PCC.Item</strong>)<tr><td></td><td> AppendIndex (pos: <strong>SIGNED32</strong>; index: <strong>Expression</strong>)<tr><td></td><td> AppendRange (pos: <strong>SIGNED32</strong>; from, to, by: <strong>Expression</strong>)<tr><td></td><td> Finish<tr><td></td><td>&amp; InitI (pos: <strong>SIGNED32</strong>; array: <strong>Designator</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -555,7 +561,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE2B89C0"><a name="PCB.AnyIndex"></a><a href="#PCB">PCB</a>.<a href="#PCB.AnyIndex">AnyIndex</a>
+<hr><h2 id="_862FC280"><a name="PCB.AnyIndex"></a><a href="#PCB">PCB</a>.<a href="#PCB.AnyIndex">AnyIndex</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -563,7 +569,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>isRange: <strong>BOOLEAN</strong><tr><td></td><td>last: <strong>Entry</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> a: <strong>PCC.Item</strong>)<tr><td></td><td> AppendIndex (pos: <strong>SIGNED32</strong>; index: <strong>Expression</strong>)<tr><td></td><td> AppendRange (pos: <strong>SIGNED32</strong>; from, to, by: <strong>Expression</strong>)<tr><td></td><td> AppendFiller (pos: <strong>SIGNED32</strong>)<tr><td></td><td> Finish<tr><td></td><td>& InitA (pos: <strong>SIGNED32</strong>; array: <strong>Designator</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>isRange: <strong>BOOLEAN</strong><tr><td></td><td>last: <strong>Entry</strong><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> a: <strong>PCC.Item</strong>)<tr><td></td><td> AppendIndex (pos: <strong>SIGNED32</strong>; index: <strong>Expression</strong>)<tr><td></td><td> AppendRange (pos: <strong>SIGNED32</strong>; from, to, by: <strong>Expression</strong>)<tr><td></td><td> AppendFiller (pos: <strong>SIGNED32</strong>)<tr><td></td><td> Finish<tr><td></td><td>&amp; InitA (pos: <strong>SIGNED32</strong>; array: <strong>Designator</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -572,7 +578,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE2CC040"><a name="PCB.ArrayOperator"></a><a href="#PCB">PCB</a>.<a href="#PCB.ArrayOperator">ArrayOperator</a>
+<hr><h2 id="_8630F900"><a name="PCB.ArrayOperator"></a><a href="#PCB">PCB</a>.<a href="#PCB.ArrayOperator">ArrayOperator</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -580,12 +586,12 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>& InitD (pos: <strong>SIGNED32</strong>; d, lopd, ropd: <strong>Expression</strong>; restype: <strong>PCT.Struct</strong>; proc: <strong>PCT.Proc</strong>; p: <strong>PCT.Parameter</strong>; op: <strong>SIGNED32</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Emit (code: <strong>PCC.Code</strong>; <strong>VAR</strong> i: <strong>PCC.Item</strong>)<tr><td></td><td>&amp; InitD (pos: <strong>SIGNED32</strong>; d, lopd, ropd: <strong>Expression</strong>; restype: <strong>PCT.Struct</strong>; proc: <strong>PCT.Proc</strong>; p: <strong>PCT.Parameter</strong>; op: <strong>SIGNED32</strong>)</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_BE2D96C0"><a name="PCB.LoopInfo"></a><a href="#PCB">PCB</a>.<a href="#PCB.LoopInfo">LoopInfo</a>
+<hr><h2 id="_8631CF80"><a name="PCB.LoopInfo"></a><a href="#PCB">PCB</a>.<a href="#PCB.LoopInfo">LoopInfo</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
@@ -594,7 +600,7 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_BE2DD2C0"><a name="PCB.FinallyInfo"></a><a href="#PCB">PCB</a>.<a href="#PCB.FinallyInfo">FinallyInfo</a>
+<hr><h2 id="_86320B80"><a name="PCB.FinallyInfo"></a><a href="#PCB">PCB</a>.<a href="#PCB.FinallyInfo">FinallyInfo</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -604,7 +610,7 @@
 
 <table><tr><th align='left'>variables</th><td>pc: <strong>PCC.Label</strong></td></tr>
 </table>
-<hr><h2 id="#_BE2E0F40"><a name="PCB.CaseInfo"></a><a href="#PCB">PCB</a>.<a href="#PCB.CaseInfo">CaseInfo</a>
+<hr><h2 id="_86324800"><a name="PCB.CaseInfo"></a><a href="#PCB">PCB</a>.<a href="#PCB.CaseInfo">CaseInfo</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -613,79 +619,83 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_BE2E3BC0"><a name="PCB.NewValue"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewValue">NewValue</a>
+<hr><h2 id="_86327480"><a name="PCB.NewValue"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewValue">NewValue</a>
 </h2>
 <p> Const utilities: Constructors</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewValue* (pos: <strong>SIGNED32</strong>; obj: <strong>PCT.Symbol</strong>): <strong>Expression</strong></pre>
-<hr><h2 id="#_BE2E90C0"><a name="PCB.NewArrayValue"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewArrayValue">NewArrayValue</a>
+<hr><h2 id="_8632C980"><a name="PCB.NewArrayValue"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewArrayValue">NewArrayValue</a>
 </h2>
-<p> fof &gt&gt </p>
+<p> fof &gt;&gt; </p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewArrayValue* (pos: <strong>SIGNED32</strong>; <strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; <strong>VAR</strong> len: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong>; dim: <strong>SIGNED32</strong>; base: <strong>PCT.Struct</strong>): <strong>Const</strong></pre>
-<hr><h2 id="#_BE2F23C0"><a name="PCB.NewBoolValue"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewBoolValue">NewBoolValue</a>
+<hr><h2 id="_86335C80"><a name="PCB.NewBoolValue"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewBoolValue">NewBoolValue</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewBoolValue* (pos: <strong>SIGNED32</strong>; b: <strong>BOOLEAN</strong>): <strong>Const</strong></pre>
-<hr><h2 id="#_BE2F7480"><a name="PCB.NewEnhIndex"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewEnhIndex">NewEnhIndex</a>
+<hr><h2 id="_8633AD40"><a name="PCB.NewEnhIndex"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewEnhIndex">NewEnhIndex</a>
 </h2>
-<p> fof &gt&gt </p>
+<p> fof &gt;&gt; </p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewEnhIndex* (pos: <strong>SIGNED32</strong>; array: <strong>Designator</strong>): <strong>EnhIndex</strong></pre>
-<hr><h2 id="#_BE2FC540"><a name="PCB.NewGuard"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewGuard">NewGuard</a>
+<hr><h2 id="_8633FE00"><a name="PCB.NewGuard"></a><a href="#PCB">PCB</a>.<a href="#PCB.NewGuard">NewGuard</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewGuard* (pos: <strong>SIGNED32</strong>; des: <strong>Designator</strong>; type: <strong>PCT.Symbol</strong>; equal: <strong>BOOLEAN</strong>): <strong>Designator</strong></pre>
-<hr><h2 id="#_BE303180"><a name="PCB.Assign"></a><a href="#PCB">PCB</a>.<a href="#PCB.Assign">Assign</a>
+<hr><h2 id="_86346A40"><a name="PCB.Assign"></a><a href="#PCB">PCB</a>.<a href="#PCB.Assign">Assign</a>
 </h2>
-<p> ---------- Statements --------------</p>
+<hr/>
+
+<p> Statements --------------</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Assign* (code: <strong>PCC.Code</strong>; suppress: <strong>BOOLEAN</strong>; lexpr: <strong>Designator</strong>; rexpr: <strong>Expression</strong>; arraycreation: <strong>BOOLEAN</strong>)</pre>
-<hr><h2 id="#_BE30AC00"><a name="PCB.Interface"></a><a href="#PCB">PCB</a>.<a href="#PCB.Interface">Interface</a>
+<hr><h2 id="_8634E300"><a name="PCB.Interface"></a><a href="#PCB">PCB</a>.<a href="#PCB.Interface">Interface</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <p> Interface - cast generic object to an interface</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Interface* (intf, obj: <strong>Designator</strong>): <strong>Designator</strong></pre>
-<hr><h2 id="#_BE3119C0"><a name="PCB.Trap"></a><a href="#PCB">PCB</a>.<a href="#PCB.Trap">Trap</a>
+<hr><h2 id="_863550C0"><a name="PCB.Trap"></a><a href="#PCB">PCB</a>.<a href="#PCB.Trap">Trap</a>
 </h2>
-<p>--------- Control Structures -----------------</p>
+<hr/>
+
+<p> Control Structures -----------------</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Trap* (code: <strong>PCC.Code</strong>; suppress: <strong>BOOLEAN</strong>; nr: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_BE317B00"><a name="PCB.If"></a><a href="#PCB">PCB</a>.<a href="#PCB.If">If</a>
+<hr><h2 id="_8635B1C0"><a name="PCB.If"></a><a href="#PCB">PCB</a>.<a href="#PCB.If">If</a>
 </h2>
 <p> If - Returns if code must be suppressed</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> If* (code: <strong>PCC.Code</strong>; suppress: <strong>BOOLEAN</strong>; <strong>VAR</strong> info: <strong>LoopInfo</strong>; cond: <strong>Expression</strong>; elsif: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_BE3212C0"><a name="PCB.Lock"></a><a href="#PCB">PCB</a>.<a href="#PCB.Lock">Lock</a>
+<hr><h2 id="_86364980"><a name="PCB.Lock"></a><a href="#PCB">PCB</a>.<a href="#PCB.Lock">Lock</a>
 </h2>
 <p> Lock - lock/unlock the given object</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Lock* (code: <strong>PCC.Code</strong>; scope: <strong>PCT.Scope</strong>; pos: <strong>SIGNED32</strong>; lock: <strong>BOOLEAN</strong>)</pre>
-<hr><h2 id="#_BE328A00"><a name="PCB.Leave"></a><a href="#PCB">PCB</a>.<a href="#PCB.Leave">Leave</a>
+<hr><h2 id="_8636C0C0"><a name="PCB.Leave"></a><a href="#PCB">PCB</a>.<a href="#PCB.Leave">Leave</a>
 </h2>
 <p> Leave - leave a procedure. Generate a trap for functions (unless noTrap)</p>
 

@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxParser">FoxParser</a></p>
-<hr><h1 id="#_E46E3080"><a name="FoxParser"></a><a href="#ModuleList">Module</a> FoxParser
+<hr><h1 id="_4C747C80"><a name="FoxParser"></a><a href="#ModuleList">Module</a> FoxParser
 </h1>
-<p> AUTHOR "fof & fn"; PURPOSE "Oberon Compiler: Parser";</p>
+<p> AUTHOR &quot;fof &amp; fn&quot;; PURPOSE &quot;Oberon Compiler: Parser&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -43,15 +43,15 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_E46EE500">
-</h1><hr><h2 id="#_E46EECC0"><a name="FoxParser.Position"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Position">Position</a>
+<hr><h1 id="_4C753100">
+</h1><hr><h2 id="_4C7538C0"><a name="FoxParser.Position"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Position">Position</a>
 </h2>
 <p> the parser reflects the EBNF specified at the procedures implementing the productions</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> Position* =<strong>Scanner.Position</strong></pre>
-<hr><h2 id="#_E46F4740"><a name="FoxParser.Parser"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>
+<hr><h2 id="_4C759340"><a name="FoxParser.Parser"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -59,7 +59,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>scanner: <strong>Scanner.Scanner</strong><tr><td></td><td>token: <strong>Scanner.Token</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><td></td><td>Lax: <strong>BOOLEAN</strong><tr><td></td><td>prevPosition: <strong>Position</strong><tr><th align='left'>procedures</th><td>& <a href="#FoxParser.Parser.Init">Init</a> (scanner: <strong>Scanner.Scanner</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>CONST</strong> definitions: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Reset<tr><td></td><td> SetLax<tr><td></td><td> <a href="#FoxParser.Parser.NextToken">NextToken</a><tr><td></td><td> Symbol (): <strong>SIGNED32</strong><tr><td></td><td> TokenB (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxParser.Parser.PeekB">PeekB</a> (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.Peek">Peek</a> (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.Mandatory">Mandatory</a> (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.MandatoryString">MandatoryString</a> (<strong>VAR</strong> name: <strong>Scanner.StringType</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.Optional">Optional</a> (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> OptionalB (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.QualifiedIdentifier">QualifiedIdentifier</a> (): <strong>SyntaxTree.QualifiedIdentifier</strong><tr><td></td><td> <a href="#FoxParser.Parser.RelationalExpression">RelationalExpression</a> (): <strong>SyntaxTree.Expression</strong><tr><td></td><td> ConditionalExpression (): <strong>SyntaxTree.Expression</strong><tr><td></td><td> Expression (): <strong>SyntaxTree.Expression</strong><tr><td></td><td> <a href="#FoxParser.Parser.Statement">Statement</a> (statements: <strong>SyntaxTree.StatementSequence</strong>; outer: <strong>SyntaxTree.Statement</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.StatementSequence">StatementSequence</a> (outer: <strong>SyntaxTree.Statement</strong>): <strong>SyntaxTree.StatementSequence</strong><tr><td></td><td> <a href="#FoxParser.Parser.Module">Module</a> (): <strong>SyntaxTree.Module</strong><tr><td></td><td> <a href="#FoxParser.Parser.NextModule">NextModule</a> (): <strong>BOOLEAN</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>scanner: <strong>Scanner.Scanner</strong><tr><td></td><td>token: <strong>Scanner.Token</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><td></td><td>Lax: <strong>BOOLEAN</strong><tr><td></td><td>prevPosition: <strong>Position</strong><tr><th align='left'>procedures</th><td>&amp; <a href="#FoxParser.Parser.Init">Init</a> (scanner: <strong>Scanner.Scanner</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>CONST</strong> definitions: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Reset<tr><td></td><td> SetLax<tr><td></td><td> <a href="#FoxParser.Parser.NextToken">NextToken</a><tr><td></td><td> Symbol (): <strong>SIGNED32</strong><tr><td></td><td> TokenB (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#FoxParser.Parser.PeekB">PeekB</a> (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.Peek">Peek</a> (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.Mandatory">Mandatory</a> (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.MandatoryString">MandatoryString</a> (<strong>VAR</strong> name: <strong>Scanner.StringType</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.Optional">Optional</a> (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> OptionalB (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.QualifiedIdentifier">QualifiedIdentifier</a> (): <strong>SyntaxTree.QualifiedIdentifier</strong><tr><td></td><td> <a href="#FoxParser.Parser.RelationalExpression">RelationalExpression</a> (): <strong>SyntaxTree.Expression</strong><tr><td></td><td> ConditionalExpression (): <strong>SyntaxTree.Expression</strong><tr><td></td><td> Expression (): <strong>SyntaxTree.Expression</strong><tr><td></td><td> <a href="#FoxParser.Parser.Statement">Statement</a> (statements: <strong>SyntaxTree.StatementSequence</strong>; outer: <strong>SyntaxTree.Statement</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#FoxParser.Parser.StatementSequence">StatementSequence</a> (outer: <strong>SyntaxTree.Statement</strong>): <strong>SyntaxTree.StatementSequence</strong><tr><td></td><td> <a href="#FoxParser.Parser.Module">Module</a> (): <strong>SyntaxTree.Module</strong><tr><td></td><td> <a href="#FoxParser.Parser.NextModule">NextModule</a> (): <strong>BOOLEAN</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -85,111 +85,158 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_E471F340"><a name="FoxParser.Parser.Init"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Init">Init</a>
+<hr><h3 id="_4C783F40"><a name="FoxParser.Parser.Init"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Init">Init</a>
 </h3>
 <p> constructor, init parser with scanner providing input and with diagnostics for error output</p>
 
 <h3>Syntax</h3>
 
-<pre><strong>PROCEDURE</strong>& Init* (scanner: <strong>Scanner.Scanner</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>CONST</strong> definitions: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h3 id="#_E4728C40"><a name="FoxParser.Parser.NextToken"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.NextToken">NextToken</a>
+<pre><strong>PROCEDURE</strong>&amp; Init* (scanner: <strong>Scanner.Scanner</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>CONST</strong> definitions: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h3 id="_4C78D840"><a name="FoxParser.Parser.NextToken"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.NextToken">NextToken</a>
 </h3>
-<p> Get next token from scanner and store it in object-local variable 'token'</p>
+<p> Get next token from scanner and store it in object-local variable &apos;token&apos;</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NextToken*</pre>
-<hr><h3 id="#_E472E800"><a name="FoxParser.Parser.PeekB"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.PeekB">PeekB</a>
+<hr><h3 id="_4C793400"><a name="FoxParser.Parser.PeekB"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.PeekB">PeekB</a>
 </h3>
 <p> Check if current token equals sym. If yes then return true, return false otherwise</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> PeekB* (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_E4736100"><a name="FoxParser.Parser.Peek"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Peek">Peek</a>
+<hr><h3 id="_4C79AD00"><a name="FoxParser.Parser.Peek"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Peek">Peek</a>
 </h3>
 <p> Check if current token equals sym. If yes then return true, return false otherwise</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Peek* (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_E473DA00"><a name="FoxParser.Parser.Mandatory"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Mandatory">Mandatory</a>
+<hr><h3 id="_4C7A2600"><a name="FoxParser.Parser.Mandatory"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Mandatory">Mandatory</a>
 </h3>
 <p> Check if the current token equals sym.If yes then read next token, report error otherwise. returns success value</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Mandatory* (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_E4746480"><a name="FoxParser.Parser.MandatoryString"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.MandatoryString">MandatoryString</a>
+<hr><h3 id="_4C7AB080"><a name="FoxParser.Parser.MandatoryString"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.MandatoryString">MandatoryString</a>
 </h3>
 <p> Check if current token is a string (or string-like character). If yes then copy identifier to name and get next token, report error otherwise and set name to empty name. returns success value</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> MandatoryString* (<strong>VAR</strong> name: <strong>Scanner.StringType</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_E4752A40"><a name="FoxParser.Parser.Optional"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Optional">Optional</a>
+<hr><h3 id="_4C7B7640"><a name="FoxParser.Parser.Optional"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Optional">Optional</a>
 </h3>
 <p> Check if current token equals sym. If yes then get next token, return false otherwise</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Optional* (symbol: <strong>Scanner.Symbol</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_E475A6C0"><a name="FoxParser.Parser.QualifiedIdentifier"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.QualifiedIdentifier">QualifiedIdentifier</a>
+<hr><h3 id="_4C7BF2C0"><a name="FoxParser.Parser.QualifiedIdentifier"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.QualifiedIdentifier">QualifiedIdentifier</a>
 </h3>
 <p> Parsing according to the EBNF</p>
 
-<p> QualifiedIdentifier = Identifier <a href="#'.'">'.'</a> Identifier].</p>
+<p> QualifiedIdentifier = Identifier [&apos;.&apos; Identifier].</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> QualifiedIdentifier* (): <strong>SyntaxTree.QualifiedIdentifier</strong></pre>
-<hr><h3 id="#_E47609C0"><a name="FoxParser.Parser.RelationalExpression"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.RelationalExpression">RelationalExpression</a>
+<hr><h3 id="_4C7C55C0"><a name="FoxParser.Parser.RelationalExpression"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.RelationalExpression">RelationalExpression</a>
 </h3>
-<p> Expression = RangeExpression <a href="#RelationOp">RelationOp</a> RangeExpression]. RelationOp = '='</p>
+<p> Expression = RangeExpression [RelationOp RangeExpression]. RelationOp = &apos;=&apos;</p>
 
-<table><tr><td> '#'</td><td> '&lt'</td><td> '&lt='</td><td> '&gt'</td><td> '&gt='</td><td> 'IN'</td><td> 'IS'</td></tr>
-<tr><td> '.='</td><td> '.#'</td><td> '.&lt'</td><td> '.&lt='</td><td> '.&gt' '.&gt='</td></tr>
-<tr><td> '??'</td><td> '!!'</td><td> '&lt&lt?'</td><td> '?'.</td></tr>
+<table><tr><td> &apos;#&apos;</td><td> &apos;&lt;&apos;</td><td> &apos;&lt;=&apos;</td><td> &apos;&gt;&apos;</td><td> &apos;&gt;=&apos;</td><td> &apos;IN&apos;</td><td> &apos;IS&apos;</td></tr>
+<tr><td> &apos;.=&apos;</td><td> &apos;.#&apos;</td><td> &apos;.&lt;&apos;</td><td> &apos;.&lt;=&apos;</td><td> &apos;.&gt;&apos; &apos;.&gt;=&apos;</td></tr>
+<tr><td> &apos;??&apos;</td><td> &apos;!!&apos;</td><td> &apos;&lt;&lt;?&apos;</td><td> &apos;?&apos;.</td></tr>
 </table>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> RelationalExpression* (): <strong>SyntaxTree.Expression</strong></pre>
-<hr><h3 id="#_E476C380"><a name="FoxParser.Parser.Statement"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Statement">Statement</a>
+<hr><h3 id="_4C7D0F80"><a name="FoxParser.Parser.Statement"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Statement">Statement</a>
 </h3>
-<p> Statement = <a href="#"></a> UnaryExpression <a href="#':='">':='</a> Expression</p>
+<p> Statement = [ UnaryExpression [&apos;:=&apos; Expression</p>
 
-<table><tr><td> '!' Expression</td><td> '?' Expression</td><td> '&lt&lt' Expresssion</td><td> '' Expression</td></tr>
+<table><tr><td> &apos;!&apos; Expression</td><td> &apos;?&apos; Expression</td><td> &apos;&lt;&lt;&apos; Expresssion</td><td> &apos;&apos; Expression</td></tr>
 </table>
 
-<table><tr><td> 'IF' Expression 'THEN' StatementSequence</td></tr>
+<table><tr><td> &apos;IF&apos; Expression &apos;THEN&apos; StatementSequence</td></tr>
+</table>
+
+<p> Expression &apos;THEN&apos; StatementSequence} [&apos;ELSE&apos; StatementSequence] &apos;END&apos;</p>
+
+<table><tr><td> &apos;WITH&apos; Identifier &apos;:&apos; QualifiedIdentifier &apos;DO&apos; StatementSequence</td></tr>
+</table>
+
+<table><tr><td>&apos; QualifiedIdentifier &apos;DO&apos; StatementSequence}</td></tr>
+</table>
+
+<p> StatementSequence] &apos;END&apos;</p>
+
+<table><tr><td> &apos;CASE&apos; Expression &apos;OF&apos; [&apos;</td><td>&apos;] Case</td></tr>
+</table>
+
+<table><tr><td>&apos; Case}</td></tr>
+</table>
+
+<p> StatementSequence] &apos;END&apos;</p>
+
+<table><tr><td> &apos;WHILE&apos; Expression &apos;DO&apos;</td></tr>
+</table>
+
+<p> &apos;END&apos;</p>
+
+<table><tr><td> &apos;REPEAT&apos;</td></tr>
+</table>
+
+<p> &apos;UNTIL&apos; Expression</p>
+
+<table><tr><td> &apos;FOR&apos; Identifier &apos;:=&apos; Expression &apos;TO&apos; Expression [&apos;BY&apos; Expression] &apos;DO&apos;</td></tr>
+</table>
+
+<p> &apos;END&apos;</p>
+
+<table><tr><td> &apos;LOOP&apos; StatementSequence &apos;END&apos;</td></tr>
+<tr><td> &apos;EXIT&apos;</td></tr>
+<tr><td> &apos;RETURN&apos; [Expression]</td></tr>
+<tr><td> &apos;AWAIT&apos; Expression</td></tr>
+<tr><td> StatementBlock</td></tr>
+<tr><td> &apos;CODE&apos; {any} &apos;END&apos;</td></tr>
+<tr><td> &apos;IGNORE&apos; Expression</td></tr>
 </table>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Statement* (statements: <strong>SyntaxTree.StatementSequence</strong>; outer: <strong>SyntaxTree.Statement</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_E4777E40"><a name="FoxParser.Parser.StatementSequence"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.StatementSequence">StatementSequence</a>
+<hr><h3 id="_4C7EF380"><a name="FoxParser.Parser.StatementSequence"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.StatementSequence">StatementSequence</a>
 </h3>
-<p> StatementSequence = Statement <code>';' Statement}. </code></p>
+<p> StatementSequence = Statement {&apos;;&apos; Statement}.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> StatementSequence* (outer: <strong>SyntaxTree.Statement</strong>): <strong>SyntaxTree.StatementSequence</strong></pre>
-<hr><h3 id="#_E477D0C0"><a name="FoxParser.Parser.Module"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Module">Module</a>
+<hr><h3 id="_4C7F4A80"><a name="FoxParser.Parser.Module"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.Module">Module</a>
 </h3>
-<p> Module = ('module' <a href="#TemplateParameters]"> 'cellnet' Flags]) Identifier 'in' Identifier]';' <code>ImportList} DeclarationSequence [Body]<BR>										'end' Identifier '.'.<BR>				TemplateParameters = "(" TemplateParameter {"," TemplateParameter} ")".<BR>		</code></a></p>
+<p> Module = (&apos;module&apos; [TemplateParameters]</p>
+
+<table><tr><td> &apos;cellnet&apos; [Flags]) Identifier [&apos;in&apos; Identifier]&apos;;&apos;</td></tr>
+</table>
+
+<p> DeclarationSequence [Body] &apos;end&apos; Identifier &apos;.&apos;. TemplateParameters = &quot;(&quot; TemplateParameter {&quot;,&quot; TemplateParameter} &quot;)&quot;.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Module* (): <strong>SyntaxTree.Module</strong></pre>
-<hr><h3 id="#_E4783800"><a name="FoxParser.Parser.NextModule"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.NextModule">NextModule</a>
+<hr><h3 id="_4C7FE040"><a name="FoxParser.Parser.NextModule"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.Parser">Parser</a>.<a href="#FoxParser.Parser.NextModule">NextModule</a>
 </h3>
-<p> check if another module declaration is available after recent module parsing -&gt for parsing and compiling multiple modules within a single file</p>
+<p> check if another module declaration is available after recent module parsing -&gt; for parsing and compiling multiple modules within a single file</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NextModule* (): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_E478C500"><a name="FoxParser.NewParser"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.NewParser">NewParser</a>
+<hr><h2 id="_4C806D40"><a name="FoxParser.NewParser"></a><a href="#FoxParser">FoxParser</a>.<a href="#FoxParser.NewParser">NewParser</a>
 </h2>
 <p> parser retrieval</p>
 

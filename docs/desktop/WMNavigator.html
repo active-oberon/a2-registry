@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMNavigator">WMNavigator</a></p>
+<hr><h1 id="_F5115F80"><a name="WMNavigator"></a><a href="#ModuleList">Module</a> WMNavigator
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Viewport in a window for navigation&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WMNavigator.ViewPort">ViewPort</a> =<strong>OBJECT</strong> (<strong>WMWindowManager.ViewPort</strong>)<tr><th align='left'>procedures</th><td> GenNavigator (): <strong>XML.Element</strong><tr><td></td><td> Open<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_F511E340">
+</h1><hr><h2 id="_F511EB00"><a name="WMNavigator.ViewPort"></a><a href="#WMNavigator">WMNavigator</a>.<a href="#WMNavigator.ViewPort">ViewPort</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ViewPort* =<strong>OBJECT</strong> (<strong>WMWindowManager.ViewPort</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>backbuffer: <strong>WMGraphics.Image</strong><tr><th align='left'>procedures</th><td>&amp; New<tr><td></td><td> GetWMCoordinates (<strong>CONST</strong> r: <strong>WMRectangles.Rectangle</strong>): <strong>WMRectangles.Rectangle</strong><tr><td></td><td> <a href="#WMNavigator.ViewPort.GetKeyState">GetKeyState</a> (<strong>VAR</strong> state: <strong>SET</strong>)<tr><td></td><td> <a href="#WMNavigator.ViewPort.SetRange">SetRange</a> (x, y, w, h: <strong>FLOAT32</strong>; showTransition: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#WMNavigator.ViewPort.Update">Update</a> (r: <strong>WMRectangles.Rectangle</strong>; top: <strong>WMWindowManager.Window</strong>)<tr><td></td><td> Refresh (top: <strong>WMWindowManager.Window</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_F5130740"><a name="WMNavigator.ViewPort.GetKeyState"></a><a href="#WMNavigator">WMNavigator</a>.<a href="#WMNavigator.ViewPort">ViewPort</a>.<a href="#WMNavigator.ViewPort.GetKeyState">GetKeyState</a>
+</h3>
+<p> Return the modifier keys that are pressed in the view</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetKeyState* (<strong>VAR</strong> state: <strong>SET</strong>)</pre>
+<hr><h3 id="_F5136F80"><a name="WMNavigator.ViewPort.SetRange"></a><a href="#WMNavigator">WMNavigator</a>.<a href="#WMNavigator.ViewPort">ViewPort</a>.<a href="#WMNavigator.ViewPort.SetRange">SetRange</a>
+</h3>
+<p> Set the observed range.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetRange* (x, y, w, h: <strong>FLOAT32</strong>; showTransition: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="_F513E200"><a name="WMNavigator.ViewPort.Update"></a><a href="#WMNavigator">WMNavigator</a>.<a href="#WMNavigator.ViewPort">ViewPort</a>.<a href="#WMNavigator.ViewPort.Update">Update</a>
+</h3>
+<p> r in wm coordinates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update* (r: <strong>WMRectangles.Rectangle</strong>; top: <strong>WMWindowManager.Window</strong>)</pre>
+</body></html>

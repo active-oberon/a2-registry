@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#DAP">DAP</a></p>
+<hr><h1 id="_EEF21700"><a name="DAP"></a><a href="#ModuleList">Module</a> DAP
+</h1>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;The debug adapter: a program that trapped, read where it stopped&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#DAP.Ready">Ready</a> =<strong>PROCEDURE</strong>{DELEGATE} <tr><td></td><td><a href="#DAP.Launcher">Launcher</a> =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> program, procedure: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; out: <strong>Streams.Writer</strong>; ready: <strong>Ready</strong>; <strong>VAR</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td><a href="#DAP.Frame">Frame</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#DAP.Wish">Wish</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#DAP.Stopped">Stopped</a> =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> why, description: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td><a href="#DAP.Core">Core</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#DAP.Report">Report</a> (core: <strong>Core</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> <a href="#DAP.Serve">Serve</a> (context: <strong>Commands.Context</strong>; launcher: <strong>Launcher</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_EEF3D7C0">
+</h1><hr><h2 id="_EEF3DF80"><a name="DAP.Ready"></a><a href="#DAP">DAP</a>.<a href="#DAP.Ready">Ready</a>
+</h2>
+<p> Ready is called by the launcher once the program&apos;s module is loaded and before the program starts the code exists, so this is the one moment a breakpoint can be written into it.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Ready* =<strong>PROCEDURE</strong>{DELEGATE} </pre>
+<hr><h2 id="_EEF49280"><a name="DAP.Launcher"></a><a href="#DAP">DAP</a>.<a href="#DAP.Launcher">Launcher</a>
+</h2>
+<p> Launcher compiles the program and runs it, returning when it has ended. `ob dap` passes the one that knows about search paths and --debug; a test passes its own. Whatever the program writes goes to `out`, never to this process&apos;s stdout, which carries the protocol.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Launcher* =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> program, procedure: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; out: <strong>Streams.Writer</strong>; ready: <strong>Ready</strong>; <strong>VAR</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_EEF5D240"><a name="DAP.Frame"></a><a href="#DAP">DAP</a>.<a href="#DAP.Frame">Frame</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Frame* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>pc: <strong>ADDRESS</strong><tr><td></td><td>fp: <strong>ADDRESS</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EEF61D80"><a name="DAP.Wish"></a><a href="#DAP">DAP</a>.<a href="#DAP.Wish">Wish</a>
+</h2>
+<p> One line the client asked for, and what became of it.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Wish* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>source: <strong>DebugMap.Name</strong><tr><td></td><td>line: <strong>SIGNED32</strong><tr><td></td><td>actual: <strong>SIGNED32</strong><tr><td></td><td>adr: <strong>ADDRESS</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EEF6BB80"><a name="DAP.Stopped"></a><a href="#DAP">DAP</a>.<a href="#DAP.Stopped">Stopped</a>
+</h2>
+<p> Stopped is how a Core says the program stands still: why, and the frame it stands on. `ob dap` turns it into a stopped event; PET moves the caret there.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Stopped* =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> why, description: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="_EEF78580"><a name="DAP.Core"></a><a href="#DAP">DAP</a>.<a href="#DAP.Core">Core</a>
+</h2>
+<p> Core is the debugger with no protocol in it: the two hooks A2&apos;s trap handler calls, the instructions planted in the program&apos;s code, and the stack of the activity being held. What to do when it stops is the owner&apos;s business, said once through Stopped -- `ob dap` writes a stopped event, PET moves the caret. Everything a driver has to read afterwards is a read-only field, because a getter per field would be longer than the object.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Core* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>frames: <strong>ARRAY</strong> MaxFrames <strong>OF</strong> <strong>Frame</strong><tr><td></td><td>count: <strong>SIGNED32</strong><tr><td></td><td>low: <strong>ADDRESS</strong><tr><td></td><td>high: <strong>ADDRESS</strong><tr><td></td><td>wishes: <strong>ARRAY</strong> MaxSpots <strong>OF</strong> <strong>Wish</strong><tr><td></td><td>wishCount: <strong>SIGNED32</strong><tr><td></td><td>stopped: <strong>BOOLEAN</strong><tr><td></td><td>armed: <strong>BOOLEAN</strong><tr><td></td><td>standing: <strong>ADDRESS</strong><tr><td></td><td>reason: <strong>Name</strong><tr><th align='left'>procedures</th><td>&amp; Init (stop: <strong>Stopped</strong>)<tr><td></td><td> Trapped (sig, trapno: <strong>SIGNED32</strong>; pc, bp, sp, stackHigh: <strong>ADDRESS</strong>)<tr><td></td><td> Break (<strong>VAR</strong> pc: <strong>ADDRESS</strong>; bp, sp, stackHigh: <strong>ADDRESS</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Release<tr><td></td><td> <a href="#DAP.Core.Forget">Forget</a><tr><td></td><td> Want (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; line: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#DAP.Core.Arm">Arm</a><tr><td></td><td> Resume (step, leave: <strong>BOOLEAN</strong>)<tr><td></td><td> Detach</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_EEFAC000"><a name="DAP.Core.Forget"></a><a href="#DAP">DAP</a>.<a href="#DAP.Core">Core</a>.<a href="#DAP.Core.Forget">Forget</a>
+</h3>
+<p> Forget drops every line asked for; Want adds one back. Together they are setBreakpoints.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Forget*</pre>
+<hr><h3 id="_EEFB2300"><a name="DAP.Core.Arm"></a><a href="#DAP">DAP</a>.<a href="#DAP.Core">Core</a>.<a href="#DAP.Core.Arm">Arm</a>
+</h3>
+<p> Arm resolves every line into an address and writes the breakpoints in. Called once the module carrying them is loaded, and again whenever the lines change.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Arm*</pre>
+<hr><h2 id="_EEFBB440"><a name="DAP.Report"></a><a href="#DAP">DAP</a>.<a href="#DAP.Report">Report</a>
+</h2>
+<p> Report writes where the program stands, as text: one line per frame of the program with the file and line it is in, and under the innermost one the parameters and locals it holds. A driver with no protocol -- PET -- needs exactly this and none of the JSON.</p>
+
+<p> It stops at the first frame the line table knows nothing about, and that is not a shortcoming below the program&apos;s own frames is the machinery that started it (Commands.Runner, Objects.BodyStarter), which was not compiled with --debug and has no business in a report about the program. Reflection.StackTraceBack, which a trap dump is made of, prints all of it and by byte offset rather than by line -- right for a post-mortem on the console, wrong for an editor that has just put the caret on the line.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Report* (core: <strong>Core</strong>; w: <strong>Streams.Writer</strong>)</pre>
+<hr><h2 id="_EEFE0C80"><a name="DAP.Serve"></a><a href="#DAP">DAP</a>.<a href="#DAP.Serve">Serve</a>
+</h2>
+<p> Serve one debug session over a context, which is how `ob dap` and the tests both drive it: the requests come in on its input, the responses and events go out on its output.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Serve* (context: <strong>Commands.Context</strong>; launcher: <strong>Launcher</strong>)</pre>
+</body></html>

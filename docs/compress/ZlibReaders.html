@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#ZlibReaders">ZlibReaders</a></p>
-<hr><h1 id="#_D67B0F40"><a name="ZlibReaders"></a><a href="#ModuleList">Module</a> ZlibReaders
+<hr><h1 id="_172C6080"><a name="ZlibReaders"></a><a href="#ModuleList">Module</a> ZlibReaders
 </h1>
 <p> Stefan Walthert</p>
 
@@ -51,14 +51,14 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_D67CF200"><a name="ZlibReaders.Ok"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Ok">Ok</a>
+<hr><h2 id="_172E4340"><a name="ZlibReaders.Ok"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Ok">Ok</a>
 </h2>
 <p> result codes</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Ok*= ZlibInflate.Ok</pre>
-<hr><h2 id="#_D67D28C0"><a name="ZlibReaders.Reader"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Reader">Reader</a>
+<hr><h2 id="_172E7A00"><a name="ZlibReaders.Reader"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Reader">Reader</a>
 </h2>
 <p> structure for reading from a file with deflated data</p>
 
@@ -72,49 +72,49 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_D67DAEC0"><a name="ZlibReaders.Reader.res"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Reader">Reader</a>.<a href="#ZlibReaders.Reader.res">res</a>
+<hr><h3 id="_172F0000"><a name="ZlibReaders.Reader.res"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Reader">Reader</a>.<a href="#ZlibReaders.Reader.res">res</a>
 </h3>
 <p> current stream state</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> res-: <strong>INTEGER</strong></pre>
-<hr><h3 id="#_D67DEC80"><a name="ZlibReaders.Reader.wrapper"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Reader">Reader</a>.<a href="#ZlibReaders.Reader.wrapper">wrapper</a>
+<hr><h3 id="_172F3DC0"><a name="ZlibReaders.Reader.wrapper"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Reader">Reader</a>.<a href="#ZlibReaders.Reader.wrapper">wrapper</a>
 </h3>
 <p> if set, a zlib header and a checksum are present</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> wrapper-: <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_D67E4540"><a name="ZlibReaders.Open"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Open">Open</a>
+<hr><h2 id="_172F9680"><a name="ZlibReaders.Open"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Open">Open</a>
 </h2>
 <p> open reader on a Rider for input; is wrapper is not set, no zlib header and no checksum are present</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Open* (<strong>VAR</strong> r: <strong>Reader</strong>; wrapper: <strong>BOOLEAN</strong>; <strong>VAR</strong> fr: <strong>Files.Rider</strong>)</pre>
-<hr><h2 id="#_D67EEDC0"><a name="ZlibReaders.ReadBytes"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.ReadBytes">ReadBytes</a>
+<hr><h2 id="_17303F00"><a name="ZlibReaders.ReadBytes"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.ReadBytes">ReadBytes</a>
 </h2>
 <p> read specified number of bytes into buffer and return number of bytes actually read</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ReadBytes* (<strong>VAR</strong> r: <strong>Reader</strong>; <strong>VAR</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>; <strong>VAR</strong> read: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_D67F9F00"><a name="ZlibReaders.Read"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Read">Read</a>
+<hr><h2 id="_1730F040"><a name="ZlibReaders.Read"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Read">Read</a>
 </h2>
 <p> read decompressed byte</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Read* (<strong>VAR</strong> r: <strong>Reader</strong>; <strong>VAR</strong> ch: <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_D67FF580"><a name="ZlibReaders.Close"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Close">Close</a>
+<hr><h2 id="_173146C0"><a name="ZlibReaders.Close"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Close">Close</a>
 </h2>
 <p> close reader</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Close* (<strong>VAR</strong> r: <strong>Reader</strong>)</pre>
-<hr><h2 id="#_D6803740"><a name="ZlibReaders.Uncompress"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Uncompress">Uncompress</a>
+<hr><h2 id="_17318880"><a name="ZlibReaders.Uncompress"></a><a href="#ZlibReaders">ZlibReaders</a>.<a href="#ZlibReaders.Uncompress">Uncompress</a>
 </h2>
 <p> uncompress deflated data from scr and write them to dst</p>
 

@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxA64Backend">FoxA64Backend</a></p>
-<hr><h1 id="#_E2BF7000"><a name="FoxA64Backend"></a><a href="#ModuleList">Module</a> FoxA64Backend
+<hr><h1 id="_35BA4180"><a name="FoxA64Backend"></a><a href="#ModuleList">Module</a> FoxA64Backend
 </h1>
-<p> AUTHOR "Andrii Puhachenko; co-author Claude (Opus 5)"; PURPOSE "backend for AArch64 (ARMv8-A, A64 instruction set)";</p>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;backend for AArch64 (ARMv8-A, A64 instruction set)&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -47,8 +47,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_E2C05140">
-</h1><hr><h2 id="#_E2C05900"><a name="FoxA64Backend.BackendA64"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>
+<hr><h1 id="_35BB1440">
+</h1><hr><h2 id="_35BB1C00"><a name="FoxA64Backend.BackendA64"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -71,7 +71,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_E2C28F40"><a name="FoxA64Backend.BackendA64.CanPassInRegister"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.CanPassInRegister">CanPassInRegister</a>
+<hr><h3 id="_35BD5240"><a name="FoxA64Backend.BackendA64.CanPassInRegister"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.CanPassInRegister">CanPassInRegister</a>
 </h3>
 <p> whether a whole aggregate may travel in a register rather than by address</p>
 
@@ -80,7 +80,7 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> CanPassInRegister* (type: <strong>SyntaxTree.Type</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_E2C40580"><a name="FoxA64Backend.BackendA64.GetParameterRegister"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.GetParameterRegister">GetParameterRegister</a>
+<hr><h3 id="_35BEC880"><a name="FoxA64Backend.BackendA64.GetParameterRegister"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.GetParameterRegister">GetParameterRegister</a>
 </h3>
 <p> the AAPCS64 argument allocation, as far as the intermediate code models it</p>
 
@@ -91,21 +91,21 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetParameterRegister* (callingConvention: <strong>SyntaxTree.CallingConvention</strong>; type: <strong>IntermediateCode.Type</strong>; <strong>VAR</strong> register: <strong>INTEGER</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_E2C64B40"><a name="FoxA64Backend.BackendA64.SupportedInstruction"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.SupportedInstruction">SupportedInstruction</a>
+<hr><h3 id="_35C10E40"><a name="FoxA64Backend.BackendA64.SupportedInstruction"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.SupportedInstruction">SupportedInstruction</a>
 </h3>
 <p> whether the code generator can emit an intermediate code instruction directly</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SupportedInstruction* (<strong>CONST</strong> instruction: <strong>IntermediateCode.Instruction</strong>; <strong>VAR</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_E2C6E000"><a name="FoxA64Backend.BackendA64.GetDescription"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.GetDescription">GetDescription</a>
+<hr><h3 id="_35C1A300"><a name="FoxA64Backend.BackendA64.GetDescription"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.BackendA64">BackendA64</a>.<a href="#FoxA64Backend.BackendA64.GetDescription">GetDescription</a>
 </h3>
 <p> the name that lands in the intermediate code module header and in the object file</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetDescription* (<strong>VAR</strong> instructionSet: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_E2C76280"><a name="FoxA64Backend.Get"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.Get">Get</a>
+<hr><h2 id="_35C22580"><a name="FoxA64Backend.Get"></a><a href="#FoxA64Backend">FoxA64Backend</a>.<a href="#FoxA64Backend.Get">Get</a>
 </h2>
 <p> get an instance of the A64 backend</p>
 

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#PCAAMD64">PCAAMD64</a></p>
+<hr><h1 id="_A151AB40"><a name="PCAAMD64"></a><a href="#ModuleList">Module</a> PCAAMD64
+</h1>
+<p> AUTHOR &quot;negelef&quot;; PURPOSE &quot;AMD64 assembler&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>default= 0<tr><th align='left'>type declarations</th><td><a href="#PCAAMD64.Operand">Operand</a> =<strong>OBJECT</strong> (<strong>PCLIR.InstructionAttribute</strong>)<tr><td></td><td><a href="#PCAAMD64.Reg">Reg</a> =<strong>OBJECT</strong> (<strong>Operand</strong>)<tr><td></td><td><a href="#PCAAMD64.Reg8">Reg8</a> =<strong>OBJECT</strong> (<strong>Reg</strong>)<tr><td></td><td><a href="#PCAAMD64.Reg16">Reg16</a> =<strong>OBJECT</strong> (<strong>MemReg</strong>)<tr><td></td><td><a href="#PCAAMD64.Reg32">Reg32</a> =<strong>OBJECT</strong> (<strong>MemReg</strong>)<tr><td></td><td><a href="#PCAAMD64.Reg64">Reg64</a> =<strong>OBJECT</strong> (<strong>MemReg</strong>)<tr><td></td><td><a href="#PCAAMD64.RegCR">RegCR</a> =<strong>OBJECT</strong> (<strong>Reg</strong>)<tr><td></td><td><a href="#PCAAMD64.RegDR">RegDR</a> =<strong>OBJECT</strong> (<strong>Reg</strong>)<tr><td></td><td><a href="#PCAAMD64.SegReg">SegReg</a> =<strong>OBJECT</strong> (<strong>Reg</strong>)<tr><td></td><td><a href="#PCAAMD64.FPReg">FPReg</a> =<strong>OBJECT</strong> (<strong>Reg</strong>)<tr><td></td><td><a href="#PCAAMD64.MMXReg">MMXReg</a> =<strong>OBJECT</strong> (<strong>Reg</strong>)<tr><td></td><td><a href="#PCAAMD64.XMMReg">XMMReg</a> =<strong>OBJECT</strong> (<strong>Reg</strong>)<tr><td></td><td><a href="#PCAAMD64.Mem">Mem</a> =<strong>OBJECT</strong> (<strong>Operand</strong>)<tr><td></td><td><a href="#PCAAMD64.Imm">Imm</a> =<strong>OBJECT</strong> (<strong>Operand</strong>)<tr><td></td><td><a href="#PCAAMD64.Offset">Offset</a> =<strong>OBJECT</strong> (<strong>Imm</strong>)<tr><td></td><td><a href="#PCAAMD64.Assembly">Assembly</a> =<strong>OBJECT</strong> (<strong>PCLIR.AsmInline</strong>)<tr><th align='left'>procedures</th><td> AssembleFile (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; labels, listing: <strong>Streams.Writer</strong>)<tr><td></td><td> Assemble (context: <strong>Commands.Context</strong>)<tr><td></td><td> NewReg8 (index: <strong>SIGNED32</strong>): <strong>Reg8</strong><tr><td></td><td> NewReg16 (index: <strong>SIGNED32</strong>): <strong>Reg16</strong><tr><td></td><td> NewReg32 (index: <strong>SIGNED32</strong>): <strong>Reg32</strong><tr><td></td><td> NewReg64 (index: <strong>SIGNED32</strong>): <strong>Reg64</strong><tr><td></td><td> NewRegCR (index: <strong>SIGNED32</strong>): <strong>RegCR</strong><tr><td></td><td> NewRegDR (index: <strong>SIGNED32</strong>): <strong>RegDR</strong><tr><td></td><td> NewSegReg (index: <strong>SIGNED32</strong>): <strong>SegReg</strong><tr><td></td><td> NewFPReg (index: <strong>SIGNED32</strong>): <strong>FPReg</strong><tr><td></td><td> NewMMXReg (index: <strong>SIGNED32</strong>): <strong>MMXReg</strong><tr><td></td><td> NewXMMReg (index: <strong>SIGNED32</strong>): <strong>XMMReg</strong><tr><td></td><td> NewMem8 (reg: <strong>Reg</strong>; displacement: <strong>SIGNED32</strong>): <strong>Mem</strong><tr><td></td><td> NewMem16 (reg: <strong>Reg</strong>; displacement: <strong>SIGNED32</strong>): <strong>Mem</strong><tr><td></td><td> NewMem32 (reg: <strong>Reg</strong>; displacement: <strong>SIGNED32</strong>): <strong>Mem</strong><tr><td></td><td> NewMem64 (reg: <strong>Reg</strong>; displacement: <strong>SIGNED32</strong>): <strong>Mem</strong><tr><td></td><td> NewMem128 (reg: <strong>Reg</strong>; displacement: <strong>SIGNED32</strong>): <strong>Mem</strong><tr><td></td><td> NewImm (size: <strong>SIGNED32</strong>; val: <strong>SIGNED64</strong>): <strong>Imm</strong><tr><td></td><td> NewImm8 (val: <strong>SIGNED64</strong>): <strong>Imm</strong><tr><td></td><td> NewImm16 (val: <strong>SIGNED64</strong>): <strong>Imm</strong><tr><td></td><td> NewImm32 (val: <strong>SIGNED64</strong>): <strong>Imm</strong><tr><td></td><td> NewImm64 (val: <strong>SIGNED64</strong>): <strong>Imm</strong><tr><td></td><td> NewOffset (size: <strong>SIGNED32</strong>; val: <strong>SIGNED64</strong>): <strong>Offset</strong><tr><td></td><td> NewOffset8 (val: <strong>SIGNED64</strong>): <strong>Offset</strong><tr><td></td><td> NewOffset16 (val: <strong>SIGNED64</strong>): <strong>Offset</strong><tr><td></td><td> NewOffset32 (val: <strong>SIGNED64</strong>): <strong>Offset</strong><tr><td></td><td> NewOffset64 (val: <strong>SIGNED64</strong>): <strong>Offset</strong><tr><td></td><td> NewPntr1616 (s, o: <strong>SIGNED32</strong>): <strong>Pntr1616</strong><tr><td></td><td> NewPntr1632 (s, o: <strong>SIGNED32</strong>): <strong>Pntr1632</strong><tr><td></td><td> Install</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A157BCC0"><a name="PCAAMD64.Operand"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Operand">Operand</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Operand* =<strong>OBJECT</strong> (<strong>PCLIR.InstructionAttribute</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A157F040"><a name="PCAAMD64.Reg"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Reg">Reg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reg* =<strong>OBJECT</strong> (<strong>Operand</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>index: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; New (i: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A1585400"><a name="PCAAMD64.Reg8"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Reg8">Reg8</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reg8* =<strong>OBJECT</strong> (<strong>Reg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A1588840"><a name="PCAAMD64.Reg16"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Reg16">Reg16</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reg16* =<strong>OBJECT</strong> (<strong>MemReg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A158BBC0"><a name="PCAAMD64.Reg32"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Reg32">Reg32</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reg32* =<strong>OBJECT</strong> (<strong>MemReg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A158F000"><a name="PCAAMD64.Reg64"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Reg64">Reg64</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Reg64* =<strong>OBJECT</strong> (<strong>MemReg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A1592380"><a name="PCAAMD64.RegCR"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.RegCR">RegCR</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RegCR* =<strong>OBJECT</strong> (<strong>Reg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A1595700"><a name="PCAAMD64.RegDR"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.RegDR">RegDR</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RegDR* =<strong>OBJECT</strong> (<strong>Reg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A1598B80"><a name="PCAAMD64.SegReg"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.SegReg">SegReg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SegReg* =<strong>OBJECT</strong> (<strong>Reg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A159BF00"><a name="PCAAMD64.FPReg"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.FPReg">FPReg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FPReg* =<strong>OBJECT</strong> (<strong>Reg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A159F280"><a name="PCAAMD64.MMXReg"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.MMXReg">MMXReg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MMXReg* =<strong>OBJECT</strong> (<strong>Reg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A15A2600"><a name="PCAAMD64.XMMReg"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.XMMReg">XMMReg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> XMMReg* =<strong>OBJECT</strong> (<strong>Reg</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A15A5980"><a name="PCAAMD64.Mem"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Mem">Mem</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Mem* =<strong>OBJECT</strong> (<strong>Operand</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>size: <strong>Size</strong><tr><th align='left'>procedures</th><td>&amp; New (s: <strong>Size</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A15ABE40"><a name="PCAAMD64.Imm"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Imm">Imm</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Imm* =<strong>OBJECT</strong> (<strong>Operand</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>val: <strong>SIGNED64</strong><tr><td></td><td>pc: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; New (s: <strong>Size</strong>; v: <strong>SIGNED64</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A15B3EC0"><a name="PCAAMD64.Offset"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Offset">Offset</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Offset* =<strong>OBJECT</strong> (<strong>Imm</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_A15B7240"><a name="PCAAMD64.Assembly"></a><a href="#PCAAMD64">PCAAMD64</a>.<a href="#PCAAMD64.Assembly">Assembly</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Assembly* =<strong>OBJECT</strong> (<strong>PCLIR.AsmInline</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>pc: <strong>SIGNED32</strong><tr><td></td><td>errPos: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; Init (d: <strong>Diagnostics.Diagnostics</strong>; list: <strong>Streams.Writer</strong>)<tr><td></td><td> Reset<tr><td></td><td> SetPC (newPC: <strong>SIGNED32</strong>)<tr><td></td><td> PutByte (b: <strong>SIGNED32</strong>)<tr><td></td><td> GetByte (): <strong>CHAR</strong><tr><td></td><td> GetWord (): <strong>SIGNED16</strong><tr><td></td><td> GetDWord (): <strong>SIGNED32</strong><tr><td></td><td> PutWord (w: <strong>SIGNED32</strong>)<tr><td></td><td> PutDWord (d: <strong>SIGNED32</strong>)<tr><td></td><td> PutQWord (q: <strong>SIGNED64</strong>)<tr><td></td><td> EmitPrefix (prefix: <strong>SIGNED32</strong>)<tr><td></td><td> Emit (mnem: <strong>SIGNED32</strong>; op1, op2, op3: <strong>Operand</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

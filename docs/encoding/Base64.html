@@ -29,16 +29,18 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Base64">Base64</a></p>
-<hr><h1 id="#_4C2AF600"><a name="Base64"></a><a href="#ModuleList">Module</a> Base64
+<hr><h1 id="_1E363640"><a name="Base64"></a><a href="#ModuleList">Module</a> Base64
 </h1>
-<p> AUTHOR "P.Hunziker - Ported from Oberon.Base64.Mod (JG 23.8.94) "; PURPOSE "Base64 encoding and decoding";</p>
+<p> AUTHOR &quot;g.f.&quot;; PURPOSE &quot;Base 64 encoding according to RFC1421&quot;;</p>
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td> Decode (R: <strong>Streams.Reader</strong>; W: <strong>Streams.Writer</strong>)<tr><td></td><td> Encode (R: <strong>Streams.Reader</strong>; W: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td> Encode (<strong>CONST</strong> image: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIZE</strong>; <strong>VAR</strong> b64: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Decode (<strong>CONST</strong> b64: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> image: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> EncodeStream (<strong>CONST</strong> image: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; len: <strong>SIGNED32</strong>; w: <strong>Streams.Writer</strong>)<tr><td></td><td> DecodeStream (r: <strong>Streams.Reader</strong>; <strong>VAR</strong> image: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
 </td></tr>
 </table>
 </body></html>

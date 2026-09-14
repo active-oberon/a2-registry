@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#LocalSockets">LocalSockets</a></p>
-<hr><h1 id="#_5DF2CDC0"><a name="LocalSockets"></a><a href="#ModuleList">Module</a> LocalSockets
+<hr><h1 id="_1141AD80"><a name="LocalSockets"></a><a href="#ModuleList">Module</a> LocalSockets
 </h1>
-<p> AUTHOR "Andrii Puhachenko"; PURPOSE "Sockets named by a path: talking to a program on this machine"</p>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;Sockets named by a path: talking to a program on this machine&quot;</p>
 
 <h3>Summary</h3>
 
@@ -43,8 +43,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_5DF3A380">
-</h1><hr><h2 id="#_5DF3AB40"><a name="LocalSockets.Connection"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>
+<hr><h1 id="_11428340">
+</h1><hr><h2 id="_11428B00"><a name="LocalSockets.Connection"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>
 </h2>
 <p> A connection to, or from, a program on this machine.</p>
 
@@ -54,7 +54,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td><a href="#LocalSockets.Connection.Reader">Reader</a>: <strong>Streams.Reader</strong><tr><td></td><td><a href="#LocalSockets.Connection.Writer">Writer</a>: <strong>Streams.Writer</strong><tr><th align='left'>procedures</th><td>& Init (descriptor: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#LocalSockets.Connection.Waiting">Waiting</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#LocalSockets.Connection.WriteLine">WriteLine</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#LocalSockets.Connection.ReadLine">ReadLine</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Close</td></tr>
+<table><tr><th align='left'>variables</th><td><a href="#LocalSockets.Connection.Reader">Reader</a>: <strong>Streams.Reader</strong><tr><td></td><td><a href="#LocalSockets.Connection.Writer">Writer</a>: <strong>Streams.Writer</strong><tr><th align='left'>procedures</th><td>&amp; Init (descriptor: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#LocalSockets.Connection.Waiting">Waiting</a> (): <strong>SIGNED32</strong><tr><td></td><td> <a href="#LocalSockets.Connection.WriteLine">WriteLine</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#LocalSockets.Connection.ReadLine">ReadLine</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Close</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -62,42 +62,42 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_5DF4BA40"><a name="LocalSockets.Connection.Reader"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.Reader">Reader</a>
+<hr><h3 id="_11439A00"><a name="LocalSockets.Connection.Reader"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.Reader">Reader</a>
 </h3>
 <p> what the other side says</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> Reader-: <strong>Streams.Reader</strong></pre>
-<hr><h3 id="#_5DF500C0"><a name="LocalSockets.Connection.Writer"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.Writer">Writer</a>
+<hr><h3 id="_1143E080"><a name="LocalSockets.Connection.Writer"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.Writer">Writer</a>
 </h3>
 <p> what it is told</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> Writer-: <strong>Streams.Writer</strong></pre>
-<hr><h3 id="#_5DF54200"><a name="LocalSockets.Connection.Waiting"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.Waiting">Waiting</a>
+<hr><h3 id="_114421C0"><a name="LocalSockets.Connection.Waiting"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.Waiting">Waiting</a>
 </h3>
 <p> How much can be read without waiting for it.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Waiting* (): <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_5DF59E40"><a name="LocalSockets.Connection.WriteLine"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.WriteLine">WriteLine</a>
+<hr><h3 id="_11447E00"><a name="LocalSockets.Connection.WriteLine"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.WriteLine">WriteLine</a>
 </h3>
 <p> A line ended with one newline, and sent at once. That is what a control socket wants: one line is one command, and it is no use sitting in a buffer. Streams.Writer.Ln would put a carriage return in front of it.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> WriteLine* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h3 id="#_5DF68540"><a name="LocalSockets.Connection.ReadLine"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.ReadLine">ReadLine</a>
+<hr><h3 id="_11456500"><a name="LocalSockets.Connection.ReadLine"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connection">Connection</a>.<a href="#LocalSockets.Connection.ReadLine">ReadLine</a>
 </h3>
 <p> One line of what came back, without its newline. FALSE when the other side is done.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ReadLine* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_5DF710C0"><a name="LocalSockets.Listener"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Listener">Listener</a>
+<hr><h2 id="_1145F080"><a name="LocalSockets.Listener"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Listener">Listener</a>
 </h2>
 <p> A socket others connect to. The path is a name in the file system and is removed with it.</p>
 
@@ -107,32 +107,32 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& InitListener (descriptor: <strong>SIGNED32</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#LocalSockets.Listener.Accept">Accept</a> (): <strong>Connection</strong><tr><td></td><td> <a href="#LocalSockets.Listener.Close">Close</a></td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; InitListener (descriptor: <strong>SIGNED32</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#LocalSockets.Listener.Accept">Accept</a> (): <strong>Connection</strong><tr><td></td><td> <a href="#LocalSockets.Listener.Close">Close</a></td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_5DF7EAC0"><a name="LocalSockets.Listener.Accept"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Listener">Listener</a>.<a href="#LocalSockets.Listener.Accept">Accept</a>
+<hr><h3 id="_1146CA80"><a name="LocalSockets.Listener.Accept"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Listener">Listener</a>.<a href="#LocalSockets.Listener.Accept">Accept</a>
 </h3>
 <p> Wait for somebody to connect, and answer them. NIL if the socket has been closed.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Accept* (): <strong>Connection</strong></pre>
-<hr><h3 id="#_5DF85CC0"><a name="LocalSockets.Listener.Close"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Listener">Listener</a>.<a href="#LocalSockets.Listener.Close">Close</a>
+<hr><h3 id="_11473C80"><a name="LocalSockets.Listener.Close"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Listener">Listener</a>.<a href="#LocalSockets.Listener.Close">Close</a>
 </h3>
 <p> Stop listening, and take the name out of the file system.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Close*</pre>
-<hr><h2 id="#_5DF8B440"><a name="LocalSockets.Connect"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connect">Connect</a>
+<hr><h2 id="_11479400"><a name="LocalSockets.Connect"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Connect">Connect</a>
 </h2>
 <p> Talk to whatever is listening at that path. NIL when there is nothing there, which is what a program that is not running looks like from here.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Connect* (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Connection</strong></pre>
-<hr><h2 id="#_5DF964C0"><a name="LocalSockets.Listen"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Listen">Listen</a>
+<hr><h2 id="_11484480"><a name="LocalSockets.Listen"></a><a href="#LocalSockets">LocalSockets</a>.<a href="#LocalSockets.Listen">Listen</a>
 </h2>
 <p> Listen at that path, so that others can connect to it. The name must be free: a socket left behind by something that died is removed first, which is what every program that does this ends up doing. NIL when it cannot be had.</p>
 

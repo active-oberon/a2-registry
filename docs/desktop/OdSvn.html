@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#OdSvn">OdSvn</a></p>
+<hr><h1 id="_6B4CA0C0"><a name="OdSvn"></a><a href="#ModuleList">Module</a> OdSvn
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#OdSvn.Activity">Activity</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#OdSvn.UpdateReq">UpdateReq</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdSvn.OdSvn">OdSvn</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_6B4CED40">
+</h1>
+<p> $Id:$Authors Edgar Schwarz, (es)Purpose Basic interface to subversion using apache2 and mod_dav_svn.TODO Better parse namespaces in XML replies.TODO Return a att/val list in PROPFIND.TODO How to add/commit a new directory.TODO Add/commit multiple files with a single activity ? Can activity be reused ?TODO Get a version to a workspace ? First part of commit ?TODO Get version history.TODO Checkout repo parent directory of path is &quot;deeper&quot; ?TODO Waiting on connection until a timeout ? Makes thing longer perhaps. Persistent connections ?</p>
+<hr><h2 id="_6B4E4680"><a name="OdSvn.Activity"></a><a href="#OdSvn">OdSvn</a>.<a href="#OdSvn.Activity">Activity</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Activity* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>statuscode: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; Init (c: <strong>OdClient.OdClient</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> make<tr><td></td><td> getUrl (): <strong>U.String</strong><tr><td></td><td> delete</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_6B4EE7C0"><a name="OdSvn.UpdateReq"></a><a href="#OdSvn">OdSvn</a>.<a href="#OdSvn.UpdateReq">UpdateReq</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> UpdateReq* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; InitUpdateReq (client: <strong>OdClient.OdClient</strong>; svn: <strong>OdSvn</strong>; <strong>CONST</strong> pathName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; headVersion, version: <strong>SIGNED32</strong>)</td></tr>
+</table>
+<hr><h2 id="_6B4F7900"><a name="OdSvn.OdSvn"></a><a href="#OdSvn">OdSvn</a>.<a href="#OdSvn.OdSvn">OdSvn</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OdSvn* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>traverseDummy: <strong>BOOLEAN</strong><tr><td></td><td>useUpdateTarget: <strong>BOOLEAN</strong><tr><td></td><td>checkout: <strong>BOOLEAN</strong><tr><td></td><td>client: <strong>OdClient.OdClient</strong><tr><td></td><td>wrk: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>ver: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>repositoryURL: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>pfStatus: <strong>SIGNED32</strong><tr><td></td><td>countChanges: <strong>SIGNED32</strong><tr><td></td><td>repositoryPathLength: <strong>SIZE</strong><tr><td></td><td>removeDir: <strong>BOOLEAN</strong><tr><td></td><td>svnUpdated: <strong>BOOLEAN</strong><tr><td></td><td>resultDoc: <strong>XML.Document</strong><tr><td></td><td>nextVersion: <strong>ARRAY</strong> 10 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>context: <strong>Commands.Context</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Propfind (url: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> properties: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> props: <strong>WebHTTP.AdditionalField</strong>; <strong>VAR</strong> err: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#OdSvn.OdSvn.Versions">Versions</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> UseSvn (b: <strong>BOOLEAN</strong>)<tr><td></td><td> FileUpdate (b: <strong>BOOLEAN</strong>)<tr><td></td><td> UpdateReport (pathName, vcc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> workUrl: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; headVersion, version: <strong>SIGNED32</strong>; <strong>CONST</strong> workName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Update (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#OdSvn.OdSvn.Add">Add</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#OdSvn.OdSvn.Commit">Commit</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Checkout (url: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> resHeader: <strong>WebHTTP.ResponseHeader</strong>; <strong>CONST</strong> err: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Proppatch (url: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> props: <strong>WebHTTP.AdditionalField</strong>; <strong>CONST</strong> err: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Merge (url: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; actUrl: <strong>U.String</strong>; <strong>VAR</strong> resHeader: <strong>WebHTTP.ResponseHeader</strong>; <strong>CONST</strong> err: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_6B535680"><a name="OdSvn.OdSvn.Versions"></a><a href="#OdSvn">OdSvn</a>.<a href="#OdSvn.OdSvn">OdSvn</a>.<a href="#OdSvn.OdSvn.Versions">Versions</a>
+</h3>
+<p> Get SVN version history. SvnVersion1.Text SvnVersion2.Text</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Versions* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h3 id="_6B53AC40"><a name="OdSvn.OdSvn.Add"></a><a href="#OdSvn">OdSvn</a>.<a href="#OdSvn.OdSvn">OdSvn</a>.<a href="#OdSvn.OdSvn.Add">Add</a>
+</h3>
+<p> Automatically do a commit afterwards. Etherreal trace Manual stuff from es.Win32.WebDAV.Tool</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Add* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h3 id="_6B541540"><a name="OdSvn.OdSvn.Commit"></a><a href="#OdSvn">OdSvn</a>.<a href="#OdSvn.OdSvn">OdSvn</a>.<a href="#OdSvn.OdSvn.Commit">Commit</a>
+</h3>
+<p> Commit a new version to a svn repository. Etherreal trace Manual stuff from es.Win32.WebDAV.Tool</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Commit* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#GenericMaps">GenericMaps</a></p>
+<hr><h1 id="_289C2400"><a name="GenericMaps"></a><a href="#ModuleList">Module</a> GenericMaps
+</h1>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;Generic hash map and set&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#INITIAL_SIZE">INITIAL_SIZE</a>= 16<tr><th align='left'>type declarations</th><td><a href="#Map">Map</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Iterator">Iterator</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Set">Set</a> =<strong>OBJECT</strong> </td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_289CA5C0"><a name="INITIAL_SIZE"></a><a href="#INITIAL_SIZE">INITIAL_SIZE</a>
+</h2>
+<p> buckets a fresh map starts with; it doubles from there</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> INITIAL_SIZE*= 16</pre>
+<hr><h2 id="_289CF1C0"><a name="Map"></a><a href="#Map">Map</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Map* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#count">count</a>: <strong>SIZE</strong></td></tr>
+</table>
+<hr><h3 id="_289D2840"><a name="count"></a><a href="#count">count</a>
+</h3>
+<p> how many pairs are in it</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> count-: <strong>SIZE</strong></pre>
+<hr><h2 id="_289D6580"><a name="Iterator"></a><a href="#Iterator">Iterator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Iterator* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_289D8C00"><a name="Set"></a><a href="#Set">Set</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Set* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#count">count</a>: <strong>SIZE</strong></td></tr>
+</table>
+</body></html>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WindowManager">WindowManager</a></p>
+<hr><h1 id="_EC563380"><a name="WindowManager"></a><a href="#ModuleList">Module</a> WindowManager
+</h1>
+<p> AUTHOR &quot;TF&quot;; PURPOSE &quot;Window manager implementation&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WindowManager.ViewPort">ViewPort</a> =<strong>OBJECT</strong> (<strong>WM.ViewPort</strong>)<tr><td></td><td><a href="#WindowManager.WindowManager">WindowManager</a> =<strong>OBJECT</strong> (<strong>WM.WindowManager</strong>)<tr><th align='left'>procedures</th><td> ZoomForUnit (unit: <strong>SIGNED32</strong>): <strong>FLOAT32</strong><tr><td></td><td> Replace (color: <strong>SIGNED32</strong>; noPointer, enableMMEmulation: <strong>BOOLEAN</strong>)<tr><td></td><td> Install (context: <strong>Commands.Context</strong>)<tr><td></td><td> TraceChain<tr><td></td><td> SetDoubleClick (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EC572A40"><a name="WindowManager.ViewPort"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.ViewPort">ViewPort</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ViewPort* =<strong>OBJECT</strong> (<strong>WM.ViewPort</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; New (disp: <strong>Displays.Display</strong>)<tr><td></td><td> <a href="#WindowManager.ViewPort.GetKeyState">GetKeyState</a> (<strong>VAR</strong> state: <strong>SET</strong>)<tr><td></td><td> <a href="#WindowManager.ViewPort.SetRange">SetRange</a> (x, y, w, h: <strong>FLOAT32</strong>; showTransition: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#WindowManager.ViewPort.Update">Update</a> (r: <strong>Rectangle</strong>; top: <strong>Window</strong>)<tr><td></td><td> Refresh (top: <strong>Window</strong>)<tr><td></td><td> GetWMCoordinates (<strong>CONST</strong> r: <strong>Rect.Rectangle</strong>): <strong>Rect.Rectangle</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_EC584740"><a name="WindowManager.ViewPort.GetKeyState"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.ViewPort">ViewPort</a>.<a href="#WindowManager.ViewPort.GetKeyState">GetKeyState</a>
+</h3>
+<p> Return the modifier keys that are pressed in the view</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetKeyState* (<strong>VAR</strong> state: <strong>SET</strong>)</pre>
+<hr><h3 id="_EC58AEC0"><a name="WindowManager.ViewPort.SetRange"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.ViewPort">ViewPort</a>.<a href="#WindowManager.ViewPort.SetRange">SetRange</a>
+</h3>
+<p> Set the observed range.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetRange* (x, y, w, h: <strong>FLOAT32</strong>; showTransition: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="_EC592200"><a name="WindowManager.ViewPort.Update"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.ViewPort">ViewPort</a>.<a href="#WindowManager.ViewPort.Update">Update</a>
+</h3>
+<p> r in wm coordinates</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Update* (r: <strong>Rectangle</strong>; top: <strong>Window</strong>)</pre>
+<hr><h2 id="_EC597C80"><a name="WindowManager.WindowManager"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WindowManager* =<strong>OBJECT</strong> (<strong>WM.WindowManager</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; New<tr><td></td><td> ShutDown<tr><td></td><td> CheckChain (details: <strong>BOOLEAN</strong>)<tr><td></td><td> Broadcast (<strong>VAR</strong> m: <strong>Messages.Message</strong>)<tr><td></td><td> Add (left, top: <strong>SIZE</strong>; w: <strong>Window</strong>; flags: <strong>SET</strong>)<tr><td></td><td> Remove (w: <strong>Window</strong>)<tr><td></td><td> ToFront (x: <strong>Window</strong>)<tr><td></td><td> ToBack (x: <strong>Window</strong>)<tr><td></td><td> SetWindowFlag (w: <strong>Window</strong>; flag: <strong>SIGNED32</strong>; include: <strong>BOOLEAN</strong>)<tr><td></td><td> SetWindowPos (w: <strong>Window</strong>; x, y: <strong>SIZE</strong>)<tr><td></td><td> SetWindowSize (w: <strong>Window</strong>; <strong>VAR</strong> width, height: <strong>SIZE</strong>)<tr><td></td><td> <a href="#WindowManager.WindowManager.AddView">AddView</a> (v: <strong>WM.ViewPort</strong>)<tr><td></td><td> <a href="#WindowManager.WindowManager.RefreshView">RefreshView</a> (v: <strong>WM.ViewPort</strong>)<tr><td></td><td> <a href="#WindowManager.WindowManager.RemoveView">RemoveView</a> (v: <strong>WM.ViewPort</strong>)<tr><td></td><td> ReplaceBackground (w: <strong>Window</strong>): <strong>Window</strong><tr><td></td><td> <a href="#WindowManager.WindowManager.GetPopulatedArea">GetPopulatedArea</a> (<strong>VAR</strong> r: <strong>Rectangle</strong>)<tr><td></td><td> <a href="#WindowManager.WindowManager.GetFirst">GetFirst</a> (): <strong>Window</strong><tr><td></td><td> <a href="#WindowManager.WindowManager.GetNext">GetNext</a> (cur: <strong>Window</strong>): <strong>Window</strong><tr><td></td><td> <a href="#WindowManager.WindowManager.GetPrev">GetPrev</a> (cur: <strong>Window</strong>): <strong>Window</strong><tr><td></td><td> <a href="#WindowManager.WindowManager.SetFocus">SetFocus</a> (w: <strong>Window</strong>)<tr><td></td><td> GetPositionOwner (x, y: <strong>SIZE</strong>): <strong>Window</strong><tr><td></td><td> <a href="#WindowManager.WindowManager.CheckPointerImage">CheckPointerImage</a><tr><td></td><td> GetFocusOwner (): <strong>Window</strong><tr><td></td><td> KeyEvent (<strong>VAR</strong> m: <strong>Messages.Message</strong>)<tr><td></td><td> HandleInternal (<strong>VAR</strong> msg: <strong>Messages.Message</strong>)<tr><td></td><td> StartDrag (w: <strong>Window</strong>; sender, data: @Any0; img: <strong>Graphics.Image</strong>; offsetX, offsetY: <strong>SIZE</strong>; onAccept, onReject: <strong>Messages.CompCommand</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WindowManager.WindowManager.TransferPointer">TransferPointer</a> (to: <strong>Window</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#WindowManager.WindowManager.AddDirty">AddDirty</a> (<strong>VAR</strong> rect: <strong>Rectangle</strong>)<tr><td></td><td> <a href="#WindowManager.WindowManager.AddVisibleDirty">AddVisibleDirty</a> (w: <strong>Window</strong>; rect: <strong>Rectangle</strong>)<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_EC5DA780"><a name="WindowManager.WindowManager.AddView"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.AddView">AddView</a>
+</h3>
+<p> View management</p>
+
+<p> Add a view</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddView* (v: <strong>WM.ViewPort</strong>)</pre>
+<hr><h3 id="_EC5DF940"><a name="WindowManager.WindowManager.RefreshView"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.RefreshView">RefreshView</a>
+</h3>
+<p> Add the whole View.range as dirty and cause a redraw</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RefreshView* (v: <strong>WM.ViewPort</strong>)</pre>
+<hr><h3 id="_EC5E5D40"><a name="WindowManager.WindowManager.RemoveView"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.RemoveView">RemoveView</a>
+</h3>
+<p> RemoveView from windowmanager</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> RemoveView* (v: <strong>WM.ViewPort</strong>)</pre>
+<hr><h3 id="_EC5EA680"><a name="WindowManager.WindowManager.GetPopulatedArea"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.GetPopulatedArea">GetPopulatedArea</a>
+</h3>
+<p> Return the area that is actually occupied</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetPopulatedArea* (<strong>VAR</strong> r: <strong>Rectangle</strong>)</pre>
+<hr><h3 id="_EC5F0300"><a name="WindowManager.WindowManager.GetFirst"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.GetFirst">GetFirst</a>
+</h3>
+<p> Enumeration</p>
+
+<p> Get the first &quot;user&quot; window --&gt; May return NIL if only background and pointer window are installed</p>
+
+<p> Must hold lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetFirst* (): <strong>Window</strong></pre>
+<hr><h3 id="_EC5F9300"><a name="WindowManager.WindowManager.GetNext"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.GetNext">GetNext</a>
+</h3>
+<p> Get the window next &quot;user&quot; window on top of cur</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetNext* (cur: <strong>Window</strong>): <strong>Window</strong></pre>
+<hr><h3 id="_EC5FFC80"><a name="WindowManager.WindowManager.GetPrev"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.GetPrev">GetPrev</a>
+</h3>
+<p> Get the &quot;user&quot; window below cur</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetPrev* (cur: <strong>Window</strong>): <strong>Window</strong></pre>
+<hr><h3 id="_EC605680"><a name="WindowManager.WindowManager.SetFocus"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.SetFocus">SetFocus</a>
+</h3>
+<p> Set the keyboard focus to the window w</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetFocus* (w: <strong>Window</strong>)</pre>
+<hr><h3 id="_EC60B480"><a name="WindowManager.WindowManager.CheckPointerImage"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.CheckPointerImage">CheckPointerImage</a>
+</h3>
+<p> Adjust pointer to new position / check picture</p>
+
+<p> MUST hold wm lock</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CheckPointerImage*</pre>
+<hr><h3 id="_EC611280"><a name="WindowManager.WindowManager.TransferPointer"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.TransferPointer">TransferPointer</a>
+</h3>
+<p> a pointer button must be pressed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TransferPointer* (to: <strong>Window</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_EC616D00"><a name="WindowManager.WindowManager.AddDirty"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.AddDirty">AddDirty</a>
+</h3>
+<p> Add a region to be refreshed</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddDirty* (<strong>VAR</strong> rect: <strong>Rectangle</strong>)</pre>
+<hr><h3 id="_EC61C500"><a name="WindowManager.WindowManager.AddVisibleDirty"></a><a href="#WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager">WindowManager</a>.<a href="#WindowManager.WindowManager.AddVisibleDirty">AddVisibleDirty</a>
+</h3>
+<p> Add a region to be refreshed, if visible through windows w and above</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddVisibleDirty* (w: <strong>Window</strong>; rect: <strong>Rectangle</strong>)</pre>
+</body></html>

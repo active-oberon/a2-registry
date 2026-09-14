@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#srTexVox">srTexVox</a></p>
+<hr><h1 id="_8E9DED00"><a name="srTexVox"></a><a href="#ModuleList">Module</a> srTexVox
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#srTexVox.TexVox">TexVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srTexVox.texmirrorVox">texmirrorVox</a> =<strong>OBJECT</strong> (<strong>TexVox</strong>)<tr><td></td><td><a href="#srTexVox.scrollVox">scrollVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srTexVox.interfereVox">interfereVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srTexVox.TexSph">TexSph</a> =<strong>OBJECT</strong> (<strong>TexVox</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8E9E7500"><a name="srTexVox.TexVox"></a><a href="#srTexVox">srTexVox</a>.<a href="#srTexVox.TexVox">TexVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TexVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>img: <strong>Raster.Image</strong><tr><td></td><td>transparent: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>&amp; init (n: <strong>Name</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8E9F0680"><a name="srTexVox.texmirrorVox"></a><a href="#srTexVox">srTexVox</a>.<a href="#srTexVox.texmirrorVox">texmirrorVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> texmirrorVox* =<strong>OBJECT</strong> (<strong>TexVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (R, G, B, alpha: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8E9F8E00"><a name="srTexVox.scrollVox"></a><a href="#srTexVox">srTexVox</a>.<a href="#srTexVox.scrollVox">scrollVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> scrollVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>img: <strong>Raster.Image</strong><tr><th align='left'>procedures</th><td>&amp; init (n: <strong>Name</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8EA01180"><a name="srTexVox.interfereVox"></a><a href="#srTexVox">srTexVox</a>.<a href="#srTexVox.interfereVox">interfereVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> interfereVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>imgm: <strong>Raster.Image</strong><tr><th align='left'>procedures</th><td>&amp; init (n, m: <strong>Name</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)<tr><td></td><td> tick</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8EA0AB00"><a name="srTexVox.TexSph"></a><a href="#srTexVox">srTexVox</a>.<a href="#srTexVox.TexSph">TexSph</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TexSph* =<strong>OBJECT</strong> (<strong>TexVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init (n: <strong>Name</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+</body></html>

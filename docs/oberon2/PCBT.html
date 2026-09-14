@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#PCBT">PCBT</a></p>
-<hr><h1 id="#_9BAEC740"><a name="PCBT"></a><a href="#ModuleList">Module</a> PCBT
+<hr><h1 id="_84BE5500"><a name="PCBT"></a><a href="#ModuleList">Module</a> PCBT
 </h1>
-<p> AUTHOR "prk / be"; PURPOSE "Parallel Compiler: back-end common structures";</p>
+<p> AUTHOR &quot;prk / be&quot;; PURPOSE &quot;Parallel Compiler: back-end common structures&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -76,37 +76,39 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_9BB1E440"><a name="PCBT.DefaultNofSysCalls"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.DefaultNofSysCalls">DefaultNofSysCalls</a>
+<hr><h2 id="_84C17200"><a name="PCBT.DefaultNofSysCalls"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.DefaultNofSysCalls">DefaultNofSysCalls</a>
 </h2>
 <p> system calls</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> DefaultNofSysCalls*= 12</pre>
-<hr><h2 id="#_9BB21640"><a name="PCBT.FixupSentinel"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.FixupSentinel">FixupSentinel</a>
+<hr><h2 id="_84C1A400"><a name="PCBT.FixupSentinel"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.FixupSentinel">FixupSentinel</a>
 </h2>
 <p> Fixup, last address in a fixup chain</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> FixupSentinel*= SIGNED32(4294967295)</pre>
-<hr><h2 id="#_9BB26380"><a name="PCBT.UndefEntryNo"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.UndefEntryNo">UndefEntryNo</a>
+<hr><h2 id="_84C1F140"><a name="PCBT.UndefEntryNo"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.UndefEntryNo">UndefEntryNo</a>
 </h2>
 <p> GlobalVariable.EntryNo</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> UndefEntryNo*= -1</pre>
-<hr><h2 id="#_9BB29580"><a name="PCBT.OberonCC"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.OberonCC">OberonCC</a>
+<hr><h2 id="_84C22340"><a name="PCBT.OberonCC"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.OberonCC">OberonCC</a>
 </h2>
 <p> Calling Conventions</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> OberonCC*= 1</pre>
-<hr><h2 id="#_9BB2C780"><a name="PCBT.Size"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Size">Size</a>
+<hr><h2 id="_84C25540"><a name="PCBT.Size"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Size">Size</a>
 </h2>
-<p> ----------- Size - type related information --------------</p>
+<hr/>
+
+<p> Size - type related information --------------</p>
 
 <h3>Syntax</h3>
 
@@ -121,28 +123,28 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_9BB37980"><a name="PCBT.Size.size"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Size">Size</a>.<a href="#PCBT.Size.size">size</a>
+<hr><h3 id="_84C30640"><a name="PCBT.Size.size"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Size">Size</a>.<a href="#PCBT.Size.size">size</a>
 </h3>
 <p> size in bytes, used for allocation</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> size*: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_9BB3C2C0"><a name="PCBT.Size.align"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Size">Size</a>.<a href="#PCBT.Size.align">align</a>
+<hr><h3 id="_84C34F80"><a name="PCBT.Size.align"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Size">Size</a>.<a href="#PCBT.Size.align">align</a>
 </h3>
 <p> on which boundary should this type be aligned</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> align*: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_9BB41480"><a name="PCBT.Size.type"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Size">Size</a>.<a href="#PCBT.Size.type">type</a>
+<hr><h3 id="_84C3A140"><a name="PCBT.Size.type"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Size">Size</a>.<a href="#PCBT.Size.type">type</a>
 </h3>
 <p> Back-End Type</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> type*: <strong>SIGNED8</strong></pre>
-<hr><h2 id="#_9BB44E40"><a name="PCBT.RecSize"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.RecSize">RecSize</a>
+<hr><h2 id="_84C3DB00"><a name="PCBT.RecSize"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.RecSize">RecSize</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -155,9 +157,11 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_9BB4BE00"><a name="PCBT.Fixup"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Fixup">Fixup</a>
+<hr><h2 id="_84C44AC0"><a name="PCBT.Fixup"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Fixup">Fixup</a>
 </h2>
-<p> ----------- Address - allocation related information -------</p>
+<hr/>
+
+<p> Address - allocation related information -------</p>
 
 <p> Fixup - offset to be patched at a later time</p>
 
@@ -170,7 +174,7 @@
 <table><tr><th align='left'>variables</th><td>offset: <strong>SIGNED32</strong><tr><td></td><td>next: <strong>Fixup</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_9BB55EC0"><a name="PCBT.Variable"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Variable">Variable</a>
+<hr><h2 id="_84C4EB40"><a name="PCBT.Variable"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Variable">Variable</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -180,7 +184,7 @@
 
 <table><tr><th align='left'>variables</th><td>offset: <strong>SIGNED32</strong></td></tr>
 </table>
-<hr><h2 id="#_9BB5A240"><a name="PCBT.GlobalVariable"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>
+<hr><h2 id="_84C52EC0"><a name="PCBT.GlobalVariable"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -188,41 +192,41 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>owner: <strong>Module</strong><tr><td></td><td><a href="#PCBT.GlobalVariable.entryNo">entryNo</a>: <strong>SIGNED16</strong><tr><td></td><td><a href="#PCBT.GlobalVariable.link">link</a>: <strong>Fixup</strong><tr><td></td><td><a href="#PCBT.GlobalVariable.next">next</a>: <strong>GlobalVariable</strong><tr><th align='left'>procedures</th><td>& <a href="#PCBT.GlobalVariable.Init">Init</a> (owner: <strong>Module</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>owner: <strong>Module</strong><tr><td></td><td><a href="#PCBT.GlobalVariable.entryNo">entryNo</a>: <strong>SIGNED16</strong><tr><td></td><td><a href="#PCBT.GlobalVariable.link">link</a>: <strong>Fixup</strong><tr><td></td><td><a href="#PCBT.GlobalVariable.next">next</a>: <strong>GlobalVariable</strong><tr><th align='left'>procedures</th><td>&amp; <a href="#PCBT.GlobalVariable.Init">Init</a> (owner: <strong>Module</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_9BB63240"><a name="PCBT.GlobalVariable.entryNo"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>.<a href="#PCBT.GlobalVariable.entryNo">entryNo</a>
+<hr><h3 id="_84C5BEC0"><a name="PCBT.GlobalVariable.entryNo"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>.<a href="#PCBT.GlobalVariable.entryNo">entryNo</a>
 </h3>
 <p> object-file information set by PCOF</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> entryNo*: <strong>SIGNED16</strong></pre>
-<hr><h3 id="#_9BB67900"><a name="PCBT.GlobalVariable.link"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>.<a href="#PCBT.GlobalVariable.link">link</a>
+<hr><h3 id="_84C60580"><a name="PCBT.GlobalVariable.link"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>.<a href="#PCBT.GlobalVariable.link">link</a>
 </h3>
 <p> occourencies of var in code</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> link-: <strong>Fixup</strong></pre>
-<hr><h3 id="#_9BB6BEC0"><a name="PCBT.GlobalVariable.next"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>.<a href="#PCBT.GlobalVariable.next">next</a>
+<hr><h3 id="_84C64B40"><a name="PCBT.GlobalVariable.next"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>.<a href="#PCBT.GlobalVariable.next">next</a>
 </h3>
 <p> next GVar in the list</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> next-: <strong>GlobalVariable</strong></pre>
-<hr><h3 id="#_9BB70480"><a name="PCBT.GlobalVariable.Init"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>.<a href="#PCBT.GlobalVariable.Init">Init</a>
+<hr><h3 id="_84C69100"><a name="PCBT.GlobalVariable.Init"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.GlobalVariable">GlobalVariable</a>.<a href="#PCBT.GlobalVariable.Init">Init</a>
 </h3>
 <p> Init - Initialize structure</p>
 
 <h3>Syntax</h3>
 
-<pre><strong>PROCEDURE</strong>& Init* (owner: <strong>Module</strong>)</pre>
-<hr><h2 id="#_9BB75300"><a name="PCBT.Attribute"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Attribute">Attribute</a>
+<pre><strong>PROCEDURE</strong>&amp; Init* (owner: <strong>Module</strong>)</pre>
+<hr><h2 id="_84C6DF80"><a name="PCBT.Attribute"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Attribute">Attribute</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -236,7 +240,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_9BB7F200"><a name="PCBT.Procedure"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Procedure">Procedure</a>
+<hr><h2 id="_84C77E80"><a name="PCBT.Procedure"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Procedure">Procedure</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -244,7 +248,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>owner: <strong>Module</strong><tr><td></td><td>public: <strong>BOOLEAN</strong><tr><td></td><td>locsize: <strong>SIGNED32</strong><tr><td></td><td>parsize: <strong>SIGNED32</strong><tr><td></td><td>entryNr: <strong>SIGNED32</strong><tr><td></td><td>fixlist: <strong>SIGNED32</strong><tr><td></td><td>next: <strong>Procedure</strong><tr><td></td><td>link: <strong>Fixup</strong><tr><td></td><td>finallyOff: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init (owner: <strong>Module</strong>; public: <strong>BOOLEAN</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>owner: <strong>Module</strong><tr><td></td><td>public: <strong>BOOLEAN</strong><tr><td></td><td>locsize: <strong>SIGNED32</strong><tr><td></td><td>parsize: <strong>SIGNED32</strong><tr><td></td><td>entryNr: <strong>SIGNED32</strong><tr><td></td><td>fixlist: <strong>SIGNED32</strong><tr><td></td><td>next: <strong>Procedure</strong><tr><td></td><td>link: <strong>Fixup</strong><tr><td></td><td>finallyOff: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; Init (owner: <strong>Module</strong>; public: <strong>BOOLEAN</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -255,7 +259,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_9BB8D9C0"><a name="PCBT.Method"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Method">Method</a>
+<hr><h2 id="_84C86640"><a name="PCBT.Method"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Method">Method</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -265,7 +269,7 @@
 
 <table><tr><th align='left'>variables</th><td>mthNo: <strong>SIGNED32</strong></td></tr>
 </table>
-<hr><h2 id="#_9BB91D40"><a name="PCBT.Module"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>
+<hr><h2 id="_84C8A9C0"><a name="PCBT.Module"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -273,7 +277,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td><a href="#PCBT.Module.locsize">locsize</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#PCBT.Module.constsize">constsize</a>: <strong>SIGNED16</strong><tr><td></td><td><a href="#PCBT.Module.casetablesize">casetablesize</a>: <strong>SIGNED16</strong><tr><td></td><td>nr: <strong>SIGNED16</strong><tr><td></td><td>const: <strong>ConstArray</strong><tr><td></td><td><a href="#PCBT.Module.OwnProcs">OwnProcs</a>: <strong>Procedure</strong><tr><td></td><td><a href="#PCBT.Module.ExtProcs">ExtProcs</a>: <strong>Procedure</strong><tr><td></td><td><a href="#PCBT.Module.OwnVars">OwnVars</a>: <strong>GlobalVariable</strong><tr><td></td><td><a href="#PCBT.Module.ExtVars">ExtVars</a>: <strong>GlobalVariable</strong><tr><td></td><td><a href="#PCBT.Module.syscalls">syscalls</a>: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Fixup</strong><tr><td></td><td>finallyOff: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> <a href="#PCBT.Module.ResetLists">ResetLists</a><tr><td></td><td> AddCasetable (tablesize: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#PCBT.Module.NewConst">NewConst</a> (<strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#PCBT.Module.NewStringConst">NewStringConst</a> (<strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#PCBT.Module.NewArrayConst">NewArrayConst</a> (<strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> len: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong>; blen: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#PCBT.Module.UseVariable">UseVariable</a> (v: <strong>GlobalVariable</strong>; offset: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCBT.Module.AddOwnProc">AddOwnProc</a> (p: <strong>Procedure</strong>; codeOffset: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCBT.Module.UseProcedure">UseProcedure</a> (p: <strong>Procedure</strong>; offset: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCBT.Module.UseSyscall">UseSyscall</a> (syscall, offset: <strong>SIGNED32</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td><a href="#PCBT.Module.locsize">locsize</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#PCBT.Module.constsize">constsize</a>: <strong>SIGNED16</strong><tr><td></td><td><a href="#PCBT.Module.casetablesize">casetablesize</a>: <strong>SIGNED16</strong><tr><td></td><td>nr: <strong>SIGNED16</strong><tr><td></td><td>const: <strong>ConstArray</strong><tr><td></td><td><a href="#PCBT.Module.OwnProcs">OwnProcs</a>: <strong>Procedure</strong><tr><td></td><td><a href="#PCBT.Module.ExtProcs">ExtProcs</a>: <strong>Procedure</strong><tr><td></td><td><a href="#PCBT.Module.OwnVars">OwnVars</a>: <strong>GlobalVariable</strong><tr><td></td><td><a href="#PCBT.Module.ExtVars">ExtVars</a>: <strong>GlobalVariable</strong><tr><td></td><td><a href="#PCBT.Module.syscalls">syscalls</a>: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Fixup</strong><tr><td></td><td>finallyOff: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> <a href="#PCBT.Module.ResetLists">ResetLists</a><tr><td></td><td> AddCasetable (tablesize: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#PCBT.Module.NewConst">NewConst</a> (<strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#PCBT.Module.NewStringConst">NewStringConst</a> (<strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#PCBT.Module.NewArrayConst">NewArrayConst</a> (<strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> len: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong>; blen: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#PCBT.Module.UseVariable">UseVariable</a> (v: <strong>GlobalVariable</strong>; offset: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCBT.Module.AddOwnProc">AddOwnProc</a> (p: <strong>Procedure</strong>; codeOffset: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCBT.Module.UseProcedure">UseProcedure</a> (p: <strong>Procedure</strong>; offset: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#PCBT.Module.UseSyscall">UseSyscall</a> (syscall, offset: <strong>SIGNED32</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -295,139 +299,143 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_9BBBA940"><a name="PCBT.Module.locsize"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.locsize">locsize</a>
+<hr><h3 id="_84CB35C0"><a name="PCBT.Module.locsize"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.locsize">locsize</a>
 </h3>
 <p> data section size</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> locsize*: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_9BBBE640"><a name="PCBT.Module.constsize"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.constsize">constsize</a>
+<hr><h3 id="_84CB72C0"><a name="PCBT.Module.constsize"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.constsize">constsize</a>
 </h3>
 <p> const section size</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> constsize*: <strong>SIGNED16</strong></pre>
-<hr><h3 id="#_9BBC2340"><a name="PCBT.Module.casetablesize"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.casetablesize">casetablesize</a>
+<hr><h3 id="_84CBAFC0"><a name="PCBT.Module.casetablesize"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.casetablesize">casetablesize</a>
 </h3>
 <p> length of case table within const section</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> casetablesize*: <strong>SIGNED16</strong></pre>
-<hr><h3 id="#_9BBC7080"><a name="PCBT.Module.OwnProcs"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.OwnProcs">OwnProcs</a>
+<hr><h3 id="_84CBFD00"><a name="PCBT.Module.OwnProcs"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.OwnProcs">OwnProcs</a>
 </h3>
-<p> this module's procedures; terminated by psentinel</p>
+<p> this module&apos;s procedures; terminated by psentinel</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> OwnProcs-: <strong>Procedure</strong></pre>
-<hr><h3 id="#_9BBCBA40"><a name="PCBT.Module.ExtProcs"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.ExtProcs">ExtProcs</a>
+<hr><h3 id="_84CC46C0"><a name="PCBT.Module.ExtProcs"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.ExtProcs">ExtProcs</a>
 </h3>
 <p> external procedures used; terminated by psentinel</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> ExtProcs-: <strong>Procedure</strong></pre>
-<hr><h3 id="#_9BBD0400"><a name="PCBT.Module.OwnVars"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.OwnVars">OwnVars</a>
+<hr><h3 id="_84CC9080"><a name="PCBT.Module.OwnVars"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.OwnVars">OwnVars</a>
 </h3>
-<p> this module's used variables; terminated by sentinel</p>
+<p> this module&apos;s used variables; terminated by sentinel</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> OwnVars-: <strong>GlobalVariable</strong></pre>
-<hr><h3 id="#_9BBD5140"><a name="PCBT.Module.ExtVars"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.ExtVars">ExtVars</a>
+<hr><h3 id="_84CCDDC0"><a name="PCBT.Module.ExtVars"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.ExtVars">ExtVars</a>
 </h3>
 <p> external used variables; terminated by sentinel</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> ExtVars-: <strong>GlobalVariable</strong></pre>
-<hr><h3 id="#_9BBD9B00"><a name="PCBT.Module.syscalls"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.syscalls">syscalls</a>
+<hr><h3 id="_84CD2780"><a name="PCBT.Module.syscalls"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.syscalls">syscalls</a>
 </h3>
-<p> syscalls' fixup lists</p>
+<p> syscalls&apos; fixup lists</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> syscalls-: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Fixup</strong></pre>
-<hr><h3 id="#_9BBDE7C0"><a name="PCBT.Module.ResetLists"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.ResetLists">ResetLists</a>
+<hr><h3 id="_84CD7440"><a name="PCBT.Module.ResetLists"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.ResetLists">ResetLists</a>
 </h3>
 <p> ResetLists - remove entries from OwnVars, ExtVars, OwnProcs, ExtProcs</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ResetLists*</pre>
-<hr><h3 id="#_9BBE36C0"><a name="PCBT.Module.NewConst"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.NewConst">NewConst</a>
+<hr><h3 id="_84CDC340"><a name="PCBT.Module.NewConst"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.NewConst">NewConst</a>
 </h3>
 <p> NewConst - Create a new constant</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewConst* (<strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_9BBEAAC0"><a name="PCBT.Module.NewStringConst"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.NewStringConst">NewStringConst</a>
+<hr><h3 id="_84CE3740"><a name="PCBT.Module.NewStringConst"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.NewStringConst">NewStringConst</a>
 </h3>
 <p> NewStringConst - Create a new string constant; used for big endian: do not change endianness of string constants</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewStringConst* (<strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>SYSTEM.BYTE</strong>; len: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_9BBF5040"><a name="PCBT.Module.NewArrayConst"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.NewArrayConst">NewArrayConst</a>
+<hr><h3 id="_84CEDCC0"><a name="PCBT.Module.NewArrayConst"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.NewArrayConst">NewArrayConst</a>
 </h3>
-<p> fof &gt&gt </p>
+<p> fof &gt;&gt; </p>
 
 <p> NewArrayConst - Create a new array constant;</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewArrayConst* (<strong>VAR</strong> a: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> len: <strong>ARRAY</strong> <strong>OF</strong> <strong>SIGNED32</strong>; blen: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_9BBFEB40"><a name="PCBT.Module.UseVariable"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.UseVariable">UseVariable</a>
+<hr><h3 id="_84CF77C0"><a name="PCBT.Module.UseVariable"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.UseVariable">UseVariable</a>
 </h3>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <p> UseVar - insert a fixup, add to ExtVars or OwnVars</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> UseVariable* (v: <strong>GlobalVariable</strong>; offset: <strong>SIGNED32</strong>)</pre>
-<hr><h3 id="#_9BC066C0"><a name="PCBT.Module.AddOwnProc"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.AddOwnProc">AddOwnProc</a>
+<hr><h3 id="_84CFF340"><a name="PCBT.Module.AddOwnProc"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.AddOwnProc">AddOwnProc</a>
 </h3>
 <p> AddOwnProc - Insert local procedure into OwnProcs list</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> AddOwnProc* (p: <strong>Procedure</strong>; codeOffset: <strong>SIGNED32</strong>)</pre>
-<hr><h3 id="#_9BC0D1C0"><a name="PCBT.Module.UseProcedure"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.UseProcedure">UseProcedure</a>
+<hr><h3 id="_84D05E40"><a name="PCBT.Module.UseProcedure"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.UseProcedure">UseProcedure</a>
 </h3>
 <p> UseProcedure - insert a fixup entry, add to ExtProcs list (if external)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> UseProcedure* (p: <strong>Procedure</strong>; offset: <strong>SIGNED32</strong>)</pre>
-<hr><h3 id="#_9BC14C40"><a name="PCBT.Module.UseSyscall"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.UseSyscall">UseSyscall</a>
+<hr><h3 id="_84D0D8C0"><a name="PCBT.Module.UseSyscall"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.Module">Module</a>.<a href="#PCBT.Module.UseSyscall">UseSyscall</a>
 </h3>
 <p> UseSyscall - Add a syscall fixup</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> UseSyscall* (syscall, offset: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_9BC1A840"><a name="PCBT.psentinel"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.psentinel">psentinel</a>
+<hr><h2 id="_84D134C0"><a name="PCBT.psentinel"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.psentinel">psentinel</a>
 </h2>
 <p> last element of the OwnProcs list</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> psentinel-: <strong>Procedure</strong></pre>
-<hr><h2 id="#_9BC1EAC0"><a name="PCBT.SetNumberOfSyscalls"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.SetNumberOfSyscalls">SetNumberOfSyscalls</a>
+<hr><h2 id="_84D17740"><a name="PCBT.SetNumberOfSyscalls"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.SetNumberOfSyscalls">SetNumberOfSyscalls</a>
 </h2>
-<p> --------------- Miscellaneous ------------------</p>
+<hr/>
+
+<p> Miscellaneous ------------------</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SetNumberOfSyscalls* (nofsyscalls: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_9BC22CC0"><a name="PCBT.AllocateTD"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.AllocateTD">AllocateTD</a>
+<hr><h2 id="_84D1B780"><a name="PCBT.AllocateTD"></a><a href="#PCBT">PCBT</a>.<a href="#PCBT.AllocateTD">AllocateTD</a>
 </h2>
-<p> ------------ Resource Allocation -----------------</p>
+<hr/>
+
+<p> Resource Allocation -----------------</p>
 
 <h3>Syntax</h3>
 

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#srBase">srBase</a></p>
+<hr><h1 id="_EDDE0500"><a name="srBase"></a><a href="#ModuleList">Module</a> srBase
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>TILESIZE= 15<tr><td></td><td>LTILESIZE= 30<tr><td></td><td>TILEi= 12<tr><td></td><td>TILEj= 9<tr><td></td><td>TILES= (TILEi*TILEj)<tr><td></td><td>W= (TILESIZE*TILEi)<tr><td></td><td>H= (TILESIZE*TILEj)<tr><td></td><td>LW= (LTILESIZE*TILEi)<tr><td></td><td>LH= (LTILESIZE*TILEj)<tr><td></td><td>LRAYX= (WDIV2)<tr><td></td><td>LRAYY= (HDIV2)<tr><td></td><td>LLRAYX= (WDIV2)<tr><td></td><td>LLRAYY= (HDIV2)<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>SREAL =<strong>FLOAT32</strong><tr><td></td><td><a href="#srBase.PT">PT</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#srBase.IPT">IPT</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#srBase.BOX">BOX</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#srBase.Aperture">Aperture</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#srBase.COLOR">COLOR</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#srBase.V">V</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#srBase.Ray">Ray</a> =<strong>RECORD</strong> <tr><td></td><td>RAYS =<strong>ARRAY</strong> W <strong>OF</strong> <strong>ARRAY</strong> H <strong>OF</strong> <strong>Ray</strong><tr><td></td><td>LRAYS =<strong>ARRAY</strong> LW <strong>OF</strong> <strong>ARRAY</strong> LH <strong>OF</strong> <strong>Ray</strong><tr><td></td><td>IMAGE =<strong>ARRAY</strong> W <strong>OF</strong> <strong>ARRAY</strong> H <strong>OF</strong> <strong>COLOR</strong><tr><td></td><td>LIMAGE =<strong>ARRAY</strong> (LW+2) <strong>OF</strong> <strong>ARRAY</strong> (LH+2) <strong>OF</strong> <strong>COLOR</strong><tr><td></td><td><a href="#srBase.Voxel">Voxel</a> =<strong>OBJECT</strong> (<strong>V</strong>)<tr><th align='left'>variables</th><td>fog: <strong>FLOAT32</strong><tr><td></td><td>rlimit: <strong>SIGNED16</strong><tr><td></td><td>iterlimit: <strong>SIGNED32</strong><tr><td></td><td>frame: <strong>SIGNED32</strong><tr><td></td><td>img: <strong>Raster.Image</strong><tr><td></td><td>copy: <strong>Raster.Mode</strong><tr><td></td><td>light: <strong>Light</strong><tr><td></td><td>rand: <strong>Random.Generator</strong><tr><td></td><td>worldalive: <strong>BOOLEAN</strong><tr><td></td><td>gravity: <strong>BOOLEAN</strong><tr><td></td><td>gravUp: <strong>BOOLEAN</strong><tr><td></td><td>fuzzon: <strong>BOOLEAN</strong><tr><td></td><td>STOP: <strong>BOOLEAN</strong><tr><td></td><td>singleray: <strong>Ray</strong><tr><td></td><td>blankray: <strong>Ray</strong><tr><td></td><td>Face: <strong>ARRAY</strong> 6 <strong>OF</strong> <strong>PT</strong><tr><td></td><td>EMPTY: <strong>Voxel</strong><tr><td></td><td>deathflag: <strong>BOOLEAN</strong><tr><td></td><td>rays: <strong>RAYS</strong><tr><td></td><td>lrays: <strong>LRAYS</strong><tr><td></td><td>LOOK: <strong>Ray</strong><tr><td></td><td>LLOOK: <strong>Ray</strong><tr><td></td><td>image: <strong>IMAGE</strong><tr><td></td><td>limage: <strong>LIMAGE</strong><tr><td></td><td>world: <strong>Voxel</strong><tr><th align='left'>procedures</th><td> clearvoxelist<tr><td></td><td> clamp (x: <strong>SREAL</strong>): <strong>SREAL</strong><tr><td></td><td> clamp3 (<strong>VAR</strong> r, g, b: <strong>SREAL</strong>)<tr><td></td><td> clamPT (<strong>VAR</strong> a: <strong>PT</strong>)<tr><td></td><td> addPT (p, q: <strong>PT</strong>; <strong>VAR</strong> r: <strong>PT</strong>)<tr><td></td><td> clampColor (<strong>VAR</strong> a: <strong>COLOR</strong>)<tr><td></td><td> fuzz3 (<strong>VAR</strong> x, y, z: <strong>SREAL</strong>; fuzz: <strong>SREAL</strong>)<tr><td></td><td> fuzz3noclamp (<strong>VAR</strong> x, y, z: <strong>SREAL</strong>; fuzz: <strong>SREAL</strong>)<tr><td></td><td> fuzznorm3 (<strong>VAR</strong> x, y, z: <strong>SREAL</strong>; fuzz: <strong>SREAL</strong>)<tr><td></td><td> fzz3 (<strong>VAR</strong> x, y, z: <strong>SREAL</strong>; fuzz: <strong>SREAL</strong>)<tr><td></td><td> tick<tr><td></td><td> RESET<tr><td></td><td> STOPGO<tr><td></td><td> normalize (<strong>VAR</strong> x, y, z: <strong>SREAL</strong>)<tr><td></td><td> printPT (p: <strong>PT</strong>)<tr><td></td><td> normalizePT (<strong>VAR</strong> n: <strong>PT</strong>)<tr><td></td><td> distance (a, b: <strong>PT</strong>): <strong>SREAL</strong><tr><td></td><td> string (s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> setPT (<strong>VAR</strong> p: <strong>PT</strong>; x, y, z: <strong>SREAL</strong>)<tr><td></td><td> setCOLOR (<strong>VAR</strong> p: <strong>COLOR</strong>; r, g, b: <strong>SREAL</strong>)<tr><td></td><td> randPT (<strong>VAR</strong> p: <strong>PT</strong>)<tr><td></td><td> randnormPT (<strong>VAR</strong> p: <strong>PT</strong>)<tr><td></td><td> dist (a, b: <strong>PT</strong>): <strong>SREAL</strong><tr><td></td><td> distsquared (a, b: <strong>PT</strong>): <strong>SREAL</strong><tr><td></td><td> midPT (a, b: <strong>PT</strong>): <strong>PT</strong><tr><td></td><td> Exit (ray: <strong>Ray</strong>): <strong>PT</strong><tr><td></td><td> filterlinear1 (<strong>VAR</strong> img: <strong>IMAGE</strong>)<tr><td></td><td> filterlinear2 (<strong>VAR</strong> img: <strong>IMAGE</strong>)<tr><td></td><td> flushworld</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EDE65200"><a name="srBase.PT"></a><a href="#srBase">srBase</a>.<a href="#srBase.PT">PT</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PT* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>x: <strong>SREAL</strong><tr><td></td><td>y: <strong>SREAL</strong><tr><td></td><td>z: <strong>SREAL</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EDE6AC00"><a name="srBase.IPT"></a><a href="#srBase">srBase</a>.<a href="#srBase.IPT">IPT</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IPT* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>i: <strong>SIGNED16</strong><tr><td></td><td>j: <strong>SIGNED16</strong><tr><td></td><td>k: <strong>SIGNED16</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EDE70600"><a name="srBase.BOX"></a><a href="#srBase">srBase</a>.<a href="#srBase.BOX">BOX</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BOX* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>p: <strong>PT</strong><tr><td></td><td>q: <strong>PT</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EDE75200"><a name="srBase.Aperture"></a><a href="#srBase">srBase</a>.<a href="#srBase.Aperture">Aperture</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Aperture* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>width: <strong>FLOAT32</strong><tr><td></td><td>height: <strong>FLOAT32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EDE79D40"><a name="srBase.COLOR"></a><a href="#srBase">srBase</a>.<a href="#srBase.COLOR">COLOR</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> COLOR* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>red: <strong>SREAL</strong><tr><td></td><td>green: <strong>SREAL</strong><tr><td></td><td>blue: <strong>SREAL</strong><tr><td></td><td>alpha: <strong>SREAL</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EDE806C0"><a name="srBase.V"></a><a href="#srBase">srBase</a>.<a href="#srBase.V">V</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> V* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> tick<tr><td></td><td> register</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EDE84940"><a name="srBase.Ray"></a><a href="#srBase">srBase</a>.<a href="#srBase.Ray">Ray</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Ray* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>theta: <strong>SREAL</strong><tr><td></td><td>phi: <strong>SREAL</strong><tr><td></td><td>xyz: <strong>PT</strong><tr><td></td><td>dxyz: <strong>PT</strong><tr><td></td><td>ddxyz: <strong>PT</strong><tr><td></td><td>lxyz: <strong>PT</strong><tr><td></td><td>origin: <strong>PT</strong><tr><td></td><td>r: <strong>SREAL</strong><tr><td></td><td>g: <strong>SREAL</strong><tr><td></td><td>b: <strong>SREAL</strong><tr><td></td><td>ra: <strong>SREAL</strong><tr><td></td><td>ga: <strong>SREAL</strong><tr><td></td><td>ba: <strong>SREAL</strong><tr><td></td><td>a: <strong>SREAL</strong><tr><td></td><td>i: <strong>SIGNED16</strong><tr><td></td><td>j: <strong>SIGNED16</strong><tr><td></td><td>k: <strong>SIGNED16</strong><tr><td></td><td>recursion: <strong>SIGNED16</strong><tr><td></td><td>scale: <strong>SREAL</strong><tr><td></td><td>length: <strong>SREAL</strong><tr><td></td><td>changed: <strong>BOOLEAN</strong><tr><td></td><td>traced: <strong>BOOLEAN</strong><tr><td></td><td>face: <strong>SIGNED16</strong><tr><td></td><td>normal: <strong>PT</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_EDE9DE40"><a name="srBase.Voxel"></a><a href="#srBase">srBase</a>.<a href="#srBase.Voxel">Voxel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Voxel* =<strong>OBJECT</strong> (<strong>V</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>passable: <strong>BOOLEAN</strong><tr><td></td><td>rlimit: <strong>SIGNED16</strong><tr><td></td><td>complex: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)<tr><td></td><td> SetNormal (n: <strong>PT</strong>)<tr><td></td><td> probeShade (<strong>VAR</strong> ray: <strong>Ray</strong>; <strong>VAR</strong> dx, dy, dz: <strong>SREAL</strong>)<tr><td></td><td> tick<tr><td></td><td> move (<strong>VAR</strong> dx, dy, dz: <strong>SREAL</strong>; <strong>VAR</strong> blocked: <strong>BOOLEAN</strong>)<tr><td></td><td> probe (x, y, z: <strong>SREAL</strong>): <strong>Voxel</strong><tr><td></td><td> stroke (p: <strong>PT</strong>; level: <strong>SIGNED32</strong>; normal: <strong>PT</strong>; color: <strong>COLOR</strong>; mirror: <strong>BOOLEAN</strong>)<tr><td></td><td> strokevoxel (p: <strong>PT</strong>; level: <strong>SIGNED32</strong>; voxel: <strong>Voxel</strong>)<tr><td></td><td> linevoxel (a, b: <strong>PT</strong>; level: <strong>SIGNED32</strong>; v: <strong>Voxel</strong>)<tr><td></td><td> setcamera (x, y, z: <strong>SREAL</strong>)<tr><td></td><td> deathray (<strong>VAR</strong> ray: <strong>Ray</strong>)<tr><td></td><td> mutateray (ray: <strong>Ray</strong>)<tr><td></td><td> connectray (ray: <strong>Ray</strong>; <strong>VAR</strong> connection: <strong>BOOLEAN</strong>; <strong>VAR</strong> vox: <strong>Voxel</strong>)<tr><td></td><td> start<tr><td></td><td> camshade (<strong>VAR</strong> ray: <strong>Ray</strong>; camx, camy, camz: <strong>SREAL</strong>)<tr><td></td><td> connect (<strong>VAR</strong> connection: <strong>BOOLEAN</strong>; <strong>VAR</strong> vox: <strong>Voxel</strong>)<tr><td></td><td> connectmessage<tr><td></td><td> talk (c: <strong>CHAR</strong>; <strong>VAR</strong> connection: <strong>BOOLEAN</strong>)<tr><td></td><td> disconnect (<strong>VAR</strong> connection: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

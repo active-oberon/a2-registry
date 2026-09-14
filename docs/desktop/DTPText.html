@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#DTPText">DTPText</a></p>
+<hr><h1 id="_20A45880"><a name="DTPText"></a><a href="#ModuleList">Module</a> DTPText
+</h1>
+<p> AUTHOR &quot;PL&quot;; PURPOSE &quot;Text Plugin for DTPEditor&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Wrap= 0<tr><td></td><td>WrapWord= 1<tr><td></td><td>HLOver= 0<tr><td></td><td>HLUnder= 1<tr><td></td><td>HLWave= 2<tr><th align='left'>type declarations</th><td><a href="#DTPText.Image">Image</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DTPText.TabStops">TabStops</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DTPText.Highlight">Highlight</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DTPText.PositionMarker">PositionMarker</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DTPText.TextDropTarget">TextDropTarget</a> =<strong>OBJECT</strong> (<strong>WMDropTarget.DropTarget</strong>)<tr><td></td><td><a href="#DTPText.TextObject">TextObject</a> =<strong>OBJECT</strong> (<strong>DTPData.ContentObject</strong>)<tr><th align='left'>procedures</th><td> GenText (): <strong>DTPData.ContentObject</strong><tr><td></td><td> Register</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20A56E00"><a name="DTPText.Image"></a><a href="#DTPText">DTPText</a>.<a href="#DTPText.Image">Image</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Image* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>image: <strong>WMGraphics.Image</strong><tr><td></td><td>file: <strong>String</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20A5B940"><a name="DTPText.TabStops"></a><a href="#DTPText">DTPText</a>.<a href="#DTPText.TabStops">TabStops</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TabStops* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetNextTabStop (x: <strong>SIZE</strong>): <strong>SIZE</strong></td></tr>
+</table>
+<hr><h2 id="_20A608C0"><a name="DTPText.Highlight"></a><a href="#DTPText">DTPText</a>.<a href="#DTPText.Highlight">Highlight</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Highlight* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>from: <strong>Texts.TextPosition</strong><tr><td></td><td>to: <strong>Texts.TextPosition</strong><tr><td></td><td>a: <strong>SIZE</strong><tr><td></td><td>b: <strong>SIZE</strong><tr><td></td><td>active: <strong>BOOLEAN</strong><tr><td></td><td>onChanged: <strong>PROCEDURE</strong>{DELEGATE} (sender, data: @Any0)<tr><th align='left'>procedures</th><td>&amp; New<tr><td></td><td> SetKind (kind: <strong>INTEGER</strong>)<tr><td></td><td> SetColor (color: <strong>WMGraphics.Color</strong>)<tr><td></td><td> SetFrom (from: <strong>SIZE</strong>)<tr><td></td><td> SetTo (to: <strong>SIZE</strong>)<tr><td></td><td> SetFromTo (from, to: <strong>SIZE</strong>)<tr><td></td><td> Sort</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20A758C0"><a name="DTPText.PositionMarker"></a><a href="#DTPText">DTPText</a>.<a href="#DTPText.PositionMarker">PositionMarker</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PositionMarker* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Load (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetVisible (visible: <strong>BOOLEAN</strong>)<tr><td></td><td> SetPosition (pos: <strong>SIZE</strong>)<tr><td></td><td> GetPosition (): <strong>SIZE</strong><tr><td></td><td> SetColor (color: <strong>WMGraphics.Color</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20A82240"><a name="DTPText.TextDropTarget"></a><a href="#DTPText">DTPText</a>.<a href="#DTPText.TextDropTarget">TextDropTarget</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TextDropTarget* =<strong>OBJECT</strong> (<strong>WMDropTarget.DropTarget</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; New (text: <strong>Texts.Text</strong>; pos: <strong>Texts.TextPosition</strong>)</td></tr>
+</table>
+<hr><h2 id="_20A88400"><a name="DTPText.TextObject"></a><a href="#DTPText">DTPText</a>.<a href="#DTPText.TextObject">TextObject</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TextObject* =<strong>OBJECT</strong> (<strong>DTPData.ContentObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>firstLine: <strong>WMProperties.SizeProperty</strong><tr><td></td><td>firstLineI: <strong>SIZE</strong><tr><td></td><td>firstPos: <strong>SIZE</strong><tr><td></td><td>firstIsFirstInP: <strong>BOOLEAN</strong><tr><td></td><td>chainNext: <strong>TextObject</strong><tr><td></td><td>chainPrev: <strong>TextObject</strong><tr><td></td><td>chainNextN: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>chainPrevN: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>vAlign: <strong>SIGNED32</strong><tr><td></td><td>borders: <strong>WMProperties.RectangleProperty</strong><tr><td></td><td>bounds: <strong>WMProperties.RectangleProperty</strong><tr><td></td><td>defaultTextColor: <strong>SIGNED32</strong><tr><td></td><td>defaultTextBgColor: <strong>SIGNED32</strong><tr><td></td><td>cursor: <strong>PositionMarker</strong><tr><td></td><td>selection: <strong>Highlight</strong><tr><th align='left'>procedures</th><td>&amp; New<tr><td></td><td> ClickHandler (sender, data: @Any0)<tr><td></td><td> Clone (): <strong>DTPData.ContentObject</strong><tr><td></td><td> SetFocus (focus: <strong>BOOLEAN</strong>)<tr><td></td><td> FocusLost<tr><td></td><td> FocusReceived<tr><td></td><td> GetPluginPointer (): <strong>WMWindowManager.PointerInfo</strong><tr><td></td><td> SetSize (w, h: <strong>SIZE</strong>)<tr><td></td><td> Resize (zoom: <strong>FLOAT32</strong>)<tr><td></td><td> ChainUpdate<tr><td></td><td> Update<tr><td></td><td> <a href="#DTPText.TextObject.SetText">SetText</a> (t: <strong>Texts.Text</strong>)<tr><td></td><td> CreateHighlight (): <strong>Highlight</strong><tr><td></td><td> RemoveHighlight (x: <strong>Highlight</strong>)<tr><td></td><td> CreatePositionMarker (): <strong>PositionMarker</strong><tr><td></td><td> RemovePositionMarker (x: <strong>PositionMarker</strong>)<tr><td></td><td> <a href="#DTPText.TextObject.FindLineByY">FindLineByY</a> (firstLine, y: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> ViewToTextPos (x, y: <strong>SIZE</strong>; <strong>VAR</strong> pos: <strong>SIZE</strong>)<tr><td></td><td> FindScreenPos (pos: <strong>SIZE</strong>; <strong>VAR</strong> x, y: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> RenderLine (canvas: <strong>WMGraphics.Canvas</strong>; <strong>VAR</strong> l: <strong>LineInfo</strong>; linenr: <strong>SIZE</strong>; top: <strong>SIZE</strong>; llen: <strong>SIZE</strong>)<tr><td></td><td> RenderAboveTextMarkers (canvas: <strong>WMGraphics.Canvas</strong>)<tr><td></td><td> PointerDown (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerMove (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerUp (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> KeyEvent (ucs: <strong>SIZE</strong>; flags: <strong>SET</strong>; <strong>VAR</strong> keysym: <strong>SIZE</strong>)<tr><td></td><td> AutoStartDrag<tr><td></td><td> DragDropped (x, y: <strong>SIZE</strong>; dragInfo: <strong>WMWindowManager.DragInfo</strong>)<tr><td></td><td> InsertChar (ch: <strong>Texts.Char32</strong>)<tr><td></td><td> CopySelection<tr><td></td><td> DeleteSelection<tr><td></td><td> Paste<tr><td></td><td> SelectAll<tr><td></td><td> CursorUp (select: <strong>BOOLEAN</strong>)<tr><td></td><td> CursorDown (select: <strong>BOOLEAN</strong>)<tr><td></td><td> CursorLeft (word, select: <strong>BOOLEAN</strong>)<tr><td></td><td> CursorRight (word, select: <strong>BOOLEAN</strong>)<tr><td></td><td> Home (ctrl, select: <strong>BOOLEAN</strong>)<tr><td></td><td> End (ctrl, select: <strong>BOOLEAN</strong>)<tr><td></td><td> Draw (canvas: <strong>WMGraphics.Canvas</strong>; x, y, w, h: <strong>SIZE</strong>; zoomF: <strong>FLOAT32</strong>; quality, preview: <strong>BOOLEAN</strong>)<tr><td></td><td> Redraw<tr><td></td><td> OnDelete<tr><td></td><td> Load (elem: <strong>XML.Element</strong>)<tr><td></td><td> FixLinks<tr><td></td><td> Store (<strong>VAR</strong> w: <strong>Files.Writer</strong>)<tr><td></td><td> Show (x, y: <strong>SIZE</strong>)<tr><td></td><td> Hide<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_20AF2400"><a name="DTPText.TextObject.SetText"></a><a href="#DTPText">DTPText</a>.<a href="#DTPText.TextObject">TextObject</a>.<a href="#DTPText.TextObject.SetText">SetText</a>
+</h3>
+<p> Replace the text</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetText* (t: <strong>Texts.Text</strong>)</pre>
+<hr><h3 id="_20AF6C40"><a name="DTPText.TextObject.FindLineByY"></a><a href="#DTPText">DTPText</a>.<a href="#DTPText.TextObject">TextObject</a>.<a href="#DTPText.TextObject.FindLineByY">FindLineByY</a>
+</h3>
+<p> Find the line number that currently contains the y value (y relative to 0 in component)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindLineByY* (firstLine, y: <strong>SIZE</strong>): <strong>SIZE</strong></pre>
+</body></html>

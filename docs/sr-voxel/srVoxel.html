@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#srVoxel">srVoxel</a></p>
+<hr><h1 id="_95AE01C0"><a name="srVoxel"></a><a href="#ModuleList">Module</a> srVoxel
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#srVoxel.ColoredVox">ColoredVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.GoorowVox">GoorowVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.LitVox">LitVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.ColoredMVox">ColoredMVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.DiffuseMVox">DiffuseMVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.DiffuseSphMVox">DiffuseSphMVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.DiffuseSphVox">DiffuseSphVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.AlphaVox">AlphaVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.TransparaVox">TransparaVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.RainbowVox">RainbowVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.JelloVox">JelloVox</a> =<strong>OBJECT</strong> (<strong>AlphaVox</strong>)<tr><td></td><td><a href="#srVoxel.AirVox">AirVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.InkVox">InkVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.OutlineVox">OutlineVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.GoutlineVox">GoutlineVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.GouraudVox">GouraudVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.VGouraudVox">VGouraudVox</a> =<strong>OBJECT</strong> (<strong>GouraudVox</strong>)<tr><td></td><td><a href="#srVoxel.HGouraudVox">HGouraudVox</a> =<strong>OBJECT</strong> (<strong>GouraudVox</strong>)<tr><td></td><td><a href="#srVoxel.NouraudVox">NouraudVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.DiffuseVox">DiffuseVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.DiffuseNouraudVox">DiffuseNouraudVox</a> =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)<tr><td></td><td><a href="#srVoxel.GridVox">GridVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.GridChirkleVox">GridChirkleVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.CheckerVox">CheckerVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.HexaVox">HexaVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.SPHexaVox">SPHexaVox</a> =<strong>OBJECT</strong> (<strong>HexaVox</strong>)<tr><td></td><td><a href="#srVoxel.PolkaVox">PolkaVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.GeckoVox">GeckoVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.BiVox">BiVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srVoxel.FuzzyTVox">FuzzyTVox</a> =<strong>OBJECT</strong> (<strong>AlphaVox</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95B0C8C0"><a name="srVoxel.ColoredVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.ColoredVox">ColoredVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ColoredVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95B148C0"><a name="srVoxel.GoorowVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.GoorowVox">GoorowVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GoorowVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B19D40"><a name="srVoxel.LitVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.LitVox">LitVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LitVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95B21E00"><a name="srVoxel.ColoredMVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.ColoredMVox">ColoredMVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ColoredMVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue, mfraction: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95B2AAC0"><a name="srVoxel.DiffuseMVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.DiffuseMVox">DiffuseMVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DiffuseMVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B30000"><a name="srVoxel.DiffuseSphMVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.DiffuseSphMVox">DiffuseSphMVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DiffuseSphMVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B35480"><a name="srVoxel.DiffuseSphVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.DiffuseSphVox">DiffuseSphVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DiffuseSphVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B3A900"><a name="srVoxel.AlphaVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.AlphaVox">AlphaVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AlphaVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue, alpha: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95B43180"><a name="srVoxel.TransparaVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.TransparaVox">TransparaVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TransparaVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue, bl: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95B4BE40"><a name="srVoxel.RainbowVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.RainbowVox">RainbowVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RainbowVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue, bl: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95B545C0"><a name="srVoxel.JelloVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.JelloVox">JelloVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> JelloVox* =<strong>OBJECT</strong> (<strong>AlphaVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B59A40"><a name="srVoxel.AirVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.AirVox">AirVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AirVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B5EEC0"><a name="srVoxel.InkVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.InkVox">InkVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InkVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B64440"><a name="srVoxel.OutlineVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.OutlineVox">OutlineVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OutlineVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetOutline (red, green, blue: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95B6C440"><a name="srVoxel.GoutlineVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.GoutlineVox">GoutlineVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GoutlineVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B718C0"><a name="srVoxel.GouraudVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.GouraudVox">GouraudVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GouraudVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> tick<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95B78340"><a name="srVoxel.VGouraudVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.VGouraudVox">VGouraudVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> VGouraudVox* =<strong>OBJECT</strong> (<strong>GouraudVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B7D7C0"><a name="srVoxel.HGouraudVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.HGouraudVox">HGouraudVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HGouraudVox* =<strong>OBJECT</strong> (<strong>GouraudVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B82C40"><a name="srVoxel.NouraudVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.NouraudVox">NouraudVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NouraudVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B880C0"><a name="srVoxel.DiffuseVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.DiffuseVox">DiffuseVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DiffuseVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B8D6C0"><a name="srVoxel.DiffuseNouraudVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.DiffuseNouraudVox">DiffuseNouraudVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DiffuseNouraudVox* =<strong>OBJECT</strong> (<strong>ColoredVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95B92B40"><a name="srVoxel.GridVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.GridVox">GridVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GridVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue, alpha: <strong>SREAL</strong>)<tr><td></td><td> SetGridColor (red, green, blue, alpha: <strong>SREAL</strong>)<tr><td></td><td> SetGrid (z: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95BA0140"><a name="srVoxel.GridChirkleVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.GridChirkleVox">GridChirkleVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GridChirkleVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue, alpha: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95BA88C0"><a name="srVoxel.CheckerVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.CheckerVox">CheckerVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CheckerVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue, alpha: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)<tr><td></td><td> tick</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95BB1A40"><a name="srVoxel.HexaVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.HexaVox">HexaVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> HexaVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> setVox (v: <strong>Voxel</strong>)<tr><td></td><td> connectmessage<tr><td></td><td> talk (c: <strong>CHAR</strong>; <strong>VAR</strong> connection: <strong>BOOLEAN</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95BBCD40"><a name="srVoxel.SPHexaVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.SPHexaVox">SPHexaVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SPHexaVox* =<strong>OBJECT</strong> (<strong>HexaVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_95BC21C0"><a name="srVoxel.PolkaVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.PolkaVox">PolkaVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PolkaVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> SetColor (red, green, blue, r2, g2, b2: <strong>SREAL</strong>)<tr><td></td><td> tick<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95BCCFC0"><a name="srVoxel.GeckoVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.GeckoVox">GeckoVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GeckoVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> SetColor (red, green, blue, alpha: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95BD5740"><a name="srVoxel.BiVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.BiVox">BiVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BiVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> set (x, y: <strong>Voxel</strong>)<tr><td></td><td> probe (x, y, z: <strong>SREAL</strong>): <strong>Voxel</strong><tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_95BE0500"><a name="srVoxel.FuzzyTVox"></a><a href="#srVoxel">srVoxel</a>.<a href="#srVoxel.FuzzyTVox">FuzzyTVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FuzzyTVox* =<strong>OBJECT</strong> (<strong>AlphaVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> setFuzz (f: <strong>SREAL</strong>)<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

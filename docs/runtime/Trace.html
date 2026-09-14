@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Trace">Trace</a></p>
-<hr><h1 id="#_9F354E00"><a name="Trace"></a><a href="#ModuleList">Module</a> Trace
+<hr><h1 id="_DF71FC80"><a name="Trace"></a><a href="#ModuleList">Module</a> Trace
 </h1>
-<p> AUTHOR "fn"; PURPOSE "Low-level trace output based on KernelLog";</p>
+<p> AUTHOR &quot;fn&quot;; PURPOSE &quot;Low-level trace output based on KernelLog&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -67,98 +67,98 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_9F38FE00"><a name="Trace.Send"></a><a href="#Trace">Trace</a>.<a href="#Trace.Send">Send</a>
+<hr><h2 id="_DF75AC80"><a name="Trace.Send"></a><a href="#Trace">Trace</a>.<a href="#Trace.Send">Send</a>
 </h2>
 <p> Send the specified characters to the trace output (cf. Streams.Sender).</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Send* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
-<hr><h2 id="#_9F399C40"><a name="Trace.Ln"></a><a href="#Trace">Trace</a>.<a href="#Trace.Ln">Ln</a>
+<hr><h2 id="_DF764AC0"><a name="Trace.Ln"></a><a href="#Trace">Trace</a>.<a href="#Trace.Ln">Ln</a>
 </h2>
 <p> Skip to the next line on trace output.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Ln*</pre>
-<hr><h2 id="#_9F39E100"><a name="Trace.String"></a><a href="#Trace">Trace</a>.<a href="#Trace.String">String</a>
+<hr><h2 id="_DF768F80"><a name="Trace.String"></a><a href="#Trace">Trace</a>.<a href="#Trace.String">String</a>
 </h2>
 <p> Write a string to the trace output.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> String* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_9F3A3E80"><a name="Trace.StringLn"></a><a href="#Trace">Trace</a>.<a href="#Trace.StringLn">StringLn</a>
+<hr><h2 id="_DF76ED00"><a name="Trace.StringLn"></a><a href="#Trace">Trace</a>.<a href="#Trace.StringLn">StringLn</a>
 </h2>
 <p> Write a string to the trace output and skip to next line.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> StringLn* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_9F3AAFC0"><a name="Trace.Int"></a><a href="#Trace">Trace</a>.<a href="#Trace.Int">Int</a>
+<hr><h2 id="_DF775E40"><a name="Trace.Int"></a><a href="#Trace">Trace</a>.<a href="#Trace.Int">Int</a>
 </h2>
 <p> Write a character.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Int* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_9F3B0000"><a name="Trace.IntSuffix"></a><a href="#Trace">Trace</a>.<a href="#Trace.IntSuffix">IntSuffix</a>
+<hr><h2 id="_DF77AE80"><a name="Trace.IntSuffix"></a><a href="#Trace">Trace</a>.<a href="#Trace.IntSuffix">IntSuffix</a>
 </h2>
-<p> Write "x" as a decimal number with a power-of-two multiplier (K, M or G), followed by "suffix". "w" is the field width, excluding "suffix".</p>
+<p> Write &quot;x&quot; as a decimal number with a power-of-two multiplier (K, M or G), followed by &quot;suffix&quot;. &quot;w&quot; is the field width, excluding &quot;suffix&quot;.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> IntSuffix* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>; <strong>CONST</strong> suffix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_9F3BB940"><a name="Trace.Hex"></a><a href="#Trace">Trace</a>.<a href="#Trace.Hex">Hex</a>
+<hr><h2 id="_DF7867C0"><a name="Trace.Hex"></a><a href="#Trace">Trace</a>.<a href="#Trace.Hex">Hex</a>
 </h2>
-<p> Write an integer in hexadecimal right-justified in a field of at least ABS(w) characters. If w <a name="0"></a> THEN w least significant hex digits of x are written (possibly including leading zeros)</p>
+<p> Write an integer in hexadecimal right-justified in a field of at least ABS(w) characters. If w &lt; 0 THEN w least significant hex digits of x are written (possibly including leading zeros)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Hex* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_9F3C7540"><a name="Trace.Address"></a><a href="#Trace">Trace</a>.<a href="#Trace.Address">Address</a>
+<hr><h2 id="_DF792740"><a name="Trace.Address"></a><a href="#Trace">Trace</a>.<a href="#Trace.Address">Address</a>
 </h2>
-<p> Write "x" as a hexadecimal address</p>
+<p> Write &quot;x&quot; as a hexadecimal address</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Address* (x: <strong>ADDRESS</strong>)</pre>
-<hr><h2 id="#_9F3CC400"><a name="Trace.Size"></a><a href="#Trace">Trace</a>.<a href="#Trace.Size">Size</a>
+<hr><h2 id="_DF797600"><a name="Trace.Size"></a><a href="#Trace">Trace</a>.<a href="#Trace.Size">Size</a>
 </h2>
-<p> Write "x" as a size</p>
+<p> Write &quot;x&quot; as a size</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Size* (x: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_9F3D0E40"><a name="Trace.HIntHex"></a><a href="#Trace">Trace</a>.<a href="#Trace.HIntHex">HIntHex</a>
+<hr><h2 id="_DF79C040"><a name="Trace.HIntHex"></a><a href="#Trace">Trace</a>.<a href="#Trace.HIntHex">HIntHex</a>
 </h2>
-<p> Write "x" as a hexadecimal number. "w" is the field width. Always prints 16 digits.</p>
+<p> Write &quot;x&quot; as a hexadecimal number. &quot;w&quot; is the field width. Always prints 16 digits.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> HIntHex* (x: <strong>SIGNED64</strong>; w: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_9F3D8C80"><a name="Trace.Memory"></a><a href="#Trace">Trace</a>.<a href="#Trace.Memory">Memory</a>
+<hr><h2 id="_DF7A3E80"><a name="Trace.Memory"></a><a href="#Trace">Trace</a>.<a href="#Trace.Memory">Memory</a>
 </h2>
 <p> Write a block of memory in hex.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Memory* (adr: <strong>ADDRESS</strong>; size: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_9F3DEBC0"><a name="Trace.Buffer"></a><a href="#Trace">Trace</a>.<a href="#Trace.Buffer">Buffer</a>
+<hr><h2 id="_DF7A9DC0"><a name="Trace.Buffer"></a><a href="#Trace">Trace</a>.<a href="#Trace.Buffer">Buffer</a>
 </h2>
 <p> Write a buffer in hex.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Buffer* (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_9F3E5780"><a name="Trace.Bits"></a><a href="#Trace">Trace</a>.<a href="#Trace.Bits">Bits</a>
+<hr><h2 id="_DF7B0980"><a name="Trace.Bits"></a><a href="#Trace">Trace</a>.<a href="#Trace.Bits">Bits</a>
 </h2>
 <p> Write bits (ofs..ofs+n-1) of x in binary.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Bits* (x: <strong>SET</strong>; ofs, n: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_9F3EBFC0"><a name="Trace.Blue"></a><a href="#Trace">Trace</a>.<a href="#Trace.Blue">Blue</a>
+<hr><h2 id="_DF7B71C0"><a name="Trace.Blue"></a><a href="#Trace">Trace</a>.<a href="#Trace.Blue">Blue</a>
 </h2>
 <p> Colors</p>
 

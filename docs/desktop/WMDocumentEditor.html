@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMDocumentEditor">WMDocumentEditor</a></p>
+<hr><h1 id="_7FF77540"><a name="WMDocumentEditor"></a><a href="#ModuleList">Module</a> WMDocumentEditor
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Document editor component&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>LoadButton= {0}<tr><td></td><td>StoreButton= {1}<tr><td></td><td>FormatButton= {2}<tr><td></td><td>SearchButton= {3}<tr><td></td><td>WrapButton= {4}<tr><td></td><td>ClearButton= {5}<tr><td></td><td>All= {0..31}<tr><th align='left'>type declarations</th><td><a href="#WMDocumentEditor.Editor">Editor</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_7FF84F80"><a name="WMDocumentEditor.Editor"></a><a href="#WMDocumentEditor">WMDocumentEditor</a>.<a href="#WMDocumentEditor.Editor">Editor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Editor* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>editor: <strong>WMEditors.Editor</strong><tr><th align='left'>procedures</th><td> Load (<strong>CONST</strong> filename, format: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Store (<strong>CONST</strong> filename, format: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetWordWrap (wordWrap: <strong>BOOLEAN</strong>)<tr><td></td><td> Clear<tr><td></td><td> SetText (text: <strong>Texts.Text</strong>)<tr><td></td><td> SetToolbar (buttons: <strong>SET</strong>)<tr><td></td><td> HandleShortcut (ucs: <strong>SIZE</strong>; flags: <strong>SET</strong>; keysym: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ToXml (config: <strong>XML.Element</strong>)<tr><td></td><td> FromXml (config: <strong>XML.Element</strong>)<tr><td></td><td> Handle (<strong>VAR</strong> m: <strong>WMMessages.Message</strong>)<tr><td></td><td> Finalize<tr><td></td><td>&amp; Init</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

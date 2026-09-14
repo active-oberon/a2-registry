@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#ModuleTrees">ModuleTrees</a></p>
+<hr><h1 id="_03586F80"><a name="ModuleTrees"></a><a href="#ModuleList">Module</a> ModuleTrees
+</h1>
+<p> AUTHOR &quot;?&quot;; PURPOSE &quot;Visualize module structure as tree&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#ModuleTrees.ExternalInfo">ExternalInfo</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#ModuleTrees.ModuleTree">ModuleTree</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_0358D380"><a name="ModuleTrees.ExternalInfo"></a><a href="#ModuleTrees">ModuleTrees</a>.<a href="#ModuleTrees.ExternalInfo">ExternalInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExternalInfo* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>modulename: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>position: <strong>Streams.Position</strong><tr><td></td><td>node: <strong>ModuleParser.Node</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_03593BC0"><a name="ModuleTrees.ModuleTree"></a><a href="#ModuleTrees">ModuleTrees</a>.<a href="#ModuleTrees.ModuleTree">ModuleTree</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ModuleTree* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>showTypeHierarchy: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td>onExpandNode: <strong>WMEvents.EventSource</strong><tr><td></td><td>onGoToExternalModule: <strong>WMEvents.EventSource</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> PropertyChanged (sender, data: @Any0)<tr><td></td><td> SetEditor (e: <strong>WMEditors.Editor</strong>)<tr><td></td><td> Erase<tr><td></td><td> RefreshHandler (sender, data: @Any0)<tr><td></td><td> SelectNodeByPos (pos: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

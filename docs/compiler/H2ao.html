@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#H2ao">H2ao</a></p>
+<hr><h1 id="_3BCD1000"><a name="H2ao"></a><a href="#ModuleList">Module</a> H2ao
+</h1>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;C headers to Active Oberon bindings&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Tool= &quot;h2ao 1&quot;<tr><td></td><td>MaxName= 256<tr><td></td><td>MaxType= 1024<tr><td></td><td>MaxPath= 1024<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> MaxName <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Spelling =<strong>ARRAY</strong> MaxType <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>Path =<strong>ARRAY</strong> MaxPath <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#H2ao.Settings">Settings</a> =<strong>RECORD</strong> <tr><th align='left'>procedures</th><td> ModuleName (<strong>CONST</strong> header: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> module: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Generate (<strong>CONST</strong> settings: <strong>Settings</strong>; root: <strong>JSON.Value</strong>; <strong>CONST</strong> header, preprocessed: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; writer: <strong>Streams.Writer</strong>; <strong>VAR</strong> module: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Bind (<strong>VAR</strong> settings: <strong>Settings</strong>; writer: <strong>Streams.Writer</strong>; error: <strong>Streams.Writer</strong>; <strong>VAR</strong> module: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#H2ao.Counts">Counts</a> (<strong>VAR</strong> proceduresOut, typesOut, constantsOut, dataOut, skippedOut: <strong>SIGNED32</strong>)<tr><td></td><td> Compiler (<strong>VAR</strong> program: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_3BCF7740">
+</h1><hr><h2 id="_3BCF7F00"><a name="H2ao.Settings"></a><a href="#H2ao">H2ao</a>.<a href="#H2ao.Settings">Settings</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Settings* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>module: <strong>Name</strong><tr><td></td><td>header: <strong>Path</strong><tr><td></td><td>libraries: <strong>Spelling</strong><tr><td></td><td>prefixes: <strong>Spelling</strong><tr><td></td><td>compiler: <strong>Path</strong><tr><td></td><td>includes: <strong>Spelling</strong><tr><td></td><td>records: <strong>BOOLEAN</strong><tr><td></td><td>varargs: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_3BD02800"><a name="H2ao.Counts"></a><a href="#H2ao">H2ao</a>.<a href="#H2ao.Counts">Counts</a>
+</h2>
+<p> What was found, for whoever asks -- the command line prints it and so does a test.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Counts* (<strong>VAR</strong> proceduresOut, typesOut, constantsOut, dataOut, skippedOut: <strong>SIGNED32</strong>)</pre>
+</body></html>

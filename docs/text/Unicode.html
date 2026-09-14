@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Unicode">Unicode</a></p>
+<hr><h1 id="_44DEF180"><a name="Unicode"></a><a href="#ModuleList">Module</a> Unicode
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Unicode.Cn">Cn</a>= 0<tr><td></td><td>Lu= 1<tr><td></td><td>Ll= 2<tr><td></td><td>Lt= 3<tr><td></td><td>Lm= 4<tr><td></td><td>Lo= 5<tr><td></td><td>Mn= 6<tr><td></td><td>Mc= 7<tr><td></td><td>Me= 8<tr><td></td><td>Nd= 9<tr><td></td><td>Nl= 10<tr><td></td><td>No= 11<tr><td></td><td>Pc= 12<tr><td></td><td>Pd= 13<tr><td></td><td>Ps= 14<tr><td></td><td>Pe= 15<tr><td></td><td>Pi= 16<tr><td></td><td>Pf= 17<tr><td></td><td>Po= 18<tr><td></td><td>Sm= 19<tr><td></td><td>Sc= 20<tr><td></td><td>Sk= 21<tr><td></td><td>So= 22<tr><td></td><td>Zs= 23<tr><td></td><td>Zl= 24<tr><td></td><td>Zp= 25<tr><td></td><td>Cc= 26<tr><td></td><td>Cf= 27<tr><td></td><td>Cs= 28<tr><td></td><td>Co= 29<tr><td></td><td><a href="#Unicode.MaxCode">MaxCode</a>= 1114111<tr><th align='left'>procedures</th><td> <a href="#Unicode.Category">Category</a> (cp: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Unicode.ToUpper">ToUpper</a> (cp: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#Unicode.ToLower">ToLower</a> (cp: <strong>SIGNED32</strong>): <strong>SIGNED32</strong><tr><td></td><td> IsUpper (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsLower (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Unicode.IsLetter">IsLetter</a> (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Unicode.IsDigit">IsDigit</a> (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsNumber (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsLetterOrDigit (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Unicode.IsSpace">IsSpace</a> (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsControl (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsPunctuation (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_44E25DC0">
+</h1>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;The Unicode character database as a compiled table: categories and simple case mapping&quot;; LIMITATIONS &quot;- simple case mapping only: the one-to-many mappings of SpecialCasing.txt (sharp s to SS) and every locale rule are not here; - no normalisation, no decomposition, no bidirectional class -- categories and case is what the string layer and the pattern matcher need, and adding the rest is adding columns to the same generator.&quot;</p>
+<hr><h2 id="_44E37B00"><a name="Unicode.Cn"></a><a href="#Unicode">Unicode</a>.<a href="#Unicode.Cn">Cn</a>
+</h2>
+<p> general categories, the two-letter names of the standard</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> Cn*= 0</pre>
+<hr><h2 id="_44E3C600"><a name="Unicode.MaxCode"></a><a href="#Unicode">Unicode</a>.<a href="#Unicode.MaxCode">MaxCode</a>
+</h2>
+<p> the largest code point Unicode defines</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MaxCode*= 1114111</pre>
+<hr><h2 id="_44E409C0"><a name="Unicode.Category"></a><a href="#Unicode">Unicode</a>.<a href="#Unicode.Category">Category</a>
+</h2>
+<p> The general category of a code point; Cn for one Unicode does not assign.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Category* (cp: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="_44E47C00"><a name="Unicode.ToUpper"></a><a href="#Unicode">Unicode</a>.<a href="#Unicode.ToUpper">ToUpper</a>
+</h2>
+<p> The simple upper case of cp, or cp when it has none.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToUpper* (cp: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="_44E4E800"><a name="Unicode.ToLower"></a><a href="#Unicode">Unicode</a>.<a href="#Unicode.ToLower">ToLower</a>
+</h2>
+<p> The simple lower case of cp, or cp when it has none.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToLower* (cp: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="_44E55340"><a name="Unicode.IsLetter"></a><a href="#Unicode">Unicode</a>.<a href="#Unicode.IsLetter">IsLetter</a>
+</h2>
+<p> A letter is any of Lu Ll Lt Lm Lo, which is what &quot;letter&quot; means in the standard.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsLetter* (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_44E5D580"><a name="Unicode.IsDigit"></a><a href="#Unicode">Unicode</a>.<a href="#Unicode.IsDigit">IsDigit</a>
+</h2>
+<p> A decimal digit: Nd, not the other numbers -- Roman numerals are Nl and one half is No.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsDigit* (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_44E658C0"><a name="Unicode.IsSpace"></a><a href="#Unicode">Unicode</a>.<a href="#Unicode.IsSpace">IsSpace</a>
+</h2>
+<p> Space is Zs Zl Zp plus the ASCII controls every language calls white space.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> IsSpace* (cp: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

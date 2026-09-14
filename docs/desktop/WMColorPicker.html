@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMColorPicker">WMColorPicker</a></p>
+<hr><h1 id="_BA521800"><a name="WMColorPicker"></a><a href="#ModuleList">Module</a> WMColorPicker
+</h1>
+<p> AUTHOR &quot;BohdanT&quot;; PURPOSE &quot;Powerful color picker dialog&quot;; December 14-17, 2014</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>stRed= 0<tr><td></td><td>stGreen= 1<tr><td></td><td>stBlue= 2<tr><td></td><td>stHue= 3<tr><td></td><td>stSat= 4<tr><td></td><td>stLum= 5<tr><th align='left'>type declarations</th><td><a href="#WMColorPicker.ColorInd">ColorInd</a> =<strong>OBJECT</strong> (<strong>WMColorComponents.ColorPot</strong>)<tr><td></td><td><a href="#WMColorPicker.Gradient">Gradient</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)<tr><td></td><td><a href="#WMColorPicker.Spectrum">Spectrum</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)<tr><td></td><td><a href="#WMColorPicker.PickColorDlg">PickColorDlg</a> =<strong>OBJECT</strong> (<strong>WMDialogs.Dialog</strong>)<tr><th align='left'>variables</th><td>userPalette: <strong>ARRAY</strong> CustomCount <strong>OF</strong> <strong>WMGraphics.Color</strong><tr><th align='left'>procedures</th><td> DrawBevel (canvas: <strong>WMGraphics.Canvas</strong>; rect: <strong>WMRectangles.Rectangle</strong>; down: <strong>BOOLEAN</strong>; mode: <strong>INTEGER</strong>)<tr><td></td><td> ColorToRGB (color: <strong>WMGraphics.Color</strong>; <strong>VAR</strong> r, g, b: <strong>WMGraphics.Color</strong>)<tr><td></td><td> RGBToColor (r, g, b: <strong>WMGraphics.Color</strong>): <strong>WMGraphics.Color</strong><tr><td></td><td> <a href="#WMColorPicker.PickColorXY">PickColorXY</a> (x, y: <strong>SIZE</strong>; <strong>VAR</strong> color: <strong>WMGraphics.Color</strong>): <strong>WMGraphics.Color</strong><tr><td></td><td> <a href="#WMColorPicker.PickColor">PickColor</a> (<strong>VAR</strong> color: <strong>WMGraphics.Color</strong>): <strong>WMGraphics.Color</strong><tr><td></td><td> Open</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BA5451C0"><a name="WMColorPicker.ColorInd"></a><a href="#WMColorPicker">WMColorPicker</a>.<a href="#WMColorPicker.ColorInd">ColorInd</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ColorInd* =<strong>OBJECT</strong> (<strong>WMColorComponents.ColorPot</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> PropertyChanged (sender, data: @Any0)<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BA54D0C0"><a name="WMColorPicker.Gradient"></a><a href="#WMColorPicker">WMColorPicker</a>.<a href="#WMColorPicker.Gradient">Gradient</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Gradient* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>position: <strong>SIZE</strong><tr><td></td><td>posX: <strong>SIZE</strong><tr><td></td><td>posY: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> SetPosition (val: <strong>SIZE</strong>)<tr><td></td><td> PointerDown (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerMove (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerUp (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td>&amp; Init<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BA560980"><a name="WMColorPicker.Spectrum"></a><a href="#WMColorPicker">WMColorPicker</a>.<a href="#WMColorPicker.Spectrum">Spectrum</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Spectrum* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> PointerDown (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerMove (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerUp (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td>&amp; Init<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BA56F940"><a name="WMColorPicker.PickColorDlg"></a><a href="#WMColorPicker">WMColorPicker</a>.<a href="#WMColorPicker.PickColorDlg">PickColorDlg</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PickColorDlg* =<strong>OBJECT</strong> (<strong>WMDialogs.Dialog</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>colorInd: <strong>ColorInd</strong><tr><th align='left'>procedures</th><td> Ok (sender, data: @Any0)<tr><td></td><td> Abort (sender, data: @Any0)<tr><td></td><td>&amp; New</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BA579180"><a name="WMColorPicker.PickColorXY"></a><a href="#WMColorPicker">WMColorPicker</a>.<a href="#WMColorPicker.PickColorXY">PickColorXY</a>
+</h2>
+<p> Open a ColorPickDialog at x:y position with default value color. Return ResOk or ResAbort. If res is ResOk color contains the selected color. Color is not changed if res is ResAbort</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PickColorXY* (x, y: <strong>SIZE</strong>; <strong>VAR</strong> color: <strong>WMGraphics.Color</strong>): <strong>WMGraphics.Color</strong></pre>
+<hr><h2 id="_BA586040"><a name="WMColorPicker.PickColor"></a><a href="#WMColorPicker">WMColorPicker</a>.<a href="#WMColorPicker.PickColor">PickColor</a>
+</h2>
+<p> Open a ColorPickDialog at default position with default value color. Return ResOk or ResAbort. If res is ResOk color contains the selected color. Color is not changed if res is ResAbort</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PickColor* (<strong>VAR</strong> color: <strong>WMGraphics.Color</strong>): <strong>WMGraphics.Color</strong></pre>
+</body></html>

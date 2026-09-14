@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxDocumentationTree">FoxDocumentationTree</a></p>
-<hr><h1 id="#_7BC06980"><a name="FoxDocumentationTree"></a><a href="#ModuleList">Module</a> FoxDocumentationTree
+<hr><h1 id="_C2A19A00"><a name="FoxDocumentationTree"></a><a href="#ModuleList">Module</a> FoxDocumentationTree
 </h1>
 <p> Documentation tree to represent a module documentation. Independent of source language.</p>
 
@@ -67,18 +67,18 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_7BC2AFC0">
-</h1><a name="concept"></a><hr><h1 id="#concept">
+<hr><h1 id="_C2A3E040">
+</h1><a name="concept"></a><hr><h1 id="concept">
 </h1>
 <h2> FoxDocumentationTree</h2>
 
-<p> All information that has been parsed by the documentation parser is stored in a documentation tree. The documentation tree is implemented in module<br> <a href="#FoxDocumentationTree">FoxDocumentationTree</a>. The root of such a documentation is a <a href="#FoxDocumenationTree.Document">Document</a>, it conists of a description and a number of sections. Each <a href="#FoxDocumentationTree.Section">section</a> consist of a title, cotents and<br> can have a label. Sections that actually have a label are merged by the DocumentationBackend. A rough picture is also provided by the <a href="#docuEBNF">EBNF</a>.</p>
+<p> All information that has been parsed by the documentation parser is stored in a documentation tree. The documentation tree is implemented in module \ <a href="#FoxDocumentationTree">FoxDocumentationTree</a>. The root of such a documentation is a <a href="#FoxDocumenationTree.Document">Document</a>, it conists of a description and a number of sections. Each <a href="#FoxDocumentationTree.Section">section</a> consist of a title, cotents and \ can have a label. Sections that actually have a label are merged by the DocumentationBackend. A rough picture is also provided by the <a href="#docuEBNF">EBNF</a>.</p>
 
 <a name="docuEBNF"></a><h3> EBNF of the documentation in a paragraph</h3>
 
-<p> The following EBNF of the documentation cannot be taken literally because some additional rules are implemented in scanner and parser. However it provides a picture<br> of the documentation rules and how they are parsed.</p>
+<p> The following EBNF of the documentation cannot be taken literally because some additional rules are implemented in scanner and parser. However it provides a picture \ of the documentation rules and how they are parsed.</p>
 
-<pre>TextElement = String |BeginItalic Text EndItalic | BeginBold Text EndBold | "[[" string | Text "]]" | "&lt&lt" String "&gt&gt" | "{{{" any text "}}}" | "\\" | "|" Text | "|=" Text | </pre>
+<pre>TextElement = String |BeginItalic Text EndItalic | BeginBold Text EndBold | &quot;[[&quot; string | Text &quot;]]&quot; | &quot;&lt;&lt;&quot; String &quot;&gt;&gt;&quot; | &quot;{{{&quot; any text &quot;}}}&quot; | &quot;\\&quot; | &quot;|&quot; Text | &quot;|=&quot; Text | </pre>
 
 <pre>ElementList = {Element} </pre>
 
@@ -86,7 +86,7 @@
 
 <pre>Paragraphs = {Paragraph}. </pre>
 
-<pre>Section = "@"{"@"} Title Contents. </pre>
+<pre>Section = &quot;@&quot;{&quot;@&quot;} Title Contents. </pre>
 
 <pre>Contents = {Paragraph}. </pre>
 
@@ -99,12 +99,12 @@
 <pre>Documents = {Document}. </pre>
 
 <pre>Documentation =  {Document}. </pre>
-<hr><h2 id="#_7BC4ACC0"><a name="FoxDocumentationTree.ElementType"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.ElementType">ElementType</a>
+<hr><h2 id="_C2A5E340"><a name="FoxDocumentationTree.ElementType"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.ElementType">ElementType</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> ElementType* =<strong>ENUMERATION</strong> <strong>CONST</strong> Whitespace*= 0, <strong>CONST</strong> Default*= 1, <strong>CONST</strong> Italic*= 2, <strong>CONST</strong> Bold*= 3, <strong>CONST</strong> Underline*= 4, <strong>CONST</strong> Link*= 5, <strong>CONST</strong> WeakLink*= 6, <strong>CONST</strong> Label*= 7, <strong>CONST</strong> Code*= 8, <strong>CONST</strong> LineBreak*= 9, <strong>CONST</strong> DataCell*= 10, <strong>CONST</strong> HeaderCell*= 11, <strong>CONST</strong> Row*= 12</pre>
-<hr><h2 id="#_7BC5B780"><a name="FoxDocumentationTree.TextElement"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.TextElement">TextElement</a>
+<hr><h2 id="_C2A6EE00"><a name="FoxDocumentationTree.TextElement"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.TextElement">TextElement</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -112,14 +112,14 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>type: <strong>ElementType</strong><tr><td></td><td>string: <strong>String</strong><tr><td></td><td>text: <strong>Text</strong><tr><th align='left'>procedures</th><td>& InitTextElement (type: <strong>ElementType</strong>)<tr><td></td><td> SetString (string: <strong>String</strong>)<tr><td></td><td> SetType (t: <strong>ElementType</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>type: <strong>ElementType</strong><tr><td></td><td>string: <strong>String</strong><tr><td></td><td>text: <strong>Text</strong><tr><th align='left'>procedures</th><td>&amp; InitTextElement (type: <strong>ElementType</strong>)<tr><td></td><td> SetString (string: <strong>String</strong>)<tr><td></td><td> SetType (t: <strong>ElementType</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_7BC67AC0"><a name="FoxDocumentationTree.Text"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Text">Text</a>
+<hr><h2 id="_C2A7B140"><a name="FoxDocumentationTree.Text"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Text">Text</a>
 </h2>
 <p> Comment of Text</p>
 
@@ -146,12 +146,12 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_7BC87680"><a name="FoxDocumentationTree.ParagraphType"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.ParagraphType">ParagraphType</a>
+<hr><h2 id="_C2A9AD00"><a name="FoxDocumentationTree.ParagraphType"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.ParagraphType">ParagraphType</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> ParagraphType* =<strong>ENUMERATION</strong> <strong>CONST</strong> TextBlock*= 0, <strong>CONST</strong> Heading*= 1, <strong>CONST</strong> Bullet*= 2, <strong>CONST</strong> Number*= 3, <strong>CONST</strong> Description*= 4, <strong>CONST</strong> Code*= 5, <strong>CONST</strong> Line*= 6, <strong>CONST</strong> Table*= 7</pre>
-<hr><h2 id="#_7BC924C0"><a name="FoxDocumentationTree.Paragraph"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Paragraph">Paragraph</a>
+<hr><h2 id="_C2AA5B40"><a name="FoxDocumentationTree.Paragraph"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Paragraph">Paragraph</a>
 </h2>
 <h3> EBNF</h3>
 
@@ -163,7 +163,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>type: <strong>ParagraphType</strong><tr><td></td><td>level: <strong>SIGNED32</strong><tr><td></td><td>text: <strong>Text</strong><tr><td></td><td>description: <strong>Text</strong><tr><td></td><td>label: <strong>Strings.String</strong><tr><th align='left'>procedures</th><td> SetLabel (label: <strong>String</strong>)<tr><td></td><td>& InitParagraph (type: <strong>ParagraphType</strong>)<tr><td></td><td> SetLevel (level: <strong>SIGNED32</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>type: <strong>ParagraphType</strong><tr><td></td><td>level: <strong>SIGNED32</strong><tr><td></td><td>text: <strong>Text</strong><tr><td></td><td>description: <strong>Text</strong><tr><td></td><td>label: <strong>Strings.String</strong><tr><th align='left'>procedures</th><td> SetLabel (label: <strong>String</strong>)<tr><td></td><td>&amp; InitParagraph (type: <strong>ParagraphType</strong>)<tr><td></td><td> SetLevel (level: <strong>SIGNED32</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -172,7 +172,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_7BCA0C00"><a name="FoxDocumentationTree.Paragraphs"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Paragraphs">Paragraphs</a>
+<hr><h2 id="_C2AB4280"><a name="FoxDocumentationTree.Paragraphs"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Paragraphs">Paragraphs</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -186,7 +186,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_7BCAF640"><a name="FoxDocumentationTree.Section"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Section">Section</a>
+<hr><h2 id="_C2AC2CC0"><a name="FoxDocumentationTree.Section"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Section">Section</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -194,7 +194,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>level: <strong>SIGNED32</strong><tr><td></td><td>title: <strong>Text</strong><tr><td></td><td>contents: <strong>Paragraphs</strong><tr><td></td><td>label: <strong>String</strong><tr><th align='left'>procedures</th><td>& InitSection (level: <strong>SIGNED32</strong>)<tr><td></td><td> SetLabel (label: <strong>String</strong>)<tr><td></td><td> SetContents (paragraphs: <strong>Paragraphs</strong>)<tr><td></td><td> WriteLabel (<strong>CONST</strong> l: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteHeading (level: <strong>SIGNED32</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>level: <strong>SIGNED32</strong><tr><td></td><td>title: <strong>Text</strong><tr><td></td><td>contents: <strong>Paragraphs</strong><tr><td></td><td>label: <strong>String</strong><tr><th align='left'>procedures</th><td>&amp; InitSection (level: <strong>SIGNED32</strong>)<tr><td></td><td> SetLabel (label: <strong>String</strong>)<tr><td></td><td> SetContents (paragraphs: <strong>Paragraphs</strong>)<tr><td></td><td> WriteLabel (<strong>CONST</strong> l: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> WriteHeading (level: <strong>SIGNED32</strong>; <strong>CONST</strong> string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -204,7 +204,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_7BCC2580"><a name="FoxDocumentationTree.Sections"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Sections">Sections</a>
+<hr><h2 id="_C2AD5C00"><a name="FoxDocumentationTree.Sections"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Sections">Sections</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -218,7 +218,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_7BCD0E80"><a name="FoxDocumentationTree.Document"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Document">Document</a>
+<hr><h2 id="_C2AE4500"><a name="FoxDocumentationTree.Document"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Document">Document</a>
 </h2>
 <p> a document provides the documentation of a module in a structured way</p>
 
@@ -228,11 +228,11 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>description: <strong>Paragraphs</strong><tr><td></td><td>sections: <strong>Sections</strong><tr><th align='left'>procedures</th><td>& InitDocument</td></tr>
+<table><tr><th align='left'>variables</th><td>description: <strong>Paragraphs</strong><tr><td></td><td>sections: <strong>Sections</strong><tr><th align='left'>procedures</th><td>&amp; InitDocument</td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_7BCDAEC0"><a name="FoxDocumentationTree.Documents"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Documents">Documents</a>
+<hr><h2 id="_C2AEE540"><a name="FoxDocumentationTree.Documents"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Documents">Documents</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -244,7 +244,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_7BCE6040"><a name="FoxDocumentationTree.Documentation"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Documentation">Documentation</a>
+<hr><h2 id="_C2AF96C0"><a name="FoxDocumentationTree.Documentation"></a><a href="#FoxDocumentationTree">FoxDocumentationTree</a>.<a href="#FoxDocumentationTree.Documentation">Documentation</a>
 </h2>
 <p> a documentation provides the documentation of several modules</p>
 
@@ -254,7 +254,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>documents: <strong>Documents</strong><tr><th align='left'>procedures</th><td>& InitDocumentation</td></tr>
+<table><tr><th align='left'>variables</th><td>documents: <strong>Documents</strong><tr><th align='left'>procedures</th><td>&amp; InitDocumentation</td></tr>
 </td></tr>
 </table>
 </body></html>

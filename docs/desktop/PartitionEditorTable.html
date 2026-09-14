@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#PartitionEditorTable">PartitionEditorTable</a></p>
+<hr><h1 id="_69F8C200"><a name="PartitionEditorTable"></a><a href="#ModuleList">Module</a> PartitionEditorTable
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Partition Table Abstraction&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Ok= Disks.Ok<tr><td></td><td>DeviceNotFound= 98<tr><td></td><td>BlocksizeNotSupported= 99<tr><td></td><td>NoSignature= 100<tr><td></td><td>SizeChanged= 1<tr><td></td><td>StartLbaChanged= 2<tr><td></td><td>StartChsChanged= 3<tr><td></td><td>EndLbaChanged= 4<tr><td></td><td>EndChsChanged= 5<tr><th align='left'>type declarations</th><td>Buffer =<strong>ARRAY</strong> BlockSize <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#PartitionEditorTable.Block">Block</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#PartitionEditorTable.Partition">Partition</a> =<strong>RECORD</strong> <tr><td></td><td>PartitionTable =<strong>ARRAY</strong> 4 <strong>OF</strong> <strong>Partition</strong><tr><th align='left'>procedures</th><td> ReadBlock (<strong>CONST</strong> devicename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; block: <strong>SIGNED32</strong>; <strong>VAR</strong> buffer: <strong>Buffer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> WriteBlock (<strong>CONST</strong> devicename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; block: <strong>SIGNED32</strong>; <strong>VAR</strong> buffer: <strong>Buffer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> HasSignature (<strong>CONST</strong> buffer: <strong>Buffer</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#PartitionEditorTable.LoadPartitionTable">LoadPartitionTable</a> (<strong>CONST</strong> devicename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; block: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>PartitionTable</strong><tr><td></td><td> ParseBuffer (<strong>CONST</strong> buffer: <strong>Buffer</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>PartitionTable</strong><tr><td></td><td> <a href="#PartitionEditorTable.StorePartitionTable">StorePartitionTable</a> (<strong>CONST</strong> devicename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; block: <strong>SIGNED32</strong>; <strong>CONST</strong> pt: <strong>PartitionTable</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> WriteToBuffer (<strong>CONST</strong> pt: <strong>PartitionTable</strong>; <strong>VAR</strong> buffer: <strong>Buffer</strong>)<tr><td></td><td> <a href="#PartitionEditorTable.Changed">Changed</a> (changeType: <strong>SIGNED32</strong>; <strong>VAR</strong> partition: <strong>Partition</strong>; <strong>CONST</strong> devicename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#PartitionEditorTable.Clear">Clear</a> (<strong>VAR</strong> partitionTable: <strong>PartitionTable</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_69FC3B40"><a name="PartitionEditorTable.Block"></a><a href="#PartitionEditorTable">PartitionEditorTable</a>.<a href="#PartitionEditorTable.Block">Block</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Block* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>lba: <strong>SIGNED32</strong><tr><td></td><td>cylinder: <strong>SIGNED32</strong><tr><td></td><td>head: <strong>SIGNED32</strong><tr><td></td><td>sector: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_69FCA400"><a name="PartitionEditorTable.Partition"></a><a href="#PartitionEditorTable">PartitionEditorTable</a>.<a href="#PartitionEditorTable.Partition">Partition</a>
+</h2>
+<p> Datastructure representing a slot of a partition table</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Partition* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>flag: <strong>CHAR</strong><tr><td></td><td>type: <strong>SIGNED32</strong><tr><td></td><td>start: <strong>Block</strong><tr><td></td><td>end: <strong>Block</strong><tr><td></td><td>size: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_69FD4400"><a name="PartitionEditorTable.LoadPartitionTable"></a><a href="#PartitionEditorTable">PartitionEditorTable</a>.<a href="#PartitionEditorTable.LoadPartitionTable">LoadPartitionTable</a>
+</h2>
+<p> This procedure is called by the Partition Editor when you press the Load button. It should load the block number &lt;block&gt; on the device &lt;devicename&gt; and extract the partition table inside if any</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadPartitionTable* (<strong>CONST</strong> devicename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; block: <strong>SIGNED32</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>): <strong>PartitionTable</strong></pre>
+<hr><h2 id="_69FE2BC0"><a name="PartitionEditorTable.StorePartitionTable"></a><a href="#PartitionEditorTable">PartitionEditorTable</a>.<a href="#PartitionEditorTable.StorePartitionTable">StorePartitionTable</a>
+</h2>
+<p> This procedure is called by the Partition Editor when you press the Store button. It shall encode the given partition table &lt;pt&gt; into a 512 bytes block and store this block on the named device at block number &lt;block&gt;</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> StorePartitionTable* (<strong>CONST</strong> devicename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; block: <strong>SIGNED32</strong>; <strong>CONST</strong> pt: <strong>PartitionTable</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="_69FF3700"><a name="PartitionEditorTable.Changed"></a><a href="#PartitionEditorTable">PartitionEditorTable</a>.<a href="#PartitionEditorTable.Changed">Changed</a>
+</h2>
+<p> This procedure is called by the Partition Editor when the user presses the enter key on an editor component. Dependent of the changeType, we should now fixup all other entries of the provide partition table entry, e.g. if the start LBA changed, we should adjust the start CHS and the partition size. The Partition Editor will visualize changes we do to the Partition record</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Changed* (changeType: <strong>SIGNED32</strong>; <strong>VAR</strong> partition: <strong>Partition</strong>; <strong>CONST</strong> devicename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="_6A00A100"><a name="PartitionEditorTable.Clear"></a><a href="#PartitionEditorTable">PartitionEditorTable</a>.<a href="#PartitionEditorTable.Clear">Clear</a>
+</h2>
+<p> Set all entries the partition table &lt;partitionTable&gt; to zero, needed by editor component. Can also be used here.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Clear* (<strong>VAR</strong> partitionTable: <strong>PartitionTable</strong>)</pre>
+</body></html>

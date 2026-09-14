@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#MatrixBlockSolvers">MatrixBlockSolvers</a></p>
-<hr><h1 id="#_FD00D900"><a name="MatrixBlockSolvers"></a><a href="#ModuleList">Module</a> MatrixBlockSolvers
+<hr><h1 id="_7F4606C0"><a name="MatrixBlockSolvers"></a><a href="#ModuleList">Module</a> MatrixBlockSolvers
 </h1>
 <h3>Summary</h3>
 
@@ -49,19 +49,19 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FD018640"><a name="MatrixBlockSolvers.LU"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.LU">LU</a>
+<hr><h2 id="_7F46B400"><a name="MatrixBlockSolvers.LU"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.LU">LU</a>
 </h2>
 <p> see http://www.maths.man.ac.uk/~nareport/narep207.pdf/demmel95block.pdf</p>
 
 <p> A=LU; diagonal blocks are squareA= <a href="#A11,A12],[A21,A22">A11,A12],[A21,A22</a>=[[I,0],[L21,I * <a href="#A11,A12][0,S">A11,A12][0,S</a> i.e.</p>
 
-<p>A = <a href="#A11,A12]">A11,A12]</a> = <a href="#I">I</a> , 0] * <a href="#A11,A12]">A11,A12]</a> <a href="#A21,A22]">A21,A22]</a> <a href="#L21,I]">L21,I]</a> <a href="#0">0</a> , S </p>
+<p>A = [A11,A12] = [ I , 0] * [A11,A12] [A21,A22] [L21,I] [ 0 , S ]</p>
 
 <p>S = Schur Complement = A22-A21 * A11inv * A12to be applied recursively</p>
 
 <dl>
 <dt><strong>specifically</strong></dt>
-<dd>1) U11:=A11; U12 := A122) Solve L21*A11 = A21 for L21 either using Gauss Elimination with partial pivoting or or compute A11inv explicitely, so that step 2 becomes a matrix multiplication and Ux=y is solved entirely by matrix vector multziplication3) S := A22 - L21 * A12 (Schur complement)4) Compute LU factorisation of S recursively</dd>
+<dd>1) U11:=A11; U12 := A122) Solve L21*A11 = A21 for L21 -either using Gauss Elimination with partial pivoting or -or compute A11inv explicitely, so that step 2 becomes a matrix multiplication and Ux=y is solved entirely by matrix vector multziplication3) S := A22 - L21 * A12 (Schur complement)4) Compute LU factorisation of S recursively</dd>
 
 
 </dl>
@@ -73,10 +73,10 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& Init (<strong>VAR</strong> A: <strong>Matrix</strong>; blocksize: <strong>SIGNED32</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; Init (<strong>VAR</strong> A: <strong>Matrix</strong>; blocksize: <strong>SIGNED32</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FD0416C0"><a name="MatrixBlockSolvers.LUAgent"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.LUAgent">LUAgent</a>
+<hr><h2 id="_7F494B00"><a name="MatrixBlockSolvers.LUAgent"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.LUAgent">LUAgent</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -84,12 +84,12 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& Init (datasize, blocksize: <strong>SIZE</strong>; notify: <strong>Notifier</strong>; prio: <strong>SIGNED32</strong>)<tr><td></td><td> Set (<strong>VAR</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> @Body</td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; Init (datasize, blocksize: <strong>SIZE</strong>; notify: <strong>Notifier</strong>; prio: <strong>SIGNED32</strong>)<tr><td></td><td> Set (<strong>VAR</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> @Body</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FD04DA80"><a name="MatrixBlockSolvers.Inverse"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.Inverse">Inverse</a>
+<hr><h2 id="_7F4A0EC0"><a name="MatrixBlockSolvers.Inverse"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.Inverse">Inverse</a>
 </h2>
 <p> Block matrix inversion is of particular advantage if A is diagonal and SchurComplement is a small matrix, because only those two need inversion.</p>
 
@@ -100,7 +100,7 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_FD0568C0"><a name="MatrixBlockSolvers.LUActive"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.LUActive">LUActive</a>
+<hr><h2 id="_7F4A9D00"><a name="MatrixBlockSolvers.LUActive"></a><a href="#MatrixBlockSolvers">MatrixBlockSolvers</a>.<a href="#MatrixBlockSolvers.LUActive">LUActive</a>
 </h2>
 <h3>Syntax</h3>
 

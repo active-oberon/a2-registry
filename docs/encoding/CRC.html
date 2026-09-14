@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#CRC">CRC</a></p>
-<hr><h1 id="#_F281A240"><a name="CRC"></a><a href="#ModuleList">Module</a> CRC
+<hr><h1 id="_9CFA0D80"><a name="CRC"></a><a href="#ModuleList">Module</a> CRC
 </h1>
-<p> AUTHOR "prk/TF"; PURPOSE "CRC utilities";</p>
+<p> AUTHOR &quot;prk/TF&quot;; PURPOSE &quot;CRC utilities&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -42,7 +42,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_F28211C0">
+<hr><h1 id="_9CFA7D00">
 </h1>
 <ul>
 <li> History: <strong></strong></li>
@@ -51,7 +51,7 @@
 
 <li> 08.01.2007 added SetCRC procedures to enable other initial values (staubesv)</li>
 </ul>
-<hr><h2 id="#_F2826680"><a name="CRC.CRC16Stream"></a><a href="#CRC">CRC</a>.<a href="#CRC.CRC16Stream">CRC16Stream</a>
+<hr><h2 id="_9CFAD1C0"><a name="CRC.CRC16Stream"></a><a href="#CRC">CRC</a>.<a href="#CRC.CRC16Stream">CRC16Stream</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -59,13 +59,13 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>crc: <strong>SIGNED16</strong><tr><th align='left'>procedures</th><td>& InitStream<tr><td></td><td> Send (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> SetCRC (crc: <strong>SIGNED16</strong>)<tr><td></td><td> GetCRC (): <strong>SIGNED16</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>crc: <strong>SIGNED16</strong><tr><th align='left'>procedures</th><td>&amp; InitStream<tr><td></td><td> Send (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> SetCRC (crc: <strong>SIGNED16</strong>)<tr><td></td><td> GetCRC (): <strong>SIGNED16</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F2834740"><a name="CRC.CRC32Stream"></a><a href="#CRC">CRC</a>.<a href="#CRC.CRC32Stream">CRC32Stream</a>
+<hr><h2 id="_9CFBB280"><a name="CRC.CRC32Stream"></a><a href="#CRC">CRC</a>.<a href="#CRC.CRC32Stream">CRC32Stream</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -73,14 +73,14 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& InitStream<tr><td></td><td> Reset<tr><td></td><td> Send (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> SetCRC (crc: <strong>SIGNED32</strong>)<tr><td></td><td> GetCRC (): <strong>SIGNED32</strong><tr><td></td><td> GetUninvertedCRC (): <strong>SIGNED32</strong></td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; InitStream<tr><td></td><td> Reset<tr><td></td><td> Send (<strong>CONST</strong> buf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; ofs, len: <strong>SIZE</strong>; propagate: <strong>BOOLEAN</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> SetCRC (crc: <strong>SIGNED32</strong>)<tr><td></td><td> GetCRC (): <strong>SIGNED32</strong><tr><td></td><td> GetUninvertedCRC (): <strong>SIGNED32</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F2843880"><a name="CRC.CRC32"></a><a href="#CRC">CRC</a>.<a href="#CRC.CRC32">CRC32</a>
+<hr><h2 id="_9CFCA3C0"><a name="CRC.CRC32"></a><a href="#CRC">CRC</a>.<a href="#CRC.CRC32">CRC32</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -88,7 +88,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Char (c: <strong>CHAR</strong>)<tr><td></td><td> Add (i: <strong>SIGNED32</strong>)<tr><td></td><td> Get (): <strong>SIGNED32</strong></td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Char (c: <strong>CHAR</strong>)<tr><td></td><td> Add (i: <strong>SIGNED32</strong>)<tr><td></td><td> Get (): <strong>SIGNED32</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>

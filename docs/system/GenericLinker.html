@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#GenericLinker">GenericLinker</a></p>
-<hr><h1 id="#_2FFA9000"><a name="GenericLinker"></a><a href="#ModuleList">Module</a> GenericLinker
+<hr><h1 id="_6F263400"><a name="GenericLinker"></a><a href="#ModuleList">Module</a> GenericLinker
 </h1>
 <h3>Summary</h3>
 
@@ -57,7 +57,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_2FFC4BC0"><a name="GenericLinker.HashTableSegmentedName"></a><a href="#GenericLinker">GenericLinker</a>.<a href="#GenericLinker.HashTableSegmentedName">HashTableSegmentedName</a>
+<hr><h2 id="_6F27EFC0"><a name="GenericLinker.HashTableSegmentedName"></a><a href="#GenericLinker">GenericLinker</a>.<a href="#GenericLinker.HashTableSegmentedName">HashTableSegmentedName</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -65,12 +65,12 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>used: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Put (<strong>CONST</strong> key: <strong>ObjectFile.SegmentedName</strong>; value: <strong>Block</strong>)<tr><td></td><td> Get (<strong>CONST</strong> key: <strong>ObjectFile.SegmentedName</strong>): <strong>Block</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>used: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>&amp; Init (initialSize: <strong>SIZE</strong>)<tr><td></td><td> Put (<strong>CONST</strong> key: <strong>ObjectFile.SegmentedName</strong>; value: <strong>Block</strong>)<tr><td></td><td> Get (<strong>CONST</strong> key: <strong>ObjectFile.SegmentedName</strong>): <strong>Block</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_2FFCFB00"><a name="GenericLinker.Arrangement"></a><a href="#GenericLinker">GenericLinker</a>.<a href="#GenericLinker.Arrangement">Arrangement</a>
+<hr><h2 id="_6F289F00"><a name="GenericLinker.Arrangement"></a><a href="#GenericLinker">GenericLinker</a>.<a href="#GenericLinker.Arrangement">Arrangement</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -83,7 +83,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_2FFDEB00"><a name="GenericLinker.Block"></a><a href="#GenericLinker">GenericLinker</a>.<a href="#GenericLinker.Block">Block</a>
+<hr><h2 id="_6F298F00"><a name="GenericLinker.Block"></a><a href="#GenericLinker">GenericLinker</a>.<a href="#GenericLinker.Block">Block</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -94,7 +94,7 @@
 <table><tr><th align='left'>variables</th><td>address: <strong>Address</strong><tr><td></td><td>aliasOf: <strong>Block</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_2FFE4A40"><a name="GenericLinker.Linker"></a><a href="#GenericLinker">GenericLinker</a>.<a href="#GenericLinker.Linker">Linker</a>
+<hr><h2 id="_6F29EE40"><a name="GenericLinker.Linker"></a><a href="#GenericLinker">GenericLinker</a>.<a href="#GenericLinker.Linker">Linker</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -102,7 +102,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>error: <strong>BOOLEAN</strong><tr><td></td><td>log: <strong>Streams.Writer</strong><tr><td></td><td>offers: <strong>ObjectFile.NameList</strong><tr><td></td><td>requires: <strong>ObjectFile.NameList</strong><tr><th align='left'>procedures</th><td>& InitLinker (diagnostics: <strong>Diagnostics.Diagnostics</strong>; log: <strong>Streams.Writer</strong>; useCategories: <strong>SET</strong>; code, data: <strong>Arrangement</strong>)<tr><td></td><td> SetLinkRoot (<strong>CONST</strong> root: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetOffers (<strong>CONST</strong> offers: <strong>ObjectFile.NameList</strong>)<tr><td></td><td> SetRequires (<strong>CONST</strong> requires: <strong>ObjectFile.NameList</strong>)<tr><td></td><td> Error (<strong>CONST</strong> source, message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source, message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ErrorP (<strong>CONST</strong> pooledName: <strong>ObjectFile.SegmentedName</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source, message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> InformationP (<strong>CONST</strong> pooledName: <strong>ObjectFile.SegmentedName</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> FindBlock (<strong>CONST</strong> identifier: <strong>ObjectFile.Identifier</strong>): <strong>Block</strong><tr><td></td><td> ImportBlock (<strong>CONST</strong> fixup: <strong>ObjectFile.Fixup</strong>): <strong>Block</strong><tr><td></td><td> ExportBlock (block: <strong>Block</strong>)<tr><td></td><td> Precedes (left, right: <strong>Block</strong>): <strong>BOOLEAN</strong><tr><td></td><td> RemoveBlock (block: <strong>Block</strong>)<tr><td></td><td> RemovePrefixed (prefix: <strong>ObjectFile.SegmentedName</strong>)<tr><td></td><td> AddSection (<strong>CONST</strong> section: <strong>ObjectFile.Section</strong>)<tr><td></td><td> EnterBlocks<tr><td></td><td> Resolve<tr><td></td><td> PatchAlias (block: <strong>Block</strong>)<tr><td></td><td> Link</td></tr>
+<table><tr><th align='left'>variables</th><td>error: <strong>BOOLEAN</strong><tr><td></td><td>log: <strong>Streams.Writer</strong><tr><td></td><td>offers: <strong>ObjectFile.NameList</strong><tr><td></td><td>requires: <strong>ObjectFile.NameList</strong><tr><th align='left'>procedures</th><td>&amp; InitLinker (diagnostics: <strong>Diagnostics.Diagnostics</strong>; log: <strong>Streams.Writer</strong>; useCategories: <strong>SET</strong>; code, data: <strong>Arrangement</strong>)<tr><td></td><td> SetLinkRoot (<strong>CONST</strong> root: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetOffers (<strong>CONST</strong> offers: <strong>ObjectFile.NameList</strong>)<tr><td></td><td> SetRequires (<strong>CONST</strong> requires: <strong>ObjectFile.NameList</strong>)<tr><td></td><td> Error (<strong>CONST</strong> source, message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source, message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ErrorP (<strong>CONST</strong> pooledName: <strong>ObjectFile.SegmentedName</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source, message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> InformationP (<strong>CONST</strong> pooledName: <strong>ObjectFile.SegmentedName</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> FindBlock (<strong>CONST</strong> identifier: <strong>ObjectFile.Identifier</strong>): <strong>Block</strong><tr><td></td><td> ImportBlock (<strong>CONST</strong> fixup: <strong>ObjectFile.Fixup</strong>): <strong>Block</strong><tr><td></td><td> ExportBlock (block: <strong>Block</strong>)<tr><td></td><td> Precedes (left, right: <strong>Block</strong>): <strong>BOOLEAN</strong><tr><td></td><td> RemoveBlock (block: <strong>Block</strong>)<tr><td></td><td> RemovePrefixed (prefix: <strong>ObjectFile.SegmentedName</strong>)<tr><td></td><td> AddSection (<strong>CONST</strong> section: <strong>ObjectFile.Section</strong>)<tr><td></td><td> EnterBlocks<tr><td></td><td> Resolve<tr><td></td><td> PatchAlias (block: <strong>Block</strong>)<tr><td></td><td> Link</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>

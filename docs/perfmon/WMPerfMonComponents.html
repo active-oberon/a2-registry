@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMPerfMonComponents">WMPerfMonComponents</a></p>
+<hr><h1 id="_A2E89F00"><a name="WMPerfMonComponents"></a><a href="#ModuleList">Module</a> WMPerfMonComponents
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Components used by the Performance Monitor application&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#WMPerfMonComponents.UnknownView">UnknownView</a>= 0<tr><td></td><td>GraphView= 1<tr><td></td><td>GridView= 2<tr><td></td><td>ChartView= 3<tr><td></td><td>BgFillColor= 1145324799<tr><td></td><td>TextColor= WMGraphics.White<tr><td></td><td>LineHeight= 20<tr><td></td><td>ButtonWidth= 80<tr><td></td><td>UseSkinColors= FALSE<tr><th align='left'>type declarations</th><td><a href="#WMPerfMonComponents.PluginContainer">PluginContainer</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#WMPerfMonComponents.SelectionComponent">SelectionComponent</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#WMPerfMonComponents.Indicator">Indicator</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)<tr><td></td><td><a href="#WMPerfMonComponents.PluginView">PluginView</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.GroupPanel</strong>)<tr><td></td><td><a href="#WMPerfMonComponents.PluginGraphView">PluginGraphView</a> =<strong>OBJECT</strong> (<strong>PluginView</strong>)<tr><td></td><td><a href="#WMPerfMonComponents.PerfMonSimpleGraph">PerfMonSimpleGraph</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#WMPerfMonComponents.PluginWindow">PluginWindow</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><td></td><td><a href="#WMPerfMonComponents.PluginGraphWindow">PluginGraphWindow</a> =<strong>OBJECT</strong> (<strong>PluginWindow</strong>)<tr><td></td><td><a href="#WMPerfMonComponents.PluginGridWindow">PluginGridWindow</a> =<strong>OBJECT</strong> (<strong>PluginWindow</strong>)<tr><td></td><td><a href="#WMPerfMonComponents.PluginChartWindow">PluginChartWindow</a> =<strong>OBJECT</strong> (<strong>PluginWindow</strong>)<tr><th align='left'>procedures</th><td> GenPerfMonSimpleGraph (): <strong>XML.Element</strong><tr><td></td><td> NewButton (<strong>CONST</strong> caption: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; handler: <strong>WMEvents.EventListener</strong>): <strong>WMStandardComponents.Button</strong><tr><td></td><td> NewGroupPanel (<strong>CONST</strong> caption: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; alignment, height: <strong>SIGNED32</strong>): <strong>WMStandardComponents.GroupPanel</strong><tr><td></td><td> NewIndicator (<strong>CONST</strong> caption: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; alignment, width, height: <strong>SIGNED32</strong>): <strong>Indicator</strong><tr><td></td><td> NewLabel (<strong>CONST</strong> caption: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; alignment, width, height: <strong>SIGNED32</strong>): <strong>WMStandardComponents.Label</strong><tr><td></td><td> NewTextField (width: <strong>SIGNED32</strong>): <strong>WMEditors.TextField</strong><tr><td></td><td> NewPanel (alignment, width, height: <strong>SIGNED32</strong>): <strong>WMStandardComponents.Panel</strong><tr><td></td><td> RestorePlugin (c: <strong>WMRestorable.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A2EBEB00"><a name="WMPerfMonComponents.UnknownView"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.UnknownView">UnknownView</a>
+</h2>
+<p> View types</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> UnknownView*= 0</pre>
+<hr><h2 id="_A2EC1D00"><a name="WMPerfMonComponents.PluginContainer"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginContainer">PluginContainer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PluginContainer* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Resized<tr><td></td><td> AlignSubComponents<tr><td></td><td> AddPlugin (plugin: <strong>Plugins.Plugin</strong>; viewType: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#WMPerfMonComponents.PluginContainer.LocatePlugins">LocatePlugins</a> (): <strong>BOOLEAN</strong><tr><td></td><td>&amp; Init</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_A2ECB3C0"><a name="WMPerfMonComponents.PluginContainer.LocatePlugins"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginContainer">PluginContainer</a>.<a href="#WMPerfMonComponents.PluginContainer.LocatePlugins">LocatePlugins</a>
+</h3>
+<p> Returns FALSE if no plugins found</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LocatePlugins* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_A2ED0480"><a name="WMPerfMonComponents.SelectionComponent"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.SelectionComponent">SelectionComponent</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SelectionComponent* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Resized<tr><td></td><td>&amp; Init<tr><td></td><td> Finalize<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A2ED6A40"><a name="WMPerfMonComponents.Indicator"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.Indicator">Indicator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Indicator* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> SetCaption (<strong>CONST</strong> x: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A2EDEE80"><a name="WMPerfMonComponents.PluginView"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginView">PluginView</a>
+</h2>
+<p> Base class for plugin views</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PluginView* =<strong>OBJECT</strong> (<strong>WMStandardComponents.GroupPanel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; New (plugin: <strong>Plugins.Plugin</strong>)<tr><td></td><td> InitView<tr><td></td><td> <a href="#WMPerfMonComponents.PluginView.UpdateStats">UpdateStats</a> (): <strong>BOOLEAN</strong><tr><td></td><td> Finalize</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_A2EE88C0"><a name="WMPerfMonComponents.PluginView.UpdateStats"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginView">PluginView</a>.<a href="#WMPerfMonComponents.PluginView.UpdateStats">UpdateStats</a>
+</h3>
+<p> Update statistics field. Returns TRUE if succeeded, FALSE if values not up to date</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> UpdateStats* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_A2EEF7C0"><a name="WMPerfMonComponents.PluginGraphView"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginGraphView">PluginGraphView</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PluginGraphView* =<strong>OBJECT</strong> (<strong>PluginView</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Resized<tr><td></td><td> InitView</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A2EF4800"><a name="WMPerfMonComponents.PerfMonSimpleGraph"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PerfMonSimpleGraph">PerfMonSimpleGraph</a>
+</h2>
+<p> Simple multipointview component that is XML capabale</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PerfMonSimpleGraph* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>plugin: <strong>WMProperties.StringProperty</strong><tr><td></td><td>showValues: <strong>WMProperties.BooleanProperty</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> RecacheProperties<tr><td></td><td> PropertyChanged (sender, property: @Any0)<tr><td></td><td> Finalize</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A2F00580"><a name="WMPerfMonComponents.PluginWindow"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginWindow">PluginWindow</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PluginWindow* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> CreateForm (): <strong>WMComponents.VisualComponent</strong><tr><td></td><td> Resized (width, height: <strong>SIZE</strong>)<tr><td></td><td> SetActive (active: <strong>BOOLEAN</strong>)<tr><td></td><td>&amp; New (plugin: <strong>Plugins.Plugin</strong>; c: <strong>WMRestorable.Context</strong>)<tr><td></td><td> <a href="#WMPerfMonComponents.PluginWindow.LoadFromXml">LoadFromXml</a> (configuration: <strong>XML.Element</strong>)<tr><td></td><td> Handle (<strong>VAR</strong> x: <strong>WMMessages.Message</strong>)<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_A2F10100"><a name="WMPerfMonComponents.PluginWindow.LoadFromXml"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginWindow">PluginWindow</a>.<a href="#WMPerfMonComponents.PluginWindow.LoadFromXml">LoadFromXml</a>
+</h3>
+<p> Load plugin state from XML element</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LoadFromXml* (configuration: <strong>XML.Element</strong>)</pre>
+<hr><h2 id="_A2F15600"><a name="WMPerfMonComponents.PluginGraphWindow"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginGraphWindow">PluginGraphWindow</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PluginGraphWindow* =<strong>OBJECT</strong> (<strong>PluginWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> CreateForm (): <strong>WMComponents.VisualComponent</strong><tr><td></td><td> LoadFromXml (configuration: <strong>XML.Element</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A2F1BD00"><a name="WMPerfMonComponents.PluginGridWindow"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginGridWindow">PluginGridWindow</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PluginGridWindow* =<strong>OBJECT</strong> (<strong>PluginWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> CreateForm (): <strong>WMComponents.VisualComponent</strong></td></tr>
+</table>
+<hr><h2 id="_A2F20A40"><a name="WMPerfMonComponents.PluginChartWindow"></a><a href="#WMPerfMonComponents">WMPerfMonComponents</a>.<a href="#WMPerfMonComponents.PluginChartWindow">PluginChartWindow</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PluginChartWindow* =<strong>OBJECT</strong> (<strong>PluginWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> CreateForm (): <strong>WMComponents.VisualComponent</strong></td></tr>
+</table>
+</body></html>

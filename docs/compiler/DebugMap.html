@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#DebugMap">DebugMap</a></p>
+<hr><h1 id="_B015B000"><a name="DebugMap"></a><a href="#ModuleList">Module</a> DebugMap
+</h1>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;PC to source position, kept from the compilation that wrote the code&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>MaxName= 256<tr><th align='left'>type declarations</th><td>Name =<strong>ARRAY</strong> MaxName <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#DebugMap.Site">Site</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#DebugMap.Procedure">Procedure</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><th align='left'>procedures</th><td> <a href="#DebugMap.Generated">Generated</a> (generated: <strong>Formats.GeneratedModule</strong>)<tr><td></td><td> <a href="#DebugMap.Find">Find</a> (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Procedure</strong><tr><td></td><td> <a href="#DebugMap.PositionOf">PositionOf</a> (pc: <strong>ADDRESS</strong>; <strong>VAR</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> line: <strong>SIGNED32</strong>; <strong>VAR</strong> position: <strong>SIGNED64</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#DebugMap.BaseName">BaseName</a> (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#DebugMap.Same">Same</a> (<strong>CONST</strong> a, b: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#DebugMap.AddressOf">AddressOf</a> (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; line: <strong>SIGNED32</strong>; <strong>VAR</strong> actual: <strong>SIGNED32</strong>): <strong>ADDRESS</strong><tr><td></td><td> <a href="#DebugMap.Forget">Forget</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_B017D6C0">
+</h1><hr><h2 id="_B017DE80"><a name="DebugMap.Site"></a><a href="#DebugMap">DebugMap</a>.<a href="#DebugMap.Site">Site</a>
+</h2>
+<p> One place in the code, and the place in the source it came from.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Site* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>offset: <strong>SIZE</strong><tr><td></td><td>line: <strong>SIGNED32</strong><tr><td></td><td>position: <strong>SIGNED64</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B0187780"><a name="DebugMap.Procedure"></a><a href="#DebugMap">DebugMap</a>.<a href="#DebugMap.Procedure">Procedure</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Procedure* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Name</strong><tr><td></td><td>source: <strong>Name</strong><tr><td></td><td>sites: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Site</strong><tr><td></td><td>next: <strong>Procedure</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B018F8C0"><a name="DebugMap.Generated"></a><a href="#DebugMap">DebugMap</a>.<a href="#DebugMap.Generated">Generated</a>
+</h2>
+<p> Generated keeps the line table of a module the backend has just produced. Install it in Compiler.Generated.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Generated* (generated: <strong>Formats.GeneratedModule</strong>)</pre>
+<hr><h2 id="_B0197280"><a name="DebugMap.Find"></a><a href="#DebugMap">DebugMap</a>.<a href="#DebugMap.Find">Find</a>
+</h2>
+<p> Find returns what was kept for a procedure, NIL if the module was not compiled with --debug.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Find* (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Procedure</strong></pre>
+<hr><h2 id="_B019FD80"><a name="DebugMap.PositionOf"></a><a href="#DebugMap">DebugMap</a>.<a href="#DebugMap.PositionOf">PositionOf</a>
+</h2>
+<p> PositionOf answers where the code under pc was written.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PositionOf* (pc: <strong>ADDRESS</strong>; <strong>VAR</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> line: <strong>SIGNED32</strong>; <strong>VAR</strong> position: <strong>SIGNED64</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_B01A99C0"><a name="DebugMap.BaseName"></a><a href="#DebugMap">DebugMap</a>.<a href="#DebugMap.BaseName">BaseName</a>
+</h2>
+<p> BaseName is the file a path ends in: an editor sends a whole path, the compiler kept what it was given.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> BaseName* (<strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="_B01B4600"><a name="DebugMap.Same"></a><a href="#DebugMap">DebugMap</a>.<a href="#DebugMap.Same">Same</a>
+</h2>
+<p> Same asks whether two paths name the same file, which is a question of their last part: an editor sends what it opened, the compiler kept what it was given.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Same* (<strong>CONST</strong> a, b: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_B01C0B00"><a name="DebugMap.AddressOf"></a><a href="#DebugMap">DebugMap</a>.<a href="#DebugMap.AddressOf">AddressOf</a>
+</h2>
+<p> AddressOf answers where the first statement at or after a line was laid down, 0 when there is none -- an empty line, a module nobody compiled with --debug, or one not loaded yet. A breakpoint is that address, so `actual` is the line the client is told it really got.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddressOf* (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; line: <strong>SIGNED32</strong>; <strong>VAR</strong> actual: <strong>SIGNED32</strong>): <strong>ADDRESS</strong></pre>
+<hr><h2 id="_B01D3540"><a name="DebugMap.Forget"></a><a href="#DebugMap">DebugMap</a>.<a href="#DebugMap.Forget">Forget</a>
+</h2>
+<p> Forget drops everything kept so far.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Forget*</pre>
+</body></html>

@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#VolumePDE">VolumePDE</a></p>
-<hr><h1 id="#_DABAE280"><a name="VolumePDE"></a><a href="#ModuleList">Module</a> VolumePDE
+<hr><h1 id="_D5D1C140"><a name="VolumePDE"></a><a href="#ModuleList">Module</a> VolumePDE
 </h1>
 <h3>Summary</h3>
 
@@ -52,14 +52,14 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_DABD3C40">
+<hr><h1 id="_D5D41B00">
 </h1>
-<p> AUTHOR "Patrick Hunziker, Basel; email: Patrick.Hunziker@swissnano.org"; DATE 2009-2-12 ; PURPOSE "implementation of partial differential equations for 3D grids solved directly in the grid domain"; LICENCE "free for noncommercial use, as long as author is cited and this header is kept unchanged "</p>
+<p> AUTHOR &quot;Patrick Hunziker, Basel; email: Patrick.Hunziker@swissnano.org&quot;; DATE 2009-2-12 ; PURPOSE &quot;implementation of partial differential equations for 3D grids solved directly in the grid domain&quot;; LICENCE &quot;free for noncommercial use, as long as author is cited and this header is kept unchanged &quot;</p>
 
 <p> Such partial derivatives have been approximated based on finite difference methods to get a set of algebraic equations. Different schemes include: Euler explicit Leap frog Adamsbashforth Crank-nicolson Euler implicit The first three numerical schemes are explicit with different orders of accuracy. In explicit methods, the physical quantity is marched forward in time from point to point from the given initial condition. The last two numerical schemes are implicit.</p>
 
 <p> Interpolation schemes include: Forward time, centered space (FTCS), e.g. applicable in explicit euler scheme Backward time, centered space (BTCS), e.g. applicable in implicit euler scheme Centered time, centered space (CTCS); etc</p>
-<hr><h2 id="#_DABF6C00"><a name="VolumePDE.Constraint"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Constraint">Constraint</a>
+<hr><h2 id="_D5D64AC0"><a name="VolumePDE.Constraint"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Constraint">Constraint</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -74,7 +74,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_DAC01C00"><a name="VolumePDE.Laplace"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Laplace">Laplace</a>
+<hr><h2 id="_D5D6FAC0"><a name="VolumePDE.Laplace"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Laplace">Laplace</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -82,13 +82,13 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Solve (<strong>VAR</strong> x: <strong>Grid</strong>; threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>VAR</strong> x: <strong>Grid</strong>; threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Solve (<strong>VAR</strong> x: <strong>Grid</strong>; threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>VAR</strong> x: <strong>Grid</strong>; threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_DAC14E40"><a name="VolumePDE.Poisson"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Poisson">Poisson</a>
+<hr><h2 id="_D5D82D00"><a name="VolumePDE.Poisson"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Poisson">Poisson</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -96,13 +96,13 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; ds, threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; ds, threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; ds, threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; ds, threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_DAC2B1C0"><a name="VolumePDE.Diffusion"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Diffusion">Diffusion</a>
+<hr><h2 id="_D5D99080"><a name="VolumePDE.Diffusion"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Diffusion">Diffusion</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -110,13 +110,13 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; nu, dt, ds, threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; nu, dt, ds, threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; nu, dt, ds, threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>CONST</strong> b: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; nu, dt, ds, threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_DAC436C0"><a name="VolumePDE.Wave"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Wave">Wave</a>
+<hr><h2 id="_D5DB1580"><a name="VolumePDE.Wave"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Wave">Wave</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -124,14 +124,14 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> SolveExplicit (<strong>CONST</strong> phim1, phi0: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; c, dt, ds: <strong>Datatype</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> phim1, phi0: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; c, dt, ds, threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>CONST</strong> phim1, phi0: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; c, dt, ds, threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>reduce: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><td></td><td>expand: <strong>PROCEDURE</strong> (<strong>CONST</strong> g: <strong>Grid</strong>): <strong>Grid</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> SolveExplicit (<strong>CONST</strong> phim1, phi0: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; c, dt, ds: <strong>Datatype</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> phim1, phi0: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; c, dt, ds, threshold: <strong>Datatype</strong>; iterations: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)<tr><td></td><td> SolveMultigrid (<strong>CONST</strong> phim1, phi0: <strong>Grid</strong>; <strong>VAR</strong> x: <strong>Grid</strong>; c, dt, ds, threshold: <strong>Datatype</strong>; minsize, iterations, smoothings: <strong>SIGNED32</strong>; Boundaries: <strong>Boundary</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_DAC63680"><a name="VolumePDE.Advection"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Advection">Advection</a>
+<hr><h2 id="_D5DD1540"><a name="VolumePDE.Advection"></a><a href="#VolumePDE">VolumePDE</a>.<a href="#VolumePDE.Advection">Advection</a>
 </h2>
 <h3>Syntax</h3>
 

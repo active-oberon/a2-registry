@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#DTPUtilities">DTPUtilities</a></p>
+<hr><h1 id="_B40FD800"><a name="DTPUtilities"></a><a href="#ModuleList">Module</a> DTPUtilities
+</h1>
+<p> AUTHOR &quot;PL&quot;; PURPOSE &quot;Utilities for simple DTP Editor&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>BtnStyleSimple= 0<tr><td></td><td>BtnStyleRoundH= 1<tr><td></td><td>BtnStyleRoundV= 2<tr><td></td><td>BtnStyleGlass= 3<tr><td></td><td>BtnStyleElevator= 4<tr><th align='left'>type declarations</th><td><a href="#DTPUtilities.ObjectPropertyWindow">ObjectPropertyWindow</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><td></td><td><a href="#DTPUtilities.PropertyEntry">PropertyEntry</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DTPUtilities.StringPropertyEntry">StringPropertyEntry</a> =<strong>OBJECT</strong> (<strong>PropertyEntry</strong>)<tr><td></td><td><a href="#DTPUtilities.RealPropertyEntry">RealPropertyEntry</a> =<strong>OBJECT</strong> (<strong>PropertyEntry</strong>)<tr><td></td><td><a href="#DTPUtilities.IntPropertyEntry">IntPropertyEntry</a> =<strong>OBJECT</strong> (<strong>PropertyEntry</strong>)<tr><td></td><td><a href="#DTPUtilities.BooleanPropertyEntry">BooleanPropertyEntry</a> =<strong>OBJECT</strong> (<strong>PropertyEntry</strong>)<tr><td></td><td><a href="#DTPUtilities.PropertyList">PropertyList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#DTPUtilities.ListChooserWindow">ListChooserWindow</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><td></td><td><a href="#DTPUtilities.ListChooser">ListChooser</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#DTPUtilities.ColorChooserWindow">ColorChooserWindow</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><td></td><td><a href="#DTPUtilities.ColorChooser">ColorChooser</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#DTPUtilities.StyleEditor">StyleEditor</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><td></td><td><a href="#DTPUtilities.Tab">Tab</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Button</strong>)<tr><td></td><td><a href="#DTPUtilities.Checkbox">Checkbox</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#DTPUtilities.PreviewPanel">PreviewPanel</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Label</strong>)<tr><td></td><td><a href="#DTPUtilities.LinePanel">LinePanel</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)<tr><td></td><td><a href="#DTPUtilities.GroupPanel">GroupPanel</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)<tr><td></td><td><a href="#DTPUtilities.BorderPanel">BorderPanel</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)<tr><td></td><td><a href="#DTPUtilities.CustomPanel">CustomPanel</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)<tr><th align='left'>procedures</th><td> Inc (<strong>VAR</strong> a, b: <strong>FLOAT32</strong>)<tr><td></td><td> Dec (<strong>VAR</strong> a, b: <strong>FLOAT32</strong>)<tr><td></td><td> FixpToFloat (x: <strong>SIZE</strong>): <strong>FLOAT32</strong><tr><td></td><td> FloatToFixp (x: <strong>FLOAT32</strong>): <strong>SIGNED32</strong><tr><td></td><td> OutReal (input: <strong>FLOAT32</strong>; digits: <strong>SIGNED32</strong>)<tr><td></td><td> ROUND (input: <strong>FLOAT32</strong>): <strong>SIGNED32</strong><tr><td></td><td> RANDOM (upperBound, lowerBound: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B4130F00"><a name="DTPUtilities.ObjectPropertyWindow"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.ObjectPropertyWindow">ObjectPropertyWindow</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ObjectPropertyWindow* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_B41347C0"><a name="DTPUtilities.PropertyEntry"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.PropertyEntry">PropertyEntry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PropertyEntry* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Set<tr><td></td><td> Get</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B4138F80"><a name="DTPUtilities.StringPropertyEntry"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.StringPropertyEntry">StringPropertyEntry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringPropertyEntry* =<strong>OBJECT</strong> (<strong>PropertyEntry</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_B413C3C0"><a name="DTPUtilities.RealPropertyEntry"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.RealPropertyEntry">RealPropertyEntry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RealPropertyEntry* =<strong>OBJECT</strong> (<strong>PropertyEntry</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_B413F740"><a name="DTPUtilities.IntPropertyEntry"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.IntPropertyEntry">IntPropertyEntry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IntPropertyEntry* =<strong>OBJECT</strong> (<strong>PropertyEntry</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_B4142B80"><a name="DTPUtilities.BooleanPropertyEntry"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.BooleanPropertyEntry">BooleanPropertyEntry</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BooleanPropertyEntry* =<strong>OBJECT</strong> (<strong>PropertyEntry</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_B4145F00"><a name="DTPUtilities.PropertyList"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.PropertyList">PropertyList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PropertyList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_B4148B80"><a name="DTPUtilities.ListChooserWindow"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.ListChooserWindow">ListChooserWindow</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ListChooserWindow* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_B414C540"><a name="DTPUtilities.ListChooser"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.ListChooser">ListChooser</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ListChooser* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_B414F8C0"><a name="DTPUtilities.ColorChooserWindow"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.ColorChooserWindow">ColorChooserWindow</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ColorChooserWindow* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>chosenColor: <strong>WMGraphics.Color</strong><tr><th align='left'>procedures</th><td>&amp; New<tr><td></td><td> Show (x, y: <strong>SIZE</strong>; <strong>VAR</strong> chosen: <strong>WMGraphics.Color</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Hide<tr><td></td><td> FocusLost</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B415A040"><a name="DTPUtilities.ColorChooser"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.ColorChooser">ColorChooser</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ColorChooser* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> PointerDown (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> Draw (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B4162D40"><a name="DTPUtilities.StyleEditor"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.StyleEditor">StyleEditor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StyleEditor* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>UpdateProc: <strong>PROCEDURE</strong>{DELEGATE} <tr><th align='left'>procedures</th><td>&amp; New<tr><td></td><td> Show (x, y: <strong>SIZE</strong>)<tr><td></td><td> Hide<tr><td></td><td> Close<tr><td></td><td> LoadStyleList (<strong>VAR</strong> doc: <strong>DTPData.Document</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B416DDC0"><a name="DTPUtilities.Tab"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.Tab">Tab</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tab* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Button</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>openSides: <strong>SET</strong><tr><th align='left'>procedures</th><td>&amp; Init</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B4173100"><a name="DTPUtilities.Checkbox"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.Checkbox">Checkbox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Checkbox* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>caption: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>leftBorder: <strong>SIGNED32</strong><tr><td></td><td>checked: <strong>BOOLEAN</strong><tr><td></td><td>default: <strong>BOOLEAN</strong><tr><td></td><td>hasThreeStates: <strong>BOOLEAN</strong><tr><td></td><td>inactive: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> PointerDown (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> Draw (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B4182C00"><a name="DTPUtilities.PreviewPanel"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.PreviewPanel">PreviewPanel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PreviewPanel* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Label</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fontColor: <strong>WMGraphics.Color</strong><tr><td></td><td>fontBackColor: <strong>WMGraphics.Color</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B418A7C0"><a name="DTPUtilities.LinePanel"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.LinePanel">LinePanel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LinePanel* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>caption: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>captionColor: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B4193180"><a name="DTPUtilities.GroupPanel"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.GroupPanel">GroupPanel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> GroupPanel* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>caption: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)<tr><td></td><td> SetCaption (string: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> AddContent (content: <strong>XML.Content</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B419EA80"><a name="DTPUtilities.BorderPanel"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.BorderPanel">BorderPanel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BorderPanel* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>border: <strong>WMRectangles.Rectangle</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> SetBorder (left, top, right, bottom: <strong>SIGNED32</strong>)<tr><td></td><td> GetBorder (): <strong>WMRectangles.Rectangle</strong><tr><td></td><td> AddContent (content: <strong>XML.Content</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_B41AA0C0"><a name="DTPUtilities.CustomPanel"></a><a href="#DTPUtilities">DTPUtilities</a>.<a href="#DTPUtilities.CustomPanel">CustomPanel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CustomPanel* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>border: <strong>WMRectangles.Rectangle</strong><tr><td></td><td>caption: <strong>ARRAY</strong> 128 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>textColor: <strong>WMGraphics.Color</strong><tr><td></td><td>font: <strong>WMGraphics.Font</strong><tr><td></td><td>alignH: <strong>SIGNED32</strong><tr><td></td><td>alignV: <strong>SIGNED32</strong><tr><td></td><td>hasBevel: <strong>BOOLEAN</strong><tr><td></td><td>bevelWidth: <strong>SIGNED32</strong><tr><td></td><td>bevelColor: <strong>WMGraphics.Color</strong><tr><td></td><td>bevelDown: <strong>BOOLEAN</strong><tr><td></td><td>hasInnerBevel: <strong>BOOLEAN</strong><tr><td></td><td>innerBevelWidth: <strong>SIGNED32</strong><tr><td></td><td>innerBevelColor: <strong>WMGraphics.Color</strong><tr><td></td><td>innerBevelDown: <strong>BOOLEAN</strong><tr><td></td><td>hasGlass: <strong>BOOLEAN</strong><tr><td></td><td>glassWidth: <strong>SIGNED32</strong><tr><td></td><td>glassDown: <strong>BOOLEAN</strong><tr><td></td><td>glassOpenSides: <strong>SET</strong><tr><td></td><td>img: <strong>Raster.Image</strong><tr><td></td><td>imgBorderWidth: <strong>SIGNED32</strong><tr><td></td><td>altFillColor: <strong>WMGraphics.Color</strong><tr><td></td><td>fillMode: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> SetBorder (left, top, right, bottom: <strong>SIGNED32</strong>)<tr><td></td><td> GetBorder (): <strong>WMRectangles.Rectangle</strong><tr><td></td><td> AddContent (content: <strong>XML.Content</strong>)<tr><td></td><td> Draw (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

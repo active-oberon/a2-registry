@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#ZlibBuffers">ZlibBuffers</a></p>
-<hr><h1 id="#_02A4F540"><a name="ZlibBuffers"></a><a href="#ModuleList">Module</a> ZlibBuffers
+<hr><h1 id="_E0C8F380"><a name="ZlibBuffers"></a><a href="#ModuleList">Module</a> ZlibBuffers
 </h1>
 <p> Stefan Walthert</p>
 
@@ -51,8 +51,8 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_02A7B3C0">
-</h1><hr><h2 id="#_02A7BB80"><a name="ZlibBuffers.Buffer"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>
+<hr><h1 id="_E0CBB200">
+</h1><hr><h2 id="_E0CBB9C0"><a name="ZlibBuffers.Buffer"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>
 </h2>
 <p> input/output buffer</p>
 
@@ -67,98 +67,98 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_02A833C0"><a name="ZlibBuffers.Buffer.avail"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>.<a href="#ZlibBuffers.Buffer.avail">avail</a>
+<hr><h3 id="_E0CC3200"><a name="ZlibBuffers.Buffer.avail"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>.<a href="#ZlibBuffers.Buffer.avail">avail</a>
 </h3>
 <p> number of bytes that can be produced/consumed</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> avail-: <strong>SIZE</strong></pre>
-<hr><h3 id="#_02A881C0"><a name="ZlibBuffers.Buffer.size"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>.<a href="#ZlibBuffers.Buffer.size">size</a>
+<hr><h3 id="_E0CC8000"><a name="ZlibBuffers.Buffer.size"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>.<a href="#ZlibBuffers.Buffer.size">size</a>
 </h3>
 <p> total number of bytes in buffer memory</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> size-: <strong>SIZE</strong></pre>
-<hr><h3 id="#_02A8CF00"><a name="ZlibBuffers.Buffer.totalIn"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>.<a href="#ZlibBuffers.Buffer.totalIn">totalIn</a>
+<hr><h3 id="_E0CCCD40"><a name="ZlibBuffers.Buffer.totalIn"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Buffer">Buffer</a>.<a href="#ZlibBuffers.Buffer.totalIn">totalIn</a>
 </h3>
 <p> total number of bytes produced/consumed</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> totalIn-: <strong>SIZE</strong></pre>
-<hr><h2 id="#_02A91600"><a name="ZlibBuffers.Reset"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Reset">Reset</a>
+<hr><h2 id="_E0CD1440"><a name="ZlibBuffers.Reset"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Reset">Reset</a>
 </h2>
 <p> set buf.totalIn and buf.totalOut to zero</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Reset* (<strong>VAR</strong> buf: <strong>Buffer</strong>)</pre>
-<hr><h2 id="#_02A967C0"><a name="ZlibBuffers.Init"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Init">Init</a>
+<hr><h2 id="_E0CD6600"><a name="ZlibBuffers.Init"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Init">Init</a>
 </h2>
 <p> initialize buffer on memory in client space</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Init* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>CONST</strong> mem: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, size, avail: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_02A9F500"><a name="ZlibBuffers.Read"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Read">Read</a>
+<hr><h2 id="_E0CDF340"><a name="ZlibBuffers.Read"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Read">Read</a>
 </h2>
 <p> read byte from (input) buffer</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Read* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>VAR</strong> ch: <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_02AA5540"><a name="ZlibBuffers.ReadBytes"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.ReadBytes">ReadBytes</a>
+<hr><h2 id="_E0CE5380"><a name="ZlibBuffers.ReadBytes"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.ReadBytes">ReadBytes</a>
 </h2>
 <p> read len bytes from (input) buffer</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ReadBytes* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>VAR</strong> dst: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_02AAD700"><a name="ZlibBuffers.Write"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Write">Write</a>
+<hr><h2 id="_E0CED540"><a name="ZlibBuffers.Write"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Write">Write</a>
 </h2>
 <p> write byte into (output) buffer</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Write* (<strong>VAR</strong> buf: <strong>Buffer</strong>; ch: <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_02AB32C0"><a name="ZlibBuffers.WriteBytes"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.WriteBytes">WriteBytes</a>
+<hr><h2 id="_E0CF3100"><a name="ZlibBuffers.WriteBytes"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.WriteBytes">WriteBytes</a>
 </h2>
 <p> write len bytes into (output) buffer</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> WriteBytes* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, len: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_02ABB500"><a name="ZlibBuffers.Rewind"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Rewind">Rewind</a>
+<hr><h2 id="_E0CFB340"><a name="ZlibBuffers.Rewind"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Rewind">Rewind</a>
 </h2>
 <p> rewind previously empty input buffer to first position after it has been filled with new input</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Rewind* (<strong>VAR</strong> buf: <strong>Buffer</strong>; avail: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_02AC3A40"><a name="ZlibBuffers.Reread"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Reread">Reread</a>
+<hr><h2 id="_E0D03880"><a name="ZlibBuffers.Reread"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Reread">Reread</a>
 </h2>
 <p> move position of next read for -offset bytes</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Reread* (<strong>VAR</strong> buf: <strong>Buffer</strong>; offset: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_02ACA300"><a name="ZlibBuffers.Rewrite"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Rewrite">Rewrite</a>
+<hr><h2 id="_E0D0A140"><a name="ZlibBuffers.Rewrite"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Rewrite">Rewrite</a>
 </h2>
 <p> restart writing at starting position of output buffer after it has been emptied</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Rewrite* (<strong>VAR</strong> buf: <strong>Buffer</strong>)</pre>
-<hr><h2 id="#_02AD0FC0"><a name="ZlibBuffers.Fill"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Fill">Fill</a>
+<hr><h2 id="_E0D10E00"><a name="ZlibBuffers.Fill"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Fill">Fill</a>
 </h2>
 <p> fill input buffer with new bytes to consume</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Fill* (<strong>VAR</strong> buf: <strong>Buffer</strong>; <strong>CONST</strong> src: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; offset, size: <strong>SIZE</strong>)</pre>
-<hr><h2 id="#_02AD9A00"><a name="ZlibBuffers.Drain"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Drain">Drain</a>
+<hr><h2 id="_E0D19840"><a name="ZlibBuffers.Drain"></a><a href="#ZlibBuffers">ZlibBuffers</a>.<a href="#ZlibBuffers.Drain">Drain</a>
 </h2>
 <p> extract bytes from output buffer to make room for new bytes</p>
 

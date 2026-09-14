@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#OdAuthBase">OdAuthBase</a></p>
+<hr><h1 id="_A6F842C0"><a name="OdAuthBase"></a><a href="#ModuleList">Module</a> OdAuthBase
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#OdAuthBase.Basic">Basic</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>defaultAuth: <strong>Basic</strong><tr><td></td><td>defaultHost: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> <a href="#OdAuthBase.AddAdditionalFieldValue">AddAdditionalFieldValue</a> (<strong>VAR</strong> af: <strong>WebHTTP.AdditionalField</strong>; <strong>CONST</strong> fieldName, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#OdAuthBase.GetAdditionalFieldVals">GetAdditionalFieldVals</a> (af: <strong>WebHTTP.AdditionalField</strong>; <strong>CONST</strong> fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; prefix: <strong>BOOLEAN</strong>; <strong>VAR</strong> values: <strong>OdUtil.Lines</strong>): <strong>BOOLEAN</strong><tr><td></td><td> EncodeString (<strong>VAR</strong> in, out: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetAuth (<strong>CONST</strong> host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Basic</strong><tr><td></td><td> SetBasicRealm (host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> realm: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> SetBasicAuth (host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> realm, user, password: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_A6FA2BC0">
+</h1><hr><h2 id="_A6FA3380"><a name="OdAuthBase.Basic"></a><a href="#OdAuthBase">OdAuthBase</a>.<a href="#OdAuthBase.Basic">Basic</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Basic* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>host: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>pathRealms: <strong>WebHTTP.AdditionalField</strong><tr><td></td><td>realmAuths: <strong>WebHTTP.AdditionalField</strong><tr><th align='left'>procedures</th><td> Authorized (<strong>VAR</strong> req: <strong>WebHTTP.RequestHeader</strong>; <strong>VAR</strong> res: <strong>WebHTTP.ResponseHeader</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_A6FADB40"><a name="OdAuthBase.AddAdditionalFieldValue"></a><a href="#OdAuthBase">OdAuthBase</a>.<a href="#OdAuthBase.AddAdditionalFieldValue">AddAdditionalFieldValue</a>
+</h2>
+<p> Additional procedures to allow a key to appear multiple times in an WebHTTP.AdditionalField. WebHTTP.AdditionalField</p>
+
+<p> Like WebHTTP.SetAdditionalFieldValue but adds a key value multiple times.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AddAdditionalFieldValue* (<strong>VAR</strong> af: <strong>WebHTTP.AdditionalField</strong>; <strong>CONST</strong> fieldName, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="_A6FB9440"><a name="OdAuthBase.GetAdditionalFieldVals"></a><a href="#OdAuthBase">OdAuthBase</a>.<a href="#OdAuthBase.GetAdditionalFieldVals">GetAdditionalFieldVals</a>
+</h2>
+<p> Like WebHTTP.GetAdditionalFieldValue but returns multiple values.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetAdditionalFieldVals* (af: <strong>WebHTTP.AdditionalField</strong>; <strong>CONST</strong> fieldName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; prefix: <strong>BOOLEAN</strong>; <strong>VAR</strong> values: <strong>OdUtil.Lines</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

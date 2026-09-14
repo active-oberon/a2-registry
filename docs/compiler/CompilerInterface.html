@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#CompilerInterface">CompilerInterface</a></p>
-<hr><h1 id="#_1FBCD2C0"><a name="CompilerInterface"></a><a href="#ModuleList">Module</a> CompilerInterface
+<hr><h1 id="_6E82C4C0"><a name="CompilerInterface"></a><a href="#ModuleList">Module</a> CompilerInterface
 </h1>
-<p> AUTHOR "staubesv"; PURPOSE "Generic compiler interface";</p>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Generic compiler interface&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -50,14 +50,14 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_1FBF0880">
+<hr><h1 id="_6E84FA80">
 </h1>
 <ul>
 <li> The idea of this module is to make it possible for client applications to use multiple different compilers.</li>
 
 <li> Compiler can be retrieve by name, file extension of filename.</li>
 </ul>
-<hr><h2 id="#_1FBF8340"><a name="CompilerInterface.Compiler"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.Compiler">Compiler</a>
+<hr><h2 id="_6E857540"><a name="CompilerInterface.Compiler"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.Compiler">Compiler</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -65,41 +65,41 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>name: <strong>Name</strong><tr><td></td><td>description: <strong>Description</strong><tr><td></td><td>fileExtension: <strong>FileExtension</strong><tr><th align='left'>procedures</th><td> CompileText (t: <strong>Texts.Text</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIGNED32</strong>; <strong>CONST</strong> pc, opt: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; log: <strong>Streams.Writer</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>VAR</strong> error: <strong>BOOLEAN</strong>)<tr><td></td><td>& Init (<strong>CONST</strong> name: <strong>Name</strong>; <strong>CONST</strong> description: <strong>Description</strong>; <strong>CONST</strong> fileExtension: <strong>FileExtension</strong>; compileText: <strong>CompileTextProc</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>name: <strong>Name</strong><tr><td></td><td>description: <strong>Description</strong><tr><td></td><td>fileExtension: <strong>FileExtension</strong><tr><th align='left'>procedures</th><td> CompileText (t: <strong>Texts.Text</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos: <strong>SIGNED32</strong>; <strong>CONST</strong> pc, opt: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; log: <strong>Streams.Writer</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>VAR</strong> error: <strong>BOOLEAN</strong>)<tr><td></td><td>&amp; Init (<strong>CONST</strong> name: <strong>Name</strong>; <strong>CONST</strong> description: <strong>Description</strong>; <strong>CONST</strong> fileExtension: <strong>FileExtension</strong>; compileText: <strong>CompileTextProc</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_1FC0C480"><a name="CompilerInterface.GetCompiler"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.GetCompiler">GetCompiler</a>
+<hr><h2 id="_6E86B680"><a name="CompilerInterface.GetCompiler"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.GetCompiler">GetCompiler</a>
 </h2>
 <p> Get compiler object for a specific file extension. Returns NIL if no appropriate compiler found.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetCompiler* (fileExtension: <strong>FileExtension</strong>): <strong>Compiler</strong></pre>
-<hr><h2 id="#_1FC13B00"><a name="CompilerInterface.GetCompilerByFilename"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.GetCompilerByFilename">GetCompilerByFilename</a>
+<hr><h2 id="_6E872D00"><a name="CompilerInterface.GetCompilerByFilename"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.GetCompilerByFilename">GetCompilerByFilename</a>
 </h2>
 <p> Get compiler object for a filename. A compiler is appropriate for a given file name if the file extension the compiler requires is part of the filename, e.g. Module.Mod.Bak for the file extension .Mod Returns NIL if no appropriate compiler found</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetCompilerByFilename* (filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Compiler</strong></pre>
-<hr><h2 id="#_1FC21DC0"><a name="CompilerInterface.Show"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.Show">Show</a>
+<hr><h2 id="_6E880FC0"><a name="CompilerInterface.Show"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.Show">Show</a>
 </h2>
 <p> Show all registered compilers</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Show* (context: <strong>Commands.Context</strong>)</pre>
-<hr><h2 id="#_1FC26440"><a name="CompilerInterface.Register"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.Register">Register</a>
+<hr><h2 id="_6E885640"><a name="CompilerInterface.Register"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.Register">Register</a>
 </h2>
 <p> Register a compiler. The name of the compiler must be unique.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Register* (<strong>CONST</strong> name: <strong>Name</strong>; <strong>CONST</strong> description: <strong>Description</strong>; fileExtension: <strong>FileExtension</strong>; compileText: <strong>CompileTextProc</strong>)</pre>
-<hr><h2 id="#_1FC2F700"><a name="CompilerInterface.Unregister"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.Unregister">Unregister</a>
+<hr><h2 id="_6E88E900"><a name="CompilerInterface.Unregister"></a><a href="#CompilerInterface">CompilerInterface</a>.<a href="#CompilerInterface.Unregister">Unregister</a>
 </h2>
 <p> Unregister a compiler</p>
 

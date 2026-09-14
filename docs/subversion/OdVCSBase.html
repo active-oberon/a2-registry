@@ -29,14 +29,14 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#OdVCSBase">OdVCSBase</a></p>
-<hr><h1 id="#_E6E7D0C0"><a name="OdVCSBase"></a><a href="#ModuleList">Module</a> OdVCSBase
+<hr><h1 id="_AC4F4C40"><a name="OdVCSBase"></a><a href="#ModuleList">Module</a> OdVCSBase
 </h1>
 <h3>Summary</h3>
 
-<table><tr><th align='left'>constants</th><td>BaseDir= "FTP:/WebDAV/repo/"<tr><td></td><td>FormatLen= 8<tr><td></td><td>FormatName= "dsfantf1"<tr><td></td><td>MakroBit= 0<tr><td></td><td>MaxVersions= 100<tr><th align='left'>type declarations</th><td><a href="#OdVCSBase.TLog">TLog</a> =<strong>RECORD</strong> <tr><td></td><td>TFileName =<strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>TDeltaEntry =<strong>ARRAY</strong> 20 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>TDList =<strong>ARRAY</strong> MaxVersions <strong>OF</strong> <strong>TDeltaEntry</strong><tr><th align='left'>variables</th><td>errMsg: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> DateTime (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#OdVCSBase.CreateDelta">CreateDelta</a> (old, new: <strong>TData</strong>; <strong>VAR</strong> dr: <strong>Files.Rider</strong>; lenOld, lenNew: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#OdVCSBase.ApplyDelta">ApplyDelta</a> (old, new: <strong>TData</strong>; dr: <strong>Files.Rider</strong>)<tr><td></td><td> <a href="#OdVCSBase.Init">Init</a> (name: <strong>TFileName</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#OdVCSBase.GetLog">GetLog</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>; <strong>VAR</strong> log: <strong>TLog</strong>)<tr><td></td><td> <a href="#OdVCSBase.GetDelta">GetDelta</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>; <strong>VAR</strong> df: <strong>Files.File</strong>; <strong>VAR</strong> dr: <strong>Files.Rider</strong>)<tr><td></td><td> <a href="#OdVCSBase.SetLog">SetLog</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED16</strong>; log: <strong>TLog</strong>)<tr><td></td><td> <a href="#OdVCSBase.GetDeltaList">GetDeltaList</a> (name: <strong>TFileName</strong>; <strong>VAR</strong> list: <strong>TDList</strong>): <strong>SIGNED16</strong><tr><td></td><td> <a href="#OdVCSBase.Create">Create</a> (historyName, name: <strong>TFileName</strong>; log: <strong>TLog</strong>; flags: <strong>SET</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#OdVCSBase.NewVersion">NewVersion</a> (name: <strong>TFileName</strong>; log: <strong>TLog</strong>; flags: <strong>SET</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#OdVCSBase.View">View</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>; newFileName: <strong>TFileName</strong>): <strong>INTEGER</strong><tr><td></td><td> <a href="#OdVCSBase.Extract">Extract</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></td></tr>
+<table><tr><th align='left'>constants</th><td>BaseDir= &quot;FTP:/WebDAV/repo/&quot;<tr><td></td><td>FormatLen= 8<tr><td></td><td>FormatName= &quot;dsfantf1&quot;<tr><td></td><td>MakroBit= 0<tr><td></td><td>MaxVersions= 100<tr><th align='left'>type declarations</th><td><a href="#OdVCSBase.TLog">TLog</a> =<strong>RECORD</strong> <tr><td></td><td>TFileName =<strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>TDeltaEntry =<strong>ARRAY</strong> 20 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>TDList =<strong>ARRAY</strong> MaxVersions <strong>OF</strong> <strong>TDeltaEntry</strong><tr><th align='left'>variables</th><td>errMsg: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> DateTime (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#OdVCSBase.CreateDelta">CreateDelta</a> (old, new: <strong>TData</strong>; <strong>VAR</strong> dr: <strong>Files.Rider</strong>; lenOld, lenNew: <strong>SIGNED32</strong>)<tr><td></td><td> <a href="#OdVCSBase.ApplyDelta">ApplyDelta</a> (old, new: <strong>TData</strong>; dr: <strong>Files.Rider</strong>)<tr><td></td><td> <a href="#OdVCSBase.Init">Init</a> (name: <strong>TFileName</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#OdVCSBase.GetLog">GetLog</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>; <strong>VAR</strong> log: <strong>TLog</strong>)<tr><td></td><td> <a href="#OdVCSBase.GetDelta">GetDelta</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>; <strong>VAR</strong> df: <strong>Files.File</strong>; <strong>VAR</strong> dr: <strong>Files.Rider</strong>)<tr><td></td><td> <a href="#OdVCSBase.SetLog">SetLog</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED16</strong>; log: <strong>TLog</strong>)<tr><td></td><td> <a href="#OdVCSBase.GetDeltaList">GetDeltaList</a> (name: <strong>TFileName</strong>; <strong>VAR</strong> list: <strong>TDList</strong>): <strong>SIGNED16</strong><tr><td></td><td> <a href="#OdVCSBase.Create">Create</a> (historyName, name: <strong>TFileName</strong>; log: <strong>TLog</strong>; flags: <strong>SET</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#OdVCSBase.NewVersion">NewVersion</a> (name: <strong>TFileName</strong>; log: <strong>TLog</strong>; flags: <strong>SET</strong>): <strong>SIGNED32</strong><tr><td></td><td> <a href="#OdVCSBase.View">View</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>; newFileName: <strong>TFileName</strong>): <strong>INTEGER</strong><tr><td></td><td> <a href="#OdVCSBase.Extract">Extract</a> (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>): <strong>SIGNED32</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -59,10 +59,15 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_E6EB6380">
+<hr><h1 id="_AC52DF00">
 </h1>
-<p> new delta file formatdescription (ci) = compressed integer in Oberon style (d) = data as array of bytes tags = numbers coded as a byteDeltaFile = # newest revision of file + deltas FormatName Flags Text 1{ Diff  .FormatName = "dsfantf1" .Flags = SET{31..1,MakroBit}.Text = TextTag TextLen(ci) Text(d) .Diff = # newer before older diffs DiffTag DiffLen(ci) OldTextLen(ci) Versiontag Version(ci) DateTag DateLen(ci) Date(d) AuthorTag AuthorLen(ci) Author(d) LogTextTag LogTextLen(ci) LogText(d) <code>DeltaAddTag   AddLen(ci) AddData(d)<BR>	  | DeltaCopyTag CopyLen(ci) CopyOffset(ci) }<BR>	[ AttachmentTag AttachmentLen(ci) Attachment(d) ] .<BR></code></p>
-<hr><h2 id="#_E6EC8E80"><a name="OdVCSBase.TLog"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.TLog">TLog</a>
+<p> new delta file formatdescription (ci) = compressed integer in Oberon style (d) = data as array of bytes tags = numbers coded as a byteDeltaFile = # newest revision of file + deltas FormatName Flags Text 1{ Diff } .FormatName = &quot;dsfantf1&quot; .Flags = SET{31..1,MakroBit}.Text = TextTag TextLen(ci) Text(d) .Diff = # newer before older diffs DiffTag DiffLen(ci) OldTextLen(ci) Versiontag Version(ci) DateTag DateLen(ci) Date(d) AuthorTag AuthorLen(ci) Author(d) LogTextTag LogTextLen(ci) LogText(d) { DeltaAddTag AddLen(ci) AddData(d)</p>
+
+<table><tr><td> DeltaCopyTag CopyLen(ci) CopyOffset(ci) }</td></tr>
+</table>
+
+<p> AttachmentTag AttachmentLen(ci) Attachment(d) ] .</p>
+<hr><h2 id="_AC543DC0"><a name="OdVCSBase.TLog"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.TLog">TLog</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -76,79 +81,83 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_E6ED30C0"><a name="OdVCSBase.CreateDelta"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.CreateDelta">CreateDelta</a>
+<hr><h2 id="_AC54E000"><a name="OdVCSBase.CreateDelta"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.CreateDelta">CreateDelta</a>
 </h2>
 <p> add delta information to diff data</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> CreateDelta* (old, new: <strong>TData</strong>; <strong>VAR</strong> dr: <strong>Files.Rider</strong>; lenOld, lenNew: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_E6EDAE40"><a name="OdVCSBase.ApplyDelta"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.ApplyDelta">ApplyDelta</a>
+<hr><h2 id="_AC555D80"><a name="OdVCSBase.ApplyDelta"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.ApplyDelta">ApplyDelta</a>
 </h2>
 <p> create previous from current version</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ApplyDelta* (old, new: <strong>TData</strong>; dr: <strong>Files.Rider</strong>)</pre>
-<hr><h2 id="#_E6EE0E80"><a name="OdVCSBase.Init"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.Init">Init</a>
+<hr><h2 id="_AC55BDC0"><a name="OdVCSBase.Init"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.Init">Init</a>
 </h2>
 <p> get newest version number from first diff in file by name</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Init* (name: <strong>TFileName</strong>): <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_E6EE7700"><a name="OdVCSBase.GetLog"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.GetLog">GetLog</a>
+<hr><h2 id="_AC562640"><a name="OdVCSBase.GetLog"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.GetLog">GetLog</a>
 </h2>
 <p> get log data for version n</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetLog* (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>; <strong>VAR</strong> log: <strong>TLog</strong>)</pre>
-<hr><h2 id="#_E6EEE4C0"><a name="OdVCSBase.GetDelta"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.GetDelta">GetDelta</a>
+<hr><h2 id="_AC569400"><a name="OdVCSBase.GetDelta"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.GetDelta">GetDelta</a>
 </h2>
 <p> get delta information for a version, set dr to beginning</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetDelta* (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>; <strong>VAR</strong> df: <strong>Files.File</strong>; <strong>VAR</strong> dr: <strong>Files.Rider</strong>)</pre>
-<hr><h2 id="#_E6EF7280"><a name="OdVCSBase.SetLog"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.SetLog">SetLog</a>
+<hr><h2 id="_AC5721C0"><a name="OdVCSBase.SetLog"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.SetLog">SetLog</a>
 </h2>
 <p> set log data for a version</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SetLog* (name: <strong>TFileName</strong>; n: <strong>SIGNED16</strong>; log: <strong>TLog</strong>)</pre>
-<hr><h2 id="#_E6EFDDC0"><a name="OdVCSBase.GetDeltaList"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.GetDeltaList">GetDeltaList</a>
+<hr><h2 id="_AC578D00"><a name="OdVCSBase.GetDeltaList"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.GetDeltaList">GetDeltaList</a>
 </h2>
 <p> not yet implemented</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetDeltaList* (name: <strong>TFileName</strong>; <strong>VAR</strong> list: <strong>TDList</strong>): <strong>SIGNED16</strong></pre>
-<hr><h2 id="#_E6F03640"><a name="OdVCSBase.Create"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.Create">Create</a>
+<hr><h2 id="_AC57E580"><a name="OdVCSBase.Create"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.Create">Create</a>
 </h2>
-<p> DeltaV.Create: Create a new version of <a name="name&gt"></a> in <a name="history"></a> path&gt&ltname&gt.VCS. Also for initial version..</p>
+<dl>
+<dt><strong>DeltaV.Create</strong></dt>
+<dd> Create a new version of &lt;name&gt; in &lt;history path&gt;&lt;name&gt;.VCS. Also for initial version..</dd>
 
+
+</dl>
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Create* (historyName, name: <strong>TFileName</strong>; log: <strong>TLog</strong>; flags: <strong>SET</strong>): <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_E6F0CD00"><a name="OdVCSBase.NewVersion"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.NewVersion">NewVersion</a>
+<hr><h2 id="_AC587B40"><a name="OdVCSBase.NewVersion"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.NewVersion">NewVersion</a>
 </h2>
-<p> Create a new version of <a name="name&gt"></a> in <a name="name&gt.VCS."></a> Also for initial version.Old variant without an explicit history path.</p>
+<p> Create a new version of &lt;name&gt; in &lt;name&gt;.VCS. Also for initial version.Old variant without an explicit history path.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewVersion* (name: <strong>TFileName</strong>; log: <strong>TLog</strong>; flags: <strong>SET</strong>): <strong>SIGNED32</strong></pre>
-<hr><h2 id="#_E6F16E40"><a name="OdVCSBase.View"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.View">View</a>
+<hr><h2 id="_AC591C80"><a name="OdVCSBase.View"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.View">View</a>
 </h2>
-<p> Get a version from <a name="name&gt.VCS"></a> and save it as <a name="newFileName&gt."></a>DeltaV.Select can be used because the complete paths are already given for source and sink.</p>
+<p> Get a version from &lt;name&gt;.VCS and save it as &lt;newFileName&gt;.DeltaV.Select can be used because the complete paths are already given for source and sink.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> View* (name: <strong>TFileName</strong>; n: <strong>SIGNED32</strong>; newFileName: <strong>TFileName</strong>): <strong>INTEGER</strong></pre>
-<hr><h2 id="#_E6F22740"><a name="OdVCSBase.Extract"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.Extract">Extract</a>
+<hr><h2 id="_AC59D580"><a name="OdVCSBase.Extract"></a><a href="#OdVCSBase">OdVCSBase</a>.<a href="#OdVCSBase.Extract">Extract</a>
 </h2>
-<p> remove versions newer than <a name="n&gt"></a> and create new working file if it doesn't exist</p>
+<p> remove versions newer than &lt;n&gt; and create new working file if it doesn&apos;t exist</p>
 
 <h3>Syntax</h3>
 

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#OdXml">OdXml</a></p>
+<hr><h1 id="_8C73FCC0"><a name="OdXml"></a><a href="#ModuleList">Module</a> OdXml
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>UpdateVersionTag= &quot;/version.&quot;<tr><th align='left'>type declarations</th><td><a href="#OdXml.StringSplitter">StringSplitter</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#OdXml.Attr3Val1Req">Attr3Val1Req</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.MergeSvnReq">MergeSvnReq</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.ErrorRes">ErrorRes</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.BaselineControlReq">BaselineControlReq</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.BaselineReportReq">BaselineReportReq</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.ConfigurationReportRes">ConfigurationReportRes</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.BaselineReportRes">BaselineReportRes</a> =<strong>OBJECT</strong> (<strong>ConfigurationReportRes</strong>)<tr><td></td><td><a href="#OdXml.CheckoutReq">CheckoutReq</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.CompareBaselineReportRes">CompareBaselineReportRes</a> =<strong>OBJECT</strong> (<strong>ConfigurationReportRes</strong>)<tr><td></td><td><a href="#OdXml.VersionTreeRes">VersionTreeRes</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.PropfindRes">PropfindRes</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.PropfindCollectionRes">PropfindCollectionRes</a> =<strong>OBJECT</strong> (<strong>XML.Document</strong>)<tr><td></td><td><a href="#OdXml.Scanner">Scanner</a> =<strong>OBJECT</strong> (<strong>XMLScanner.Scanner</strong>)<tr><td></td><td><a href="#OdXml.Parser">Parser</a> =<strong>OBJECT</strong> (<strong>XMLParser.Parser</strong>)<tr><td></td><td><a href="#OdXml.OdXml">OdXml</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> GetCharData (parent: <strong>XML.Element</strong>; <strong>VAR</strong> charData: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetCharString (parent: <strong>XML.Element</strong>): <strong>Strings.String</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_8C75E2C0">
+</h1><hr><h2 id="_8C75EA80"><a name="OdXml.StringSplitter"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.StringSplitter">StringSplitter</a>
+</h2>
+<p>*******************************************************************************</p>
+
+<p>*******************************************************************************</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringSplitter* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Next (tag: <strong>CHAR</strong>; <strong>VAR</strong> segment: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8C769100"><a name="OdXml.Attr3Val1Req"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.Attr3Val1Req">Attr3Val1Req</a>
+</h2>
+<p> NEW(doc, &quot;D:merge&quot;, &quot;D:source&quot;, &quot;D:href&quot;, &quot;http://svn.edgarschwarz.de/.....&quot;)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Attr3Val1Req* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; InitA3V1 (<strong>CONST</strong> a1, a2, a3, v1: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</table>
+<hr><h2 id="_8C772600"><a name="OdXml.MergeSvnReq"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.MergeSvnReq">MergeSvnReq</a>
+</h2>
+<p> NEW(doc, &quot;D:merge&quot;, &quot;D:source&quot;, &quot;D:href&quot;, &quot;http://svn.edgarschwarz.de/.....&quot;)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MergeSvnReq* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; InitMergeSvnReq (<strong>CONST</strong> a1, a2, a3, v1: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</table>
+<hr><h2 id="_8C77BA40"><a name="OdXml.ErrorRes"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.ErrorRes">ErrorRes</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ErrorRes* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init1 (<strong>CONST</strong> error: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</table>
+<hr><h2 id="_8C781EC0"><a name="OdXml.BaselineControlReq"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.BaselineControlReq">BaselineControlReq</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BaselineControlReq* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init1 (<strong>CONST</strong> host, baseline: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</table>
+<hr><h2 id="_8C7884C0"><a name="OdXml.BaselineReportReq"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.BaselineReportReq">BaselineReportReq</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BaselineReportReq* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init</td></tr>
+</table>
+<hr><h2 id="_8C78CB80"><a name="OdXml.ConfigurationReportRes"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.ConfigurationReportRes">ConfigurationReportRes</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ConfigurationReportRes* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init1 (<strong>CONST</strong> hostName, conf: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> addVcrState (<strong>CONST</strong> host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> ms: <strong>XML.Element</strong>; <strong>CONST</strong> res, hist: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> state: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8C79AC40"><a name="OdXml.BaselineReportRes"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.BaselineReportRes">BaselineReportRes</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BaselineReportRes* =<strong>OBJECT</strong> (<strong>ConfigurationReportRes</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> addVcr (<strong>CONST</strong> host: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> ms: <strong>XML.Element</strong>; <strong>CONST</strong> res, hist: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</table>
+<hr><h2 id="_8C7A4100"><a name="OdXml.CheckoutReq"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.CheckoutReq">CheckoutReq</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CheckoutReq* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init1 (<strong>CONST</strong> host, activity: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</table>
+<hr><h2 id="_8C7AAC40"><a name="OdXml.CompareBaselineReportRes"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.CompareBaselineReportRes">CompareBaselineReportRes</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CompareBaselineReportRes* =<strong>OBJECT</strong> (<strong>ConfigurationReportRes</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>ARRAY</strong> 16 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> addVcrType (<strong>VAR</strong> ms: <strong>XML.Element</strong>; <strong>CONST</strong> type, from, to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8C7B4E40"><a name="OdXml.VersionTreeRes"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.VersionTreeRes">VersionTreeRes</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> VersionTreeRes* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init1 (<strong>CONST</strong> hist: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> addVersion (<strong>CONST</strong> host, ver: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> author, date, logText: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8C7C0540"><a name="OdXml.PropfindRes"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.PropfindRes">PropfindRes</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PropfindRes* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init1 (<strong>CONST</strong> url: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> addVersion (<strong>CONST</strong> ver, author, date, logText, state, dateTime: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; length: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_8C7CC1C0"><a name="OdXml.PropfindCollectionRes"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.PropfindCollectionRes">PropfindCollectionRes</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PropfindCollectionRes* =<strong>OBJECT</strong> (<strong>XML.Document</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init1 (<strong>CONST</strong> collection: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> addResponse (<strong>CONST</strong> href: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> addOK (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> addResourceType (<strong>CONST</strong> type: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> addNotFound (name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> addConfiguration (<strong>CONST</strong> name, version, state: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#OdXml.PropfindCollectionRes.addMember">addMember</a> (<strong>CONST</strong> name, type, dateTime: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; length: <strong>SIGNED32</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_8C7E49C0"><a name="OdXml.PropfindCollectionRes.addMember"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.PropfindCollectionRes">PropfindCollectionRes</a>.<a href="#OdXml.PropfindCollectionRes.addMember">addMember</a>
+</h3>
+<p> Add information for a collection member &lt;D:multistatus xmlns=&quot;DAV:&quot;&gt; &lt;D:response&gt; &lt;D:href&gt;http://127.0.0.1/bl0/bl1&lt;/href&gt; &lt;D:propstat&gt; &lt;D:prop&gt; &lt;D:getcontentlength&gt;0&lt;/getcontentlength&gt; &lt;D:getlastmodified&gt;04.Jun.2003 16:38:12&lt;/D:getlastmodified&gt; &lt;D:getlastmodified&gt;Tue, 11 Mar 2003 14:16:03 GMT&lt;/D:getlastmodified&gt; &lt;D:displayname&gt;bl1&lt;Displayname&gt; &lt;D:resourcetype&gt; &lt;D:collection <em>&gt; &lt;/D:resourcetype&gt; &lt;D:resourcetype &gt; for files. &lt;/D:prop&gt; &lt;D:status&gt;HTTP/1.1 200 OK&lt;/D:status&gt; &lt;/D:propstat&gt; &lt;/D:response&gt;</em></p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> addMember* (<strong>CONST</strong> name, type, dateTime: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; length: <strong>SIGNED32</strong>)</pre>
+<hr><h2 id="_8C7F4580"><a name="OdXml.Scanner"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.Scanner">Scanner</a>
+</h2>
+<p> Scanner and Parser which have my error procedure which doesn&apos;t HALT(99)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scanner* =<strong>OBJECT</strong> (<strong>XMLScanner.Scanner</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init (fr: <strong>Streams.Reader</strong>)</td></tr>
+</table>
+<hr><h2 id="_8C7FCD00"><a name="OdXml.Parser"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.Parser">Parser</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Parser* =<strong>OBJECT</strong> (<strong>XMLParser.Parser</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init (s: <strong>XMLScanner.Scanner</strong>)</td></tr>
+</table>
+<hr><h2 id="_8C802000"><a name="OdXml.OdXml"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.OdXml">OdXml</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OdXml* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>showTree: <strong>PROCEDURE</strong> (doc: <strong>XML.Document</strong>)<tr><td></td><td>xmlns: <strong>WebHTTP.AdditionalField</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> <a href="#OdXml.OdXml.ShowDAVError">ShowDAVError</a> (doc: <strong>XML.Document</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsDAVError (doc: <strong>XML.Document</strong>; <strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> XmlSize (doc: <strong>XML.Document</strong>): <strong>Streams.Position</strong><tr><td></td><td> <a href="#OdXml.OdXml.GetXmlns">GetXmlns</a> (el: <strong>XML.Element</strong>)<tr><td></td><td> <a href="#OdXml.OdXml.AbsXmlName">AbsXmlName</a> (rawName: <strong>XML.String</strong>): <strong>OdUtil.Line</strong><tr><td></td><td> <a href="#OdXml.OdXml.AbsName">AbsName</a> (<strong>CONST</strong> rawName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>OdUtil.Line</strong><tr><td></td><td> EqualName (name: <strong>XML.String</strong>; <strong>CONST</strong> absName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#OdXml.OdXml.LogDoc">LogDoc</a> (<strong>CONST</strong> info: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; doc: <strong>XML.Document</strong>)<tr><td></td><td> LogEl (<strong>CONST</strong> info: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; el: <strong>XML.Element</strong>)<tr><td></td><td> GetFirstChild (parent: <strong>XML.Element</strong>): <strong>XML.Element</strong><tr><td></td><td> FindElement (parent: <strong>XML.Element</strong>; <strong>CONST</strong> type: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Element</strong><tr><td></td><td> SplitElement (parent: <strong>XML.Element</strong>; <strong>CONST</strong> path: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Element</strong><tr><td></td><td> ConfigurationReportReq (): <strong>XML.Document</strong><tr><td></td><td> UpdateReq (<strong>CONST</strong> host, ver: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Document</strong><tr><td></td><td> VersionTreeReq (): <strong>XML.Document</strong><tr><td></td><td> ProppatchReq (<strong>CONST</strong> modeName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; props: <strong>WebHTTP.AdditionalField</strong>): <strong>XML.Document</strong><tr><td></td><td> PropfindReq (props: <strong>WebHTTP.AdditionalField</strong>): <strong>XML.Document</strong><tr><td></td><td> CheckinReq (<strong>CONST</strong> author, desc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Document</strong><tr><td></td><td> VersionControlCreateReq (<strong>CONST</strong> author, desc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Document</strong><tr><td></td><td> FreezeReq (<strong>CONST</strong> method, author, desc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Document</strong><tr><td></td><td> SelectReq (<strong>CONST</strong> method, host, ver: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Document</strong><tr><td></td><td> Href1Req (<strong>CONST</strong> label, href: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>XML.Document</strong><tr><td></td><td> GetVersionControlHref (doc: <strong>XML.Document</strong>; <strong>VAR</strong> charData: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetUpdateVersionName (doc: <strong>XML.Document</strong>; <strong>VAR</strong> versionName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> GetAuthorDesc (doc: <strong>XML.Document</strong>; <strong>VAR</strong> author, desc: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> File</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_8C8538C0"><a name="OdXml.OdXml.ShowDAVError"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.OdXml">OdXml</a>.<a href="#OdXml.OdXml.ShowDAVError">ShowDAVError</a>
+</h3>
+<p>*******************************************************************************</p>
+
+<p>*******************************************************************************</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ShowDAVError* (doc: <strong>XML.Document</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_8C858640"><a name="OdXml.OdXml.GetXmlns"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.OdXml">OdXml</a>.<a href="#OdXml.OdXml.GetXmlns">GetXmlns</a>
+</h3>
+<p> Collect XML namespaces from an element. No nested scopes. So hope that no namespace is redefined ina XML body.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetXmlns* (el: <strong>XML.Element</strong>)</pre>
+<hr><h3 id="_8C861140"><a name="OdXml.OdXml.AbsXmlName"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.OdXml">OdXml</a>.<a href="#OdXml.OdXml.AbsXmlName">AbsXmlName</a>
+</h3>
+<p> Expand an xmlns for an XML String.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AbsXmlName* (rawName: <strong>XML.String</strong>): <strong>OdUtil.Line</strong></pre>
+<hr><h3 id="_8C866EC0"><a name="OdXml.OdXml.AbsName"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.OdXml">OdXml</a>.<a href="#OdXml.OdXml.AbsName">AbsName</a>
+</h3>
+<p> Expand an xmlns.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> AbsName* (<strong>CONST</strong> rawName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>OdUtil.Line</strong></pre>
+<hr><h3 id="_8C86C800"><a name="OdXml.OdXml.LogDoc"></a><a href="#OdXml">OdXml</a>.<a href="#OdXml.OdXml">OdXml</a>.<a href="#OdXml.OdXml.LogDoc">LogDoc</a>
+</h3>
+<p> Write an XML document or element e.g. in case of unexpected elements to the log device set in KernelLog.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> LogDoc* (<strong>CONST</strong> info: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; doc: <strong>XML.Document</strong>)</pre>
+</body></html>

@@ -21,6 +21,13 @@ import glob, json, os, re, shutil, subprocess, sys, tempfile
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MINIA2 = os.environ.get("MINIA2", os.path.join(os.path.dirname(HERE), "minia2"))
 OB = os.environ.get("OB", os.path.join(MINIA2, "target", "bundle", "ob"))
+# A2SDK picks the library the driver resolves imports against. The shipped payload is headless, so
+# against it every module that imports the window system fails to compile and gets no page at all
+# (apps/desktop went from 108 modules to 5). Point it at a full build instead:
+#     tests/bundle.sh --full --no-tar -o target/fullsdk target/Linux64   (in minia2)
+#     A2SDK=/path/to/minia2/target/fullsdk python3 tools/gen-docs.py
+SDK = os.environ.get("A2SDK") or os.path.join(MINIA2, "target", "fullsdk")
+ENV = dict(os.environ, A2SDK=SDK) if os.path.isdir(SDK) else None
 want = set(sys.argv[1:])
 
 
@@ -75,7 +82,10 @@ for man in manifests:
         for m, p in files:
             shutil.copy(p, os.path.join(work, m + ".Mod"))
         out = os.path.join(work, "out")
-        r = subprocess.run([OB, "doc", "-o", out], cwd=work, capture_output=True, text=True)
+        # errors="replace": a diagnostic can quote a source line, and an A2 Text source is
+        # binary -- one 0xF0 in a message used to kill the whole run with UnicodeDecodeError.
+        r = subprocess.run([OB, "doc", "-o", out], cwd=work, capture_output=True, text=True,
+                           errors="replace", env=ENV)
         pages = glob.glob(os.path.join(out, "*.html")) if os.path.isdir(out) else []
         if len(pages) < 2:      # index.html alone means ob doc produced nothing -- keep what is there
             skipped.append(f"{name} (no pages; left the existing docs alone)")
@@ -86,7 +96,9 @@ for man in manifests:
         dst = os.path.join(HERE, "docs", short)
         shutil.rmtree(dst, ignore_errors=True)
         shutil.copytree(out, dst)
-        written.append(f"{name}: {len(pages)-1} module(s)")
+        short_of = len(files) - (len(pages) - 1)
+        written.append(f"{name}: {len(pages)-1} module(s)"
+                       + (f" -- {short_of} of {len(files)} produced no page" if short_of > 0 else ""))
 
 for line in written:
     print("  " + line)

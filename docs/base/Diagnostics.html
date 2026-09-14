@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Diagnostics">Diagnostics</a></p>
-<hr><h1 id="#_C532CE00"><a name="Diagnostics"></a><a href="#ModuleList">Module</a> Diagnostics
+<hr><h1 id="_4AB1FBC0"><a name="Diagnostics"></a><a href="#ModuleList">Module</a> Diagnostics
 </h1>
-<p> AUTHOR "staubesv"; PURPOSE "Generic diagnostics reporting facility";</p>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Generic diagnostics reporting facility&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -49,21 +49,21 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_C533ED40"><a name="Diagnostics.TypeInformation"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.TypeInformation">TypeInformation</a>
+<hr><h2 id="_4AB31B00"><a name="Diagnostics.TypeInformation"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.TypeInformation">TypeInformation</a>
 </h2>
 <p> Entry types</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> TypeInformation*= 0</pre>
-<hr><h2 id="#_C5341F40"><a name="Diagnostics.All"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.All">All</a>
+<hr><h2 id="_4AB34D00"><a name="Diagnostics.All"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.All">All</a>
 </h2>
 <p> DiagnosticsList.ToStream mask argument</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> All*= {TypeInformation,TypeWarning,TypeError}</pre>
-<hr><h2 id="#_C53463C0"><a name="Diagnostics.Diagnostics"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.Diagnostics">Diagnostics</a>
+<hr><h2 id="_4AB39180"><a name="Diagnostics.Diagnostics"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.Diagnostics">Diagnostics</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -75,7 +75,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_C5358000"><a name="Diagnostics.Entry"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.Entry">Entry</a>
+<hr><h2 id="_4AB4ADC0"><a name="Diagnostics.Entry"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.Entry">Entry</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -89,7 +89,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_C5361C00"><a name="Diagnostics.DiagnosticsList"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.DiagnosticsList">DiagnosticsList</a>
+<hr><h2 id="_4AB549C0"><a name="Diagnostics.DiagnosticsList"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.DiagnosticsList">DiagnosticsList</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -97,7 +97,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>entries: <strong>Entry</strong><tr><td></td><td>nofErrors: <strong>SIZE</strong><tr><td></td><td>nofWarnings: <strong>SIZE</strong><tr><td></td><td>nofInformations: <strong>SIZE</strong><tr><td></td><td>nofMessages: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Error (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ToStream (w: <strong>Streams.Writer</strong>; mask: <strong>SET</strong>)<tr><td></td><td>& Reset<tr><td></td><td> ForAll (proc: <strong>EnumProc</strong>)<tr><td></td><td> GetEntries (): <strong>EntryArray</strong><tr><td></td><td> NewEntry (type: <strong>INTEGER</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; next: <strong>Entry</strong>): <strong>Entry</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>entries: <strong>Entry</strong><tr><td></td><td>nofErrors: <strong>SIZE</strong><tr><td></td><td>nofWarnings: <strong>SIZE</strong><tr><td></td><td>nofInformations: <strong>SIZE</strong><tr><td></td><td>nofMessages: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Error (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ToStream (w: <strong>Streams.Writer</strong>; mask: <strong>SET</strong>)<tr><td></td><td>&amp; Reset<tr><td></td><td> ForAll (proc: <strong>EnumProc</strong>)<tr><td></td><td> GetEntries (): <strong>EntryArray</strong><tr><td></td><td> NewEntry (type: <strong>INTEGER</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; next: <strong>Entry</strong>): <strong>Entry</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -111,7 +111,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_C5386140"><a name="Diagnostics.StreamDiagnostics"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.StreamDiagnostics">StreamDiagnostics</a>
+<hr><h2 id="_4AB78F00"><a name="Diagnostics.StreamDiagnostics"></a><a href="#Diagnostics">Diagnostics</a>.<a href="#Diagnostics.StreamDiagnostics">StreamDiagnostics</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -119,7 +119,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& Init (w: <strong>Streams.Writer</strong>)<tr><td></td><td> Error (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; Init (w: <strong>Streams.Writer</strong>)<tr><td></td><td> Error (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Warning (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Information (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; position: <strong>Streams.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Format">Format</a></p>
+<hr><h1 id="_3CBCC680"><a name="Format"></a><a href="#ModuleList">Module</a> Format
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Format.Formatter">Formatter</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Format.StringFormatter">StringFormatter</a> =<strong>OBJECT</strong> (<strong>Formatter</strong>)<tr><th align='left'>procedures</th><td> <a href="#Format.To">To</a> (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> template: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Formatter</strong><tr><td></td><td> <a href="#Format.Into">Into</a> (size: <strong>SIZE</strong>; <strong>CONST</strong> template: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>StringFormatter</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_3CBD7AC0">
+</h1>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;Messages written as one template with holes, in a language that has no varargs&quot;; LIMITATIONS &quot;- the holes are positional and take no spec: {} and nothing else, because the way a number is written is chosen by the method that fills the hole (Int, Hex, Float), not by a second little language inside the string; - a template is filled once, left to right; there is no going back to a hole.&quot;</p>
+<hr><h2 id="_3CBEA900"><a name="Format.Formatter"></a><a href="#Format">Format</a>.<a href="#Format.Formatter">Formatter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Formatter* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Format.Formatter.holes">holes</a>: <strong>SIGNED32</strong><tr><td></td><td><a href="#Format.Formatter.extra">extra</a>: <strong>BOOLEAN</strong><tr><td></td><td><a href="#Format.Formatter.missing">missing</a>: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td> Set (writer: <strong>Streams.Writer</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Str (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Char (c: <strong>CHAR</strong>)<tr><td></td><td> <a href="#Format.Formatter.Int">Int</a> (x: <strong>SIGNED64</strong>; width= 0: <strong>INTEGER</strong>)<tr><td></td><td> Hex (x: <strong>SIGNED64</strong>; digits= -16: <strong>INTEGER</strong>)<tr><td></td><td> <a href="#Format.Formatter.Float">Float</a> (x: <strong>FLOAT64</strong>; width= 16: <strong>INTEGER</strong>)<tr><td></td><td> Bool (b: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Format.Formatter.Done">Done</a><tr><td></td><td> <a href="#Format.Formatter.Complete">Complete</a> (): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_3CC048C0"><a name="Format.Formatter.holes"></a><a href="#Format">Format</a>.<a href="#Format.Formatter">Formatter</a>.<a href="#Format.Formatter.holes">holes</a>
+</h3>
+<p> holes filled so far</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> holes-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="_3CC08AC0"><a name="Format.Formatter.extra"></a><a href="#Format">Format</a>.<a href="#Format.Formatter">Formatter</a>.<a href="#Format.Formatter.extra">extra</a>
+</h3>
+<p> TRUE when an argument arrived with no hole left for it</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> extra-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_3CC0E880"><a name="Format.Formatter.missing"></a><a href="#Format">Format</a>.<a href="#Format.Formatter">Formatter</a>.<a href="#Format.Formatter.missing">missing</a>
+</h3>
+<p> TRUE when Done had to write a hole out because nobody filled it</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> missing-: <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_3CC14E00"><a name="Format.Formatter.Int"></a><a href="#Format">Format</a>.<a href="#Format.Formatter">Formatter</a>.<a href="#Format.Formatter.Int">Int</a>
+</h3>
+<p> width is the minimum field width, 0 for none -- the same argument Streams.Writer takes.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Int* (x: <strong>SIGNED64</strong>; width= 0: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="_3CC1D880"><a name="Format.Formatter.Float"></a><a href="#Format">Format</a>.<a href="#Format.Formatter">Formatter</a>.<a href="#Format.Formatter.Float">Float</a>
+</h3>
+<p> width is what Streams.Writer.Float means by it: the whole field, decimals included.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Float* (x: <strong>FLOAT64</strong>; width= 16: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="_3CC25880"><a name="Format.Formatter.Done"></a><a href="#Format">Format</a>.<a href="#Format.Formatter">Formatter</a>.<a href="#Format.Formatter.Done">Done</a>
+</h3>
+<p> The rest of the template, holes and all: a hole nobody filled shows as {}.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Done*</pre>
+<hr><h3 id="_3CC2BF00"><a name="Format.Formatter.Complete"></a><a href="#Format">Format</a>.<a href="#Format.Formatter">Formatter</a>.<a href="#Format.Formatter.Complete">Complete</a>
+</h3>
+<p> Every hole filled, no argument left over -- ask before trusting the message.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Complete* (): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_3CC32A00"><a name="Format.StringFormatter"></a><a href="#Format">Format</a>.<a href="#Format.StringFormatter">StringFormatter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StringFormatter* =<strong>OBJECT</strong> (<strong>Formatter</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; InitString (size: <strong>SIZE</strong>; <strong>CONST</strong> t: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Format.StringFormatter.Get">Get</a> (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_3CC3C340"><a name="Format.StringFormatter.Get"></a><a href="#Format">Format</a>.<a href="#Format.StringFormatter">StringFormatter</a>.<a href="#Format.StringFormatter.Get">Get</a>
+</h3>
+<p> The message, truncated if it did not fit the size this was made with.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Get* (<strong>VAR</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
+<hr><h2 id="_3CC44240"><a name="Format.To"></a><a href="#Format">Format</a>.<a href="#Format.To">To</a>
+</h2>
+<p> A template written to a stream.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> To* (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> template: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Formatter</strong></pre>
+<hr><h2 id="_3CC4AF80"><a name="Format.Into"></a><a href="#Format">Format</a>.<a href="#Format.Into">Into</a>
+</h2>
+<p> A template written into a string of at most size characters.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Into* (size: <strong>SIZE</strong>; <strong>CONST</strong> template: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>StringFormatter</strong></pre>
+</body></html>

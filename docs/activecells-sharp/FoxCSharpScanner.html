@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxCSharpScanner">FoxCSharpScanner</a></p>
-<hr><h1 id="#_62D06A80"><a name="FoxCSharpScanner"></a><a href="#ModuleList">Module</a> FoxCSharpScanner
+<hr><h1 id="_D1E3D400"><a name="FoxCSharpScanner"></a><a href="#ModuleList">Module</a> FoxCSharpScanner
 </h1>
 <h3>Summary</h3>
 
@@ -164,17 +164,17 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_62D8C380"><a name="FoxCSharpScanner.KeywordTable"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.KeywordTable">KeywordTable</a>
+<hr><h2 id="_D1EC2D00"><a name="FoxCSharpScanner.KeywordTable"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.KeywordTable">KeywordTable</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> KeywordTable* =<strong>FoxScanner.KeywordTable</strong></pre>
-<hr><h2 id="#_62D8E6C0"><a name="FoxCSharpScanner.Position"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Position">Position</a>
+<hr><h2 id="_D1EC5040"><a name="FoxCSharpScanner.Position"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Position">Position</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> Position* =<strong>Basic.Position</strong></pre>
-<hr><h2 id="#_62D90A00"><a name="FoxCSharpScanner.Token"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Token">Token</a>
+<hr><h2 id="_D1EC7380"><a name="FoxCSharpScanner.Token"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Token">Token</a>
 </h2>
 <dl>
 <dt><strong>token</strong></dt>
@@ -199,12 +199,12 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_62DA1A80"><a name="FoxCSharpScanner.StringMaker"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.StringMaker">StringMaker</a>
+<hr><h2 id="_D1ED8400"><a name="FoxCSharpScanner.StringMaker"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.StringMaker">StringMaker</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> StringMaker* =<strong>FoxScanner.StringMaker</strong></pre>
-<hr><h2 id="#_62DA3DC0"><a name="FoxCSharpScanner.Scanner"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Scanner">Scanner</a>
+<hr><h2 id="_D1EDA740"><a name="FoxCSharpScanner.Scanner"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Scanner">Scanner</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -212,7 +212,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>source: <strong>StringType</strong><tr><td></td><td>position: <strong>Position</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitializeScanner (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>SIGNED32</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> <a href="#FoxCSharpScanner.Scanner.GetNextToken">GetNextToken</a> (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResetError<tr><td></td><td> <a href="#FoxCSharpScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a> (<strong>VAR</strong> diagnostics: <strong>Diagnostics.Diagnostics</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>source: <strong>StringType</strong><tr><td></td><td>position: <strong>Position</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>&amp; InitializeScanner (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>SIGNED32</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> <a href="#FoxCSharpScanner.Scanner.GetNextToken">GetNextToken</a> (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ResetError<tr><td></td><td> <a href="#FoxCSharpScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a> (<strong>VAR</strong> diagnostics: <strong>Diagnostics.Diagnostics</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -220,35 +220,35 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_62DB3DC0"><a name="FoxCSharpScanner.Scanner.GetNextToken"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Scanner">Scanner</a>.<a href="#FoxCSharpScanner.Scanner.GetNextToken">GetNextToken</a>
+<hr><h3 id="_D1EEA740"><a name="FoxCSharpScanner.Scanner.GetNextToken"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Scanner">Scanner</a>.<a href="#FoxCSharpScanner.Scanner.GetNextToken">GetNextToken</a>
 </h3>
 <p> get next token</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetNextToken* (<strong>VAR</strong> token: <strong>Token</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h3 id="#_62DB9000"><a name="FoxCSharpScanner.Scanner.ResetErrorDiagnostics"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Scanner">Scanner</a>.<a href="#FoxCSharpScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a>
+<hr><h3 id="_D1EEF980"><a name="FoxCSharpScanner.Scanner.ResetErrorDiagnostics"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.Scanner">Scanner</a>.<a href="#FoxCSharpScanner.Scanner.ResetErrorDiagnostics">ResetErrorDiagnostics</a>
 </h3>
-<p> set the diagnostics mode of the scanner (diagnostics = NIL ==&gt no report) and reset the error state intended for silent token peeeking after the end of a module</p>
+<p> set the diagnostics mode of the scanner (diagnostics = NIL ==&gt; no report) and reset the error state intended for silent token peeeking after the end of a module</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ResetErrorDiagnostics* (<strong>VAR</strong> diagnostics: <strong>Diagnostics.Diagnostics</strong>)</pre>
-<hr><h2 id="#_62DC41C0"><a name="FoxCSharpScanner.NewScanner"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.NewScanner">NewScanner</a>
+<hr><h2 id="_D1EFAB40"><a name="FoxCSharpScanner.NewScanner"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.NewScanner">NewScanner</a>
 </h2>
 <p> return a new scanner on a stream, error output via diagnostics</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewScanner* (<strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; reader: <strong>Streams.Reader</strong>; position: <strong>SIGNED32</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>Scanner</strong></pre>
-<hr><h2 id="#_62DCE080"><a name="FoxCSharpScanner.OutToken"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.OutToken">OutToken</a>
+<hr><h2 id="_D1F04A00"><a name="FoxCSharpScanner.OutToken"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.OutToken">OutToken</a>
 </h2>
 <p> debugging output</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> OutToken* (w: <strong>Streams.Writer</strong>; <strong>CONST</strong> token: <strong>Token</strong>)</pre>
-<hr><h2 id="#_62DD2F40"><a name="FoxCSharpScanner.ReportKeywords"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.ReportKeywords">ReportKeywords</a>
+<hr><h2 id="_D1F098C0"><a name="FoxCSharpScanner.ReportKeywords"></a><a href="#FoxCSharpScanner">FoxCSharpScanner</a>.<a href="#FoxCSharpScanner.ReportKeywords">ReportKeywords</a>
 </h2>
 <p> debugging / reporting</p>
 

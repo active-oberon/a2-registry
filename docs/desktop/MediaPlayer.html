@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#MediaPlayer">MediaPlayer</a></p>
+<hr><h1 id="_289A6E00"><a name="MediaPlayer"></a><a href="#ModuleList">Module</a> MediaPlayer
+</h1>
+<p> AUTHOR &quot;PL/staubesv&quot;; PURPOSE &quot;Media Player&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Ok= 0<tr><td></td><td>CouldNotOpenStream= 1<tr><td></td><td>AudioNotCompatible= 2<tr><td></td><td>VideoNotCompatible= 3<tr><td></td><td>DemuxNotCompatible= 4<tr><td></td><td>NoVideoDecoder= 5<tr><td></td><td>NoAudioDecoder= 6<tr><td></td><td>NoDecoders= 7<tr><td></td><td>WrongParameters= 8<tr><td></td><td><a href="#MediaPlayer.NotReady">NotReady</a>= 1<tr><td></td><td>Ready= 2<tr><td></td><td>Playing= 3<tr><td></td><td>Paused= 4<tr><td></td><td>Stopped= 5<tr><td></td><td>Stepping= 6<tr><td></td><td>InTransition= 7<tr><td></td><td>Finished= 9<tr><td></td><td>Closed= 10<tr><td></td><td>Error= 99<tr><th align='left'>type declarations</th><td><a href="#MediaPlayer.VideoBuffer">VideoBuffer</a> =<strong>WMGraphics.Image</strong><tr><td></td><td>KeyEventHandler =<strong>PROCEDURE</strong>{DELEGATE} (ucs: <strong>SIZE</strong>; flags: <strong>SET</strong>; keysym: <strong>SIZE</strong>)<tr><td></td><td>PointerDownHandler =<strong>PROCEDURE</strong>{DELEGATE} (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td>ContextMenuHandler =<strong>PROCEDURE</strong>{DELEGATE} (sender: @Any0; x, y: <strong>SIZE</strong>)<tr><td></td><td><a href="#MediaPlayer.PlayerWindow">PlayerWindow</a> =<strong>OBJECT</strong> (<strong>WMWindowManager.DoubleBufferWindow</strong>)<tr><td></td><td><a href="#MediaPlayer.Setup">Setup</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#MediaPlayer.EofHandler">EofHandler</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#MediaPlayer.Player">Player</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#MediaPlayer.Open">Open</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Pause (context: <strong>Commands.Context</strong>)<tr><td></td><td> Step (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#MediaPlayer.TransitionTo">TransitionTo</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#MediaPlayer.Close">Close</a><tr><td></td><td> <a href="#MediaPlayer.SetEofAction">SetEofAction</a> (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_289D6840">
+</h1>
+<p> <strong></strong></p>
+
+<ul>
+<li> History: <strong></strong></li>
+
+<li> 15.02.2006 Set UpdateInterval to 500ms, optionally open player window in current view,</li>
+
+<li> added SetEofAction &amp; EofHandler for testing purposes, improved closing behaviour (staubesv) <strong></strong></li>
+
+<li> TODOs:</li>
+
+<li> - reuse filler threads</li>
+
+<li> - optimize filler threads seek procedure (first look at already decoded pictures before flushing them - maybe we can use them)</li>
+
+<li> - Does the player need to be able to play standalone at all? (Remove GUI related code from module?)</li>
+
+<li> - implement/finish drop frame mechanism</li>
+
+<li> - improve SetPos</li>
+
+<li> - Don&apos;t change volume of audio play channels</li>
+
+<li> - USE same position info for both audio and video!!! (milliseconds)</li>
+</ul>
+<hr><h2 id="_289F1640"><a name="MediaPlayer.NotReady"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.NotReady">NotReady</a>
+</h2>
+<p> Player States</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> NotReady*= 1</pre>
+<hr><h2 id="_289F4840"><a name="MediaPlayer.VideoBuffer"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.VideoBuffer">VideoBuffer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> VideoBuffer* =<strong>WMGraphics.Image</strong></pre>
+<hr><h2 id="_289F7180"><a name="MediaPlayer.PlayerWindow"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.PlayerWindow">PlayerWindow</a>
+</h2>
+<p> default Player Window where the video is played</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PlayerWindow* =<strong>OBJECT</strong> (<strong>WMWindowManager.DoubleBufferWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fullscreenEnabled: <strong>BOOLEAN</strong><tr><td></td><td>fullscreen: <strong>BOOLEAN</strong><tr><td></td><td>lastFrame: <strong>WMGraphics.Image</strong><tr><td></td><td>extPointerDownHandler: <strong>PointerDownHandler</strong><tr><td></td><td>extContextMenuHandler: <strong>ContextMenuHandler</strong><tr><td></td><td>extKeyEventHandler: <strong>KeyEventHandler</strong><tr><th align='left'>procedures</th><td>&amp; New (w, h: <strong>SIGNED32</strong>; alpha: <strong>BOOLEAN</strong>; player: <strong>Player</strong>; autoHideCursor: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#MediaPlayer.PlayerWindow.ToggleFullscreen">ToggleFullscreen</a><tr><td></td><td> Draw (canvas: <strong>WMGraphics.Canvas</strong>; w, h: <strong>SIZE</strong>; q: <strong>SIGNED32</strong>)<tr><td></td><td> Close<tr><td></td><td> KeyEvent (ucs: <strong>SIZE</strong>; flags: <strong>SET</strong>; keysym: <strong>SIZE</strong>)<tr><td></td><td> ShowBlack<tr><td></td><td> ShowFrame (frame: <strong>WMGraphics.Image</strong>)<tr><td></td><td> PointerMove (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerDown (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_28A196C0"><a name="MediaPlayer.PlayerWindow.ToggleFullscreen"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.PlayerWindow">PlayerWindow</a>.<a href="#MediaPlayer.PlayerWindow.ToggleFullscreen">ToggleFullscreen</a>
+</h3>
+<p> Toggle between fullscreen and window mode</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToggleFullscreen*</pre>
+<hr><h2 id="_28A1DB80"><a name="MediaPlayer.Setup"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.Setup">Setup</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Setup* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>uri: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>hasAudio: <strong>BOOLEAN</strong><tr><td></td><td>hasVideo: <strong>BOOLEAN</strong><tr><td></td><td>canSeek: <strong>BOOLEAN</strong><tr><td></td><td>maxTime: <strong>SIGNED32</strong><tr><td></td><td>width: <strong>SIGNED32</strong><tr><td></td><td>height: <strong>SIGNED32</strong><tr><td></td><td>mspf: <strong>SIGNED32</strong><tr><td></td><td>maxFrames: <strong>SIGNED32</strong><tr><td></td><td>channels: <strong>SIGNED32</strong><tr><td></td><td>bits: <strong>SIGNED32</strong><tr><td></td><td>rate: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_28A2D080"><a name="MediaPlayer.EofHandler"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.EofHandler">EofHandler</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EofHandler* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>proc: <strong>EofProc</strong><tr><td></td><td>player: <strong>Player</strong><tr><th align='left'>procedures</th><td> Call<tr><td></td><td> Terminate<tr><td></td><td>&amp; New (player: <strong>Player</strong>)<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_28A35F40"><a name="MediaPlayer.Player"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.Player">Player</a>
+</h2>
+<ul>
+<li> Player Object</li>
+
+<li> The body of the active object manages the state of the player. If a client wants to change the player state, it</li>
+
+<li> issues a state change request using (indirectly) RequestState.</li>
+
+</ul>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Player* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>state: <strong>SIGNED32</strong><tr><td></td><td>console: <strong>BOOLEAN</strong><tr><td></td><td>pw: <strong>PlayerWindow</strong><tr><td></td><td>setup: <strong>PROCEDURE</strong>{DELEGATE} (data: <strong>Setup</strong>)<tr><td></td><td>update: <strong>PROCEDURE</strong>{DELEGATE} (state, frame, maxFrame, time, displayTime: <strong>SIGNED32</strong>)<tr><td></td><td>pointerDownHandler: <strong>PROCEDURE</strong>{DELEGATE} (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><th align='left'>procedures</th><td> <a href="#MediaPlayer.Player.Open">Open</a> (<strong>CONST</strong> uri: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Play<tr><td></td><td> Step<tr><td></td><td> DoTransition (<strong>CONST</strong> uri: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; pos, duration: <strong>SIGNED32</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> Stop<tr><td></td><td> Pause<tr><td></td><td> GetTimePos (): <strong>SIGNED32</strong><tr><td></td><td> GetFrame (): <strong>SIGNED32</strong><tr><td></td><td> PreviewFrame (delta: <strong>SIZE</strong>): <strong>VideoBuffer</strong><tr><td></td><td> GetPos (): <strong>SIGNED32</strong><tr><td></td><td> SetPos (pos: <strong>SIGNED32</strong>)<tr><td></td><td> SetEofAction (proc: <strong>EofProc</strong>)<tr><td></td><td>&amp; New<tr><td></td><td> SetState (state: <strong>SIGNED32</strong>)<tr><td></td><td> GetState (): <strong>SIGNED32</strong><tr><td></td><td> CanSeek (): <strong>BOOLEAN</strong><tr><td></td><td> GetCurrentFrame (): <strong>VideoBuffer</strong><tr><td></td><td> ToggleFullScreen (sender, data: @Any0)<tr><td></td><td> NoAction (sender, data: @Any0)<tr><td></td><td> Reset (sender, data: @Any0)<tr><td></td><td> Loop (sender, data: @Any0)<tr><td></td><td> Quit (sender, data: @Any0)<tr><td></td><td> Close<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_28A79B40"><a name="MediaPlayer.Player.Open"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.Player">Player</a>.<a href="#MediaPlayer.Player.Open">Open</a>
+</h3>
+<p> -- Player Controls -----------------------------------------------</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (<strong>CONST</strong> uri: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h2 id="_28A82000"><a name="MediaPlayer.Open"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.Open">Open</a>
+</h2>
+<p> Command line user interface</p>
+
+<p> Play the specified video/audio file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="_28A87CC0"><a name="MediaPlayer.TransitionTo"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.TransitionTo">TransitionTo</a>
+</h2>
+<p> Do a transition to the specified video/audio file (of the specified duration)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> TransitionTo* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="_28A8E280"><a name="MediaPlayer.Close"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.Close">Close</a>
+</h2>
+<p> Close the media player and its window</p>
+
+<p> ~</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Close*</pre>
+<hr><h2 id="_28A928C0"><a name="MediaPlayer.SetEofAction"></a><a href="#MediaPlayer">MediaPlayer</a>.<a href="#MediaPlayer.SetEofAction">SetEofAction</a>
+</h2>
+<p> Set a EOF (end of file) handler, i.e. action to be taken when playing of a ressource finished.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetEofAction* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

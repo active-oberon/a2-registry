@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMPartitionsComponents">WMPartitionsComponents</a></p>
+<hr><h1 id="_BEE580C0"><a name="WMPartitionsComponents"></a><a href="#ModuleList">Module</a> WMPartitionsComponents
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Partition view &amp; selection componet&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WMPartitionsComponents.NoWheelGrid">NoWheelGrid</a> =<strong>OBJECT</strong> (<strong>WMStringGrids.StringGrid</strong>)<tr><td></td><td><a href="#WMPartitionsComponents.BevelPanel">BevelPanel</a> =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)<tr><td></td><td><a href="#WMPartitionsComponents.Selection">Selection</a> =<strong>PartitionsLib.Selection</strong><tr><td></td><td><a href="#WMPartitionsComponents.SelectionWrapper">SelectionWrapper</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WMPartitionsComponents.PartitionSelector">PartitionSelector</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#WMPartitionsComponents.Operation">Operation</a> =<strong>PartitionsLib.Operation</strong><tr><td></td><td><a href="#WMPartitionsComponents.OperationWrapper">OperationWrapper</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WMPartitionsComponents.OperationSelector">OperationSelector</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><th align='left'>procedures</th><td> TestPartitionSelector<tr><td></td><td> GenPartitionSelector (): <strong>XML.Element</strong><tr><td></td><td> GenOperationSelector (): <strong>XML.Element</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_BEE691C0"><a name="WMPartitionsComponents.NoWheelGrid"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.NoWheelGrid">NoWheelGrid</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NoWheelGrid* =<strong>OBJECT</strong> (<strong>WMStringGrids.StringGrid</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> WheelMove (dz: <strong>SIZE</strong>)</td></tr>
+</table>
+<hr><h2 id="_BEE6E200"><a name="WMPartitionsComponents.BevelPanel"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.BevelPanel">BevelPanel</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BevelPanel* =<strong>OBJECT</strong> (<strong>WMStandardComponents.Panel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)</td></tr>
+</table>
+<hr><h2 id="_BEE73240"><a name="WMPartitionsComponents.Selection"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.Selection">Selection</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Selection* =<strong>PartitionsLib.Selection</strong></pre>
+<hr><h2 id="_BEE75640"><a name="WMPartitionsComponents.SelectionWrapper"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.SelectionWrapper">SelectionWrapper</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SelectionWrapper* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>selection: <strong>PartitionsLib.Selection</strong></td></tr>
+</table>
+<hr><h2 id="_BEE79300"><a name="WMPartitionsComponents.PartitionSelector"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.PartitionSelector">PartitionSelector</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PartitionSelector* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#WMPartitionsComponents.PartitionSelector.showDetails">showDetails</a>: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td><a href="#WMPartitionsComponents.PartitionSelector.showDiskGeometry">showDiskGeometry</a>: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td><a href="#WMPartitionsComponents.PartitionSelector.onSelection">onSelection</a>: <strong>WMEvents.EventSource</strong><tr><td></td><td><a href="#WMPartitionsComponents.PartitionSelector.clSelected">clSelected</a>: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clBackground: <strong>WMProperties.ColorProperty</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> GetSelection (): <strong>Selection</strong><tr><td></td><td> ClearSelection<tr><td></td><td> Synchronize<tr><td></td><td> AlignSubComponents<tr><td></td><td> Resized<tr><td></td><td> Finalize<tr><td></td><td> PropertyChanged (sender, property: @Any0)<tr><td></td><td> WheelMove (dz: <strong>SIZE</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_BEE8AB00"><a name="WMPartitionsComponents.PartitionSelector.showDetails"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.PartitionSelector">PartitionSelector</a>.<a href="#WMPartitionsComponents.PartitionSelector.showDetails">showDetails</a>
+</h3>
+<p> Show detailed textual disk information? (default = FALSE)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> showDetails-: <strong>WMProperties.BooleanProperty</strong></pre>
+<hr><h3 id="_BEE8FD80"><a name="WMPartitionsComponents.PartitionSelector.showDiskGeometry"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.PartitionSelector">PartitionSelector</a>.<a href="#WMPartitionsComponents.PartitionSelector.showDiskGeometry">showDiskGeometry</a>
+</h3>
+<p> Show disk geometry information in title? (default = FALSE)</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> showDiskGeometry-: <strong>WMProperties.BooleanProperty</strong></pre>
+<hr><h3 id="_BEE95380"><a name="WMPartitionsComponents.PartitionSelector.onSelection"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.PartitionSelector">PartitionSelector</a>.<a href="#WMPartitionsComponents.PartitionSelector.onSelection">onSelection</a>
+</h3>
+<p> Generates an event whenever the user selects a partition</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> onSelection-: <strong>WMEvents.EventSource</strong></pre>
+<hr><h3 id="_BEE9AA80"><a name="WMPartitionsComponents.PartitionSelector.clSelected"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.PartitionSelector">PartitionSelector</a>.<a href="#WMPartitionsComponents.PartitionSelector.clSelected">clSelected</a>
+</h3>
+<p> use fillColor property for overall background of the component</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> clSelected-: <strong>WMProperties.ColorProperty</strong></pre>
+<hr><h2 id="_BEEA0080"><a name="WMPartitionsComponents.Operation"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.Operation">Operation</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Operation* =<strong>PartitionsLib.Operation</strong></pre>
+<hr><h2 id="_BEEA23C0"><a name="WMPartitionsComponents.OperationWrapper"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.OperationWrapper">OperationWrapper</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OperationWrapper* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>operation: <strong>PartitionsLib.Operation</strong></td></tr>
+</table>
+<hr><h2 id="_BEEA6080"><a name="WMPartitionsComponents.OperationSelector"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.OperationSelector">OperationSelector</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> OperationSelector* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#WMPartitionsComponents.OperationSelector.onSelection">onSelection</a>: <strong>WMEvents.EventSource</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Initialize<tr><td></td><td> GetSelection (): <strong>Operation</strong><tr><td></td><td> Resized<tr><td></td><td> WheelMove (dz: <strong>SIZE</strong>)<tr><td></td><td> Finalize<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_BEEB0F40"><a name="WMPartitionsComponents.OperationSelector.onSelection"></a><a href="#WMPartitionsComponents">WMPartitionsComponents</a>.<a href="#WMPartitionsComponents.OperationSelector">OperationSelector</a>.<a href="#WMPartitionsComponents.OperationSelector.onSelection">onSelection</a>
+</h3>
+<p> Generates an event whenever the user selects an operation</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> onSelection-: <strong>WMEvents.EventSource</strong></pre>
+</body></html>

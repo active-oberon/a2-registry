@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#srLifeVox">srLifeVox</a></p>
+<hr><h1 id="_0BA26A80"><a name="srLifeVox"></a><a href="#ModuleList">Module</a> srLifeVox
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#srLifeVox.LifeVox">LifeVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srLifeVox.RDVox">RDVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srLifeVox.RDMirror">RDMirror</a> =<strong>OBJECT</strong> (<strong>RDVox</strong>)<tr><td></td><td><a href="#srLifeVox.RDVolVox">RDVolVox</a> =<strong>OBJECT</strong> (<strong>Voxel</strong>)<tr><td></td><td><a href="#srLifeVox.RDCloud">RDCloud</a> =<strong>OBJECT</strong> (<strong>RDVolVox</strong>)<tr><td></td><td><a href="#srLifeVox.LifeBloc">LifeBloc</a> =<strong>OBJECT</strong> (<strong>srVoxel2.Bloc2</strong>)<tr><td></td><td><a href="#srLifeVox.LifeBloc2">LifeBloc2</a> =<strong>OBJECT</strong> (<strong>srVoxel2.Bloc2</strong>)<tr><th align='left'>procedures</th><td> STOPGO</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_0BA331C0"><a name="srLifeVox.LifeVox"></a><a href="#srLifeVox">srLifeVox</a>.<a href="#srLifeVox.LifeVox">LifeVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LifeVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> seed<tr><td></td><td> tick<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>srBase.Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_0BA3A640"><a name="srLifeVox.RDVox"></a><a href="#srLifeVox">srLifeVox</a>.<a href="#srLifeVox.RDVox">RDVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RDVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init<tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>srBase.Ray</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_0BA406C0"><a name="srLifeVox.RDMirror"></a><a href="#srLifeVox">srLifeVox</a>.<a href="#srLifeVox.RDMirror">RDMirror</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RDMirror* =<strong>OBJECT</strong> (<strong>RDVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Shade (<strong>VAR</strong> ray: <strong>srBase.Ray</strong>)</td></tr>
+</table>
+<hr><h2 id="_0BA45C00"><a name="srLifeVox.RDVolVox"></a><a href="#srLifeVox">srLifeVox</a>.<a href="#srLifeVox.RDVolVox">RDVolVox</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RDVolVox* =<strong>OBJECT</strong> (<strong>Voxel</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>m1: <strong>ARRAY</strong> V <strong>OF</strong> <strong>ARRAY</strong> V <strong>OF</strong> <strong>ARRAY</strong> V <strong>OF</strong> <strong>FLOAT32</strong><tr><td></td><td>tock: <strong>SIGNED16</strong><tr><th align='left'>procedures</th><td>&amp; init (red, blue, yellow: <strong>Voxel</strong>)<tr><td></td><td> clear<tr><td></td><td> seed<tr><td></td><td> tick<tr><td></td><td> probe (x, y, z: <strong>SREAL</strong>): <strong>Voxel</strong><tr><td></td><td> Shade (<strong>VAR</strong> ray: <strong>srBase.Ray</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_0BA57640"><a name="srLifeVox.RDCloud"></a><a href="#srLifeVox">srLifeVox</a>.<a href="#srLifeVox.RDCloud">RDCloud</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RDCloud* =<strong>OBJECT</strong> (<strong>RDVolVox</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> tick</td></tr>
+</table>
+<hr><h2 id="_0BA5B680"><a name="srLifeVox.LifeBloc"></a><a href="#srLifeVox">srLifeVox</a>.<a href="#srLifeVox.LifeBloc">LifeBloc</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LifeBloc* =<strong>OBJECT</strong> (<strong>srVoxel2.Bloc2</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init</td></tr>
+</table>
+<hr><h2 id="_0BA5F800"><a name="srLifeVox.LifeBloc2"></a><a href="#srLifeVox">srLifeVox</a>.<a href="#srLifeVox.LifeBloc2">LifeBloc2</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LifeBloc2* =<strong>OBJECT</strong> (<strong>srVoxel2.Bloc2</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; init</td></tr>
+</table>
+</body></html>

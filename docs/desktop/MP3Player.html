@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#MP3Player">MP3Player</a></p>
+<hr><h1 id="_7F1E4CC0"><a name="MP3Player"></a><a href="#ModuleList">Module</a> MP3Player
+</h1>
+<p> AUTHOR &quot;TF,PL&quot;; PURPOSE &quot;MP3 Player&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#MP3Player.Player">Player</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> Open (context: <strong>Commands.Context</strong>)<tr><td></td><td> Stop</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_7F1EB5C0"><a name="MP3Player.Player"></a><a href="#MP3Player">MP3Player</a>.<a href="#MP3Player.Player">Player</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Player* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>setup: <strong>PROCEDURE</strong>{DELEGATE} (canSeek: <strong>BOOLEAN</strong>; totTime, totSamp: <strong>SIGNED32</strong>)<tr><td></td><td>update: <strong>PROCEDURE</strong>{DELEGATE} (status: <strong>BOOLEAN</strong>; pos, displayTime: <strong>SIGNED32</strong>)<tr><td></td><td>eof: <strong>PROCEDURE</strong>{DELEGATE} (sender, data: @Any0)<tr><th align='left'>procedures</th><td>&amp; Init (in: <strong>Streams.Reader</strong>; length: <strong>SIGNED32</strong>)<tr><td></td><td> Play<tr><td></td><td> Stop<tr><td></td><td> Pause<tr><td></td><td> SetPos (pos: <strong>SIGNED32</strong>)<tr><td></td><td> GetPos (): <strong>SIGNED32</strong><tr><td></td><td> Close<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

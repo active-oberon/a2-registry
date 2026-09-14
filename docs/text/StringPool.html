@@ -29,10 +29,10 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#StringPool">StringPool</a></p>
-<hr><h1 id="#_B6969DC0"><a name="StringPool"></a><a href="#ModuleList">Module</a> StringPool
+<hr><h1 id="_8253D380"><a name="StringPool"></a><a href="#ModuleList">Module</a> StringPool
 </h1>
 <p> prk</p>
 
@@ -46,26 +46,26 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_B697D840">
+<hr><h1 id="_82550E00">
 </h1>
-<p> AUTHOR "prk"; PURPOSE "StringPool";</p>
-<hr><h2 id="#_B697F200"><a name="StringPool.GetString"></a><a href="#StringPool">StringPool</a>.<a href="#StringPool.GetString">GetString</a>
+<p> AUTHOR &quot;prk&quot;; PURPOSE &quot;StringPool&quot;;</p>
+<hr><h2 id="_825527C0"><a name="StringPool.GetString"></a><a href="#StringPool">StringPool</a>.<a href="#StringPool.GetString">GetString</a>
 </h2>
 <p> GetString - Get a string from the string pool</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetString* (index: <strong>Index</strong>; <strong>VAR</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_B69865C0"><a name="StringPool.GetIndex"></a><a href="#StringPool">StringPool</a>.<a href="#StringPool.GetIndex">GetIndex</a>
+<hr><h2 id="_82559B80"><a name="StringPool.GetIndex"></a><a href="#StringPool">StringPool</a>.<a href="#StringPool.GetIndex">GetIndex</a>
 </h2>
 <p> GetIndex - Retrieve a string from the pool, add if not present</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> GetIndex* (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> index: <strong>Index</strong>)</pre>
-<hr><h2 id="#_B698E9C0"><a name="StringPool.CompareString"></a><a href="#StringPool">StringPool</a>.<a href="#StringPool.CompareString">CompareString</a>
+<hr><h2 id="_82561F80"><a name="StringPool.CompareString"></a><a href="#StringPool">StringPool</a>.<a href="#StringPool.CompareString">CompareString</a>
 </h2>
-<p> Compare two strings CompareString = 0 <a name="==&gt"></a> Str(index1) = Str(index2) CompareString <a name="0"></a> <a name="==&gt"></a> Str(index1) <a name="Str(index2)"></a> CompareString  0 <a name="==&gt"></a> Str(index1)  Str(index2)</p>
+<p> Compare two strings CompareString = 0 &lt;==&gt; Str(index1) = Str(index2) CompareString &lt; 0 &lt;==&gt; Str(index1) &lt; Str(index2) CompareString &gt; 0 &lt;==&gt; Str(index1) &gt; Str(index2)</p>
 
 <h3>Syntax</h3>
 

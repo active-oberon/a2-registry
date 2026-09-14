@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#FoxCodeGenerators">FoxCodeGenerators</a></p>
-<hr><h1 id="#_F1040E40"><a name="FoxCodeGenerators"></a><a href="#ModuleList">Module</a> FoxCodeGenerators
+<hr><h1 id="_67475780"><a name="FoxCodeGenerators"></a><a href="#ModuleList">Module</a> FoxCodeGenerators
 </h1>
-<p> AUTHOR ""; PURPOSE "";</p>
+<p> AUTHOR &quot;&quot;; PURPOSE &quot;&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -51,7 +51,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F10531C0"><a name="FoxCodeGenerators.RegisterAllocation"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.RegisterAllocation">RegisterAllocation</a>
+<hr><h2 id="_67487B00"><a name="FoxCodeGenerators.RegisterAllocation"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.RegisterAllocation">RegisterAllocation</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -60,7 +60,7 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_F1055E40"><a name="FoxCodeGenerators.RegisterEntry"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.RegisterEntry">RegisterEntry</a>
+<hr><h2 id="_6748A780"><a name="FoxCodeGenerators.RegisterEntry"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.RegisterEntry">RegisterEntry</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -69,7 +69,7 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_F10592C0"><a name="FoxCodeGenerators.LiveRegisters"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.LiveRegisters">LiveRegisters</a>
+<hr><h2 id="_6748DC00"><a name="FoxCodeGenerators.LiveRegisters"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.LiveRegisters">LiveRegisters</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -78,7 +78,7 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_F105C000"><a name="FoxCodeGenerators.GenericCodeGenerator"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.GenericCodeGenerator">GenericCodeGenerator</a>
+<hr><h2 id="_67490940"><a name="FoxCodeGenerators.GenericCodeGenerator"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.GenericCodeGenerator">GenericCodeGenerator</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -86,7 +86,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>diagnostics: <strong>Diagnostics.Diagnostics</strong><tr><td></td><td>module: <strong>Sections.Module</strong><tr><td></td><td>dump: <strong>Streams.Writer</strong><tr><td></td><td>in: <strong>IntermediateCode.Section</strong><tr><td></td><td>out: <strong>BinaryCode.Section</strong><tr><td></td><td>inPC: <strong>SIZE</strong><tr><td></td><td>outPC: <strong>SIZE</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><td></td><td>inEmulation: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>& InitGenerator (diagnostics: <strong>Diagnostics.Diagnostics</strong>; optimize: <strong>BOOLEAN</strong>)<tr><td></td><td> SetModule (module: <strong>Sections.Module</strong>)<tr><td></td><td> Error (position: <strong>Basic.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Section (in: <strong>IntermediateCode.Section</strong>; out: <strong>BinaryCode.Section</strong>)<tr><td></td><td> FirstUse (virtualRegister: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> LastUse (virtualRegister: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> Supported (<strong>CONST</strong> instr: <strong>IntermediateCode.Instruction</strong>; <strong>VAR</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Generate (<strong>VAR</strong> instr: <strong>IntermediateCode.Instruction</strong>)<tr><td></td><td> PostGenerate (<strong>CONST</strong> instr: <strong>IntermediateCode.Instruction</strong>)<tr><td></td><td> GetDataSection (): <strong>IntermediateCode.Section</strong><tr><td></td><td> Prepare</td></tr>
+<table><tr><th align='left'>variables</th><td>diagnostics: <strong>Diagnostics.Diagnostics</strong><tr><td></td><td>module: <strong>Sections.Module</strong><tr><td></td><td>dump: <strong>Streams.Writer</strong><tr><td></td><td>in: <strong>IntermediateCode.Section</strong><tr><td></td><td>out: <strong>BinaryCode.Section</strong><tr><td></td><td>inPC: <strong>SIZE</strong><tr><td></td><td>outPC: <strong>SIZE</strong><tr><td></td><td>error: <strong>BOOLEAN</strong><tr><td></td><td>inEmulation: <strong>BOOLEAN</strong><tr><th align='left'>procedures</th><td>&amp; InitGenerator (diagnostics: <strong>Diagnostics.Diagnostics</strong>; optimize: <strong>BOOLEAN</strong>)<tr><td></td><td> SetModule (module: <strong>Sections.Module</strong>)<tr><td></td><td> Error (position: <strong>Basic.Position</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> Section (in: <strong>IntermediateCode.Section</strong>; out: <strong>BinaryCode.Section</strong>)<tr><td></td><td> FirstUse (virtualRegister: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> LastUse (virtualRegister: <strong>SIZE</strong>): <strong>SIZE</strong><tr><td></td><td> Supported (<strong>CONST</strong> instr: <strong>IntermediateCode.Instruction</strong>; <strong>VAR</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Generate (<strong>VAR</strong> instr: <strong>IntermediateCode.Instruction</strong>)<tr><td></td><td> PostGenerate (<strong>CONST</strong> instr: <strong>IntermediateCode.Instruction</strong>)<tr><td></td><td> GetDataSection (): <strong>IntermediateCode.Section</strong><tr><td></td><td> Prepare</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -107,7 +107,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F10806C0"><a name="FoxCodeGenerators.Ticket"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.Ticket">Ticket</a>
+<hr><h2 id="_674B5000"><a name="FoxCodeGenerators.Ticket"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.Ticket">Ticket</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -125,7 +125,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F108C740"><a name="FoxCodeGenerators.Tickets"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.Tickets">Tickets</a>
+<hr><h2 id="_674C1080"><a name="FoxCodeGenerators.Tickets"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.Tickets">Tickets</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -133,13 +133,13 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>live: <strong>Ticket</strong><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> Enter (<strong>CONST</strong> class: <strong>IntermediateCode.RegisterClass</strong>; <strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>; register: <strong>SIGNED32</strong>; spillable, spilled: <strong>BOOLEAN</strong>; offset: <strong>SIGNED32</strong>; lastuse: <strong>SIZE</strong>): <strong>Ticket</strong><tr><td></td><td> Remove (ticket: <strong>Ticket</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>live: <strong>Ticket</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Enter (<strong>CONST</strong> class: <strong>IntermediateCode.RegisterClass</strong>; <strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>; register: <strong>SIGNED32</strong>; spillable, spilled: <strong>BOOLEAN</strong>; offset: <strong>SIGNED32</strong>; lastuse: <strong>SIZE</strong>): <strong>Ticket</strong><tr><td></td><td> Remove (ticket: <strong>Ticket</strong>)<tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F109C040"><a name="FoxCodeGenerators.VirtualRegisters"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.VirtualRegisters">VirtualRegisters</a>
+<hr><h2 id="_674D0980"><a name="FoxCodeGenerators.VirtualRegisters"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.VirtualRegisters">VirtualRegisters</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -147,7 +147,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>firstMapped: <strong>SIZE</strong><tr><td></td><td>lastMapped: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>& Init (parts: <strong>SIZE</strong>)<tr><td></td><td> Mapped (register: <strong>SIZE</strong>; part: <strong>SIZE</strong>): <strong>Ticket</strong><tr><td></td><td> SetMapped (register: <strong>SIZE</strong>; part: <strong>SIZE</strong>; ticket: <strong>Ticket</strong>)<tr><td></td><td> Unmap (register: <strong>SIZE</strong>)<tr><td></td><td> Parts (): <strong>SIZE</strong><tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>firstMapped: <strong>SIZE</strong><tr><td></td><td>lastMapped: <strong>SIZE</strong><tr><th align='left'>procedures</th><td>&amp; Init (parts: <strong>SIZE</strong>)<tr><td></td><td> Mapped (register: <strong>SIZE</strong>; part: <strong>SIZE</strong>): <strong>Ticket</strong><tr><td></td><td> SetMapped (register: <strong>SIZE</strong>; part: <strong>SIZE</strong>; ticket: <strong>Ticket</strong>)<tr><td></td><td> Unmap (register: <strong>SIZE</strong>)<tr><td></td><td> Parts (): <strong>SIZE</strong><tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -156,7 +156,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F10AE0C0"><a name="FoxCodeGenerators.PhysicalRegisters"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.PhysicalRegisters">PhysicalRegisters</a>
+<hr><h2 id="_674E2A00"><a name="FoxCodeGenerators.PhysicalRegisters"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.PhysicalRegisters">PhysicalRegisters</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -174,7 +174,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F10C3600"><a name="FoxCodeGenerators.SpillStack"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.SpillStack">SpillStack</a>
+<hr><h2 id="_674F7F40"><a name="FoxCodeGenerators.SpillStack"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.SpillStack">SpillStack</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -182,7 +182,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& Init<tr><td></td><td> NextFree (): <strong>SIGNED32</strong><tr><td></td><td> Allocate (offset: <strong>SIGNED32</strong>; ticket: <strong>Ticket</strong>)<tr><td></td><td> Free (offset: <strong>SIGNED32</strong>)<tr><td></td><td> Size (): <strong>SIGNED32</strong><tr><td></td><td> MaxSize (): <strong>SIGNED32</strong><tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> NextFree (): <strong>SIGNED32</strong><tr><td></td><td> Allocate (offset: <strong>SIGNED32</strong>; ticket: <strong>Ticket</strong>)<tr><td></td><td> Free (offset: <strong>SIGNED32</strong>)<tr><td></td><td> Size (): <strong>SIGNED32</strong><tr><td></td><td> MaxSize (): <strong>SIGNED32</strong><tr><td></td><td> Dump (w: <strong>Streams.Writer</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -190,7 +190,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_F10D1380"><a name="FoxCodeGenerators.GeneratorWithTickets"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.GeneratorWithTickets">GeneratorWithTickets</a>
+<hr><h2 id="_67505CC0"><a name="FoxCodeGenerators.GeneratorWithTickets"></a><a href="#FoxCodeGenerators">FoxCodeGenerators</a>.<a href="#FoxCodeGenerators.GeneratorWithTickets">GeneratorWithTickets</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -198,7 +198,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>physicalRegisters: <strong>PhysicalRegisters</strong><tr><td></td><td>virtualRegisters: <strong>VirtualRegisters</strong><tr><td></td><td>tickets: <strong>Tickets</strong><tr><td></td><td>spillStack: <strong>SpillStack</strong><tr><th align='left'>procedures</th><td>& InitTicketGenerator (diagnostics: <strong>Diagnostics.Diagnostics</strong>; optimize: <strong>BOOLEAN</strong>; numberRegisterParts: <strong>SIGNED32</strong>; physicalRegisters: <strong>PhysicalRegisters</strong>)<tr><td></td><td> Section (in: <strong>IntermediateCode.Section</strong>; out: <strong>BinaryCode.Section</strong>)<tr><td></td><td> GetPartType (<strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>; part: <strong>SIGNED32</strong>; <strong>VAR</strong> typePart: <strong>IntermediateCode.Type</strong>)<tr><td></td><td> ToSpillStack (ticket: <strong>Ticket</strong>)<tr><td></td><td> AllocateSpillStack (size: <strong>SIGNED32</strong>)<tr><td></td><td> ToRegister (ticket: <strong>Ticket</strong>)<tr><td></td><td> ExchangeTickets (ticket1, ticket2: <strong>Ticket</strong>)<tr><td></td><td> Spill (ticket: <strong>Ticket</strong>)<tr><td></td><td> UnSpill (ticket: <strong>Ticket</strong>)<tr><td></td><td> GetPreferredSpill (<strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>): <strong>Ticket</strong><tr><td></td><td> ForceFreeRegister (<strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>): <strong>SIGNED32</strong><tr><td></td><td> ReservePhysicalRegister (<strong>CONST</strong> class: <strong>IntermediateCode.RegisterClass</strong>; <strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>; register: <strong>SIGNED32</strong>; lastUse: <strong>SIZE</strong>): <strong>Ticket</strong><tr><td></td><td> TemporaryTicket (<strong>CONST</strong> class: <strong>IntermediateCode.RegisterClass</strong>; <strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>): <strong>Ticket</strong><tr><td></td><td> MapVirtualRegister (virtualRegister: <strong>SIZE</strong>; class: <strong>IntermediateCode.RegisterClass</strong>; type: <strong>IntermediateCode.Type</strong>; part: <strong>SIGNED32</strong>)<tr><td></td><td> UnmapTicket (ticket: <strong>Ticket</strong>)<tr><td></td><td> TryAllocate (<strong>CONST</strong> operand: <strong>IntermediateCode.Operand</strong>; part: <strong>SIGNED32</strong>)<tr><td></td><td> TryUnmap (<strong>CONST</strong> operand: <strong>IntermediateCode.Operand</strong>)<tr><td></td><td> ReleaseHint (register: <strong>SIGNED32</strong>)<tr><td></td><td> ReserveTicketRegister (ticket: <strong>Ticket</strong>; reserved: <strong>BOOLEAN</strong>)<tr><td></td><td> ReserveOperandRegisters (<strong>CONST</strong> operand: <strong>IntermediateCode.Operand</strong>; reserved: <strong>BOOLEAN</strong>)</td></tr>
+<table><tr><th align='left'>variables</th><td>physicalRegisters: <strong>PhysicalRegisters</strong><tr><td></td><td>virtualRegisters: <strong>VirtualRegisters</strong><tr><td></td><td>tickets: <strong>Tickets</strong><tr><td></td><td>spillStack: <strong>SpillStack</strong><tr><th align='left'>procedures</th><td>&amp; InitTicketGenerator (diagnostics: <strong>Diagnostics.Diagnostics</strong>; optimize: <strong>BOOLEAN</strong>; numberRegisterParts: <strong>SIGNED32</strong>; physicalRegisters: <strong>PhysicalRegisters</strong>)<tr><td></td><td> Section (in: <strong>IntermediateCode.Section</strong>; out: <strong>BinaryCode.Section</strong>)<tr><td></td><td> GetPartType (<strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>; part: <strong>SIGNED32</strong>; <strong>VAR</strong> typePart: <strong>IntermediateCode.Type</strong>)<tr><td></td><td> ToSpillStack (ticket: <strong>Ticket</strong>)<tr><td></td><td> AllocateSpillStack (size: <strong>SIGNED32</strong>)<tr><td></td><td> ToRegister (ticket: <strong>Ticket</strong>)<tr><td></td><td> ExchangeTickets (ticket1, ticket2: <strong>Ticket</strong>)<tr><td></td><td> Spill (ticket: <strong>Ticket</strong>)<tr><td></td><td> UnSpill (ticket: <strong>Ticket</strong>)<tr><td></td><td> GetPreferredSpill (<strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>): <strong>Ticket</strong><tr><td></td><td> ForceFreeRegister (<strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>): <strong>SIGNED32</strong><tr><td></td><td> ReservePhysicalRegister (<strong>CONST</strong> class: <strong>IntermediateCode.RegisterClass</strong>; <strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>; register: <strong>SIGNED32</strong>; lastUse: <strong>SIZE</strong>): <strong>Ticket</strong><tr><td></td><td> TemporaryTicket (<strong>CONST</strong> class: <strong>IntermediateCode.RegisterClass</strong>; <strong>CONST</strong> type: <strong>IntermediateCode.Type</strong>): <strong>Ticket</strong><tr><td></td><td> MapVirtualRegister (virtualRegister: <strong>SIZE</strong>; class: <strong>IntermediateCode.RegisterClass</strong>; type: <strong>IntermediateCode.Type</strong>; part: <strong>SIGNED32</strong>)<tr><td></td><td> UnmapTicket (ticket: <strong>Ticket</strong>)<tr><td></td><td> TryAllocate (<strong>CONST</strong> operand: <strong>IntermediateCode.Operand</strong>; part: <strong>SIGNED32</strong>)<tr><td></td><td> TryUnmap (<strong>CONST</strong> operand: <strong>IntermediateCode.Operand</strong>)<tr><td></td><td> ReleaseHint (register: <strong>SIGNED32</strong>)<tr><td></td><td> ReserveTicketRegister (ticket: <strong>Ticket</strong>; reserved: <strong>BOOLEAN</strong>)<tr><td></td><td> ReserveOperandRegisters (<strong>CONST</strong> operand: <strong>IntermediateCode.Operand</strong>; reserved: <strong>BOOLEAN</strong>)</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>

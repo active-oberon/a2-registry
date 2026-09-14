@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#ReleaseVisualizer">ReleaseVisualizer</a></p>
+<hr><h1 id="_5B11A7C0"><a name="ReleaseVisualizer"></a><a href="#ModuleList">Module</a> ReleaseVisualizer
+</h1>
+<p> AUTHOR &quot;TF&quot;; PURPOSE &quot;Generate module overview poster&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#ReleaseVisualizer.Import">Import</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#ReleaseVisualizer.ModuleInfo">ModuleInfo</a> =<strong>OBJECT</strong> <tr><td></td><td>ModuleArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>ModuleInfo</strong><tr><td></td><td><a href="#ReleaseVisualizer.ModuleList">ModuleList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#ReleaseVisualizer.RealRect">RealRect</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#ReleaseVisualizer.Window">Window</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><th align='left'>procedures</th><td> Open (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_5B127BC0"><a name="ReleaseVisualizer.Import"></a><a href="#ReleaseVisualizer">ReleaseVisualizer</a>.<a href="#ReleaseVisualizer.Import">Import</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Import* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>m: <strong>ModuleInfo</strong><tr><td></td><td>next: <strong>Import</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_5B12CF00"><a name="ReleaseVisualizer.ModuleInfo"></a><a href="#ReleaseVisualizer">ReleaseVisualizer</a>.<a href="#ReleaseVisualizer.ModuleInfo">ModuleInfo</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ModuleInfo* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>context: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>desc: <strong>Strings.String</strong><tr><td></td><td>file: <strong>Strings.String</strong><tr><td></td><td>author: <strong>Strings.String</strong><tr><td></td><td>purpose: <strong>Strings.String</strong><tr><td></td><td>imports: <strong>Import</strong><tr><td></td><td>ok: <strong>BOOLEAN</strong><tr><td></td><td>level: <strong>SIGNED32</strong><tr><td></td><td>nofTotalImports: <strong>SIGNED32</strong><tr><td></td><td>nofDirectImports: <strong>SIGNED32</strong><tr><td></td><td>reference: @Any0<tr><td></td><td>group: <strong>SIGNED32</strong><tr><td></td><td>subgroup: <strong>SIGNED32</strong><tr><td></td><td>subsystems: <strong>SET</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_5B13F700"><a name="ReleaseVisualizer.ModuleList"></a><a href="#ReleaseVisualizer">ReleaseVisualizer</a>.<a href="#ReleaseVisualizer.ModuleList">ModuleList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ModuleList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>modules: <strong>ModuleArray</strong><tr><td></td><td>nofModules: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> CalcTotalImports<tr><td></td><td> CalcLevels (maxLevel: <strong>SIGNED32</strong>)<tr><td></td><td> GetDepth (m: <strong>ModuleInfo</strong>): <strong>SIGNED32</strong><tr><td></td><td> Imports (m, i: <strong>ModuleInfo</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Dump (details: <strong>BOOLEAN</strong>)<tr><td></td><td> GetModule (<strong>CONST</strong> name, context: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ModuleInfo</strong><tr><td></td><td> AddImport (m: <strong>ModuleInfo</strong>; <strong>CONST</strong> importName, context: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_5B154400"><a name="ReleaseVisualizer.RealRect"></a><a href="#ReleaseVisualizer">ReleaseVisualizer</a>.<a href="#ReleaseVisualizer.RealRect">RealRect</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RealRect* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>l: <strong>FLOAT64</strong><tr><td></td><td>t: <strong>FLOAT64</strong><tr><td></td><td>r: <strong>FLOAT64</strong><tr><td></td><td>b: <strong>FLOAT64</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_5B15ACC0"><a name="ReleaseVisualizer.Window"></a><a href="#ReleaseVisualizer">ReleaseVisualizer</a>.<a href="#ReleaseVisualizer.Window">Window</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Window* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Close<tr><td></td><td> Handle (<strong>VAR</strong> x: <strong>WMMessages.Message</strong>)</td></tr>
+</td></tr>
+</table>
+</body></html>

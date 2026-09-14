@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Notepad">Notepad</a></p>
+<hr><h1 id="_F9532800"><a name="Notepad"></a><a href="#ModuleList">Module</a> Notepad
+</h1>
+<p> AUTHOR &quot;TF&quot;; PURPOSE &quot;Simple Text Editor&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Notepad.Window">Window</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><th align='left'>procedures</th><td> <a href="#Notepad.Open">Open</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> Restore (context: <strong>WMRestorable.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_F953ABC0"><a name="Notepad.Window"></a><a href="#Notepad">Notepad</a>.<a href="#Notepad.Window">Window</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Window* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>editor: <strong>WMDocumentEditor.Editor</strong><tr><th align='left'>procedures</th><td>&amp; New (c: <strong>WMRestorable.Context</strong>)<tr><td></td><td> Close<tr><td></td><td> Handle (<strong>VAR</strong> x: <strong>WMMessages.Message</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_F9543880"><a name="Notepad.Open"></a><a href="#Notepad">Notepad</a>.<a href="#Notepad.Open">Open</a>
+</h2>
+<p> Open document</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

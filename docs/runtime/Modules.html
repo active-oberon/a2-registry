@@ -29,16 +29,16 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#Modules">Modules</a></p>
-<hr><h1 id="#_FB861A80"><a name="Modules"></a><a href="#ModuleList">Module</a> Modules
+<hr><h1 id="_BD2AF940"><a name="Modules"></a><a href="#ModuleList">Module</a> Modules
 </h1>
-<p> AUTHOR "pjm"; PURPOSE "Modules and types";</p>
+<p> AUTHOR &quot;pjm&quot;; PURPOSE &quot;Modules and types&quot;;</p>
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>constants</th><td>Ok= 0<tr><td></td><td>PackageDelimiter= "-"<tr><td></td><td>MaxTags= 16<tr><td></td><td><a href="#Modules.Tag0Ofs">Tag0Ofs</a>= (-AddressSize*2)<tr><td></td><td><a href="#Modules.Mth0Ofs">Mth0Ofs</a>= (Tag0Ofs-(AddressSize*MaxTags))<tr><td></td><td><a href="#Modules.Ptr0Ofs">Ptr0Ofs</a>= AddressSize<tr><td></td><td><a href="#Modules.ProtTypeBit">ProtTypeBit</a>= Heaps.ProtTypeBit<tr><td></td><td>None= 0<tr><td></td><td>PowerDown= 1<tr><td></td><td>Reboot= 2<tr><td></td><td>DefaultContext= "A2"<tr><td></td><td>PreciseGC= 0<tr><th align='left'>type declarations</th><td>Name =<strong>Heaps.Name</strong><tr><td></td><td>DynamicName =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Modules.Command">Command</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Modules.ExportDesc">ExportDesc</a> =<strong>RECORD</strong> <tr><td></td><td>ExportArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>ExportDesc</strong><tr><td></td><td>Bytes =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>TerminationHandler =<strong>PROCEDURE</strong> <tr><td></td><td><a href="#Modules.TypeDesc">TypeDesc</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Modules.ExceptionTableEntry">ExceptionTableEntry</a> =<strong>RECORD</strong> <tr><td></td><td>ExceptionTable =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>ExceptionTableEntry</strong><tr><td></td><td><a href="#Modules.ProcedureDescPointer">ProcedureDescPointer</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ProcedureDesc</strong><tr><td></td><td><a href="#Modules.ProcedureDesc">ProcedureDesc</a> =<strong>RECORD</strong> <tr><td></td><td>ProcedureDescs =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>ProcedureDescPointer</strong><tr><td></td><td><a href="#Modules.Module">Module</a> =<strong>OBJECT</strong> (<strong>Heaps.RootObject</strong>)<tr><td></td><td>LoaderProc =<strong>PROCEDURE</strong> (<strong>CONST</strong> name, fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><th align='left'>variables</th><td>extension: <strong>ARRAY</strong> MaxObjFormats <strong>OF</strong> <strong>ARRAY</strong> 8 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Modules.freeRoot">freeRoot</a>: <strong>Module</strong><tr><td></td><td><a href="#Modules.root">root</a>: <strong>Module</strong><tr><td></td><td><a href="#Modules.shutdown">shutdown</a>: <strong>INTEGER</strong><tr><td></td><td>procedureDescriptors: <strong>ProcedureDescs</strong><tr><th align='left'>procedures</th><td> AddLoader (<strong>CONST</strong> ext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; proc: <strong>LoaderProc</strong>)<tr><td></td><td> <a href="#Modules.RemoveLoader">RemoveLoader</a> (<strong>CONST</strong> ext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; proc: <strong>LoaderProc</strong>)<tr><td></td><td> <a href="#Modules.Append">Append</a> (<strong>CONST</strong> from: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PackagePath (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Modules.Publish">Publish</a> (<strong>VAR</strong> m: <strong>Module</strong>; <strong>VAR</strong> new: <strong>BOOLEAN</strong>)<tr><td></td><td> Initialize (<strong>VAR</strong> module: <strong>Module</strong>)<tr><td></td><td> Initialize0 (module: <strong>Module</strong>)<tr><td></td><td> <a href="#Modules.Find">Find</a> (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><td></td><td> ModuleByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><td></td><td> <a href="#Modules.This">This</a> (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><td></td><td> ThisModule (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><td></td><td> <a href="#Modules.ThisModuleByAdr0">ThisModuleByAdr0</a> (pc: <strong>ADDRESS</strong>): <strong>Module</strong><tr><td></td><td> <a href="#Modules.ThisModuleByAdr">ThisModuleByAdr</a> (pc: <strong>ADDRESS</strong>): <strong>Module</strong><tr><td></td><td> GetProcedure (<strong>CONST</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; argTdAdr, retTdAdr: <strong>ADDRESS</strong>; <strong>VAR</strong> entryAdr: <strong>ADDRESS</strong>)<tr><td></td><td> <a href="#Modules.ThisType">ThisType</a> (m: <strong>Module</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>TypeDesc</strong><tr><td></td><td> ThisTypeByAdr (adr: <strong>ADDRESS</strong>; <strong>VAR</strong> m: <strong>Module</strong>; <strong>VAR</strong> t: <strong>TypeDesc</strong>)<tr><td></td><td> <a href="#Modules.NewObj">NewObj</a> (t: <strong>TypeDesc</strong>; isRealtime: <strong>BOOLEAN</strong>): @Any0<tr><td></td><td> <a href="#Modules.TypeOf">TypeOf</a> (obj: @Any0): <strong>TypeDesc</strong><tr><td></td><td> <a href="#Modules.FindProc">FindProc</a> (pc: <strong>ADDRESS</strong>; p: <strong>ProcedureDescs</strong>): <strong>ProcedureDescPointer</strong><tr><td></td><td> <a href="#Modules.InstallTermHandler">InstallTermHandler</a> (h: <strong>TerminationHandler</strong>)<tr><td></td><td> <a href="#Modules.Free">Free</a> (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> FreeModule (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Modules.Shutdown">Shutdown</a> (code: <strong>INTEGER</strong>)<tr><td></td><td> IsExceptionHandled (<strong>VAR</strong> pc, fp: <strong>ADDRESS</strong>; deep: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetExceptionHandler (pc: <strong>ADDRESS</strong>): <strong>ADDRESS</strong><tr><td></td><td> <a href="#Modules.Initialized">Initialized</a> (m: <strong>Module</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Register (module: <strong>Module</strong>)<tr><td></td><td> Main</td></tr>
+<table><tr><th align='left'>constants</th><td>Ok= 0<tr><td></td><td>PackageDelimiter= &quot;-&quot;<tr><td></td><td>MaxTags= 16<tr><td></td><td><a href="#Modules.Tag0Ofs">Tag0Ofs</a>= (-AddressSize*2)<tr><td></td><td><a href="#Modules.Mth0Ofs">Mth0Ofs</a>= (Tag0Ofs-(AddressSize*MaxTags))<tr><td></td><td><a href="#Modules.Ptr0Ofs">Ptr0Ofs</a>= AddressSize<tr><td></td><td><a href="#Modules.ProtTypeBit">ProtTypeBit</a>= Heaps.ProtTypeBit<tr><td></td><td>None= 0<tr><td></td><td>PowerDown= 1<tr><td></td><td>Reboot= 2<tr><td></td><td>DefaultContext= &quot;A2&quot;<tr><td></td><td>PreciseGC= 0<tr><th align='left'>type declarations</th><td>Name =<strong>Heaps.Name</strong><tr><td></td><td>DynamicName =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Modules.Command">Command</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Modules.ExportDesc">ExportDesc</a> =<strong>RECORD</strong> <tr><td></td><td>ExportArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> MAX(SIZE) <strong>OF</strong> <strong>ExportDesc</strong><tr><td></td><td>Bytes =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>TerminationHandler =<strong>PROCEDURE</strong> <tr><td></td><td><a href="#Modules.TypeDesc">TypeDesc</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#Modules.ExceptionTableEntry">ExceptionTableEntry</a> =<strong>RECORD</strong> <tr><td></td><td>ExceptionTable =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>ExceptionTableEntry</strong><tr><td></td><td><a href="#Modules.ProcedureDescPointer">ProcedureDescPointer</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>ProcedureDesc</strong><tr><td></td><td><a href="#Modules.ProcedureDesc">ProcedureDesc</a> =<strong>RECORD</strong> <tr><td></td><td>ProcedureDescs =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>ProcedureDescPointer</strong><tr><td></td><td><a href="#Modules.Module">Module</a> =<strong>OBJECT</strong> (<strong>Heaps.RootObject</strong>)<tr><td></td><td>LoaderProc =<strong>PROCEDURE</strong> (<strong>CONST</strong> name, fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><th align='left'>variables</th><td>extension: <strong>ARRAY</strong> MaxObjFormats <strong>OF</strong> <strong>ARRAY</strong> 8 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td><a href="#Modules.freeRoot">freeRoot</a>: <strong>Module</strong><tr><td></td><td><a href="#Modules.root">root</a>: <strong>Module</strong><tr><td></td><td><a href="#Modules.shutdown">shutdown</a>: <strong>INTEGER</strong><tr><td></td><td>procedureDescriptors: <strong>ProcedureDescs</strong><tr><th align='left'>procedures</th><td> AddLoader (<strong>CONST</strong> ext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; proc: <strong>LoaderProc</strong>)<tr><td></td><td> <a href="#Modules.RemoveLoader">RemoveLoader</a> (<strong>CONST</strong> ext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; proc: <strong>LoaderProc</strong>)<tr><td></td><td> <a href="#Modules.Append">Append</a> (<strong>CONST</strong> from: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> PackagePath (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Modules.Publish">Publish</a> (<strong>VAR</strong> m: <strong>Module</strong>; <strong>VAR</strong> new: <strong>BOOLEAN</strong>)<tr><td></td><td> Initialize (<strong>VAR</strong> module: <strong>Module</strong>)<tr><td></td><td> Initialize0 (module: <strong>Module</strong>)<tr><td></td><td> <a href="#Modules.Find">Find</a> (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><td></td><td> ModuleByName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><td></td><td> <a href="#Modules.This">This</a> (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><td></td><td> ThisModule (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong><tr><td></td><td> <a href="#Modules.ThisModuleByAdr0">ThisModuleByAdr0</a> (pc: <strong>ADDRESS</strong>): <strong>Module</strong><tr><td></td><td> <a href="#Modules.ThisModuleByAdr">ThisModuleByAdr</a> (pc: <strong>ADDRESS</strong>): <strong>Module</strong><tr><td></td><td> GetProcedure (<strong>CONST</strong> moduleName, procedureName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; argTdAdr, retTdAdr: <strong>ADDRESS</strong>; <strong>VAR</strong> entryAdr: <strong>ADDRESS</strong>)<tr><td></td><td> <a href="#Modules.ThisType">ThisType</a> (m: <strong>Module</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>TypeDesc</strong><tr><td></td><td> ThisTypeByAdr (adr: <strong>ADDRESS</strong>; <strong>VAR</strong> m: <strong>Module</strong>; <strong>VAR</strong> t: <strong>TypeDesc</strong>)<tr><td></td><td> <a href="#Modules.NewObj">NewObj</a> (t: <strong>TypeDesc</strong>; isRealtime: <strong>BOOLEAN</strong>): @Any0<tr><td></td><td> <a href="#Modules.TypeOf">TypeOf</a> (obj: @Any0): <strong>TypeDesc</strong><tr><td></td><td> <a href="#Modules.FindProc">FindProc</a> (pc: <strong>ADDRESS</strong>; p: <strong>ProcedureDescs</strong>): <strong>ProcedureDescPointer</strong><tr><td></td><td> <a href="#Modules.InstallTermHandler">InstallTermHandler</a> (h: <strong>TerminationHandler</strong>)<tr><td></td><td> <a href="#Modules.Free">Free</a> (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> FreeModule (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> <a href="#Modules.Shutdown">Shutdown</a> (code: <strong>INTEGER</strong>)<tr><td></td><td> IsExceptionHandled (<strong>VAR</strong> pc, fp: <strong>ADDRESS</strong>; deep: <strong>BOOLEAN</strong>): <strong>BOOLEAN</strong><tr><td></td><td> GetExceptionHandler (pc: <strong>ADDRESS</strong>): <strong>ADDRESS</strong><tr><td></td><td> <a href="#Modules.Initialized">Initialized</a> (m: <strong>Module</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Register (module: <strong>Module</strong>)<tr><td></td><td> Main</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -99,7 +99,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FB8ED300"><a name="Modules.Tag0Ofs"></a><a href="#Modules">Modules</a>.<a href="#Modules.Tag0Ofs">Tag0Ofs</a>
+<hr><h2 id="_BD33B1C0"><a name="Modules.Tag0Ofs"></a><a href="#Modules">Modules</a>.<a href="#Modules.Tag0Ofs">Tag0Ofs</a>
 </h2>
 <p> type descriptor field offsets relative to root (middle)</p>
 
@@ -108,28 +108,28 @@
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Tag0Ofs*= (-AddressSize*2)</pre>
-<hr><h2 id="#_FB8F3340"><a name="Modules.Mth0Ofs"></a><a href="#Modules">Modules</a>.<a href="#Modules.Mth0Ofs">Mth0Ofs</a>
+<hr><h2 id="_BD341200"><a name="Modules.Mth0Ofs"></a><a href="#Modules">Modules</a>.<a href="#Modules.Mth0Ofs">Mth0Ofs</a>
 </h2>
 <p> first method</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Mth0Ofs*= (Tag0Ofs-(AddressSize*MaxTags))</pre>
-<hr><h2 id="#_FB8F7700"><a name="Modules.Ptr0Ofs"></a><a href="#Modules">Modules</a>.<a href="#Modules.Ptr0Ofs">Ptr0Ofs</a>
+<hr><h2 id="_BD3455C0"><a name="Modules.Ptr0Ofs"></a><a href="#Modules">Modules</a>.<a href="#Modules.Ptr0Ofs">Ptr0Ofs</a>
 </h2>
 <p> first pointer offset</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> Ptr0Ofs*= AddressSize</pre>
-<hr><h2 id="#_FB8FAE00"><a name="Modules.ProtTypeBit"></a><a href="#Modules">Modules</a>.<a href="#Modules.ProtTypeBit">ProtTypeBit</a>
+<hr><h2 id="_BD348CC0"><a name="Modules.ProtTypeBit"></a><a href="#Modules">Modules</a>.<a href="#Modules.ProtTypeBit">ProtTypeBit</a>
 </h2>
 <p> flags in TypeDesc, RoundUp(log2(MaxTags)) low bits reserved for extLevel</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> ProtTypeBit*= Heaps.ProtTypeBit</pre>
-<hr><h2 id="#_FB900140"><a name="Modules.Command"></a><a href="#Modules">Modules</a>.<a href="#Modules.Command">Command</a>
+<hr><h2 id="_BD34E000"><a name="Modules.Command"></a><a href="#Modules">Modules</a>.<a href="#Modules.Command">Command</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -142,7 +142,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FB906AC0"><a name="Modules.ExportDesc"></a><a href="#Modules">Modules</a>.<a href="#Modules.ExportDesc">ExportDesc</a>
+<hr><h2 id="_BD354980"><a name="Modules.ExportDesc"></a><a href="#Modules">Modules</a>.<a href="#Modules.ExportDesc">ExportDesc</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -156,7 +156,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FB90E240"><a name="Modules.TypeDesc"></a><a href="#Modules">Modules</a>.<a href="#Modules.TypeDesc">TypeDesc</a>
+<hr><h2 id="_BD35C100"><a name="Modules.TypeDesc"></a><a href="#Modules">Modules</a>.<a href="#Modules.TypeDesc">TypeDesc</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -171,7 +171,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FB9175C0"><a name="Modules.ExceptionTableEntry"></a><a href="#Modules">Modules</a>.<a href="#Modules.ExceptionTableEntry">ExceptionTableEntry</a>
+<hr><h2 id="_BD365480"><a name="Modules.ExceptionTableEntry"></a><a href="#Modules">Modules</a>.<a href="#Modules.ExceptionTableEntry">ExceptionTableEntry</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -183,12 +183,12 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FB91D0C0"><a name="Modules.ProcedureDescPointer"></a><a href="#Modules">Modules</a>.<a href="#Modules.ProcedureDescPointer">ProcedureDescPointer</a>
+<hr><h2 id="_BD36AF80"><a name="Modules.ProcedureDescPointer"></a><a href="#Modules">Modules</a>.<a href="#Modules.ProcedureDescPointer">ProcedureDescPointer</a>
 </h2>
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> ProcedureDescPointer* =<strong>POINTER</strong> <strong>TO</strong> <strong>ProcedureDesc</strong></pre>
-<hr><h2 id="#_FB91FCC0"><a name="Modules.ProcedureDesc"></a><a href="#Modules">Modules</a>.<a href="#Modules.ProcedureDesc">ProcedureDesc</a>
+<hr><h2 id="_BD36DB80"><a name="Modules.ProcedureDesc"></a><a href="#Modules">Modules</a>.<a href="#Modules.ProcedureDesc">ProcedureDesc</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -200,7 +200,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_FB926740"><a name="Modules.Module"></a><a href="#Modules">Modules</a>.<a href="#Modules.Module">Module</a>
+<hr><h2 id="_BD374600"><a name="Modules.Module"></a><a href="#Modules">Modules</a>.<a href="#Modules.Module">Module</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -230,136 +230,140 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_FB943500"><a name="Modules.Module.next"></a><a href="#Modules">Modules</a>.<a href="#Modules.Module">Module</a>.<a href="#Modules.Module.next">next</a>
+<hr><h3 id="_BD3913C0"><a name="Modules.Module.next"></a><a href="#Modules">Modules</a>.<a href="#Modules.Module">Module</a>.<a href="#Modules.Module.next">next</a>
 </h3>
 <p> once a module is published, all fields are read-only</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> next*: <strong>Module</strong></pre>
-<hr><h2 id="#_FB948A40"><a name="Modules.freeRoot"></a><a href="#Modules">Modules</a>.<a href="#Modules.freeRoot">freeRoot</a>
+<hr><h2 id="_BD396900"><a name="Modules.freeRoot"></a><a href="#Modules">Modules</a>.<a href="#Modules.freeRoot">freeRoot</a>
 </h2>
 <p> list of freed modules (temporary)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> freeRoot*: <strong>Module</strong></pre>
-<hr><h2 id="#_FB94CA40"><a name="Modules.root"></a><a href="#Modules">Modules</a>.<a href="#Modules.root">root</a>
+<hr><h2 id="_BD39A900"><a name="Modules.root"></a><a href="#Modules">Modules</a>.<a href="#Modules.root">root</a>
 </h2>
 <p> list of modules (read-only)</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> root-: <strong>Module</strong></pre>
-<hr><h2 id="#_FB9504C0"><a name="Modules.shutdown"></a><a href="#Modules">Modules</a>.<a href="#Modules.shutdown">shutdown</a>
+<hr><h2 id="_BD39E380"><a name="Modules.shutdown"></a><a href="#Modules">Modules</a>.<a href="#Modules.shutdown">shutdown</a>
 </h2>
 <p> None, Reboot, PowerDown</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> shutdown*: <strong>INTEGER</strong></pre>
-<hr><h2 id="#_FB953B00"><a name="Modules.RemoveLoader"></a><a href="#Modules">Modules</a>.<a href="#Modules.RemoveLoader">RemoveLoader</a>
+<hr><h2 id="_BD3A19C0"><a name="Modules.RemoveLoader"></a><a href="#Modules">Modules</a>.<a href="#Modules.RemoveLoader">RemoveLoader</a>
 </h2>
 <p> Remove a module loader.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> RemoveLoader* (<strong>CONST</strong> ext: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; proc: <strong>LoaderProc</strong>)</pre>
-<hr><h2 id="#_FB959AC0"><a name="Modules.Append"></a><a href="#Modules">Modules</a>.<a href="#Modules.Append">Append</a>
+<hr><h2 id="_BD3A7980"><a name="Modules.Append"></a><a href="#Modules">Modules</a>.<a href="#Modules.Append">Append</a>
 </h2>
 <p> Append string from to to, truncating on overflow.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Append* (<strong>CONST</strong> from: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> to: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_FB961580"><a name="Modules.Publish"></a><a href="#Modules">Modules</a>.<a href="#Modules.Publish">Publish</a>
+<hr><h2 id="_BD3AF440"><a name="Modules.Publish"></a><a href="#Modules">Modules</a>.<a href="#Modules.Publish">Publish</a>
 </h2>
 <p> Add a module to the pool of accessible modules, or return named module.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Publish* (<strong>VAR</strong> m: <strong>Module</strong>; <strong>VAR</strong> new: <strong>BOOLEAN</strong>)</pre>
-<hr><h2 id="#_FB9693C0"><a name="Modules.Find"></a><a href="#Modules">Modules</a>.<a href="#Modules.Find">Find</a>
+<hr><h2 id="_BD3B7280"><a name="Modules.Find"></a><a href="#Modules">Modules</a>.<a href="#Modules.Find">Find</a>
 </h2>
 <p> Return the named module or NIL if it is not loaded yet.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Find* (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong></pre>
-<hr><h2 id="#_FB971380"><a name="Modules.This"></a><a href="#Modules">Modules</a>.<a href="#Modules.This">This</a>
+<hr><h2 id="_BD3BF240"><a name="Modules.This"></a><a href="#Modules">Modules</a>.<a href="#Modules.This">This</a>
 </h2>
 <p> Load the module if it is not already loaded.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> This* (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong></pre>
-<hr><h2 id="#_FB97B2C0"><a name="Modules.ThisModuleByAdr0"></a><a href="#Modules">Modules</a>.<a href="#Modules.ThisModuleByAdr0">ThisModuleByAdr0</a>
+<hr><h2 id="_BD3C9180"><a name="Modules.ThisModuleByAdr0"></a><a href="#Modules">Modules</a>.<a href="#Modules.ThisModuleByAdr0">ThisModuleByAdr0</a>
 </h2>
 <p> Return the module that contains code address pc or NIL if not found. Can also return freed modules. Non-blocking version for reflection</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ThisModuleByAdr0* (pc: <strong>ADDRESS</strong>): <strong>Module</strong></pre>
-<hr><h2 id="#_FB984380"><a name="Modules.ThisModuleByAdr"></a><a href="#Modules">Modules</a>.<a href="#Modules.ThisModuleByAdr">ThisModuleByAdr</a>
+<hr><h2 id="_BD3D2240"><a name="Modules.ThisModuleByAdr"></a><a href="#Modules">Modules</a>.<a href="#Modules.ThisModuleByAdr">ThisModuleByAdr</a>
 </h2>
 <p> Return the module that contains code address pc or NIL if not found. Can also return freed modules.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ThisModuleByAdr* (pc: <strong>ADDRESS</strong>): <strong>Module</strong></pre>
-<hr><h2 id="#_FB98C5C0"><a name="Modules.ThisType"></a><a href="#Modules">Modules</a>.<a href="#Modules.ThisType">ThisType</a>
+<hr><h2 id="_BD3DA480"><a name="Modules.ThisType"></a><a href="#Modules">Modules</a>.<a href="#Modules.ThisType">ThisType</a>
 </h2>
 <p> Return the named type</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> ThisType* (m: <strong>Module</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>TypeDesc</strong></pre>
-<hr><h2 id="#_FB992B00"><a name="Modules.NewObj"></a><a href="#Modules">Modules</a>.<a href="#Modules.NewObj">NewObj</a>
+<hr><h2 id="_BD3E09C0"><a name="Modules.NewObj"></a><a href="#Modules">Modules</a>.<a href="#Modules.NewObj">NewObj</a>
 </h2>
 <p> create a new object given its type descriptor</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NewObj* (t: <strong>TypeDesc</strong>; isRealtime: <strong>BOOLEAN</strong>): @Any0</pre>
-<hr><h2 id="#_FB9994C0"><a name="Modules.TypeOf"></a><a href="#Modules">Modules</a>.<a href="#Modules.TypeOf">TypeOf</a>
+<hr><h2 id="_BD3E7380"><a name="Modules.TypeOf"></a><a href="#Modules">Modules</a>.<a href="#Modules.TypeOf">TypeOf</a>
 </h2>
 <p> return the type descriptor of an object</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> TypeOf* (obj: @Any0): <strong>TypeDesc</strong></pre>
-<hr><h2 id="#_FB99EC00"><a name="Modules.FindProc"></a><a href="#Modules">Modules</a>.<a href="#Modules.FindProc">FindProc</a>
+<hr><h2 id="_BD3ECAC0"><a name="Modules.FindProc"></a><a href="#Modules">Modules</a>.<a href="#Modules.FindProc">FindProc</a>
 </h2>
 <p> searches for the given pc in the global ProcKeyTable, if found it returns the corresponding data element</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> FindProc* (pc: <strong>ADDRESS</strong>; p: <strong>ProcedureDescs</strong>): <strong>ProcedureDescPointer</strong></pre>
-<hr><h2 id="#_FB9A7940"><a name="Modules.InstallTermHandler"></a><a href="#Modules">Modules</a>.<a href="#Modules.InstallTermHandler">InstallTermHandler</a>
+<hr><h2 id="_BD3F5800"><a name="Modules.InstallTermHandler"></a><a href="#Modules">Modules</a>.<a href="#Modules.InstallTermHandler">InstallTermHandler</a>
 </h2>
 <p> Install procedure to execute when module is freed or shut down. The handler can distinguish the two cases by checking Modules.shutdown. If it is None, the module is being freed, otherwise the system is being shut down or rebooted. Only one handler may be installed per module. The last handler installed is active.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> InstallTermHandler* (h: <strong>TerminationHandler</strong>)</pre>
-<hr><h2 id="#_FB9B7900"><a name="Modules.Free"></a><a href="#Modules">Modules</a>.<a href="#Modules.Free">Free</a>
+<hr><h2 id="_BD4057C0"><a name="Modules.Free"></a><a href="#Modules">Modules</a>.<a href="#Modules.Free">Free</a>
 </h2>
-<p> Free a module. The module's termination handler, if any, is called first. Then all objects that have finalizers in this module are finalized (even if they are still reachable). Then the module's data and code are invalidated.</p>
+<p> Free a module. The module&apos;s termination handler, if any, is called first. Then all objects that have finalizers in this module are finalized (even if they are still reachable). Then the module&apos;s data and code are invalidated.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Free* (<strong>CONST</strong> package, name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>; <strong>VAR</strong> msg: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</pre>
-<hr><h2 id="#_FB9C7E40"><a name="Modules.Shutdown"></a><a href="#Modules">Modules</a>.<a href="#Modules.Shutdown">Shutdown</a>
+<hr><h2 id="_BD415D00"><a name="Modules.Shutdown"></a><a href="#Modules">Modules</a>.<a href="#Modules.Shutdown">Shutdown</a>
 </h2>
 <p> Shut down all modules by calling their termination handlers and then call Machine.Shutdown.</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Shutdown* (code: <strong>INTEGER</strong>)</pre>
-<hr><h2 id="#_FB9CE780"><a name="Modules.Initialized"></a><a href="#Modules">Modules</a>.<a href="#Modules.Initialized">Initialized</a>
+<hr><h2 id="_BD41C640"><a name="Modules.Initialized"></a><a href="#Modules">Modules</a>.<a href="#Modules.Initialized">Initialized</a>
 </h2>
-<p> fof: to make custom solutions to the race process, described below, possible. This is not a solution to the generic problem !!</p>
+<dl>
+<dt><strong>fof</strong></dt>
+<dd> to make custom solutions to the race process, described below, possible. This is not a solution to the generic problem !!</dd>
 
+
+</dl>
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Initialized* (m: <strong>Module</strong>): <strong>BOOLEAN</strong></pre>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Regex">Regex</a></p>
+<hr><h1 id="_4A4D0000"><a name="Regex"></a><a href="#ModuleList">Module</a> Regex
+</h1>
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td><a href="#Regex.MaxGroups">MaxGroups</a>= 9<tr><td></td><td><a href="#Regex.MaxRepeat">MaxRepeat</a>= 1000<tr><th align='left'>type declarations</th><td><a href="#Regex.Regexp">Regexp</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> <a href="#Regex.Compile">Compile</a> (<strong>CONST</strong> pattern: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> error: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Regexp</strong><tr><td></td><td> <a href="#Regex.Matches">Matches</a> (<strong>CONST</strong> pattern, s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_4A4DC040">
+</h1>
+<p> AUTHOR &quot;Andrii Puhachenko&quot;; PURPOSE &quot;Regular expressions for Active Oberon, matched without backtracking&quot;; LIMITATIONS &quot;- UTF-8 in, byte offsets out: Find and Group report where a match is in bytes, because that is what a caller indexes with; a byte that is not well-formed UTF-8 is matched as the character of that byte&apos;s value, so a broken string cannot stall the search; - simple case only: there is no case-insensitive flag yet; - no back references (a back reference is what makes matching exponential, and this engine trades it away on purpose); - {m,n} is written out into the program, so a count is capped at MaxRepeat; - ^ and $ anchor the whole text, not a line; - at most MaxGroups capturing groups; - a compiled Regexp carries the result of its last search, so it is a searcher and not a shared constant: give each activity its own; - Split ignores an empty match, because splitting on one produces one piece per character and nobody means that.&quot;</p>
+<hr><h2 id="_4A504540"><a name="Regex.MaxGroups"></a><a href="#Regex">Regex</a>.<a href="#Regex.MaxGroups">MaxGroups</a>
+</h2>
+<p> capturing groups, not counting group 0 -- the whole match</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MaxGroups*= 9</pre>
+<hr><h2 id="_4A509740"><a name="Regex.MaxRepeat"></a><a href="#Regex">Regex</a>.<a href="#Regex.MaxRepeat">MaxRepeat</a>
+</h2>
+<p> the largest count {m,n} may name: the program is written out, not counted</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>CONST</strong> MaxRepeat*= 1000</pre>
+<hr><h2 id="_4A50F600"><a name="Regex.Regexp"></a><a href="#Regex">Regex</a>.<a href="#Regex.Regexp">Regexp</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Regexp* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td><a href="#Regex.Regexp.ngroups">ngroups</a>: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td> <a href="#Regex.Regexp.Match">Match</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Regex.Regexp.Find">Find</a> (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; from: <strong>SIZE</strong>; <strong>VAR</strong> pos, len: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Regex.Regexp.Group">Group</a> (i: <strong>SIGNED32</strong>; <strong>VAR</strong> pos, len: <strong>SIZE</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Regex.Regexp.GroupString">GroupString</a> (i: <strong>SIGNED32</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ReplaceAll (<strong>CONST</strong> s, repl: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> out: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Split (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> parts: <strong>Strings.StringArray</strong>): <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_4A52D440"><a name="Regex.Regexp.ngroups"></a><a href="#Regex">Regex</a>.<a href="#Regex.Regexp">Regexp</a>.<a href="#Regex.Regexp.ngroups">ngroups</a>
+</h3>
+<p> capturing groups the pattern declares, not counting group 0</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>VAR</strong> ngroups-: <strong>SIGNED32</strong></pre>
+<hr><h3 id="_4A532A40"><a name="Regex.Regexp.Match"></a><a href="#Regex">Regex</a>.<a href="#Regex.Regexp">Regexp</a>.<a href="#Regex.Regexp.Match">Match</a>
+</h3>
+<p> Does the pattern match anywhere in s? Groups are readable afterwards with Group.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Match* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_4A53AB40"><a name="Regex.Regexp.Find"></a><a href="#Regex">Regex</a>.<a href="#Regex.Regexp">Regexp</a>.<a href="#Regex.Regexp.Find">Find</a>
+</h3>
+<p> The leftmost match at or after from: pos and len say where it is.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Find* (<strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; from: <strong>SIZE</strong>; <strong>VAR</strong> pos, len: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_4A545840"><a name="Regex.Regexp.Group"></a><a href="#Regex">Regex</a>.<a href="#Regex.Regexp">Regexp</a>.<a href="#Regex.Regexp.Group">Group</a>
+</h3>
+<p> Where group i landed in the last successful search. Group 0 is the whole match; a group that did not take part returns FALSE.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Group* (i: <strong>SIGNED32</strong>; <strong>VAR</strong> pos, len: <strong>SIZE</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h3 id="_4A551240"><a name="Regex.Regexp.GroupString"></a><a href="#Regex">Regex</a>.<a href="#Regex.Regexp">Regexp</a>.<a href="#Regex.Regexp.GroupString">GroupString</a>
+</h3>
+<p> Group i of the last search, copied out. FALSE if it did not take part.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GroupString* (i: <strong>SIGNED32</strong>; <strong>CONST</strong> s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+<hr><h2 id="_4A55C240"><a name="Regex.Compile"></a><a href="#Regex">Regex</a>.<a href="#Regex.Compile">Compile</a>
+</h2>
+<p> Compile pattern. Returns NIL and a reason in error if the pattern is not one.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Compile* (<strong>CONST</strong> pattern: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> error: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Regexp</strong></pre>
+<hr><h2 id="_4A565C80"><a name="Regex.Matches"></a><a href="#Regex">Regex</a>.<a href="#Regex.Matches">Matches</a>
+</h2>
+<p> Does pattern match anywhere in s? A pattern that does not compile does not match.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Matches* (<strong>CONST</strong> pattern, s: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BOOLEAN</strong></pre>
+</body></html>

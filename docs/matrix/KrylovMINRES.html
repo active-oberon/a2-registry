@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#KrylovMINRES">KrylovMINRES</a></p>
+<hr><h1 id="_4A848AC0"><a name="KrylovMINRES"></a><a href="#ModuleList">Module</a> KrylovMINRES
+</h1>
+<dl>
+<dt><strong>DESCRIPTION</strong></dt>
+<dd> Minimum Residual solver of linear systems of equations</dd>
+
+
+<dl>
+<dt><strong>AUTHOR</strong></dt>
+<dd> Alexey Morozov</dd>
+
+
+</dl>
+</dl>
+<p> MINRES is attractive when the system matrix is symmetric and indefinite. In the symmetric positive definite case CG is the preferred method. The usage of 3 term recurrence relations (within Lanczos recurrence) makes MINRES very vulnerable for rounding errors. It has been shown in literature that rounding errors are propogated to the approximate solution with a factor proportional to the square of the condition number of the matrix, whereas in GMRES these errors depend only on the condition number itself. Therefore one should be careful with MINRES for ill-conditioned systems. If storage is not a problem then GMRES should be preferred for ill-conditioned systems; if it is a problem then one might consider usage of SYMMLQ. SYMMLQ, however may converge a good deal slower than MINRES for ill-conditioned systems.</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td>MatrixToVectorProc =<strong>PROCEDURE</strong>{DELEGATE} (<strong>CONST</strong> X: <strong>Vector</strong>; <strong>VAR</strong> Y: <strong>Vector</strong>)<tr><td></td><td><a href="#KrylovMINRES.Solver">Solver</a> =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)<tr><th align='left'>procedures</th><td> CreateSolver (): <strong>MatrixBase.Solver</strong><tr><td></td><td> Solve (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> Test</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_4A877780"><a name="KrylovMINRES.Solver"></a><a href="#KrylovMINRES">KrylovMINRES</a>.<a href="#KrylovMINRES.Solver">Solver</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Solver* =<strong>OBJECT</strong> (<strong>MatrixBase.Solver</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>Tolerance: <strong>Datatype</strong><tr><td></td><td>nMaxIterations: <strong>SIGNED32</strong><tr><td></td><td>nIterations: <strong>SIGNED32</strong><tr><td></td><td>Tracer: <strong>Streams.Writer</strong><tr><th align='left'>procedures</th><td>&amp; Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveNoCopy (<strong>VAR</strong> A: <strong>Matrix</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveProcBased (MatrixToVector: <strong>MatrixToVectorProc</strong>; <strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

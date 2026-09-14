@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMCalendar">WMCalendar</a></p>
+<hr><h1 id="_23A059C0"><a name="WMCalendar"></a><a href="#ModuleList">Module</a> WMCalendar
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Calendar component and applicatoin&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Monday= 1<tr><td></td><td>Tuesday= 2<tr><td></td><td>Wednesday= 3<tr><td></td><td>Thursday= 4<tr><td></td><td>Friday= 5<tr><td></td><td>Saturday= 6<tr><td></td><td>Sunday= 7<tr><td></td><td>January= 1<tr><td></td><td>February= 2<tr><td></td><td>March= 3<tr><td></td><td>April= 4<tr><td></td><td>May= 5<tr><td></td><td>June= 6<tr><td></td><td>July= 7<tr><td></td><td>August= 8<tr><td></td><td>September= 9<tr><td></td><td>October= 10<tr><td></td><td>November= 11<tr><td></td><td>December= 12<tr><th align='left'>type declarations</th><td><a href="#WMCalendar.SelectionWrapper">SelectionWrapper</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#WMCalendar.Calendar">Calendar</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#WMCalendar.CalendarController">CalendarController</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><th align='left'>procedures</th><td> Open<tr><td></td><td> Restore (context: <strong>WMRestorable.Context</strong>)<tr><td></td><td> GenCalendar (): <strong>XML.Element</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_23A22880"><a name="WMCalendar.SelectionWrapper"></a><a href="#WMCalendar">WMCalendar</a>.<a href="#WMCalendar.SelectionWrapper">SelectionWrapper</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SelectionWrapper* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>year: <strong>SIGNED32</strong><tr><td></td><td>month: <strong>SIGNED32</strong><tr><td></td><td>day: <strong>SIGNED32</strong><tr><td></td><td>week: <strong>SIGNED32</strong><tr><td></td><td>weekDay: <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_23A2A000"><a name="WMCalendar.Calendar"></a><a href="#WMCalendar">WMCalendar</a>.<a href="#WMCalendar.Calendar">Calendar</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Calendar* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>onSelect: <strong>WMEvents.EventSource</strong><tr><td></td><td>allowSelection: <strong>WMProperties.BooleanProperty</strong><tr><td></td><td>year: <strong>WMProperties.Int32Property</strong><tr><td></td><td>month: <strong>WMProperties.Int32Property</strong><tr><td></td><td>firstDayOfWeek: <strong>WMProperties.Int32Property</strong><tr><td></td><td>clText: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clTextTitle: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clTextWeekend: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clTextOtherMonths: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clTextCurrentDay: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>clMouseOver: <strong>WMProperties.ColorProperty</strong><tr><td></td><td>currentDayImageName: <strong>WMProperties.StringProperty</strong><tr><td></td><td>backgroundImageName: <strong>WMProperties.StringProperty</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Initialize<tr><td></td><td> PropertyChanged (sender, property: @Any0)<tr><td></td><td> RecacheProperties<tr><td></td><td> NextMonth<tr><td></td><td> PreviousMonth<tr><td></td><td> PointerDown (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerUp (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerMove (x, y: <strong>SIZE</strong>; keys: <strong>SET</strong>)<tr><td></td><td> PointerLeave<tr><td></td><td> DrawBackground (canvas: <strong>WMGraphics.Canvas</strong>)<tr><td></td><td> Finalize<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_23A4BAC0"><a name="WMCalendar.CalendarController"></a><a href="#WMCalendar">WMCalendar</a>.<a href="#WMCalendar.CalendarController">CalendarController</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CalendarController* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> SetCalendar (calendar: <strong>Calendar</strong>)</td></tr>
+</td></tr>
+</table>
+</body></html>

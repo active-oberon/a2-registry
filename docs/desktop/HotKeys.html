@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#HotKeys">HotKeys</a></p>
+<hr><h1 id="_380ED240"><a name="HotKeys"></a><a href="#ModuleList">Module</a> HotKeys
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Hotkey support&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#HotKeys.Show">Show</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#HotKeys.Open">Open</a> (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_380F3980">
+</h1>
+<ul>
+<li> This tool registers a message preview handler at the window manager. If the previewed message is a keyboard message,</li>
+
+<li> the tool checks whether a command or key remapping has been defined for that key.</li>
+
+<li> In case of a defined command, the command is executed and the keyboard message is discarded. In case of a key remapping, the</li>
+
+<li> keyboard message is modified and then forwarded. <strong></strong></li>
+
+<li> Usage: <strong></strong></li>
+
+<li> HotKeys.Open ~ enables the hot keys defined in the DefaultHotKeyFile</li>
+
+<li> HotKeys.Open &lt;filename&gt; ~ enables the hot keys defined in the specified file <strong></strong></li>
+
+<li> HotKeys.Show ~ displays a list of bound hot keys <strong></strong></li>
+
+<li> System.Free HotKeys ~ disables all hot keys and unloads the module <strong></strong></li>
+
+<li> History: <strong></strong></li>
+
+<li> 22.08.2006 First release (staubesv)</li>
+</ul>
+<hr><h2 id="_38112A40"><a name="HotKeys.Show"></a><a href="#HotKeys">HotKeys</a>.<a href="#HotKeys.Show">Show</a>
+</h2>
+<p> Show all currently loaded hot keys</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Show* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="_38117800"><a name="HotKeys.Open"></a><a href="#HotKeys">HotKeys</a>.<a href="#HotKeys.Open">Open</a>
+</h2>
+<p> (Re)Load hotkeys of the specified file. If no filename is specified, the default filename is used</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Open* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#TFTypeSys">TFTypeSys</a></p>
+<hr><h1 id="_74F754C0"><a name="TFTypeSys"></a><a href="#ModuleList">Module</a> TFTypeSys
+</h1>
+<p> AUTHOR &quot;tf&quot;; PURPOSE &quot;semantic representation&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>TNone= -1<tr><td></td><td>TBasic= 0<tr><td></td><td>TAlias= 1<tr><td></td><td>TObject= 2<tr><td></td><td>TArray= 3<tr><td></td><td>TRecord= 4<tr><td></td><td>TPointer= 5<tr><td></td><td>TProcedure= 6<tr><td></td><td>BasicBoolean= 0<tr><td></td><td>BasicInt8= 1<tr><td></td><td>BasicInt16= 2<tr><td></td><td>BasicInt32= 3<tr><td></td><td>BasicInt64= 4<tr><td></td><td>BasicCard8= 5<tr><td></td><td>BasicCard16= 6<tr><td></td><td>BasicCard32= 7<tr><td></td><td>BasicCard64= 8<tr><td></td><td>BasicChar8= 9<tr><td></td><td>BasicChar16= 10<tr><td></td><td>BasicChar32= 11<tr><td></td><td>BasicReal32= 12<tr><td></td><td>BasicReal64= 13<tr><td></td><td>BasicNIL= 14<tr><td></td><td>BasicString= 15<tr><td></td><td>BasicSet= 16<tr><td></td><td>ExpressionIllegal= -1<tr><td></td><td>ExpressionPrimitive= 0<tr><td></td><td>ExpressionUnary= 1<tr><td></td><td>ExpressionBinary= 2<tr><td></td><td>ExpressionProcedure= 3<tr><td></td><td>ExpressionDesignator= 4<tr><td></td><td>IsParam= 0<tr><td></td><td>IsVarParam= 1<tr><td></td><td>IsConstParam= 2<tr><td></td><td>OpNegate= 1<tr><td></td><td>OpInvert= 2<tr><td></td><td>OpAdd= 3<tr><td></td><td>OpSub= 4<tr><td></td><td>OpOr= 5<tr><td></td><td>OpMul= 6<tr><td></td><td>OpAnd= 7<tr><td></td><td>OpIntDiv= 8<tr><td></td><td>OpMod= 9<tr><td></td><td>OpDiv= 10<tr><td></td><td>OpEql= 11<tr><td></td><td>OpNeq= 12<tr><td></td><td>OpLss= 13<tr><td></td><td>OpLeq= 14<tr><td></td><td>OpGtr= 15<tr><td></td><td>OpGeq= 16<tr><td></td><td>OpIn= 17<tr><td></td><td>OpIs= 18<tr><td></td><td>StatementAssign= 1<tr><td></td><td>ExportReadWrite= 0<tr><td></td><td>ExportReadOnly= 1<tr><th align='left'>type declarations</th><td><a href="#TFTypeSys.Position">Position</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.Comment">Comment</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.Comments">Comments</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.Expression">Expression</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.ExpressionList">ExpressionList</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.Designator">Designator</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.Set">Set</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.SetRange">SetRange</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.Ident">Ident</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#TFTypeSys.Index">Index</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#TFTypeSys.Dereference">Dereference</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#TFTypeSys.ActualParameters">ActualParameters</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Designator</strong>)<tr><td></td><td><a href="#TFTypeSys.Statement">Statement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.EmptyStatement">EmptyStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.Assignment">Assignment</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.ProcedureCall">ProcedureCall</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.IFStatement">IFStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.WHILEStatement">WHILEStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.FORStatement">FORStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.WITHStatement">WITHStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.REPEATStatement">REPEATStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.LOOPStatement">LOOPStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.RETURNStatement">RETURNStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.AWAITStatement">AWAITStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.EXITStatement">EXITStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.CASEStatement">CASEStatement</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.Case">Case</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.CaseRange">CaseRange</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.StatementBlock">StatementBlock</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)<tr><td></td><td><a href="#TFTypeSys.Array">Array</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.Pointer">Pointer</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.ProcedureSignature">ProcedureSignature</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.ProcedureType">ProcedureType</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.Type">Type</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.NamedObject">NamedObject</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.TypeDecl">TypeDecl</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)<tr><td></td><td><a href="#TFTypeSys.Const">Const</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)<tr><td></td><td><a href="#TFTypeSys.Import">Import</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)<tr><td></td><td><a href="#TFTypeSys.Var">Var</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)<tr><td></td><td><a href="#TFTypeSys.ObjectList">ObjectList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#TFTypeSys.Scope">Scope</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#TFTypeSys.Record">Record</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TFTypeSys.ProcDecl">ProcDecl</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)<tr><td></td><td><a href="#TFTypeSys.Class">Class</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)<tr><td></td><td><a href="#TFTypeSys.Module">Module</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)<tr><td></td><td><a href="#TFTypeSys.NameSpace">NameSpace</a> =<strong>OBJECT</strong> <tr><th align='left'>variables</th><td>s: <strong>TFStringPool.StringPool</strong><tr><td></td><td>ns: <strong>NameSpace</strong><tr><th align='left'>procedures</th><td> GetModule (imp: <strong>Import</strong>): <strong>Module</strong><tr><td></td><td> FindType (d: <strong>Designator</strong>; scope: <strong>Scope</strong>): <strong>Type</strong><tr><td></td><td> PrimitiveExpressionInt (value: <strong>SIGNED64</strong>): <strong>Expression</strong><tr><td></td><td> PrimitiveExpressionString (<strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Expression</strong><tr><td></td><td> PrimitiveExpressionBool (value: <strong>BOOLEAN</strong>): <strong>Expression</strong><tr><td></td><td> PrimitiveExpressionSet (value: <strong>Set</strong>): <strong>Expression</strong><tr><td></td><td> PrimitiveExpressionNIL (): <strong>Expression</strong><tr><td></td><td> IllegalExpression (): <strong>Expression</strong><tr><td></td><td> UnaryExpression (op: <strong>SIGNED16</strong>; exp: <strong>Expression</strong>): <strong>Expression</strong><tr><td></td><td> BinaryExpression (op: <strong>SIGNED32</strong>; expa, expb: <strong>Expression</strong>): <strong>Expression</strong><tr><td></td><td> CreateDesignatorExpression (designator: <strong>Designator</strong>): <strong>Expression</strong><tr><td></td><td> CreateAssignment (designator: <strong>Designator</strong>; expression: <strong>Expression</strong>): <strong>Statement</strong><tr><td></td><td> CreateProcedureCall (designator: <strong>Designator</strong>): <strong>Statement</strong><tr><td></td><td> CreateWhile (expression: <strong>Expression</strong>; statements: <strong>Statement</strong>): <strong>Statement</strong><tr><td></td><td> CreateRepeat (expression: <strong>Expression</strong>; statements: <strong>Statement</strong>): <strong>Statement</strong><tr><td></td><td> CreateLoop (statements: <strong>Statement</strong>): <strong>Statement</strong><tr><td></td><td> CreateFor (variable: <strong>Designator</strong>; from, to, by: <strong>Expression</strong>; statements: <strong>Statement</strong>): <strong>Statement</strong><tr><td></td><td> CreateWith (variable, type: <strong>Designator</strong>; statements: <strong>Statement</strong>): <strong>Statement</strong><tr><td></td><td> CreateCase (expression: <strong>Expression</strong>; cases: <strong>Case</strong>; statements: <strong>Statement</strong>): <strong>Statement</strong><tr><td></td><td> CreateExit (): <strong>Statement</strong><tr><td></td><td> CreateReturn (ex: <strong>Expression</strong>): <strong>Statement</strong><tr><td></td><td> CreateAwait (ex: <strong>Expression</strong>): <strong>Statement</strong><tr><td></td><td> AddComment (<strong>VAR</strong> comments: <strong>Comments</strong>; <strong>CONST</strong> str: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Comment</strong><tr><td></td><td> NewEmptyStatement (): <strong>Statement</strong><tr><td></td><td> WriteSymbolFile (m: <strong>Module</strong>)<tr><td></td><td> ReadSymbolFile (<strong>CONST</strong> modname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_7503E4C0">
+</h1><hr><h2 id="_7503EC80"><a name="TFTypeSys.Position"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Position">Position</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Position* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>valid: <strong>BOOLEAN</strong><tr><td></td><td>a: <strong>SIZE</strong><tr><td></td><td>b: <strong>SIZE</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75044680"><a name="TFTypeSys.Comment"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Comment">Comment</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Comment* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>Comment</strong><tr><td></td><td>pos: <strong>Position</strong><tr><td></td><td>str: <strong>String</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_7504A940"><a name="TFTypeSys.Comments"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Comments">Comments</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Comments* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>first: <strong>Comment</strong><tr><td></td><td>last: <strong>Comment</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_7504FC80"><a name="TFTypeSys.Expression"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Expression">Expression</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Expression* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>kind: <strong>SIGNED32</strong><tr><td></td><td>op: <strong>SIGNED32</strong><tr><td></td><td>basicType: <strong>SIGNED32</strong><tr><td></td><td>intValue: <strong>SIGNED64</strong><tr><td></td><td>strValue: <strong>Strings.String</strong><tr><td></td><td>setValue: <strong>Set</strong><tr><td></td><td>a: <strong>Expression</strong><tr><td></td><td>b: <strong>Expression</strong><tr><td></td><td>designator: <strong>Designator</strong><tr><td></td><td>eol: <strong>BOOLEAN</strong><tr><td></td><td>isConstant: <strong>BOOLEAN</strong><tr><td></td><td>boolValue: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_7505E400"><a name="TFTypeSys.ExpressionList"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.ExpressionList">ExpressionList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ExpressionList* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>ExpressionList</strong><tr><td></td><td>expression: <strong>Expression</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75063740"><a name="TFTypeSys.Designator"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Designator">Designator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Designator* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>Designator</strong></td></tr>
+</table>
+<hr><h2 id="_75067BC0"><a name="TFTypeSys.Set"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Set">Set</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Set* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>setRanges: <strong>SetRange</strong></td></tr>
+</table>
+<hr><h2 id="_7506C140"><a name="TFTypeSys.SetRange"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.SetRange">SetRange</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SetRange* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>SetRange</strong><tr><td></td><td>a: <strong>Expression</strong><tr><td></td><td>b: <strong>Expression</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75072340"><a name="TFTypeSys.Ident"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Ident">Ident</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Ident* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>SIZE</strong><tr><td></td><td>type: <strong>Type</strong><tr><td></td><td>pos: <strong>Position</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75078B40"><a name="TFTypeSys.Index"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Index">Index</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Index* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expressionList: <strong>ExpressionList</strong></td></tr>
+</table>
+<hr><h2 id="_7507D5C0"><a name="TFTypeSys.Dereference"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Dereference">Dereference</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Dereference* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_75081040"><a name="TFTypeSys.ActualParameters"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.ActualParameters">ActualParameters</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ActualParameters* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Designator</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expressionList: <strong>ExpressionList</strong></td></tr>
+</table>
+<hr><h2 id="_75085C00"><a name="TFTypeSys.Statement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Statement">Statement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Statement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>Statement</strong><tr><td></td><td>preComment: <strong>Comments</strong><tr><td></td><td>postComment: <strong>Comments</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_7508BE00"><a name="TFTypeSys.EmptyStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.EmptyStatement">EmptyStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EmptyStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_7508FDC0"><a name="TFTypeSys.Assignment"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Assignment">Assignment</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Assignment* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>designator: <strong>Designator</strong><tr><td></td><td>expression: <strong>Expression</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75095700"><a name="TFTypeSys.ProcedureCall"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.ProcedureCall">ProcedureCall</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureCall* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>designator: <strong>Designator</strong></td></tr>
+</table>
+<hr><h2 id="_7509A180"><a name="TFTypeSys.IFStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.IFStatement">IFStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IFStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expression: <strong>Expression</strong><tr><td></td><td>then: <strong>Statement</strong><tr><td></td><td>else: <strong>Statement</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750A0980"><a name="TFTypeSys.WHILEStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.WHILEStatement">WHILEStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WHILEStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expression: <strong>Expression</strong><tr><td></td><td>statements: <strong>Statement</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750A62C0"><a name="TFTypeSys.FORStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.FORStatement">FORStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FORStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>variable: <strong>Designator</strong><tr><td></td><td>fromExpression: <strong>Expression</strong><tr><td></td><td>toExpression: <strong>Expression</strong><tr><td></td><td>byExpression: <strong>Expression</strong><tr><td></td><td>statements: <strong>Statement</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750AE9C0"><a name="TFTypeSys.WITHStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.WITHStatement">WITHStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> WITHStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>variable: <strong>Designator</strong><tr><td></td><td>type: <strong>Designator</strong><tr><td></td><td>statements: <strong>Statement</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750B51C0"><a name="TFTypeSys.REPEATStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.REPEATStatement">REPEATStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> REPEATStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expression: <strong>Expression</strong><tr><td></td><td>statements: <strong>Statement</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750BAB00"><a name="TFTypeSys.LOOPStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.LOOPStatement">LOOPStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> LOOPStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>statements: <strong>Statement</strong></td></tr>
+</table>
+<hr><h2 id="_750BF580"><a name="TFTypeSys.RETURNStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.RETURNStatement">RETURNStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> RETURNStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expression: <strong>Expression</strong></td></tr>
+</table>
+<hr><h2 id="_750C4000"><a name="TFTypeSys.AWAITStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.AWAITStatement">AWAITStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AWAITStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expression: <strong>Expression</strong></td></tr>
+</table>
+<hr><h2 id="_750C8A80"><a name="TFTypeSys.EXITStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.EXITStatement">EXITStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> EXITStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_750CC500"><a name="TFTypeSys.CASEStatement"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.CASEStatement">CASEStatement</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CASEStatement* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expression: <strong>Expression</strong><tr><td></td><td>cases: <strong>Case</strong><tr><td></td><td>else: <strong>Statement</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750D2D00"><a name="TFTypeSys.Case"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Case">Case</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Case* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>Case</strong><tr><td></td><td>caseRanges: <strong>CaseRange</strong><tr><td></td><td>statements: <strong>Statement</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750D8F00"><a name="TFTypeSys.CaseRange"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.CaseRange">CaseRange</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> CaseRange* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>CaseRange</strong><tr><td></td><td>a: <strong>Expression</strong><tr><td></td><td>b: <strong>Expression</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750DF100"><a name="TFTypeSys.StatementBlock"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.StatementBlock">StatementBlock</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StatementBlock* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>Statement</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>statements: <strong>Statement</strong></td></tr>
+</table>
+<hr><h2 id="_750E3B80"><a name="TFTypeSys.Array"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Array">Array</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Array* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>container: <strong>Scope</strong><tr><td></td><td>open: <strong>BOOLEAN</strong><tr><td></td><td>len: <strong>SIGNED32</strong><tr><td></td><td>expression: <strong>Expression</strong><tr><td></td><td>base: <strong>Type</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750EBD00"><a name="TFTypeSys.Pointer"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Pointer">Pointer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Pointer* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>Type</strong></td></tr>
+</table>
+<hr><h2 id="_750F0180"><a name="TFTypeSys.ProcedureSignature"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.ProcedureSignature">ProcedureSignature</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureSignature* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>params: <strong>ObjectList</strong><tr><td></td><td>return: <strong>Type</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750F54C0"><a name="TFTypeSys.ProcedureType"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.ProcedureType">ProcedureType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcedureType* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>delegate: <strong>BOOLEAN</strong><tr><td></td><td>signature: <strong>ProcedureSignature</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_750FA800"><a name="TFTypeSys.Type"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Type">Type</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Type* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>container: <strong>Scope</strong><tr><td></td><td>kind: <strong>SIGNED32</strong><tr><td></td><td>basicType: <strong>SIGNED32</strong><tr><td></td><td>qualident: <strong>Designator</strong><tr><td></td><td>type: <strong>TypeDecl</strong><tr><td></td><td>array: <strong>Array</strong><tr><td></td><td>record: <strong>Record</strong><tr><td></td><td>pointer: <strong>Pointer</strong><tr><td></td><td>object: <strong>Class</strong><tr><td></td><td>procedure: <strong>ProcedureType</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75107140"><a name="TFTypeSys.NamedObject"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.NamedObject">NamedObject</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NamedObject* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>container: <strong>Scope</strong><tr><td></td><td>scope: <strong>Scope</strong><tr><td></td><td>name: <strong>String</strong><tr><td></td><td>exportState: <strong>SET</strong><tr><td></td><td>preComment: <strong>Comments</strong><tr><td></td><td>postComment: <strong>Comments</strong><tr><td></td><td>pos: <strong>Position</strong><tr><td></td><td>altPos: <strong>Position</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75111D00"><a name="TFTypeSys.TypeDecl"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.TypeDecl">TypeDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TypeDecl* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>Type</strong></td></tr>
+</table>
+<hr><h2 id="_75116780"><a name="TFTypeSys.Const"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Const">Const</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Const* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expression: <strong>Expression</strong></td></tr>
+</table>
+<hr><h2 id="_7511B200"><a name="TFTypeSys.Import"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Import">Import</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Import* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>import: <strong>String</strong><tr><td></td><td>package: <strong>String</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75120B40"><a name="TFTypeSys.Var"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Var">Var</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Var* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>Type</strong><tr><td></td><td>varNr: <strong>SIGNED32</strong><tr><td></td><td>parameterType: <strong>SET</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75127340"><a name="TFTypeSys.ObjectList"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.ObjectList">ObjectList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ObjectList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>objs: <strong>NamedObjectArray</strong><tr><td></td><td>nofObjs: <strong>SIGNED32</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Add (m: <strong>NamedObject</strong>)<tr><td></td><td> AddReplace (m: <strong>NamedObject</strong>)<tr><td></td><td> Get (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>NamedObject</strong><tr><td></td><td> GetWithPrefix (<strong>CONST</strong> prefix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; candidates: <strong>ObjectList</strong>; onlyPublic: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75137340"><a name="TFTypeSys.Scope"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Scope">Scope</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Scope* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>elements: <strong>ObjectList</strong><tr><td></td><td>params: <strong>ObjectList</strong><tr><td></td><td>parent: <strong>Scope</strong><tr><td></td><td>super: <strong>Scope</strong><tr><td></td><td>superQualident: <strong>Designator</strong><tr><td></td><td>ownerBody: <strong>Statement</strong><tr><td></td><td>owner: <strong>NamedObject</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> Add (no: <strong>NamedObject</strong>)<tr><td></td><td> FixSuperScope<tr><td></td><td> Find (<strong>VAR</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; searchUpscopes: <strong>BOOLEAN</strong>): <strong>NamedObject</strong><tr><td></td><td> FindCandidates (<strong>VAR</strong> prefix: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; searchUpscopes, onlyPublic: <strong>BOOLEAN</strong>; candidates: <strong>ObjectList</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_7514C180"><a name="TFTypeSys.Record"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Record">Record</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Record* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>scope: <strong>Scope</strong></td></tr>
+</table>
+<hr><h2 id="_75150600"><a name="TFTypeSys.ProcDecl"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.ProcDecl">ProcDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcDecl* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>signature: <strong>ProcedureSignature</strong></td></tr>
+</table>
+<hr><h2 id="_75155080"><a name="TFTypeSys.Class"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Class">Class</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Class* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>implements: <strong>ObjectList</strong></td></tr>
+</table>
+<hr><h2 id="_7515A040"><a name="TFTypeSys.Module"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.Module">Module</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Module* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> (<strong>NamedObject</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>package: <strong>Strings.String</strong><tr><td></td><td>filename: <strong>Strings.String</strong><tr><td></td><td>isSymbolic: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75160840"><a name="TFTypeSys.NameSpace"></a><a href="#TFTypeSys">TFTypeSys</a>.<a href="#TFTypeSys.NameSpace">NameSpace</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NameSpace* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> AddModule (m: <strong>Module</strong>)<tr><td></td><td> GetModule (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Module</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

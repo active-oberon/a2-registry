@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMPlayer">WMPlayer</a></p>
+<hr><h1 id="_573A5280"><a name="WMPlayer"></a><a href="#ModuleList">Module</a> WMPlayer
+</h1>
+<p> AUTHOR &quot;PL&quot;; PURPOSE &quot;MediaPlayer GUI&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WMPlayer.InfoWindow">InfoWindow</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><td></td><td><a href="#WMPlayer.Window">Window</a> =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)<tr><th align='left'>procedures</th><td> Open (context: <strong>Commands.Context</strong>)<tr><td></td><td> Cleanup</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_573AD940"><a name="WMPlayer.InfoWindow"></a><a href="#WMPlayer">WMPlayer</a>.<a href="#WMPlayer.InfoWindow">InfoWindow</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InfoWindow* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; New (setupData: <strong>MediaPlayer.Setup</strong>)</td></tr>
+</table>
+<hr><h2 id="_573B3180"><a name="WMPlayer.Window"></a><a href="#WMPlayer">WMPlayer</a>.<a href="#WMPlayer.Window">Window</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Window* =<strong>OBJECT</strong> (<strong>WMComponents.FormWindow</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>playBtn: <strong>WMStandardComponents.Button</strong><tr><td></td><td>stopBtn: <strong>WMStandardComponents.Button</strong><tr><td></td><td>pauseBtn: <strong>WMStandardComponents.Button</strong><tr><td></td><td>ffBtn: <strong>WMStandardComponents.Button</strong><tr><td></td><td>rewBtn: <strong>WMStandardComponents.Button</strong><tr><td></td><td>infoBtn: <strong>WMStandardComponents.Button</strong><tr><td></td><td>stepBtn: <strong>WMStandardComponents.Button</strong><tr><td></td><td>resetBtn: <strong>WMStandardComponents.Button</strong><tr><td></td><td>toolbar: <strong>WMStandardComponents.Panel</strong><tr><td></td><td>timeLbl: <strong>WMStandardComponents.Label</strong><tr><td></td><td>totTimeLbl: <strong>WMStandardComponents.Label</strong><tr><td></td><td>frameLbl: <strong>WMStandardComponents.Label</strong><tr><td></td><td>maxFrameLbl: <strong>WMStandardComponents.Label</strong><tr><td></td><td>player: <strong>MediaPlayer.Player</strong><tr><td></td><td>filename: <strong>Files.FileName</strong><tr><td></td><td>setupData: <strong>MediaPlayer.Setup</strong><tr><td></td><td>infos: <strong>InfoWindow</strong><tr><td></td><td>res: <strong>INTEGER</strong><tr><td></td><td>windowInfo: <strong>WMWindowManager.WindowInfo</strong><tr><th align='left'>procedures</th><td> CreateForm (): <strong>WMComponents.VisualComponent</strong><tr><td></td><td>&amp; New<tr><td></td><td> GenerateControl (): @Any0<tr><td></td><td> Open (<strong>CONST</strong> fileName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ButtonHandler (sender, data: @Any0)<tr><td></td><td> Close<tr><td></td><td> Handle (<strong>VAR</strong> x: <strong>WMMessages.Message</strong>)<tr><td></td><td> Update (status, pos, maxpos, time, displayTime: <strong>SIGNED32</strong>)<tr><td></td><td> SetUpController (setup: <strong>MediaPlayer.Setup</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

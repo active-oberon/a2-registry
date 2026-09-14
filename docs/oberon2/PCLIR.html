@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#PCLIR">PCLIR</a></p>
-<hr><h1 id="#_889A4D40"><a name="PCLIR"></a><a href="#ModuleList">Module</a> PCLIR
+<hr><h1 id="_8904D5C0"><a name="PCLIR"></a><a href="#ModuleList">Module</a> PCLIR
 </h1>
-<p> AUTHOR "prk / be"; PURPOSE "Parallel Compiler: intermediate code representation";</p>
+<p> AUTHOR &quot;prk / be&quot;; PURPOSE &quot;Parallel Compiler: intermediate code representation&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -213,30 +213,30 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_88ACC780"><a name="PCLIR.NoSize"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.NoSize">NoSize</a>
+<hr><h2 id="_89175000"><a name="PCLIR.NoSize"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.NoSize">NoSize</a>
 </h2>
 <p>Register sizes</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> NoSize*= 0</pre>
-<hr><h2 id="#_88ACF800"><a name="PCLIR.none"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.none">none</a>
+<hr><h2 id="_89178080"><a name="PCLIR.none"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.none">none</a>
 </h2>
 <p>Special Register Values</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> none*= -1</pre>
-<hr><h2 id="#_88AD2F80"><a name="PCLIR.HwReg"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.HwReg">HwReg</a>
+<hr><h2 id="_8917B800"><a name="PCLIR.HwReg"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.HwReg">HwReg</a>
 </h2>
 <p> map to a real register, reg := HwReg - Rx</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> HwReg*= -16</pre>
-<hr><h2 id="#_88AD8500"><a name="PCLIR.form00"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form00">form00</a>
+<hr><h2 id="_89180D80"><a name="PCLIR.form00"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form00">form00</a>
 </h2>
-<p> Opcodes The opcodes have a format XY, X = number of destinations <a href="#0,1]">0,1]</a> register assigned by the instruction Y = number of sources <a href="#0..3,">0..3,</a> C] registers used by the instruction. C = Constant Value</p>
+<p> Opcodes The opcodes have a format XY, X = number of destinations [0,1] register assigned by the instruction Y = number of sources [0..3, C] registers used by the instruction. C = Constant Value</p>
 
 <p> Instruction Formats</p>
 
@@ -245,98 +245,98 @@
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form00*= 0</pre>
-<hr><h2 id="#_88AE4F00"><a name="PCLIR.form0C"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form0C">form0C</a>
+<hr><h2 id="_8918D780"><a name="PCLIR.form0C"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form0C">form0C</a>
 </h2>
 <p> Instr Immediate</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form0C*= 1</pre>
-<hr><h2 id="#_88AE81C0"><a name="PCLIR.form01"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form01">form01</a>
+<hr><h2 id="_89190A40"><a name="PCLIR.form01"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form01">form01</a>
 </h2>
 <p> Instr Src</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form01*= 2</pre>
-<hr><h2 id="#_88AEB3C0"><a name="PCLIR.form10"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form10">form10</a>
+<hr><h2 id="_89193C40"><a name="PCLIR.form10"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form10">form10</a>
 </h2>
 <p> Instr Dst</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form10*= 3</pre>
-<hr><h2 id="#_88AEE5C0"><a name="PCLIR.form1C"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form1C">form1C</a>
+<hr><h2 id="_89196E40"><a name="PCLIR.form1C"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form1C">form1C</a>
 </h2>
 <p> Instr Dst, Immediate</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form1C*= 4</pre>
-<hr><h2 id="#_88AF1D00"><a name="PCLIR.form11"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form11">form11</a>
+<hr><h2 id="_8919A580"><a name="PCLIR.form11"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form11">form11</a>
 </h2>
 <p> Instr Dst, Src</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form11*= 5</pre>
-<hr><h2 id="#_88AF5340"><a name="PCLIR.form1M"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form1M">form1M</a>
+<hr><h2 id="_8919DBC0"><a name="PCLIR.form1M"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form1M">form1M</a>
 </h2>
 <p> Instr Dst, Mem</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form1M*= 6</pre>
-<hr><h2 id="#_88AF8980"><a name="PCLIR.formM1"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.formM1">formM1</a>
+<hr><h2 id="_891A1200"><a name="PCLIR.formM1"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.formM1">formM1</a>
 </h2>
 <p> Instr Mem, Src</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> formM1*= 7</pre>
-<hr><h2 id="#_88AFBFC0"><a name="PCLIR.form02"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form02">form02</a>
+<hr><h2 id="_891A4840"><a name="PCLIR.form02"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form02">form02</a>
 </h2>
 <p> Instr Src1, Src2</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form02*= 8</pre>
-<hr><h2 id="#_88AFF600"><a name="PCLIR.form12"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form12">form12</a>
+<hr><h2 id="_891A7E80"><a name="PCLIR.form12"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form12">form12</a>
 </h2>
 <p> Instr Dst, Src1, Src2</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form12*= 9</pre>
-<hr><h2 id="#_88B03180"><a name="PCLIR.form02C"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form02C">form02C</a>
+<hr><h2 id="_891ABA00"><a name="PCLIR.form02C"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form02C">form02C</a>
 </h2>
 <p> Instr Src1, Src2, Imm</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form02C*= 10</pre>
-<hr><h2 id="#_88B06C00"><a name="PCLIR.form03"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form03">form03</a>
+<hr><h2 id="_891AF480"><a name="PCLIR.form03"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.form03">form03</a>
 </h2>
 <p> Instr Src1, Src2, Srcc3</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> form03*= 11</pre>
-<hr><h2 id="#_88B0A680"><a name="PCLIR.formXX"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.formXX">formXX</a>
+<hr><h2 id="_891B2F00"><a name="PCLIR.formXX"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.formXX">formXX</a>
 </h2>
 <p> Special formats</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> formXX*= 12</pre>
-<hr><h2 id="#_88B0D880"><a name="PCLIR.barrier"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.barrier">barrier</a>
+<hr><h2 id="_891B6100"><a name="PCLIR.barrier"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.barrier">barrier</a>
 </h2>
 <p> Instruction Flags</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> barrier*= 0</pre>
-<hr><h2 id="#_88B10A80"><a name="PCLIR.load"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.load">load</a>
+<hr><h2 id="_891B9300"><a name="PCLIR.load"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.load">load</a>
 </h2>
 <p> Opcodes</p>
 
@@ -386,19 +386,55 @@
 
 <p>label 0C x val = position in source code 0 anchor for jumps (contains links list)</p>
 
-<p>jCC 02C xx x if CC(R1,R2) -&gt pc := val CC = <code>e, ne, lt, le, gt, ge, ae, f, nf}<BR><BR>jmp      0C         x     pc := val<BR>call     0C           x   push pc; pc := adr<BR>callreg  01     x         push pc; pc := R1<BR>syscall  0C         x     push pc; pc := SYSTEM_CALL[val]<BR><BR>enter    XX         x x   enter subrutine with CALLCONV[val]. Additional info = adr<BR>exit     XX     x   x     exit subroutine with CALLCONV[val], nofbytes in src1<BR><BR>trap     0C         x     HALT(val)<BR>tCC      02C    xx  x     IF CC(R1, R2) -&gt HALT(val)<BR><BR>setCC    12     xx        IF CC(R1, R2) THEN Rpc := 1 ELSE Rpc := 0 END<BR><BR>result   10               Rpc := 1st result of previous call (must follow call)<BR>result2  10               Rpc := 2nd result of previous call (must follow result)<BR>pop      10               Rpc := MEM[SP]; inc(SP)<BR>ret      01     x         (1st result of current call) := R1<BR>ret2     01     x         (2nd result of current call) := R1 (must follow ret)<BR>push     01     x         MEM[SP] := R1; dec(SP)<BR>kill     01     x         kill R1 (used with phi)<BR>loadsp   01     x         SP := R1<BR><BR>convs    11     x         Rpc :=   SIGNED_CONVERSION(size, R1)<BR>convu    11     x         Rpc := UNSIGNED_CONVERSION(size, R1)<BR>copy     11     x         Rpc := Rsrc1 (no convertion, e.g. int-&gtfloat register)<BR><BR>not      11     x         Rpc := BINARY_NEGATION(R1)<BR>neg      11     x         Rpc := ARITH_NEGATION(R1)<BR>abs      11     x         Rpc := ABSOLUTE(R1)<BR><BR>mul      12     xx        Rpc := R1 * R2<BR>div      12     xx        Rpc := R1 / R2<BR>mod      12     xx        Rpc := R1 % R2<BR>sub      12     xx        Rpc := R1 - R2<BR>add      12     xx        Rpc := R1 + R2<BR><BR>and      12     xx        Rpc := AND(R1, R2)<BR>or       12     xx        Rpc := OR (R1, R2)<BR>xor      12     xx        Rpc := XOR(R1, R2)<BR><BR>bts      12     xx        Rpc := OR (R1, 1&lt&ltR2)<BR>btc      12     xx        Rpc := AND(R1, NOT(1&lt&ltR2))<BR><BR>bsh      12     xx        Rpc := BINARY_SHIFT(R1, R2)<BR>ash      12     xx        Rpc :=  ARITH_SHIFT(R1, R2)<BR>rot      12     xx        Rpc := ROTATE(R1, R2)<BR><BR>phi      12     xx        Rpc := PHI(R1, R2)<BR><BR>move     03     xxx       MOVE FROM MEM[R1..R1+R3-1] TO MEM[R2..R2+R3-1]<BR>                          at end R1':=R1+R3 and R2':=R2+R3<BR><BR>inline   XX               inline assembler code<BR><BR>case     XX     xxx       case on R1 (R2 = min, R3 = max)<BR>casel    XX     x   x     caseline: R1 = case, val = case-offset<BR>casee    XX     x         caseelse: R1 = case<BR><BR><BR>Remarks:<BR>1) dstCount and dstSize are used by the form1X instructions<BR><BR>	</code></p>
+<p>jCC 02C xx x if CC(R1,R2) -&gt; pc := val CC = {e, ne, lt, le, gt, ge, ae, f, nf}</p>
 
+<p>jmp 0C x pc := valcall 0C x push pc; pc := adrcallreg 01 x push pc; pc := R1syscall 0C x push pc; pc := SYSTEM_CALL[val]</p>
+
+<p>enter XX x x enter subrutine with CALLCONV[val]. Additional info = adrexit XX x x exit subroutine with CALLCONV[val], nofbytes in src1</p>
+
+<p>trap 0C x HALT(val)tCC 02C xx x IF CC(R1, R2) -&gt; HALT(val)</p>
+
+<p>setCC 12 xx IF CC(R1, R2) THEN Rpc := 1 ELSE Rpc := 0 END</p>
+
+<p>result 10 Rpc := 1st result of previous call (must follow call)result2 10 Rpc := 2nd result of previous call (must follow result)pop 10 Rpc := MEM[SP]; inc(SP)ret 01 x (1st result of current call) := R1ret2 01 x (2nd result of current call) := R1 (must follow ret)push 01 x MEM[SP] := R1; dec(SP)kill 01 x kill R1 (used with phi)loadsp 01 x SP := R1</p>
+
+<p>convs 11 x Rpc := SIGNED_CONVERSION(size, R1)convu 11 x Rpc := UNSIGNED_CONVERSION(size, R1)copy 11 x Rpc := Rsrc1 (no convertion, e.g. int-&gt;float register)</p>
+
+<p>not 11 x Rpc := BINARY_NEGATION(R1)neg 11 x Rpc := ARITH_NEGATION(R1)abs 11 x Rpc := ABSOLUTE(R1)</p>
+
+<p>mul 12 xx Rpc := R1 * R2div 12 xx Rpc := R1 / R2mod 12 xx Rpc := R1 % R2sub 12 xx Rpc := R1 - R2add 12 xx Rpc := R1 + R2</p>
+
+<p>and 12 xx Rpc := AND(R1, R2)or 12 xx Rpc := OR (R1, R2)xor 12 xx Rpc := XOR(R1, R2)</p>
+
+<p>bts 12 xx Rpc := OR (R1, 1&lt;&lt;R2)btc 12 xx Rpc := AND(R1, NOT(1&lt;&lt;R2))</p>
+
+<p>bsh 12 xx Rpc := BINARY_SHIFT(R1, R2)ash 12 xx Rpc := ARITH_SHIFT(R1, R2)rot 12 xx Rpc := ROTATE(R1, R2)</p>
+
+<p>phi 12 xx Rpc := PHI(R1, R2)</p>
+
+<p>move 03 xxx MOVE FROM MEM[R1..R1+R3-1] TO MEM[R2..R2+R3-1] at end R1&apos;:=R1+R3 and R2&apos;:=R2+R3</p>
+
+<p>inline XX inline assembler code</p>
+
+<p>case XX xxx case on R1 (R2 = min, R3 = max)casel XX x x caseline: R1 = case, val = case-offsetcasee XX x caseelse: R1 = case</p>
+
+<dl>
+<dt><strong>Remarks</strong></dt>
+<dd>1) dstCount and dstSize are used by the form1X instructions</dd>
+
+
+</dl>
 <h3>Syntax</h3>
 
 <pre><strong>CONST</strong> load*= 0</pre>
-<hr><h2 id="#_88B3D240"><a name="PCLIR.Opcode"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Opcode">Opcode</a>
+<hr><h2 id="_8923A780"><a name="PCLIR.Opcode"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Opcode">Opcode</a>
 </h2>
 <p> ============= Instruction Set Definitions ========================</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> Opcode* =<strong>SIGNED8</strong></pre>
-<hr><h2 id="#_88B411C0"><a name="PCLIR.InstructionAttribute"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.InstructionAttribute">InstructionAttribute</a>
+<hr><h2 id="_8923E700"><a name="PCLIR.InstructionAttribute"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.InstructionAttribute">InstructionAttribute</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -407,7 +443,7 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_88B43FC0"><a name="PCLIR.Instruction"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Instruction">Instruction</a>
+<hr><h2 id="_89241500"><a name="PCLIR.Instruction"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Instruction">Instruction</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -428,7 +464,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_88B51E80"><a name="PCLIR.Piece"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Piece">Piece</a>
+<hr><h2 id="_8924F3C0"><a name="PCLIR.Piece"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Piece">Piece</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -436,10 +472,10 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>instr: <strong>ARRAY</strong> PieceLen <strong>OF</strong> <strong>Instruction</strong><tr><th align='left'>procedures</th><td>& Init</td></tr>
+<table><tr><th align='left'>variables</th><td>instr: <strong>ARRAY</strong> PieceLen <strong>OF</strong> <strong>Instruction</strong><tr><th align='left'>procedures</th><td>&amp; Init</td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_88B57D40"><a name="PCLIR.CodeAttributes"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeAttributes">CodeAttributes</a>
+<hr><h2 id="_89255280"><a name="PCLIR.CodeAttributes"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeAttributes">CodeAttributes</a>
 </h2>
 <p> Code - a junk of code</p>
 
@@ -450,7 +486,7 @@
 <h3>Summary</h3>
 
 <table></table>
-<hr><h2 id="#_88B5D1C0"><a name="PCLIR.Code"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Code">Code</a>
+<hr><h2 id="_8925A700"><a name="PCLIR.Code"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Code">Code</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -458,7 +494,7 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>pc: <strong>SIGNED32</strong><tr><td></td><td>barrier: <strong>SIGNED32</strong><tr><td></td><td>info: <strong>CodeAttributes</strong><tr><td></td><td>name: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> GetPiece (<strong>VAR</strong> src: <strong>SIGNED32</strong>; <strong>VAR</strong> p: <strong>Piece</strong>)<tr><td></td><td> Traverse (proc: <strong>TraverseProc</strong>; reversed: <strong>BOOLEAN</strong>; context: @Any0)<tr><td></td><td>& Init</td></tr>
+<table><tr><th align='left'>variables</th><td>pc: <strong>SIGNED32</strong><tr><td></td><td>barrier: <strong>SIGNED32</strong><tr><td></td><td>info: <strong>CodeAttributes</strong><tr><td></td><td>name: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><th align='left'>procedures</th><td> GetPiece (<strong>VAR</strong> src: <strong>SIGNED32</strong>; <strong>VAR</strong> p: <strong>Piece</strong>)<tr><td></td><td> Traverse (proc: <strong>TraverseProc</strong>; reversed: <strong>BOOLEAN</strong>; context: @Any0)<tr><td></td><td>&amp; Init</td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
@@ -466,7 +502,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_88B6C700"><a name="PCLIR.AsmFixup"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.AsmFixup">AsmFixup</a>
+<hr><h2 id="_89269C40"><a name="PCLIR.AsmFixup"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.AsmFixup">AsmFixup</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -478,7 +514,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_88B72900"><a name="PCLIR.AsmBlock"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.AsmBlock">AsmBlock</a>
+<hr><h2 id="_8926FE40"><a name="PCLIR.AsmBlock"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.AsmBlock">AsmBlock</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -490,7 +526,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_88B79940"><a name="PCLIR.AsmInline"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.AsmInline">AsmInline</a>
+<hr><h2 id="_89276E80"><a name="PCLIR.AsmInline"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.AsmInline">AsmInline</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -501,21 +537,23 @@
 <table><tr><th align='left'>variables</th><td>code: <strong>AsmBlock</strong><tr><td></td><td>fixup: <strong>AsmFixup</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_88B7EB80"><a name="PCLIR.CodeArray"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeArray">CodeArray</a>
+<hr><h2 id="_8927C0C0"><a name="PCLIR.CodeArray"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeArray">CodeArray</a>
 </h2>
-<p> ----------- Code Generator Types ----------------------</p>
+<hr/>
+
+<p> Code Generator Types ----------------------</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> CodeArray* =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></pre>
-<hr><h2 id="#_88B83AC0"><a name="PCLIR.InitHandler"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.InitHandler">InitHandler</a>
+<hr><h2 id="_89280E00"><a name="PCLIR.InitHandler"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.InitHandler">InitHandler</a>
 </h2>
 <p> Code generator initialization. Called before code generation</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>TYPE</strong> InitHandler* =<strong>PROCEDURE</strong> (): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_88B88E00"><a name="PCLIR.CodeGenerator"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeGenerator">CodeGenerator</a>
+<hr><h2 id="_89286140"><a name="PCLIR.CodeGenerator"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeGenerator">CodeGenerator</a>
 </h2>
 <p> codelength = actual size of the code (bytes); hdrlength = value stored in header file as code length (bytes) addressFactor = addresses in fixup-lists are multiplied by this factor</p>
 
@@ -536,56 +574,56 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h3 id="#_88B9D940"><a name="PCLIR.CodeGenerator.MaxCodeSize"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeGenerator">CodeGenerator</a>.<a href="#PCLIR.CodeGenerator.MaxCodeSize">MaxCodeSize</a>
+<hr><h3 id="_8929AC80"><a name="PCLIR.CodeGenerator.MaxCodeSize"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeGenerator">CodeGenerator</a>.<a href="#PCLIR.CodeGenerator.MaxCodeSize">MaxCodeSize</a>
 </h3>
 <p> max. codesize</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> MaxCodeSize*: <strong>SIGNED32</strong></pre>
-<hr><h3 id="#_88BA1400"><a name="PCLIR.CodeGenerator.SysCallMap"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeGenerator">CodeGenerator</a>.<a href="#PCLIR.CodeGenerator.SysCallMap">SysCallMap</a>
+<hr><h3 id="_8929E740"><a name="PCLIR.CodeGenerator.SysCallMap"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.CodeGenerator">CodeGenerator</a>.<a href="#PCLIR.CodeGenerator.SysCallMap">SysCallMap</a>
 </h3>
-<p> internal syscall id -&gt object file syscall tag</p>
+<p> internal syscall id -&gt; object file syscall tag</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>VAR</strong> SysCallMap*: <strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong></pre>
-<hr><h2 id="#_88BA7580"><a name="PCLIR.SizeOf"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.SizeOf">SizeOf</a>
+<hr><h2 id="_892A48C0"><a name="PCLIR.SizeOf"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.SizeOf">SizeOf</a>
 </h2>
 <p> SizeOf - Return size of a Register</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SizeOf* (code: <strong>Code</strong>; reg: <strong>Register</strong>): <strong>Size</strong></pre>
-<hr><h2 id="#_88BADA40"><a name="PCLIR.Signed"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Signed">Signed</a>
+<hr><h2 id="_892AAD80"><a name="PCLIR.Signed"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Signed">Signed</a>
 </h2>
 <p> Signed- Returns TRUE if the value in this register is signed</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Signed* (code: <strong>Code</strong>; reg: <strong>Register</strong>): <strong>BOOLEAN</strong></pre>
-<hr><h2 id="#_88BB5000"><a name="PCLIR.NofBytes"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.NofBytes">NofBytes</a>
+<hr><h2 id="_892B2340"><a name="PCLIR.NofBytes"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.NofBytes">NofBytes</a>
 </h2>
 <p> NofBytes - Return the number of Bytes taken by a Size</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> NofBytes* (size: <strong>Size</strong>): <strong>SIGNED8</strong></pre>
-<hr><h2 id="#_88BBB7C0"><a name="PCLIR.EmitStoreAbsolute"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.EmitStoreAbsolute">EmitStoreAbsolute</a>
+<hr><h2 id="_892B8B00"><a name="PCLIR.EmitStoreAbsolute"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.EmitStoreAbsolute">EmitStoreAbsolute</a>
 </h2>
 <p> Code Emission Procedures</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> EmitStoreAbsolute* (code: <strong>Code</strong>; offset: <strong>SIGNED32</strong>; addr: <strong>PCM.Attribute</strong>; source: <strong>Register</strong>)</pre>
-<hr><h2 id="#_88BC22C0"><a name="PCLIR.FixList"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.FixList">FixList</a>
+<hr><h2 id="_892BF600"><a name="PCLIR.FixList"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.FixList">FixList</a>
 </h2>
 <p> Fixup list handling</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> FixList* (code: <strong>Code</strong>; <strong>VAR</strong> pos: <strong>SIGNED32</strong>; val: <strong>SIGNED32</strong>)</pre>
-<hr><h2 id="#_88BC8440"><a name="PCLIR.SwapSources"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.SwapSources">SwapSources</a>
+<hr><h2 id="_892C5780"><a name="PCLIR.SwapSources"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.SwapSources">SwapSources</a>
 </h2>
 <p> Other LIR Functionalities</p>
 
@@ -594,23 +632,23 @@
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> SwapSources* (<strong>VAR</strong> instr: <strong>Instruction</strong>)</pre>
-<hr><h2 id="#_88BCEBC0"><a name="PCLIR.DumpCode"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.DumpCode">DumpCode</a>
+<hr><h2 id="_892CBF00"><a name="PCLIR.DumpCode"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.DumpCode">DumpCode</a>
 </h2>
 <p> DumpCode (Debug) - TraverseProc, dumps whole code to global writer W</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> DumpCode* (code: <strong>Code</strong>; <strong>VAR</strong> instr: <strong>Instruction</strong>; pc: <strong>SIGNED32</strong>; context: @Any0)</pre>
-<hr><h2 id="#_88BD7B00"><a name="PCLIR.Emit"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Emit">Emit</a>
+<hr><h2 id="_892D4E40"><a name="PCLIR.Emit"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.Emit">Emit</a>
 </h2>
 <p> Emit - Emit the code</p>
 
 <h3>Syntax</h3>
 
 <pre><strong>PROCEDURE</strong> Emit* (code: <strong>Code</strong>)</pre>
-<hr><h2 id="#_88BDC540"><a name="PCLIR.SetMethods"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.SetMethods">SetMethods</a>
+<hr><h2 id="_892D9880"><a name="PCLIR.SetMethods"></a><a href="#PCLIR">PCLIR</a>.<a href="#PCLIR.SetMethods">SetMethods</a>
 </h2>
-<p> &lt&lt fof</p>
+<p> &lt;&lt; fof</p>
 
 <h3>Syntax</h3>
 

@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#MatrixLeastSquares">MatrixLeastSquares</a></p>
-<hr><h1 id="#_8C9C8D80"><a name="MatrixLeastSquares"></a><a href="#ModuleList">Module</a> MatrixLeastSquares
+<hr><h1 id="_B375E640"><a name="MatrixLeastSquares"></a><a href="#ModuleList">Module</a> MatrixLeastSquares
 </h1>
-<p> AUTHOR "Patrick Hunziker"; PURPOSE "compute least squares solution from linear system of equation";</p>
+<p> AUTHOR &quot;Patrick Hunziker&quot;; PURPOSE &quot;compute least squares solution from linear system of equation&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -53,7 +53,7 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_8C9E7C00"><a name="MatrixLeastSquares.LeastSquares"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.LeastSquares">LeastSquares</a>
+<hr><h2 id="_B377D4C0"><a name="MatrixLeastSquares.LeastSquares"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.LeastSquares">LeastSquares</a>
 </h2>
 <h3>Syntax</h3>
 
@@ -61,10 +61,10 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_8C9EFC40"><a name="MatrixLeastSquares.LeastSquaresQR"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.LeastSquaresQR">LeastSquaresQR</a>
+<hr><h2 id="_B3785500"><a name="MatrixLeastSquares.LeastSquaresQR"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.LeastSquaresQR">LeastSquaresQR</a>
 </h2>
 <p> Least Squares based on QR - prefer this in overdetermined systems; works in square and overdetermined systems</p>
 
@@ -74,12 +74,12 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>qr: <strong>MatrixStandardSolvers.QR</strong><tr><td></td><td>solver: <strong>MatrixStandardSolvers.QR</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>qr: <strong>MatrixStandardSolvers.QR</strong><tr><td></td><td>solver: <strong>MatrixStandardSolvers.QR</strong><tr><th align='left'>procedures</th><td>&amp; Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_8C9FE300"><a name="MatrixLeastSquares.LeastSquaresSVD"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.LeastSquaresSVD">LeastSquaresSVD</a>
+<hr><h2 id="_B3793BC0"><a name="MatrixLeastSquares.LeastSquaresSVD"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.LeastSquaresSVD">LeastSquaresSVD</a>
 </h2>
 <p> Least Squares based on SVD - prefer this in underdetermined systems; works in under/overdetermined and square systems and works in ill-conditioned systems</p>
 
@@ -89,10 +89,10 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
+<table><tr><th align='left'>procedures</th><td>&amp; Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong></td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_8CA0BC80"><a name="MatrixLeastSquares.TotalLeastSquares"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.TotalLeastSquares">TotalLeastSquares</a>
+<hr><h2 id="_B37A1540"><a name="MatrixLeastSquares.TotalLeastSquares"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.TotalLeastSquares">TotalLeastSquares</a>
 </h2>
 <p> Total leasts squares are tricky in that they do not always have a unique solution or a solution at all, and in some situations the results given by the algorithm are not the true TLS solution. SeeIVETA HNETYNKOVA, MARTIN PLESINGER, DIANA MARIA SIMA, ZDENIK STRAKO,SABINE VAN HUFFEL: THE TOTAL LEAST SQUARES PROBLEM IN AX . B: A NEW CLASSIFICATION WITH THE RELATIONSHIP TO THE CLASSICAL WORKS</p>
 
@@ -102,14 +102,14 @@
 
 <h3>Summary</h3>
 
-<table><tr><th align='left'>variables</th><td>dC: <strong>Matrix</strong><tr><td></td><td>C: <strong>Matrix</strong><tr><td></td><td>svd: <strong>MatrixSVD.Solver</strong><tr><th align='left'>procedures</th><td>& Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveMultiple (<strong>CONST</strong> B: <strong>Matrix</strong>): <strong>Matrix</strong></td></tr>
+<table><tr><th align='left'>variables</th><td>dC: <strong>Matrix</strong><tr><td></td><td>C: <strong>Matrix</strong><tr><td></td><td>svd: <strong>MatrixSVD.Solver</strong><tr><th align='left'>procedures</th><td>&amp; Init (<strong>CONST</strong> A: <strong>Matrix</strong>)<tr><td></td><td> Solve (<strong>CONST</strong> b: <strong>Vector</strong>): <strong>Vector</strong><tr><td></td><td> SolveMultiple (<strong>CONST</strong> B: <strong>Matrix</strong>): <strong>Matrix</strong></td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </td></tr>
 </table>
-<hr><h2 id="#_8CA293C0"><a name="MatrixLeastSquares.TestQR"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.TestQR">TestQR</a>
+<hr><h2 id="_B37BEC80"><a name="MatrixLeastSquares.TestQR"></a><a href="#MatrixLeastSquares">MatrixLeastSquares</a>.<a href="#MatrixLeastSquares.TestQR">TestQR</a>
 </h2>
 <p> how to use</p>
 

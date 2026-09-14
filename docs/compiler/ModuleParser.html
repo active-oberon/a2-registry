@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#ModuleParser">ModuleParser</a></p>
+<hr><h1 id="_20479740"><a name="ModuleParser"></a><a href="#ModuleList">Module</a> ModuleParser
+</h1>
+<p> AUTHOR &quot;mb&quot;; PURPOSE &quot;Active Oberon parser for use with ModuleTrees</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Public= 1<tr><td></td><td>PublicRO= 2<tr><td></td><td>Private= 3<tr><td></td><td>Exclusive= 1<tr><td></td><td>Active= 2<tr><td></td><td>Safe= 3<tr><td></td><td>Priority= 4<tr><td></td><td>Unchecked= 5<tr><td></td><td>Uncooperative= 6<tr><td></td><td>HasExclusiveBlock= 7<tr><td></td><td>Overwrite= 8<tr><td></td><td>Overwritten= 9<tr><td></td><td>Interrupt= 10<tr><th align='left'>type declarations</th><td><a href="#ModuleParser.InfoItem">InfoItem</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#ModuleParser.Node">Node</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#ModuleParser.NodeList">NodeList</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.Import">Import</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.Definition">Definition</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.Type">Type</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.Array">Array</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.Any">Any</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.AnyRecord">AnyRecord</a> =<strong>OBJECT</strong> (<strong>Any</strong>)<tr><td></td><td><a href="#ModuleParser.AnyObject">AnyObject</a> =<strong>OBJECT</strong> (<strong>Any</strong>)<tr><td></td><td><a href="#ModuleParser.AnyPointer">AnyPointer</a> =<strong>OBJECT</strong> (<strong>Any</strong>)<tr><td></td><td><a href="#ModuleParser.Record">Record</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.Pointer">Pointer</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.Enumeration">Enumeration</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.Port">Port</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.Cell">Cell</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.Object">Object</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.Procedure">Procedure</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.DeclSeq">DeclSeq</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.ConstDecl">ConstDecl</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.TypeDecl">TypeDecl</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.VarDecl">VarDecl</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.ProcDecl">ProcDecl</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.ProcHead">ProcHead</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.FormalPars">FormalPars</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><td></td><td><a href="#ModuleParser.FPSection">FPSection</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.Expr">Expr</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.SimpleExpr">SimpleExpr</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.Term">Term</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.Factor">Factor</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.Designator">Designator</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.Qualident">Qualident</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.Element">Element</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.MulOp">MulOp</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.AddOp">AddOp</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.IdentDef">IdentDef</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#ModuleParser.TemplateType">TemplateType</a> =<strong>ENUMERATION</strong> <tr><td></td><td><a href="#ModuleParser.TemplateParameter">TemplateParameter</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.IdentList">IdentList</a> =<strong>OBJECT</strong> (<strong>NodeList</strong>)<tr><td></td><td><a href="#ModuleParser.Module">Module</a> =<strong>OBJECT</strong> (<strong>Node</strong>)<tr><th align='left'>variables</th><td>invalidIdentifier: <strong>Strings.String</strong><tr><th align='left'>procedures</th><td> SplitName (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> moduleName, typeName: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)<tr><td></td><td> ParseFile (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>Module</strong><tr><td></td><td> <a href="#ModuleParser.SetSuperTypes">SetSuperTypes</a> (module: <strong>Module</strong>)<tr><td></td><td> Parse (scanner: <strong>FoxScanner.Scanner</strong>; <strong>VAR</strong> module: <strong>Module</strong>; <strong>CONST</strong> definitions: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_204D1080">
+</h1>
+<ul>
+<li> Notes:</li>
+
+<li> - The Module node&apos;s parent is the module node itself</li>
+</ul>
+<hr><h2 id="_204D47C0"><a name="ModuleParser.InfoItem"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.InfoItem">InfoItem</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> InfoItem* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Strings.String</strong><tr><td></td><td>pos: <strong>Streams.Position</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_204D9300"><a name="ModuleParser.Node"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Node">Node</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Node* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>parent: <strong>Node</strong><tr><th align='left'>procedures</th><td> GetModule (): <strong>Module</strong><tr><td></td><td>&amp; Init (parent: <strong>Node</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_204E0700"><a name="ModuleParser.NodeList"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.NodeList">NodeList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> NodeList* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>next: <strong>NodeList</strong></td></tr>
+</table>
+<hr><h2 id="_204E4A80"><a name="ModuleParser.Import"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Import">Import</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Import* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ident: <strong>InfoItem</strong><tr><td></td><td>alias: <strong>InfoItem</strong><tr><td></td><td>context: <strong>InfoItem</strong><tr><td></td><td>parameters: <strong>TemplateParameter</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_204EBB00"><a name="ModuleParser.Definition"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Definition">Definition</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Definition* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ident: <strong>InfoItem</strong><tr><td></td><td>refines: <strong>Qualident</strong><tr><td></td><td>procs: <strong>ProcHead</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_204F1C00"><a name="ModuleParser.Type"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Type">Type</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Type* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>qualident: <strong>Qualident</strong><tr><td></td><td>array: <strong>Array</strong><tr><td></td><td>record: <strong>Record</strong><tr><td></td><td>pointer: <strong>Pointer</strong><tr><td></td><td>object: <strong>Object</strong><tr><td></td><td>enumeration: <strong>Enumeration</strong><tr><td></td><td>cell: <strong>Cell</strong><tr><td></td><td>port: <strong>Port</strong><tr><td></td><td>procedure: <strong>Procedure</strong><tr><td></td><td>any: <strong>Any</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_204FE440"><a name="ModuleParser.Array"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Array">Array</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Array* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>open: <strong>BOOLEAN</strong><tr><td></td><td>len: <strong>InfoItem</strong><tr><td></td><td>base: <strong>Type</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20504640"><a name="ModuleParser.Any"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Any">Any</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Any* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_205079C0"><a name="ModuleParser.AnyRecord"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.AnyRecord">AnyRecord</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AnyRecord* =<strong>OBJECT</strong> (<strong>Any</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_2050AD40"><a name="ModuleParser.AnyObject"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.AnyObject">AnyObject</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AnyObject* =<strong>OBJECT</strong> (<strong>Any</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_2050E0C0"><a name="ModuleParser.AnyPointer"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.AnyPointer">AnyPointer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AnyPointer* =<strong>OBJECT</strong> (<strong>Any</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_20511440"><a name="ModuleParser.Record"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Record">Record</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Record* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>super: <strong>Qualident</strong><tr><td></td><td>superPtr: <strong>Record</strong><tr><td></td><td>declSeq: <strong>DeclSeq</strong><tr><th align='left'>procedures</th><td> FindProcDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ProcDecl</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_2051A580"><a name="ModuleParser.Pointer"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Pointer">Pointer</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Pointer* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>Type</strong></td></tr>
+</table>
+<hr><h2 id="_2051E900"><a name="ModuleParser.Enumeration"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Enumeration">Enumeration</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Enumeration* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>enumeratorList: <strong>ConstDecl</strong></td></tr>
+</table>
+<hr><h2 id="_20522C80"><a name="ModuleParser.Port"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Port">Port</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Port* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table></table>
+<hr><h2 id="_20526000"><a name="ModuleParser.Cell"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Cell">Cell</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Cell* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>modifiers: <strong>SET</strong><tr><td></td><td>declSeq: <strong>DeclSeq</strong><tr><td></td><td>bodyPos: <strong>Streams.Position</strong><tr><td></td><td>formalPars: <strong>FormalPars</strong><tr><th align='left'>procedures</th><td> FindProcDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ProcDecl</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_2052FF00"><a name="ModuleParser.Object"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Object">Object</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Object* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>super: <strong>Qualident</strong><tr><td></td><td>implements: <strong>Qualident</strong><tr><td></td><td>superPtr: <strong>Object</strong><tr><td></td><td>modifiers: <strong>SET</strong><tr><td></td><td>declSeq: <strong>DeclSeq</strong><tr><td></td><td>bodyPos: <strong>Streams.Position</strong><tr><th align='left'>procedures</th><td> FindProcDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ProcDecl</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_2053BB80"><a name="ModuleParser.Procedure"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Procedure">Procedure</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Procedure* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>delegate: <strong>BOOLEAN</strong><tr><td></td><td>formalPars: <strong>FormalPars</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20540DC0"><a name="ModuleParser.DeclSeq"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.DeclSeq">DeclSeq</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> DeclSeq* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>constDecl: <strong>ConstDecl</strong><tr><td></td><td>typeDecl: <strong>TypeDecl</strong><tr><td></td><td>varDecl: <strong>VarDecl</strong><tr><td></td><td>procDecl: <strong>ProcDecl</strong><tr><th align='left'>procedures</th><td> FindProcDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>ProcDecl</strong><tr><td></td><td> FindTypeDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>TypeDecl</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_2054DAC0"><a name="ModuleParser.ConstDecl"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.ConstDecl">ConstDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ConstDecl* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>identDef: <strong>IdentDef</strong><tr><td></td><td>constExpr: <strong>Expr</strong><tr><td></td><td>expr: <strong>InfoItem</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20553BC0"><a name="ModuleParser.TypeDecl"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.TypeDecl">TypeDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TypeDecl* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>identDef: <strong>IdentDef</strong><tr><td></td><td>type: <strong>Type</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20558E00"><a name="ModuleParser.VarDecl"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.VarDecl">VarDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> VarDecl* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>identList: <strong>IdentList</strong><tr><td></td><td>type: <strong>Type</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_2055E040"><a name="ModuleParser.ProcDecl"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.ProcDecl">ProcDecl</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcDecl* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>head: <strong>ProcHead</strong><tr><td></td><td>declSeq: <strong>DeclSeq</strong><tr><td></td><td>bodyPos: <strong>Streams.Position</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20564140"><a name="ModuleParser.ProcHead"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.ProcHead">ProcHead</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcHead* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sysFlag: <strong>InfoItem</strong><tr><td></td><td>constructor: <strong>BOOLEAN</strong><tr><td></td><td>inline: <strong>BOOLEAN</strong><tr><td></td><td>operator: <strong>BOOLEAN</strong><tr><td></td><td>modifiers: <strong>SET</strong><tr><td></td><td>identDef: <strong>IdentDef</strong><tr><td></td><td>formalPars: <strong>FormalPars</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_2056DD40"><a name="ModuleParser.FormalPars"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.FormalPars">FormalPars</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FormalPars* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>fpSectionList: <strong>FPSection</strong><tr><td></td><td>returnType: <strong>Type</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20572F80"><a name="ModuleParser.FPSection"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.FPSection">FPSection</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> FPSection* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>var: <strong>BOOLEAN</strong><tr><td></td><td>const: <strong>BOOLEAN</strong><tr><td></td><td>identList: <strong>IdentList</strong><tr><td></td><td>type: <strong>Type</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20579F40"><a name="ModuleParser.Expr"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Expr">Expr</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Expr* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>simpleExprL: <strong>SimpleExpr</strong><tr><td></td><td>simpleExprR: <strong>SimpleExpr</strong><tr><td></td><td>relation: <strong>InfoItem</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20580040"><a name="ModuleParser.SimpleExpr"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.SimpleExpr">SimpleExpr</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> SimpleExpr* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sign: <strong>InfoItem</strong><tr><td></td><td>termL: <strong>Term</strong><tr><td></td><td>termR: <strong>Term</strong><tr><td></td><td>addOp: <strong>AddOp</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20587000"><a name="ModuleParser.Term"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Term">Term</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Term* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>factorL: <strong>Factor</strong><tr><td></td><td>factorR: <strong>Factor</strong><tr><td></td><td>mulOp: <strong>MulOp</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_2058D100"><a name="ModuleParser.Factor"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Factor">Factor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Factor* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>designator: <strong>Designator</strong><tr><td></td><td>number: <strong>InfoItem</strong><tr><td></td><td>string: <strong>InfoItem</strong><tr><td></td><td>nil: <strong>InfoItem</strong><tr><td></td><td>bool: <strong>InfoItem</strong><tr><td></td><td>set: <strong>Element</strong><tr><td></td><td>expr: <strong>Expr</strong><tr><td></td><td>factor: <strong>Factor</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_20597DC0"><a name="ModuleParser.Designator"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Designator">Designator</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Designator* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>qualident: <strong>Qualident</strong><tr><td></td><td>ident: <strong>InfoItem</strong><tr><td></td><td>arrowUp: <strong>InfoItem</strong><tr><td></td><td>exprList: <strong>Expr</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_2059ED80"><a name="ModuleParser.Qualident"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Qualident">Qualident</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Qualident* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ident: <strong>InfoItem</strong></td></tr>
+</table>
+<hr><h2 id="_205A3100"><a name="ModuleParser.Element"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Element">Element</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Element* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>expr: <strong>Expr</strong><tr><td></td><td>upToExpr: <strong>Expr</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_205A8340"><a name="ModuleParser.MulOp"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.MulOp">MulOp</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> MulOp* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>op: <strong>InfoItem</strong></td></tr>
+</table>
+<hr><h2 id="_205AC6C0"><a name="ModuleParser.AddOp"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.AddOp">AddOp</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> AddOp* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>op: <strong>InfoItem</strong></td></tr>
+</table>
+<hr><h2 id="_205B0A40"><a name="ModuleParser.IdentDef"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.IdentDef">IdentDef</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IdentDef* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ident: <strong>InfoItem</strong><tr><td></td><td>vis: <strong>SIGNED8</strong><tr><td></td><td>initializer: <strong>InfoItem</strong><tr><td></td><td>external: <strong>Strings.String</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_205B7300"><a name="ModuleParser.TemplateType"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.TemplateType">TemplateType</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TemplateType* =<strong>ENUMERATION</strong> <strong>CONST</strong> Type*= 0, <strong>CONST</strong> Const*= 1, <strong>CONST</strong> Import*= 2, <strong>CONST</strong> Automatic*= 3</pre>
+<hr><h2 id="_205BDC80"><a name="ModuleParser.TemplateParameter"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.TemplateParameter">TemplateParameter</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TemplateParameter* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>TemplateType</strong><tr><td></td><td>ident: <strong>InfoItem</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_205C2EC0"><a name="ModuleParser.IdentList"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.IdentList">IdentList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> IdentList* =<strong>OBJECT</strong> (<strong>NodeList</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>identDef: <strong>IdentDef</strong></td></tr>
+</table>
+<hr><h2 id="_205C7240"><a name="ModuleParser.Module"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.Module">Module</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Module* =<strong>OBJECT</strong> (<strong>Node</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>ident: <strong>InfoItem</strong><tr><td></td><td>context: <strong>InfoItem</strong><tr><td></td><td>importList: <strong>Import</strong><tr><td></td><td>modifiers: <strong>SET</strong><tr><td></td><td>definitions: <strong>Definition</strong><tr><td></td><td>declSeq: <strong>DeclSeq</strong><tr><td></td><td>bodyPos: <strong>Streams.Position</strong><tr><td></td><td>hasError: <strong>BOOLEAN</strong><tr><td></td><td>resolved: <strong>BOOLEAN</strong><tr><td></td><td>parameters: <strong>TemplateParameter</strong><tr><th align='left'>procedures</th><td> FindTypeDecl (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>TypeDecl</strong><tr><td></td><td> FindImport (<strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Import</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_205D9640"><a name="ModuleParser.SetSuperTypes"></a><a href="#ModuleParser">ModuleParser</a>.<a href="#ModuleParser.SetSuperTypes">SetSuperTypes</a>
+</h2>
+<p> Parse all modules required to set the Record.superPtr and Object.superPtr fields and set these fields</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetSuperTypes* (module: <strong>Module</strong>)</pre>
+</body></html>

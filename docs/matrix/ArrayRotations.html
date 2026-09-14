@@ -29,12 +29,12 @@
 				</style>
 				</head>
 				<body>
-			<a name="ModuleList"></a><hr><h1 id="#ModuleList">
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
 </h1>
 <p>Module <a href="#ArrayRotations">ArrayRotations</a></p>
-<hr><h1 id="#_E0473240"><a name="ArrayRotations"></a><a href="#ModuleList">Module</a> ArrayRotations
+<hr><h1 id="_78D92500"><a name="ArrayRotations"></a><a href="#ModuleList">Module</a> ArrayRotations
 </h1>
-<p> AUTHOR "Patrick Hunziker"; PURPOSE "rotation decompositions in 2D and 3D";</p>
+<p> AUTHOR &quot;Patrick Hunziker&quot;; PURPOSE &quot;rotation decompositions in 2D and 3D&quot;;</p>
 
 <h3>Summary</h3>
 
@@ -49,16 +49,16 @@
 </td></tr>
 </td></tr>
 </table>
-<hr><h1 id="#_E0486480">
+<hr><h1 id="_78DA5740">
 </h1>
-<p> example of rotation of a point or vector by a matrix: <a href="#x1,y1,z1]">x1,y1,z1]</a> := R * <a href="#x0,y0,z0]">x0,y0,z0]</a> ; example of concatenated rotatations: v1:= R2*R1*v0 ;</p>
+<p> example of rotation of a point or vector by a matrix: [x1,y1,z1] := R * [x0,y0,z0] ; example of concatenated rotatations: v1:= R2*R1*v0 ;</p>
 
 <dl>
 <dt><strong>CAVE</strong></dt>
 <dd> order of rotations !</dd>
 
 </dl>
-<hr><h2 id="#_E048DFC0"><a name="ArrayRotations.Rotation4ShearDecomposition"></a><a href="#ArrayRotations">ArrayRotations</a>.<a href="#ArrayRotations.Rotation4ShearDecomposition">Rotation4ShearDecomposition</a>
+<hr><h2 id="_78DAD280"><a name="ArrayRotations.Rotation4ShearDecomposition"></a><a href="#ArrayRotations">ArrayRotations</a>.<a href="#ArrayRotations.Rotation4ShearDecomposition">Rotation4ShearDecomposition</a>
 </h2>
 <p> decomposes full 3D rotation from rotation matrix R into one of the possible sequences of 4 consecutive shear transforms; there are at least 6 variants; and the one with the lowest sum of squares for parameters a,b,c,d,e,f,g,h is chosen. Note that there are still invalid cases near 0,90,180 degree rotation.</p>
 

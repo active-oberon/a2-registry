@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Release">Release</a></p>
+<hr><h1 id="_3D377D80"><a name="Release"></a><a href="#ModuleList">Module</a> Release
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Release build tool&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#Release.Package">Package</a> =<strong>OBJECT</strong> <tr><td></td><td>PackageArray =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Package</strong><tr><td></td><td><a href="#Release.PackageList">PackageList</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Release.File">File</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Release.BuildObj">BuildObj</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Release.Builds">Builds</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> ParseBuildDescription (text: <strong>Texts.Text</strong>; <strong>CONST</strong> source: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>VAR</strong> builds: <strong>Builds</strong>; log: <strong>Streams.Writer</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>BOOLEAN</strong><tr><td></td><td> ParseBuildFile (<strong>CONST</strong> filename: <strong>Files.FileName</strong>; <strong>VAR</strong> builds: <strong>Builds</strong>; log: <strong>Streams.Writer</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Release.CheckFiles">CheckFiles</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#Release.FindPosition">FindPosition</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#Release.Analyze">Analyze</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#Release.Check">Check</a> (context: <strong>Commands.Context</strong>)<tr><td></td><td> WhoImports (context: <strong>Commands.Context</strong>)<tr><td></td><td> RequiredModules (context: <strong>Commands.Context</strong>)<tr><td></td><td> Rebuild (context: <strong>Commands.Context</strong>)<tr><td></td><td> <a href="#Release.Build">Build</a> (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_3D39BA00">
+</h1>
+<p> <strong></strong></p>
+
+<ul>
+<li> Usage: <strong></strong></li>
+
+<li> Release.Analyze [Options] ~ analyzes the package description file <strong></strong></li>
+
+<li> Option f, file : Package description file to be analyzed [default: Release.Tool] <strong></strong></li>
+
+<li> Release.CheckFiles [Options] filemask ~ lists all files that match to filemask but are not listed in the package description file <strong></strong></li>
+
+<li> Option f, file : Package description file to be analyzed [default: Release.Tool] <strong></strong></li>
+
+<li> Release.Check [Options] ~ builds all builds described in the package description file to a RAM disk <strong></strong></li>
+
+<li> Option f, file : Specify the package description file [default: Release.Tool] <strong></strong></li>
+
+<li> Release.Build [Options] BuildName ~ <strong></strong></li>
+
+<li> Option b, build : Compile the specified build (otherwise, open Notepad with compile command)</li>
+
+<li> Option c,compiler : Override compiler specified in the package description file</li>
+
+<li> Option exclude : Exclude packages (specified as space separated list of package names)</li>
+
+<li> Option e, extension : Override the extension option specified in the package description file</li>
+
+<li> Option f, file : Specify the package description file [default: Release.Tool]</li>
+
+<li> Option n, nocheck : Skip file existence and import order checks</li>
+
+<li> Option o, options : Override the compiler options specified in the package description file</li>
+
+<li> Option only : Only compile the packages provided in a list. No other effect applies i.e. packages are fully taken into account otherwise. if packages need to be excluded, use exclude instead</li>
+
+<li> Option p, path : Override the path option specified in the package description file</li>
+
+<li> Option s, symbolFileExtension : Ovveride the symbolFileExtension option specified in the package description file</li>
+
+<li> Option t, target : Override the target option specified in the package description file</li>
+
+<li> Option v, verbose : Show compiler output (only useful in combination with option --build)</li>
+
+<li> Option w, workers : Number of worker threads for parallel compilation</li>
+
+<li> Option x, xml : Generate XML package description file needed by WMInstaller.Mod</li>
+
+<li> Option z, zip : Generate ZIP file for each package (for now, only together with --build option) <strong></strong></li>
+
+<li> Argument BuildName: Name of build to be built <strong></strong></li>
+
+<li> Release.FindPosition [Options] BuildName FileName ~ finds the first position in the package description file</li>
+
+<li> where the specified file could be inserted (compile order) <strong></strong></li>
+
+<li> Option f, file : Specify the package description file [default: Release.Tool] <strong> </strong></li>
+
+<li> System.Free Release ~ <strong></strong></li>
+
+<li> Based on Release.Mod by pjm <strong> </strong></li>
+
+<li> BuildDescription = Header Import BuildSection Packages</li>
+
+<li> BuildSection = BUILDS {Build} END</li>
+
+<li> Build = buildName OPENSECTION {BuildParameter} CLOSESECTION</li>
+
+<li> Build = INCLUDE &apos;&quot;&apos; [buildprefix {&quot; &quot; buildprefix} ] &apos;&quot;&apos;</li>
+
+</ul>
+<table><tr><td></td></tr>
+</table>
+
+<p> COMPILER &apos;&quot;&apos; compileCommand &apos;&quot;&apos;</p>
+
+<table><tr><td> COMPILEROPTIONS &apos;&quot;&apos; compileOptions &apos;&quot;&apos;</td><td></td></tr>
+</table>
+
+<p> LINKER &apos;&quot;&apos; linkCommand &apos;&quot;&apos;</p>
+
+<table><tr><td> LINKEROPTIONS &apos;&quot;&apos; linkOptions &apos;&quot;&apos;</td><td></td></tr>
+</table>
+
+<p> TARGET &apos;&quot;&apos; target &apos;&quot;&apos;</p>
+
+<table><tr><td></td></tr>
+</table>
+
+<p> EXTENSION &apos;&quot;&apos; objectFileExtension &apos;&quot;&apos;</p>
+
+<table><tr><td> PATH &apos;&quot;&apos; objectFilePath &apos;&quot;&apos;</td><td></td></tr>
+</table>
+
+<p> EXCLUDEPACKAGES &apos;&quot;&apos; [ exludedPackage {&quot; &quot; excludedPackage} ] &apos;&quot;&apos;</p>
+
+<ul>
+<li> DISABLED &quot;TRUE&quot;</li>
+
+</ul>
+<table><tr><td> &quot;FALSE&quot;</td></tr>
+</table>
+
+<ul>
+<li> Packages = { PackageSpec FileList }</li>
+
+<li> PackageSpec = PACKAGE packageName ARCHIVE ArchiveName SOURCE SourceName ENDSECTION</li>
+
+<li> FileList = { Filename</li>
+
+</ul>
+<table><tr><td> ReleaseSpec OPENSECTION [ {filename } ] CLOSESECTION }</td></tr>
+</table>
+
+<p> ReleaseSpec = ReleaseName [ { SEPARATOR ReleaseName } ]</p>
+<hr><h2 id="_3D419E80"><a name="Release.Package"></a><a href="#Release">Release</a>.<a href="#Release.Package">Package</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Package* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>archive: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>source: <strong>ARRAY</strong> 32 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>description: <strong>ARRAY</strong> 256 <strong>OF</strong> <strong>CHAR</strong><tr><td></td><td>nofFiles: <strong>SIZE</strong><tr><td></td><td>nofSources: <strong>SIZE</strong><tr><td></td><td>position: <strong>Files.Position</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_3D426C80"><a name="Release.PackageList"></a><a href="#Release">Release</a>.<a href="#Release.PackageList">PackageList</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> PackageList* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> GetAll (): <strong>PackageArray</strong></td></tr>
+</table>
+<hr><h2 id="_3D42B240"><a name="Release.File"></a><a href="#Release">Release</a>.<a href="#Release.File">File</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> File* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Files.FileName</strong><tr><td></td><td>package: <strong>Package</strong><tr><td></td><td>release: <strong>Expression</strong><tr><td></td><td>flags: <strong>SET</strong><tr><td></td><td>prev: <strong>File</strong><tr><td></td><td>next: <strong>File</strong><tr><th align='left'>procedures</th><td> IsInRelease (<strong>CONST</strong> release: <strong>Set</strong>): <strong>BOOLEAN</strong><tr><td></td><td> IsSourceCode (): <strong>BOOLEAN</strong><tr><td></td><td> IsTemplate (): <strong>BOOLEAN</strong><tr><td></td><td> CheckImports (diagnostics: <strong>Diagnostics.Diagnostics</strong>; build: <strong>BuildObj</strong>; <strong>VAR</strong> error: <strong>BOOLEAN</strong>)<tr><td></td><td> ParseModule (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Show (w: <strong>Streams.Writer</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_3D43FF40"><a name="Release.BuildObj"></a><a href="#Release">Release</a>.<a href="#Release.BuildObj">BuildObj</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> BuildObj* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>name: <strong>Name</strong><tr><td></td><td>position: <strong>Files.Position</strong><tr><th align='left'>procedures</th><td> <a href="#Release.BuildObj.ToStream">ToStream</a> (w: <strong>Streams.Writer</strong>; charactersPerLine: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Release.BuildObj.GenerateToolFile">GenerateToolFile</a> (<strong>CONST</strong> filename: <strong>Files.FileName</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)<tr><td></td><td> FindPosition (<strong>CONST</strong> filename: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; diagnostics: <strong>Diagnostics.DiagnosticsList</strong>): <strong>Streams.Position</strong><tr><td></td><td> <a href="#Release.BuildObj.CheckFiles">CheckFiles</a> (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> <a href="#Release.BuildObj.CheckModules">CheckModules</a> (diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>VAR</strong> error: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Release.BuildObj.DoChecks">DoChecks</a> (out: <strong>Streams.Writer</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>VAR</strong> error: <strong>BOOLEAN</strong>)<tr><td></td><td> GetInfo (<strong>VAR</strong> nofSources, nofFiles: <strong>SIZE</strong>)<tr><td></td><td> <a href="#Release.BuildObj.Compile">Compile</a> (nofWorkers: <strong>SIZE</strong>; out, error: <strong>Streams.Writer</strong>; verbose: <strong>BOOLEAN</strong>; diagnostics: <strong>Diagnostics.DiagnosticsList</strong>; <strong>VAR</strong> err: <strong>BOOLEAN</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_3D45ED80"><a name="Release.BuildObj.ToStream"></a><a href="#Release">Release</a>.<a href="#Release.BuildObj">BuildObj</a>.<a href="#Release.BuildObj.ToStream">ToStream</a>
+</h3>
+<p> List all source code files included in this build to a stream</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> ToStream* (w: <strong>Streams.Writer</strong>; charactersPerLine: <strong>SIZE</strong>)</pre>
+<hr><h3 id="_3D466800"><a name="Release.BuildObj.GenerateToolFile"></a><a href="#Release">Release</a>.<a href="#Release.BuildObj">BuildObj</a>.<a href="#Release.BuildObj.GenerateToolFile">GenerateToolFile</a>
+</h3>
+<p> Generate a file that contains the list of all source code files of this build in compile order</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GenerateToolFile* (<strong>CONST</strong> filename: <strong>Files.FileName</strong>; <strong>VAR</strong> res: <strong>INTEGER</strong>)</pre>
+<hr><h3 id="_3D470080"><a name="Release.BuildObj.CheckFiles"></a><a href="#Release">Release</a>.<a href="#Release.BuildObj">BuildObj</a>.<a href="#Release.BuildObj.CheckFiles">CheckFiles</a>
+</h3>
+<p> For all files contained in this build check whether they exist. Also try to parse the import section of the source code files</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CheckFiles* (diagnostics: <strong>Diagnostics.Diagnostics</strong>)</pre>
+<hr><h3 id="_3D479700"><a name="Release.BuildObj.CheckModules"></a><a href="#Release">Release</a>.<a href="#Release.BuildObj">BuildObj</a>.<a href="#Release.BuildObj.CheckModules">CheckModules</a>
+</h3>
+<p> Check the source code files of this build for the import order</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CheckModules* (diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>VAR</strong> error: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="_3D481500"><a name="Release.BuildObj.DoChecks"></a><a href="#Release">Release</a>.<a href="#Release.BuildObj">BuildObj</a>.<a href="#Release.BuildObj.DoChecks">DoChecks</a>
+</h3>
+<p> Call both CheckFiles and CheckModules</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> DoChecks* (out: <strong>Streams.Writer</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>; <strong>VAR</strong> error: <strong>BOOLEAN</strong>)</pre>
+<hr><h3 id="_3D488680"><a name="Release.BuildObj.Compile"></a><a href="#Release">Release</a>.<a href="#Release.BuildObj">BuildObj</a>.<a href="#Release.BuildObj.Compile">Compile</a>
+</h3>
+<p> Compile all sources included in this build</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Compile* (nofWorkers: <strong>SIZE</strong>; out, error: <strong>Streams.Writer</strong>; verbose: <strong>BOOLEAN</strong>; diagnostics: <strong>Diagnostics.DiagnosticsList</strong>; <strong>VAR</strong> err: <strong>BOOLEAN</strong>)</pre>
+<hr><h2 id="_3D492280"><a name="Release.Builds"></a><a href="#Release">Release</a>.<a href="#Release.Builds">Builds</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Builds* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>builds: <strong>ARRAY</strong> MaxBuilds <strong>OF</strong> <strong>BuildObj</strong><tr><td></td><td>packages: <strong>PackageList</strong><tr><td></td><td>nofFiles: <strong>SIZE</strong><tr><td></td><td>nofSources: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> CheckAll (out: <strong>Streams.Writer</strong>; diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Show (w: <strong>Streams.Writer</strong>; details: <strong>BOOLEAN</strong>)<tr><td></td><td> <a href="#Release.Builds.GetBuild">GetBuild</a> (<strong>CONST</strong> buildname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BuildObj</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_3D4A1BC0"><a name="Release.Builds.GetBuild"></a><a href="#Release">Release</a>.<a href="#Release.Builds">Builds</a>.<a href="#Release.Builds.GetBuild">GetBuild</a>
+</h3>
+<p> Get a reference to a BuildObj by name</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> GetBuild* (<strong>CONST</strong> buildname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>BuildObj</strong></pre>
+<hr><h2 id="_3D4A8AC0"><a name="Release.CheckFiles"></a><a href="#Release">Release</a>.<a href="#Release.CheckFiles">CheckFiles</a>
+</h2>
+<p> Find files that match the filemask but are not listed in the build description file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> CheckFiles* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="_3D4AFB00"><a name="Release.FindPosition"></a><a href="#Release">Release</a>.<a href="#Release.FindPosition">FindPosition</a>
+</h2>
+<p> Find the text position where the specified file could be inserted into the build description file</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> FindPosition* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="_3D4B6EC0"><a name="Release.Analyze"></a><a href="#Release">Release</a>.<a href="#Release.Analyze">Analyze</a>
+</h2>
+<p> Analyze the builds</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Analyze* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="_3D4BB040"><a name="Release.Check"></a><a href="#Release">Release</a>.<a href="#Release.Check">Check</a>
+</h2>
+<p> Build specified build (or all of none specified) to a RAM disk</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Check* (context: <strong>Commands.Context</strong>)</pre>
+<hr><h2 id="_3D4C1600"><a name="Release.Build"></a><a href="#Release">Release</a>.<a href="#Release.Build">Build</a>
+</h2>
+<p> Build the specified build</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Build* (context: <strong>Commands.Context</strong>)</pre>
+</body></html>

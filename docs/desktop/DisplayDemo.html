@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#DisplayDemo">DisplayDemo</a></p>
+<hr><h1 id="_3948FE40"><a name="DisplayDemo"></a><a href="#ModuleList">Module</a> DisplayDemo
+</h1>
+<p> AUTHOR &quot;&quot;; PURPOSE &quot;What a Displays driver looks like when it works: a picture and a moving thing&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#DisplayDemo.Check">Check</a><tr><td></td><td> <a href="#DisplayDemo.Ascii">Ascii</a><tr><td></td><td> <a href="#DisplayDemo.Mandelbrot">Mandelbrot</a><tr><td></td><td> <a href="#DisplayDemo.Pattern">Pattern</a><tr><td></td><td> <a href="#DisplayDemo.PatternInPieces">PatternInPieces</a><tr><td></td><td> <a href="#DisplayDemo.Tiny">Tiny</a><tr><td></td><td> <a href="#DisplayDemo.Frames">Frames</a><tr><td></td><td> <a href="#DisplayDemo.Animate">Animate</a><tr><td></td><td> <a href="#DisplayDemo.Stop">Stop</a><tr><td></td><td> <a href="#DisplayDemo.Run">Run</a></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_3949C580">
+</h1><hr><h2 id="_3949CD40"><a name="DisplayDemo.Check"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.Check">Check</a>
+</h2>
+<p> Draw the set at the size a phone screen has and print what landed in the frame buffer, coarsely. The picture and the arithmetic fail in ways that look alike on a screen, and this is the one that needs no screen: the shape below must be the shape Ascii prints.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Check*</pre>
+<hr><h2 id="_394AB400"><a name="DisplayDemo.Ascii"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.Ascii">Ascii</a>
+</h2>
+<p> The same set on a terminal, 78 by 30. Here because the arithmetic and the driver fail in ways that look alike on a screen: this says which of the two it was, and it runs anywhere.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Ascii*</pre>
+<hr><h2 id="_394B6A00"><a name="DisplayDemo.Mandelbrot"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.Mandelbrot">Mandelbrot</a>
+</h2>
+<p> Draw the set over the whole display, and put it on the screen.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Mandelbrot*</pre>
+<hr><h2 id="_394BC1C0"><a name="DisplayDemo.Pattern"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.Pattern">Pattern</a>
+</h2>
+<p> The pattern, in one frame.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Pattern*</pre>
+<hr><h2 id="_394BFB40"><a name="DisplayDemo.PatternInPieces"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.PatternInPieces">PatternInPieces</a>
+</h2>
+<p> The same pattern, in seven frames -- the same screen, if partial frames lose nothing.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> PatternInPieces*</pre>
+<hr><h2 id="_394C5A00"><a name="DisplayDemo.Tiny"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.Tiny">Tiny</a>
+</h2>
+<p> Time the smallest possible frame: one dot changed, put up a hundred times. What is left after the copying is gone -- the lock, whatever the surface carries over for itself, and the wait for a buffer to come free, which on a screen refreshing at 120 Hz is a refresh.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Tiny*</pre>
+<hr><h2 id="_394D40C0"><a name="DisplayDemo.Frames"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.Frames">Frames</a>
+</h2>
+<p> Time a plain frame: fill the display in one colour and put it up, ten times over.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Frames*</pre>
+<hr><h2 id="_394DA980"><a name="DisplayDemo.Animate"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.Animate">Animate</a>
+</h2>
+<p> Start the bouncing box, on a thread of its own. It follows the mouse, or the finger, while held.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Animate*</pre>
+<hr><h2 id="_394E1840"><a name="DisplayDemo.Stop"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.Stop">Stop</a>
+</h2>
+<p> Stop it.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Stop*</pre>
+<hr><h2 id="_394E4400"><a name="DisplayDemo.Run"></a><a href="#DisplayDemo">DisplayDemo</a>.<a href="#DisplayDemo.Run">Run</a>
+</h2>
+<p> The set, then the box: what one asks of a display the first time it works.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Run*</pre>
+</body></html>

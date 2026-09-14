@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#TestSuite">TestSuite</a></p>
+<hr><h1 id="_75A08280"><a name="TestSuite"></a><a href="#ModuleList">Module</a> TestSuite
+</h1>
+<p> AUTHOR &quot;negelef&quot;; PURPOSE &quot;Simple testing framework&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>Positive= 0<tr><td></td><td>Negative= 1<tr><td></td><td>Failure= 2<tr><th align='left'>type declarations</th><td>TestType =<strong>INTEGER</strong><tr><td></td><td><a href="#TestSuite.TestResult">TestResult</a> =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> <tr><td></td><td><a href="#TestSuite.Report">Report</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#TestSuite.Tester">Tester</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#TestSuite.StreamReport">StreamReport</a> =<strong>OBJECT</strong> (<strong>Report</strong>)<tr><th align='left'>procedures</th><td> DriveByReader (reader: <strong>Streams.Reader</strong>; error: <strong>Streams.Writer</strong>; <strong>CONST</strong> resultname: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; tester: <strong>Tester</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Drive (context: <strong>Commands.Context</strong>; tester: <strong>Tester</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75A1C740"><a name="TestSuite.TestResult"></a><a href="#TestSuite">TestSuite</a>.<a href="#TestSuite.TestResult">TestResult</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> TestResult* =<strong>POINTER</strong> <strong>TO</strong> <strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>type: <strong>TestType</strong><tr><td></td><td>name: <strong>TestName</strong><tr><td></td><td>succeeded: <strong>BOOLEAN</strong><tr><td></td><td>new: <strong>BOOLEAN</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75A23800"><a name="TestSuite.Report"></a><a href="#TestSuite">TestSuite</a>.<a href="#TestSuite.Report">Report</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Report* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>tests: <strong>SIZE</strong><tr><td></td><td>succeeded: <strong>SIZE</strong><tr><td></td><td>succeededThisTime: <strong>SIZE</strong><tr><td></td><td>failed: <strong>SIZE</strong><tr><td></td><td>failedThisTime: <strong>SIZE</strong><tr><th align='left'>procedures</th><td> Open<tr><td></td><td> Handle (result: <strong>TestResult</strong>)<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75A2E1C0"><a name="TestSuite.Tester"></a><a href="#TestSuite">TestSuite</a>.<a href="#TestSuite.Tester">Tester</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Tester* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>diagnostics: <strong>Diagnostics.Diagnostics</strong><tr><th align='left'>procedures</th><td>&amp; Init (diagnostics: <strong>Diagnostics.Diagnostics</strong>)<tr><td></td><td> Process (r: <strong>Streams.Reader</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Handle (r: <strong>Streams.Reader</strong>; pos: <strong>Streams.Position</strong>; <strong>CONST</strong> name: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; type: <strong>TestType</strong>): <strong>INTEGER</strong><tr><td></td><td> Print (report: <strong>Report</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_75A3D1C0"><a name="TestSuite.StreamReport"></a><a href="#TestSuite">TestSuite</a>.<a href="#TestSuite.StreamReport">StreamReport</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StreamReport* =<strong>OBJECT</strong> (<strong>Report</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; InitStreamReport (w: <strong>Streams.Writer</strong>)<tr><td></td><td> Open<tr><td></td><td> Handle (test: <strong>TestResult</strong>)<tr><td></td><td> Close</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+</body></html>

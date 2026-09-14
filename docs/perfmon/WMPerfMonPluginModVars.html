@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMPerfMonPluginModVars">WMPerfMonPluginModVars</a></p>
+<hr><h1 id="_AF3E7940"><a name="WMPerfMonPluginModVars"></a><a href="#ModuleList">Module</a> WMPerfMonPluginModVars
+</h1>
+<p> AUTHOR &quot;staubesv&quot;; PURPOSE &quot;Performance Monitor module variables plugin&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>type declarations</th><td><a href="#WMPerfMonPluginModVars.VariableDescriptor">VariableDescriptor</a> =<strong>RECORD</strong> <tr><td></td><td>VariableDescriptors =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>VariableDescriptor</strong><tr><th align='left'>procedures</th><td> InstallPlugin (<strong>CONST</strong> name: <strong>WMPerfMonPlugins.Name</strong>; vd: <strong>VariableDescriptors</strong>)<tr><td></td><td> Install (context: <strong>Commands.Context</strong>)</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h1 id="_AF3F2EC0">
+</h1>
+<ul>
+<li> History: <strong></strong></li>
+
+<li> 16.02.2006 First Release (staubesv)</li>
+</ul>
+<hr><h2 id="_AF3F5200"><a name="WMPerfMonPluginModVars.VariableDescriptor"></a><a href="#WMPerfMonPluginModVars">WMPerfMonPluginModVars</a>.<a href="#WMPerfMonPluginModVars.VariableDescriptor">VariableDescriptor</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> VariableDescriptor* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>moduleName: <strong>Modules.Name</strong><tr><td></td><td>variableName: <strong>ARRAY</strong> 64 <strong>OF</strong> <strong>CHAR</strong></td></tr>
+</td></tr>
+</table>
+</body></html>

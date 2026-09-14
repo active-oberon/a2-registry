@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title> 
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#WMProcessInfo">WMProcessInfo</a></p>
+<hr><h1 id="_0D437FC0"><a name="WMProcessInfo"></a><a href="#ModuleList">Module</a> WMProcessInfo
+</h1>
+<p> AUTHOR &quot;tf/staubesv&quot;; PURPOSE &quot;Components for process visualization&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>None= 0<tr><td></td><td>ID= 1<tr><td></td><td>Priority= 2<tr><td></td><td>Mode= 3<tr><th align='left'>type declarations</th><td>Selection =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Objects.Process</strong><tr><td></td><td><a href="#WMProcessInfo.ProcessSelector">ProcessSelector</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><td></td><td><a href="#WMProcessInfo.ProcessManager">ProcessManager</a> =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)<tr><th align='left'>procedures</th><td> GenProcessSelector (): <strong>XML.Element</strong><tr><td></td><td> GenProcessManager (): <strong>XML.Element</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_0D447080"><a name="WMProcessInfo.ProcessSelector"></a><a href="#WMProcessInfo">WMProcessInfo</a>.<a href="#WMProcessInfo.ProcessSelector">ProcessSelector</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcessSelector* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>sort: <strong>WMProperties.Int32Property</strong><tr><th align='left'>procedures</th><td>&amp; Init<tr><td></td><td> GetSelection (): <strong>Selection</strong><tr><td></td><td> PropertyChanged (sender, property: @Any0)<tr><td></td><td> RecacheProperties<tr><td></td><td> Resized<tr><td></td><td> Finalize<tr><td></td><td> @Body</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_0D452500"><a name="WMProcessInfo.ProcessManager"></a><a href="#WMProcessInfo">WMProcessInfo</a>.<a href="#WMProcessInfo.ProcessManager">ProcessManager</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> ProcessManager* =<strong>OBJECT</strong> (<strong>WMComponents.VisualComponent</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>toolbar: <strong>WMStandardComponents.Panel</strong><tr><th align='left'>procedures</th><td>&amp; Init</td></tr>
+</td></tr>
+</table>
+</body></html>
