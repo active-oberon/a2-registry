@@ -370,11 +370,11 @@
     },
     "std/encoding": {
       "status": "bundled",
-      "modules": 4,
+      "modules": 5,
       "path": "packages/std/encoding",
       "tier": 3,
       "install": "bundled with the SDK",
-      "summary": "Turning values into bytes and back: JSON, CSV, Base64, CRC.",
+      "summary": "Turning values into bytes and back: JSON, configuration YAML, CSV, Base64, CRC.",
       "requires": [
         "std/base",
         "std/runtime",
