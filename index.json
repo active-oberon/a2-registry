@@ -1,7 +1,7 @@
 {
   "registry": "a2-registry",
   "description": "Catalogue and docs for the whole A2 / Active Oberon module world — the bundled standard library (std/*) and installable community packages (community/*, via `ob get`).",
-  "updated": "2026-08-24",
+  "updated": "2026-10-12",
   "packages": {
     "apps/desktop": {
       "status": "in-tree",
@@ -214,17 +214,19 @@
       "summary": "zlib/DEFLATE, gzip, raw inflate, and the small experimental codecs beside them."
     },
     "community/crypto": {
-      "status": "pending-manifest",
-      "modules": 32,
+      "status": "validated",
+      "modules": 31,
       "path": "packages/crypto",
       "requires": [
         "std/base",
+        "std/encoding",
         "std/runtime",
         "std/system",
         "std/text",
         "std/time"
       ],
-      "summary": "Ciphers, hashes, HMAC, big numbers, RSA/DSA/DH, Fortuna, ASN.1 and X.509 (the A2 crypto tree)."
+      "summary": "Ciphers, hashes, HMAC, big numbers, RSA/DSA/DH, Fortuna, ASN.1 and X.509 (the A2 crypto tree).",
+      "doc_pages": 31
     },
     "community/fftw": {
       "status": "validated",
@@ -381,6 +383,22 @@
         "std/system",
         "std/text"
       ]
+    },
+    "std/logging": {
+      "status": "bundled",
+      "modules": 1,
+      "path": "packages/std/logging",
+      "tier": 3,
+      "install": "bundled with the SDK",
+      "summary": "Structured application logging: typed attributes, immutable logger context, level filtering, and synchronous text or JSON stream handlers.",
+      "requires": [
+        "std/base",
+        "std/encoding",
+        "std/runtime",
+        "std/text",
+        "std/time"
+      ],
+      "doc_pages": 1
     },
     "std/math": {
       "status": "bundled",

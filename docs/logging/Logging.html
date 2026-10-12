@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title></title>
+<style>
+				normal {
+				font-family: Helvetica, Sans-Serif;
+				}
+			.bold {
+				font-family: Helvetica, Sans-Serif;
+				}
+			H1 {
+				color: #550088
+				}
+			H2 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H3 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			H4 {
+				font-family: Helvetica, Sans-Serif;
+				color: #550088
+				}
+			A {
+				color: #550088
+				}
+				</style>
+				</head>
+				<body>
+			<a name="ModuleList"></a><hr><h1 id="ModuleList">
+</h1>
+<p>Module <a href="#Logging">Logging</a></p>
+<hr><h1 id="_DA7A4C00"><a name="Logging"></a><a href="#ModuleList">Module</a> Logging
+</h1>
+<p> PURPOSE &quot;Typed structured records with replaceable, synchronous handlers&quot;;</p>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>constants</th><td>LevelDebug= -4<tr><td></td><td>LevelInfo= 0<tr><td></td><td>LevelWarn= 4<tr><td></td><td>LevelError= 8<tr><td></td><td>TextValue= 0<tr><td></td><td>IntValue= 1<tr><td></td><td>UIntValue= 2<tr><td></td><td>BoolValue= 3<tr><td></td><td>FloatValue= 4<tr><th align='left'>type declarations</th><td><a href="#Logging.Attr">Attr</a> =<strong>RECORD</strong> <tr><td></td><td>Attrs =<strong>POINTER</strong> <strong>TO</strong> <strong>ARRAY</strong> <strong>OF</strong> <strong>Attr</strong><tr><td></td><td><a href="#Logging.Record">Record</a> =<strong>RECORD</strong> <tr><td></td><td><a href="#Logging.Handler">Handler</a> =<strong>OBJECT</strong> <tr><td></td><td><a href="#Logging.StreamHandler">StreamHandler</a> =<strong>OBJECT</strong> (<strong>Handler</strong>)<tr><td></td><td><a href="#Logging.Logger">Logger</a> =<strong>OBJECT</strong> <tr><th align='left'>procedures</th><td> String (<strong>CONST</strong> key, value: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>Attr</strong><tr><td></td><td> Int (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>SIGNED64</strong>): <strong>Attr</strong><tr><td></td><td> UInt (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>UNSIGNED64</strong>): <strong>Attr</strong><tr><td></td><td> Bool (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>BOOLEAN</strong>): <strong>Attr</strong><tr><td></td><td> Float (<strong>CONST</strong> key: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; value: <strong>FLOAT64</strong>): <strong>Attr</strong><tr><td></td><td> <a href="#Logging.NewTextHandler">NewTextHandler</a> (writer: <strong>Streams.Writer</strong>; minimum= LevelInfo: <strong>SIGNED32</strong>): <strong>StreamHandler</strong><tr><td></td><td> <a href="#Logging.NewJSONHandler">NewJSONHandler</a> (writer: <strong>Streams.Writer</strong>; minimum= LevelInfo: <strong>SIGNED32</strong>): <strong>StreamHandler</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DA7D1600"><a name="Logging.Attr"></a><a href="#Logging">Logging</a>.<a href="#Logging.Attr">Attr</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Attr* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>key: <strong>Strings.String</strong><tr><td></td><td>text: <strong>Strings.String</strong><tr><td></td><td>kind: <strong>SIGNED32</strong><tr><td></td><td>integer: <strong>SIGNED64</strong><tr><td></td><td>unsigned: <strong>UNSIGNED64</strong><tr><td></td><td>boolean: <strong>BOOLEAN</strong><tr><td></td><td>real: <strong>FLOAT64</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DA7DAB00"><a name="Logging.Record"></a><a href="#Logging">Logging</a>.<a href="#Logging.Record">Record</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Record* =<strong>RECORD</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>variables</th><td>time: <strong>Dates.DateTime</strong><tr><td></td><td>level: <strong>SIGNED32</strong><tr><td></td><td>message: <strong>Strings.String</strong><tr><td></td><td>attrs: <strong>Attrs</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DA7E13C0"><a name="Logging.Handler"></a><a href="#Logging">Logging</a>.<a href="#Logging.Handler">Handler</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Handler* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> Enabled (level: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> Handle (<strong>CONST</strong> record: <strong>Record</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</table>
+<hr><h2 id="_DA7E8880"><a name="Logging.StreamHandler"></a><a href="#Logging">Logging</a>.<a href="#Logging.StreamHandler">StreamHandler</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> StreamHandler* =<strong>OBJECT</strong> (<strong>Handler</strong>)</pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td> <a href="#Logging.StreamHandler.SetLevel">SetLevel</a> (level: <strong>SIGNED32</strong>)<tr><td></td><td> Enabled (level: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Logging.StreamHandler.Handle">Handle</a> (<strong>CONST</strong> record: <strong>Record</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_DA7F1F00"><a name="Logging.StreamHandler.SetLevel"></a><a href="#Logging">Logging</a>.<a href="#Logging.StreamHandler">StreamHandler</a>.<a href="#Logging.StreamHandler.SetLevel">SetLevel</a>
+</h3>
+<p> SetLevel changes filtering for every logger sharing this handler.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> SetLevel* (level: <strong>SIGNED32</strong>)</pre>
+<hr><h3 id="_DA7F8040"><a name="Logging.StreamHandler.Handle"></a><a href="#Logging">Logging</a>.<a href="#Logging.StreamHandler">StreamHandler</a>.<a href="#Logging.StreamHandler.Handle">Handle</a>
+</h3>
+<p> Handle keeps the writer exclusive until the complete record has been flushed.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Handle* (<strong>CONST</strong> record: <strong>Record</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="_DA7FF6C0"><a name="Logging.Logger"></a><a href="#Logging">Logging</a>.<a href="#Logging.Logger">Logger</a>
+</h2>
+<h3>Syntax</h3>
+
+<pre><strong>TYPE</strong> Logger* =<strong>OBJECT</strong> </pre>
+
+<h3>Summary</h3>
+
+<table><tr><th align='left'>procedures</th><td>&amp; Init (handler: <strong>Handler</strong>)<tr><td></td><td> <a href="#Logging.Logger.With">With</a> (<strong>CONST</strong> attrs: <strong>ARRAY</strong> <strong>OF</strong> <strong>Attr</strong>): <strong>Logger</strong><tr><td></td><td> Enabled (level: <strong>SIGNED32</strong>): <strong>BOOLEAN</strong><tr><td></td><td> <a href="#Logging.Logger.Log">Log</a> (level: <strong>SIGNED32</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> attrs: <strong>ARRAY</strong> <strong>OF</strong> <strong>Attr</strong>): <strong>SIGNED32</strong><tr><td></td><td> Debug (<strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> Info (<strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> Warn (<strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong><tr><td></td><td> Error (<strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>): <strong>SIGNED32</strong></td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</td></tr>
+</table>
+<hr><h3 id="_DA8196C0"><a name="Logging.Logger.With"></a><a href="#Logging">Logging</a>.<a href="#Logging.Logger">Logger</a>.<a href="#Logging.Logger.With">With</a>
+</h3>
+<p> With copies attributes into a new logger so the parent stays safe to share.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> With* (<strong>CONST</strong> attrs: <strong>ARRAY</strong> <strong>OF</strong> <strong>Attr</strong>): <strong>Logger</strong></pre>
+<hr><h3 id="_DA821C40"><a name="Logging.Logger.Log"></a><a href="#Logging">Logging</a>.<a href="#Logging.Logger">Logger</a>.<a href="#Logging.Logger.Log">Log</a>
+</h3>
+<p> Log filters before allocating a record and returns the handler&apos;s output error.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> Log* (level: <strong>SIGNED32</strong>; <strong>CONST</strong> message: <strong>ARRAY</strong> <strong>OF</strong> <strong>CHAR</strong>; <strong>CONST</strong> attrs: <strong>ARRAY</strong> <strong>OF</strong> <strong>Attr</strong>): <strong>SIGNED32</strong></pre>
+<hr><h2 id="_DA82C1C0"><a name="Logging.NewTextHandler"></a><a href="#Logging">Logging</a>.<a href="#Logging.NewTextHandler">NewTextHandler</a>
+</h2>
+<p> NewTextHandler writes one escaped key=value record per line to a dedicated writer.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewTextHandler* (writer: <strong>Streams.Writer</strong>; minimum= LevelInfo: <strong>SIGNED32</strong>): <strong>StreamHandler</strong></pre>
+<hr><h2 id="_DA834200"><a name="Logging.NewJSONHandler"></a><a href="#Logging">Logging</a>.<a href="#Logging.NewJSONHandler">NewJSONHandler</a>
+</h2>
+<p> NewJSONHandler nests attributes so their names cannot replace record metadata.</p>
+
+<h3>Syntax</h3>
+
+<pre><strong>PROCEDURE</strong> NewJSONHandler* (writer: <strong>Streams.Writer</strong>; minimum= LevelInfo: <strong>SIGNED32</strong>): <strong>StreamHandler</strong></pre>
+</body></html>
